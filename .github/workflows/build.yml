@@ -30,14 +30,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Setup Pages
         uses: actions/configure-pages@v2
-        
+
+      - name: setup node
+        uses: volta-cli/action@v3
+
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: "node_modules"
+          key: "k"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: '.'
+          path: "build"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1

@@ -1,6 +1,13 @@
 # Website
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+Going to put everything I know about INSAT here
+
+- CheatSheets
+- Tips
+- Guides
+- PFE things
+
+Contributions through PRs are always welcome
 
 ### Installation
 

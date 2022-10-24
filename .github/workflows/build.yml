@@ -37,11 +37,17 @@ jobs:
       - name: setup node
         uses: volta-cli/action@v3
 
+      - name: Install deps
+        run: yarn
+
       - name: Cache
         uses: actions/cache@v3
         with:
           path: "node_modules"
           key: "k"
+
+      - name: Build project
+        run: yarn build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

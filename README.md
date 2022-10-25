@@ -1,6 +1,6 @@
 # Website
 
-Going to put everything I know about INSAT here
+Going to put everything I know about INSAT & its software engineering degree here
 
 - CheatSheets
 - Tips

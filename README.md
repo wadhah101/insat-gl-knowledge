@@ -23,10 +23,13 @@ curl https://get.volta.sh | bash
 
 Follow this [guide](https://docs.volta.sh/guide/getting-started)
 
+Install your dependencies. Yarn V2 [Plug'n'Play](https://yarnpkg.com/features/pnp) is active and you won't find any node_module folder.
 
 ```console
 yarn
 ```
+
+For Vscode user make sure to apply .vscode/settings.json when promoted
 
 ## Local Development
 

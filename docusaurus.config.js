@@ -6,8 +6,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "insat-gl-knowledge",
-  tagline: "Dinosaurs are cool",
+  title: "INSAT GL knowledge",
+  tagline:
+    " My Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
   url: "https://wadhah101.github.io",
   baseUrl: "/insat-gl-knowledge/",
   onBrokenLinks: "throw",

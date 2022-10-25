@@ -19,8 +19,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/intro"
           >
-            My Guide on how to survive software engineering in INSAT. Use at
-            your own risk.
+            Start here ! Use at your own risk.
           </Link>
         </div>
       </div>
@@ -33,9 +32,6 @@ export default function Home(): JSX.Element {
   return (
     <Layout title={`Hello from ${siteConfig.title}`} description="">
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
     </Layout>
   );
 }

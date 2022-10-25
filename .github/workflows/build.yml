@@ -44,7 +44,7 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install deps
-        run: yarn install --immutable --immutable-cache --check-cache
+        run: yarn install --immutable --immutable-cache
 
       - name: Build project
         run: yarn build

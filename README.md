@@ -9,13 +9,26 @@ Going to put everything I know about INSAT & its software engineering degree her
 
 Contributions through PRs are always welcome
 
-### Installation
+## Installation
+
+Make sure Volta is installed and configured on your system. This project relies on  **specific** node & yarn versions.
+
+### Unix/Linux
+
+```console
+curl https://get.volta.sh | bash
+```
+
+### Windows
+
+Follow this [guide](https://docs.volta.sh/guide/getting-started)
+
 
 ```console
 yarn
 ```
 
-### Local Development
+## Local Development
 
 ```console
 yarn start
@@ -23,7 +36,7 @@ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
+## Build
 
 ```console
 yarn build

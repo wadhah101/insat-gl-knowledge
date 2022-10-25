@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "postinstall": "yarn dlx @yarnpkg/sdks vscode",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",

@@ -1,10 +1,12 @@
-### Publish / Subscribe
+# Cheat sheet RabbitMQ
+
+## Publish / Subscribe
 
 - This pattern is known as "publish/subscribe".deliver a message to multiple consumers.
 
 - Essentially, published log messages are going to be broadcast to all the receivers.
 
-**Exchanges**
+## Exchanges
 
 - what we covered in the previous tutorials:
   - A *producer* is a user application that sends messages.

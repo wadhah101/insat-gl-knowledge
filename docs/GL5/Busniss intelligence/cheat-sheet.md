@@ -1,3 +1,3 @@
-# Buniss intelligence - the essentials
+# Cheat sheet
 
 ## Dimension & Fact tables

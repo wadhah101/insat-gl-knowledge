@@ -40,25 +40,25 @@
 - ``CREATE CONCRETE VIEW view_name(col1,col2,..) AS  query  [WITH CHECK OPTION] [WITH READ ONLY] ``
  
 ### Delete
-- `` DROP VIEW view_name ``
-# Recursive Queries (^SQL3)
 
+`` DROP VIEW view_name ``
+### Recursive Queries (^SQL3)
+
+```sql
      WITH [RECURSIVE] name AS (
      Initialisation Query 
      UNION ALL
      Recursive Query with terminate condition in where 
      )
      SELECT * from name; -- Displaying result data 
-     
-     
-- PostgreSQL requires the RECURSIVE keyword in recursive definitions but it is optional for other databases.
+```
 
+- PostgreSQL requires the RECURSIVE keyword in recursive definitions but it is optional for other databases.
 
 ![image](https://cdn.sqlservertutorial.net/wp-content/uploads/SQL-Server-Recursive-CTE-execution-flow.png)
 
 
 # PL/SQL 
-
  ``DECLARE``<br /> ``VarName [constant] type [:= val];``<br /> ``BEGIN``<br />``EXCEPTION``<br />``END`` 
 
  

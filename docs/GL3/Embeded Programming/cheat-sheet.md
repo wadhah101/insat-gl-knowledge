@@ -1,4 +1,4 @@
-# Embeded Programming cheat sheet
+# Cheat sheet
 
 ## General Input Output
 

@@ -1,4 +1,4 @@
-# Logic programming
+# Cheat sheet - Haj ali
 
 ## SLD Resolution
 
@@ -433,5 +433,3 @@ insert_tree((t(G,X,D),X,t(G,X,D)).
 insert_tree(t(G,R,D),X,t(Ag,R,D)):-X<R,insert_tree(G,X,Ag).
 insert_tree(t(G,R,D),X,t(G,R,Ad)):-X>R,insert_tree(D,X,Ad).
 ```
-
-

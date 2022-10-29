@@ -1,4 +1,4 @@
-# Promela Cheat Sheet
+# Cheat Sheet
 
 ## conditions
 

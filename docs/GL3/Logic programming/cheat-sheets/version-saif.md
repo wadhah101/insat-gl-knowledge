@@ -1,3 +1,5 @@
+# Cheat sheet - Saif
+
 ## Introduction  
 
 - Two standards of Prolog are used currently : 
@@ -518,14 +520,14 @@ X mod Y the remainder of X divided by Y
   
     - we can also use another notation , called the `list notation` : `[a]`
     
-    - | List                    | Head       | Tail               |
-      | ----------------------- | ---------- | ------------------ |
-      | [a,b,c]                 | a          | [b,c]              |
-      | []                      | (none)     | (none)             |
-      | [[the, cat], sat]       | [the, cat] | [sat]              |
-      | [the, [cat, sat]]       | the        | [[cat, sat]]       |
-      | [the, [cat, sat], down] | the        | [[cat, sat], down] |
-      | [X+Y,x+y]               | X+Y        | [x+y]              |
+    | -                       | List       | Head               | Tail |
+    | ----------------------- | ---------- | ------------------ |
+    | [a,b,c]                 | a          | [b,c]              |
+    | []                      | (none)     | (none)             |
+    | [[the, cat], sat]       | [the, cat] | [sat]              |
+    | [the, [cat, sat]]       | the        | [[cat, sat]]       |
+    | [the, [cat, sat], down] | the        | [[cat, sat], down] |
+    | [X+Y,x+y]               | X+Y        | [x+y]              |
 
 - Notice that the empty list has neither a head nor a tail. When we try to unify it with [X|Y] **it will fail.**
 

@@ -4,7 +4,7 @@ authors:
     url: https://github.com/ramizouari  
 ---
 
-# Cheat sheet
+# Course 1
 
 Author : [@ramizaouri](https://github.com/ramizouari)
 
@@ -316,7 +316,7 @@ Les transitions en **verts** sont les transitions synchrones.
 ### 4.1 Notations
 
 - Soit $\mathcal{G}=(\mathcal{V},\mathcal{E})$ un graphe directe fini avec $\mathcal{E}\subseteq \mathcal{V}\times \mathcal{V}$
-- Soit $\DeclareMathOperator{\Adj}{Adj}\Adj(u)=\{v\in\mathcal{V} / \quad (u,v)\in\mathcal{E}\}$ la liste d'adjacence d'un nœud $u\in\mathcal{V}$
+- Soit $\text{Adj}(u)=\{v\in\mathcal{V} / \quad (u,v)\in\mathcal{E}\}$ la liste d'adjacence d'un nœud $u\in\mathcal{V}$
 
 - Soit $n=\lvert \mathcal{V}\vert$ le nombre de nœuds dans $\mathcal{G}$. En particulier, pour la simplicité, on pose que $n=2^m$ et $\mathcal{V}=\{0,\dots,n-1\}$
 
@@ -335,12 +335,12 @@ Les transitions en **verts** sont les transitions synchrones.
 
 On définit la fonction $f$ par:
 $$
-\DeclareMathOperator{\Adj}{Adj}
-f(x_0,\dots,x_{m-1},x'_1,\dots,x'_{m-1})=\sum_{i=0}^{n-1}\sum_{j\in\Adj (i)} F(i,x_0,\dots,x_{m-1})\times F(j,x'_0,\dots,x'_{m-1})
+\text{Adj}
+f(x_0,\dots,x_{m-1},x'_1,\dots,x'_{m-1})=\sum_{i=0}^{n-1}\sum_{j\in\text{Adj} (i)} F(i,x_0,\dots,x_{m-1})\times F(j,x'_0,\dots,x'_{m-1})
 $$
 Cette fonction binaire va encoder le graphe $\mathcal{G}$
 
-##### Exemple 1
+#### Exemple 1
 
 Soit $\mathcal{G}=(\mathcal{V},\mathcal{E})$ le graphe suivant:
 
@@ -357,22 +357,22 @@ flowchart TB
 
 On a $m=3$, On construit le tableau de $F$
 
-| $k$ | $\Adj(k)$   | $b_k$ | $F(k,x_0,x_1,x_2)$         |
-| --- | ----------- | ----- | -------------------------- |
-| $0$ | $\{1,2\}$   | $000$ | $x_0x_1x_2$                |
-| $1$ | $\{3,4\}$   | $001$ | $\bar x_0x_1 x_2$          |
-| $2$ | $\{5,6\}$   | $010$ | $x_0\bar x_1x_2$           |
-| $3$ | $\{7\}$     | $011$ | $\bar x_0\bar x_1 x_2$     |
-| $4$ | $\emptyset$ | $100$ | $x_0x_1\bar x_2$           |
-| $5$ | $\emptyset$ | $101$ | $\bar x_0x_1\bar x_2$      |
-| $6$ | $\emptyset$ | $110$ | $x_0\bar x_1\bar x_2$      |
-| $7$ | $\emptyset$ | $111$ | $\bar x_0\bar x_1\bar x_2$ |
+| $k$ | $\text{Adj}(k)$ | $b_k$ | $F(k,x_0,x_1,x_2)$         |
+| --- | --------------- | ----- | -------------------------- |
+| $0$ | $\{1,2\}$       | $000$ | $x_0x_1x_2$                |
+| $1$ | $\{3,4\}$       | $001$ | $\bar x_0x_1 x_2$          |
+| $2$ | $\{5,6\}$       | $010$ | $x_0\bar x_1x_2$           |
+| $3$ | $\{7\}$         | $011$ | $\bar x_0\bar x_1 x_2$     |
+| $4$ | $\emptyset$     | $100$ | $x_0x_1\bar x_2$           |
+| $5$ | $\emptyset$     | $101$ | $\bar x_0x_1\bar x_2$      |
+| $6$ | $\emptyset$     | $110$ | $x_0\bar x_1\bar x_2$      |
+| $7$ | $\emptyset$     | $111$ | $\bar x_0\bar x_1\bar x_2$ |
 
 Ainsi:
 $$
 \begin{align}
- f(x_0,x_1,x_2,x'_0,x'_1,x'_2)&=\sum_{i=0}^{7}\sum_{j\in\Adj (i)} F(i,x_0,x_1,x_2)\times F(j,x'_0,x'_1,x'_2) \\
- &=\sum_{i=0}^{3}\sum_{j\in\Adj (i)} F(i,x_0,x_1,x_2)\times F(j,x'_0,x'_1,x'_2) \\
+ f(x_0,x_1,x_2,x'_0,x'_1,x'_2)&=\sum_{i=0}^{7}\sum_{j\in\text{Adj} (i)} F(i,x_0,x_1,x_2)\times F(j,x'_0,x'_1,x'_2) \\
+ &=\sum_{i=0}^{3}\sum_{j\in\text{Adj} (i)} F(i,x_0,x_1,x_2)\times F(j,x'_0,x'_1,x'_2) \\
  &= F(0,x_0,x_1,x_2)\times F(1,x'_0,x'_1,x'_2)+F(0,x_0,x_1,x_2)\times F(2,x'_0,x'_1,x'_2) \\ & + F(1,x_0,x_1,x_2)\times F(3,x'_0,x'_1,x'_2) +F(1,x_0,x_1,x_2)\times F(4,x'_0,x'_1,x'_2) \\
  &+F(2,x_0,x_1,x_2)\times F(5,x'_0,x'_1,x'_2) +F(2,x_0,x_1,x_2)\times F(6,x'_0,x'_1,x'_2) \\
  &+F(3,x_0,x_1,x_2)\times F(7,x'_0,x'_1,x'_2) \\
@@ -395,7 +395,7 @@ M_{i,j}=f(b_{i,0},\dots,b_{i,m-1},b_{j,0},\dots,b_{j,m-1})
 $$
 À partir de la matrice $M$ on peut construire la liste des arêtes $\mathcal{E}$ et par suite le graphe $\mathcal{G}=(\mathcal{V},\mathcal{E})$
 
-##### Exemple 2
+#### Exemple 2
 
 Soit $f(x_0,x_1,x'_0,x'_1)=x_0x'_1+x_1x'_0$
 
@@ -454,7 +454,6 @@ flowchart LR
 Toute fonction booléenne $f$ avec un nombre fini $n$ de variables booléennes peut être implémenté avec une arbre de décision.
 
 Cependant, la taille d'une telle arbre peut être exponentielle en $n$. Pour cela, on doit représenter $f$ sous une forme compacte.
-
 **La solution est d'utiliser un Binary Decision Diagram**
 
 ### 5.1 Cas d'étude: $f(x,y,z)=(x\oplus y\oplus z) +\bar xyz$

@@ -9,10 +9,6 @@ const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  markdown: {
-    mermaid: true,
-  },
-  themes: ["@docusaurus/theme-mermaid"],
   title: "INSAT GL knowledge",
   tagline:
     " My Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",

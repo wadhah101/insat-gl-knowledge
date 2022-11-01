@@ -101,6 +101,15 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      mermaid: {
+        theme: {
+          light: "dark",
+          dark: "forest",
+        },
+        config: {
+          // Mermaid config
+        },
+      },
     }),
 };
 

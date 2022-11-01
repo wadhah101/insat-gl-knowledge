@@ -3,23 +3,23 @@
 partie QCM
 question / reponse
 
-etheurium vs bitcoin  research
+etheurium vs bitcoin research
 
 <https://www.youtube.com/watch?v=jxLkbJozKbY>
 
+- need to research bitcoin
 
-need to research bitcoin
+- what does a bitcoin block contain ?
 
-what does a bitcoin block contain ?
-
-why we need to compile smart contracts ? how does JS communicate with smart contract
+- why we need to compile smart contracts ?
+- how does JS communicate with smart contract
 
 <https://www.youtube.com/watch?v=ZE2HxTmxfrI>
 
 node types :
 
-- simple
-- miner: high performance
+  - light nodes: Usually deployed on less performant machines, like mobile phones. They are mostly wallet nodes.
+  - full nodes: Contain the entire ledger history, starting form the genesis block. This results in more memory/computation requirements. Generally used for validators/miners.
 
 research proof of work, how it works, its problems: 51 attack, energy intensive
 research proof of stake

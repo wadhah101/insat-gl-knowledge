@@ -48,7 +48,8 @@ const config = {
           remarkPlugins: [math],
           rehypePlugins: [katex],
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/wadhah101/insat-gl-knowledge",
+          editUrl:
+            "https://github.com/wadhah101/insat-gl-knowledge/edit/master",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

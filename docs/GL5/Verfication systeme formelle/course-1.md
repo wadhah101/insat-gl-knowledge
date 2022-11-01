@@ -6,7 +6,7 @@ authors:
 
 # Course 1
 
-Author : [@ramizaouri](https://github.com/ramizouari)
+Author [@ramizaouri](https://github.com/ramizouari)
 
 ## 1. Automate à États Finis
 

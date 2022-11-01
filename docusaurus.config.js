@@ -9,6 +9,10 @@ const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  markdown: {
+    mermaid: true,
+  },
+  themes: ["@docusaurus/theme-mermaid"],
   title: "INSAT GL knowledge",
   tagline:
     " My Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
@@ -48,14 +52,6 @@ const config = {
           remarkPlugins: [math],
           rehypePlugins: [katex],
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/wadhah101/insat-gl-knowledge",
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/wadhah101/insat-gl-knowledge",
         },
         theme: {
@@ -68,6 +64,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      themeConfig: {
+        mermaid: {
+          theme: { light: "neutral", dark: "forest" },
+        },
+      },
       navbar: {
         title: "Home",
         logo: {
@@ -115,15 +116,6 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      },
-      mermaid: {
-        theme: {
-          light: "dark",
-          dark: "forest",
-        },
-        config: {
-          // Mermaid config
-        },
       },
     }),
 };

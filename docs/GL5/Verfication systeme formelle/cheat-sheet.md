@@ -1,3 +1,9 @@
+---
+authors:
+  - name: Rami Zouari
+    url: https://github.com/ramizouari
+---
+
 # Cheat sheet
 
 ## 1. Automate à États Finis

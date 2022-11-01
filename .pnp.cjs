@@ -37,9 +37,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mdx-js/react", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.6.22"],\
             ["@tsconfig/docusaurus", "npm:1.0.6"],\
             ["clsx", "npm:1.2.1"],\
+            ["hast-util-is-element", "npm:1.1.0"],\
             ["prism-react-renderer", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:17.0.2"],\
+            ["rehype-katex", "npm:5.0.0"],\
+            ["remark-math", "npm:3.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"]\
           ],\
           "linkType": "SOFT"\
@@ -5503,6 +5506,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/katex", [\
+        ["npm:0.11.1", {\
+          "packageLocation": "./.yarn/cache/@types-katex-npm-0.11.1-00a0d8409c-1e51988b4b.zip/node_modules/@types/katex/",\
+          "packageDependencies": [\
+            ["@types/katex", "npm:0.11.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/keyv", [\
         ["npm:3.1.4", {\
           "packageLocation": "./.yarn/cache/@types-keyv-npm-3.1.4-a8082ea56b-e009a2bfb5.zip/node_modules/@types/keyv/",\
@@ -9391,6 +9403,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["hast-util-is-element", [\
+        ["npm:1.1.0", {\
+          "packageLocation": "./.yarn/cache/hast-util-is-element-npm-1.1.0-be10e62fa7-30fad3f65e.zip/node_modules/hast-util-is-element/",\
+          "packageDependencies": [\
+            ["hast-util-is-element", "npm:1.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["hast-util-parse-selector", [\
         ["npm:2.2.5", {\
           "packageLocation": "./.yarn/cache/hast-util-parse-selector-npm-2.2.5-cd773533ea-22ee4afbd1.zip/node_modules/hast-util-parse-selector/",\
@@ -9429,6 +9450,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["web-namespaces", "npm:1.1.4"],\
             ["xtend", "npm:4.0.2"],\
             ["zwitch", "npm:1.0.5"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["hast-util-to-text", [\
+        ["npm:2.0.1", {\
+          "packageLocation": "./.yarn/cache/hast-util-to-text-npm-2.0.1-2541ca4a18-4e7960b414.zip/node_modules/hast-util-to-text/",\
+          "packageDependencies": [\
+            ["hast-util-to-text", "npm:2.0.1"],\
+            ["hast-util-is-element", "npm:1.1.0"],\
+            ["repeat-string", "npm:1.6.1"],\
+            ["unist-util-find-after", "npm:3.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9918,9 +9951,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mdx-js/react", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.6.22"],\
             ["@tsconfig/docusaurus", "npm:1.0.6"],\
             ["clsx", "npm:1.2.1"],\
+            ["hast-util-is-element", "npm:1.1.0"],\
             ["prism-react-renderer", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:17.0.2"],\
+            ["rehype-katex", "npm:5.0.0"],\
+            ["remark-math", "npm:3.0.1"],\
             ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"]\
           ],\
           "linkType": "SOFT"\
@@ -10625,6 +10661,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/jsonpointer-npm-5.0.1-8e4c22e512-0b40f71290.zip/node_modules/jsonpointer/",\
           "packageDependencies": [\
             ["jsonpointer", "npm:5.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["katex", [\
+        ["npm:0.13.24", {\
+          "packageLocation": "./.yarn/cache/katex-npm-0.13.24-7ca4a080f2-1b7c829586.zip/node_modules/katex/",\
+          "packageDependencies": [\
+            ["katex", "npm:0.13.24"],\
+            ["commander", "npm:8.3.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13737,6 +13783,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["rehype-katex", [\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/rehype-katex-npm-5.0.0-e4d09d3648-b20e24c532.zip/node_modules/rehype-katex/",\
+          "packageDependencies": [\
+            ["rehype-katex", "npm:5.0.0"],\
+            ["@types/katex", "npm:0.11.1"],\
+            ["hast-util-to-text", "npm:2.0.1"],\
+            ["katex", "npm:0.13.24"],\
+            ["rehype-parse", "npm:7.0.1"],\
+            ["unified", "npm:9.2.2"],\
+            ["unist-util-visit", "npm:2.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["rehype-parse", [\
+        ["npm:7.0.1", {\
+          "packageLocation": "./.yarn/cache/rehype-parse-npm-7.0.1-6af956500f-c3c914aa92.zip/node_modules/rehype-parse/",\
+          "packageDependencies": [\
+            ["rehype-parse", "npm:7.0.1"],\
+            ["hast-util-from-parse5", "npm:6.0.1"],\
+            ["parse5", "npm:6.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["relateurl", [\
         ["npm:0.2.7", {\
           "packageLocation": "./.yarn/cache/relateurl-npm-0.2.7-7687cc0a2a-5891e792ea.zip/node_modules/relateurl/",\
@@ -13763,6 +13835,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/remark-footnotes-npm-2.0.0-b0be266d8e-f2f87ffd6f.zip/node_modules/remark-footnotes/",\
           "packageDependencies": [\
             ["remark-footnotes", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["remark-math", [\
+        ["npm:3.0.1", {\
+          "packageLocation": "./.yarn/cache/remark-math-npm-3.0.1-ac4eef923f-690256f27f.zip/node_modules/remark-math/",\
+          "packageDependencies": [\
+            ["remark-math", "npm:3.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15319,6 +15400,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/unist-builder-npm-2.0.3-8bf7de2024-e946fdf77d.zip/node_modules/unist-builder/",\
           "packageDependencies": [\
             ["unist-builder", "npm:2.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["unist-util-find-after", [\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/unist-util-find-after-npm-3.0.0-7381434645-daa9a28f6c.zip/node_modules/unist-util-find-after/",\
+          "packageDependencies": [\
+            ["unist-util-find-after", "npm:3.0.0"],\
+            ["unist-util-is", "npm:4.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\

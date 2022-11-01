@@ -11,7 +11,7 @@ const katex = require("rehype-katex");
 const config = {
   title: "INSAT GL knowledge",
   tagline:
-    " My Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
+    "My Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
   url: "https://wadhah101.github.io",
   baseUrl: "/insat-gl-knowledge/",
   onBrokenLinks: "throw",
@@ -108,7 +108,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `licensed under GPL v3.0`,
       },
       prism: {
         theme: lightCodeTheme,

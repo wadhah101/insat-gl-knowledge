@@ -1,10 +1,12 @@
 ---
 authors:
   - name: Rami Zouari
-    url: https://github.com/ramizouari
+    url: https://github.com/ramizouari  
 ---
 
 # Cheat sheet
+
+Author : [@ramizaouri](https://github.com/ramizouari)
 
 ## 1. Automate à États Finis
 
@@ -223,11 +225,11 @@ La composition parallèle entre $\mathcal{A}_1$ et $\mathcal{A}_2$ est l'automat
 
 - $\delta_3$ est définie par:
   $$
-  \delta_3\left((u,u'),a,(v,v')\right) \iff \text{one of the following: } \cases
-  {
+  \delta_3\left((u,u'),a,(v,v')\right) \iff \text{one of the following: }
+  \begin{cases}
   \big[\delta_1(u,a,v) \ \text{and} \ u'=v'  \ \text{or} \ \delta_2(u',a,v') \ \text{ and } u=v \big] \ \text{and} \ a\notin \Sigma_{\cap} \\
   \delta_1(u,a,v) \ \text{and} \ \delta_2(u',a,v') \ \text{and} \ a\in \Sigma_\cap
-  }
+  \end{cases}
   $$
   
 ### 3.3 Explication Informelle

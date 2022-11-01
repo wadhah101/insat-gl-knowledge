@@ -5,11 +5,16 @@ question / reponse
 
 etheurium vs bitcoin  research
 
+<https://www.youtube.com/watch?v=jxLkbJozKbY>
+
+
 need to research bitcoin
 
 what does a bitcoin block contain ?
 
 why we need to compile smart contracts ? how does JS communicate with smart contract
+
+<https://www.youtube.com/watch?v=ZE2HxTmxfrI>
 
 node types :
 

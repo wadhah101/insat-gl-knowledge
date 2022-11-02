@@ -18,9 +18,9 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Lint Code Base
-        uses: github/super-linter:slim-v4
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          VALIDATE_MARKDOWN: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Lint Code Base
+      #   uses: github/super-linter:slim-v4
+      #   env:
+      #     VALIDATE_ALL_CODEBASE: false
+      #     VALIDATE_MARKDOWN: true
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

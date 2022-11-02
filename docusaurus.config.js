@@ -108,7 +108,7 @@ const config = {
             ],
           },
         ],
-        copyright: `licensed under GPL v3.0`,
+        copyright: `Licensed under GPL v3.0`,
       },
       prism: {
         theme: lightCodeTheme,

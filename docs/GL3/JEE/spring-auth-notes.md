@@ -1,6 +1,5 @@
 # Spring boot explanation
 
-
 ```java
 @Field("temp_value")
 ```
@@ -39,4 +38,3 @@ In most use cases, authentication providers extract user identity information ba
 - `loadUserByUsername` accepts username as a parameter and returns the user identity object.
 
 ## Authentication Using JWT with Spring Security
-

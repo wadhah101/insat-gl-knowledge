@@ -13,33 +13,27 @@
   - A *queue* is a buffer that stores messages.
   - A *consumer* is a user application that receives messages.
 
-  
+- the producer can only send messages to an *exchange*.
 
-- the producer can only send messages to an *exchange*. 
-
-- An exchange is a very simple thing. On one side it receives messages from producers and the other side it pushes them to queues. 
+- An exchange is a very simple thing. On one side it receives messages from producers and the other side it pushes them to queues.
 
 - The exchange must know exactly what to do with a message it receives. Should it be appended to a particular queue? Should it be appended to many queues? Or should it get discarded. The rules for that are defined by the *exchange type*.
 
-- There are a few exchange types available: 
+- There are a few exchange types available:
   - **direct**
   - **topic**
   - **headers**
   - **fanout** (we'll focus on this)
 
-- Creating an exchange : 
+- Creating an exchange :
 
   ```
   channel.exchangeDeclare("logs", "fanout");
   ```
 
-
-
 #### Listing Exchanges
 
 - To list the exchanges on the server you can run the ever useful `rabbitmqctl`:
-
-  
 
   ```bash
   sudo rabbitmqctl list_exchanges
@@ -53,13 +47,9 @@ In previous parts of the tutorial we knew nothing about exchanges, but still wer
 
 Recall how we published a message before:
 
-
-
 ```java
 channel.basicPublish("", "hello", null, message.getBytes());
 ```
-
-
 
 The first parameter is the name of the exchange. The empty string denotes the default or *nameless* exchange: messages are routed to the queue with the name specified by `routingKey`, if it exists.
 
@@ -68,8 +58,6 @@ Now, we can publish to our named exchange instead:
 ```java
 channel.basicPublish( "logs", "", null, message.getBytes());
 ```
-
-
 
 #### Temporary queues
 
@@ -92,15 +80,11 @@ channel.queueBind(queueName, "logs", "");
 
 From now on the `logs` exchange will append messages to our queue.
 
-
-
-
-
 #### Final Notes
 
-- We created one publisher , many subscribers 
+- We created one publisher , many subscribers
   - we have many temporary queues , each subscribers is related to one queue. all queues are related to the exchange with : `channel.queueBind(queueName, "logs", "");`
-  - The **declaration** of the exchange is  in the publisher class , in addition to relating **it to the publisher** 
+  - The **declaration** of the exchange is  in the publisher class , in addition to relating **it to the publisher**
     - first : `channel.exchangeDeclare("logs", "fanout");`
     - and then : `channel.basicPublish( "logs", "", null, message.getBytes());`
 - before this , we created 1 producer and 2 consumers ( with work queues)
@@ -111,11 +95,7 @@ From now on the `logs` exchange will append messages to our queue.
 
 - In this tutorial we're going to add a feature to it - we're going to make it possible to subscribe only to a subset of the messages. For example, we will be able to direct only critical error messages to the log file (to save disk space), while still being able to print all of the log messages on the console.
 
-
-
-
-
-#### Bindings 
+#### Bindings
 
 - A binding is a relationship between an exchange and a queue. This can be simply read as: the queue is interested in messages from this exchange.
 
@@ -129,7 +109,7 @@ From now on the `logs` exchange will append messages to our queue.
 
 #### Direct exchange
 
-- Our logging system from the previous tutorial broadcasts all messages to all consumers. 
+- Our logging system from the previous tutorial broadcasts all messages to all consumers.
 - We want to extend that to allow **filtering messages** based on their severity. For example we may want a program which writes log messages to the disk to only receive critical errors, and not waste disk space on warning or info log messages.
 - fanout exchange : only capable of mindless broadcasting.
 - direct exchange : a message goes to the queues whose **binding key exactly matches the routing key** of the message.
@@ -144,12 +124,12 @@ From now on the `logs` exchange will append messages to our queue.
 
 ![direct-exchange-multiple](C:\Users\saief\OneDrive\Documents\CheatSheets\Rabbitmq\direct-exchange-multiple.png)
 
-- It is perfectly legal to bind multiple queues with the same binding key. In our example we could add a binding between X and Q1 with binding key black. In that case, the direct exchange will behave like fanout and will broadcast the message to all the matching queues. 
+- It is perfectly legal to bind multiple queues with the same binding key. In our example we could add a binding between X and Q1 with binding key black. In that case, the direct exchange will behave like fanout and will broadcast the message to all the matching queues.
 - A message with routing key black will be delivered to both Q1 and Q2.
 
 #### Emitting logs
 
-- Declaring the exchange : 
+- Declaring the exchange :
 
   ```java
   channel.exchangeDeclare(EXCHANGE_NAME, "direct");
@@ -161,7 +141,7 @@ From now on the `logs` exchange will append messages to our queue.
   channel.basicPublish(EXCHANGE_NAME, severity, null, message.getBytes());
   ```
 
-### Subscribing : 
+### Subscribing
 
 - Receiving messages will work just like in the previous tutorial, with one exception - we're going to create a new binding for each severity we're interested in.
 
@@ -173,14 +153,9 @@ for(String severity : argv){
 }
 ```
 
-
-
 ---
 
 Final Notes :
 
-
-
 - One Queue two consumers (workers) : they get the messages in a round robin way , to prevent this we change the prefetch config , however each consumer consumes exactly one message from the queue.
 - To make many consumers get the same message , we use one queue per consumer and we relate them to an exchange , we make that exchange fanout/direct/topic  ....
-

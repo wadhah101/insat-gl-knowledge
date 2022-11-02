@@ -322,7 +322,7 @@ Les transitions en **verts** sont les transitions synchrones.
 
 - Pour $k\in\{0,\dots,2^m-1\}$, soit $b_k=b_{k,m-1}\dots b_{k,0}$ la représentation binaire de $k$
 
-- Soit $x_0,\dots,x_{m-1},x'_0,\dots,x'_{m-1}$ $2m$ variables booléennes.
+- Soit $x_0,\dots,x_{m-1},x'*0,\dots,x'*{m-1}$ $2m$ variables booléennes.
 
 - Soit $e(x,0)=x$ et $e(x,1)=\bar x$
 
@@ -336,7 +336,7 @@ Les transitions en **verts** sont les transitions synchrones.
 On définit la fonction $f$ par:
 $$
 \text{Adj}
-f(x_0,\dots,x_{m-1},x'_1,\dots,x'_{m-1})=\sum_{i=0}^{n-1}\sum_{j\in\text{Adj} (i)} F(i,x_0,\dots,x_{m-1})\times F(j,x'_0,\dots,x'_{m-1})
+f(x_0,\dots,x_{m-1},x'*1,\dots,x'*{m-1})=\sum_{i=0}^{n-1}\sum_{j\in\text{Adj} (i)} F(i,x_0,\dots,x_{m-1})\times F(j,x'*0,\dots,x'*{m-1})
 $$
 Cette fonction binaire va encoder le graphe $\mathcal{G}$
 
@@ -371,7 +371,7 @@ On a $m=3$, On construit le tableau de $F$
 Ainsi:
 $$
 \begin{align}
- f(x_0,x_1,x_2,x'_0,x'_1,x'_2)&=\sum_{i=0}^{7}\sum_{j\in\text{Adj} (i)} F(i,x_0,x_1,x_2)\times F(j,x'_0,x'_1,x'_2) \\
+ f(x_0,x_1,x_2,x'_0,x'_1,x'*2)&=\sum*{i=0}^{7}\sum_{j\in\text{Adj} (i)} F(i,x_0,x_1,x_2)\times F(j,x'_0,x'_1,x'_2) \\
  &=\sum_{i=0}^{3}\sum_{j\in\text{Adj} (i)} F(i,x_0,x_1,x_2)\times F(j,x'_0,x'_1,x'_2) \\
  &= F(0,x_0,x_1,x_2)\times F(1,x'_0,x'_1,x'_2)+F(0,x_0,x_1,x_2)\times F(2,x'_0,x'_1,x'_2) \\ & + F(1,x_0,x_1,x_2)\times F(3,x'_0,x'_1,x'_2) +F(1,x_0,x_1,x_2)\times F(4,x'_0,x'_1,x'_2) \\
  &+F(2,x_0,x_1,x_2)\times F(5,x'_0,x'_1,x'_2) +F(2,x_0,x_1,x_2)\times F(6,x'_0,x'_1,x'_2) \\

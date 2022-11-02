@@ -26,7 +26,7 @@ A B-tree of **order m** follows the following rules;
   <img src="assets/example.png" alt="example" />
 </p>
 
- ### Structure
+### Structure
 
 ``` c
 typedef struc bNode{ 
@@ -130,7 +130,7 @@ void insertIncomplete(bTree t, int key)
 }
 ```
 
-### Insertion in a B Tree 
+### Insertion in a B Tree
 
 ``` c
 bTree insert(bTree t, int key){
@@ -154,7 +154,7 @@ bTree insert(bTree t, int key){
 
 | IMPORTANT                                                                                                                                                                                                                                                                    |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| In here you will find two functions ``borrowRight``, ``fusionRight`` and ``deletePred``, you should know that there are also two other ``borrowLeft``, ``fusionRight`` and ``deleteSucc`` that are basically symetrical to the right version. __You should implement them__. |
+| In here you will find two functions ``borrowRight``, ``fusionRight`` and ``deletePred``, you should know that there are also two other ``borrowLeft``, ``fusionRight`` and ``deleteSucc`` that are basically symetrical to the right version. **You should implement them**. |
 
 ### Borrowing a key from a right child
 

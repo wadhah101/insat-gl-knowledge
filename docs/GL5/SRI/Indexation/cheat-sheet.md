@@ -16,8 +16,6 @@ Processus permettant de construire un ensemble d'éléments
 **clés** permettant de caractériser le contenu d’un
 document / retrouver ce document en réponse à une requête
 
-----------------------------------------------------------------
-
 ### Indexation Libre / Controlée
 
 #### Indexation Libre

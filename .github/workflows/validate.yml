@@ -23,5 +23,4 @@ jobs:
         with:
           files: docs/*.md
           config_file: .markdownlint.yaml
-          dot: true
           ignore_path: .markdownlintignore

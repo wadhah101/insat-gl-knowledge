@@ -88,15 +88,15 @@ document / retrouver ce document en réponse à une requête
 
   - Construire une matrice d'incidence
 
-  |        | documents |
-  | ------ | :-------: |
-  | termes |   0 / 1   |
+    |        | documents |
+    | ------ | :-------: |
+    | termes |   0 / 1   |
 
-  0: Le terme n'appartient pas au document
+    0: Le terme n'appartient pas au document
 
-  1 : le terme apparait dans le document
+    1 : le terme apparait dans le document
 
-  matrice éparse => représenter que les 1
+    matrice éparse => représenter que les 1
 
 - Composantes
 

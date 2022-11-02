@@ -10,7 +10,7 @@ Author [@medbensalah](https://github.com/medbensalah)
 
 ## Indexation
 
-#### Definition
+### Definition
 
 Processus permettant de construire un ensemble d'éléments
 _clés_ permettant de caractériser le contenu d’un
@@ -30,9 +30,9 @@ document / retrouver ce document en réponse à une requête
 - Vocabulaire contrôlé
 - Thésaurus
 
-##### Construction d'index<br>
+##### Construction d'index
 
-![](./assets/Construction.png)
+![Construction](./assets/Construction.png)
 
 ##### Tokenisation
 
@@ -74,7 +74,7 @@ document / retrouver ce document en réponse à une requête
 
 - Algorithme naïf
 
-  ```
+  ```Algorithhm
   input requête q;
 
   for every document d in collection
@@ -100,19 +100,23 @@ document / retrouver ce document en réponse à une requête
 
 - Composantes
 
-  ![](./assets/IndexInverse.png)<br><br>
-  <b>Dictionnaire : </b>en mémoire centrale permettant un accès rapide
+  ![IndexInverse](./assets/IndexInverse.png)
+
+  **Dictionnaire :** en mémoire centrale permettant un accès rapide
   aux termes et leurs informations
 
-  <b>Postings : </b>au niveau du disque et sauvegardant les
+  **Postings :** au niveau du disque et sauvegardant les
   informations des termes et les identifiants des documents
 
-  Ce qu'on stocke dépend du modèle de la recherche : + <g>Recherche booléenne : </g>L'identifiant du document est suffisant<br>
-  ![](./assets/Screenshot_93.png) + <g>Recherche Rankée : </g>Fréquence ou score du terme<br>
-  ![](./assets/Screenshot_94.png) + <g>Recherche de proximité / de séquence : </g>Fréquence ou score du terme<br>
-  ![](./assets/Screenshot_95.png)
-  <br>
-  Les liste de posting peuvent être triées selon: + <g>Document ID : </g>![](./assets/Screenshot_97.png) + <g>Term Frequency : </g>![](./assets/Screenshot_96.png)
+  Ce qu'on stocke dépend du modèle de la recherche : + Recherche booléenne : L'identifiant du document est suffisant
+
+  ![Screenshot_93](./assets/Screenshot_93.png) + Recherche Rankée : Fréquence ou score du terme
+
+  ![Screenshot_94](./assets/Screenshot_94.png) + Recherche de proximité / de séquence : Fréquence ou score du terme
+
+  ![Screenshot_95](./assets/Screenshot_95.png)
+
+  Les liste de posting peuvent être triées selon: + Document ID : ![Screenshot_97](./assets/Screenshot_97.png) + Term Frequency : ![Screenshot_96](./assets/Screenshot_96.png)
 
 - Construction d'un fichier inverse
 
@@ -124,11 +128,11 @@ document / retrouver ce document en réponse à une requête
 
   - Trier les termes par ordre alphabétique
 
-    ![](./assets/Screenshot_99.png)
+    ![Screenshot_99](./assets/Screenshot_99.png)
 
   - Indexation
 
-  - ![](./assets/Screenshot_100.png) ![](./assets/Screenshot_101.png)
+  - ![Screenshot_100](./assets/Screenshot_100.png) ![Screenshot_101](./assets/Screenshot_101.png)
   - Compression
 
     Minimiser le nombre de bits transférés
@@ -137,23 +141,30 @@ document / retrouver ce document en réponse à une requête
 
 #### Variable-Byte Encoding
 
-Le bit du poids le plus fort est un <b>stop bit</b>
+Le bit du poids le plus fort est un **stop bit**
 
-- Exemple:<br>
-  13 = 00000000 00000000 00000000 00001101<br>
+- Exemple:
+  
+  13 = 00000000 00000000 00000000 00001101
+
   VBE : 10001101
-- Exemple:<br>
-  131 = 00000000 00000000 00000000 10000011<br>
+
+- Exemple:
+  
+  131 = 00000000 00000000 00000000 10000011
+
   VBE : 00000001 10000011
-- Exemple:<br>
-  1337 = 00000000 00000000 00000101 00111001<br>
+- Exemple:
+  
+  1337 = 00000000 00000000 00000101 00111001
+
   VBE : 00001010 10111001
 
 ---
 
 - Exercice
 
-  ```
+  ```Algorithm
   00000111 10011100 10000101 01111010 01011000 10111101
          924       |    5   |           2010173        |
   ```

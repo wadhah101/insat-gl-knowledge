@@ -8,9 +8,9 @@ authors:
 
 Author [@medbensalah](https://github.com/medbensalah)
 
-# Indexation
+## Indexation
 
-### Definition
+#### Definition
 
 Processus permettant de construire un ensemble d'éléments
 _clés_ permettant de caractériser le contenu d’un
@@ -18,23 +18,23 @@ document / retrouver ce document en réponse à une requête
 
 ---
 
-### Indexation Libre / Controlée
+#### Indexation Libre / Controlée
 
-#### Indexation Libre
+##### Indexation Libre
 
 - Mots, termes des documents
 
-#### Indexation Contrôlée
+##### Indexation Contrôlée
 
 - Listes de termes prédéfinies
 - Vocabulaire contrôlé
 - Thésaurus
 
-#### Construction d'index<br>
+##### Construction d'index<br>
 
 ![](./assets/Construction.png)
 
-#### Tokenisation
+##### Tokenisation
 
 - Identification des élements élementaires
   - phonèmes
@@ -42,7 +42,7 @@ document / retrouver ce document en réponse à une requête
   - mots, ...
 - Complexe en certains langues
 
-#### Filtrae des mots vides "StopWords"
+##### Filtrae des mots vides "StopWords"
 
 - Determinants
 - pronons
@@ -50,7 +50,7 @@ document / retrouver ce document en réponse à une requête
 
 > parfois ces mots portent un sens
 
-#### Normalisation
+##### Normalisation
 
 - Normalisation textuelle
   - Unifier les termes
@@ -70,7 +70,7 @@ document / retrouver ce document en réponse à une requête
 - Recherche de groupes de mots
   - n-grammes ; n > 1 / un n-gramme sera considéré comme un terme
 
-#### Construction de l'index
+##### Construction de l'index
 
 - Algorithme naïf
 
@@ -135,7 +135,7 @@ document / retrouver ce document en réponse à une requête
 
 ---
 
-### Variable-Byte Encoding
+#### Variable-Byte Encoding
 
 Le bit du poids le plus fort est un <b>stop bit</b>
 

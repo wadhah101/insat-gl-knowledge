@@ -47,13 +47,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/docusaurus", "npm:1.0.6"],\
             ["clsx", "npm:1.2.1"],\
             ["hast-util-is-element", "npm:1.1.0"],\
+            ["mdx-mermaid", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.2"],\
             ["mermaid", "npm:9.2.0"],\
             ["prism-react-renderer", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:17.0.2"],\
             ["rehype-katex", "npm:5.0.0"],\
             ["remark-math", "npm:3.0.1"],\
-            ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"]\
+            ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"],\
+            ["unist-util-visit", "npm:2.0.3"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -10394,13 +10396,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/docusaurus", "npm:1.0.6"],\
             ["clsx", "npm:1.2.1"],\
             ["hast-util-is-element", "npm:1.1.0"],\
+            ["mdx-mermaid", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.2"],\
             ["mermaid", "npm:9.2.0"],\
             ["prism-react-renderer", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:17.0.2"],\
             ["rehype-katex", "npm:5.0.0"],\
             ["remark-math", "npm:3.0.1"],\
-            ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"]\
+            ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"],\
+            ["unist-util-visit", "npm:2.0.3"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -11502,6 +11506,36 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/mdurl-npm-1.0.1-054d974269-71731ecba9.zip/node_modules/mdurl/",\
           "packageDependencies": [\
             ["mdurl", "npm:1.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["mdx-mermaid", [\
+        ["npm:1.3.2", {\
+          "packageLocation": "./.yarn/cache/mdx-mermaid-npm-1.3.2-e8a6432fce-f4fde2b5de.zip/node_modules/mdx-mermaid/",\
+          "packageDependencies": [\
+            ["mdx-mermaid", "npm:1.3.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.2", {\
+          "packageLocation": "./.yarn/__virtual__/mdx-mermaid-virtual-9229a483ed/0/cache/mdx-mermaid-npm-1.3.2-e8a6432fce-f4fde2b5de.zip/node_modules/mdx-mermaid/",\
+          "packageDependencies": [\
+            ["mdx-mermaid", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.2"],\
+            ["@types/mermaid", null],\
+            ["@types/react", null],\
+            ["@types/unist-util-visit", null],\
+            ["mermaid", "npm:9.2.0"],\
+            ["react", "npm:17.0.2"],\
+            ["unist-util-visit", "npm:2.0.3"]\
+          ],\
+          "packagePeers": [\
+            "@types/mermaid",\
+            "@types/react",\
+            "@types/unist-util-visit",\
+            "mermaid",\
+            "react",\
+            "unist-util-visit"\
           ],\
           "linkType": "HARD"\
         }]\

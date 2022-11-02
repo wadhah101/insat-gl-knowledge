@@ -1,0 +1,26 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Validate
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - master
+
+jobs:
+  lint-md:
+    name: Lint markdown
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Lint Code Base
+        uses: github/super-linter:slim-v4
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_MARKDOWN: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

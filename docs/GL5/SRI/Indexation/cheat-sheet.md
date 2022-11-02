@@ -13,7 +13,7 @@ Author [@medbensalah](https://github.com/medbensalah)
 ### Definition
 
 Processus permettant de construire un ensemble d'éléments
-_clés_ permettant de caractériser le contenu d’un
+**clés** permettant de caractériser le contenu d’un
 document / retrouver ce document en réponse à une requête
 
 ---

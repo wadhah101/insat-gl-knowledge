@@ -18,8 +18,8 @@ etheurium vs bitcoin research
 
 node types :
 
-  - light nodes: Usually deployed on less performant machines, like mobile phones. They are mostly wallet nodes.
-  - full nodes: Contain the entire ledger history, starting form the genesis block. This results in more memory/computation requirements. Generally used for validators/miners.
+- light nodes: Usually deployed on less performant machines, like mobile phones. They are mostly wallet nodes.
+- full nodes: Contain the entire ledger history, starting form the genesis block. This results in more memory/computation requirements. Generally used for validators/miners.
 
 research proof of work, how it works, its problems: 51 attack, energy intensive
 research proof of stake

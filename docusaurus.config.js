@@ -3,118 +3,128 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-
 const math = require("remark-math");
 const katex = require("rehype-katex");
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
-  title: "INSAT GL knowledge",
-  tagline:
-    "My Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
-  url: "https://wadhah101.github.io",
-  baseUrl: "/insat-gl-knowledge/",
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
-  organizationName: "wadhah101", // Usually your GitHub org/user name.
-  projectName: "insat-gl-knowledge", // Usually your repo name.
+// /** @type {import('@docusaurus/types').Config} */
+const config = async () => {
+  const mdxMermaid = await import("mdx-mermaid");
 
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
-  },
+  /** @type {import('@docusaurus/types').Config} */
+  return {
+    // DEBT use docusaurus native mermaid supposrt
+    // markdown: {
+    //   mermaid: true,
+    // },
+    // themes: ["@docusaurus/theme-mermaid"],
+    title: "INSAT GL knowledge",
+    tagline:
+      "My Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
+    url: "https://wadhah101.github.io",
+    baseUrl: "/insat-gl-knowledge/",
+    onBrokenLinks: "throw",
+    onBrokenMarkdownLinks: "warn",
+    favicon: "img/favicon.ico",
+    organizationName: "wadhah101", // Usually your GitHub org/user name.
+    projectName: "insat-gl-knowledge", // Usually your repo name.
 
-  stylesheets: [
-    {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
-      type: "text/css",
-      integrity:
-        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
-      crossorigin: "anonymous",
+    i18n: {
+      defaultLocale: "en",
+      locales: ["en"],
     },
-  ],
 
-  presets: [
-    [
-      "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
+    stylesheets: [
       {
-        googleAnalytics: {
-          trackingID: "G-XR2Q0GYH0M",
-          anonymizeIP: true,
-        },
-        docs: {
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
-          sidebarPath: require.resolve("./sidebars.js"),
-          editUrl:
-            "https://github.com/wadhah101/insat-gl-knowledge/edit/master",
-        },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
+        href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+        type: "text/css",
+        integrity:
+          "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+        crossorigin: "anonymous",
       },
     ],
-  ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      themeConfig: {
-        mermaid: {
-          theme: { light: "neutral", dark: "forest" },
+    presets: [
+      [
+        "classic",
+        /** @type {import('@docusaurus/preset-classic').Options} */
+        {
+          googleAnalytics: {
+            trackingID: "G-XR2Q0GYH0M",
+            anonymizeIP: true,
+          },
+          docs: {
+            // DEBT use docusaurus native mermaid supposrt
+            remarkPlugins: [math, mdxMermaid.default],
+            rehypePlugins: [katex],
+            sidebarPath: require.resolve("./sidebars.js"),
+            editUrl:
+              "https://github.com/wadhah101/insat-gl-knowledge/edit/master",
+          },
+          theme: {
+            customCss: require.resolve("./src/css/custom.css"),
+          },
         },
-      },
-      navbar: {
-        title: "Home",
-        logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+      ],
+    ],
+
+    themeConfig:
+      /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+      ({
+        themeConfig: {
+          mermaid: {
+            theme: { light: "neutral", dark: "forest" },
+          },
         },
-        items: [
-          {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Docs",
+        navbar: {
+          title: "Home",
+          logo: {
+            alt: "My Site Logo",
+            src: "img/logo.svg",
           },
-          {
-            href: "https://github.com/wadhah101/insat-gl-knowledge",
-            label: "GitHub",
-            position: "right",
-          },
-        ],
-      },
-      footer: {
-        style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "GitHub",
-                href: "https://github.com/wadhah101/insat-gl-knowledge",
-              },
-            ],
-          },
-        ],
-        copyright: `Licensed under GPL v3.0`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
+          items: [
+            {
+              type: "doc",
+              docId: "docusaurus",
+              position: "left",
+              label: "Docs",
+            },
+            {
+              href: "https://github.com/wadhah101/insat-gl-knowledge",
+              label: "GitHub",
+              position: "right",
+            },
+          ],
+        },
+        footer: {
+          style: "dark",
+          links: [
+            {
+              title: "Docs",
+              items: [
+                {
+                  label: "Tutorial",
+                  to: "/docs/docusaurus",
+                },
+              ],
+            },
+            {
+              title: "More",
+              items: [
+                {
+                  label: "GitHub",
+                  href: "https://github.com/wadhah101/insat-gl-knowledge",
+                },
+              ],
+            },
+          ],
+          copyright: `Licensed under GPL v3.0`,
+        },
+        prism: {
+          theme: lightCodeTheme,
+          darkTheme: darkCodeTheme,
+        },
+      }),
+  };
 };
 
 module.exports = config;

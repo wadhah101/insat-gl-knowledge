@@ -1,0 +1,26 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Validate
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - master
+
+jobs:
+  lint-md:
+    name: Lint markdown
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: markdownlint-cli
+        uses: nosborn/github-action-markdown-cli@v3.2.0
+        with:
+          files: docs
+          config_file: .markdownlint.yaml
+          ignore_path: .markdownlintignore

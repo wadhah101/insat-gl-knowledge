@@ -19,11 +19,11 @@ __Important note:__
 > When we write a goal like _X = Y_ in Prolog, we are testing for more than simple equality in the mathematical sense. We are testing whether X (which might be a variable, an atom, or an arbitrarily complex term) __unifies__ with Y (which might also be an atom, a variable, or a term).
 > Whenever you write "=" in a Prolog procedure, review the code to see whether you can get rid of the "=" clause by replacing the item on the left of "=" by the item to the right of it, elsewhere in the procedure.
 
- ## Example
+## Example
 
- * Socrates is a human.
- * All humans are mortal.
- * Is Socrates mortal?
+* Socrates is a human.
+* All humans are mortal.
+* Is Socrates mortal?
 
 In prolog, this will be translated to;
 
@@ -92,7 +92,7 @@ __Predefined mathematical functions:__
 | ``sqrt(X)``   | Square root                                 |
 | ``exp(X)``    | The exponential function                    |
 | ``sign(X)``   | The sign function                           |
-| ``random(X)`` | Evaluates to a random integer *i*, *0<=i<X* |
+| ``random(X)`` | Evaluates to a random integer _i_, _0<=i<X_ |
 | ``sin(X)``    | The sine function                           |
 | ``cos(X)``    | The cosine function                         |
 | ``tan(X)``    | The tangent function                        |
@@ -110,6 +110,7 @@ X = 3 + 2.
 X + Y = 3 + 2.
 % X=3, Y=2
 ```
+
 This is easily explained by the fact that expressions are represented with __trees__ and the ``=`` operator is used for the __unification__.
 
 <p align="center">
@@ -117,8 +118,8 @@ This is easily explained by the fact that expressions are represented with __tre
 </p>
 
 * ``Exp1 =:= Exp2``, is successful if the two expressions are equal. (The opposite of the the ``=\=`` operator)
-* ``Exp1 < Exp2``, is successful if the value of Exp1 is strictly inferior than Exp2. (The opposite of the the ``>`` operator) 
-* ``Exp1 =< Exp2``, is successful if the value of Exp1 is inferior or equals Exp2. (The opposite of the the ``>=`` operator) 
+* ``Exp1 < Exp2``, is successful if the value of Exp1 is strictly inferior than Exp2. (The opposite of the the ``>`` operator)
+* ``Exp1 =< Exp2``, is successful if the value of Exp1 is inferior or equals Exp2. (The opposite of the the ``>=`` operator)
 
 ## Unification
 
@@ -225,6 +226,7 @@ A list is a data structure in Prolog which consists of a sequence of objects tha
 [X| L] = [1, []].
 %X=1, L= [[]]
 ```
+
 __Predicates:__
 
 ``member/2``
@@ -333,12 +335,13 @@ bagof(X,solution(X,Y),L).
 * It's made to control the search tree to get rid of useless explorations.
 * Cut is not logical.
 
-*H:-B1,B2,...,Bi,!,Bi+1,...,Bm.*
+_H:-B1,B2,...,Bi,!,Bi+1,...,Bm._
 
-* Once the predicate ``!`` is executed, the choice-points in *H, B1,...,Bi* are deleted.
-* However, it can still explore other choice-points in *Bi+1,...,Bm*.
+* Once the predicate ``!`` is executed, the choice-points in _H, B1,...,Bi_ are deleted.
+* However, it can still explore other choice-points in _Bi+1,...,Bm_.
 
-**Why use cut?**
+__Why use cut?__
+
 * To stop useless explorations.
   
 ``` prolog
@@ -378,11 +381,13 @@ min(X,Y,Y).
 ## Negation
 
 The ``not`` in Prolog has two limitations:
+
 * It has to be in the body of a clause.
 
 ``` prolog
 strong(X):-athletic(X),not(small(X)).
 ```
+
 * The ``not`` is different from the logical negation.
 
 ``` prolog
@@ -401,6 +406,7 @@ p(X),q(X).
 > __not(X)__ does not mean that X is always false, it means that _we don't have enough information_ to prove X.
 
 Each time we use the ``not/1``, we have to create another search tree;
+
 * if it shows a success, then the not will return __false__.
 * if it returns all errors, the the not will return a __true__.
 

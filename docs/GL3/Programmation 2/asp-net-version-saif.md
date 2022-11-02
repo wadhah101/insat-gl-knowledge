@@ -18,7 +18,7 @@ In an MVC app, the view only displays information. The controller handles and re
 - `https://localhost:5001/Home/Privacy`: specifies the `Home` controller and the `Privacy` action.
 - `https://localhost:5001/Movies/Edit/5`: is a request to edit the movie with ID=5 using the `Movies` controller and the `Edit` action, which are detailed later in the tutorial.
 
-# Part2, Controllers 
+# Part2, Controllers
 
 ```c#
 using Microsoft.AspNetCore.Mvc;
@@ -47,21 +47,15 @@ namespace MvcMovie.Controllers
 }
 ```
 
-
-
 Every `public` method in a controller is callable as an HTTP endpoint. In the sample above, both methods return a string. Note the comments preceding each method.
 
 ![Browser window showing an app response of This is my default action](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-controller/_static/hell1.png?view=aspnetcore-5.0)
-
-
 
 MVC invokes controller classes, and the action methods within them, depending on the incoming URL. The default [URL routing logic](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0) used by MVC, uses a format like this to determine what code to invoke:
 
 ```
 /[Controller]/[ActionName]/[Parameters]
 ```
-
-
 
 The routing format is set in the `Configure` method in `Startup.cs` file.
 
@@ -80,9 +74,7 @@ app.UseEndpoints(endpoints =>
 - The second part of the URL segment determines the action method on the class. So `localhost:5001/HelloWorld/Index` causes the `Index` method of the `HelloWorldController` class to run. Notice that you only had to browse to `localhost:5001/HelloWorld` and the `Index` method was called by default. `Index` is the default method that will be called on a controller if a method name isn't explicitly specified.
 - The third part of the URL segment ( `id`) is for route data. Route data is explained later in the tutorial.
 
-
-
-## Example 1 
+## Example 1
 
 - Change the `Welcome` method to include two parameters as shown in the following code.
 
@@ -103,8 +95,6 @@ The preceding code:
 
 ![Browser window showing an application response of Hello Rick, NumTimes is: 4](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-controller/_static/rick4.png?view=aspnetcore-5.0)
 
-
-
 ## Example 2  (Important)
 
 ```csharp
@@ -118,7 +108,7 @@ Run the app and enter the following URL: `https://localhost{PORT}/HelloWorld/Wel
 
 - **We notice that id is not passed as a query parameter but as a route parameter instead.**
 
-- This behavior is caused by : 
+- This behavior is caused by :
 
   ```c#
   app.UseEndpoints(endpoints =>
@@ -128,8 +118,6 @@ Run the app and enter the following URL: `https://localhost{PORT}/HelloWorld/Wel
           pattern: "{controller=Home}/{action=Index}/{id?}");
   });
   ```
-
-  
 
 # Part3, Views
 
@@ -174,11 +162,9 @@ Navigate to `https://localhost:{PORT}/HelloWorld`:
 
 ![Browser window](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-view/_static/hell_template.png?view=aspnetcore-5.0)
 
-
-
 ## Change views and layout pages
 
-* In `Shared/_Layout.cshtml`
+- In `Shared/_Layout.cshtml`
 
 ```html
 <!-- ... -->
@@ -305,8 +291,6 @@ namespace MvcMovie.Models
     }
 }
 ```
-
-
 
 The `Movie` class contains an `Id` field, which is required by the database for the primary key.
 
@@ -625,7 +609,7 @@ The ASP.NET Core [Configuration](https://docs.microsoft.com/en-us/aspnet/core/fu
 
 By default, EF will make a property named `ID` the primary key.
 
-## Seed the database 
+## Seed the database
 
 Create a new class named `SeedData` in the *Models* folder. Replace the generated code with the following:
 
@@ -701,8 +685,6 @@ if (context.Movie.Any())
 }
 ```
 
-
-
 ### Add the seed initializer
 
 In *`Program.cs`* :
@@ -753,9 +735,7 @@ namespace MvcMovie
 
 # Part 6, controller methods and views (Important)
 
-
-
-- In *`Models/Movie.cs`* 
+- In *`Models/Movie.cs`*
 
 ```csharp
 using System;
@@ -780,13 +760,9 @@ namespace MvcMovie.Models
 }
 ```
 
-
-
 - The [Display](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.metadata.displaymetadata) attribute specifies what to display for the name of a field (in this case "Release Date" instead of "ReleaseDate"). The [`DataType`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.dataannotations.internal.datatypeattributeadapter) attribute specifies the type of the data (Date), so the time information stored in the field isn't displayed.
 
 - The `[Column(TypeName = "decimal(18, 2)")]` data annotation is required so Entity Framework Core can correctly map `Price` to currency in the database. For more information, see [Data Types](https://docs.microsoft.com/en-us/ef/core/modeling/relational/data-types).
-
-
 
 - In *`Views/Movies/Index.cshtml`*
 
@@ -799,10 +775,6 @@ namespace MvcMovie.Models
 ```
 
 [Tag Helpers](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.0) enable server-side code to participate in creating and rendering HTML elements in Razor files. In the code above, the `AnchorTagHelper` dynamically generates the HTML `href` attribute value from the controller action method and route id.
-
-
-
-
 
 - The following code shows the `HTTP POST Edit` method, which processes the posted movie values:
 
@@ -851,8 +823,6 @@ The [model binding](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/mode
 
 Before the form is posted to the server, client-side validation checks any validation rules on the fields. If there are any validation errors, an error message is displayed and the form isn't posted. If JavaScript is disabled, you won't have client-side validation but the server will detect the posted values that are not valid, and the form values will be redisplayed with error messages. Later in the tutorial we examine [Model Validation](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-3.0) in more detail. The [Validation Tag Helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms?view=aspnetcore-3.0) in the `*Views/Movies/Edit.cshtml*` view template takes care of displaying appropriate error messages.
 
-
-
 the `HttpGet Edit` method takes the movie `ID` parameter, looks up the movie using the Entity Framework `FindAsync` method, and returns the selected movie to the Edit view. If a movie cannot be found, `NotFound` (HTTP 404) is returned.
 
 ```csharp
@@ -872,8 +842,6 @@ public async Task<IActionResult> Edit(int? id)
     return View(movie);
 }
 ```
-
-
 
 When the scaffolding system created the Edit view, it examined the `Movie` class and created code to render `<label>` and `<input>` elements for each property of the class. The following example shows the Edit view that was generated by the Visual Studio scaffolding system:
 
@@ -935,11 +903,7 @@ Notice how the view template has a `@model MvcMovie.Models.Movie` statement at t
 
 The scaffolded code uses several Tag Helper methods to streamline the HTML markup. The [Label Tag Helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms?view=aspnetcore-3.0) displays the name of the field ("Title", "ReleaseDate", "Genre", or "Price"). The [Input Tag Helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms?view=aspnetcore-3.0) renders an HTML `<input>` element. The [Validation Tag Helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms?view=aspnetcore-3.0) displays any validation messages associated with that property.
 
-
-
 # Part 7, add search
-
-
 
 ## Add Search by name
 
@@ -960,14 +924,10 @@ public async Task<IActionResult> Index(string searchString)
 }
 ```
 
-
-
 1. We create a LINQ query
 2. If the `searchString` parameter contains a string, the movies query is modified to filter on the value of the search string
    - The `s => s.Title.Contains()` code above is a [Lambda Expression](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions). Lambdas are used in method-based [LINQ](https://docs.microsoft.com/en-us/dotnet/standard/using-linq) queries as arguments to standard query operator methods such as the [Where](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.where) method or `Contains` (used in the code above). LINQ queries are not executed when they're defined or when they're modified by calling a method such as `Where`, `Contains`, or `OrderBy`. Rather, query execution is deferred. That means that the evaluation of an expression is delayed until its realized value is actually iterated over or the `ToListAsync` method is called.
    - Note: The [Contains](https://docs.microsoft.com/en-us/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) method is run on the database, not in the c# code shown above. The case sensitivity on the query depends on the database and the collation. On SQL Server, [Contains](https://docs.microsoft.com/en-us/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) maps to [SQL LIKE](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/like-transact-sql), which is case insensitive. In SQLite, with the default collation, it's case sensitive.
-
-
 
 In *`Views/Movies/Index.cshtml`*
 
@@ -980,11 +940,7 @@ In *`Views/Movies/Index.cshtml`*
 </form>
 ```
 
-
-
 - If we don't the form method , it defaults to **POST**.
-
-  
 
 ## Add Search by genre
 
@@ -1012,8 +968,6 @@ The movie-genre view model will contain:
 - A `SelectList` containing the list of genres. This allows the user to select a genre from the list.
 - `MovieGenre`, which contains the selected genre.
 - `SearchString`, which contains the text users enter in the search text box.
-
-
 
 Replace the `Index` method in `MoviesController.cs` with the following code:
 
@@ -1089,15 +1043,13 @@ When EF Code First is used to automatically create a database, Code First:
 - Adds a table to the database to track the schema of the database.
 - Verifies the database is in sync with the model classes it was generated from. If they aren't in sync, EF throws an exception. This makes it easier to find inconsistent database/code issues.
 
-
-
 We add a new Field `Rating` :
 
 - We Modify our Model
 
-- We modify The view 
+- We modify The view
 
-- We modify the controller  `[Bind("Id,Title,ReleaseDate,Genre,Price,Rating")]` 
+- We modify the controller  `[Bind("Id,Title,ReleaseDate,Genre,Price,Rating")]`
 
 - We create our migration & update the database with code first migrations:
 
@@ -1107,8 +1059,6 @@ We add a new Field `Rating` :
   ```
 
 # Part 9, add validation
-
-
 
 The validation support provided by MVC and Entity Framework Core Code First is a good example of the **DRY**(Don't Repeat Yourself) principle in action. You can declaratively specify validation rules in one place (in the model class) and the rules are enforced everywhere in the app.
 
@@ -1176,8 +1126,6 @@ The `DataType` attributes only provide hints for the view engine to format the d
 
 The `DisplayFormat` attribute is used to explicitly specify the date format:
 
-
-
 ```csharp
 [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
 public DateTime ReleaseDate { get; set; }
@@ -1190,8 +1138,6 @@ You can use the `DisplayFormat` attribute by itself, but it's generally a good i
 - The browser can enable HTML5 features (for example to show a calendar control, the locale-appropriate currency symbol, email links, etc.)
 - By default, the browser will render data using the correct format based on your locale.
 - The `DataType` attribute can enable MVC to choose the right field template to render the data (the `DisplayFormat` if used by itself uses the string template).
-
-
 
 The following code shows combining attributes on one line:
 
@@ -1220,13 +1166,9 @@ public class Movie
 
 # Part 10, examine the Details and Delete methods
 
-
-
 ## Delete Method
 
 Examine the `Delete` and `DeleteConfirmed` methods.
-
-
 
 ```csharp
 // GET: Movies/Delete/5
@@ -1263,15 +1205,11 @@ Note that the `HTTP GET Delete` method doesn't delete the specified movie, it re
 
 The `[HttpPost]` method that deletes the data is named `DeleteConfirmed` to give the HTTP POST method a unique signature or name. The two method signatures are shown below:
 
-
-
 ```csharp
 // GET: Movies/Delete/5
 public async Task<IActionResult> Delete(int? id)
 {
 ```
-
-
 
 ```csharp
 // POST: Movies/Delete/5

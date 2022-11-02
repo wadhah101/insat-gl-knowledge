@@ -270,4 +270,4 @@ why ? :
 
 ![lambda](assets/lambda.png)
 
-https://www.cyres.fr/blog/architecture-lambda-big-data/
+<https://www.cyres.fr/blog/architecture-lambda-big-data/>

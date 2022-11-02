@@ -1,8 +1,8 @@
-# Chapter 1 : Hello, C#! welcome, .NET!
+# Chapter 1 : Hello, C#! welcome, .NET
 
 ## Understanding .NET
 
-- NET Framework is a development platform that includes a Common Language Runtime (CLR), which manages the execution of code, and a Base Class Library (BCL), which provides a rich library of classes to build applications from. 
+- NET Framework is a development platform that includes a Common Language Runtime (CLR), which manages the execution of code, and a Base Class Library (BCL), which provides a rich library of classes to build applications from.
 
 - All of the apps on a computer written for the .NET Framework share the same version of the CLR and libraries stored in the Global Assembly Cache (GAC), which can lead to issues if some of them need a specific version for compatibility.
 
@@ -20,18 +20,14 @@
 
 # Chapter 2
 
-Comments : // or /* */
+Comments : // or /**/
 
 | Naming Convention | Examples                                        | Use for                                                    |
 | ----------------- | ----------------------------------------------- | ---------------------------------------------------------- |
 | camel Case        | `cost`, `orderDetail`, `dateOfBirth`            | Local variables, private fields.                           |
 | Pascal Case       | `String`, `Int32`, `Cost`, `DateOfBirth`, `Run` | Types, non-private fields, and other members like methods. |
 
-
-
-
-
--  **Literal string**: Characters enclosed in double-quote characters. They can use escape characters like \t for tab.
+- **Literal string**: Characters enclosed in double-quote characters. They can use escape characters like \t for tab.
 - **Verbatim string**: A literal string prefixed with @ to disable escape characters so that a backslash is a backslash. (`@"\t"` will show `\t` and not a tab)
 - **Interpolated string**: A literal string prefixed with $ to enable embedded formatted variables. You will learn more about this later in this chapter.
 
@@ -51,17 +47,13 @@ Console.WriteLine($"{name} has {length2} characters."); // interpolated string
 
 - `dynamic`  : type changes with each assignment
 
-- **Default values for types**  : 
+- **Default values for types**  :
 
   - references : null
-  - bool : False 
+  - bool : False
   - Datetime : 01/01/0001 00:00:00
 
-  
-
-
-
-### Arrays :
+### Arrays
 
 - Arrays are always of a fixed size at the time of memory allocation, so you need to decide how many items you want to store before instantiating them.
 - Arrays are useful for temporarily storing multiple items, but collections are a more flexible option when adding and removing items dynamically.
@@ -83,8 +75,6 @@ for (int i = 0; i < names.Length; i++)
 }
 ```
 
-
-
 ### Making a value type nullable (for `int` )
 
 - Sometimes, for example, when reading values stored in a database that allows empty, missing, or null values, it is convenient to allow a value type to be null, we call this a nullable value type.
@@ -94,8 +84,6 @@ int thisCannotBeNull = 4;
 thisCannotBeNull = null; // compile error!
 int? thisCouldBeNull = null; // all good
 ```
-
-
 
 ### Checking for null
 
@@ -110,8 +98,6 @@ int? y = authorName?.Length;
 var result = authorName?.Length ?? 3;
 Console.WriteLine(result);
 ```
-
-
 
 ### Understanding format strings
 
@@ -141,8 +127,6 @@ Apples 1,234
 Bananas 56,789
 ```
 
-
-
 ### Getting text input from the user
 
 ```c#
@@ -154,34 +138,26 @@ Console.WriteLine(
  $"Hello {firstName}, you look good for {age}.");
 ```
 
-
-
-### Importing a namespace 
+### Importing a namespace
 
 ```c#
 using <Namespace> ;
 ```
 
-
-
 ### Main arguments
 
 - Command-line arguments are separated by spaces. Other characters like hyphens and colons are treated as part of an argument value. To include spaces in an argument value, enclose the argument value in single or double quotes
 
-
-
 ### Controlling Flow and converting types
 
 - `nameof` : name of the variable
-- `sizeof` : size of the type 
-
-
+- `sizeof` : size of the type
 
 ### Looping with the `foreach` statement
 
-- Technically, the `foreach` statement will work on any type that follows these rules: 
-  1. The type must have a method named `GetEnumerator` that returns an object. 
-  2. The returned object must have a property named Current and a method named `MoveNext`. 
+- Technically, the `foreach` statement will work on any type that follows these rules:
+  1. The type must have a method named `GetEnumerator` that returns an object.
+  2. The returned object must have a property named Current and a method named `MoveNext`.
   3. The `MoveNext` method must return true if there are more items to enumerate through or false if there are no more items.
 - There are interfaces named `IEnumerable` and `IEnumerable` that formally define these rules but technically the compiler does not require the type to implement these interfaces
 
@@ -192,8 +168,6 @@ foreach (string name in names)
  WriteLine($"{name} has {name.Length} characters.");
 }
 ```
-
-
 
 ### Casting and converting between types
 
@@ -208,8 +182,6 @@ int h = ToInt32(g);
 WriteLine($"g is {g} and h is {h}");
 ```
 
-
-
-#### Rounding numbers 
+#### Rounding numbers
 
 - the cast operator trims the decimal part of a real number and that the `System.Convert` methods round up or down.

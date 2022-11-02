@@ -84,7 +84,7 @@ const config = async () => {
           items: [
             {
               type: "doc",
-              docId: "intro",
+              docId: "docusaurus",
               position: "left",
               label: "Docs",
             },

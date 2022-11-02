@@ -9,9 +9,9 @@ Going to put everything I know about INSAT & its software engineering degree her
 
 Contributions through PRs are always welcome
 
-## Installation
+## Setup
 
-Make sure Volta is installed and configured on your system. This project relies on  **specific** node & yarn versions.
+Make sure Volta is installed and configured on your system. This project relies on **specific** node & yarn versions.
 
 ### Unix/Linux
 
@@ -23,13 +23,15 @@ curl https://get.volta.sh | bash
 
 Follow this [guide](https://docs.volta.sh/guide/getting-started)
 
-Install your dependencies. Yarn V2 [Plug'n'Play](https://yarnpkg.com/features/pnp) is active and you won't find any node_module folder.
+### Installation
+
+Install your dependencies. **Yarn V2** [Plug'n'Play](https://yarnpkg.com/features/pnp) is active and you won't find any node_module folder.
 
 ```console
 yarn
 ```
 
-For Vscode user make sure to apply .vscode/settings.json when promoted
+For Vscode userS make sure to apply .vscode/settings.json when promoted
 
 ## Local Development
 

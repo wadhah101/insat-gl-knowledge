@@ -205,7 +205,7 @@ gpg -o file --decrypt file.enc
 |Less number of keys||
 
 
-## Needham-Schroeder
+### Needham-Schroeder
 Authentication Protocole 
 
 
@@ -234,7 +234,7 @@ This algo could easly be attacked by the Man in the midlle
 
 <img src="assets/The-Needham-Schroeder-Lowe-protocol-with-public-keys.png" /> 
 
-## RSA
+### RSA
 NP-complete problem 
 
 **Parameters**: 
@@ -251,7 +251,7 @@ NP-complete problem
 **Decryption** :
 M = ![\Large C^d](https://latex.codecogs.com/svg.latex?\Large&space;C^d) mod N
 
-## ELGamal
+### ELGamal
 DLP : Discrete logarithm problem  
 <br/>
 
@@ -290,7 +290,7 @@ p (prime number) and g are public infos
 5. Key of A : Ka= ![\Large v^a](https://latex.codecogs.com/svg.latex?\Large&space;v^a) = ![\Large g^ba](https://latex.codecogs.com/svg.latex?\Large&space;g^ba) mod p
 <br/> => Ka = Kb 
 
-# Kerberos
+## Kerberos
 it is responsible for authenticating, authorizing and monitoring users who want to access resources and services on your network. It acts as a watchdog against intruders on your network services.
 
 Based on 
@@ -312,20 +312,20 @@ Based on
 
 Implementation : https://github.com/rihemebh/Kerberos-project
 
-# Elliptic Curve 
+## Elliptic Curve 
 ECC is based on the elliptic curve discrete logarithm problem, or (ECDLP), Instead of numbers, the elliptic curve’s problems operate on points, and multiplication is used instead of exponentiation : **Finding the number k given a base point P where the point Q = kP.**
 
 
-## ECC Auth:
+### ECC Auth
 
 The standard algorithm used for signing with ECC is ECDSA, which stands for elliptic curve digital signature algorithm. 
 This algorithm has replaced RSA signatures and classical DSA signatures in many applications. It is, for example, the only signature algorithm used in Bitcoin and is supported by many TLS and SSH implementations.
 
 
 
-## Signature generation
+### Signature generation
 
-### Parameters:
+#### Parameters:
 n is the number of point in the curve 
 
 G = (x,y) is a base point 
@@ -334,7 +334,7 @@ private key = d
 
 public Key P = dG
 
-### Algorithm:
+#### Algorithm:
 
 1. Hash a message (SHA-256 or BLAKE2) ⇒ generate h between 0 and n-1
 2. Pick a random number k between 1 and n-1
@@ -343,7 +343,7 @@ public Key P = dG
 5. compute s = (h+rd)/ k mod n 
 6. signature = (r,s)
 
-## Signature Verification
+### Signature Verification
 
 1. compute w = 1/s  = k / (h+rd) mod n
 2. wh = hk(h+rd) = u 
@@ -354,7 +354,7 @@ The verifier only accepts the signature if the x coordinate of Q is equal to the
 
 
 
-## Encryption
+### Encryption
 
 We have: 
 - (q ,G, G1, e), P un point de la CE E tq q divise p^k - 1
@@ -367,7 +367,7 @@ We have:
 
 
 
-## Decryption
+### Decryption
 
 <img src="assets/dechiff.PNG" />
 
@@ -380,7 +380,7 @@ Elliptic curve cryptography is often viewed as an alternative to RSA for public-
 RSA is only used for encryption and signatures, whereas ECC is a family of algorithms that can be used to perform encryption, generate signatures, perform key agreement, and offer advanced cryptographic functionalities such as identity-based encryption.
 
 The significant difference: 
-### => The same level of security with small numbers
+**=> The same level of security with small numbers**
 
 <img src="assets/elliptic-curve-cryptography.png" width="500" height="250"  />
 
@@ -391,7 +391,7 @@ Because ECC works with shorter numbers, it produces shorter signatures than RSA 
 Signing with ECDSA is also much faster than signing with RSA (though signature verification is about as fast) because ECDSA works with much smaller numbers than RSA does for a similar security level.
 
 **Reference** : Serious Cryptography A Practical Introduction to Modern Encryption by --Jean-Philippe Aumasson 
-# Hash
+## Hash
 Hash is used to garantee Integrity : We use non-bijective functions to hash the message. <br/>
 Whatever the size of the real message, the size of a hash message is always the same.  <br/>
 **Examples of Hash functions** : sha, sha256, md5  <br/>
@@ -404,9 +404,9 @@ $ sha256sum file
 ```
 
 
-# OpenSSL
+## OpenSSL
 
-## Definition 
+### Definition 
 SSL  (Secure Sockets Layer)
 - Is an encryption-based protocol
 - Ensure confidentiality,,Authentication and Integrity 
@@ -418,7 +418,7 @@ OpenSSL is a software library for applications that secure communications over c
 It contains an open-source implementation of the SSL and TLS protocols. The core library, written in C programming language, implements basic cryptographic functions and provides various utility functions.
 
 
-## CMD 
+### CMD 
 
 - Encrypt the "file" with "aes-128-cbc" algorithm and put the result in "file.enc"
 ```ubuntu
@@ -469,7 +469,7 @@ openssl rsault -encrypt -pubin -inkey PUB -in file -out file.enc
 openssl rsautl -decrypt -inkey mykey.enc -in file -out rsa.enc 
 ```
 
-## Signature 
+### Signature 
 
 - Sign with the private key 
 ```
@@ -487,7 +487,7 @@ openssl rsault -verify -pubin -inkey PUB -in fileRSA.sign
 openssl dgst -sha256 -verify PUB -signature fileHashSign file 
 ```
 
-## Certificate 
+### Certificate 
 
 - Digital Certificates are verifiable small data files that contain identity credentials to help websites, people, and devices represent their authentic online identity.
 - Digital certificates cover three main uses: 

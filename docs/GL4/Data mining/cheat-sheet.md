@@ -102,14 +102,14 @@ Supervised learning is a type of machine learning that it is based on labeled or
 
 Supervised learning uses a training set to teach models to yield the desired output. This training dataset includes inputs and correct outputs, which allow the model to learn over time. The algorithm measures its accuracy through the loss function, adjusting until the error has been sufficiently minimized. (IBM-2020)
 
-### When we need domain expert ? 
+**When we need domain expert ?**
 
 We need an expert at the begining to put the correct labels on data.
 
-### Classification
+**Classification**:
 When the data that we want to predict is discret (YES/NO , {1,2,3..} ..)
 
-### Regression 
+**Regression**:
 When the Data that we want to predict is continous (price, distance .. )
 
 ### Libraries to use
@@ -118,21 +118,22 @@ When the Data that we want to predict is continous (price, distance .. )
 - keras
 
 
-## Decision Tree
-### Entropy 
+### Decision Tree
+// edit to add 
+#### Entropy 
 <img src="assets/entropy.png" />
 
 
-### Information Gain 
+#### Information Gain 
 
 <img src="assets/Gain.png" />
 
 
-## Bagging & Random Forest 
+### Bagging & Random Forest 
 
 // edit to add  this part
 
-## K-NN
+### K-NN
 
 Predict the label of a data point by :
 - Looking at the ‘k’ closest labeled data points 
@@ -143,9 +144,9 @@ Predict the label of a data point by :
 - Smaller k=more complex model=can lead to overfitting
 
 
-### Practice 
+#### Practice 
 
-#### Fit and predict
+**Fit and predict**
 ``` python
 from sklearn.neighbors import KNeighbors
 
@@ -160,7 +161,7 @@ print('Prediction: {}’.format(prediction))
 Prediction: [1 1 0]
 ```
 
-#### Split and calculate performance with score()
+ **Split and calculate performance with score()**
 ```python
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test =    train_test_split(X, y, test_size=0.3, random_state=21, stratify=y)
@@ -205,7 +206,7 @@ We have 3 rules for the classification <br/>
 
  => We choose the class that has the maximum P(class|feature)* P(class)
 
-### Practice with scikit-learn
+#### Practice with scikit-learn
 ```python
 from sklearn import naive_bayes
 
@@ -248,16 +249,16 @@ print("Error using numpy :",np.count_nonzero(P-Y)/len(irisData.data))
 
 print("Accuracy : ",nb.score(irisData.data,Y))
 ```
-# Test
+### Test
 
-## Cross Validation
+#### Cross Validation
 
 The original sample is divided into k samples, then one of the k samples is selected as the validation set while the k-1 other samples constitute the training set. After learning, a validation performance can be calculated. Then the operation is repeated by selecting another validation sample from among the predefined blocks. 
 At the end of the procedure we thus obtain performance scores, one per block. 
 
 The mean and standard deviation of performance scores can be calculated to estimate bias and variance in validation performance.
 
-### Practice 
+#### Practice 
 ``` python
 
 from sklearn.model_selection import cross_val_score
@@ -270,7 +271,7 @@ print(cv_results)
 np.mean(cv_results)
 # the mean result : 0.35327592439587058
 ``` 
-## Train Test Split
+#### Train Test Split
 
 We split our dataset to 2/3 for training and 1/3 for test 
 
@@ -281,12 +282,12 @@ Why we use it?
 - When the dataset is large it is very expensive to use other test methods like cross validation also we have enough data for our model to learn from and test with new data will be more efficient and very close to the real-life performance
 
 
-## Measuring model performance 
+### Measuring model performance 
 
  Gerenally our metric is  " **Accuracy** " : The more it is higher the more we have better performance.
  But this isn't the case when we are working with unbalanced datasets when there is significant disparity between the number of positive and negative labels which is the most common case in the real life problems that's why we need to have other metrics 
 
-### Confusion matrix 
+#### Confusion matrix 
 
 - It is generally used with binary classification: (True/Flase , Spam/NotSpam .. )
  <img src = "assets/matrix.png" />
@@ -302,40 +303,35 @@ We should note that it works well with non binary classification:
 [See this article for more details](https://towardsdatascience.com/confusion-matrix-for-your-multi-class-machine-learning-model-ff9aa3bf7826)
 
 
-# Unsupervised learning
+## Unsupervised learning
 
 Unsupervised learning is based on unlabled data, it uses machine learning algorithms to analyse and cluster those data without human intervention 
 
-## When we need domain expert ? 
+**When we need domain expert ?**
 
 Since we are dealing with unlabeled data so the most critical part that need domain expert is the validation of the clusturing 
 
-## Clusturing 
+**Clusturing** :
 Clustering is a data mining technique which groups unlabeled data based on their similarities or differences. 
 
 We optimize the clusturing by calculating the intercluster (between 2 clusters) + intracluster (within a cluster) distances
-
-### Similarity 
-
-Similarity is the fact that 2 instances are similar depending on the metric we use.
-
+**Similarity**: Similarity is the fact that 2 instances are similar depending on the metric we use.
 The larger the measure, the more similar the points.
-
 the metric used to calculate similarity is the distance 
-
 The calculation of the distance depends on the data type: 
+
+// edit to complete this part 
 
 |Types |Distance|
 |---|---|
 |continous| 1. Normalisation : transform data into values between [0..1] <br/> <img src="assets/normalisation.PNG" /> <br/>  -- Xif is the value of the feature "f" in the line "i"<br/><br/>   2. Standarisation <br/>   Z-score=   <img src="assets/zscore.PNG" /><br/> where  Sf, mf =  <img src="assets/stand1.PNG" /> <br/><br/> 3. Distance : <br/> - Minkow <br/>  - Menhaten <br/>  - Euclidien|
-// edit to add 
 |Binary||
 |Nominal||
 |Ordinal||
 |Mixed||
 
 
-### Clusturing Algorithms:
+### Clusturing Algorithms
   #### K-means 
   //edit to add 
   #### K-Medoides 

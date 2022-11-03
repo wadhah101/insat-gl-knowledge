@@ -19,7 +19,7 @@ In order to test it you need to configure 3 machines : KDC, Client and Server th
 
   --Note: in the rest of this document I will only use 2 machines one for the KDC and the other will work as server and client
   
-### Prerequisite
+## Prerequisite
 - Docker 
 - Ubuntu image 
 - Python3 
@@ -39,10 +39,10 @@ apt update && apt upgrade
 
 then install whatever you need (in our case we'll need: nano,  host, ntp, ntpdate, python3, python3-pip )
 
-### Machines' Setup:
+## Machines' Setup:
 
-We will use ``insat.tn`` as domain name 
-#### 1. In each machine match different ips to their sub domain name in ``/etc/hosts`` 
+We will use ``insat.tn`` as domain name. 
+ 1. In each machine match different ips to their sub domain name in ``/etc/hosts``  
 ```cmd 
 172.21.0.2      kdc.insat.tn kdc
 172.21.0.3      server.insat.tn server
@@ -52,11 +52,10 @@ To test if everything is working properly try this command on each sub-domain:
 ```
 host kdc.insat.tn
 ```
-#### 2. Synchronize date between machines with ntp and ntpdate :
+ 2. Synchronize date between machines with ntp and ntpdate :
 
-##### Why ?
-
-Kerberos is time sensitive. It uses timestamps mechanism to check the validity of a ticket.Thus, we will create our own time server and synchronize all the machines.
+- Why ?
+  - Kerberos is time sensitive. It uses timestamps mechanism to check the validity of a ticket.Thus, we will create our own time server and synchronize all the machines.
 
 - On the Kdc machine edit the ``/etc/ntp.conf`` and add the lines below:
 ```cmd
@@ -85,7 +84,7 @@ ntpdate -dv 192.168.56.110
 ```
 
 
-#### 3. Configure KDC 
+3. Configure KDC 
 ```
 apt install krb5-kdc krb5-admin-server krb5-config 
 ```
@@ -145,25 +144,27 @@ pip install flask_kerberos
 ```
 
 
- ### =>  Now your machines are ready to use the flask service 
+  **=>  Now your machines are ready to use the flask service** 
  
-#### What is next ?
+## Integrating Kerberos to a Flask Endpoint
  Since Kerberos is based on ticket granting and not passwords so we need first to grant a ticket for the user to access the service 
- 
+ ### Tickets
  We have 2 types of tickets : <br/>
  - TGT (ticket granting ticket) : the ticket that will allow you to get tickets for services 
 -  TGS (ticket granting service) allow you to access a service secured by kerberos
  
+### Steps
+
  In order to test the endpoint you need to follow these steps: 
  
- - Generate a ticket : ``kinit``.
- - Get the List of tickets with some details about them like expiration date : ``klist``.
- - Change the diffrent domain names in files  "requestHandler" and "index" with your ones.
- - Run the server ``./index.py``
- - Execute the requestHandler.py file : its role is to generate a negotiate token and add the header to the url.
+ 1. Generate a ticket : ``kinit``.
+ 2. Get the List of tickets with some details about them like expiration date : ``klist``.
+ 3. Change the diffrent domain names in files  "requestHandler" and "index" with your ones.
+ 4. Run the server ``./index.py``
+ 5. Execute the requestHandler.py file : its role is to generate a negotiate token and add the header to the url.
 
 
-### References : 
+## References : 
 
 - [https://ubuntu.com/server/docs/service-kerberos](https://ubuntu.com/server/docs/service-kerberos)
 - [https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/kadmin_local.html](https://web.mit.edu/kerberos/krb51.12/doc/admin/admin_commands/kadmin_local.html)

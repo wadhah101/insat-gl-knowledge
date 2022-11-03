@@ -49,7 +49,7 @@ const config = async () => {
         /** @type {import('@docusaurus/preset-classic').Options} */
         {
           sitemap: {
-            changefreq: "daily",
+            changefreq: "weekly",
             priority: 0.5,
             filename: "sitemap.xml",
           },

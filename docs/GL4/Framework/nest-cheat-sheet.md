@@ -165,7 +165,7 @@ what we will going to do with this request should be transfered to the business 
 
  A request flows through middleware to guards, then to interceptors, then to pipes and finally back to interceptors on the return path (as the response is generated).
  
-<img src="https://github.com/rihemebh/Nest.js-Cheat-sheet/blob/main/lifecycle.png" width="800" height="400" />
+<img src="assets/lifecycle.png" width="800" height="400" />
 
 ### Middlewares
 A Middleware is quite simply a function called before the request is processed by the controller

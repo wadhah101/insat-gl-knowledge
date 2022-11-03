@@ -83,7 +83,7 @@ we can call a method using: <br/>
 Angular supports two-way data binding that allows interctions from DOM to component and component to DOM using directives **ngModel**   .
 
 
-  <img src="https://github.com/rihemebh/Angular-Cheat-Sheet/blob/main/databinding.png"   alt="data-binding" />
+  <img src="assets/databinding.png"   alt="data-binding" />
 
 ## Life cycle
 

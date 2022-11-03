@@ -125,4 +125,4 @@ public void test()
 
 ### Order of execution
 
-<img src="https://github.com/rihemebh/Software-Quality/blob/main/order%20of%20execution.PNG"  />
+<img src="assets/order_of_execution.PNG"  />

@@ -10,11 +10,12 @@ Kerberos is a computer-network authentication protocol that works on the basis o
 
 ## Architecture
 
-<img src="assets/architecture.png" />
+![architecture](assets/architecture.png)
 
 ## What we will do ?
 
-You will find in this repo a flask endpoint that needs kerberos authentication. <br/>
+You will find in this repo a flask endpoint that needs kerberos authentication.
+
 In order to test it you need to configure 3 machines : KDC, Client and Server then generate a token from the ticket produced by the KDC and everything will work properly
 
   --Note: in the rest of this document I will only use 2 machines one for the KDC and the other will work as server and client
@@ -34,7 +35,7 @@ In order to test it you need to configure 3 machines : KDC, Client and Server th
 
 Since the image doesn’t have any pre-installed dependencies you should first run :
 
-```cmd
+```console
 apt update && apt upgrade 
 ```
 
@@ -44,59 +45,59 @@ then install whatever you need (in our case we'll need: nano,  host, ntp, ntpdat
 
 We will use ``insat.tn`` as domain name.
 
- 1. In each machine match different ips to their sub domain name in ``/etc/hosts``  
+1. In each machine match different ips to their sub domain name in ``/etc/hosts``
 
-```cmd
-172.21.0.2      kdc.insat.tn kdc
-172.21.0.3      server.insat.tn server
-```
+    ```console
+    172.21.0.2      kdc.insat.tn kdc
+    172.21.0.3      server.insat.tn server
+    ```
 
-To test if everything is working properly try this command on each sub-domain:
+    To test if everything is working properly try this command on each sub-domain:
 
-```
-host kdc.insat.tn
-```
+    ```console
+    host kdc.insat.tn
+    ```
 
- 2. Synchronize date between machines with ntp and ntpdate :
+2. Synchronize date between machines with ntp and ntpdate :
 
-- Why ?
-  - Kerberos is time sensitive. It uses timestamps mechanism to check the validity of a ticket.Thus, we will create our own time server and synchronize all the machines.
+      - Why ?
+        - Kerberos is time sensitive. It uses timestamps mechanism to check the validity of a ticket.Thus, we will create our own time server and synchronize all the machines.
 
-- On the Kdc machine edit the ``/etc/ntp.conf`` and add the lines below:
+      - On the Kdc machine edit the ``/etc/ntp.conf`` and add the lines below:
 
-```cmd
-restrict 127.0.0.1
-restrict ::1
-restrict 192.168.56.110 mask 255.255.255.0
-nomodify notrap
-server 127.127.1.0 stratum 10
-listen on *
-```
+      ```console
+      restrict 127.0.0.1
+      restrict ::1
+      restrict 192.168.56.110 mask 255.255.255.0
+      nomodify notrap
+      server 127.127.1.0 stratum 10
+      listen on *
+      ```
 
-- On the server install ntp and ntpdate:
+      - On the server install ntp and ntpdate:
 
-```cmd
-apt install ntp
-apt install ntpdate
-```
+      ```console
+      apt install ntp
+      apt install ntpdate
+      ```
 
-- then edit the ``/etc/ntp.conf`` and add the lines below:
+      - then edit the ``/etc/ntp.conf`` and add the lines below:
 
-```cmd
-pool ntp.ubuntu.com
-server 192.168.56.110
-server obelix
-````
+      ```console
+      pool ntp.ubuntu.com
+      server 192.168.56.110
+      server obelix
+      ````
 
-- Synchronize time by running the below command on the server machine:
+      - Synchronize time by running the below command on the server machine:
 
-```cmd
-ntpdate -dv 192.168.56.110
-```
+      ```console
+      ntpdate -dv 192.168.56.110
+      ```
 
 3. Configure KDC
 
-```
+```console
 apt install krb5-kdc krb5-admin-server krb5-config 
 ```
 
@@ -107,7 +108,7 @@ When it's prompted :
 
 - Create the realm: A Kerberos realm is the domain over which a Kerberos authentication server has the authority to authenticate a user, host or service.
 
-```
+```console
 krb5_newrealm
 ```
 
@@ -115,16 +116,16 @@ krb5_newrealm
   - A Kerberos Principal represents a unique identity in a Kerberos system to which Kerberos can assign tickets to access Kerberos-aware services.
   - The Kerberos Keytab file contains mappings between Kerberos Principal names and DES-encrypted keys that are derived from the password used to log into the Kerberos Key Distribution Center (KDC).
 
-```
+```console
 kadmin.local                              
 addprinc root/admin                       
 addprinc -randkey host/kdc.example.tn     
 ktadd host/kdc.example.tn                 
 ```
 
-#### 4. Configure Server
+### 4. Configure Server
 
-```
+```console
 apt install krb5-user libpam-krb5 libpam-ccreds
 ```
 
@@ -132,21 +133,21 @@ Then do the same thing for realm, kerberos service, administrative service
 
 - Add host :
 
-```
+```console
 kadmin                                      
 addprinc -randkey host/server.insat.tn     
 ktadd host/server.insat.tn  
 ```
 
-- Install Flask and Flask-Kerberos with pip <br/>
+- Install Flask and Flask-Kerberos with pip
 
-```cmd
+```console
 pip install flask
 ```
 
 If you are using a docker image you should run those commands before installing flask kerberos:
 
-```cmd
+```console
 apt-get install libkrb5-dev
 apt-get install krb5-config
 apt-get install libkrb5-dev
@@ -158,7 +159,7 @@ pip install flask_kerberos
 
 ```
 
-  **=>  Now your machines are ready to use the flask service**
+=>  Now your machines are ready to use the flask service
 
 ## Integrating Kerberos to a Flask Endpoint
 
@@ -166,7 +167,7 @@ pip install flask_kerberos
 
 ### Tickets
 
- We have 2 types of tickets : <br/>
+ We have 2 types of tickets
 
 - TGT (ticket granting ticket) : the ticket that will allow you to get tickets for services
 - TGS (ticket granting service) allow you to access a service secured by kerberos

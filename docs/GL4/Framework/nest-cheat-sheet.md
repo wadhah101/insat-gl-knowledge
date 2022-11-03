@@ -6,18 +6,25 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ### Installation
 
-    npm i -g @nestjs/cli
+```console
+npm i -g @nestjs/cli
+```
 
 ### New Project
 
-    $nest new <project-name>
+```console
+    nest new <project-name>
+```
 
 ### launch project
 
+```console
     npm run start:dev
-   Or
+```
 
+```console
     nest start –watch
+```
 
 ## Module
 
@@ -27,8 +34,8 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ### Creation
 
-```js
-nest g mo ModuleName
+```console
+  nest g mo ModuleName
 ```
 
 ### Parameters
@@ -42,9 +49,9 @@ nest g mo ModuleName
 
 Controller is a class annotated with ``@Controller`` that contains a list of actions to accept the client's requests according to the route
 
-### Creation
+### Creating controllers
 
-```js
+```console
 nest g co controllerName
 ```
 
@@ -65,20 +72,20 @@ A route will identify the uri associated to an action.
 
 ### Annotations
 
- |name|description|
- |---|---|
- |``@Post()`` , ``@Get()`` , ``@Delete()``,  ``@Put()`` , ``@Patch()``|Accepts a HTTP request|
- |``@Body()`` | retrieve the POST request body |
- |``@Res()``| response |
- |``@HttpCode(code)``|customize the HTTP code |
- |``@Header()``||
- |``@Param(<name>)``|retirive params from the uri|
+ | name                                                                 | description                    |
+ | -------------------------------------------------------------------- | ------------------------------ |
+ | ``@Post()`` , ``@Get()`` , ``@Delete()``,  ``@Put()`` , ``@Patch()`` | Accepts a HTTP request         |
+ | ``@Body()``                                                          | retrieve the POST request body |
+ | ``@Res()``                                                           | response                       |
+ | ``@HttpCode(code)``                                                  | customize the HTTP code        |
+ | ``@Header()``                                                        |                                |
+ | ``@Param(<name>)``                                                   | retirive params from the uri   |
 
 #### Generic URI
 
 ``*`` : 0 or plus
 
-```js
+```typescript
 @Get('test*') : //any uri that begins with test
 ```
 
@@ -91,15 +98,15 @@ A route will identify the uri associated to an action.
 - It is an object that allows to define how the data is sent via the network.
 - DTOs are not the models, in many cases the model and data you wish to receive is different.
 
-|They can be defined using classes or interfaces, but Nest recommends using classes as TypeScript does not save metadata for generics and interfaces|
-|---|
+| They can be defined using classes or interfaces, but Nest recommends using classes as TypeScript does not save metadata for generics and interfaces |
+| --------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## Dependency Injection (DI)
 
  Nest is built around the strong design pattern commonly known as Dependency injection
 
-| Dependencies are services or objects that a class needs to perform its function. Dependency injection, or DI, is a design pattern in which a class requests dependencies from external sources rather than creating them.|
-|---|
+| Dependencies are services or objects that a class needs to perform its function. Dependency injection, or DI, is a design pattern in which a class requests dependencies from external sources rather than creating them. |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ### How the DI container works ?
 
@@ -158,10 +165,15 @@ If your class doesn't extend another provider, you should always prefer using co
 The only role of a controller should be : **Accept the client requests**
 what we will going to do with this request should be transfered to the business layer that's why we have **Services**
 
-     nest generate service <service name>
-   or
+```console
+nest generate service <service name>
+```
+
+or
   
-     nest g s <service name>
+```console
+nest g s <service name>
+```
 
  -> Encapsulates some functionnality
 
@@ -173,7 +185,7 @@ what we will going to do with this request should be transfered to the business 
 
  A request flows through middleware to guards, then to interceptors, then to pipes and finally back to interceptors on the return path (as the response is generated).
 
-<img src="assets/lifecycle.png" width="800" height="400" />
+![lifecycle](assets/lifecycle.png)
 
 ### Middlewares
 
@@ -220,6 +232,7 @@ A Middleware could be a class or a function
             }
            }
         ```
+
   -
 
 - Function : create a function that accepts ``Request`` , ``Response`` and the ``Next`` method.
@@ -246,13 +259,29 @@ adapt.
 - Nest calls the pipe just before invoking a method to transform or evaluate its params
 
 We have 2 different types of pipes
-||Transformation Pipes|Validation Pipes|
-|---|---|---|
-|Explanation| Transform input data to the desired form (e.g., from string to integer)|Evaluate the input data and throw an exception if invalid  |
-|Installation| auto |``npm i --save class-validator class-transformer``|
-|Where ?|Add it to the property that we want to pipe (Body , Param , Query ...)|Annotate properties|
-|Activation|auto |Globally : ``app.useGlobalPipes(new ValidationPipe({transform: true, whitelist: true}))`` <br/> In a specific route: ``@UsePipes(PipeClass1, PipeClass2,…)``|
-|Example of use |1. with dependecy injection <br/> ``@Param('id', ParseIntPipe)`` <br/>2. with class instantiation ( where we could customize the error message ) <br/>``@Param('id', new ParseIntPipe({errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE})`` <br/>|1. specify the error message with a simple string : ``@MinLength(20, {message: "$property should has at least $constraint1 characters "})`` <br/> ``title: string;`` <br/>1. specify the error messages with a function :``@MinLength(20, {message: (validationData: ValidationArguments) => { return `the size of ${validationData.property} ${validationData.value} is too small, you should at least have  ${validationData.constraints[0]} characters `}`` |
+|              | Transformation Pipes                                                    | Validation Pipes                                                                          |
+| ------------ | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Explanation  | Transform input data to the desired form (e.g., from string to integer) | Evaluate the input data and throw an exception if invalid                                 |
+| Installation | auto                                                                    | ``npm i --save class-validator class-transformer``                                        |
+| Where ?      | Add it to the property that we want to pipe (Body , Param , Query ...)  | Annotate properties                                                                       |
+| Activation   | auto                                                                    | Globally : ``app.useGlobalPipes(new ValidationPipe({transform: true, whitelist: true}))`` |
+
+ In a specific route: ``@UsePipes(PipeClass1, PipeClass2,…)``                                                                                                                                                                                                                                                                                                   |
+| Example of use
+
+1. With dependecy injection
+
+   ``@Param('id', ParseIntPipe)``
+
+2. with class instantiation ( where we could customize the error message )
+
+``@Param('id', new ParseIntPipe({errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE})``
+
+ | 1. specify the error message with a simple string : ``@MinLength(20, {message: "$property should has at least $constraint1 characters "})``
+
+ ``title: string;``
+
+1. specify the error messages with a function :``@MinLength(20, {message: (validationData: ValidationArguments) => { return `the size of ${validationData.property} ${validationData.value} is too small, you should at least have  ${validationData.constraints[0]} characters `}`` |
 
 #### Mapped Type
 
@@ -327,43 +356,44 @@ Interceptors has 3 scopes :
 
 1. Routes
 
-```typescript
-@Get('')
-@UseInterceptors(RequestDurationInterceptor)
-getAllProducts() {
-return this.produitService.getAllProduits();
-}
-```
+    ```typescript
+    @Get('')
+    @UseInterceptors(RequestDurationInterceptor)
+    getAllProducts() {
+    return this.produitService.getAllProduits();
+    }
+    ```
 
 2. Controller
 
-```typescript
-@UseInterceptors(RequestDurationInterceptor)
-@Controller('post')
-export class PostController {
-constructor(
-public service: PostService
-) {
-}
-```
+    ```typescript
+    @UseInterceptors(RequestDurationInterceptor)
+    @Controller('post')
+    export class PostController {
+    constructor(
+    public service: PostService
+    ) {
+    }
+    ```
 
 3. Global
 
-```typescript
-app.useGlobalInterceptors(
-new ErrorHandlerInterceptor(),
-new RequestDurationInterceptor(),
-new TransformInterceptor(),
-new ExcludNullInterceptor() );
-```
+    ```typescript
+    app.useGlobalInterceptors(
+    new ErrorHandlerInterceptor(),
+    new RequestDurationInterceptor(),
+    new TransformInterceptor(),
+    new ExcludNullInterceptor() );
+    ```
 
 ## Filters
 
  Filters are used to manage exceptions
 
-       NestJs comes with his own exception management layer that handles all the HTTP exceptions .
-       - If you don't handle the exception Nest will do it for you 
-       - If an exception isn't recognized by this filter a default exception is triggered : the famous "Internal  server error" with the "500 status"
+NestJs comes with his own exception management layer that handles all the HTTP exceptions .
+
+- If you don't handle the exception Nest will do it for you
+- If an exception isn't recognized by this filter a default exception is triggered : the famous "Internal  server error" with the "500 status"
   HttpException is a class given by Nest to handle all the HTTP exceptions, its constructor takes 2 arguments : response and status
   
   Example
@@ -380,10 +410,10 @@ new ExcludNullInterceptor() );
 - Annotate the class with ``@Catch(<exception type>)``
 - Implement the ``catch(<exception>,ArgumentHost)`` method : ArgumentHost imported from ``@nestjs/common``
   
-  Example :
+Example:
 
-  ```typescript
- import { ArgumentsHost, Catch, ExceptionFilter, HttpException } from '@nestjs/common';
+```typescript
+import { ArgumentsHost, Catch, ExceptionFilter, HttpException } from '@nestjs/common';
 import { Request, Response } from 'express';
 @Catch(HttpException)
 export class CustomFilter implements ExceptionFilter{
@@ -404,21 +434,21 @@ catch(exception: HttpException, host: ArgumentsHost): any {
   
 return response;
 }
-  ```
+```
 
 - Make this filter global for all requests by
 
- 1. Adding it to the list of providers in the main module :
+1. Adding it to the list of providers in the main module :
 
- ```typescript
- providers: [
-  {
-    provide: APP_FILTER,
-    useClass: CustomFilter,
-  } ],
- ```
+    ```typescript
+    providers: [
+    {
+      provide: APP_FILTER,
+      useClass: CustomFilter,
+    } ],
+    ```
 
-  2. Using ``useGlobalFilters`` in our app of main.js
+2. Using ``useGlobalFilters`` in our app of main.js
 
   ```typescript
   app.useGlobalFilters(new CustomFilter())
@@ -426,8 +456,7 @@ return response;
   
 - To attach a filter to a specific method use ``@UseFilter(<filter instance/class>)`` : note that if we don't write any parameter this method will use all filters
 
-         Prefer applying filters by using classes instead of instances when possible. 
-         It reduces memory usage since Nest can easily reuse instances of the same class across your entire module.
+Prefer applying filters by using classes instead of instances when possible. It reduces memory usage since Nest can easily reuse instances of the same class across your entire module.
   
 ## Database Access
 

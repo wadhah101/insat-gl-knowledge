@@ -1,6 +1,5 @@
 # Recursive Algorithms
 
-
 The time complexity of recursive algorithms are usually not as simple as their iterative conterparts.
 
 For that we will need to learn the theory behind it, and then practice on some examples.
@@ -58,9 +57,7 @@ $$
 \implies k_*&= \left \lceil2\frac{\ln a}{\ln 2} \right \rceil+1 \quad \text{is a choice}
 \end{align*}
 $$
-We have $T(a,b) \le k_* =\mathcal{O}(\log a)$ 
-
-
+We have $T(a,b) \le k_* =\mathcal{O}(\log a)$
 
 ## 2. Master Theorem
 
@@ -83,8 +80,6 @@ Let $c_*=\log_b a$
 | Work to split/recombine a problem is dwarfed by subproblems. | $f(n)=\mathcal{O}(n^c)$ with $c<c_*$                         | $T_n=\Theta(n^c)$                              |
 | Work to split/recombine a problem is comparable to subproblems. | $f(n)=\mathcal{O}\left(n^{c_*} (\log n)^k\right)$ with $k\ge 0$ | $T_n=\Theta(n^{c_*}\left(\log n\right)^{k+1})$ |
 | Work to split/recombine a problem dominates subproblems.     | $f(n)=\mathcal{O}(n^c)$ with $c>c_*$                         | $T_n=\Theta(f(n))$                             |
-
-
 
 ### 2.3 Merge Sort example
 
@@ -111,7 +106,7 @@ def merge(A,B):
 def merge_sort(A):
     n=len(A)
     if n<2:
-    	return A
+     return A
     B,C=A[:n//2],A[n//2:]
     B=merge_sort(B)
     C=merge_sort(C)
@@ -142,4 +137,3 @@ So, the complexity of merge sort is:
 $$
 T_n = \mathcal{O}(n\log n)
 $$
-

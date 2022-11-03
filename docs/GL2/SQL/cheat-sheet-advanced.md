@@ -6,7 +6,11 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 | With Select                                                                                                                                                                                                                                                                         | With Update                                                                | With Insert                                                                                           | With Delete                                              |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| ``SELECT (SELECT query that returns one value) FROM table  WHERE conditions``  <br />  <br /> ``SELECT columns FROM (SELECT query that retuns multiple rows ) WHERE condition``  <br />  <br />  ``SELECT column_name FROM   tables  WHERE  column_name OPERATOR  (SELECT Query)`` | ``UPDATE table SET column_name = new_value WHERE OPERATOR (SELECT Query)`` | ``INSERT INTO table_name [ (columns..) ]  VALUES (SELECT Query that reurns one value , [val , ...])`` | ``DELETE FROM TABLE_NAME WHERE OPERATOR (SELECT Query)`` |
+| ``SELECT (SELECT query that returns one value) FROM table  WHERE conditions``  
+
+ ``SELECT columns FROM (SELECT query that retuns multiple rows ) WHERE condition``  
+
+  ``SELECT column_name FROM   tables  WHERE  column_name OPERATOR  (SELECT Query)`` | ``UPDATE table SET column_name = new_value WHERE OPERATOR (SELECT Query)`` | ``INSERT INTO table_name [ (columns..) ]  VALUES (SELECT Query that reurns one value , [val , ...])`` | ``DELETE FROM TABLE_NAME WHERE OPERATOR (SELECT Query)`` |
 <!--## With Select
        SELECT ( SELECT Query that returns one value 
       // Don't forget to make the join condition with the table called in the main select )
@@ -67,7 +71,15 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ## PL/SQL
 
- ``DECLARE``<br /> ``VarName [constant] type [:= val];``<br /> ``BEGIN``<br />``EXCEPTION``<br />``END``
+ ``DECLARE``
+
+ ``VarName [constant] type [:= val];``
+
+ ``BEGIN``
+
+``EXCEPTION``
+
+``END``
 
 ### Functions and Procedures
 
@@ -75,13 +87,67 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 | Oracle                                                                                                                                                                                                                                                                 | PostgreSQL                                                                                                                                                                                                                   |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ``CREATE FUNCTION func_name[(in / out / in out parms)] RETURN returnType AS``<br /> ``DECLARE``<br /> ``VarName [constant] type [:= val];``<br /> ``BEGIN``<br />``-- SELECT must always be used with INTO``<br />``RETURN statement``<br />``EXCEPTION``<br />``END`` | ``CREATE FUNCTION func_name() RETURNS returnType AS $$``<br />``DECLARE``<br />``VarName [constant] type [:= val];``<br /> ``BEGIN``<br />``RETURN statement``<br />``EXCEPTION``<br />``END``<br />``$$ LANGUAGE plpgsql;`` |
+| ``CREATE FUNCTION func_name[(in / out / in out parms)] RETURN returnType AS``
+
+ ``DECLARE``
+
+ ``VarName [constant] type [:= val];``
+
+ ``BEGIN``
+
+``-- SELECT must always be used with INTO``
+
+``RETURN statement``
+
+``EXCEPTION``
+
+``END`` | ``CREATE FUNCTION func_name() RETURNS returnType AS $$``
+
+``DECLARE``
+
+``VarName [constant] type [:= val];``
+
+ ``BEGIN``
+
+``RETURN statement``
+
+``EXCEPTION``
+
+``END``
+
+``$$ LANGUAGE plpgsql;`` |
 
 #### Procedures
   
   | Oracle                                                                                                                                                                                                                                                            | PostgreSQL                                                                                                                                                                       |
   | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-  | ``CREATE procedure proc_name[(in / out / in out parms)] AS``<br /> ``DECLARE``<br /> ``VarName [constant] type [:= val];``<br /> ``BEGIN``<br />``-- SELECT must always be used with INTO``<br />``RETURN statement``<br />``EXCEPTION``<br />``END proc_name;`` | ``CREATE Procedure prod_name() AS $$``<br />``DECLARE``<br />``VarName [constant] type [:= val];``<br /> ``BEGIN``<br />``EXCEPTION``<br />``END``<br />``$$ LANGUAGE plpgsql;`` |
+  | ``CREATE procedure proc_name[(in / out / in out parms)] AS``
+
+ ``DECLARE``
+
+ ``VarName [constant] type [:= val];``
+
+ ``BEGIN``
+
+``-- SELECT must always be used with INTO``
+
+``RETURN statement``
+
+``EXCEPTION``
+
+``END proc_name;`` | ``CREATE Procedure prod_name() AS $$``
+
+``DECLARE``
+
+``VarName [constant] type [:= val];``
+
+ ``BEGIN``
+
+``EXCEPTION``
+
+``END``
+
+``$$ LANGUAGE plpgsql;`` |
 
 - Var Types
   - RECORD, INTEGER , VARCHAR(n) , CHAR ,DATE , DECIMAL ...
@@ -90,9 +156,11 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ### Custom Type
 
-            CREATE TYPE type_name AS (
-            var_name    var_type ,
-              );
+```sql
+CREATE TYPE type_name AS (
+var_name    var_type ,
+  );
+```
 
 - Return Types:
   - INTEGER , VARCHAR(n) , CHAR ,DATE , DECIMAL ...
@@ -100,22 +168,25 @@ Author [@rihemebh](https://github.com/rihemebh)
 
    **Example:**
 
-            CREATE OR REPLACE function cat() RETURNS setof varchar language plpgsql as $$
-            DECLARE 
-              liste CURSOR for SELECT tablename FROM pg_tables where tableowner='root';
-              tablename RECORD ;
-              BEGIN
+```sql
+CREATE OR REPLACE function cat() RETURNS setof varchar language plpgsql as $$
+DECLARE 
+  liste CURSOR for SELECT tablename FROM pg_tables where tableowner='root';
+  tablename RECORD ;
+  BEGIN
 
-              for tablename in liste 
-              loop 
-              return NEXT tablename.tablename ;
-              end loop;
+  for tablename in liste 
+  loop 
+  return NEXT tablename.tablename ;
+  end loop;
 
-              END 
-               $$;
+  END 
+    $$;
+```
 
 ### Triggers
 
+```sql
        CREATE TRIGGER trigger_name
        {BEFORE | AFTER} {INSERT | UPDATE| DELETE } [OF colums]
        ON table_name
@@ -126,22 +197,39 @@ Author [@rihemebh](https://github.com/rihemebh)
         or
         --calling a function (EXECUTE PROCEDURE func_name();) ; 
         this function should RETURN a TRIGGER
+```
 
 ### Cursor
 
 - It helps you store multiple lines and Mange access to them
 
-#### Creation
+#### Cursor Creation
 
 | Oracle                                                                                                                | PostgreSQL                       |
 | --------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
-| ``CURSOR cursorname IS SELECT ..FROM .. WHERE..``<br />``FOR UPDATE/DELETE [OF Column list ]][NOWAIT WAIT duration]`` | ``cursorname CURSOR  FOR Query`` |
+| ``CURSOR cursorname IS SELECT ..FROM .. WHERE..``
+
+``FOR UPDATE/DELETE [OF Column list ]][NOWAIT WAIT duration]`` | ``cursorname CURSOR  FOR Query`` |
 
 #### Iterating Rows
 
 | Oracle                                                                                  | PostgreSQL                                                                                                                    |
 | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| ``FOR record_variable IN cursor_variable`` <br/>``LOOP``<br/>``...``<br/> ``END LOOP;`` | ``LOOP``<br/>``FETCH FROM cursor_variable INTO record_variable;``<br/>``EXIT WHEN NOT FOUND;``<br/>``...``<br />``END LOOP;`` |
+| ``FOR record_variable IN cursor_variable``
+
+``LOOP``
+
+``...``
+
+ ``END LOOP;`` | ``LOOP``
+
+``FETCH FROM cursor_variable INTO record_variable;``
+
+``EXIT WHEN NOT FOUND;``
+
+``...``
+
+``END LOOP;`` |
 
 In PostgreSQL : we should open the Cursor after Declation
 
@@ -149,24 +237,27 @@ In PostgreSQL : we should open the Cursor after Declation
 
 we add exceptions within a PL/SQL bloc :
 
-       DECLARE 
-       -- Variables, curseurs, exceptions définies par l'utilisateur
-       BEGIN *
+```sql
+DECLARE 
+-- Variables, curseurs, exceptions définies par l'utilisateur
+BEGIN *
 
-       -- Instructions 
+-- Instructions 
 
-       EXCEPTION (facultatif)
-       -- Actions à effectuer lorsque des erreurs se produisent
-       END; *
-  -------------------------------------
+EXCEPTION (facultatif)
+-- Actions à effectuer lorsque des erreurs se produisent
+END; 
+```
 
-      EXCEPTION 
-      WHEN DefinedException | costum exception THEN
-      statement;
-      ...
-   
-      WHEN OTHERS THEN
-      statement;
+```sql
+EXCEPTION 
+WHEN DefinedException | costum exception THEN
+statement;
+...
+
+WHEN OTHERS THEN
+statement;
+      ```
 
 - Defined exception
   - NO_DATA_FOUND

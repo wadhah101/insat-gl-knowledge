@@ -298,7 +298,7 @@ This algo could easly be attacked by the Man in the midlle
 
 - By adding b (prove the identity of b) , a will make sure if he is talking with b or with not
 
-![protocol]("assets/The-Needham-Schroeder-Lowe-protocol-with-public-keys.png)
+![protocol](assets/The-Needham-Schroeder-Lowe-protocol-with-public-keys.png)
 
 #### RSA
 

@@ -1,10 +1,9 @@
 # Cheat sheet
 
 Author [@rihemebh](https://github.com/rihemebh)
+**Note that this cheat sheet is not completed yet please make your PR to contribute**
 
-**Note that this cheat sheet is not completed yet please make your PR to contribute** 
-
-## Definitions 
+## Definitions
 
 - **Data Mining** presents the discovery of knowledge (interesting information) from large amounts of data, by automatic methods
 
@@ -20,10 +19,10 @@ Example: hand writing recognition
 
 Data mining is designed to extract the rules from large quantities of data, while machine learning teaches a computer how to learn and comprehend the given parameters
 
-
 ## Methodologies
 
 ### KDD (by Ossama Fayyad - 1996)
+
 KDD knowledge discovery process  is iterative and interactive, comprises of nine steps :
 
  1. **Building up an understanding of the application domain**
@@ -32,9 +31,9 @@ KDD knowledge discovery process  is iterative and interactive, comprises of nine
  3. **Preprocessing and cleansing**
 
  4. **Data Transformation** <br/>
-In this stage, the creation of appropriate data for Data Mining is prepared and developed. Techniques here incorporate dimension reduction( for example, feature    selection and extraction and record sampling), also attribute transformation(for example, discretization of numerical attributes and functional transformation). 
+In this stage, the creation of appropriate data for Data Mining is prepared and developed. Techniques here incorporate dimension reduction( for example, feature    selection and extraction and record sampling), also attribute transformation(for example, discretization of numerical attributes and functional transformation).
  5. **Prediction and description** <br/>
-We are now prepared to decide on which kind of Data Mining to use, for example, classification, regression, clustering, etc. 
+We are now prepared to decide on which kind of Data Mining to use, for example, classification, regression, clustering, etc.
 
  6. **choose the right Data Mining algo**
  7. **Implement the algo**
@@ -83,22 +82,22 @@ Which types are your problem? Regression? Classification? <br/>
 
 ## To know
 
-||Meaning|
-|---|---|
-|Features|predictor variables |
-|Class|Target variable <br/> response variable|
-|Overfitting|e talk about  overfitting when a model has learned too much the particularities of each of the examples provided as an example. It then presents a very high success rate on the training data (which can reach up to 100%), but does not generalize well (less good performance on the test data). |
-|Underfitting|An algorithm that does not learn enough from the learning phase (poor performance on the training set)|
-|Positive|We consider the positive is the less recent case in other words what our task is searching for  <br/> Example: if our task is to pridict the spam emails so the positive is an email is spam |
-|Negative|The more recent case: which is generally the normal case | 
-|True and False positive **TP & FP** |When the model correctly predicts the positive: ***True positive***, else it is called: ***False positive***|
-|True and False negative **TN & FN** |When the model correctly predicts the negative : ***True negative***, else it is called ***False negative***|
+|                                     | Meaning                                                                                                                                                                                                                                                                                             |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Features                            | predictor variables                                                                                                                                                                                                                                                                                 |
+| Class                               | Target variable <br/> response variable                                                                                                                                                                                                                                                             |
+| Overfitting                         | e talk about  overfitting when a model has learned too much the particularities of each of the examples provided as an example. It then presents a very high success rate on the training data (which can reach up to 100%), but does not generalize well (less good performance on the test data). |
+| Underfitting                        | An algorithm that does not learn enough from the learning phase (poor performance on the training set)                                                                                                                                                                                              |
+| Positive                            | We consider the positive is the less recent case in other words what our task is searching for  <br/> Example: if our task is to pridict the spam emails so the positive is an email is spam                                                                                                        |
+| Negative                            | The more recent case: which is generally the normal case                                                                                                                                                                                                                                            |
+| True and False positive **TP & FP** | When the model correctly predicts the positive: ***True positive***, else it is called: ***False positive***                                                                                                                                                                                        |
+| True and False negative **TN & FN** | When the model correctly predicts the negative : ***True negative***, else it is called ***False negative***                                                                                                                                                                                        |
 
 ## Supervised Learning
- 
+
 Supervised learning is a type of machine learning that it is based on labeled or classified dataset to predict the label of new unkonw data.
 
-### How it works ? 
+### How it works ?
 
 Supervised learning uses a training set to teach models to yield the desired output. This training dataset includes inputs and correct outputs, which allow the model to learn over time. The algorithm measures its accuracy through the loss function, adjusting until the error has been sufficiently minimized. (IBM-2020)
 
@@ -113,40 +112,43 @@ When the data that we want to predict is discret (YES/NO , {1,2,3..} ..)
 When the Data that we want to predict is continous (price, distance .. )
 
 ### Libraries to use
+
 - scikit-learn/sklearn
 - TensorFlow
 - keras
 
-
 ### Decision Tree
-// edit to add 
-#### Entropy 
+
+// edit to add
+
+#### Entropy
+
 <img src="assets/entropy.png" />
 
-
-#### Information Gain 
+#### Information Gain
 
 <img src="assets/Gain.png" />
 
-
-### Bagging & Random Forest 
+### Bagging & Random Forest
 
 // edit to add  this part
 
 ### K-NN
 
 Predict the label of a data point by :
-- Looking at the ‘k’ closest labeled data points 
+
+- Looking at the ‘k’ closest labeled data points
 - Taking a majority vote
 
-#### Choosing k : 
+#### Choosing k
+
 - Larger k= smoother decision boundary = less complex model
 - Smaller k=more complex model=can lead to overfitting
 
-
-#### Practice 
+#### Practice
 
 **Fit and predict**
+
 ``` python
 from sklearn.neighbors import KNeighbors
 
@@ -162,6 +164,7 @@ Prediction: [1 1 0]
 ```
 
  **Split and calculate performance with score()**
+
 ```python
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test =    train_test_split(X, y, test_size=0.3, random_state=21, stratify=y)
@@ -177,36 +180,41 @@ knn.score(X_test, y_test)
 
 
 ```
+
 ### Naive bayes
+
 Associate to each new instance the class that has the biggest probability.
 Naive Bayes classifier assumes that the features we use to predict the target are independent and do not affect each other. That’s why it is called naïve.
 
 Bayes Formula: P(class| features) = P(Features|class) * P(class) / P(features) <br/>
-•	P(A|B) is the probability of hypothesis A given the data B. => **posterior** probability. <br/>
-•	P(B|A) is the probability of data B given that the hypothesis A was true. => **Likelihood** probability <br/>
-•	P(A) is the probability of hypothesis A being true (regardless of the data). This is called the prior probability of A. <br/>
-•	P(B) is the probability of the data (regardless of the hypothesis). <br/>
+• P(A|B) is the probability of hypothesis A given the data B. => **posterior** probability. <br/>
+• P(B|A) is the probability of data B given that the hypothesis A was true. => **Likelihood** probability <br/>
+• P(A) is the probability of hypothesis A being true (regardless of the data). This is called the prior probability of A. <br/>
+• P(B) is the probability of the data (regardless of the hypothesis). <br/>
 
-#### How it works? 
+#### How it works?
+
 We will take the example of the famous weather dataset <br />
 
-
-- Create a frequency and likelihood table for Every features against all classes 
+- Create a frequency and likelihood table for Every features against all classes
 <img src="assets/frequency_and_likelihood.png" />
 
 We have 3 rules for the classification <br/>
 
 - **Majority rule**
- 
+
 => We choose the class that has the maximum P(class)  
+
 - **Maximum rule**
 
  => We choose the class that has the maximum P(class|feature)  
+
 - **Bayes rule**
 
  => We choose the class that has the maximum P(class|feature)* P(class)
 
 #### Practice with scikit-learn
+
 ```python
 from sklearn import naive_bayes
 
@@ -222,7 +230,9 @@ predicted_results = nb.predict(irisData.data[:])
 print("Prediction results", predicted_results)
 print("Actual results", irisData.target)
 ```
+
 #### Calculate performance
+
 ```python
 import numpy as np
 # Training
@@ -249,16 +259,18 @@ print("Error using numpy :",np.count_nonzero(P-Y)/len(irisData.data))
 
 print("Accuracy : ",nb.score(irisData.data,Y))
 ```
+
 ### Test
 
 #### Cross Validation
 
-The original sample is divided into k samples, then one of the k samples is selected as the validation set while the k-1 other samples constitute the training set. After learning, a validation performance can be calculated. Then the operation is repeated by selecting another validation sample from among the predefined blocks. 
-At the end of the procedure we thus obtain performance scores, one per block. 
+The original sample is divided into k samples, then one of the k samples is selected as the validation set while the k-1 other samples constitute the training set. After learning, a validation performance can be calculated. Then the operation is repeated by selecting another validation sample from among the predefined blocks.
+At the end of the procedure we thus obtain performance scores, one per block.
 
 The mean and standard deviation of performance scores can be calculated to estimate bias and variance in validation performance.
 
-#### Practice 
+#### Practice
+
 ``` python
 
 from sklearn.model_selection import cross_val_score
@@ -270,81 +282,87 @@ print(cv_results)
 # different performance scores : [ 0.63919994  0.71386698  0.58702344  0.07923081 -0.25294154]
 np.mean(cv_results)
 # the mean result : 0.35327592439587058
-``` 
+```
+
 #### Train Test Split
 
-We split our dataset to 2/3 for training and 1/3 for test 
+We split our dataset to 2/3 for training and 1/3 for test
 
-=>  Calculate performance on a new data 
+=>  Calculate performance on a new data
 
-Why we use it? 
+Why we use it?
 
 - When the dataset is large it is very expensive to use other test methods like cross validation also we have enough data for our model to learn from and test with new data will be more efficient and very close to the real-life performance
 
-
-### Measuring model performance 
+### Measuring model performance
 
  Gerenally our metric is  " **Accuracy** " : The more it is higher the more we have better performance.
- But this isn't the case when we are working with unbalanced datasets when there is significant disparity between the number of positive and negative labels which is the most common case in the real life problems that's why we need to have other metrics 
+ But this isn't the case when we are working with unbalanced datasets when there is significant disparity between the number of positive and negative labels which is the most common case in the real life problems that's why we need to have other metrics
 
-#### Confusion matrix 
+#### Confusion matrix
 
 - It is generally used with binary classification: (True/Flase , Spam/NotSpam .. )
  <img src = "assets/matrix.png" />
 
-|Metric| Meaning|
-|---|---|
-|Accuracy| General metric : Fraction of correct predictions: number of correctly classified instances / total number of instances|
-|Precision|When the cost of false positive is high :   TP/ TP + FP |
-|Recall |When the cost of false negative is high :  TP/ TP + FN |
-|F-Score|A measure that combines precision and recall is their harmonic mean : 𝐹=2∗𝑃𝑟e𝑐𝑖𝑠𝑖𝑜𝑛∗𝑅ecall / Precision+𝑅ecall|
+| Metric    | Meaning                                                                                                                |
+| --------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Accuracy  | General metric : Fraction of correct predictions: number of correctly classified instances / total number of instances |
+| Precision | When the cost of false positive is high :   TP/ TP + FP                                                                |
+| Recall    | When the cost of false negative is high :  TP/ TP + FN                                                                 |
+| F-Score   | A measure that combines precision and recall is their harmonic mean : 𝐹=2∗𝑃𝑟e𝑐𝑖𝑠𝑖𝑜𝑛∗𝑅ecall / Precision+𝑅ecall          |
 
-We should note that it works well with non binary classification: 
+We should note that it works well with non binary classification:
 [See this article for more details](https://towardsdatascience.com/confusion-matrix-for-your-multi-class-machine-learning-model-ff9aa3bf7826)
-
 
 ## Unsupervised learning
 
-Unsupervised learning is based on unlabled data, it uses machine learning algorithms to analyse and cluster those data without human intervention 
+Unsupervised learning is based on unlabled data, it uses machine learning algorithms to analyse and cluster those data without human intervention
 
 **When we need domain expert ?**
 
-Since we are dealing with unlabeled data so the most critical part that need domain expert is the validation of the clusturing 
+Since we are dealing with unlabeled data so the most critical part that need domain expert is the validation of the clusturing
 
 **Clusturing** :
-Clustering is a data mining technique which groups unlabeled data based on their similarities or differences. 
+Clustering is a data mining technique which groups unlabeled data based on their similarities or differences.
 
 We optimize the clusturing by calculating the intercluster (between 2 clusters) + intracluster (within a cluster) distances
 **Similarity**: Similarity is the fact that 2 instances are similar depending on the metric we use.
 The larger the measure, the more similar the points.
-the metric used to calculate similarity is the distance 
-The calculation of the distance depends on the data type: 
+the metric used to calculate similarity is the distance
+The calculation of the distance depends on the data type:
 
-// edit to complete this part 
+// edit to complete this part
 
-|Types |Distance|
-|---|---|
-|continous| 1. Normalisation : transform data into values between [0..1] <br/> <img src="assets/normalisation.PNG" /> <br/>  -- Xif is the value of the feature "f" in the line "i"<br/><br/>   2. Standarisation <br/>   Z-score=   <img src="assets/zscore.PNG" /><br/> where  Sf, mf =  <img src="assets/stand1.PNG" /> <br/><br/> 3. Distance : <br/> - Minkow <br/>  - Menhaten <br/>  - Euclidien|
-|Binary||
-|Nominal||
-|Ordinal||
-|Mixed||
-
+| Types     | Distance                                                                                                                                                                                                                                                                                                                                                                                    |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| continous | 1. Normalisation : transform data into values between [0..1] <br/> <img src="assets/normalisation.PNG" /> <br/>  -- Xif is the value of the feature "f" in the line "i"<br/><br/>   2. Standarisation <br/>   Z-score=   <img src="assets/zscore.PNG" /><br/> where  Sf, mf =  <img src="assets/stand1.PNG" /> <br/><br/> 3. Distance : <br/> - Minkow <br/>  - Menhaten <br/>  - Euclidien |
+| Binary    |                                                                                                                                                                                                                                                                                                                                                                                             |
+| Nominal   |                                                                                                                                                                                                                                                                                                                                                                                             |
+| Ordinal   |                                                                                                                                                                                                                                                                                                                                                                                             |
+| Mixed     |                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ### Clusturing Algorithms
-  #### K-means 
-  //edit to add 
-  #### K-Medoides 
-  //edit to add 
+
+#### K-means
+
+  //edit to add
+
+#### K-Medoides
+
+  //edit to add
+
 ### Hierarchical Algorithms
 
- #### AGNES
- //edit to add 
- #### DIANA
- // edit to add 
- 
- 
-Implementation : https://github.com/rihemebh/ML-Labs/blob/main/unspervised_learning/diana.py
+#### AGNES
 
-### Performance 
-// adit to add 
+ //edit to add
+
+#### DIANA
+
+ // edit to add
+
+Implementation : <https://github.com/rihemebh/ML-Labs/blob/main/unspervised_learning/diana.py>
+
+### Performance
+
+// adit to add

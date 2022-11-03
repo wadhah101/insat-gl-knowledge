@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "arcanis.vscode-zipfs",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "DavidAnson.vscode-markdownlint"
   ]
 }

@@ -48,6 +48,11 @@ const config = async () => {
         "classic",
         /** @type {import('@docusaurus/preset-classic').Options} */
         {
+          sitemap: {
+            changefreq: "daily",
+            priority: 0.5,
+            filename: "sitemap.xml",
+          },
           googleAnalytics: {
             trackingID: "G-XR2Q0GYH0M",
             anonymizeIP: true,

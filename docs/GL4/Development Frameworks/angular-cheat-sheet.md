@@ -4,7 +4,7 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ## Angular
 
-Angular is a Js Framework that supports multiple laguages like ES5, Typescript , dart ... <br />
+Angular is a Js Framework that supports multiple laguages like ES5, Typescript , dart ...
 
 - SPA (Single Page application):
 The single page application is a web application or website that interacts with the user by dynamically rewriting the current page, rather than loading entire new pages from the server.
@@ -61,7 +61,7 @@ We can call a property using :
 #### Event Binding (DOM -> Component)
 
 A one-way binding that allows intercations from the DOM to the components using events Handlers.
-we can call a method using: <br/>
+we can call a method using:
 
 1. on-eventName
 2. (eventName)
@@ -80,9 +80,9 @@ we can call a method using: <br/>
   
 #### Tow-way Binding (DOM <-> Component)
 
-Angular supports two-way data binding that allows interctions from DOM to component and component to DOM using directives **ngModel**   .
+Angular supports two-way data binding that allows interctions from DOM to component and component to DOM using directives **ngModel**.
 
-  <img src="assets/databinding.png"   alt="data-binding" />
+![databinding](assets/databinding.png)
 
 ## Life cycle
 
@@ -92,7 +92,9 @@ Angular supports two-way data binding that allows interctions from DOM to compon
  |Method|description|When it is called|Use Cases
  |---|---|---|---|
  |ngOnChanges()| |When an input/output binding value changes|whenever there is a change in the @Input data property, we can do some more changes in this method by comparing previous and current values.|
- |ngOnInit()|Initilize the component after construction|occurs only one time: After the first ngOnChanges|- fetch data <br/> - Initialize some third party lib|
+ |ngOnInit()|Initilize the component after construction|occurs only one time: After the first ngOnChanges|- fetch data
+
+- Initialize some third party lib|
  |ngDoCheck()|Responsible for Change Detetction|Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run||
  |ngOnDestroy()|Used for clean up| Just before the component is destroyed|The best place to clean up event handlers or any subscriptions|
 
@@ -189,34 +191,35 @@ Angular  has 3 types of Directives :
 
 ### 1. Built-in Attribute Directives
 
-- **ngStyle** : adds and removes a set of HTML styles. <br/>
+- **ngStyle** : adds and removes a set of HTML styles.
 
-      ```html
-       <p [ngStyle]="{'color' : myColor }" ></p>
-      ```
+```html
+  <p [ngStyle]="{'color' : myColor }" ></p>
+```
 
-- **ngClass** : adds and removes a set of CSS classes <br/>
+- **ngClass** : adds and removes a set of CSS classes
 
-      ```typescript
-         private isColoree:boolean=true;
-       ```
+```typescript
+    private isColoree:boolean=true;
+```
 
-      ```html
-         <!--colorer is also a CSS class-->
-         <div [ngClass]="{ colorer : isColoree }" class="encadrer" ></p>
-      ```
+```html
+    <!--colorer is also a CSS class-->
+    <div [ngClass]="{ colorer : isColoree }" class="encadrer" ></p>
+```
 
-- **ngModel** : ndds two-way data binding to an HTML form element. <br/>
-      We need to Import ``FormsModule`` and add it to the NgModule's imports list. <br/>
+- **ngModel** : ndds two-way data binding to an HTML form element.
 
-      ```html
-      <label for="example-ngModel">[(ngModel)]:</label>
-      <input [(ngModel)]="name" id="example-ngModel">
-      ```
+We need to Import ``FormsModule`` and add it to the NgModule's imports list.
 
-      => tow-way binding of th property name
+```html
+<label for="example-ngModel">[(ngModel)]:</label>
+<input [(ngModel)]="name" id="example-ngModel">
+```
 
-### 2. Custom Attribute Directives: <br/>
+=> tow-way binding of th property name
+
+### 2. Custom Attribute Directives
 
 ```typescript
          @Directive({
@@ -233,16 +236,18 @@ Angular  has 3 types of Directives :
       <p appHighlight>Highlight me!</p>
      ```
   
-- **HostBinding** : associate a property to a directive <br />
-         ```typescript
-            @HostBinding('style.backgroundColor')
-             bg:string="red";
+- **HostBinding** : associate a property to a directive
 
+```typescript
+  @HostBinding('style.backgroundColor')
+    bg:string="red";
 ```
-- **HostListener**: associate an event to a directive <br/>
-         ```typescript
-            @HostBinding('style.backgroundColor')
-            bg:string="red";
+
+- **HostListener**: associate an event to a directive
+
+```typescript
+  @HostBinding('style.backgroundColor')
+  bg:string="red";
 ```
 
 ### 3. Structural Directives
@@ -254,37 +259,35 @@ Angular  has 3 types of Directives :
 ## Pipes
 
  Pipes are used in Angular to Format data. It is a class that implements the PipeTransform interface and its ```transform()``` method
-<br/>
+
  You can use predefined Pipes by Angular or create your own one.
 
 - Create a new Pipe :
 
-      ```cmd
-      ng g p <pipe-name>
-      ```
+```console
+ng g p <pipe-name>
+```
 
 - Call the pipe in the template
 
-      ```html
-      {{variableName | PipeName}}
-      <!--Using multiple Pipes -->
-      {{variableName | Pipe1 | Pipe2 |....}}
-      ```
+```html
+{{variableName | PipeName}}
+<!--Using multiple Pipes -->
+{{variableName | Pipe1 | Pipe2 |....}}
+```
 
 ## Services
   
-  Classes decorated by ``@Injectable()`` allowing to encapsulate business processes
+Classes decorated by ``@Injectable()`` allowing to encapsulate business processes
   
-  ```typescript
-  import { Injectable } from '@angular/core';
+```typescript
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HeroService {
-
   constructor() { }
-
 }
   
   ```
@@ -293,12 +296,13 @@ export class HeroService {
   
 ## Routes
 
- Before we start we need to: <br/>
-      1. Create a routing file : ``app.routing.ts``  
-      2. Import the RouteModule <br/>
-      3. Define our routes
-  <br/>
- In the template use : <br/>
+ Before we start we need to:
+
+  1. Create a routing file : ``app.routing.ts``  
+  2. Import the RouteModule
+  3. Define our routes
+  
+ In the template use :
 
  ```html
       <router-outlet></router-outlet>
@@ -367,27 +371,25 @@ PS: Children should be sorted from most specific  to least specific
 - Use the ``<form> </form>`` tag to let angular detect that we are using forms
 - Add ``ngModel`` and name property to tags that you want them to be managed by angular form
 
-   ```html
-
- <input type="text" id="username" class="formcontrol"
- ngModel
- name="username" >
-
-  ```
+```html
+  <input type="text" id="username" class="formcontrol"
+  ngModel
+  name="username" >
+```
 
 - Associate the  form object to a component variable using ``ngForm`` and references using ``#``
 
-     ``` html
-     <form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm">
-     ```
+``` html
+<form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm">
+```
 
-     ```typescript
-       export class TmeplateDrivenComponent{
-   onSubmit(formulaire: NgForm){
-    console.log(formulaire);
-   }
-  }
-    ```
+```typescript
+    export class TmeplateDrivenComponent {
+    onSubmit(formulaire: NgForm){
+      console.log(formulaire);
+    }
+}
+```
 
 ### Validation
 

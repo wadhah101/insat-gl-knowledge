@@ -30,10 +30,12 @@ KDD knowledge discovery process  is iterative and interactive, comprises of nine
 
  3. **Preprocessing and cleansing**
 
- 4. **Data Transformation** <br/>
-In this stage, the creation of appropriate data for Data Mining is prepared and developed. Techniques here incorporate dimension reduction( for example, feature    selection and extraction and record sampling), also attribute transformation(for example, discretization of numerical attributes and functional transformation).
- 5. **Prediction and description** <br/>
-We are now prepared to decide on which kind of Data Mining to use, for example, classification, regression, clustering, etc.
+ 4. **Data Transformation**
+
+    In this stage, the creation of appropriate data for Data Mining is prepared and developed. Techniques here incorporate dimension reduction( for example, feature    selection and extraction and record sampling), also attribute transformation(for example, discretization of numerical attributes and functional transformation).
+ 5. **Prediction and description**
+
+    We are now prepared to decide on which kind of Data Mining to use, for example, classification, regression, clustering, etc.
 
  6. **choose the right Data Mining algo**
  7. **Implement the algo**
@@ -42,41 +44,68 @@ We are now prepared to decide on which kind of Data Mining to use, for example, 
 
 ### SEMMA
 
-1. **Sample** <br/>
-Extracts samples from a large data set, in numbers large enough to contain the important information, but small enough to be quickly manipulated.
+1. **Sample**
 
-2. **Explore** <br/>
-Exploring the data by looking for unforeseen anomalies in order to better understand the data.
-3. **Modify** <br/>
-Modifies data by creating, selecting and transforming variables to focus on the model selection process.
-4. **Model** <br/>
-Models the data by allowing the software to automatically search for a combination of data that reliably predicts the desired outcome
+    Extracts samples from a large data set, in numbers large enough to contain the important information, but small enough to be quickly manipulated.
 
-5. **Assess** <br/>
+2. **Explore**
+
+    Exploring the data by looking for unforeseen anomalies in order to better understand the data.
+
+3. **Modify**
+
+    Modifies data by creating, selecting and transforming variables to focus on the model selection process.
+
+4. **Model**
+
+    Models the data by allowing the software to automatically search for a combination of data that reliably predicts the desired outcome
+
+5. **Assess**
+
 Assesses the usefulness and reliability of the results of the Data Mining process and assesses how it will perform
 
 ### CRISP-DM: CRoss-IndustryStandard Processfor Data Mining (By IBM)
 
-1. **Business Understanding** <br/>
-Essential things to be determined in this phase:<br/>
-· Business Objectives <br/>
-· Data Mining Goals <br/>
-· Definition of project success criteria <br/>
-2. **Data Understanding** <br/>
-Explore the data with the statistical method and data visualization. <br/>
-3. **Data hub building (Data Preparation)** <br/>
-· Select Important Columns <br/>
-· Sampling Rows (Train Test Split, Cross-Validation) <br/>
-· Create or Derives new compound variables <br/>
-· Filter data (Filter Out Irrelevant data points) <br/>
-· Merging data sources (Data Aggregations) <br/>
-· Impute or Remove Missing value <br/>
-· Decide whether to remove or keep Outlier <br/>
-4. **Modelling** <br/>
-Choose the right algorithm for modelling: <br/>
-Are you doing supervised learning or unsupervised learning? <br/>
-Which types are your problem? Regression? Classification? <br/>
--> From there, you can determine your algorithm <br/>
+1. **Business Understanding**
+
+    Essential things to be determined in this phase:
+
+    · Business Objectives
+
+    · Data Mining Goals
+
+    · Definition of project success criteria
+
+2. **Data Understanding**
+
+    Explore the data with the statistical method and data visualization.
+
+3. **Data hub building (Data Preparation)**
+
+    · Select Important Columns
+
+    · Sampling Rows (Train Test Split, Cross-Validation)
+
+    · Create or Derives new compound variables
+
+    · Filter data (Filter Out Irrelevant data points)
+
+    · Merging data sources (Data Aggregations)
+
+    · Impute or Remove Missing value
+
+    · Decide whether to remove or keep Outlier
+
+4. **Modelling**
+
+    Choose the right algorithm for modelling:
+
+    Are you doing supervised learning or unsupervised learning?
+
+    Which types are your problem? Regression? Classification?
+
+    -> From there, you can determine your algorithm
+
 5. **Evaluation**
 6. **Deployment**
 
@@ -85,10 +114,14 @@ Which types are your problem? Regression? Classification? <br/>
 |                                     | Meaning                                                                                                                                                                                                                                                                                             |
 | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Features                            | predictor variables                                                                                                                                                                                                                                                                                 |
-| Class                               | Target variable <br/> response variable                                                                                                                                                                                                                                                             |
+| Class                               | Target variable
+
+ response variable                                                                                                                                                                                                                                                             |
 | Overfitting                         | e talk about  overfitting when a model has learned too much the particularities of each of the examples provided as an example. It then presents a very high success rate on the training data (which can reach up to 100%), but does not generalize well (less good performance on the test data). |
 | Underfitting                        | An algorithm that does not learn enough from the learning phase (poor performance on the training set)                                                                                                                                                                                              |
-| Positive                            | We consider the positive is the less recent case in other words what our task is searching for  <br/> Example: if our task is to pridict the spam emails so the positive is an email is spam                                                                                                        |
+| Positive                            | We consider the positive is the less recent case in other words what our task is searching for  
+
+ Example: if our task is to pridict the spam emails so the positive is an email is spam                                                                                                        |
 | Negative                            | The more recent case: which is generally the normal case                                                                                                                                                                                                                                            |
 | True and False positive **TP & FP** | When the model correctly predicts the positive: ***True positive***, else it is called: ***False positive***                                                                                                                                                                                        |
 | True and False negative **TN & FN** | When the model correctly predicts the negative : ***True negative***, else it is called ***False negative***                                                                                                                                                                                        |
@@ -123,11 +156,11 @@ When the Data that we want to predict is continous (price, distance .. )
 
 #### Entropy
 
-<img src="assets/entropy.png" />
+![entropy](assets/entropy.png)
 
 #### Information Gain
 
-<img src="assets/Gain.png" />
+![Gain](assets/Gain.png)
 
 ### Bagging & Random Forest
 
@@ -147,7 +180,7 @@ Predict the label of a data point by :
 
 #### Practice
 
-**Fit and predict**
+  Fit and predict
 
 ``` python
 from sklearn.neighbors import KNeighbors
@@ -163,7 +196,7 @@ print('Prediction: {}’.format(prediction))
 Prediction: [1 1 0]
 ```
 
- **Split and calculate performance with score()**
+  Split and calculate performance with score()
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -186,20 +219,25 @@ knn.score(X_test, y_test)
 Associate to each new instance the class that has the biggest probability.
 Naive Bayes classifier assumes that the features we use to predict the target are independent and do not affect each other. That’s why it is called naïve.
 
-Bayes Formula: P(class| features) = P(Features|class) * P(class) / P(features) <br/>
-• P(A|B) is the probability of hypothesis A given the data B. => **posterior** probability. <br/>
-• P(B|A) is the probability of data B given that the hypothesis A was true. => **Likelihood** probability <br/>
-• P(A) is the probability of hypothesis A being true (regardless of the data). This is called the prior probability of A. <br/>
-• P(B) is the probability of the data (regardless of the hypothesis). <br/>
+Bayes Formula: P(class| features) = P(Features|class) * P(class) / P(features)
+
+• P(A|B) is the probability of hypothesis A given the data B. => **posterior** probability.
+
+• P(B|A) is the probability of data B given that the hypothesis A was true. => **Likelihood** probability
+
+• P(A) is the probability of hypothesis A being true (regardless of the data). This is called the prior probability of A.
+
+• P(B) is the probability of the data (regardless of the hypothesis).
 
 #### How it works?
 
-We will take the example of the famous weather dataset <br />
+We will take the example of the famous weather dataset
 
 - Create a frequency and likelihood table for Every features against all classes
-<img src="assets/frequency_and_likelihood.png" />
 
-We have 3 rules for the classification <br/>
+![frequency_and_likelihood](assets/frequency_and_likelihood.png)
+
+We have 3 rules for the classification
 
 - **Majority rule**
 
@@ -269,7 +307,7 @@ At the end of the procedure we thus obtain performance scores, one per block.
 
 The mean and standard deviation of performance scores can be calculated to estimate bias and variance in validation performance.
 
-#### Practice
+#### Cross Validation Practice
 
 ``` python
 
@@ -302,7 +340,8 @@ Why we use it?
 #### Confusion matrix
 
 - It is generally used with binary classification: (True/Flase , Spam/NotSpam .. )
- <img src = "assets/matrix.png" />
+
+![matrix](assets/matrix.png)
 
 | Metric    | Meaning                                                                                                                |
 | --------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -335,7 +374,25 @@ The calculation of the distance depends on the data type:
 
 | Types     | Distance                                                                                                                                                                                                                                                                                                                                                                                    |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| continous | 1. Normalisation : transform data into values between [0..1] <br/> <img src="assets/normalisation.PNG" /> <br/>  -- Xif is the value of the feature "f" in the line "i"<br/><br/>   2. Standarisation <br/>   Z-score=   <img src="assets/zscore.PNG" /><br/> where  Sf, mf =  <img src="assets/stand1.PNG" /> <br/><br/> 3. Distance : <br/> - Minkow <br/>  - Menhaten <br/>  - Euclidien |
+| continous | 1. Normalisation : transform data into values between [0..1]
+
+![normalisation](assets/normalisation.PNG)
+
+  -- Xif is the value of the feature "f" in the line "i"
+
+   1. Standarisation
+
+   Z-score=   ![zscore](assets/zscore.PNG)
+
+ where  Sf, mf = ![stand1](assets/stand1.PNG)
+
+ 1. Distance :
+
+- Minkow
+
+- Menhaten
+
+- Euclidien |
 | Binary    |                                                                                                                                                                                                                                                                                                                                                                                             |
 | Nominal   |                                                                                                                                                                                                                                                                                                                                                                                             |
 | Ordinal   |                                                                                                                                                                                                                                                                                                                                                                                             |

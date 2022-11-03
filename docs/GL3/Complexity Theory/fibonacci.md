@@ -4,13 +4,11 @@
 
 Given an integer $n$, calculate the $n^\text{th}$ term of the Fibonacci sequence $F_n$.
 
-$F_n$ is defined by: 
+$F_n$ is defined by:
 
 - $F_0=0$
 - $F_1=1$
 - $\forall n>1,\quad F_{n}=F_{n-1}+F_{n-2}$
-
-
 
 ## 2. Naive Solution
 
@@ -77,9 +75,6 @@ We can do even more than that, using more advanced techniques, it can be establi
 $$
 T_n=\Theta\left(\left(\frac{1+\sqrt 5}{2}\right)^n\right)
 $$
-
-
-
 
 ## 3. Better Solution
 
@@ -154,4 +149,3 @@ We have $p=q=r=2$. So we have the complexity of `fibonacci` is
 $$
 T_n=\mathcal{O}(p^3\log n+pq)=\mathcal{O}(8\log n+4)=\mathcal{O}(\log n)
 $$
-

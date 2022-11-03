@@ -1,4 +1,5 @@
 # Design Patterns
+
 Author [@rihemebh](https://github.com/rihemebh)
 
 ### Creational Pattern
@@ -17,7 +18,7 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 [Adapter](https://www.notion.so/Adapter-9922697f875649829f3c30422f97a823)
 
-[Facade ](https://www.notion.so/Facade-0839e6c5d58c4999a0c956c2c4b9d10c)
+[Facade](https://www.notion.so/Facade-0839e6c5d58c4999a0c956c2c4b9d10c)
 
 [Composite](https://www.notion.so/Composite-fb8571b0bd0e40d1a4defb60c86e25d9)
 
@@ -29,7 +30,7 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ### Behavioral Pattern
 
-[Template ](https://www.notion.so/Template-94028059c85b4f9381833677eb0e5bae)
+[Template](https://www.notion.so/Template-94028059c85b4f9381833677eb0e5bae)
 
 [State](https://www.notion.so/State-7addd26ca8af4929b636a4fcc773e19d)
 
@@ -41,14 +42,13 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 [command](https://www.notion.so/command-13b7509dad9c43e8aea420df9a48ef90)
 
-[Visitor ](https://www.notion.so/Visitor-b25e4702e0c44404ae1d3f56e2b47059)
+[Visitor](https://www.notion.so/Visitor-b25e4702e0c44404ae1d3f56e2b47059)
 
 [Iterator](https://www.notion.so/Iterator-272f6a5833af4d87b7b730549c327049)
 
 [Memento](https://www.notion.so/Memento-2002b540166c4ed9b96217d6d50506b8)
 
 [Mediator](https://www.notion.so/Mediator-ea7b25c7963947cdb2e63ab4c93e3137)
-
 
 ## Resources
 

@@ -4,8 +4,6 @@
 
 Complexity Theory is a sub-field of computer science in which we will estimate algorithm costs  mathematically and independently from the underlying hardware
 
-
-
 ## 2. Model of computation
 
 ### 2.1 Definition
@@ -30,10 +28,6 @@ Using the model $\mathcal{M}$, any algorithm can be decomposed into one of the e
 To simplify the analysis, we can require that the cost of each  elementary instruction is $1$
 
 ### 2.3 Example
-
-
-
-
 
 ## 3. Big $\mathcal{O}$-Notation
 
@@ -66,8 +60,6 @@ $$
 | Scaling        | $f=\mathcal{O}(g) \implies f=\mathcal{O}(k\cdot g) \quad \forall k\in\mathbb{R}_+^*$ | Remove constants          |
 | Product        | $\begin{cases} f_1=\mathcal{O}(g_1) \\ f_2=\mathcal{O}(g_2)\end{cases} \implies f_1f_2=\mathcal{O}(g_1g_2)$ | Simplify products         |
 | Cumulative Sum | $f \ \text{increasing} \implies \sum_{i=1}^nf(i)=\mathcal{O}\left(\int_{1}^{n+1} f(x)dx\right)$ |                           |
-
-
 
 ## 4. Big $\Omega$-Notation
 
@@ -102,8 +94,6 @@ $$
 | Cumulative Sum | $f \ \text{increasing} \implies \sum_{i=1}^nf(i)=\Omega\left(\int_{1}^{n} f(x)dx\right)$ |                           |
 | Duality        | $f=\mathcal{O}(g) \iff g=\Omega(f)$                          |                           |
 
-
-
 ## 5. Big $\Theta$- Notation
 
 ### 5.1 Mathematical Definition
@@ -113,8 +103,6 @@ $$
 Let $f,g\in\mathscr{F}(\mathbb{R}_+,\mathbb{R}_+)$ be two real valued functions with positive values.
 
 By definition, we say that $f=\Theta(g)$  if $f=\mathcal{O}(g)$ and $f=\Omega(g)$
-
-
 
 ## 6. Examples
 
@@ -127,4 +115,3 @@ By definition, we say that $f=\Theta(g)$  if $f=\mathcal{O}(g)$ and $f=\Omega(g)
 | $f(n)=\exp(\sin^2 n^{10})+ n^2$ | $\mathcal{O}(n^2)$        | $\Omega(n^2)$       | $\Theta(n^2)$ |
 | $f(n)=\sum_{k=1}^n3^k$          | $\mathcal{O}(3^n)$        | $\Omega(3^n)$       | $\Theta(3^n)$ |
 | $f(n)=\exp(n^2(\sin n+2))$      | $\mathcal{O}(\exp(3n^2))$ | $\Omega(\exp(n^2))$ |               |
-

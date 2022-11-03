@@ -12,17 +12,13 @@ Our proposed definition, while simple, cannot deal with these scenarios. And so,
 
 Finally, it is possible that the input itself follows some probability distribution, on which the algorithmic definitions maybe a little bit pessimistic. And with that we will introduce a definition for average case complexity
 
-
-
 This section is very technical, and is intended only for those who can understand even the tiniest details. This chapter is as optional as it gets :smile:.
-
-
 
 ## 2. Deterministic Algorithm
 
 ### 2.1 Introduction
 
-We will start by deterministic algorithms, as they are the easiest to model. 
+We will start by deterministic algorithms, as they are the easiest to model.
 
 A deterministic algorithm is an algorithm that gives the same output for the same input.
 
@@ -42,8 +38,6 @@ $$
 C_\mathcal{A} =\mathcal{O}(g)
 $$
 
-
-
 ### 2.2 $\Omega$ Notation
 
 By definition, we say that $\mathcal{A}$ has time complexity bound from below by g if:
@@ -51,17 +45,15 @@ $$
 C_\mathcal{A} =\Omega(g)
 $$
 
-#### Example 1:
+#### Example 1
 
 ```python
 def sum(arr: Array[int]):
-	S=0
+ S=0
     for a in arr:
         S+=a
     return S
 ```
-
-
 
 - $\mathcal{S}(\texttt{arr}) = \text{length}(\texttt{arr})$
 
@@ -79,8 +71,6 @@ C_{\texttt{sum}}=\mathcal{O}(n)\\
 C_{\texttt{sum}}=\Omega(n)
 \end{cases} \implies C_{\texttt{sum}}=\Theta(n)
 $$
-
-
 
 ## 3. Non-Deterministic Algorithm
 
@@ -105,8 +95,6 @@ $$
   It is maximum number of elementary instructions executed while working on input with size $\le x$ executed on the best path
 
 - Let $g\in\mathscr{F}(\mathbb{R}_+,\mathbb{R}_+)$ some real valued function that is eventually strictly positive
-
-
 
 ## 4. Randomised Algorithm
 
@@ -134,9 +122,7 @@ In many cases, for every input $X$, the non-deterministic algorithm will have a 
 
 - Let $g\in\mathscr{F}(\mathbb{R}_+,\mathbb{R}_+)$ some real valued function that is eventually strictly positive
 
-
-
-## 5. Deterministic Average Case Complexity 
+## 5. Deterministic Average Case Complexity
 
 ### 5.1 Introduction
 
@@ -144,7 +130,7 @@ In many cases, the input itself will follow some distribution $\mathcal{D}.$
 
 In that case, doing a supremum over all inputs of size $\le x$  is a pessimistic measure of complexity.
 
-With the knowledge of $\mathcal{D},$ we can estimate the average case complexity 
+With the knowledge of $\mathcal{D},$ we can estimate the average case complexity
 
 ### 5.2 Notations
 
@@ -159,17 +145,13 @@ $$
 \tilde{C}_{\mathcal{A}}(x)=\sup_{r\le x} \mathbb{E}\big[E(\mathcal{A},\mathcal{X}) \mid S(\mathcal{X})=r\big]
 $$
 
-### 5.4 Averaging over all Inputs 
+### 5.4 Averaging over all Inputs
 
 $$
 \tilde{C}_{\mathcal{A}}(x)=\mathbb{E}\big[E(\mathcal{A},\mathcal{X}) \mid S(\mathcal{X})\le x\big]
 $$
 
-
-
-
-
-## 6. Non-Deterministic Average Case Complexity 
+## 6. Non-Deterministic Average Case Complexity
 
 ### 6.1 Introduction
 
@@ -177,7 +159,7 @@ In many cases, the input itself will follow some distribution $\mathcal{D}.$
 
 In that case, doing a supremum over all inputs of size $\le x$  is a pessimistic measure of complexity.
 
-With the knowledge of $\mathcal{D},$ we can estimate the average case complexity 
+With the knowledge of $\mathcal{D},$ we can estimate the average case complexity
 
 ### 6.2 Notations
 
@@ -226,11 +208,7 @@ C^{W}_{\mathcal{A}}(x)
 =\mathbb{E}\left[\inf_{p\in\mathscr{P}(\mathcal{A},\mathcal{X})}E(p) \mid S(\mathcal{X})\le x\right]
 $$
 
-
-
-
-
-## 7. Non-Deterministic Average Case Complexity 
+## 7. Non-Deterministic Average Case Complexity
 
 ### 7.1 Introduction
 
@@ -238,7 +216,7 @@ In many cases, the input itself will follow some distribution $\mathcal{D}.$
 
 In that case, doing a supremum over all inputs of size $\le x$  is a pessimistic measure of complexity.
 
-With the knowledge of $\mathcal{D},$ we can estimate the average case complexity 
+With the knowledge of $\mathcal{D},$ we can estimate the average case complexity
 
 ### 7.2 Notations
 
@@ -263,4 +241,3 @@ $$
 C^{W}_{\mathcal{A}}(x)
 = \mathbb{E}_{\mathcal{X}}\left[\mathbb{E}_{\Phi}\left[E(\Phi(\mathcal{X}))\right] \mid S(\mathcal{X})\le x\right]
 $$
-

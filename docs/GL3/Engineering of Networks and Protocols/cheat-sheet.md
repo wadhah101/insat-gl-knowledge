@@ -1,5 +1,7 @@
 # Cheat Sheet
 
+Autho [@wadhah101](https://github.com/wadhah101)
+
 ## conditions
 
 if no instruction is executable "if" blocks

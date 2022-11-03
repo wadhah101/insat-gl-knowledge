@@ -13,17 +13,17 @@ npm i -g @nestjs/cli
 ### New Project
 
 ```console
-    nest new <project-name>
+nest new <project-name>
 ```
 
 ### launch project
 
 ```console
-    npm run start:dev
+npm run start:dev
 ```
 
 ```console
-    nest start –watch
+nest start –watch
 ```
 
 ## Module
@@ -65,7 +65,6 @@ A route will identify the uri associated to an action.
 
 ```js
 @Get('uri/:param/:param1?')
-
 ```
 
 ***Param?*** : Means that this parameter is optional
@@ -151,7 +150,7 @@ This shorthand allows us to both declare and initialize the catsService member i
  In some very specific cases, property-based injection might be useful. For instance, if your top-level class depends on either one or multiple providers, passing them all the way up by calling ``super()`` in sub-classes from the constructor can be very tedious. In order to avoid this, you can use the ``@Inject()`` decorator at the property level.
 
  ```typescript
- @Injectable()
+@Injectable()
 export class HttpService<T> {
   @Inject('HTTP_OPTIONS')
   private readonly httpClient: T;

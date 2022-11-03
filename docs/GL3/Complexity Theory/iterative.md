@@ -142,7 +142,7 @@ $$
 \begin{align*}
 \sum_{k\in S_1}f_1(k)
 &=\mathcal{O}\left(\sum_{k\in S_1}\frac{n}{k}\right) \\
-\sum_{k\in S_1} \frac{n}{k}&=\sum_{s\in\mathbb{N} \and 2^s\le n } \frac{n}{2^s}\\
+\sum_{k\in S_1} \frac{n}{k}&=\sum_{s\in\mathbb{N} \wedge 2^s\le n } \frac{n}{2^s}\\
 &\le \sum_{s\in\mathbb{N}}\frac{n}{2^s}\\
 &\le n \sum_{s\in\mathbb{N}}\frac{1}{2^s}\\
 &\le 2n \\

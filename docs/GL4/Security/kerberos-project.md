@@ -139,7 +139,7 @@ addprinc -randkey host/server.insat.tn
 ktadd host/server.insat.tn  
 ```
 
-- Install Flask and Flask-Kerberos with pip 
+- Install Flask and Flask-Kerberos with pip
 
 ```console
 pip install flask

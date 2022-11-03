@@ -220,6 +220,7 @@ A Middleware could be a class or a function
             }
            }
         ```
+
   -
 
 - Function : create a function that accepts ``Request`` , ``Response`` and the ``Next`` method.
@@ -383,6 +384,7 @@ new ExcludNullInterceptor() );
   Example :
 
   ```typescript
+
  import { ArgumentsHost, Catch, ExceptionFilter, HttpException } from '@nestjs/common';
 import { Request, Response } from 'express';
 @Catch(HttpException)
@@ -404,6 +406,7 @@ catch(exception: HttpException, host: ArgumentsHost): any {
   
 return response;
 }
+
   ```
 
 - Make this filter global for all requests by

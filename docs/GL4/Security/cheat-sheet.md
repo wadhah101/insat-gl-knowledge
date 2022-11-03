@@ -139,6 +139,7 @@ Use one shared encryption key between sender and receiver.
      ```
      gpg -c <filename>
      ```
+
   - ASCII format
 
      ```

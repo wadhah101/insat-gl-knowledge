@@ -1,5 +1,7 @@
 # Advanced SQL
+
 Author [@rihemebh](https://github.com/rihemebh)
+
 ## Nested Queries
 
 | With Select                                                                                                                                                                                                                                                                         | With Update                                                                | With Insert                                                                                           | With Delete                                              |

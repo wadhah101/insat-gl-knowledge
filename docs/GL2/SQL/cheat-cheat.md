@@ -14,15 +14,17 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ### ROLES
 
-- ``
+- ```sql
     CREATE ROLE role_name;
-``
-- ``
+  ```
+
+- ```sql
    GRANT previlege ON table TO role;
-``
-- ``
- GRANT role TO user;
-``
+  ```
+
+- ```sql
+  GRANT role TO user;
+  ```
 
 ## Managing Tables
 
@@ -55,7 +57,7 @@ Author [@rihemebh](https://github.com/rihemebh)
     - ``DATE``
     - ``DATETIME``
 
-##### FIND MORE: `https://www.w3schools.com/sql/sql_datatypes.asp`
+#### FIND MORE: `https://www.w3schools.com/sql/sql_datatypes.asp`
 
 ### Modification
 
@@ -78,13 +80,15 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ### SELECT
 
-     SELECT {DISTINCT | ALL} columns
-     FROM tables 
-     WHERE conditions
-     GROUP BY columns 
-     HAVING conditions
-     [UNION | INTERSECT | MINUS <sub-Query>]
-     ORDER BY columns 
+```sql
+  SELECT {DISTINCT | ALL} columns
+  FROM tables 
+  WHERE conditions
+  GROUP BY columns 
+  HAVING conditions
+  [UNION | INTERSECT | MINUS <sub-Query>]
+  ORDER BY columns 
+```
 
 #### Operations can be used in ``WHERE`` and ``HAVING`` clause
 
@@ -109,16 +113,20 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ### UPDATE
 
-- ``
+- ```sql
   UPDATE table
   SET changes
   WHERE condition
-  ``
+  ```
 
 ### INSERT
 
-- ``INSET INTO table_name (col1, col2, ...) VALUES (val1, val2 ,...);``
+- ```sql
+  INSERT INTO table_name (col1, col2, ...) VALUES (val1, val2 ,...);
+  ```
 
 ### DELETE
 
-- ``DELETE FROM table_name WHERE condition``
+- ```sql
+  DELETE FROM table_name WHERE condition
+  ```

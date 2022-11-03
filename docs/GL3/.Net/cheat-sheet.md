@@ -1,5 +1,7 @@
 # .Net cheat sheets
 
+Author [@rihemebh](https://github.com/rihemebh)
+
 ## [.NET framework vs Core vs Standard](https://www.linkedin.com/posts/rihemebenhassan_net-framework-vs-core-vs-standard-activity-6804365749277274112-b6Ah)
 
     .Net Framework and  .Net Core are two different .Net Runtime implementation .

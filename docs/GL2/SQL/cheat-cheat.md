@@ -1,33 +1,32 @@
 
-# Managing Users
+# SQL Introduction
+
+Author [@rihemebh](https://github.com/rihemebh)
+
+## Managing Users
 
 - ``GRANT privileges ON table TO user (PUBLIC) [WITH GRANT OPTION ]``
 - ``REVOKE privileges ON table FROM user``
 - Privileges:
 
-| ``ALL PREVILEGES`` | ``UPDATE (columns)`` | ``SELECT (columns)`` | ``INSERT (columns)`` | ``DELETE (columns)`` | ``ALTER (columns)`` | ``INDEX`` |
-| ------------------ | -------------------- | -------------------- | -------------------- | -------------------- | ------------------- | --------- |
+|``ALL PREVILEGES``|``UPDATE (columns)``|``SELECT (columns)``|``INSERT (columns)``|``DELETE (columns)``|``ALTER (columns)``| ``INDEX``|
+| --- | --- | --- | --- | --- | --- | --- |
 
-## ROLES
+### ROLES
 
-```sql
+- ``
     CREATE ROLE role_name;
-
-```
-
-```sql
+``
+- ``
    GRANT previlege ON table TO role;
-```
-
-```sql
-
+``
+- ``
  GRANT role TO user;
+``
 
-```
+## Managing Tables
 
-# Managing Tables
-
-## Creation
+### Creation
 
 - ``CREATE TABLE table_name ( column_name  [TYPE] [COLUMN_CONSTRAINT]  , [TABLE CONSTRAINT] [REFRENTIAL CONSTAINT]);``
 
@@ -56,9 +55,9 @@
     - ``DATE``
     - ``DATETIME``
 
-### FIND MORE: `https://www.w3schools.com/sql/sql_datatypes.asp`
+##### FIND MORE: `https://www.w3schools.com/sql/sql_datatypes.asp`
 
-## Modification
+### Modification
 
 - ``ALTER TABLE table_name [OPERATION];``
 
@@ -71,15 +70,14 @@
     - ``ADD CONSTRAINT`` constraint_details
     - ``MODIFY COLUMN`` column_name
 
-## Delete
+### Delete
 
 - ``DROP TABLE Table_name {CASCADE CONSTRAINT | RESTRICT };``
 
-# Managing Data
+## Managing Data
 
-## SELECT
+### SELECT
 
-```sql
      SELECT {DISTINCT | ALL} columns
      FROM tables 
      WHERE conditions
@@ -87,19 +85,18 @@
      HAVING conditions
      [UNION | INTERSECT | MINUS <sub-Query>]
      ORDER BY columns 
-```
 
-### Operations can be used in ``WHERE`` and ``HAVING`` clause
+#### Operations can be used in ``WHERE`` and ``HAVING`` clause
 
- | < , > , = ,<= , >= | LIKE | IS NULL | IN (va1, val) | BETWEEN n1 AND n2 |
- | ------------------ | ---- | ------- | ------------- | ----------------- |
+ |< , > , = ,<= , >= |LIKE|IS NULL|IN (va1, val)|BETWEEN n1 AND n2|
+ | --- | --- | --- | --- | --- |
   
-### Functions can be used in ``SELECT`` statement, ``WHERE`` and ``ORDER BY`` clause
+#### Functions can be used in ``SELECT`` statement, ``WHERE`` and ``ORDER BY`` clause
 
 1 - **Multiple-Row Functions** : Aggregate Functions
 
- | SUM | AVG | MIN | MAX | COUNT |
- | --- | --- | --- | --- | ----- |
+ | SUM|AVG|MIN|MAX|COUNT|
+ | --- | --- | --- | --- | --- |
 
 2  - **Single-Row functions**
 
@@ -110,7 +107,7 @@
 
   See More : <https://docs.oracle.com/database/121/SQLRF/functions002.htm#SQLRF51178>
 
-## UPDATE
+### UPDATE
 
 - ``
   UPDATE table
@@ -118,10 +115,10 @@
   WHERE condition
   ``
 
-## INSERT
+### INSERT
 
 - ``INSET INTO table_name (col1, col2, ...) VALUES (val1, val2 ,...);``
 
-## DELETE
+### DELETE
 
 - ``DELETE FROM table_name WHERE condition``

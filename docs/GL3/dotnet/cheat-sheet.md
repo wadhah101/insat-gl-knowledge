@@ -1,4 +1,4 @@
-# .Net cheat sheets
+# .Net 
 
 Author [@rihemebh](https://github.com/rihemebh)
 

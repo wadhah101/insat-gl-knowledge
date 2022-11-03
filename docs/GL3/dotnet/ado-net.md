@@ -13,9 +13,7 @@ Author [@rihemebh](https://github.com/rihemebh)
     
 ## Connected Mode 
 
-
 ``SqlConnection`` : It is used to establish a connection to a specific data source
-
 
  ``SqlCommand`` : It is used to execute queries to perform database operations
  
@@ -34,10 +32,6 @@ Author [@rihemebh](https://github.com/rihemebh)
  ``DataSet``: It is used to initialize a new instance of the DataSet class
  
  
-
-## Architecture
-<img src="https://www.researchgate.net/profile/Syed-Rahman-5/publication/228997568/figure/fig1/AS:393865853980679@1470916345540/ADONET-Architecture.png" alt="archi" width="480" height="300"/>
-
 
 ## Stored Procedures 
 
@@ -168,26 +162,13 @@ Entity framework Code First had different database initialization strategies pri
 ##### Automated Migrations : 
 
   In your package manager tap those cmd: 
-  <br />
-      `` > enable- migrations``
-   <br />
-   ``> add-migration <migration name>``
-   
-     this will create a migration for you that has 2 methods : 
-  
+  -  **enable-migrations**
+  -  **add-migration "migration_name"** : this will create a migration for you that has 2 methods 
         - up() contains all the sql queries of the changes that you made 
         - down() : contains the opposite of the up() method 
-    
-   
- 
- 
-``> update-database ``
-<br />
-This helps you add all the updates to your server 
+ - **update-database** :This helps you add all the updates to your server 
 
 
-
-------------------------------------------------------------------
 
 ### EDM  
 
@@ -196,6 +177,8 @@ This helps you add all the updates to your server
     -  **EntitySet** : Container for EntityType (like the db table)
     -  **EntityType** : datatype in the model
     -  **AssociationSet** : Defines the relation between each entityset
+
+
 #### Quering with EDM
 - LinQ to Entity 
    - LinQ Method 
@@ -296,4 +279,6 @@ dbCtx.SaveChanges();
     context.SaveChanges();
     }
   ```
+
+
   

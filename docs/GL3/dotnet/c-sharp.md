@@ -1,4 +1,4 @@
-# Chapter 1 : Hello, C#! welcome, .NET
+# C# and .NET
 
 ## Understanding .NET
 

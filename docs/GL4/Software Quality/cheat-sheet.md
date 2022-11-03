@@ -124,5 +124,5 @@ public void test()
 ```
 
 ### Order of execution
+![execution](assets/order_of_execution.PNG)
 
-<img src="assets/order_of_execution.PNG"  />

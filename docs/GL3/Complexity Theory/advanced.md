@@ -14,7 +14,7 @@ Finally, it is possible that the input itself follows some probability distribut
 
 
 
-This section is very technical, and is intended only for those who can be bothered by the tiniest details. And is not required for this this course :smile:
+This section is very technical, and is intended only for those who can understand even the tiniest details. This chapter is as optional as it gets :smile:.
 
 
 

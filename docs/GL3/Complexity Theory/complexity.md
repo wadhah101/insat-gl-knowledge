@@ -118,13 +118,13 @@ By definition, we say that $f=\Theta(g)$  if $f=\mathcal{O}(g)$ and $f=\Omega(g)
 
 ## 6. Examples
 
-| Function                        | Big $\mathcal{O}$         | Big $\Omega$        | Big $\Theta$ |
-| ------------------------------- | ------------------------- | ------------------- | ------------ |
-| $f(n)=n^5+10n-50$               | $\mathcal{O}(n^5)$        | $\Omega(n^5)$       |              |
-| $f(n)= n-\frac{1}{n}$           | $\mathcal{O}(n)$          | $\Omega(n)$         |              |
-| $f(n)= e^n-n$                   | $\mathcal{O}(e^n)$        | $\Omega(e^n)$       |              |
-| $f(n)=\sin n$                   | $\mathcal{O}(1)$          | $\Omega(1)$         |              |
-| $f(n)=\exp(\sin^2 n^{10})+ n^2$ | $\mathcal{O}(n^2)$        | $\Omega(n^2)$       |              |
-| $f(n)=\sum_{k=1}^n3^k$          | $\mathcal{O}(3^n)$        | $\Omega(3^n)$       |              |
-| $f(n)=\exp(n^2(\sin n+2))$      | $\mathcal{O}(\exp(3n^2))$ | $\Omega(\exp(n^2))$ |              |
+| Function                        | Big $\mathcal{O}$         | Big $\Omega$        | Big $\Theta$  |
+| ------------------------------- | ------------------------- | ------------------- | ------------- |
+| $f(n)=n^5+10n-50$               | $\mathcal{O}(n^5)$        | $\Omega(n^5)$       | $\Theta(n^5)$ |
+| $f(n)= n-\frac{1}{n}$           | $\mathcal{O}(n)$          | $\Omega(n)$         | $\Theta(n)$   |
+| $f(n)= e^n-n$                   | $\mathcal{O}(e^n)$        | $\Omega(e^n)$       | $\Theta(e^n)$ |
+| $f(n)=2+\sin n$                 | $\mathcal{O}(1)$          | $\Omega(1)$         | $\Theta(1)$   |
+| $f(n)=\exp(\sin^2 n^{10})+ n^2$ | $\mathcal{O}(n^2)$        | $\Omega(n^2)$       | $\Theta(n^2)$ |
+| $f(n)=\sum_{k=1}^n3^k$          | $\mathcal{O}(3^n)$        | $\Omega(3^n)$       | $\Theta(3^n)$ |
+| $f(n)=\exp(n^2(\sin n+2))$      | $\mathcal{O}(\exp(3n^2))$ | $\Omega(\exp(n^2))$ |               |
 

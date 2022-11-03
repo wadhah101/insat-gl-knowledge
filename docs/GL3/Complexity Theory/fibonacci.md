@@ -47,11 +47,11 @@ We also have for some fixed $K>0$:
 $$
 T_n\le T_{n-1}+T_{n-2} +K
 $$
-We can prove by recursion that:
+We can prove by induction that:
 $$
 T_n\le (1+Kn)F_{n+1}
 $$
-By recursion, we can prove that:
+Also by induction, we can prove that:
 $$
 F_n\le 2^n
 $$

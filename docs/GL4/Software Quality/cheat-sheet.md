@@ -125,4 +125,4 @@ public void test()
 
 ### Order of execution
 
-<img src="assets/order_of_execution.PNG"  />
+![order_of_execution](assets/order_of_execution.png)

@@ -2,7 +2,6 @@
 
 Author [@rihemebh](https://github.com/rihemebh)
 
-
 ## Complexity
 
 [What is it ?](https://www.notion.so/What-is-it-5929d83f4cfa468f8548a041d962060a)
@@ -19,7 +18,6 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 [Summary](https://www.notion.so/Summary-271451b1fc0643b99637f879bafbfa7a)
 
-
-[Useful Links ](https://www.notion.so/a5655f5fccfe42ef80f77a6d77a651e3)
+[Useful Links](https://www.notion.so/a5655f5fccfe42ef80f77a6d77a651e3)
 
 [Useful Videos & playlist](https://www.notion.so/Useful-Videos-playlist-b41c5f768a8046118d9077575fb48d31)

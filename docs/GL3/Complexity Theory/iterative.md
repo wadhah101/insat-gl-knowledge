@@ -1,7 +1,5 @@
 # Iterative Algorithms
 
-
-
 ## 1. Statement
 
 ### 1.1 Rule
@@ -10,8 +8,6 @@ The cost of a statement is:
 
 - $1$ if it is an elementary statement
 - Otherwise, it is a subroutine. The cost of the statement is the subroutine's cost.
-
-
 
 ### 1.2 Example 1
 
@@ -31,8 +27,6 @@ A.sort()
 - Cost of the first statement is $\mathcal{O}(n)$ as it creates an array of size $n$
 - Cost of the second statement is the cost of the `sort` method on $A$
 
-
-
 ## 2. Branching
 
 ### 2.1 Rule
@@ -41,7 +35,7 @@ The cost of a conditional statement is the cost of the executed path.
 
 When in doubt, we can bound all paths from above by $\mathcal{O}(\max_i C_i)$ where $C_i$ the cost of the $i^\text{th}$ path
 
-### 2.2 Example 
+### 2.2 Example
 
 ```python
 R=0
@@ -58,8 +52,6 @@ else:
 - If we know that $x=0$, then the complexity is $\mathcal{O}(n^2)$
 - If we know that $x\ne 0$, then the complexity is $\mathcal{O}(n)$
 - If we have know no information on $x$, then we will estimate the complexity using $\mathcal{O}(\max(n,n^2))=\mathcal{O}(n^2)$
-
-
 
 ## 3. Loops
 
@@ -98,7 +90,7 @@ while n > 0:
 
 We have $S=\{\lfloor \frac{n}{2^k}\rfloor, \quad k\in\mathbb{N}\}$
 
-We have $f(x)=\mathcal{O}(1).$ and $\lvert S \rvert= \log n$ 
+We have $f(x)=\mathcal{O}(1).$ and $\lvert S \rvert= \log n$
 
 So the complexity of the algorithm is:
 $$
@@ -151,9 +143,7 @@ $$
 $$
 So the algorithm is $\mathcal{O}(n)$
 
-
-
-### 3.5 Example 4:
+### 3.5 Example 4
 
 ```python
 for i in range(42):

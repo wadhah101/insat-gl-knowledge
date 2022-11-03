@@ -47,7 +47,7 @@ Execution of a Prolog program is initiated when the user writes a __query__. Log
 
 Operationally, Prolog's execution strategy can be thought of as a generalization of _function calls_ in other languages, one difference being that multiple clause heads can match a given call. In that case, the system creates a choice-point, __unifies__ the goal with the clause head of the first alternative, and continues with the goals of that first alternative. If any goal fails in the course of executing the program, all variable bindings that were made since the most recent choice-point was created are __undone__, and execution continues with the next alternative of that choice-point. This execution strategy is called chronological __backtracking__.
 
-### Example
+### Execution Example
 
 ``` prolog
 parent(i,j).

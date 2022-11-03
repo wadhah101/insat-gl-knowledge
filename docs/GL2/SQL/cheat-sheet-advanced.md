@@ -1,5 +1,6 @@
-
-# Nested Queries
+# Advanced SQL
+Author [@rihemebh](https://github.com/rihemebh)
+## Nested Queries
 
 | With Select                                                                                                                                                                                                                                                                         | With Update                                                                | With Insert                                                                                           | With Delete                                              |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
@@ -30,7 +31,7 @@
 -->
  **OPERATOR**  : EXISTS / NOT EXISTS  -- BETWEEN -- IN
 
-# Views
+## Views
 
 ### Creation
 
@@ -62,19 +63,19 @@
 
 ![image](https://cdn.sqlservertutorial.net/wp-content/uploads/SQL-Server-Recursive-CTE-execution-flow.png)
 
-# PL/SQL
+## PL/SQL
 
  ``DECLARE``<br /> ``VarName [constant] type [:= val];``<br /> ``BEGIN``<br />``EXCEPTION``<br />``END``
 
-# Functions and Procedures
+### Functions and Procedures
 
-## Functions
+#### Functions
 
 | Oracle                                                                                                                                                                                                                                                                 | PostgreSQL                                                                                                                                                                                                                   |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ``CREATE FUNCTION func_name[(in / out / in out parms)] RETURN returnType AS``<br /> ``DECLARE``<br /> ``VarName [constant] type [:= val];``<br /> ``BEGIN``<br />``-- SELECT must always be used with INTO``<br />``RETURN statement``<br />``EXCEPTION``<br />``END`` | ``CREATE FUNCTION func_name() RETURNS returnType AS $$``<br />``DECLARE``<br />``VarName [constant] type [:= val];``<br /> ``BEGIN``<br />``RETURN statement``<br />``EXCEPTION``<br />``END``<br />``$$ LANGUAGE plpgsql;`` |
 
-## Procedures
+#### Procedures
   
   | Oracle                                                                                                                                                                                                                                                            | PostgreSQL                                                                                                                                                                       |
   | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -111,7 +112,7 @@
               END 
                $$;
 
-# Triggers
+### Triggers
 
        CREATE TRIGGER trigger_name
        {BEFORE | AFTER} {INSERT | UPDATE| DELETE } [OF colums]
@@ -124,17 +125,17 @@
         --calling a function (EXECUTE PROCEDURE func_name();) ; 
         this function should RETURN a TRIGGER
 
-# Cursor
+### Cursor
 
 - It helps you store multiple lines and Mange access to them
 
-### Creation
+#### Creation
 
 | Oracle                                                                                                                | PostgreSQL                       |
 | --------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
 | ``CURSOR cursorname IS SELECT ..FROM .. WHERE..``<br />``FOR UPDATE/DELETE [OF Column list ]][NOWAIT WAIT duration]`` | ``cursorname CURSOR  FOR Query`` |
 
-### Iterating Rows
+#### Iterating Rows
 
 | Oracle                                                                                  | PostgreSQL                                                                                                                    |
 | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
@@ -142,7 +143,7 @@
 
 In PostgreSQL : we should open the Cursor after Declation
 
-# Exceptions
+### Exceptions
 
 we add exceptions within a PL/SQL bloc :
 

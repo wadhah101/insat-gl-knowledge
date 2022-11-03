@@ -257,7 +257,7 @@ statement;
 
 WHEN OTHERS THEN
 statement;
-      ```
+```
 
 - Defined exception
   - NO_DATA_FOUND

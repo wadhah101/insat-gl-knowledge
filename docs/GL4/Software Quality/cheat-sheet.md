@@ -1,3 +1,7 @@
+---
+slug: /gl4/software-quality/cheat-sheet
+---
+
 
 # Selenium Cheat sheet
 
@@ -95,7 +99,7 @@ File screeenshotFile =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE)
 Selenium grid is a tool used together with Selenium RC to run parallel tests across different machines and different browsers all at the same time.
 Parallele execution means running multiple test at one
 
-# JUnit
+## JUnit
 
 JUnit is an open source framework for the development and execution of automatable unit tests. The main interest is to ensure that the code still meets the needs even after possible modifications. More generally, this type of tests is called unit non-regression tests.
 

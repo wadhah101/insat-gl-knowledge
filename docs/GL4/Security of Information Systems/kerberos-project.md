@@ -1,3 +1,7 @@
+---
+slug: /gl4/security-of-information-systems/kerberos-project
+---
+
 # Kerberos
 
 Author [@rihemebh](https://github.com/rihemebh)

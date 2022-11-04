@@ -1,3 +1,7 @@
+---
+slug: /gl3/complexity-theory/complexity
+---
+
 # Complexity Theory
 
 ## 1. Introduction

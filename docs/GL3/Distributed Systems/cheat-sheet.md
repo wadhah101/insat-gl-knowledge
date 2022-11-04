@@ -1,3 +1,7 @@
+---
+slug: /gl3/distributed-systems/cheat-sheet
+---
+
 # Cheat sheet RabbitMQ
 
 ## Publish / Subscribe

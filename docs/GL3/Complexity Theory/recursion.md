@@ -1,3 +1,7 @@
+---
+slug: /gl3/complexity-theory/recursion
+---
+
 # Recursive Algorithms
 
 The time complexity of recursive algorithms are usually not as simple as their iterative conterparts.

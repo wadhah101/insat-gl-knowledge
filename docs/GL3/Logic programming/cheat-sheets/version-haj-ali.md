@@ -1,3 +1,7 @@
+---
+slug: /gl3/logic-programming/cheat-sheets/version-haj-ali
+---
+
 # Cheat sheet - Haj ali
 
 ## SLD Resolution

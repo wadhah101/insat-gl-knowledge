@@ -1,3 +1,7 @@
+---
+slug: /gl3/dotnet/c-sharp
+---
+
 # C## and .NET
 
 ## Understanding .NET

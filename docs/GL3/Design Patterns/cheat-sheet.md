@@ -1,3 +1,7 @@
+---
+slug: /gl3/design-patterns/cheat-sheet
+---
+
 # Design Patterns
 
 Author [@rihemebh](https://github.com/rihemebh)

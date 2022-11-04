@@ -1,3 +1,7 @@
+---
+slug: /gl2/sql/cheat-sheet-advance
+---
+
 # Advanced SQL
 
 Author [@rihemebh](https://github.com/rihemebh)

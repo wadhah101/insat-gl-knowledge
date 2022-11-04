@@ -1,3 +1,7 @@
+---
+slug: /gl3/jee/cheat-sheet-spring
+---
+
 # Spring boot videos explanatiton
 
 Author [@Saief1999](https://github.com/Saief1999)

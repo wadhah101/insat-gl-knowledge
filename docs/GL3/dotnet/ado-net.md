@@ -1,3 +1,7 @@
+---
+slug: /gl3/dotnet/ado-net
+---
+
 # ADO.NET
 
 Author [@rihemebh](https://github.com/rihemebh)

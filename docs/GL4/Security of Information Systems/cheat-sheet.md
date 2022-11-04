@@ -1,3 +1,7 @@
+---
+slug: /gl4/security-of-information-systems/cheat-sheet
+---
+
 # Cheat sheet
 
 Author [@rihemebh](https://github.com/rihemebh)

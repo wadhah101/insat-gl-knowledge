@@ -1,3 +1,7 @@
+---
+slug: /gl3/logic-programming/cheat-sheets/version-saif
+---
+
 # Cheat sheet - Saif
 
 ## Introduction  

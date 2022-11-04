@@ -62,9 +62,7 @@ ancestor(i,X).
 
 __Execution:__
 
-<p align="center">
-  <img src="assets/search_tree.png" alt="tree" />
-</p>
+![search_tree](assets/search_tree.png)
 
 ## Arithmetics
 
@@ -113,9 +111,7 @@ X + Y = 3 + 2.
 
 This is easily explained by the fact that expressions are represented with __trees__ and the ``=`` operator is used for the __unification__.
 
-<p align="center">
-  <img src="assets/num_tree.png" alt="tree" />
-</p>
+![num_tree](assets/num_tree.png)
 
 * ``Exp1 =:= Exp2``, is successful if the two expressions are equal. (The opposite of the the ``=\=`` operator)
 * ``Exp1 < Exp2``, is successful if the value of Exp1 is strictly inferior than Exp2. (The opposite of the the ``>`` operator)
@@ -150,9 +146,9 @@ X == 9 mod 4.
 
 Let's take the __Facrotial function__ as an example;
 
-_0! = 1_
+0! = 1
 
-_n! = n(n-1)! for n>0_
+n! = n(n-1)! for n>0
 
 ``` prolog
 fact(0,1).
@@ -412,9 +408,7 @@ Each time we use the ``not/1``, we have to create another search tree;
 
 ## Binary search trees
 
-<p align="center">
-  <img src="assets/binary_tree.png" alt="tree" />
-</p>
+![binary_tree](assets/binary_tree.png)
 
 The following tree can be implemented as;
 

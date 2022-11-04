@@ -75,10 +75,8 @@ const config = async () => {
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
-        themeConfig: {
-          mermaid: {
-            theme: { light: "neutral", dark: "forest" },
-          },
+        mermaid: {
+          theme: { light: "neutral", dark: "forest" },
         },
         navbar: {
           title: "Home",
@@ -127,6 +125,7 @@ const config = async () => {
         prism: {
           theme: lightCodeTheme,
           darkTheme: darkCodeTheme,
+          additionalLanguages: ["bash", "csharp", "java"],
         },
       }),
   };

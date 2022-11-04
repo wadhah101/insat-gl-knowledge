@@ -6,23 +6,23 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ### Installation
 
-```console
+```bash
 npm i -g @nestjs/cli
 ```
 
 ### New Project
 
-```console
+```bash
 nest new <project-name>
 ```
 
 ### launch project
 
-```console
+```bash
 npm run start:dev
 ```
 
-```console
+```bash
 nest start –watch
 ```
 
@@ -34,7 +34,7 @@ nest start –watch
 
 ### Creation
 
-```console
+```bash
   nest g mo ModuleName
 ```
 
@@ -51,7 +51,7 @@ Controller is a class annotated with ``@Controller`` that contains a list of act
 
 ### Creating controllers
 
-```console
+```bash
 nest g co controllerName
 ```
 
@@ -164,13 +164,13 @@ If your class doesn't extend another provider, you should always prefer using co
 The only role of a controller should be : **Accept the client requests**
 what we will going to do with this request should be transfered to the business layer that's why we have **Services**
 
-```console
+```bash
 nest generate service <service name>
 ```
 
 or
   
-```console
+```bash
 nest g s <service name>
 ```
 

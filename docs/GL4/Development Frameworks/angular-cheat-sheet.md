@@ -264,7 +264,7 @@ We need to Import ``FormsModule`` and add it to the NgModule's imports list.
 
 - Create a new Pipe :
 
-```console
+```bash
 ng g p <pipe-name>
 ```
 

@@ -21,19 +21,19 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 - Get Hostname
 
-```console
+```bash
 hostname -I
 ```
 
 - Connect remotely via a private network
 
-```console
+```bash
 ssh <username>@<hostname>
 ```
 
 - Secure copy :
 
-```console
+```bash
 scp <filename> <username>@<hostname>:<path>
 ```
 
@@ -88,55 +88,55 @@ The chain's name : INPUT
 
 - Rules' List
 
-```shell
+```bash
 iptable -L --line-numbers
 ```
 
 - Create a Chain (named allowed)
 
-```shell
+```bash
 iptables -N allowed
 ```
 
 - Erase a chain
 
-```shell
+```bash
 iptables -X allowed
 ```
 
 - Modify the authorization
 
-```shell
+```bash
 iptables -P INPUT DROP
 ```
 
 - Add rule to end of the chain
 
-```shell
+```bash
 iptables -A INPUT
 ```
 
 - Drop rule
 
-```shell
+```bash
 iptables -D INPUT --dport 80 -j DROP, iptables -D INPUT 1
 ```
 
 - Replace a rule
 
-```shell
+```bash
 iptables -R INPUT 1 -s 192.168.0.1 -j DROP
 ```
 
 - Insert a rule anywhere
 
-```shell
+```bash
 iptables -I INPUT 1 --dport 80 -j ACCEPT
 ```
 
 - Clear the chain's rules
 
-```shell
+```bash
 iptables -F INPUT
 ```
 
@@ -151,19 +151,19 @@ Use one shared encryption key between sender and receiver.
 - Encrypt the file :
   - Binary format (default)
 
-     ```console
+     ```bash
      gpg -c <filename>
      ```
 
   - ASCII format
 
-     ```console
+     ```bash
      gpg -c --armor(or -a) <filename>
      ```
 
 - Get all the algos
 
-```console
+```bash
  gpg --version 
 ```
 
@@ -173,13 +173,13 @@ AES (Advanced Encryption Standard), DES (Data Encryption Standard), IDEA (Intern
 
 - Encrypt the file and specify the algo (cipher)
 
-```console
+```bash
 gpg -c -a --cipher-algo <filename>
 ```
 
 - Decrypt
 
-```console
+```bash
 gpg -d <filename>
 ```
 
@@ -218,50 +218,50 @@ Use public keys for encryption and private keys for decryption
 
 - Generate Keys
 
-```console
+```bash
 gpg --full-generate-key
 gpg --gen-key
 ```
 
 - Get the Key List
 
-```console
+```bash
 gpg --list -keys
 ```
 
 - Export a public key
 
-```console
+```bash
 gpg -o KEY -a --export <KeyID> 
 ```
 
 - Import Key
 
-```console
+```bash
 gpg --import KEY
 ```
 
 - Encryption
 
-```console
+```bash
 gpg -o file.enc -a -r <publicKey> -encrypt file
 ```
 
 - Sign
 
-```console
+```bash
 gpg -o file.signed --sign-file
 ```
 
 - Verify a signature
 
-```console
+```bash
 gpg --verify file.signed 
 ```
 
 - Decrypt
 
-```console
+```bash
 gpg -o file --decrypt file.enc
 ```
 
@@ -467,7 +467,7 @@ Whatever the size of the real message, the size of a hash message is always the 
 
 - Hash a file
 
-```console
+```bash
 asc25sum file
 md5sum file
 sha256sum file
@@ -502,21 +502,21 @@ openssl enc -aes-128-cbc -iter 2 -in file -out file.enc
 
 - Decrypt
 
-```console
+```bash
 openssl enc -d -aes-128-cbc -in file.enc -out filerestored
 openssl enc -d -aes-128-cbc  -iter 2 -in file.enc -out filerestored
 ```
 
 - Generate RSA Key:
 
-```console
+```bash
 openssl genrsa -out mykey 2048
 
 ```
 
 - Generate RSA params:
 
-```console
+```bash
 openssl rsa -in mykey -text -noout 
 ```
 
@@ -524,25 +524,25 @@ openssl rsa -in mykey -text -noout
 
 - Generate a public key from a private key
 
-```console
+```bash
 openssl rsa -in mykey -pubout -out pub 
 ```
 
 - Private Key Encryption :
 
-```console
+```bash
 openssl rsa -in mykey -des -out mykey.enc 
 ```
 
 - Encrypt with public key
 
-```console
+```bash
 openssl rsault -encrypt -pubin -inkey PUB -in file -out file.enc 
 ```
 
 - Decrypt
 
-```console
+```bash
 openssl rsautl -decrypt -inkey mykey.enc -in file -out rsa.enc 
 ```
 
@@ -550,19 +550,19 @@ openssl rsautl -decrypt -inkey mykey.enc -in file -out rsa.enc
 
 - Sign with the private key
 
-```console
+```bash
 openssl rsault -sign -inkey myKey.enc -in file -out fileRSA.sign 
 ```
 
 - Verify signature
 
-```console
+```bash
 openssl rsault -verify -pubin -inkey PUB -in fileRSA.sign
 ```
 
 - Encrypt + Sign
 
-```console
+```bash
 openssl dgst -sha256 -verify PUB -signature fileHashSign file 
 ```
 
@@ -580,7 +580,7 @@ openssl dgst -sha256 -verify PUB -signature fileHashSign file
 
 - Get the Certification of the www.google.com website:
 
-```console
+```bash
 openssl s_client www.google.com:443
 ```
 
@@ -588,7 +588,7 @@ openssl s_client www.google.com:443
 
  google.cert is the file that contains google certification : output of the above cmd
 
-```console
+```bash
 openssl x509 -in google.cert -subject -issuer -noout
 ```
 
@@ -608,13 +608,13 @@ Goal:
 
 - Create RSA keys for INSAT and put it in INSAT.key
 
-```console
+```bash
 openssl genrsa -des3 -out INSAT.key 3072
 ```
 
 - Create a certification for INSAT
 
-```console
+```bash
 openssl req -new -x509 -days 730 -key INSAT.key -out INSAT.cert
 ```
 
@@ -622,25 +622,25 @@ openssl req -new -x509 -days 730 -key INSAT.key -out INSAT.cert
 
 - Create keys for GL4
 
-```console
+```bash
 openssl genrsa -des3 -out gl4.key 3072
 ```
 
 - Create request for a certiif from INSAT
 
-```console
+```bash
 openssl req -new  -key gl4.key -out gl4.req 
 ```
 
 - Generate a Certificate for GL4:
 
-```console
+```bash
 openssl x509 -req -in gl4.req -out gl4.cert -CA INSAT.cert -CAKey INSAT.key -CAcreateserial -CAserial gl4.srl
 ```
 
 - Export the certificate
 
-```console
+```bash
 openssl pkcs12 -export -out gl4.pfx -in gl4.cert -inkey gl4.key -name "certificat de gl4"
 ```
 

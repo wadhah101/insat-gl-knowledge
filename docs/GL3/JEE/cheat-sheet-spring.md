@@ -663,7 +663,7 @@ private void preDestroy(){
 
 - Order is the following for **Singleton** Scope :
 
-```console
+```bash
 //during startup
 postConstruct
 afterPropertiesSet

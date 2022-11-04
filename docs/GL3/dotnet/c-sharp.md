@@ -121,7 +121,7 @@ Console.WriteLine(
 
 - Result :
 
-```console
+```bash
 Name Count
 Apples 1,234
 Bananas 56,789

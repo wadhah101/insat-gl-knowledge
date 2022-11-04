@@ -35,7 +35,7 @@ In order to test it you need to configure 3 machines : KDC, Client and Server th
 
 Since the image doesn’t have any pre-installed dependencies you should first run :
 
-```console
+```bash
 apt update && apt upgrade 
 ```
 
@@ -47,14 +47,14 @@ We will use ``insat.tn`` as domain name.
 
 1. In each machine match different ips to their sub domain name in ``/etc/hosts``
 
-    ```console
+    ```bash
     172.21.0.2      kdc.insat.tn kdc
     172.21.0.3      server.insat.tn server
     ```
 
     To test if everything is working properly try this command on each sub-domain:
 
-    ```console
+    ```bash
     host kdc.insat.tn
     ```
 
@@ -65,7 +65,7 @@ We will use ``insat.tn`` as domain name.
 
       - On the Kdc machine edit the ``/etc/ntp.conf`` and add the lines below:
 
-      ```console
+      ```bash
       restrict 127.0.0.1
       restrict ::1
       restrict 192.168.56.110 mask 255.255.255.0
@@ -76,14 +76,14 @@ We will use ``insat.tn`` as domain name.
 
       - On the server install ntp and ntpdate:
 
-      ```console
+      ```bash
       apt install ntp
       apt install ntpdate
       ```
 
       - then edit the ``/etc/ntp.conf`` and add the lines below:
 
-      ```console
+      ```bash
       pool ntp.ubuntu.com
       server 192.168.56.110
       server obelix
@@ -91,13 +91,13 @@ We will use ``insat.tn`` as domain name.
 
       - Synchronize time by running the below command on the server machine:
 
-      ```console
+      ```bash
       ntpdate -dv 192.168.56.110
       ```
 
 3. Configure KDC
 
-```console
+```bash
 apt install krb5-kdc krb5-admin-server krb5-config 
 ```
 
@@ -108,7 +108,7 @@ When it's prompted :
 
 - Create the realm: A Kerberos realm is the domain over which a Kerberos authentication server has the authority to authenticate a user, host or service.
 
-```console
+```bash
 krb5_newrealm
 ```
 
@@ -116,7 +116,7 @@ krb5_newrealm
   - A Kerberos Principal represents a unique identity in a Kerberos system to which Kerberos can assign tickets to access Kerberos-aware services.
   - The Kerberos Keytab file contains mappings between Kerberos Principal names and DES-encrypted keys that are derived from the password used to log into the Kerberos Key Distribution Center (KDC).
 
-```console
+```bash
 kadmin.local                              
 addprinc root/admin                       
 addprinc -randkey host/kdc.example.tn     
@@ -125,7 +125,7 @@ ktadd host/kdc.example.tn
 
 ### 4. Configure Server
 
-```console
+```bash
 apt install krb5-user libpam-krb5 libpam-ccreds
 ```
 
@@ -133,7 +133,7 @@ Then do the same thing for realm, kerberos service, administrative service
 
 - Add host :
 
-```console
+```bash
 kadmin                                      
 addprinc -randkey host/server.insat.tn     
 ktadd host/server.insat.tn  
@@ -141,13 +141,13 @@ ktadd host/server.insat.tn
 
 - Install Flask and Flask-Kerberos with pip
 
-```console
+```bash
 pip install flask
 ```
 
 If you are using a docker image you should run those commands before installing flask kerberos:
 
-```console
+```bash
 apt-get install libkrb5-dev
 apt-get install krb5-config
 apt-get install libkrb5-dev

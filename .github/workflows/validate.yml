@@ -1,0 +1,51 @@
+# A simple workflow for validating Mardown docs
+name: Validate
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - master
+
+jobs:
+  lint-md:
+    name: Lint markdown
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: markdownlint-cli
+        uses: nosborn/github-action-markdown-cli@v3.2.0
+        with:
+          files: docs
+          config_file: .markdownlint.yaml
+          ignore_path: .markdownlintignore
+
+  build:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref != 'refs/heads/master' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      - name: setup node
+        uses: volta-cli/action@v3
+
+      - name: cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: "**/.yarn"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install deps
+        run: yarn install --immutable
+
+      - name: Build project
+        run: yarn build

@@ -15,7 +15,6 @@ proctype A(){
         ::instrN -> optionsN
     fi;
 }
-
 ```
 
 ## While loop
@@ -27,7 +26,6 @@ do
     :: count = count - 1
     :: (count == 0) -> break;
 od;
-
 ```
 
 ## Functions
@@ -36,7 +34,6 @@ od;
     proctype A() {
         work();
     }
-
 ```
 
 ## Main
@@ -115,5 +112,4 @@ proctype A(){
     s3 :
         goto s4 ;
 }
-
 ```

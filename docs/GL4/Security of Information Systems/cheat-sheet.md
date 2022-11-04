@@ -1,3 +1,7 @@
+---
+slug: /gl4/security-of-information-systems/cheat-sheet
+---
+
 # Cheat sheet
 
 Author [@rihemebh](https://github.com/rihemebh)
@@ -576,8 +580,6 @@ openssl dgst -sha256 -verify PUB -signature fileHashSign file
 
 - Certification Authority issues digital certificates
 
-----------------------------------------------------------------------------
-
 - Get the Certification of the www.google.com website:
 
 ```bash
@@ -594,8 +596,6 @@ openssl x509 -in google.cert -subject -issuer -noout
 
 => google trust
 
-----------------------------------------------------------------------------
-
 Goal:
 
 - Create a certification authority called "**INSAT**"
@@ -603,8 +603,6 @@ Goal:
 - **GL4** will ask a certification from **INSAT**
 - **INSAT** will verify this request and generate a certificate
 - Now **INSAT** is the authority of **GL4**
-
-----------------------------------------------------------------------------
 
 - Create RSA keys for INSAT and put it in INSAT.key
 

@@ -1,3 +1,7 @@
+---
+slug: /gl3/advanced-algorithms/heap
+---
+
 # Heap & Priority queues
 
 ## Priority queues

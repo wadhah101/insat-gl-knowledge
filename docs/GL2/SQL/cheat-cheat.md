@@ -1,3 +1,7 @@
+---
+slug: /gl2/sql/cheat-cheat
+---
+
 
 # SQL Introduction
 

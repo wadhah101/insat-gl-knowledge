@@ -1,3 +1,7 @@
+---
+slug: /gl3/complexity-theory/advance
+---
+
 # Advanced Formulation
 
 ## 1. Introduction

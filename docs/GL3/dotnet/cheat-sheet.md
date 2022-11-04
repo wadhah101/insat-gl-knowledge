@@ -1,3 +1,7 @@
+---
+slug: /gl3/dotnet/cheat-sheet
+---
+
 # .Net
 
 Author [@rihemebh](https://github.com/rihemebh)

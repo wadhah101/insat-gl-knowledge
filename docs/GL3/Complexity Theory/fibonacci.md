@@ -1,3 +1,7 @@
+---
+slug: /gl3/complexity-theory/fibonacci
+---
+
 # Fibonacci Sequence Problem
 
 ## 1. Problem

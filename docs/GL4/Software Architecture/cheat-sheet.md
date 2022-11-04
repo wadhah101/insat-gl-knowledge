@@ -1,3 +1,7 @@
+---
+slug: /gl4/software-architecture/cheat-sheet
+---
+
 # Cheat sheet
 
 ## Good design rules

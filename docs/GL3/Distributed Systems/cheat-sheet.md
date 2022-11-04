@@ -1,3 +1,7 @@
+---
+slug: /gl3/distributed-systems/cheat-sheet
+---
+
 # Cheat sheet RabbitMQ
 
 ## Publish / Subscribe
@@ -152,8 +156,6 @@ for(String severity : argv){
   channel.queueBind(queueName, EXCHANGE_NAME, severity);
 }
 ```
-
----
 
 Final Notes :
 

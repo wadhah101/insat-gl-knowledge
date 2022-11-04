@@ -1,3 +1,7 @@
+---
+slug: /gl3/complexity-theory/cheat-sheet
+---
+
 # Cheat sheet
 
 Author [@rihemebh](https://github.com/rihemebh)

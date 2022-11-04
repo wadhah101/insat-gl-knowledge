@@ -1,3 +1,7 @@
+---
+slug: /gl3/advanced-algorithms/b-tree
+---
+
 # B-Trees
 
 B-trees are **self-balanced search trees**, they are commonly used in databases.

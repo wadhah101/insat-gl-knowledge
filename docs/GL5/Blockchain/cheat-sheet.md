@@ -1,3 +1,7 @@
+---
+slug: /gl5/blockchain/cheat-sheet
+---
+
 # Cheat sheet
 
 Author [@rihemebh](https://github.com/rihemebh) + Resumé essia

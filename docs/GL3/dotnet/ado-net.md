@@ -1,3 +1,7 @@
+---
+slug: /gl3/dotnet/ado-net
+---
+
 # ADO.NET
 
 Author [@rihemebh](https://github.com/rihemebh)
@@ -74,8 +78,6 @@ Storage model.
  |ModelFirst|DatabaseFirst| CodeFirst |
  | --- | --- | --- |
  |Working on a visual diagram using the EF Designer and letting the Entity Framework create/update the rest accordingly|building the Database and letting Entity Framework create/update the rest accordingly|writing the Data Model entity classes and let Entity Framework generate the Database accordingly|
-
-----------------------------------------------------------------------------------------------------------
 
 #### Code First
 

@@ -1,3 +1,7 @@
+---
+slug: /gl4/data-mining/cheat-sheet
+---
+
 # Cheat sheet
 
 Author [@rihemebh](https://github.com/rihemebh)

@@ -1,3 +1,7 @@
+---
+slug: /gl3/logic-programming/cheat-sheets/version-haj-ali
+---
+
 # Cheat sheet - Haj ali
 
 ## SLD Resolution
@@ -32,8 +36,6 @@ human(socrates).
 % X is a variable
 mortal(X):-human(X).
 
-%-----------
-
 mortal(socrates).
 ```
 
@@ -54,8 +56,6 @@ parent(i,j).
 parent(j,b).
 ancestor(X,Y):-parent(X,Y).
 ancestor(X,Y):-parent(X,Z),ancestor(Z,Y).
-
-%-----------
 
 ancestor(i,X).
 ```
@@ -297,8 +297,6 @@ num(8).
 num(9).
 solution(X):-num(X),0<X*X-10*X+20.
 
-%------
-
 findall(X,solution(X),L).
 %L=[0,1,2,8,9]
 ```
@@ -317,8 +315,6 @@ num(7,impair).
 num(8,pair).
 num(9,impair).
 solution(X,Y):-num(X,Y),0<X*X-10*X+20.
-
-%------
 
 bagof(X,solution(X,Y),L).
 %Y=impair, L=[1,9]
@@ -390,8 +386,6 @@ strong(X):-athletic(X),not(small(X)).
 r(a).
 q(b).
 p(X):-not(r(X)).
-
-%------
 
 q(X),p(X).
 % true.

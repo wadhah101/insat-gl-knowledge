@@ -1,3 +1,7 @@
+---
+slug: /gl2/sql/cheat-sheet-advance
+---
+
 # Advanced SQL
 
 Author [@rihemebh](https://github.com/rihemebh)
@@ -16,11 +20,9 @@ Author [@rihemebh](https://github.com/rihemebh)
       // Don't forget to make the join condition with the table called in the main select )
        FROM table 
        WHERE conditions 
-  ------------------------------    
        SELECT columns 
        FROM (SELECT query that retuns multiple values )
        WHERE condition
----------------------------------------
       SELECT column_name
       FROM   tables 
       WHERE  column_name OPERATOR  (SELECT Query)

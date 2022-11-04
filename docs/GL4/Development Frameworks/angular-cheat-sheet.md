@@ -1,3 +1,7 @@
+---
+slug: /gl4/development-frameworks/angular-cheat-sheet
+---
+
 # Angular-Cheat-Sheet
 
 Author [@rihemebh](https://github.com/rihemebh)

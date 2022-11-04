@@ -1,3 +1,7 @@
+---
+slug: /gl3/complexity-theory/iterative
+---
+
 # Iterative Algorithms
 
 ## 1. Statement

@@ -1,3 +1,7 @@
+---
+slug: /gl4/development-frameworks/nest-cheat-sheet
+---
+
 # Nest Cheat Sheet
 
 Author [@rihemebh](https://github.com/rihemebh)
@@ -249,9 +253,7 @@ adapt.
   
 #### Global Middlewares
 
-   You can declare the middleware in the ``use(<middlewarename>)``  function of main.js
-
- ------------------------------------------
+You can declare the middleware in the ``use(<middlewarename>)``  function of main.js
 
 ### Pipes
 

@@ -1,3 +1,7 @@
+---
+slug: /gl3/engineering-of-networks-and-protocols/cheat-sheet
+---
+
 # Cheat Sheet
 
 Autho [@wadhah101](https://github.com/wadhah101)

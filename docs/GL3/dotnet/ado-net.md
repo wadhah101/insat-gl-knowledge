@@ -302,9 +302,10 @@ dbCtx.SaveChanges();
 ###### 3. Delete
 
 ```C#
-  using (var context = new SchoolDBEntities())
-  { context.Entry(disconnectedTeacher).State =
-  System.Data.EntityState.Deleted;
-  context.SaveChanges();
-  }
+using (var context = new SchoolDBEntities())
+{ 
+    context.Entry(disconnectedTeacher).State =
+    System.Data.EntityState.Deleted;
+    context.SaveChanges();
+}
 ```

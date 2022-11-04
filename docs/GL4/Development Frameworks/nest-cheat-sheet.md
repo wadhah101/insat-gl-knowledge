@@ -249,9 +249,7 @@ adapt.
   
 #### Global Middlewares
 
-   You can declare the middleware in the ``use(<middlewarename>)``  function of main.js
-
- ------------------------------------------
+You can declare the middleware in the ``use(<middlewarename>)``  function of main.js
 
 ### Pipes
 

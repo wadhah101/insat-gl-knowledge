@@ -16,8 +16,6 @@ Processus permettant de construire un ensemble d'éléments
 **clés** permettant de caractériser le contenu d’un
 document / retrouver ce document en réponse à une requête
 
----
-
 #### Indexation Libre / Controlée
 
 ##### Indexation Libre
@@ -137,8 +135,6 @@ document / retrouver ce document en réponse à une requête
 
     Minimiser le nombre de bits transférés
 
----
-
 #### Variable-Byte Encoding
 
 Le bit du poids le plus fort est un **stop bit**
@@ -159,8 +155,6 @@ Le bit du poids le plus fort est un **stop bit**
   1337 = 00000000 00000000 00000101 00111001
 
   VBE : 00001010 10111001
-
----
 
 - Exercice
 

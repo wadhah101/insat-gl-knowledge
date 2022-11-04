@@ -23,8 +23,6 @@ Modules include :
 - support for embedded tomcat , curated maven dependencies & simplified security
 - behind the scenes, Spring boot uses Spring 5.0
 
----
-
 ### Video 1.3 : Choosing an IDE ?
 
 - List of tools are available in this link  <https://Spring.io/tools> .
@@ -35,8 +33,6 @@ Modules include :
 #### To create a new project
 
 `New project > Maven > fill groupId and artifactId > choose location > create`
-
----
 
 ### Video 1.4 : Setting Up Maven
 
@@ -86,8 +82,6 @@ we add `spring-boot-starter-web` to `pom.xml`
 
 `right click project > maven > download sources and documentation`
 
----
-
 ### Video 1.5 : Creating a Run Configuration
 
 #### Creating the main class
@@ -107,8 +101,6 @@ public class Main {
 To add a run configuration we do :
 
 `Add run configuration < + < Application < name it ' Demo Run ' < Select Main.java as Main Class < Apply`
-
----
 
 ### Video 1.6 : Running a Spring Application
 
@@ -175,8 +167,6 @@ A printer that uses a document
 
 Instead of using the `Document`  in the `Printer` as an attribute. We create a `DocumentInterface` and we use it inside the Printer instead.
 
----
-
 #### Video 2.2 : Dependency Injection with Annotations
 
 - **Annotations** : metadata that is added to java source Code
@@ -189,8 +179,6 @@ Instead of using the `Document`  in the `Printer` as an attribute. We create a `
 - In addition we have (will be explained later)  :
   - `@Qualifier` (DI by qualifier)
   - `@Component` and `@ComponentScan` (DI by name)
-
----
 
 #### Video 2.3 : Introduction to the @Component Annotation
 
@@ -223,8 +211,6 @@ public class Greeter {
     }
 }
 ```
-
----
 
 ### Video 2.4 : Introduction to the @Autowired Annotation
 
@@ -268,8 +254,6 @@ private NotABean notABean ;
 ```
 
 This will work without exceptions !
-
----
 
 ### Video 2.5 : Dependency Injection with the @Autowired Annotation
 
@@ -443,8 +427,6 @@ public class GreeterConfiguration {
 
 - The attribute name **Should match** the method name when requesting the bean.
 
----
-
 ### Video 3.3 : Spring Bean Scopes
 
 - Bean Scope : bean scope in spring influences its life cycle and exposure (visibility) to other components.
@@ -587,8 +569,6 @@ public FriendlyGreeter friendlyGreeter()
 
 - each Call for `/hellofriendly1` `/hellofriendly2` creates a new `FriendlyGreeter` bean instance.
 
----
-
 ### Video 3.4 : Spring Bean Life Cycle and Callbacks
 
 - Spring bean life cycle :
@@ -672,8 +652,6 @@ afterPropertiesSet
 preDestroy
 destroy
 ```
-
----
 
 ### Video 3.5 : Spring Property Files
 
@@ -776,8 +754,6 @@ private DatabaseConfiguration config ;
   - fully supported by Spring Boot
   - Default configuration in Spring Boot is the **in-memory storage** (the data is **lost on application restart**)
 
----
-
 ### Video 4.2 : Spring Data Dependencies
 
 - Required Dependencies :
@@ -802,8 +778,6 @@ In `pom.xml` :
     <scope>runtime</scope>
 </dependency>
 ```
-
----
 
 ### Video 4.3 : Creating a Data Model
 
@@ -863,8 +837,6 @@ public class Customer {
 }
 ```
 
----
-
 ### Video 4.4 : Setting Up a Repository
 
 - **Repository<T, ID>** :generic interface all repositories inherit from
@@ -923,8 +895,6 @@ public class RestController {
 }
 
 ```
-
----
 
 ### Video 4.5 : Reading and Writing the Database
 
@@ -1015,8 +985,6 @@ public class CustomerRepositoryTest {
   - **PUT** : changes/updates data on the server
   - **DELETE** : deletes data from the server
 
----
-
 ### Video 5.2 : Creating a RestController
 
 - **Controller** : a class responsible for preparing data ( from a model) to be presented in a view
@@ -1036,8 +1004,6 @@ public class CustomerController {
 
 }
 ```
-
----
 
 ### Video 5.3 : Creating endpoints for receiving data
 
@@ -1096,8 +1062,6 @@ public class CustomerController {
 }
 ```
 
----
-
 ### Video 5.4: Creating endpoints for Sending and Deleting Data
 
 - GET endpoint :
@@ -1126,8 +1090,6 @@ public class CustomerController {
 Notes:
 
 - we need the id to perform delete and get. We use `@PathVariable`
-
----
 
 ### Video 5.5: Testing the Endpoints
 
@@ -1162,8 +1124,6 @@ In `pom.xml`
     <artifactId>spring-boot-starter-webflux</artifactId>
 </dependency>
 ```
-
----
 
 ### Video 6.2 : Creating a Reactive Repository
 
@@ -1203,8 +1163,6 @@ public class ReactiveCustomerRepository {
     }
 }
 ```
-
----
 
 ### Video 6.3 : Creating a Reactive RestController
 

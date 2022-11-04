@@ -153,8 +153,6 @@ for(String severity : argv){
 }
 ```
 
----
-
 Final Notes :
 
 - One Queue two consumers (workers) : they get the messages in a round robin way , to prevent this we change the prefetch config , however each consumer consumes exactly one message from the queue.

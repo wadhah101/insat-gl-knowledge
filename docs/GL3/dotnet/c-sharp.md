@@ -16,8 +16,6 @@
 
 - Another .NET initiative is called .NET Native. This compiles C## code to native CPU instructions ahead of time (`AoT`), rather than using the CLR to compile IL code JIT to native code later. .NET Native improves execution speed and reduces the memory footprint for applications because the native code is generated at build time and then deployed instead of the IL code.
 
----
-
 ## Chapter 2
 
 Comments : // or /**/

@@ -1,7 +1,5 @@
 ---
-authors:
-  - name: Mohamed Ben Salah
-    url: https://github.com/medbensalah
+slug: /gl5/sri/indexation/cheat-sheet
 ---
 
 # Cheat sheet

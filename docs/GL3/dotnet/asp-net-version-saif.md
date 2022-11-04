@@ -1,8 +1,8 @@
 # ASP.NET
 
-Author [@Saif](https://github.com/Saief1999)
+Author [@Saief1999](https://github.com/Saief1999)
 
-# Part1, Introduction
+## Part1, Introduction
 
 MVC-based apps contain:
 
@@ -18,7 +18,7 @@ In an MVC app, the view only displays information. The controller handles and re
 - `https://localhost:5001/Home/Privacy`: specifies the `Home` controller and the `Privacy` action.
 - `https://localhost:5001/Movies/Edit/5`: is a request to edit the movie with ID=5 using the `Movies` controller and the `Edit` action, which are detailed later in the tutorial.
 
-# Part2, Controllers
+## Part2, Controllers
 
 ```c#
 using Microsoft.AspNetCore.Mvc;
@@ -53,7 +53,7 @@ Every `public` method in a controller is callable as an HTTP endpoint. In the sa
 
 MVC invokes controller classes, and the action methods within them, depending on the incoming URL. The default [URL routing logic](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0) used by MVC, uses a format like this to determine what code to invoke:
 
-```
+```c#
 /[Controller]/[ActionName]/[Parameters]
 ```
 
@@ -74,7 +74,7 @@ app.UseEndpoints(endpoints =>
 - The second part of the URL segment determines the action method on the class. So `localhost:5001/HelloWorld/Index` causes the `Index` method of the `HelloWorldController` class to run. Notice that you only had to browse to `localhost:5001/HelloWorld` and the `Index` method was called by default. `Index` is the default method that will be called on a controller if a method name isn't explicitly specified.
 - The third part of the URL segment ( `id`) is for route data. Route data is explained later in the tutorial.
 
-## Example 1
+### Example 1
 
 - Change the `Welcome` method to include two parameters as shown in the following code.
 
@@ -89,13 +89,13 @@ public string Welcome(string name, int numTimes = 1)
 
 The preceding code:
 
-- Uses the C# optional-parameter feature to indicate that the `numTimes` parameter defaults to 1 if no value is passed for that parameter.
+- Uses the C## optional-parameter feature to indicate that the `numTimes` parameter defaults to 1 if no value is passed for that parameter.
 - Uses `HtmlEncoder.Default.Encode` to protect the app from malicious input, such as through JavaScript.
 - Uses [Interpolated Strings](https://docs.microsoft.com/en-us/dotnet/articles/csharp/language-reference/keywords/interpolated-strings) in `$"Hello {name}, NumTimes is: {numTimes}"`.
 
 ![Browser window showing an application response of Hello Rick, NumTimes is: 4](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-controller/_static/rick4.png?view=aspnetcore-5.0)
 
-## Example 2  (Important)
+### Example 2  (Important)
 
 ```csharp
 public string Welcome(string name, int ID = 1)
@@ -119,7 +119,7 @@ Run the app and enter the following URL: `https://localhost{PORT}/HelloWorld/Wel
   });
   ```
 
-# Part3, Views
+## Part3, Views
 
 View templates are created using Razor. Razor-based view templates:
 
@@ -143,7 +143,7 @@ Controller methods:
 - Are referred to as *action methods*. For example, the `Index` action method in the preceding code.
 - Generally return an [IActionResult](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.iactionresult) or a class derived from [ActionResult](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult), not a type like `string`.
 
-## Add a view
+### Add a view
 
 ```html
 @{
@@ -162,7 +162,7 @@ Navigate to `https://localhost:{PORT}/HelloWorld`:
 
 ![Browser window](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-view/_static/hell_template.png?view=aspnetcore-5.0)
 
-## Change views and layout pages
+### Change views and layout pages
 
 - In `Shared/_Layout.cshtml`
 
@@ -178,7 +178,7 @@ Navigate to `https://localhost:{PORT}/HelloWorld`:
 
 - `RenderBody` is a placeholder where all the view-specific pages you create show up, *wrapped* in the layout page. For example, if you select the **Privacy** link, the **Views/Home/Privacy.cshtml** view is rendered inside the `RenderBody` method.
 
-## Change the title, footer, and menu link in the layout file
+### Change the title, footer, and menu link in the layout file
 
 ```html
 <title>@ViewData["Title"] - Movie App</title> 
@@ -223,7 +223,7 @@ The *`Views/_ViewStart.cshtml`* file brings in the *`Views/Shared/_Layout.cshtml
 
 he content in the *`Index.cshtml`* view template is merged with the *`Views/Shared/_Layout.cshtml`* view template. A single HTML response is sent to the browser. Layout templates make it easy to make changes that apply across all of the pages in an app.
 
-### Passing Data from the Controller to the View
+#### Passing Data from the Controller to the View
 
 Controllers are responsible for providing the data required in order for a view template to render a response.
 
@@ -254,7 +254,7 @@ The `ViewData` dictionary object contains data that will be passed to the view.
 
 - In *`Views/HelloWorld/Welcome.cshtml`*
 
-```
+```c#
 @{
     ViewData["Title"] = "Welcome";
 }
@@ -269,7 +269,7 @@ The `ViewData` dictionary object contains data that will be passed to the view.
 </ul>
 ```
 
-# Part 4, Models
+## Part 4, Models
 
 - We are going to use the Model-First Method.
 
@@ -303,7 +303,7 @@ The [`DataType`](https://docs.microsoft.com/en-us/dotnet/api/system.componentmod
 Install-Package Microsoft.EntityFrameworkCore.SqlServer
 ```
 
-## Create a database context class
+### Create a database context class
 
 A database context class is needed to coordinate EF Core functionality (Create, Read, Update, Delete) for the `Movie` model. The database context is derived from [`Microsoft.EntityFrameworkCore.DbContext`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext) and specifies the entities to include in the data model.
 
@@ -329,7 +329,7 @@ namespace MvcMovie.Data
 
 The preceding code creates a [`DbSet`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbset-1) property for the entity set. In Entity Framework terminology, an entity set typically corresponds to a database table. An entity corresponds to a row in the table.
 
-## Register the database context
+### Register the database context
 
 ASP.NET Core is built with [dependency injection (DI)](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0). Services (such as the EF Core DB context) must be registered with DI during application startup. Components that require these services (such as Razor Pages) are provided these services via constructor parameters. The constructor code that gets a DB context instance is shown later in the tutorial. In this section, you register the database context with the DI container.
 
@@ -342,8 +342,7 @@ using Microsoft.EntityFrameworkCore
 
 Add the following highlighted code in `Startup.ConfigureServices`
 
-```
-
+```c#
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddControllersWithViews();
@@ -355,7 +354,7 @@ public void ConfigureServices(IServiceCollection services)
 
 The name of the connection string is passed in to the context by calling a method on a [`DbContextOptions`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions) object. For local development, the [ASP.NET Core configuration system](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.0) reads the connection string from the *`appsettings.json`* file.
 
-## Add a database connection string
+### Add a database connection string
 
 ```json
 {
@@ -373,7 +372,7 @@ The name of the connection string is passed in to the context by calling a metho
 }
 ```
 
-## Scaffold movie pages
+### Scaffold movie pages
 
 Use the scaffolding tool to produce Create, Read, Update, and Delete (CRUD) pages for the movie model.
 
@@ -381,7 +380,7 @@ Use the scaffolding tool to produce Create, Read, Update, and Delete (CRUD) page
 
 ![Add Scaffold dialog](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-model/_static/add_scaffold21.png?view=aspnetcore-3.0)
 
-## Initial migration
+### Initial migration
 
 ```powershell
 Add-Migration InitialCreate
@@ -392,7 +391,7 @@ Update-Database
 
 - `Update-Database`: Updates the database to the latest migration, which the previous command created. This command runs the `Up` method in the *`Migrations/{time-stamp}_InitialCreate.cs`* file, which creates the database.
 
-## Dependency injection in the controller
+### Dependency injection in the controller
 
 ```c#
 public class MoviesController : Controller
@@ -407,7 +406,7 @@ public class MoviesController : Controller
 
 The constructor uses [Dependency Injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0) to inject the database context (`MvcMovieContext`) into the controller. The database context is used in each of the [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) methods in the controller.
 
-## Strongly typed models and the @model keyword
+### Strongly typed models and the @model keyword
 
 MVC (in addition to `ViewData`) also provides the ability to pass strongly typed model objects to a view. This strongly typed approach enables compile time code checking. The scaffolding mechanism used this approach (that is, passing a strongly typed model) with the `MoviesController` class and views.
 
@@ -507,7 +506,7 @@ The `@model` statement at the top of the view file specifies the type of object 
 
 This `@model` directive **allows access to the movie that the controller passed to the view**. The `Model` object is strongly typed. For example, in the *`Details.cshtml`* view, the code passes each movie field to the `DisplayNameFor` and `DisplayFor` HTML Helpers with the strongly typed `Model` object. The `Create` and `Edit` methods and views also pass a `Movie` model object.
 
-### Listing
+#### Listing
 
 Examine the *`Index.cshtml`* view and the `Index` method in the Movies controller. Notice how the code creates a `List` object when it calls the `View` method. The code passes this `Movies` list from the `Index` action method to the view:
 
@@ -585,7 +584,7 @@ The `@model` directive allows you to access the list of movies that the controll
 
 Because the `Model` object is strongly typed (as an `IEnumerable<Movie>` object), each item in the loop is typed as `Movie`. Among other benefits, this means that you get compile time checking of the code.
 
-# Part 5, work with a database
+## Part 5, work with a database
 
 The `MvcMovieContext` object handles the task of connecting to the database and mapping `Movie` objects to database records. The database context is registered with the [Dependency Injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0) container in the `ConfigureServices` method in the *`Startup.cs`* file:
 
@@ -609,7 +608,7 @@ The ASP.NET Core [Configuration](https://docs.microsoft.com/en-us/aspnet/core/fu
 
 By default, EF will make a property named `ID` the primary key.
 
-## Seed the database
+### Seed the database
 
 Create a new class named `SeedData` in the *Models* folder. Replace the generated code with the following:
 
@@ -685,7 +684,7 @@ if (context.Movie.Any())
 }
 ```
 
-### Add the seed initializer
+#### Add the seed initializer
 
 In *`Program.cs`* :
 
@@ -733,7 +732,7 @@ namespace MvcMovie
 }
 ```
 
-# Part 6, controller methods and views (Important)
+## Part 6, controller methods and views (Important)
 
 - In *`Models/Movie.cs`*
 
@@ -903,9 +902,9 @@ Notice how the view template has a `@model MvcMovie.Models.Movie` statement at t
 
 The scaffolded code uses several Tag Helper methods to streamline the HTML markup. The [Label Tag Helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms?view=aspnetcore-3.0) displays the name of the field ("Title", "ReleaseDate", "Genre", or "Price"). The [Input Tag Helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms?view=aspnetcore-3.0) renders an HTML `<input>` element. The [Validation Tag Helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms?view=aspnetcore-3.0) displays any validation messages associated with that property.
 
-# Part 7, add search
+## Part 7, add search
 
-## Add Search by name
+### Add Search by name
 
 Update the `Index` method found inside *`Controllers/MoviesController.cs`* with the following code:
 
@@ -927,7 +926,7 @@ public async Task<IActionResult> Index(string searchString)
 1. We create a LINQ query
 2. If the `searchString` parameter contains a string, the movies query is modified to filter on the value of the search string
    - The `s => s.Title.Contains()` code above is a [Lambda Expression](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions). Lambdas are used in method-based [LINQ](https://docs.microsoft.com/en-us/dotnet/standard/using-linq) queries as arguments to standard query operator methods such as the [Where](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.where) method or `Contains` (used in the code above). LINQ queries are not executed when they're defined or when they're modified by calling a method such as `Where`, `Contains`, or `OrderBy`. Rather, query execution is deferred. That means that the evaluation of an expression is delayed until its realized value is actually iterated over or the `ToListAsync` method is called.
-   - Note: The [Contains](https://docs.microsoft.com/en-us/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) method is run on the database, not in the c# code shown above. The case sensitivity on the query depends on the database and the collation. On SQL Server, [Contains](https://docs.microsoft.com/en-us/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) maps to [SQL LIKE](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/like-transact-sql), which is case insensitive. In SQLite, with the default collation, it's case sensitive.
+   - Note: The [Contains](https://docs.microsoft.com/en-us/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) method is run on the database, not in the c## code shown above. The case sensitivity on the query depends on the database and the collation. On SQL Server, [Contains](https://docs.microsoft.com/en-us/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) maps to [SQL LIKE](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/like-transact-sql), which is case insensitive. In SQLite, with the default collation, it's case sensitive.
 
 In *`Views/Movies/Index.cshtml`*
 
@@ -942,7 +941,7 @@ In *`Views/Movies/Index.cshtml`*
 
 - If we don't the form method , it defaults to **POST**.
 
-## Add Search by genre
+### Add Search by genre
 
 Add the following `MovieGenreViewModel` class to the *Models* folder:
 
@@ -1036,7 +1035,7 @@ We need To also change the lambda expressions ( to access `model.Movies[0].Title
     </thead>
 ```
 
-# Part 8, add a new field
+## Part 8, add a new field
 
 When EF Code First is used to automatically create a database, Code First:
 
@@ -1058,11 +1057,11 @@ We add a new Field `Rating` :
   Update-Database
   ```
 
-# Part 9, add validation
+## Part 9, add validation
 
 The validation support provided by MVC and Entity Framework Core Code First is a good example of the **DRY**(Don't Repeat Yourself) principle in action. You can declaratively specify validation rules in one place (in the model class) and the rules are enforced everywhere in the app.
 
-## Add validation rules to the movie model
+### Add validation rules to the movie model
 
 ```c#
 public class Movie
@@ -1094,7 +1093,7 @@ public class Movie
 }
 ```
 
-## Validation Error UI
+### Validation Error UI
 
 ```HTML
 <h4>Movie</h4>
@@ -1118,7 +1117,7 @@ The [Input Tag Helper](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/wo
 
 What's really nice about this approach is that neither the controller nor the `Create` view template knows anything about the actual validation rules being enforced or about the specific error messages displayed. The validation rules and the error strings are specified only in the `Movie` class. These same validation rules are automatically applied to the `Edit` view and any other views templates you might create that edit your model.
 
-## Using Datatype Attributes
+### Using Datatype Attributes
 
 The `DataType` attributes only provide hints for the view engine to format the data (and supplies elements/attributes such as `<a>` for URL's and `<a href="mailto:EmailAddress.com">` for email. You can use the `RegularExpression` attribute to validate the format of the data. The `DataType` attribute is used to specify a data type that's more specific than the database intrinsic type, they're not validation attributes. In this case we only want to keep track of the date, not the time. The `DataType` Enumeration provides for many data types, such as Date, Time, PhoneNumber, Currency, EmailAddress and more. The `DataType` attribute can also enable the application to automatically provide type-specific features. For example, a `mailto:` link can be created for `DataType.EmailAddress`, and a date selector can be provided for `DataType.Date` in browsers that support HTML5. The `DataType` attributes emit HTML 5 `data-` (pronounced data dash) attributes that HTML 5 browsers can understand. The `DataType` attributes do **not** provide any validation.
 
@@ -1164,9 +1163,9 @@ public class Movie
 }
 ```
 
-# Part 10, examine the Details and Delete methods
+## Part 10, examine the Details and Delete methods
 
-## Delete Method
+### Delete Method
 
 Examine the `Delete` and `DeleteConfirmed` methods.
 

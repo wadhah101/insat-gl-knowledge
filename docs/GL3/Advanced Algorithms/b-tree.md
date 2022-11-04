@@ -13,18 +13,14 @@ A B-tree of **order m** follows the following rules;
 
 ## Node's structure
 
-<p align="center">
-  <img src="assets/node.png" alt="node" />
-</p>
+![node.png](assets/node.png)
 
 * p*i* is a pointer to a node that has keys, ``keys<ki``,
 * a node that has ``2m children`` is called a **complete node**,
 * the size of a node is usually the size of a **page**,
 * satellite information are stored with corresponding keys or in an another page.
 
-<p align="center">
-  <img src="assets/example.png" alt="example" />
-</p>
+![example](assets/example.png)
 
 ### Structure
 

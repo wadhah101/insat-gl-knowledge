@@ -6,7 +6,7 @@ For that we will need to learn the theory behind it, and then practice on some e
 
 ## 1. Theoretical Appraoch
 
-*For simplicity, we won't consider indirect recursive calls, and we will only consider deterministic algorithms*
+For simplicity, we won't consider indirect recursive calls, and we will only consider deterministic algorithms
 
 ### 1.1 Main Result
 

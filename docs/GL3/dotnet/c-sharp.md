@@ -1,4 +1,4 @@
-# C# and .NET
+# C## and .NET
 
 ## Understanding .NET
 
@@ -10,15 +10,15 @@
 
 ## Understanding intermediate language
 
-- The C# compiler (named Roslyn) used by the `dotnet` CLI tool converts your C# source code into intermediate language (IL) code and stores the IL in an assembly (a DLL or EXE file). IL code statements are like assembly language instructions, which are executed by .NET Core's virtual machine, known as `CoreCLR`.
+- The C## compiler (named Roslyn) used by the `dotnet` CLI tool converts your C## source code into intermediate language (IL) code and stores the IL in an assembly (a DLL or EXE file). IL code statements are like assembly language instructions, which are executed by .NET Core's virtual machine, known as `CoreCLR`.
 
 - At runtime, `CoreCLR` loads the IL code from the assembly, the just-in-time (JIT) compiler compiles it into native CPU instructions, and then it is executed by the CPU on your machine.
 
-- Another .NET initiative is called .NET Native. This compiles C# code to native CPU instructions ahead of time (`AoT`), rather than using the CLR to compile IL code JIT to native code later. .NET Native improves execution speed and reduces the memory footprint for applications because the native code is generated at build time and then deployed instead of the IL code.
+- Another .NET initiative is called .NET Native. This compiles C## code to native CPU instructions ahead of time (`AoT`), rather than using the CLR to compile IL code JIT to native code later. .NET Native improves execution speed and reduces the memory footprint for applications because the native code is generated at build time and then deployed instead of the IL code.
 
 ---
 
-# Chapter 2
+## Chapter 2
 
 Comments : // or /**/
 
@@ -75,7 +75,7 @@ for (int i = 0; i < names.Length; i++)
 }
 ```
 
-### Making a value type nullable (for `int` )
+#### Making a value type nullable (for `int` )
 
 - Sometimes, for example, when reading values stored in a database that allows empty, missing, or null values, it is convenient to allow a value type to be null, we call this a nullable value type.
 
@@ -85,7 +85,7 @@ thisCannotBeNull = null; // compile error!
 int? thisCouldBeNull = null; // all good
 ```
 
-### Checking for null
+#### Checking for null
 
 ```c
 string authorName = null;
@@ -99,7 +99,7 @@ var result = authorName?.Length ?? 3;
 Console.WriteLine(result);
 ```
 
-### Understanding format strings
+#### Understanding format strings
 
 ```c#
 string applesText = "Apples";
@@ -121,13 +121,13 @@ Console.WriteLine(
 
 - Result :
 
-```
+```console
 Name Count
 Apples 1,234
 Bananas 56,789
 ```
 
-### Getting text input from the user
+#### Getting text input from the user
 
 ```c#
 Console.Write("Type your first name and press ENTER: ");
@@ -138,22 +138,22 @@ Console.WriteLine(
  $"Hello {firstName}, you look good for {age}.");
 ```
 
-### Importing a namespace
+#### Importing a namespace
 
 ```c#
 using <Namespace> ;
 ```
 
-### Main arguments
+#### Main arguments
 
 - Command-line arguments are separated by spaces. Other characters like hyphens and colons are treated as part of an argument value. To include spaces in an argument value, enclose the argument value in single or double quotes
 
-### Controlling Flow and converting types
+#### Controlling Flow and converting types
 
 - `nameof` : name of the variable
 - `sizeof` : size of the type
 
-### Looping with the `foreach` statement
+#### Looping with the `foreach` statement
 
 - Technically, the `foreach` statement will work on any type that follows these rules:
   1. The type must have a method named `GetEnumerator` that returns an object.
@@ -169,9 +169,9 @@ foreach (string name in names)
 }
 ```
 
-### Casting and converting between types
+#### Casting and converting between types
 
-#### Casting numbers implicitly and explicitly
+##### Casting numbers implicitly and explicitly
 
 ```c#
 using static System.Convert;
@@ -182,6 +182,6 @@ int h = ToInt32(g);
 WriteLine($"g is {g} and h is {h}");
 ```
 
-#### Rounding numbers
+##### Rounding numbers
 
 - the cast operator trims the decimal part of a real number and that the `System.Convert` methods round up or down.

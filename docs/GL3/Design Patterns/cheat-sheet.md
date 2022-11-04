@@ -2,7 +2,7 @@
 
 Author [@rihemebh](https://github.com/rihemebh)
 
-### Creational Pattern
+## Creational Pattern
 
 [Factory Pattern](https://www.notion.so/Factory-Pattern-735b328fc75b464ba3d0489c9ccce534)
 
@@ -12,7 +12,7 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 [Singleton](https://www.notion.so/Singleton-7104ae55054247d5ab2e9859018739c7)
 
-### Structural Pattern
+## Structural Pattern
 
 [Decorator](https://www.notion.so/Decorator-e81357319ae34697a45c211b34d3426e)
 
@@ -28,7 +28,7 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 [Bridge](https://www.notion.so/Bridge-a349989928464dac8b35bf78353bb09c)
 
-### Behavioral Pattern
+## Behavioral Pattern
 
 [Template](https://www.notion.so/Template-94028059c85b4f9381833677eb0e5bae)
 

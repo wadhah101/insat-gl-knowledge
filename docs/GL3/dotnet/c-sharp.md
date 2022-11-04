@@ -33,7 +33,7 @@ Comments : // or /**/
 
 - **decimal Type**  : The decimal type is accurate because it stores the number as a large integer and shifts the decimal point. For example, 0.1 is stored as 1, with a note to shift the decimal point one place to the left. 12.75 is stored as 1275, with a note to shift the decimal point two places to the left.
 
-```c#
+```csharp
 int population = 66_000_000; // 66 million in UK
 double weight = 1.88; // in kilograms
 decimal price = 4.99M; // in pounds sterling
@@ -58,7 +58,7 @@ Console.WriteLine($"{name} has {length2} characters."); // interpolated string
 - Arrays are always of a fixed size at the time of memory allocation, so you need to decide how many items you want to store before instantiating them.
 - Arrays are useful for temporarily storing multiple items, but collections are a more flexible option when adding and removing items dynamically.
 
-```c#
+```csharp
 string[] names; // can reference any array of strings
 // allocating memory for four strings in an array
 names = new string[4];
@@ -79,7 +79,7 @@ for (int i = 0; i < names.Length; i++)
 
 - Sometimes, for example, when reading values stored in a database that allows empty, missing, or null values, it is convenient to allow a value type to be null, we call this a nullable value type.
 
-```c#
+```csharp
 int thisCannotBeNull = 4;
 thisCannotBeNull = null; // compile error!
 int? thisCouldBeNull = null; // all good
@@ -101,7 +101,7 @@ Console.WriteLine(result);
 
 #### Understanding format strings
 
-```c#
+```csharp
 string applesText = "Apples";
 int applesCount = 1234;
 string bananasText = "Bananas";
@@ -129,7 +129,7 @@ Bananas 56,789
 
 #### Getting text input from the user
 
-```c#
+```csharp
 Console.Write("Type your first name and press ENTER: ");
 string firstName = Console.ReadLine();
 Console.Write("Type your age and press ENTER: ");
@@ -140,7 +140,7 @@ Console.WriteLine(
 
 #### Importing a namespace
 
-```c#
+```csharp
 using <Namespace> ;
 ```
 
@@ -161,7 +161,7 @@ using <Namespace> ;
   3. The `MoveNext` method must return true if there are more items to enumerate through or false if there are no more items.
 - There are interfaces named `IEnumerable` and `IEnumerable` that formally define these rules but technically the compiler does not require the type to implement these interfaces
 
-```c#
+```csharp
 string[] names = { "Adam", "Barry", "Charlie" };
 foreach (string name in names)
 {
@@ -173,7 +173,7 @@ foreach (string name in names)
 
 ##### Casting numbers implicitly and explicitly
 
-```c#
+```csharp
 using static System.Convert;
 /*...*/
 int d = (int)c;

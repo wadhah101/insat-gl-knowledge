@@ -43,14 +43,14 @@ We could Pass parameters to actions by :
   
 ###### ViewBag
 
-```C#
+```csharp
 ViewBag.Message = “some text”;
 ViewBag.ServerTime = DateTime.Now;
 ```  
 
 ###### ViewData
 
-```C#
+```csharp
 ViewData["Message"] = "some text";
 ViewData["ServerTime"] = DateTime.Now;
 ```  
@@ -90,7 +90,7 @@ Routing is responsible for matching incoming HTTP requests and dispatching those
 
 In startups.cs file :
 
-```C#
+```csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
     if (env.IsDevelopment())
@@ -113,7 +113,7 @@ We can use annotaions instead of the declaration
 
 Example:
 
-```C#
+```csharp
    [Route("api/[action]")]
    public class ProductsController : Controller
       {
@@ -199,7 +199,7 @@ Razor Generate html code from helpers
 
 ### 3. Models
 
-``` C#
+```csharp
 public class Student
 {   
     
@@ -216,7 +216,7 @@ public class Student
 
 **In the Controller :**
 
-``` C#
+```csharp
 return View("<htmlFileName>", Student);
 ```
 
@@ -246,7 +246,7 @@ return View("<htmlFileName>", Student);
 
 #### Specify the action to be executed after submit
 
-```C#
+```csharp
 Html.BeginForm("<actionName>","<ControllerName>") 
 ```
 
@@ -254,7 +254,7 @@ Html.BeginForm("<actionName>","<ControllerName>")
 
 => Customize the form fields
 
-``` C#
+```csharp
 public class Student
 {   
     

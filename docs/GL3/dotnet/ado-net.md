@@ -91,7 +91,7 @@ Storage model.
 
 ###### 1.  One To One
 
- ```C#
+ ```csharp
  class c1 {
  public int id {get; set;}
  public virtual c2 c {get; set;}
@@ -105,7 +105,7 @@ Storage model.
 
 ###### 2.  One To Many
 
-  ```C#
+  ```csharp
  class c1 {
  public int id {get; set;}
  public virtual ICollection<c2> cs {get; set;}
@@ -119,7 +119,7 @@ Storage model.
 
 ###### 3.  Many To Many
 
-  ```C#
+  ```csharp
  class c1 {
  public int id {get; set;}
  public virtual ICollection<c2> cs {get; set;}
@@ -147,7 +147,7 @@ It is a wrapper around ObjectContext which is useful in all the development mode
 
 ####### Example
 
-```C#
+```csharp
 public class ForumContext : DbContext
 { public DbSet<Category> Categories { get; set; }
 public DbSet<Post> Posts { get; set; }
@@ -199,7 +199,7 @@ Entity framework Code First had different database initialization strategies pri
 - LinQ to Entity
   - LinQ Method
 
-   ```C#
+   ```csharp
    //Student is a model 
    using( var context = new SchoolDBStudents() ) {
    
@@ -211,7 +211,7 @@ Entity framework Code First had different database initialization strategies pri
 
   - LinQ Query
 
-```C#
+```csharp
 
 using( var context = new SchoolDBStudents() ) {
 
@@ -235,7 +235,7 @@ The difference = First() will throw an exception and FirstOrDefault () returns d
 
 - Entity SQL : It returns ObjectQuery instead of Iqueryable
 
-```C#
+```csharp
 //You need ObjectContext to create a query using Entity SQL.
   string command = " select VALUE st from SchoolDBEntities.Students " +
                     "AS st WHERE st.StudentName ==  'Bill'";
@@ -248,7 +248,7 @@ ObjectQuery<Student> student = obj.CreateQuery<Student>(command);
 
 - Native SQL
 
-```C#
+```csharp
 
 using( var ctx = new SchoolDBEntities() ) {
 
@@ -264,7 +264,7 @@ var student = ctx.Students.SqlQuery("Select * from Students where StudentId=@id"
 
 ###### 1. Insert
 
-```C#
+```csharp
 // create new Standard entity object
   var newStandard = new Standard();
 // Assign standard name
@@ -281,7 +281,7 @@ var student = ctx.Students.SqlQuery("Select * from Students where StudentId=@id"
   
 ###### 2. Update
 
-   ```C#
+   ```csharp
  Student stud ;
 // Get student from DB
 using (var ctx = new SchoolDBEntities())
@@ -301,7 +301,7 @@ dbCtx.SaveChanges();
 
 ###### 3. Delete
 
-```C#
+```csharp
 using (var context = new SchoolDBEntities())
 { 
     context.Entry(disconnectedTeacher).State =

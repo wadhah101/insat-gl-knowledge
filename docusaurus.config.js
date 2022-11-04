@@ -1,12 +1,10 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/vsDark");
 const math = require("remark-math");
 const katex = require("rehype-katex");
 
-// /** @type {import('@docusaurus/types').Config} */
 const config = async () => {
   const mdxMermaid = await import("mdx-mermaid");
 

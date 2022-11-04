@@ -20,7 +20,7 @@ In an MVC app, the view only displays information. The controller handles and re
 
 ## Part2, Controllers
 
-```c#
+```csharp
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 
@@ -53,13 +53,13 @@ Every `public` method in a controller is callable as an HTTP endpoint. In the sa
 
 MVC invokes controller classes, and the action methods within them, depending on the incoming URL. The default [URL routing logic](https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-5.0) used by MVC, uses a format like this to determine what code to invoke:
 
-```c#
+```csharp
 /[Controller]/[ActionName]/[Parameters]
 ```
 
 The routing format is set in the `Configure` method in `Startup.cs` file.
 
-```c#
+```csharp
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
@@ -78,7 +78,7 @@ app.UseEndpoints(endpoints =>
 
 - Change the `Welcome` method to include two parameters as shown in the following code.
 
-```c#
+```csharp
 // GET: /HelloWorld/Welcome/ 
 // Requires using System.Text.Encodings.Web;
 public string Welcome(string name, int numTimes = 1)
@@ -110,7 +110,7 @@ Run the app and enter the following URL: `https://localhost{PORT}/HelloWorld/Wel
 
 - This behavior is caused by :
 
-  ```c#
+  ```csharp
   app.UseEndpoints(endpoints =>
   {
       endpoints.MapControllerRoute(
@@ -126,7 +126,7 @@ View templates are created using Razor. Razor-based view templates:
 - Have a *`.cshtml`* file extension.
 - Provide an elegant way to create HTML output with C#.
 
-```c#
+```csharp
 public IActionResult Index()
 {
     return View();
@@ -254,7 +254,7 @@ The `ViewData` dictionary object contains data that will be passed to the view.
 
 - In *`Views/HelloWorld/Welcome.cshtml`*
 
-```c#
+```csharp
 @{
     ViewData["Title"] = "Welcome";
 }
@@ -273,7 +273,7 @@ The `ViewData` dictionary object contains data that will be passed to the view.
 
 - We are going to use the Model-First Method.
 
-```c#
+```csharp
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -309,7 +309,7 @@ A database context class is needed to coordinate EF Core functionality (Create, 
 
 - In *`Data/MvcMovieContext.cs`*
 
-```c#
+```csharp
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
 
@@ -342,7 +342,7 @@ using Microsoft.EntityFrameworkCore
 
 Add the following highlighted code in `Startup.ConfigureServices`
 
-```c#
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddControllersWithViews();
@@ -393,7 +393,7 @@ Update-Database
 
 ### Dependency injection in the controller
 
-```c#
+```csharp
 public class MoviesController : Controller
 {
     private readonly MvcMovieContext _context;
@@ -1063,7 +1063,7 @@ The validation support provided by MVC and Entity Framework Core Code First is a
 
 ### Add validation rules to the movie model
 
-```c#
+```csharp
 public class Movie
 {
     public int Id { get; set; }

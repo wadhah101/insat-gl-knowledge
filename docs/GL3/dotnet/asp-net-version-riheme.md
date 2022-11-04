@@ -59,7 +59,7 @@ ViewData["ServerTime"] = DateTime.Now;
 
 ###### Retrieving Information ViewBag
 
-```razor
+```cshtml
 <p>
 Message is: @ViewBag.Message
 
@@ -69,7 +69,7 @@ Server time is: @ViewBag.ServerTime.ToString()
   
 ###### Retrieving Information ViewData
 
-```razor
+```cshtml
 <p>
     Message is: @ViewData["Message"] //ViewBag.Message
     Server time is: @((DateTime)ViewData["ServerTime"])
@@ -150,7 +150,7 @@ into objects that the controller can handle
 
 - Comments
 
-``` razor
+```cshtml
 @* comment text *@
 ```
 
@@ -158,7 +158,7 @@ into objects that the controller can handle
 
 Example 1 : Displaying dynamic data
 
-``` razor
+```cshtml
 @* if viewBag.price = 9 *@
 @ViewBag.Price * 2  @* Result: 9 * 2 *@
 @(ViewBag.Price * 2) @* Result: 18 *@
@@ -167,7 +167,7 @@ Example 1 : Displaying dynamic data
 
 Example 2 : if we want to write a bloc of code inside the HTML
 
-``` razor
+```cshtml
 @{
 @* code C## *@
 }
@@ -179,7 +179,7 @@ Razor Generate html code from helpers
 
 ##### @HTML.ActionLink()
 
-``` razor
+```cshtml
 @HTML.ActionLink("Click here to view photo 1", "Display" , "Photo" , new { id = 1}) 
  
 @* equivalent to *@
@@ -189,7 +189,7 @@ Razor Generate html code from helpers
 
 ##### @URL.Action()
 
-``` razor
+```cshtml
 <img src="@Url.Action('GetImage', new {id = 1})" />
  
 @* equivalent to *@
@@ -222,7 +222,7 @@ return View("<htmlFileName>", Student);
 
 **In the View :**
 
-``` razor
+```cshtml
 @Model.Name
 ```
 
@@ -230,7 +230,7 @@ return View("<htmlFileName>", Student);
 
 #### Diplaying a form
 
-``` razor
+```cshtml
 @using (Html.BeginForm()){
 
 @*  generate a form from the model class  *@
@@ -257,7 +257,6 @@ Html.BeginForm("<actionName>","<ControllerName>")
 ```csharp
 public class Student
 {   
-    
     public int StudentId { get; set; }
     [Required]
     [Display(Name="My Name")] // to costumize the label in the form 

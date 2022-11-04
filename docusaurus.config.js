@@ -123,7 +123,7 @@ const config = async () => {
         prism: {
           theme: lightCodeTheme,
           darkTheme: darkCodeTheme,
-          additionalLanguages: ["bash", "csharp", "java"],
+          additionalLanguages: ["bash", "csharp", "java", "cshtml"],
         },
       }),
   };

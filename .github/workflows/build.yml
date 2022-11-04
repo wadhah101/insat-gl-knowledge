@@ -65,13 +65,13 @@ jobs:
         run: yarn build
 
       - name: Upload artifact
-        if: startsWith(github.head_ref, 'refs/heads/master')
+        if: ${{ github.event_name != 'pull_request' }}
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
           path: "build"
 
       - name: Deploy to GitHub Pages
-        if: startsWith(github.head_ref, 'refs/heads/master')
+        if: ${{ github.event_name != 'pull_request' }}
         id: deployment
         uses: actions/deploy-pages@v1

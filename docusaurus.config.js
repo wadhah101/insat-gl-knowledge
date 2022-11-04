@@ -6,15 +6,12 @@ const math = require("remark-math");
 const katex = require("rehype-katex");
 
 const config = async () => {
-  const mdxMermaid = await import("mdx-mermaid");
-
   /** @type {import('@docusaurus/types').Config} */
   return {
-    // DEBT use docusaurus native mermaid supposrt
-    // markdown: {
-    //   mermaid: true,
-    // },
-    // themes: ["@docusaurus/theme-mermaid"],
+    markdown: {
+      mermaid: true,
+    },
+    themes: ["@docusaurus/theme-mermaid"],
     title: "INSAT GL knowledge",
     tagline:
       "My Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
@@ -57,7 +54,7 @@ const config = async () => {
           },
           docs: {
             // DEBT use docusaurus native mermaid supposrt
-            remarkPlugins: [math, mdxMermaid.default],
+            remarkPlugins: [math],
             rehypePlugins: [katex],
             sidebarPath: require.resolve("./sidebars.js"),
             editUrl:
@@ -74,7 +71,7 @@ const config = async () => {
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
         mermaid: {
-          theme: { light: "neutral", dark: "forest" },
+          theme: { light: "default", dark: "dark" },
         },
         navbar: {
           title: "Home",

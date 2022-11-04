@@ -40,6 +40,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -64,13 +65,13 @@ jobs:
         run: yarn build
 
       - name: Upload artifact
-        if: ${{ github.  != 'pull_request' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
           path: "build"
 
       - name: Deploy to GitHub Pages
-        if: ${{ github.event_name != 'pull_request' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         id: deployment
         uses: actions/deploy-pages@v1

@@ -31,7 +31,7 @@ ADO.NET has two main components that are used for accessing and manipulating dat
 
 After adding stored procedure in the sql server our SqlCommand becomes:
 
-```C#
+```csharp
 SqlCommand cmd = new SqlCommand()
 {
     CommandText = "<stored procedure namme>",

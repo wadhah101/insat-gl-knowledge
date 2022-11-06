@@ -1,23 +1,225 @@
-# Continuous Distributions 
+# Continuous Distributions 1
 
-## 1. Normal Distribution
+## 1. Uniform Distribution
 
 ### 1.1 Definition
+
+A continuous random variable $X$ is said to follow the uniform distribution on an interval $[a,b]$ with $a<b$  denoted by $\mathcal{U}(a,b)$ if:
+$$
+f_X(x)=\begin{cases}
+\frac{1}{b-a} &x\in[a,b]\\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+## 1.2 Significance
+
+In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [statistics](https://en.wikipedia.org/wiki/Statistics), the **continuous uniform distribution** or **rectangular distribution** is a family of [symmetric](https://en.wikipedia.org/wiki/Symmetric_distribution) [probability distributions](https://en.wikipedia.org/wiki/Probability_distributions). The distribution describes an experiment where there is an arbitrary outcome that lies between certain bounds. The bounds are defined by the parameters, *a* and *b*, which are the minimum and maximum values. The interval can either be [closed](https://en.wikipedia.org/wiki/Closed_interval) (e.g. $[a,b]$) or [open](https://en.wikipedia.org/wiki/Open_Interval) (e.g. $]a,b[$).
+
+
+
+
+
+### 1.2 Standard Uniform distribution
+
+It is the uniform distribution on the interval $[0,1]$:
+$$
+\mathcal{U}=\mathcal{U}(0,1)
+$$
+
+
+
+###  1.2 Opposite of Uniform Random Variable
+
+Let $X \sim \mathcal{U}(a,b)$
+$$
+\begin{align*}
+\forall x\in\mathbb{R},F_{-X}(x)&=\mathcal{P}(-X<x)\\
+&=\mathcal{P}(X>-x)\\
+&=1-F_X(-x)\\
+\forall x\in\mathbb{R},f_{-X}(x)&=f'_X(-x)\\
+&=\frac{1}{b-a}\mathbb{1}_{[a,b]}(-x)\\
+&=\frac{1}{(-a)-(-b)}\mathbb{1}_{[-b,-a]}(x)\\
+\implies -X&\sim\mathcal{U}(-b,-a)
+\end{align*}
+$$
+
+### 1.3 Linear Transformation of a Uniform Random Variable
+
+- Let $\alpha \in\mathbb{R}_+^*,\beta\in\mathbb{R}$
+- Let $a,b\in\mathbb{R}$ with  $a<b$
+- Let $X\sim \mathcal{U}(a,b)$ and $Y=\alpha X+b$ 
+
+$$
+\begin{align*}
+\forall x\in\mathbb{R},F_Y(x)&=\mathcal{P}(Y< x)\\
+&=\mathcal{P}(\alpha X< x-\beta)\\
+&= \mathcal{P}(X<\frac{x-\beta}{\alpha})\\
+&=F_X\left(\frac{x-\beta}{\alpha}\right)\\
+\implies \forall x\in\mathbb{R},F_Y(x)&=\frac{1}{a}F_X'\left(\frac{x-\beta}{\alpha}\right)\\
+&=\frac{1}{\alpha}f_X(\frac{x-\beta}{\alpha})\\
+&= \frac{1}{\alpha(b-a)} \mathbb{1}_{[a,b]}(\frac{x-\beta}{\alpha}) \\
+&= \frac{1}{\alpha b-\alpha a}\mathbb{1}_{[\alpha a +\beta,\alpha b +\beta]}(x) \\
+&= \frac{1}{(\alpha b +\beta) - (\alpha a +\beta)}\mathbb{1}_{[\alpha a +\beta,\alpha b +\beta]}(x) \\
+\implies &Y\sim \mathcal{U}(\alpha a+\beta,\alpha b+\beta)
+\end{align*}
+$$
+
+In particular:
+$$
+\boxed{X\sim\mathcal{U}(a,b)\iff \frac{X-a}{b-a}\sim\mathcal{U}(0,1)}
+$$
+For $\alpha < 0$, We have $Y=\alpha X+\beta=-\left(-\alpha X-\beta\right).$
+
+We have:
+$$
+-\alpha X -\beta \sim \mathcal{U}(-\alpha a-\beta,-\alpha b-\beta) \implies \alpha X+\beta \sim\mathcal{U}(\alpha b+\beta,\alpha a+\beta)
+$$
+
+### 1.4 Moments & Central Moments
+
+#### 1.4.1 Moments
+
+$$
+\begin{align*} \forall n\in\mathbb{N}^*,\quad \mathbb{E}[X^n]&=\int_{a}^b \frac{x^n}{b-a} \text{dx}\\
+&=\frac{b^{n+1}-a^{n+1}}{(n+1)(b-a)}
+\end{align*}
+$$
+
+In particular, the expected value $\mathbb{E}[X]$ is
+$$
+\boxed{\mathbb{E}[X]=\frac{a+b}{2}}
+$$
+
+#### 1.4.1 Central Moments
+
+For $n\in\mathbb{N}^*$, the $n^\text{th}$-central moment of $X$ is the $n^\text{th}$-moment of $X-\mathbb{E}[X]$
+
+But $X-\mathbb{E}[X]\sim \mathcal{U}(\frac{a-b}{2},\frac{b-a}{2})$
+$$
+\begin{align*} \forall n \in\mathbb{N}^*,\quad \mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^n\right]&=\frac{(\frac{b-a}{2})^{n+1}-(\frac{a-b}{2})^{n+1}}{(n+1)(\frac{b-a}{2}-\frac{a-b}{2})} \\
+&=\frac{1-(-1)^{n+1}}{2^n(n+1)}\cdot\frac{(b-a)^n}{b-a}
+\end{align*}
+$$
+In particular, the variance $\mathbb{V}[X]$ is:
+$$
+\boxed{\mathbb{V}[X]=\frac{(b-a)^2}{12}}
+$$
+
+## 2. Exponential Distribution
+
+### 2.1 Definition
+
+A continuous random variable $X$ is said to follow the exponential distribution with paramter $\lambda\in\mathbb{R}_+^*$ if:
+$$
+f_X(x)=\begin{cases}
+\lambda e^{-\lambda x} &x \in\mathbb{R}_+ \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+We denote it by:
+$$
+X \sim \mathcal{E}(\lambda)
+$$
+
+### 2.2 Significance
+
+The exponential distribution is the probability distribution of the time between events in a Poisson point process. It is the continuous analogue of the geometric distribution, and it has the key property of being memoryless.
+
+It is used to model radioactive decay.
+
+
+
+### 2.3 Moments
+
+#### 2.3.1 Raw Moments
+
+$$
+\begin{align*}
+\forall n\in\mathbb{N},\quad \mathbb{E}[X^n]&=\int_{\mathbb{R}_+}\lambda t^ne^{-\lambda t} \text{dt}\\
+&= \int_{\mathbb{R}_+}\left(\frac{u}{\lambda}\right)^ne^{-u} \text{du} \quad \text{with} \space u=\lambda t,\quad \text{du}=\lambda\text{dt}\\
+&=\lambda^{-n}\int_{\mathbb{R}_+}u^ne^{-u} \text{du}\\
+&=\frac{\Gamma(n+1)}{\lambda^n}\\
+&=\frac{n!}{\lambda^n}
+\end{align*}
+$$
+
+In particular, the expected value $\mathbb{E}[X]$ is:
+$$
+\boxed{\mathbb{E}[X]=\frac{1}{\lambda}}
+$$
+
+
+#### 2.3.2  Central moments
+
+$$
+\begin{align*}
+\forall n\in\mathbb{N},\quad \mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^n\right]&=\sum_{k=0}^n(-1)^{n-k}{n \choose k}\mathbb{E}[X^k]\mathbb{E}[X]^{n-k}\\
+&=\sum_{k=0}^n(-1)^{n-k}{n \choose k}\frac{k!}{\lambda^n}\\
+&=\frac{1}{\lambda^n}\sum_{k=0}^n(-1)^{n-k}\frac{n!}{(n-k)!}
+\end{align*}
+$$
+
+In particular, the variance $\mathbb{V}[X]$ is:
+$$
+\boxed{\mathbb{V}[X]=\mathbb{E}[X^2]-\mathbb{E}[X]^2=\frac{2}{\lambda^2}-\frac{1}{\lambda^2}=\frac{1}{\lambda^2}}
+$$
+
+
+### 2.4 Memoryless
+
+Memory-less is a fundamental property in the exponential distribution, It states:
+$$
+\forall T,r\in\mathbb{R}_+,\quad \mathcal{P}(X \ge T+r \mid X\ge T)=\mathcal{P}(X\ge r)
+$$
+The proof is as follow:
+$$
+\begin{align*}
+\forall T,r\in\mathbb{R}_+,\quad \mathcal{P}(X \ge T+r \mid X\ge T)&=\frac{\mathcal{P}(X \ge T+r)}{\mathcal{P}(X\ge T)}\\
+&=\frac{\int_{T+r}^{+\infty}\lambda e^{-\lambda u}\text{du}}{\int_{T}^{+\infty}\lambda e^{-\lambda u}\text{du}} \\
+&=\frac{e^{-(T+r)\lambda}}{e^{-T\lambda}}\\
+&=e^{-\lambda r}\\
+&=\mathcal{P}(X \ge r)
+\end{align*}
+$$
+
+### 2.5 Scaling
+
+- Let $k\in\mathbb{R}_+^*$
+- Let $X\sim \mathcal{E}(\lambda)$ and $Y=kX$
+
+We will calculate the probability distribution function of $Y:$
+$$
+\begin{align*}
+\forall x\in\mathbb{R}_+,\quad f_Y(x)&=\frac{1}{k}f_X\left(\frac{x}{k}\right)\\
+&=\frac{\lambda}{k}e^{-\frac{\lambda}{k}x}
+\end{align*}
+$$
+By that:
+$$
+\boxed{\forall k\in\mathbb{R}_+^*,\quad X\sim \mathcal{E}(\lambda) \iff kX\sim \mathcal{E}\left(\frac{\lambda}{k}\right)}
+$$
+
+
+
+
+## 3. Normal Distribution
+
+### 3.1 Definition
 
 A continuous random variable $X$ is said to follow the normal distribution with mean $\mu$ and variance $\sigma^2$ if:
 $$
 f_X(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 $$
 
-### 1.2 Significance
+### 3.2 Significance
 
 Normal distributions are important in [statistics](https://en.wikipedia.org/wiki/Statistics) and are often used in the [natural](https://en.wikipedia.org/wiki/Natural_science) and [social sciences](https://en.wikipedia.org/wiki/Social_science) to represent real-valued [random variables](https://en.wikipedia.org/wiki/Random_variable) whose distributions are not known.
 
 Their importance is partly due to the [central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem). It states that, under some conditions, the average of many samples (observations) of a random variable with finite mean and variance is itself a random variable—whose distribution [converges](https://en.wikipedia.org/wiki/Convergence_in_distribution) to a normal distribution as the number of samples increases. Therefore, physical quantities that are expected to be the sum of many independent processes, such as [measurement errors](https://en.wikipedia.org/wiki/Measurement_error), often have distributions that are nearly normal.
 
-Moreover, Gaussian distributions have some unique properties that are valuable in analytic studies. For instance, any linear combination of a fixed collection of normal deviates is a normal deviate. Many results and methods, such as [propagation of uncertainty](https://en.wikipedia.org/wiki/Propagation_of_uncertainty) and [least squares](https://en.wikipedia.org/wiki/Least_squares) parameter fitting, can be derived analytically in explicit form when the relevant variables are normally distributed.
-
-### 1.3 Standard Normal distribution
+### 3.3 Standard Normal distribution
 
 It is the normal distribution with unit mean and unit variance:
 
@@ -26,9 +228,9 @@ $$
 \mathcal{S}\mathcal{N}=\mathcal{N}(0,1)
 $$
 
-### 1.4 Linear Transformation of a Normal random variable
+### 3.4 Linear Transformation of a Normal random variable
 
-#### 1.4.1 Opposite of standard normal random variable
+#### 3.4.1 Opposite of standard normal random variable
 
 Let $X\sim\mathcal{N}(0,1)$
 $$
@@ -47,7 +249,7 @@ X\sim\mathcal{N}(0,1)\implies -X\sim \mathcal{N}(0,1)
 $$
 
 
-#### 1.4.2 Linear tranformation of a Normal random variable
+#### 3.4.2 Linear tranformation of a Normal random variable
 
 - Let $a\in\mathbb{R}^*_+,b\in\mathbb{R},\mu\in\mathbb{R},\sigma\in\mathbb{R}_+^*$
 
@@ -90,9 +292,72 @@ $$
 \boxed{X\sim \mathcal{N}(\mu,\sigma)\implies ax+b\sim\mathcal{N}\left(a\mu+b,a^2\sigma^2\right)}
 $$
 
-### 1.5 Sum of independent normal variables
+### 3.5 Moments
 
-#### 1.5.1 Case of two centered normal variables
+#### 3.5.1 Moment of a centered Normal distribution
+
+Let $X\sim \mathcal{U}(0,\sigma^2)$ 
+$$
+\begin{align*}
+\forall n\in\mathbb{N}_{\ge 2},\quad \mathbb{E}[X^n] &=\int_{\mathbb{R}}x^{n}f_X(x)\space \text{dx}\\
+&=\int_{\mathbb{R}}\frac{1}{\sqrt{2\pi}\sigma}x^{n}e^{-\frac{x^2}{2\sigma^2}}\space \text{dx}\\
+&=\int_{\mathbb{R}}\frac{1}{\sqrt{2\pi}\sigma}x^{n-1}xe^{-\frac{x^2}{2\sigma^2}}\space \text{dx}\\
+&=\left[\left(\frac{(n-1)x^{n-2}}{n\sqrt{2\pi}\sigma}\right)\times \left(-\sigma^2e^{-\frac{x^2}{2\sigma^2}}\right)\right]^{+\infty}_{-\infty}-\int_{\mathbb{R}}\left(\frac{(n-1)x^{n-2}}{\sqrt{2\pi}\sigma}\right)\times\left(-\sigma^2e^{-\frac{x^2}{2\sigma^2}}\right) \space \text{dx}\\
+&=(n-1)\sigma^2\mathbb{E}[X^{n-2}]\\
+\implies \forall n\in\mathbb{N}_{\ge 2},\quad \mathbb{E}[X^n]&=\mathbb{E}[X^{n \bmod 2}]\prod_{k=1}^{\lfloor\frac{n}{2}\rfloor}\big((2k-1)\sigma^2\big) \\
+&= \mathbb{E}[X^{n \bmod 2}]\sigma^{2\lfloor\frac{n}{2}\rfloor}\prod_{k=1}^{\lfloor\frac{n}{2}\rfloor}(2k-1)\\
+\implies \forall n\in\mathbb{N}^*,\quad \mathbb{E}[X^{2n}]&= \sigma^{2n}\prod_{k=1}^{n}(2k-1)\\
+&=\sigma^{2n}\frac{\prod_{k=1}^{n}2k(2k-1)}{\prod_{k=1}^n2k}\\
+&=\sigma^{2n}\cdot \frac{(2n)!}{2^nn!}\\
+\forall n\in\mathbb{N},\mathbb{E}[X^{2n+1}]&=0 \quad \text{because} \space \mathcal{N}(0,\sigma^2) \space \text{is symmetric}
+\end{align*}
+$$
+In particular, the expected value $\mathbb{E}[X]$ is:
+$$
+\boxed{\mathbb{E}[X]=0}
+$$
+Also, the variance:
+$$
+\boxed{\mathbb{V}[X]=\sigma^2}
+$$
+
+
+#### 3.5.2 Central Moments
+
+Let $X\sim \mathcal{N}(\mu,\sigma^2)$
+
+As $\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)\right] \sim \mathcal{N}(0,\sigma^2)$
+$$
+\forall n\in\mathbb{N}, \begin{cases}
+\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{2n}\right]&= \frac{(2n)!}{2^nn!}\sigma^{2n}\\
+\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{2n+1}\right]&=0
+
+\end{cases}
+$$
+
+### 3.5.3 Non-central moments
+
+Let $X\sim \mathcal{N}(\mu,\sigma^2)$
+$$
+\begin{align*}
+\forall n\in\mathbb{N},\quad \mathbb{E}[X^{2n}]&=\mathbb{E}\left[\left(X-\mathbb{E}[X]+\mathbb{E}[X]\right)^{2n}\right] \\
+&=\sum_{k=0}^{2n}{2n \choose k}\mathbb{E}[X]^{2n-k}\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{k}\right] \\
+&=\sum_{k=0}^{n}{2n \choose 2k}\mathbb{E}[X]^{2n-2k}\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{2k}\right]\\
+&=\sum_{k=0}^{n}{2n \choose 2k}\frac{(2k)!}{2^kk!}\mu^{2n-2k}\sigma^{2k} \\
+
+\forall n\in\mathbb{N},\quad \mathbb{E}[X^{2n+1}]&=\mathbb{E}\left[\left(X-\mathbb{E}[X]+\mathbb{E}[X]\right)^{2n+1}\right] \\
+&=\sum_{k=0}^{2n+1}{2n+1 \choose k}\mathbb{E}[X]^{2n+1-k}\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{k}\right] \\
+&=\sum_{k=0}^{n}{2n+1 \choose 2k}\mathbb{E}[X]^{2n+1-2k}\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{2k}\right]\\
+&=\sum_{k=0}^{n}{2n+1 \choose 2k}\frac{(2k)!}{2^kk!}\mu^{2n+1-2k}\sigma^{2k}
+\end{align*}
+$$
+
+
+
+
+### 3.6 Sum of independent normal variables
+
+#### 3.6.1 Case of two centered normal variables
 
 - Let $X_1\sim \mathcal{N}(0,\sigma_1^2),X_2\sim\mathcal{N}(0,\sigma_2^2)$ two independent centered normal variables
 - Let $Y=X_1+X_2$
@@ -121,7 +386,7 @@ $$
 > Y\sim\mathcal{N}\left(0,\sigma_1^2+\sigma_2^2\right)
 > $$
 
-#### 1.5.2 Case of two independent normal variables
+#### 3.6.2 Case of two independent normal variables
 
 - Let $X_1\sim \mathcal{N}(\mu_1,\sigma_1^2),X_2\sim\mathcal{N}(\mu_2,\sigma_2^2)$ two independent normal variables
 - Let $Y=X_1+X_2$
@@ -139,7 +404,7 @@ $$
 \boxed{Y=X_1+X_2\sim\mathcal{N}\left(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2\right)}
 $$
 
-#### 1.5.3 General Case:
+#### 3.6.3 General Case:
 
 - Let $n\in\mathbb{N}^*$
 - Let $X_1\sim\mathcal{N}(\mu_1,\sigma_1^2),\dots,X_n\sim\mathcal{N}(\mu_n,\sigma_n^2)$  be $n$ independent random variables
@@ -150,9 +415,9 @@ $$
 $$
 
 
-## 2. $\Gamma$ distributions
+## 4. $\Gamma$ distributions
 
-### 2.1 Definition
+### 4.1 Definition
 
 1. Let $\alpha,\beta\in\mathbb{R}_+^*$
 
@@ -167,21 +432,58 @@ $$
 X\sim \Gamma(\alpha,\beta)
 $$
 
-### 2.2 Significance
+### 4.2 Significance
 
-The gamma distribution has been used to model the size of [insurance claims](https://en.wikipedia.org/wiki/Insurance_policy)[[22\]](https://en.wikipedia.org/wiki/Gamma_distribution#cite_note-22) and rainfalls.[[23\]](https://en.wikipedia.org/wiki/Gamma_distribution#cite_note-Aksoy-23) This means that aggregate insurance claims and the amount of rainfall accumulated in a reservoir are modelled by a [gamma process](https://en.wikipedia.org/wiki/Gamma_process) – much like the [exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) generates a [Poisson process](https://en.wikipedia.org/wiki/Poisson_process).
+The gamma distribution has been used to model the size of [insurance claims](https://en.wikipedia.org/wiki/Insurance_policy) and rainfalls. This means that aggregate insurance claims and the amount of rainfall accumulated in a reservoir are modelled by a [gamma process](https://en.wikipedia.org/wiki/Gamma_process) – much like the [exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) generates a [Poisson process](https://en.wikipedia.org/wiki/Poisson_process).
 
 The gamma distribution is also used to model errors in multi-level [Poisson regression](https://en.wikipedia.org/wiki/Poisson_regression) models, because a [mixture](https://en.wikipedia.org/wiki/Mixture_distribution) of [Poisson distributions](https://en.wikipedia.org/wiki/Poisson_distribution) with gamma distributed rates has a known closed form distribution, called [negative binomial](https://en.wikipedia.org/wiki/Negative_binomial_distribution).
 
 In wireless communication, the gamma distribution is used to model the [multi-path fading](https://en.wikipedia.org/wiki/Multi-path_fading) of signal power.
 
-### 2.3 $\mathcal{E}(\lambda)=\Gamma(1,\lambda)$
+### 4.3 Exponential Distribution as a Gamma Distribution
 
-This can be checked easily
+We have:
+$$
+\mathcal{E}(\lambda)=\Gamma(1,\lambda)
+$$
 
-### 2.4 Sum of gamma distributions
+### 4.4 Moments
 
-#### 2.4.1 Two gamma distributions
+#### 4.4.1 Non-Central moments
+
+Let $X\sim \Gamma(\alpha,\beta)$
+$$
+\begin{align*}
+\forall n\in\mathbb{N},\quad \mathbb{E}[X^n]&=\int_{\mathbb{R}_+}x^nf_X(x) \space \text{dx}\\
+&=\int_{\mathbb{R}_+}\frac{x^{\alpha+n-1}\beta^\alpha e^{-\beta x}}{\Gamma(\alpha)} \space \text{dx}\\
+&=\frac{\Gamma(\alpha+n)}{\Gamma(\alpha)\beta^n}\int_{\mathbb{R}_+}\frac{x^{\alpha+n-1}\beta^{\alpha+n} e^{-\beta x}}{\Gamma(\alpha+n)} \space \text{dx}\\
+&=\frac{\Gamma(\alpha+n)}{\Gamma(\alpha)\beta^n}\\
+&=\beta^{-n}\prod_{i=0}^{n-1}\alpha+i
+\end{align*}
+$$
+In particular, The expected value $\mathbb{E}[X]$ is:
+$$
+\boxed{\mathbb{E}[X]=\frac{\alpha}{\beta}}
+$$
+
+### 4.4.2 Central Moments
+
+$$
+\begin{align*}
+\forall n\in\mathbb{N},\quad \mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^n\right]&= \sum_{k=0}^n{n \choose k}(-1)^{n-k}\mathbb{E}[X^k]\mathbb{E}[X]^{n-k}\\
+&=\sum_{k=0}^n {n \choose k}(-1)^{n-k}\frac{\alpha^{n-k}\Gamma(\alpha+k)}{\beta^n\Gamma(\alpha)}
+\end{align*}
+$$
+
+In particular, the variance $\mathbb{V}[X]$ is:
+$$
+\boxed{\mathbb{V}[X]=\frac{\alpha^2\Gamma(\alpha)-2\alpha\Gamma(\alpha+1)+\Gamma(\alpha+2)}{\beta^2 \Gamma(\alpha)}=\frac{\alpha^2-2\alpha^2+\alpha(\alpha+1)}{\beta^2}=\frac{\alpha}{\beta^2}}
+$$
+
+
+### 4.5 Sum of gamma distributions
+
+#### 4.5.1 Two gamma distributions
 
 1. Let $\alpha_1,\alpha_2,\beta\in\mathbb{R}_+^*$
 2. Let $X\sim \Gamma(\alpha_1,\beta), Y\sim\Gamma(\alpha_2,\beta),$ two independent random variables and let $Z=X+Y$ 
@@ -205,173 +507,40 @@ $$
 \boxed{Z=X+Y\sim \Gamma(\alpha_1+\alpha_2,\beta)}
 $$
 
-#### 2.4.2 General Case
+#### 4.5.2 General Case
 
 - Let $n\in\mathbb{N}^*$
-- Let $X_1\sim\Gamma(\alpha_1,\beta),\dots,X_n\sim\Gamma(\alpha_n,\beta)$  be $n$ independents gamma distributions have the same $\beta$ parameter
+- Let $X_1\sim\Gamma(\alpha_1,\beta),\dots,X_n\sim\Gamma(\alpha_n,\beta)$  be $n$ independents gamma distributions that have the same $\beta$ parameter
 
 ​	It can be proved by induction that:
 $$
 \boxed{\sum_{i=1}^nX_i\sim\Gamma\left(\sum_{i=1}^n\alpha_i,\beta\right)}
 $$
 
-### 2.5 Sum of Exponential distributions:
+### 4.6 Sum of Exponential distributions:
 
 - Let $n\in\mathbb{N}^*,\lambda\in\mathbb{R}_+^*$
-- Let $X_1,\dots,X_n\sim\mathcal{E}(\lambda)$  be $n$ independents exponential random variables having the same parameter $\lambda$
+- Let $X_1,\dots,X_n\sim\mathcal{E}(\lambda)$  be $n$ independent exponential random variables having the same parameter $\lambda$
 
 This is a special case of $2.4:$
 $$
 \boxed{\sum_{i=1}^nX_i\sim\Gamma\left(n,\lambda\right)}
 $$
 
-## 3. $\chi^2$ distributions
+### 4.7 Scaling of Gamma distributions
 
-### 3.1 Definition
+- Let $k\in\mathbb{R}_+^*$
+- Let $X\sim \Gamma(\alpha,\beta)$ and $Y=kX$
 
-Let $X$ be a continuous random variable.
-
-By definition, $X$ is said to follow the $\chi^2$ distribution with $k$ degrees of freedom if
-$$
-X\sim \Gamma(\frac{k}{2},\frac{1}{2})=\chi^2_k
-$$
-
-### 3.2 Significance
-
-For $k\in\mathbb{N},$ The $\chi^2_k$ distribution is the distribution of the sum of square of $k$ independent standard normal random variables.
-
-The chi-squared distribution is a special case of the [gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution) and is one of the most widely used [probability distributions](https://en.wikipedia.org/wiki/Probability_distribution) in [inferential statistics](https://en.wikipedia.org/wiki/Inferential_statistics), notably in [hypothesis testing](https://en.wikipedia.org/wiki/Hypothesis_testing) and in construction of [confidence intervals](https://en.wikipedia.org/wiki/Confidence_interval).
-
-The chi-squared distribution is used in the common [chi-squared tests](https://en.wikipedia.org/wiki/Chi-squared_test) for [goodness of fit](https://en.wikipedia.org/wiki/Goodness_of_fit) of an observed distribution to a theoretical one, the [independence](https://en.wikipedia.org/wiki/Statistical_independence) of two criteria of classification of [qualitative data](https://en.wikipedia.org/wiki/Data_analysis), and in confidence interval estimation for a population [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation) of a normal distribution from a sample standard deviation. Many other statistical tests also use this distribution, such as [Friedman's analysis of variance by ranks](https://en.wikipedia.org/wiki/Friedman_test).
-
-### 3.3 Square of a standard normal random variable
-
-Let $X\in\mathcal{N}(0,1),$ and let $Y=X^2$
+We have:
 $$
 \begin{align*}
-\forall x\in\mathbb{R}_+^*,F_Y(x)&=\mathcal{P}(X^2<x)\\
-&=\mathcal{P}(-\sqrt{x}<X<\sqrt{x})\\
-&=\frac{1}{\sqrt{2\pi}}\int_{-\sqrt{x}}^{\sqrt{x}}e^{-\frac{t^2}{2}}\text{dt}\\
-&=\frac{\sqrt{2}}{\sqrt{\pi}}\int_{0}^{\sqrt{x}}e^{-\frac{t^2}{2}}\text{dt}\\
-\implies\forall x\in\mathbb{R}_+^*,f_Y(x)&=F_Y'(x)\\
-&=\frac{1}{2\sqrt{x}}\cdot\left(\frac{\sqrt{2}}{\sqrt{\pi}}e^{-\frac{(\sqrt x)^2}{2}}\right)\\
-&=\frac{1}{\sqrt{2\pi}}e^{-\frac{x}{2}}
+\forall x\in\mathbb{R}_+^*, \quad f_Y(x)&=\frac{1}{k}f\left(\frac{x}{k}\right)\\
+&=\frac{1}{k}\cdot \frac{\beta^\alpha\left(\frac{x}{k}\right)^{\alpha-1}e^{\frac{-\beta}{k}x}}{\Gamma(\alpha)}\\
+&=\frac{\left(\frac{\beta}{k}\right)^{\alpha}x^{\alpha-1}e^{\frac{-\beta}{k}x}}{\Gamma(\alpha)}
 \end{align*}
 $$
-$\forall x\leq0,$ it is trivial that $F_Y(x)=0,$ So consequently $\forall x\leq 0,f_Y(x)=0$
-
-So we can conclude that:
+So we have $Y\sim \Gamma(\alpha,\frac{\beta}{k})$:
 $$
-\boxed{X^2\sim\Gamma(\frac{1}{2},\frac{1}{2})=\chi^2_1}
-$$
-
-### 3.4 Sum of squares of independent standard normal random variables
-
-- Let $n\in\mathbb{N}^*$
-- Let $X_1,\dots,X_n \sim \mathcal{N}(0,1)$ be independent standard normal random variables
-
-$$
-\boxed{\sum_{i=0}^nX_i^2\sim \Gamma(\frac{n}{2},\frac{1}{2})=\chi^2_n}
-$$
-
-This follows immediately from the sum of gamma distributions.
-
-
-
-### 3.5 Sum of chi-square distributions
-
-- Let $n\in\mathbb{N}^*$
-- Let $d_1,\dots,d_n\in\mathbb{N}^*,$ and let $r=\sum_{i=1}^nd_i$
-- Let $X_1\sim \chi^2_{d_1},\dots,X_n\sim \chi^2_{d_n}$:
-
-$$
-\boxed{\sum_{i=1}^nX_i\sim \chi^2_{r}}
-$$
-
-This follows immediately from the sum of gamma distributions.
-
-
-
-## 4. $\mathcal{F}$- distributions
-
-### 4.1 Definition
-
-- Let $d_1\,d_2 \in\mathbb{N}^*$
-- $X$ a continuous random variable
-
-By definition, we say that $X$ follows the $F$ distribution with parameters $(d_1,d_2)$ if there exists $X_1\sim\chi^2_{d_1},X_2\sim \chi^2_{d_2}$ such that $X_1,X_2$ are independents and:
-$$
-X=\frac{\tfrac{X_1}{d_1}}{\tfrac{X_2}{d_2}}
-$$
-By definition:
-$$
-\boxed{\forall d_1,d_2\in\mathbb{N}^*,\quad\forall X_1\sim\chi^2_{d_1},\forall X_2\sim\chi^2_{d_2} \text{ independents}:\quad \frac{\tfrac{X_1}{d_1}}{\tfrac{X_2}{d_2}}\sim\mathcal{F}(d_1,d_2)}
-$$
-
-
-
-
-### 4.2 Significance
-
-the $F$-distribution arises frequently as the [null distribution](https://en.wikipedia.org/wiki/Null_distribution) of a [test statistic](https://en.wikipedia.org/wiki/Test_statistic), most notably in the [analysis of variance](https://en.wikipedia.org/wiki/Analysis_of_variance) (ANOVA) and other [*F*-tests](https://en.wikipedia.org/wiki/F-test).
-
-A [random variate](https://en.wikipedia.org/wiki/Random_variate) of the *F*-distribution with parameters $d_1$ and $d_2$ arises as the ratio of two appropriately scaled [chi-squared](https://en.wikipedia.org/wiki/Chi-squared_distribution) variates with respective degree of freedoms $d_1$ and $d_2$.
-
-### 4.3 Probability Distribution Function
-
-Let $d_1,d_2\in\mathbb{N}^*$
-
-We have $\chi_{d_1}^2,\chi_{d_2}^2> 0$, So:
-$$
-\begin{align*}
-\forall x \in \mathbb{R}_+^*,f_{\mathcal{F}(d_1,d_2)}(x)&=\int_{\mathbb{R}_+^*}tf_{\chi^2_{d_1}/d_1}(xt)f_{\chi^2_{d_2}/d_2}(t)\text{dt}\\
-&=\int_{\mathbb{R}_+^*}d_1d_2tf_{\chi^2_{d_1}}(xd_1t)f_{\chi^2_{d_2}}(d_2t)\text{dt}\\
-&=d_1d_2\int_{\mathbb{R}_+^*}tf_{\chi^2_{d_1}}(xd_1t)f_{\chi^2_{d_2}}(d_2t)\text{dt}\\
-&=d_1d_2\int_{\mathbb{R}_+^*}t\frac{d_1^{\tfrac{d_1}{2}-1}t^{\tfrac{d_1}{2}-1}x^{\tfrac{d_1}{2}-1}e^{-\tfrac{d_1x}{2}t}d_2^{\tfrac{d_2}{2}-1}t^{\tfrac{d_2}{2}-1}e^{-\tfrac{d_2}{2}t}}{2^{\tfrac{d_1+d_2}{2}}\Gamma(\tfrac{d_1}{2})\Gamma(\tfrac{d_2}{2})}\text{dt}\\
-&=\frac{d_1^{\tfrac{d_1}{2}}d_2^{\tfrac{d_2}{2}}x^{\tfrac{d_1}{2}-1}}{2^{\tfrac{d_1+d_2}{2}}\Gamma(\tfrac{d_1}{2})\Gamma(\tfrac{d_2}{2})}\int_{\mathbb{R}_+^*}t^{\tfrac{d_1+d_2}{2}-1}e^{-\tfrac{d_1x+d_2}{2}t}\text{dt}\\
-&=\frac{d_1^{\tfrac{d_1}{2}}d_2^{\tfrac{d_2}{2}}x^{\tfrac{d_1}{2}-1}}{2^{\tfrac{d_1+d_2}{2}}\Gamma(\tfrac{d_1}{2})\Gamma(\tfrac{d_2}{2})}\int_{\mathbb{R}_+^*}\left(\frac{2}{d_1x+d_2}\right)^{\tfrac{d_1+d_2}{2}}u^{\tfrac{d_1+d_2}{2}-1}e^{-u}\text{du} \text{ with }u=\frac{2t}{d_1x+d_2}\\
-&=\frac{d_1^{\tfrac{d_1}{2}}d_2^{\tfrac{d_2}{2}}x^{\tfrac{d_1}{2}-1}}{\left(d_1x+d_2\right)^{\tfrac{d_1+d_2}{2}}\Gamma(\tfrac{d_1}{2})\Gamma(\tfrac{d_2}{2})}\int_{\mathbb{R}_+^*}u^{\tfrac{d_1+d_2}{2}-1}e^{-u}\text{du}\\
-&=\frac{d_1^{\tfrac{d_1}{2}}d_2^{\tfrac{d_2}{2}}x^{\tfrac{d_1}{2}-1}}{\left(d_1x+d_2\right)^{\tfrac{d_1+d_2}{2}}\Gamma(\tfrac{d_1}{2})\Gamma(\tfrac{d_2}{2})}\Gamma\left(\frac{d_1+d_2}{2}\right)\\
-&=\frac{d_1^{\tfrac{d_1}{2}}d_2^{\tfrac{d_2}{2}}x^{\tfrac{d_1}{2}-1}}{\left(d_1x+d_2\right)^{\tfrac{d_1+d_2}{2}}\Beta(\tfrac{d_1}{2},\tfrac{d_2}{2})}\\
-&=\frac{1}{x\Beta(\tfrac{d_1}{2},\tfrac{d_2}{2})}\sqrt{\frac{(d_1x)^{d_1}d_2^{d_2}}{(d_1x+d_2)^{d_1+d_2}}}
-\end{align*}
-$$
-
-
-
-
-## 5. Sudent's $t$-distribution
-
-### 5.1 Definition
-
-In [probability](https://en.wikipedia.org/wiki/Probability) and [statistics](https://en.wikipedia.org/wiki/Statistics), **Student's $t$-distribution** (or simply the **$t$-distribution**) is any member of a family of continuous [probability distributions](https://en.wikipedia.org/wiki/Probability_distribution) that arise when estimating the [mean](https://en.wikipedia.org/wiki/Expected_value) of a [normally distributed](https://en.wikipedia.org/wiki/Normal_distribution) [population](https://en.wikipedia.org/wiki/Statistical_population) in situations where the [sample size](https://en.wikipedia.org/wiki/Sample_size) is small and the population's [standard deviation](https://en.wikipedia.org/wiki/Standard_deviation) is unknown. It was developed by English statistician [William Sealy Gosset](https://en.wikipedia.org/wiki/William_Sealy_Gosset) under the pseudonym "Student".
-
-- Let $d_1\,d_2 \in\mathbb{N}^*$
-- $X$ a continuous random variable
-
-By definition, we say that $X$ follows the $t$ distribution with $\nu$ degrees of freedom if there exists $P\sim\mathcal{N}(0,1),S\sim \chi^2_{\nu}$ such that $X,S$ are independents and:
-$$
-X=\frac{P}{\sqrt{\tfrac{S}{\nu}}}
-$$
-By definition:
-$$
-\boxed{\forall \nu\in\mathbb{N}^*,\quad\forall P\sim\mathcal{N}(0,1),\forall S\sim\chi^2_{\nu} \text{ independents}:\quad \frac{P}{\sqrt{\tfrac{S}{\nu}}}\sim\mathcal{T}(\nu)}
-$$
-
-
-
-### 5.2 Significance
-
-The $t$-distribution plays a role in a number of widely used statistical analyses, including [Student's *t*-test](https://en.wikipedia.org/wiki/Student's_t-test) for assessing the [statistical significance](https://en.wikipedia.org/wiki/Statistical_significance) of the difference between two sample means, the construction of [confidence intervals](https://en.wikipedia.org/wiki/Confidence_interval) for the difference between two population means, and in linear [regression analysis](https://en.wikipedia.org/wiki/Regression_analysis). Student's *t*-distribution also arises in the [Bayesian analysis](https://en.wikipedia.org/wiki/Bayesian_analysis) of data from a normal family.
-
-If we take a sample of $n$ observations from a normal distribution, then the *$t$*-distribution with $\nu=n-1$ [degrees of freedom](https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)) can be defined as the distribution of the location of the sample mean relative to the true mean, divided by the sample standard deviation, after multiplying by the standardizing term $\sqrt{n}$. In this way, the *t*-distribution can be used to construct a [confidence interval](https://en.wikipedia.org/wiki/Confidence_interval) for the true mean.
-
-The $t$-distribution is symmetric and bell-shaped, like the normal distribution. However, the $t$-distribution has heavier tails, meaning that it is more prone to producing values that fall far from its mean. This makes it useful for understanding the statistical behavior of certain types of ratios of random quantities, in which variation in the denominator is amplified and may produce outlying values when the denominator of the ratio falls close to zero. The Student's $t$-distribution is a special case of the [generalised hyperbolic distribution](https://en.wikipedia.org/wiki/Generalised_hyperbolic_distribution).
-
-
-
-#### 5.3 Probability Distribution Function
-
-$$
-\forall x\in\mathbb{R},\quad f_{\mathcal{T}(\nu)}(x)=\frac{\Gamma(\tfrac{n+1}{2})}{\sqrt{n\pi}\Gamma(\tfrac{n}{2})}\left(1+\frac{x^2}{2}\right)^{-\tfrac{n+1}{2}}
+\boxed{\forall k\in\mathbb{R}_+^*,\quad X\sim\Gamma(\alpha,\beta)\iff kX\sim \Gamma\left(\alpha,\frac{\beta}{k}\right)}
 $$

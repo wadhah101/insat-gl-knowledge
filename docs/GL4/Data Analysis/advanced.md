@@ -1,6 +1,6 @@
 # Advanced Probability
 
-## 1. Function of 
+## 1. Function {#random-variable-function} 
 
 Sometimes, 
 
@@ -281,7 +281,7 @@ $$
 
 We can go further, and calculate the variance of $Y$
 
-First of all: we calculate the expected variance, given $X$:
+First of all, we calculate the conditional variance, given $X$:
 $$
 \begin{align*}
 \forall n\in\mathbb{N}^*,\quad \mathbb{V}[Y\mid X=n]&=\frac{n^2}{12} \quad \text{since} \space Y[X=n]\sim\mathcal{U}(0,n) \\

@@ -34,7 +34,9 @@ $$
 
 ### 5.2 Significance
 
+In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [statistics](https://en.wikipedia.org/wiki/Statistics), the **hyper-geometric distribution** is a [discrete probability distribution](https://en.wikipedia.org/wiki/Probability_distribution#Discrete_probability_distribution) that describes the probability of $k$ successes (random draws for which the object drawn has a specified feature) in $n$ draws, *without* replacement, from a finite [population](https://en.wikipedia.org/wiki/Statistical_population) of size $N$ that contains exactly $K$ objects with that feature, wherein each draw is either a success or a failure. 
 
+In contrast, the [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) describes the probability of successes in $n$ draws *with* replacement.
 
 ### 5.3 Probability Mass function
 

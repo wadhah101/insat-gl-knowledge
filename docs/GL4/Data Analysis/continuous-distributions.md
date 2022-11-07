@@ -1,6 +1,6 @@
 # Continuous Distributions 1
 
-## 1. Uniform Distribution
+## 1. Uniform Distribution {#uniform-distribution}
 
 ### 1.1 Definition
 
@@ -106,7 +106,9 @@ $$
 \boxed{\mathbb{V}[X]=\frac{(b-a)^2}{12}}
 $$
 
-## 2. Exponential Distribution
+
+
+## 2. Exponential Distribution {#exponential-distribution}
 
 ### 2.1 Definition
 
@@ -204,7 +206,7 @@ $$
 
 
 
-## 3. Normal Distribution
+## 3. Normal Distribution {#normal-distribution}
 
 ### 3.1 Definition
 
@@ -415,7 +417,8 @@ $$
 $$
 
 
-## 4. $\Gamma$ distributions
+
+## 4. $\Gamma$ distributions {#gamma-distribution}
 
 ### 4.1 Definition
 

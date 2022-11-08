@@ -1,5 +1,5 @@
 ---
-slug: /gl4/data-analysis/advance
+slug: /gl4/data-analysis/advanced
 ---
 
 # Advanced Probability

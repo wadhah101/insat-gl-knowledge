@@ -1,3 +1,7 @@
+---
+slug: /gl3/embeded-programming/cheat-sheet
+---
+
 # Cheat sheet
 
 ## General Input Output

@@ -1,3 +1,7 @@
+---
+slug: /gl5/blockchain/questions
+---
+
 # Questions
 
 partie QCM

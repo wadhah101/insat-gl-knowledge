@@ -15,7 +15,7 @@ Make sure Volta is installed and configured on your system. This project relies 
 
 ### Unix/Linux
 
-```console
+```bash
 curl https://get.volta.sh | bash
 ```
 
@@ -27,7 +27,7 @@ Follow this [guide](https://docs.volta.sh/guide/getting-started)
 
 Install your dependencies. **Yarn V2** [Plug'n'Play](https://yarnpkg.com/features/pnp) is active and you won't find any node_module folder.
 
-```console
+```bash
 yarn
 ```
 
@@ -35,7 +35,7 @@ For Vscode userS make sure to apply .vscode/settings.json when promoted
 
 ## Local Development
 
-```console
+```bash
 yarn start
 ```
 
@@ -43,7 +43,7 @@ This command starts a local development server and opens up a browser window. Mo
 
 ## Build
 
-```console
+```bash
 yarn build
 ```
 

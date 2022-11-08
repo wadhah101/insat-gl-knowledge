@@ -1,3 +1,7 @@
+---
+slug: /gl4/big-data/cheat-sheet
+---
+
 # Cheat sheet
 
 ## introduction & 5vs

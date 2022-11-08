@@ -1,3 +1,7 @@
+---
+slug: /gl3/advanced-algorithms/heap
+---
+
 # Heap & Priority queues
 
 ## Priority queues
@@ -29,9 +33,7 @@ Let *E* be a set mapped by a priority function *p*. We call a priority queue a d
 
 The level of a node X in a tree A is the __number of edges__ on the path from the root node to X.
 
-<p align="center">
-  <img src="assets/node_level.png" alt="level node" />
-</p>
+![node_level](assets/node_level.png)
 
 The level of the green node is __3__.
 
@@ -39,19 +41,15 @@ The level of the green node is __3__.
 
 For a binary tree A, hierarchical numbering consists of numbering, starting from 1, the nodes from *top to bottom* and for each level from the *left to the right*.
 
-<p align="center">
-  <img src="assets/hier_numbering.png" alt="hier numbering" />
-</p>
+![hier_numbering](assets/hier_numbering.png)
 
 ### Complete binary tree
 
 A complete binary tree is a binary tree in which every level, __except possibly the last__, is completely filled, and all nodes are *as far left* as possible.
 
-<p align="center">
-  <img src="assets/complete_tree.png" alt="complete" />
-</p>
+![complete_tree](assets/complete_tree.png)
 
-### Heap
+### Heap : Complete binary tree
 
 Let *E* be a set mapped by a priority function *p*. A heap representing *(E,p)* is a couple *T=(A,obj)* where *A* is a __complete tree__ and *obj*  is a __bijection__ that maps for each node an element of *E*.
 
@@ -73,9 +71,7 @@ typedef struct{
 
 You may be wondering as to why we represent it as an array! Well let me explain.
 
-<p align="center">
-  <img src="./assets/array.png" alt="array" />
-</p>
+![array](assets/array.png)
 
 The root is the node of index ``0``. And for a node of index ``i``, the __parent__ is the node of index ``i-1 div 2``, the __left child__ is the node of index ``2i+1`` and the __right child__ is the node of index ``2i+2``.
 

@@ -1,22 +1,17 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const darkCodeTheme = require("prism-react-renderer/themes/vsDark");
 const math = require("remark-math");
 const katex = require("rehype-katex");
 
-// /** @type {import('@docusaurus/types').Config} */
 const config = async () => {
-  const mdxMermaid = await import("mdx-mermaid");
-
   /** @type {import('@docusaurus/types').Config} */
   return {
-    // DEBT use docusaurus native mermaid supposrt
-    // markdown: {
-    //   mermaid: true,
-    // },
-    // themes: ["@docusaurus/theme-mermaid"],
+    markdown: {
+      mermaid: true,
+    },
+    themes: ["@docusaurus/theme-mermaid"],
     title: "INSAT GL knowledge",
     tagline:
       "My Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
@@ -48,13 +43,18 @@ const config = async () => {
         "classic",
         /** @type {import('@docusaurus/preset-classic').Options} */
         {
+          sitemap: {
+            changefreq: "weekly",
+            priority: 0.5,
+            filename: "sitemap.xml",
+          },
           googleAnalytics: {
             trackingID: "G-XR2Q0GYH0M",
             anonymizeIP: true,
           },
           docs: {
             // DEBT use docusaurus native mermaid supposrt
-            remarkPlugins: [math, mdxMermaid.default],
+            remarkPlugins: [math],
             rehypePlugins: [katex],
             sidebarPath: require.resolve("./sidebars.js"),
             editUrl:
@@ -70,10 +70,29 @@ const config = async () => {
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
-        themeConfig: {
-          mermaid: {
-            theme: { light: "neutral", dark: "forest" },
-          },
+        algolia: {
+          // The application ID provided by Algolia
+          appId: "SB21WGVQ6P",
+
+          apiKey: "1d0d11b0a4de52a0547adfd329146b56",
+
+          indexName: "prod_gl_knowledge",
+
+          // Optional: see doc section below
+          contextualSearch: true,
+
+          // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+          externalUrlRegex: "external\\.com|domain\\.com",
+
+          // Optional: Algolia search parameters
+          searchParameters: {},
+
+          // Optional: path for search page that enabled by default (`false` to disable it)
+          searchPagePath: "search",
+        },
+
+        mermaid: {
+          theme: { light: "default", dark: "dark" },
         },
         navbar: {
           title: "Home",
@@ -122,6 +141,7 @@ const config = async () => {
         prism: {
           theme: lightCodeTheme,
           darkTheme: darkCodeTheme,
+          additionalLanguages: ["bash", "csharp", "java", "cshtml", "prolog"],
         },
       }),
   };

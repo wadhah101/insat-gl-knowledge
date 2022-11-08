@@ -1,7 +1,5 @@
 ---
-authors:
-  - name: Rami Zouari
-    url: https://github.com/ramizouari  
+slug: /gl5/verfication-systeme-formelle/course-1
 ---
 
 # Course 1

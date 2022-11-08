@@ -1,3 +1,7 @@
+---
+slug: /gl3/distributed-systems/cheat-sheet
+---
+
 # Cheat sheet RabbitMQ
 
 ## Publish / Subscribe
@@ -27,11 +31,11 @@
 
 - Creating an exchange :
 
-  ```
+  ```java
   channel.exchangeDeclare("logs", "fanout");
   ```
 
-#### Listing Exchanges
+### Listing Exchanges
 
 - To list the exchanges on the server you can run the ever useful `rabbitmqctl`:
 
@@ -95,7 +99,7 @@ From now on the `logs` exchange will append messages to our queue.
 
 - In this tutorial we're going to add a feature to it - we're going to make it possible to subscribe only to a subset of the messages. For example, we will be able to direct only critical error messages to the log file (to save disk space), while still being able to print all of the log messages on the console.
 
-#### Bindings
+#### Routing Bindings
 
 - A binding is a relationship between an exchange and a queue. This can be simply read as: the queue is interested in messages from this exchange.
 
@@ -152,8 +156,6 @@ for(String severity : argv){
   channel.queueBind(queueName, EXCHANGE_NAME, severity);
 }
 ```
-
----
 
 Final Notes :
 

@@ -1,4 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
+# A simple workflow for validating Mardown docs
 name: Validate
 
 on:
@@ -6,7 +6,7 @@ on:
     branches:
       - master
   pull_request:
-    types: [opened, reopened]
+    types: [opened, reopened, synchronize]
     branches:
       - master
 
@@ -24,3 +24,28 @@ jobs:
           files: docs
           config_file: .markdownlint.yaml
           ignore_path: .markdownlintignore
+
+  build:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref != 'refs/heads/master' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      - name: setup node
+        uses: volta-cli/action@v3
+
+      - name: cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: "**/.yarn"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install deps
+        run: yarn install --immutable
+
+      - name: Build project
+        run: yarn build

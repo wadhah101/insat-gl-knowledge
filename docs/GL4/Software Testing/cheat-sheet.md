@@ -1,3 +1,7 @@
+---
+slug: /gl4/software-testing/cheat-sheet
+---
+
 # Cheat sheet
 
 ## Fundamentals

@@ -1,3 +1,7 @@
+---
+slug: /gl3/logic-programming/cheat-sheets/version-haj-ali
+---
+
 # Cheat sheet - Haj ali
 
 ## SLD Resolution
@@ -32,8 +36,6 @@ human(socrates).
 % X is a variable
 mortal(X):-human(X).
 
-%-----------
-
 mortal(socrates).
 ```
 
@@ -47,7 +49,7 @@ Execution of a Prolog program is initiated when the user writes a __query__. Log
 
 Operationally, Prolog's execution strategy can be thought of as a generalization of _function calls_ in other languages, one difference being that multiple clause heads can match a given call. In that case, the system creates a choice-point, __unifies__ the goal with the clause head of the first alternative, and continues with the goals of that first alternative. If any goal fails in the course of executing the program, all variable bindings that were made since the most recent choice-point was created are __undone__, and execution continues with the next alternative of that choice-point. This execution strategy is called chronological __backtracking__.
 
-### Example
+### Execution Example
 
 ``` prolog
 parent(i,j).
@@ -55,16 +57,12 @@ parent(j,b).
 ancestor(X,Y):-parent(X,Y).
 ancestor(X,Y):-parent(X,Z),ancestor(Z,Y).
 
-%-----------
-
 ancestor(i,X).
 ```
 
 __Execution:__
 
-<p align="center">
-  <img src="assets/search_tree.png" alt="tree" />
-</p>
+![search_tree](assets/search_tree.png)
 
 ## Arithmetics
 
@@ -113,9 +111,7 @@ X + Y = 3 + 2.
 
 This is easily explained by the fact that expressions are represented with __trees__ and the ``=`` operator is used for the __unification__.
 
-<p align="center">
-  <img src="assets/num_tree.png" alt="tree" />
-</p>
+![num_tree](assets/num_tree.png)
 
 * ``Exp1 =:= Exp2``, is successful if the two expressions are equal. (The opposite of the the ``=\=`` operator)
 * ``Exp1 < Exp2``, is successful if the value of Exp1 is strictly inferior than Exp2. (The opposite of the the ``>`` operator)
@@ -150,9 +146,9 @@ X == 9 mod 4.
 
 Let's take the __Facrotial function__ as an example;
 
-_0! = 1_
+0! = 1
 
-_n! = n(n-1)! for n>0_
+n! = n(n-1)! for n>0
 
 ``` prolog
 fact(0,1).
@@ -301,8 +297,6 @@ num(8).
 num(9).
 solution(X):-num(X),0<X*X-10*X+20.
 
-%------
-
 findall(X,solution(X),L).
 %L=[0,1,2,8,9]
 ```
@@ -321,8 +315,6 @@ num(7,impair).
 num(8,pair).
 num(9,impair).
 solution(X,Y):-num(X,Y),0<X*X-10*X+20.
-
-%------
 
 bagof(X,solution(X,Y),L).
 %Y=impair, L=[1,9]
@@ -395,8 +387,6 @@ r(a).
 q(b).
 p(X):-not(r(X)).
 
-%------
-
 q(X),p(X).
 % true.
 p(X),q(X).
@@ -412,9 +402,7 @@ Each time we use the ``not/1``, we have to create another search tree;
 
 ## Binary search trees
 
-<p align="center">
-  <img src="assets/binary_tree.png" alt="tree" />
-</p>
+![binary_tree](assets/binary_tree.png)
 
 The following tree can be implemented as;
 

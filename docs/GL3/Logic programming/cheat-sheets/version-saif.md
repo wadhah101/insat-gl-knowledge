@@ -1,3 +1,7 @@
+---
+slug: /gl3/logic-programming/cheat-sheets/version-saif
+---
+
 # Cheat sheet - Saif
 
 ## Introduction  
@@ -62,7 +66,7 @@
 
 Database :
 
-```
+```prolog
 likes(joe, fish). 
 ikes(joe, mary).
 likes(mary, book).
@@ -72,7 +76,7 @@ likes(john, france).
 
 Questions :
 
-```
+```prolog
 ?- likes(joe, money).
 no
 ?- likes(mary, joe).
@@ -87,7 +91,7 @@ yes
 
 Database :
 
-```
+```prolog
 human(socrates).
 human(aristotle).
 athenian(socrates).   
@@ -95,7 +99,7 @@ athenian(socrates).
 
 Questions :
 
-```
+```prolog
 ?- athenian(socrates).
 yes
 ?- athenian(aristotle).
@@ -118,7 +122,7 @@ no
 
 Database :
 
-```
+```prolog
 likes(john, flowers).
 likes(john, mary).
 likes(paul, mary).
@@ -126,7 +130,7 @@ likes(paul, mary).
 
 Question
 
-```
+```prolog
 ?- likes(john, X).
 X = flowers
 ```
@@ -145,7 +149,7 @@ X = flowers
 
 #### Example 2 (same database)
 
-```
+```prolog
 ?- likes(X, mary).
 X = john ;
 X = paul ;
@@ -154,7 +158,7 @@ no
 
 - IMPORTANT : in SWI-Prolog, we have this output  (will stop searching if there's not more instantiations available)
 
-```
+```prolog
 ?- likes(X, mary).
 X = john ;
 X = paul .
@@ -168,7 +172,7 @@ Example :
 
 Database
 
-```
+```prolog
 likes(mary, chocolate).
 likes(mary, wine).
 likes(john, wine).
@@ -177,14 +181,14 @@ likes(john, mary).
 
 Questions
 
-```
+```prolog
 ?- likes(john, mary), likes(mary, john).
 no
 ```
 
 In SWI-Prolog
 
-```
+```prolog
 likes(john, mary), likes(mary, john).
 false.
 ```
@@ -195,7 +199,7 @@ false.
   - If the second goal of a conjunction is not satisfied, then Prolog will attempt to re-satisfy the previous goal (in this case the first goal). **Starting from the goal’s own place-marker**. then will try to satisfy the next goal **starting from the top of the database** (basically backtracking).
 - Example ( explanation page 12 &13 )  :
 
-```
+```prolog
 ?- likes(mary, X), likes(john, X).
 X = wine.
 ```
@@ -214,7 +218,7 @@ X = wine.
 
 Database :
 
-```
+```prolog
 male(albert).
 male(edward).
 female(alice).
@@ -226,7 +230,7 @@ sister_of(X, Y) :- female(X), parents(X, M, F), parents(Y, M, F).
 
 Question
 
-```
+```prolog
 ?- sister_of(alice, edward).
 yes(in SWI-prolog true )
 ```
@@ -240,7 +244,7 @@ Explanation :
 
 Question 2 :
 
-```
+```prolog
 ?- sister_of(alice, X).
 X = edward ;                                                                                         X = alice.  
 ```
@@ -332,7 +336,7 @@ X = edward ;                                                                    
 
   - Integers and atoms are always equal :
 
-    ```
+    ```prolog
     policeman = policeman succeeds
     paper = pencil fails
     1066 = 1066 succeeds
@@ -354,7 +358,7 @@ X = edward ;                                                                    
 
 ### 2.5 Arithmetic
 
-```
+```prolog
 X =:=Y X and Y stand for the same number
 X =\=Y X and Y stand for different numbers
 X < Y X is less than Y
@@ -370,7 +374,7 @@ Example :
 
 Database :
 
-```
+```prolog
 reigns(rhodri, 844, 878).
 reigns(anarawd, 878, 916).
 reigns(hywel_dda, 916, 950).
@@ -382,7 +386,7 @@ reigns(maredudd, 986, 999).
 
 Then we define this : `X was a prince during year Y if: X reigned between years A and B, and Y is between A and B, inclusive.`
 
-```
+```prolog
 prince(X, Y) :-
 reigns(X, A, B),
 Y >= A,
@@ -391,7 +395,7 @@ Y =< B.
 
 Question :
 
-```
+```prolog
 ?- prince(cadwallon, 986).
 yes
 ?- prince(X, 979).
@@ -402,7 +406,7 @@ yes
 
 Example 2 :
 
-```
+```prolog
 pop(usa, 203).
 pop(india, 548).
 pop(china, 800).
@@ -434,7 +438,7 @@ Y is P / A.
 
 Depending on what computer you use, various arithmetic operators can be used on the right-hand side of the “is” operator. All Standard Prolog systems, however, will have the following
 
-```
+```prolog
 X + Y the sum of X and Y
 X - Y the difference of X and Y
 X * Y the product of X and Y
@@ -451,7 +455,7 @@ X mod Y the remainder of X divided by Y
 - Backtracking consists of reviewing what has been done, attempting to re-satisfy the goals by finding an alternative way to satisfying them.
 - Furthermore, if you are not content with an answer to your question, you can initiate backtracking yourself by typing a semicolon when Prolog informs you of a solution.
 
-**General rule of Unification (IMPORTANT)**
+#### General rule of Unification (IMPORTANT)
 
 - The rules for deciding whether a goal unifies with the head of a use of a clause are as follows. Note that in the use of a clause, all variables are initially `uninstantiated`.
   - An `uninstantiated` variable will unify with any object. As a result, that object will be what the variable stands for.
@@ -499,7 +503,7 @@ X mod Y the remainder of X divided by Y
 
 Example :
 
-```
+```prolog
 p([1,2,3]).
 p([the, cat, sat, [on, the, mat]]).
 ?- p([X|Y]).
@@ -527,7 +531,7 @@ Examples 2 :
 
 Example  :
 
-```
+```prolog
 member(X, [X|_]).
 member(X, [_|Y]) :- member(X, Y).
 ?- member(d, [a, b, c, d, e, f, g]).
@@ -536,26 +540,26 @@ yes
 no
 ```
 
-**Circular definition(error)**
+#### Circular definition(error)
 
-```
+```prolog
 parent(X, Y) :- child(Y, X).
 child(A, B) :- parent(B, A)
 ```
 
 In this example, to satisfy parent, we set up child as a goal. However, the definition for child uses only parent as a goal. You should be able to see that asking a question about parent or child would lead to a loop in which Prolog would never infer anything new, and that the loop would never terminate.
 
-**left recursion(error):**
+##### left recursion(error)
 
-```
+```prolog
 person(X) :- person(Y), mother(X, Y).
 person(adam).
 ?- person(X).
 ```
 
-**Solution left recursion (this case)**
+##### solution left recursion (this case)
 
-```
+```prolog
 person(adam).
 person(X) :- person(Y), mother(X, Y).
 ```
@@ -579,7 +583,7 @@ A Prolog program to change one sentence into another can be written as follows:
 
 5. At the end of the database we need a “catchall” fact, because if a word is not changed into another word it needs to be changed into itself.
 
-   ```
+   ```prolog
    change(you, i).
    /*...*/
    change(X, X). /* this is the "catchall" */
@@ -587,7 +591,7 @@ A Prolog program to change one sentence into another can be written as follows:
 
 Full Program :
 
-```
+```prolog
 change(you, i).
 change(are, [am,not]).
 change(french, german).
@@ -602,7 +606,7 @@ alter([H|T],[X|Y]):- change(H,X),alter(T,Y).
 
 Example :
 
-```
+```prolog
 fuel_consumed(waster, [3.1, 10.4, 15.9, 10.3]).
 fuel_consumed(guzzler, [3.2, 9.9, 13.0, 11.6]).
 fuel_consumed(prodigal, [2.8, 9.8, 13.1, 10.4]).
@@ -648,14 +652,14 @@ sometimes_better(Con1, Con2).
 
 The predicate **append** is defined as follows:
 
-```
+```prolog
 append([], L, L). 
 append([X|L1], L2, [X|L3]) :- append(L1, L2, L3).
 ```
 
 #### Bicycle example
 
-```
+```prolog
 partsof(X, [X]) :- basicpart(X).
 
 partsof(X, P) :-
@@ -677,14 +681,14 @@ partsoflist([P|Tail], Total) :-
 
 #### Calculating length recursively (traditional approach)
 
-```
+```prolog
 listlen([],0).
 listlen([H|T],N) :- listlen(T,N1),N is N1+1.
 ```
 
 #### Calculating length using an accumulator
 
-```
+```prolog
 lenacc([], A, A).
 lenacc([H|T], A, N) :- A1 is A + 1, lenacc(T, A1, N)
 ```
@@ -695,7 +699,7 @@ lenacc([H|T], A, N) :- A1 is A + 1, lenacc(T, A1, N)
 
 #### Relation between both approaches
 
-```
+```prolog
 listlen(L, N) :- lenacc(L, 0, N). /* we start from 0 and we increment */
 ```
 
@@ -706,7 +710,7 @@ listlen(L, N) :- lenacc(L, 0, N). /* we start from 0 and we increment */
 - `partsacc(X,A,P)` : means that the parts of object X, when added to the list A, give the list P.
 - `A` : accumulator that represents t**he list of (basic) parts that have been found so far.**
 
-```
+```prolog
 % partsof(X, P) :- partsacc(X, [], P).
 
 partsacc(X, A, [X|A]) :- basicpart(X).
@@ -738,11 +742,11 @@ partsacclist([P|Tail], A, Total) :-
 
 The simplest way a set of facts can allow multiple solutions to a question is when there are several facts that will match against the question.
 
-#### Example 1
+#### Generating Multiple Solutions Example 1
 
 ##### Input
 
-```
+```prolog
 possible_pair(X, Y) :- boy(X), girl(Y).
 boy(john).
 boy(marmaduke).
@@ -755,7 +759,7 @@ girl(brunhilde).
 
 ##### Output
 
-```
+```prolog
 ?- possible_pair(X, Y).
 X = john, Y = griselda ;
 X = john, Y = ermintrude ;
@@ -773,12 +777,12 @@ X = charles, Y = brunhilde
 
 #### Example 2 : membership
 
-```
+```prolog
 member(X, [X|_]).
 member(X, [_|Y]) :- member(X, Y).
 ```
 
-```
+```prolog
 ?- member(a, [a,b,r,a,c,a,d,a,b,r,a]). /* will succeed 5 times */
 ```
 
@@ -792,7 +796,7 @@ member(X, [_|Y]) :- member(X, Y).
 
 Example :
 
-```
+```prolog
 facility(Pers, Fac) :-
     book_overdue(Pers, Book),
     !,
@@ -832,7 +836,7 @@ book_overdue(’A. Jones’, book29907)
 
 #### 4.3.1 Confirming the Choice of a Rule
 
-```
+```prolog
 sum_to(1, 1) :- !.
 sum_to(N, Res) :-
     N1 isN-1,
@@ -846,7 +850,7 @@ sum_to(N, Res) :-
 
 Example 2 :
 
-```
+```prolog
 go :- sum_to(1, X), foo(apples).
 ?- go.
 ```
@@ -868,7 +872,7 @@ Example :
 
 - If we have a foreigner then we should fail and stop searching for other alternatives
 
-```
+```prolog
 average_taxpayer(X) :- foreigner(X), !, fail.
 average_taxpayer(X) :-
     spouse(X, Y),
@@ -902,7 +906,7 @@ investment_income(X, Y) :- ...
 
 - line(B,X,Y,Z) : instantiates the arguments X,Y,Z to the three squares that make up a line in board B:
 
-```
+```prolog
 line(b(X,Y,Z,_,_,_,_,_,_), X, Y, Z).
 line(b(_,_,_,X,Y,Z,_,_,_), X, Y, Z).
 line(b(_,_,_,_,_,_,X,Y,Z), X, Y, Z).
@@ -913,14 +917,14 @@ line(b(X,_,_,_,Y,_,_,_,Z), X, Y, Z).
 line(b(_,_,X,_,Y,_,Z,_,_), X, Y, Z).
 ```
 
-```
+```prolog
 forced_move(Board) :-
     line(Board, X, Y, Z),
     threatening(X, Y, Z),
     !.
 ```
 
-```
+```prolog
 threatening(e, x, x).
 threatening(x, e, x).
 threatening(x, x, e).
@@ -934,7 +938,7 @@ threatening(x, x, e).
 
 Example :
 
-```
+```prolog
 ?- append(X, Y, [a,b,c]). 
 ```
 
@@ -952,7 +956,7 @@ Example :
 
 #### Introductory example
 
-```
+```prolog
 winnings(abaris, 582).
 winnings(careful, 17).
 winnings(jingling_silver, 300).
@@ -967,7 +971,7 @@ winnings(maloja, 356).
 - One of these components, called the **key**, is the one whose name determines its place in the dictionary (the name of the horse in our example). The **other item** is used to store any other information about the object involved (the winnings in our example).
 - In addition, each node contains a **tail** (like the tail of a list) to a node containing a key whose name is alphabetically less than the name of the key in the node itself. Furthermore, the node contains **another tail**, to a node whose name is alphabetically greater than the key in the node.
 
-```
+```prolog
 % THIS NEEDS TO BE GIVEN IN PARAMETER : 
 % LIKE lookup(H,w(....),G).
 % OTHERWISE, a new w will be created instead

@@ -1,3 +1,7 @@
+---
+slug: /gl3/jee/spring-auth-notes
+---
+
 # Spring boot explanation
 
 ```java

@@ -1,7 +1,5 @@
 # Introduction
 
-
-
 ## 1 Probability Space
 
 > The Formal Definition is found at [Probability Space](./formalisation.md#probability-space)
@@ -10,43 +8,37 @@
 
 A probability space is a triplet $\mathfrak{P}=\left(\Omega,\mathcal{F},\mu\right)$ with:
 
-- $\Omega$ is the universe
-- $\mathcal{F}\subseteq \mathscr{P}(\Omega)$ is the set of all events
-- $\mu:\mathcal{F}\rightarrow [0,1]$ is a probability function that assigns a probability to each event
+- $\Omega$ is the universe.
+- $\mathcal{F}\subseteq \mathscr{P}(\Omega)$ is the set of all events.
+- $\mu:\mathcal{F}\rightarrow [0,1]$ is a probability function that assigns a probability to each event.
 
 We define the probability of an event $A\in\mathcal{F}$ as follow:
 $$
 \mathcal{P}(A)=\mu(A)
 $$
 
-
 ### 1.2 Example: Dice Game {#dice-game}
 
-You are playing a dice game with your friend, at each turn are throwing two dices; one at a time. 
+You are playing a dice game with your friend, at each turn are throwing two dices; one at a time.
 
 We will assume that both dices are fair, you want to calculate the probability that you get $i$ on the first dice and $j$ on the second dice for each $i,j\in\{1,2,3,4,5,6\}$
-
-
 
 #### Solution
 
 We will first create a mathematical model for this problem.
 
-- Let $\Omega=\{1,2,3,4,5,6\}\times \{1,2,3,4,5,6\}$
-- Let $\mathcal{F}=\mathscr{P}(\Omega)=\{A / \quad A \subseteq \Omega\}$
-- Let $\mu:\mathcal{F}\rightarrow [0,1]$ defined simply by $\mu(A)=\frac{\lvert A \rvert}{\lvert \Omega \rvert }.$ The choice of such $\mu$ is justified as both dices are fair 
+- Let $\Omega=\{1,2,3,4,5,6\}\times \{1,2,3,4,5,6\}$.
+- Let $\mathcal{F}=\mathscr{P}(\Omega)=\{A / \quad A \subseteq \Omega\}$.
+- Let $\mu:\mathcal{F}\rightarrow [0,1]$ defined simply by $\mu(A)=\frac{\lvert A \rvert}{\lvert \Omega \rvert }.$ The choice of such $\mu$ is justified as both dices are fair.
 
-- Let $A_i$ be the event: $\texttt{The first dice has the value i}$
-- Let $B_j$ the event: $\texttt{The second dice has the value j}$
-- Let $C_{i,j}$ be the event: $\texttt{The first dice has the value i, and the second dice has the value j}$
+- Let $A_i$ be the event: $\texttt{The first dice has the value i}$.
+- Let $B_j$ the event: $\texttt{The second dice has the value j}$.
+- Let $C_{i,j}$ be the event: $\texttt{The first dice has the value i, and the second dice has the value j}$.
 
 Mathematically, $C_{i,j}=A_i\cap B_j=\{(i,j)\},$ its probability is:
 $$
 \mathcal{P}(C_{i,j})=\frac{\lvert C_{i,j}\rvert}{\lvert \Omega \rvert}=\frac{1}{36}
 $$
-
-
-
 
 ## 2. Random Variable
 
@@ -54,13 +46,12 @@ $$
 
 ### 2.1 Definition
 
-A random variable is a function $X:\Omega\rightarrow S$ 
+A random variable is a function $X:\Omega\rightarrow S$.
 
 In some sense, the probability that $X\in A$ from some $A\subseteq S$ is defined as:
 $$
 \mu(X^{-1}\left(A\right))
 $$
-
 
 ### 2.2 Example: Dice Game 2
 
@@ -85,7 +76,7 @@ We will generate a table of values of possible sums each with its corresponding 
 
  We have:
 
-- $X^{-1}(2)=\{(1,1)\}$ 
+- $X^{-1}(2)=\{(1,1)\}$
 - $X^{-1}(3)=\{(1,2),(2,1)\}$
 - $X^{-1}(5)=\{(1,4),(2,3),(3,2),(4,1)\}$
 - $X^{-1}(7)=\{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\}$
@@ -107,15 +98,11 @@ Now we will build the table of probabilities of $X$
 | $7$   | $\frac{6}{36}=\frac{1}{6}$   |
 | $11$  | $\frac{2}{36}=\frac{1}{18}$  |
 
-
-
 ## 2. Expected Value
 
-Let $X$ be a random variable following some distribution $\mathcal{D}.$ 
+Let $X$ be a random variable following some distribution $\mathcal{D}.$
 
 The expected value of $X$, denoted $\mathbb{E}[X]$, if it exists, defines in some sense what value at average we expect from $X$
-
-
 
 ### 2.1 Discrete Case
 
@@ -124,8 +111,6 @@ $$
 \mathbb{E}[X]=\sum_{k\in S}k\mathcal{P}(X=k)
 $$
 With $S$ defined as the support of $X$
-
-
 
 ### 2.2 Continuous Case
 
@@ -158,7 +143,6 @@ $$
 \mathbb{E}[Y]=\mathbb{E}\left[\sum_{k=1}^na_kX_k\right]=\sum_{k=1}^na_k\mathbb{E}[X_k]
 $$
 
-
 ### 2.4 Example: Dice Game 3
 
 We want to calculate the expected number of steps taken on each step:
@@ -174,9 +158,9 @@ $$
 
 ### 3.1 Definition
 
-Let $X$ be a random variable following some distribution $\mathcal{D}.$ 
+Let $X$ be a random variable following some distribution $\mathcal{D}.$
 
-The variance of $X$, denoted $\mathbb{V}[X]$, if it exists, defines in some sense how far is $X$ from its expected value, on average. 
+The variance of $X$, denoted $\mathbb{V}[X]$, if it exists, defines in some sense how far is $X$ from its expected value, on average.
 
 It is defined as follow:
 $$
@@ -191,8 +175,6 @@ $$
 $$
 With $S$ defined as the support of $X$
 
-
-
 ### 3.2 Continuous Case
 
 If $\mathcal{D}$ is a continuous distribution, then:
@@ -200,14 +182,12 @@ $$
 \mathbb{E}[X]=\int_{S}(x-\mathbb{E}[X])^2f(x)\space \text{dx}
 $$
 
-### 
-
 ### 3.3 Variance of sum of independent random variables
 
 #### 3.3.1 Simple Case
 
-- Let $a,b\in\mathbb{R}$
-- Let $X,Y$ two independent random variables
+- Let $a,b\in\mathbb{R}$.
+- Let $X,Y$ two independent random variables.
 
 The expected value is linear:
 $$
@@ -226,10 +206,6 @@ $$
 \mathbb{V}[Y]=\mathbb{V}\left[\sum_{k=1}^na_kX_k\right]=\sum_{k=1}^na_k^2\mathbb{V}[X_k]
 $$
 
-
-### 
-
-
 ### 3.4 Example: Dice Game 4
 
 $$
@@ -244,24 +220,20 @@ $$
 \end{align*}
 $$
 
-
-
-
-
 ## 4. Co-variance
 
-### 3.1 Definition
+### 4.1 Definition
 
-Let $X,Y$ be two random variables. 
+Let $X,Y$ be two random variables.
 
-The co-variance of $X$ and $Y$, denoted $\text{Cov}[X,Y]$, if it exists, defines in some sense how $X$ and $Y$ varies together. 
+The co-variance of $X$ and $Y$, denoted $\text{Cov}[X,Y]$, if it exists, defines in some sense how $X$ and $Y$ varies together.
 
 It is defined as follow:
 $$
 \text{Cov}[X,Y]=\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)\cdot \left(Y-\mathbb{E}[Y]\right)\right]=\mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y]
 $$
 
-### 3.1 Discrete Case
+### 4.1 Discrete Case
 
 If $\mathcal{D}$ is a discrete distribution, then:
 $$
@@ -269,20 +241,16 @@ $$
 $$
 With $S$ defined as the support of $X$
 
-
-
-### 3.2 Continuous Case
+### 4.2 Continuous Case
 
 If $\mathcal{D}$ is a continuous distribution, then:
 $$
 \text{Cov}[X,Y]=\iint_{S_1\times S_2}(x-\mathbb{E}[X])(y-\mathbb{E}[Y])f(x,y)\space \text{dydx}
 $$
 
-### 
+### 4.3 Bi-linearity
 
-### 3.3 Bi-linearity
-
-#### 3.3.1 Simple Case
+#### 4.3.1 Simple Case
 
 - Let $a,b\in\mathbb{R}$
 - Let $X,Y,Z$ three random variables
@@ -292,13 +260,12 @@ $$
 \text{Cov}[aX+bY,Z]=a\text{Cov}[X,Z]+b\text{Cov}[Y,Z]
 $$
 
-The co-variance is right-linear 
+The co-variance is right-linear:
 $$
 \text{Cov}[X,aY+bZ]=a\text{Cov}[X,Y]+b\text{Cov}[X,Z]
 $$
 
-
-#### 3.3.2 Generalisation
+#### 4.3.2 Generalisation
 
 - Let $n,m\in\mathbb{N}$
 - Let $a_1,\dots,a_n,b_1,\dots,b_m\in\mathbb{R}$
@@ -309,25 +276,21 @@ $$
 \text{Cov}\left[\sum_{i=1}^na_iX_i,\sum_{j=1}^mb_jY_j\right]=\sum_{i=1}^n\sum_{j=1}^ma_ib_j\text{Cov}\left[X_i,Y_j\right]
 $$
 
-### 
-
-#### 3.3.4 Symmetry
+#### 4.3.4 Symmetry
 
 In fact, $\text{Cov}$ is also symmetric as:
 $$
 \text{Cov}[X,Y]=\text{Cov}[Y,X]
 $$
 
-
-#### 3.3.5 Positive semi-definite
+#### 4.3.5 Positive semi-definite
 
 More than that, $\text{Cov}$ is positive semi-definite as:
 $$
 \text{Cov}[X,X]=\mathbb{V}[X]\ge 0
 $$
 
-
-#### 3.3.6 Orthogonality between independent random variables
+#### 4.3.6 Orthogonality between independent random variables
 
 Let $X,Y$ two independent random variables. We have:
 $$
@@ -335,11 +298,9 @@ $$
 $$
 *The converse does not generally hold*
 
+### 4.4 Relation to Variance
 
-
-### 3.4 Relation to Variance
-
-#### 3.4.1 Variance as a Co-variance
+#### 4.4.1 Variance as a Co-variance
 
 Let $X$ a random variable.
 
@@ -348,8 +309,7 @@ $$
 \mathbb{V}[X]=\text{Cov}[X,X]
 $$
 
-
-#### 3.4.2 Variance of a sum of random variables
+#### 4.4.2 Variance of a sum of random variables
 
 - Let $n\in\mathbb{N}$
 - Let $a_1,\dots,a_n\in\mathbb{R}$

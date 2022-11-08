@@ -29,7 +29,6 @@ $$
 p_{i,j}=\mathcal{P}(X=x_i)\cdot \mathcal{P}(Y=y_j)
 $$
 
-
 ### 1.3 Joint Distribution Matrix
 
 Let $M$ be a matrix with positive entries.
@@ -66,7 +65,19 @@ $$
 \forall x\in V,\quad \mathcal{P}(Y=y)=\sum_{x\in U}\mathcal{P}(X=x\wedge Y=y)
 $$
 
+### 1.6 Conditional Distribution
 
+#### 1.6.1 Conditional Distribution of $X$ knowing $Y=y$
+
+$$
+\forall x\in U,\quad \mathcal{P}(X[Y=y]=x)=\mathcal{P}(X_{Y=y}=x)=\mathcal{P}(Y=y \mid X=x)=\frac{\mathcal{P}(X=x \wedge Y=y)}{\mathcal{P}(Y=y)}
+$$
+
+#### 1.6.2 Conditional Distribution of $Y$ knowing $X=x$
+
+$$
+\forall y\in V,\quad \mathcal{P}(Y[X=x]=y)=\mathcal{P}(Y_{X=x}=y)=\mathcal{P}(Y=y \mid X=x)=\frac{\mathcal{P}(X=x \wedge Y=y)}{\mathcal{P}(Y=y)}
+$$
 
 ## 2. Continuous Real Random Variables
 
@@ -85,14 +96,11 @@ A function $h\in\mathscr{L}^1(\mathbb{R})$ is said to be a joint distribution fu
 1. $h$ is positive: $h\ge 0$
 
 2. The integral of $h$ is $1$:
-   $$
-   \lVert h \rVert_1=\iint_{\mathbb{R}^2}h(u)\text{du}=\int_{\mathbb{R}}\int_{\mathbb{R}}h(x,y)\space \text{dydx}=1
-   $$
-   
+$$
+\lVert h \rVert_1=\iint_{\mathbb{R}^2}h(u)\text{du}=\int_{\mathbb{R}}\int_{\mathbb{R}}h(x,y)\space \text{dydx}=1
+$$
 
-
-
-### 1.4 Event Probability
+### 2.4 Event Probability
 
 Let $A\subseteq \mathcal{B}$
 
@@ -101,9 +109,9 @@ $$
 \mathcal{P}((X,Y)\in A)=\iint_{A}h(u)\space \text{du}
 $$
 
-### 1.5 Marginal Distribution
+### 2.5 Marginal Distribution
 
-#### 1.5.1 Marginal Distribution of $X$
+#### 2.5.1 Marginal Distribution of $X$
 
 The marginal distribution of $X$ is the probability distribution of $X$ determined
 from $(X, Y)$
@@ -111,7 +119,7 @@ $$
 \forall x\in \mathbb{R},\quad f_X(x)=\int_{y\in\mathbb{R}}f_{X,Y}(x,y)\text{dy}
 $$
 
-#### 1.5.2 Marginal Distribution of $Y$
+#### 2.5.2 Marginal Distribution of $Y$
 
 The marginal distribution of $Y$ is the probability distribution of $Y$ determined
 from $(X, Y)$
@@ -119,45 +127,21 @@ $$
 \forall y\in \mathbb{R},\quad f_Y(y)=\int_{x\in\mathbb{R}}f_{X,Y}(x,y)\text{dx}
 $$
 
+### 2.6 Conditional Distribution
 
-
-### 1.6 Conditional Distribution
-
-#### 1.6.1 Conditional Distribution of $X$ knowing $Y=y$
-
-$$
-\forall x\in U,\quad \mathcal{P}(X[Y=y]=x)=\mathcal{P}(X_{Y=y}=x)=\mathcal{P}(Y=y \mid X=x)=\frac{\mathcal{P}(X=x \wedge Y=y)}{\mathcal{P}(Y=y)}
-$$
-
-#### 1.6.2 Conditional Distribution of $Y$ knowing $X=x$
-
-$$
-\forall y\in V,\quad \mathcal{P}(Y[X=x]=y)=\mathcal{P}(Y_{X=x}=y)=\mathcal{P}(Y=y \mid X=x)=\frac{\mathcal{P}(X=x \wedge Y=y)}{\mathcal{P}(Y=y)}
-$$
-
-
-
-
-
-### 1.6 Conditional Distribution
-
-#### 1.6.1 Conditional Distribution of $X$ knowing $Y=y$
+#### 2.6.1 Conditional Distribution of $X$ knowing $Y=y$
 
 It is the conditional distribution of $X$ with the knowledge that $Y=y$, it is defined as:
 $$
 \forall x\in \mathbb{R},\quad f_{X[Y=y]}(x)=f_{X_{\mid Y=y}}(x)=\frac{f_{X,Y}(x,y)}{f_Y(y)}
 $$
 
-#### 1.6.2 Conditional Distribution of $Y$ knowing $X=x$
+#### 2.6.2 Conditional Distribution of $Y$ knowing $X=x$
 
 It is the conditional distribution of $Y$ with the knowledge that $X=x$, it is defined as:
 $$
 \forall y\in \mathbb{R},\quad f_{Y[X=x]}(x)=f_{Y_{\mid X=x}}(y)=\frac{f_{X,Y}(x,y)}{f_X(x)}
 $$
-
-
-
-
 
 ## 3. Conditional Expectation
 
@@ -172,7 +156,7 @@ $$
 
 ### 3.2 As a random variable
 
-By introducing the function $\varphi$ defined as follow: 
+By introducing the function $\varphi$ defined as follow:
 $$
 \begin{align*}
 \varphi:&\mathbb{R}\rightarrow \mathbb{R}\\
@@ -184,9 +168,7 @@ $$
 \mathbb{E}[Y\mid X]=\varphi(X)
 $$
 
->  To calculate its distribution, see [Function on a random variable](./advanced.md#random-variable-function)
-
-
+> To calculate its distribution, see [Function on a random variable](./advanced.md#random-variable-function)
 
 ### 3.3 Law of Total Expectation
 
@@ -196,16 +178,10 @@ We have the following:
 $$
 \mathbb{E}[Y]=\mathbb{E}\left[\mathbb{E}[Y|\mid X\right] =\mathbb{E}_X\left[\mathbb{E}_Y[Y\mid X]\right]
 $$
-To avoid confusion, we noted: 
+To avoid confusion, we noted:
 
-- $\mathbb{E}_Y$ to emphasise that the expectation is calculated against $Y$
-- $\mathbb{E}_X$ to emphasise that the expectation is calculated against $X$
-
- 
-
-
-
-
++ $\mathbb{E}_Y$ to emphasise that the expectation is calculated against $Y$
++ $\mathbb{E}_X$ to emphasise that the expectation is calculated against $X$
 
 ## 4. Conditional Variance
 
@@ -220,7 +196,7 @@ $$
 
 ### 4.2 As a random variable
 
-By introducing the function $\varphi$ defined as follow: 
+By introducing the function $\varphi$ defined as follow:
 $$
 \begin{align*}
 \varphi:&\mathbb{R}\rightarrow \mathbb{R}\\
@@ -232,9 +208,7 @@ $$
 \mathbb{V}[Y\mid X]=\varphi(X)
 $$
 
->  To calculate its distribution, see [Function on a random variable](./advanced.md#random-variable-function)
-
-
+> To calculate its distribution, see [Function on a random variable](./advanced.md#random-variable-function)
 
 ### 3.3 Law of Total Variance
 
@@ -244,12 +218,7 @@ We have the following:
 $$
 \mathbb{V}[Y]=\mathbb{V}\left[\mathbb{E}[Y\mid X]\right]+\mathbb{E}\left[\mathbb{V}[Y\mid X]\right] =\mathbb{V}_X\left[\mathbb{E}_Y[Y\mid X]\right]+\mathbb{E}_X\left[\mathbb{V}_Y[Y\mid X]\right]
 $$
-To avoid confusion, we noted: 
+To avoid confusion, we noted:
 
-- $\mathbb{E}_Y,\mathbb{V}_Y$ to emphasise that the expectation and variance are calculated respectively against $Y$
-- $\mathbb{E}_X,\mathbb{V}_X$ to emphasise that the expectation and variance are calculated respectively against $X$
-
- 
-
-
-
++ $\mathbb{E}_Y,\mathbb{V}_Y$ to emphasise that the expectation and variance are calculated respectively against $Y$
++ $\mathbb{E}_X,\mathbb{V}_X$ to emphasise that the expectation and variance are calculated respectively against $X$

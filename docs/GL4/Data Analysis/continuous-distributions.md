@@ -16,10 +16,6 @@ $$
 
 In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [statistics](https://en.wikipedia.org/wiki/Statistics), the **continuous uniform distribution** or **rectangular distribution** is a family of [symmetric](https://en.wikipedia.org/wiki/Symmetric_distribution) [probability distributions](https://en.wikipedia.org/wiki/Probability_distributions). The distribution describes an experiment where there is an arbitrary outcome that lies between certain bounds. The bounds are defined by the parameters, *a* and *b*, which are the minimum and maximum values. The interval can either be [closed](https://en.wikipedia.org/wiki/Closed_interval) (e.g. $[a,b]$) or [open](https://en.wikipedia.org/wiki/Open_Interval) (e.g. $]a,b[$).
 
-
-
-
-
 ### 1.2 Standard Uniform distribution
 
 It is the uniform distribution on the interval $[0,1]$:
@@ -27,9 +23,7 @@ $$
 \mathcal{U}=\mathcal{U}(0,1)
 $$
 
-
-
-###  1.2 Opposite of Uniform Random Variable
+### 1.2 Opposite of Uniform Random Variable
 
 Let $X \sim \mathcal{U}(a,b)$
 $$
@@ -46,9 +40,9 @@ $$
 
 ### 1.3 Linear Transformation of a Uniform Random Variable
 
-- Let $\alpha \in\mathbb{R}_+^*,\beta\in\mathbb{R}$
-- Let $a,b\in\mathbb{R}$ with  $a<b$
-- Let $X\sim \mathcal{U}(a,b)$ and $Y=\alpha X+b$ 
++ Let $\alpha \in\mathbb{R}_+^*,\beta\in\mathbb{R}$
++ Let $a,b\in\mathbb{R}$ with  $a<b$
++ Let $X\sim \mathcal{U}(a,b)$ and $Y=\alpha X+b$
 
 $$
 \begin{align*}
@@ -106,8 +100,6 @@ $$
 \boxed{\mathbb{V}[X]=\frac{(b-a)^2}{12}}
 $$
 
-
-
 ## 2. Exponential Distribution {#exponential-distribution}
 
 ### 2.1 Definition
@@ -131,8 +123,6 @@ The exponential distribution is the probability distribution of the time between
 
 It is used to model radioactive decay.
 
-
-
 ### 2.3 Moments
 
 #### 2.3.1 Raw Moments
@@ -152,7 +142,6 @@ $$
 \boxed{\mathbb{E}[X]=\frac{1}{\lambda}}
 $$
 
-
 #### 2.3.2  Central moments
 
 $$
@@ -167,7 +156,6 @@ In particular, the variance $\mathbb{V}[X]$ is:
 $$
 \boxed{\mathbb{V}[X]=\mathbb{E}[X^2]-\mathbb{E}[X]^2=\frac{2}{\lambda^2}-\frac{1}{\lambda^2}=\frac{1}{\lambda^2}}
 $$
-
 
 ### 2.4 Memoryless
 
@@ -188,8 +176,8 @@ $$
 
 ### 2.5 Scaling
 
-- Let $k\in\mathbb{R}_+^*$
-- Let $X\sim \mathcal{E}(\lambda)$ and $Y=kX$
++ Let $k\in\mathbb{R}_+^*$
++ Let $X\sim \mathcal{E}(\lambda)$ and $Y=kX$
 
 We will calculate the probability distribution function of $Y:$
 $$

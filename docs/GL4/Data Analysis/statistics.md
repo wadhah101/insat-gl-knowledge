@@ -21,7 +21,7 @@ $$
 \forall X_1,\dots,X_n\in\mathcal{A},\quad\mathbb{E}[\hat{s}(X_1,\dots,X_n)]=s
 $$
 
-## 2. Estimating mean 
+## 2. Estimating mean
 
 The trivial mean estimator is:
 $$

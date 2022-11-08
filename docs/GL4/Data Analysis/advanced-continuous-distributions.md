@@ -51,8 +51,6 @@ $$
 
 This follows immediately from the sum of gamma distributions.
 
-
-
 ### 3.5 Sum of chi-square distributions
 
 - Let $n\in\mathbb{N}^*$
@@ -73,19 +71,17 @@ As a $\chi^2$-distribution is a $\Gamma$-distribution, the calculation of the mo
 
 We will list here essentially the expected value and the variance.
 
-#### 3.6.1 Expected Value:
+#### 3.6.1 Expected Value
 
 $$
 \mathbb{E}[X]=\frac{\frac{n}{2}}{\frac{1}{2}}=n
 $$
 
-#### 3.6.2 Variance:
+#### 3.6.2 Variance
 
 $$
 \mathbb{V}[X]=\frac{\frac{n}{2}}{\frac{1}{2^2}}=2n
 $$
-
-
 
 ## 4. $\mathcal{F}$- distributions
 
@@ -102,9 +98,6 @@ By definition:
 $$
 \boxed{\forall d_1,d_2\in\mathbb{N}^*,\quad\forall X_1\sim\chi^2_{d_1},\forall X_2\sim\chi^2_{d_2} \text{ independents}:\quad \frac{\tfrac{X_1}{d_1}}{\tfrac{X_2}{d_2}}\sim\mathcal{F}(d_1,d_2)}
 $$
-
-
-
 
 ### 4.2 Significance
 
@@ -132,9 +125,6 @@ $$
 \end{align*}
 $$
 
-
-
-
 ## 5. Sudent's $t$-distribution
 
 ### 5.1 Definition
@@ -153,8 +143,6 @@ $$
 \boxed{\forall \nu\in\mathbb{N}^*,\quad\forall P\sim\mathcal{N}(0,1),\forall S\sim\chi^2_{\nu} \text{ independents}:\quad \frac{P}{\sqrt{\tfrac{S}{\nu}}}\sim\mathcal{T}(\nu)}
 $$
 
-
-
 ### 5.2 Significance
 
 The $t$-distribution plays a role in a number of widely used statistical analyses, including [Student's *t*-test](https://en.wikipedia.org/wiki/Student's_t-test) for assessing the [statistical significance](https://en.wikipedia.org/wiki/Statistical_significance) of the difference between two sample means, the construction of [confidence intervals](https://en.wikipedia.org/wiki/Confidence_interval) for the difference between two population means, and in linear [regression analysis](https://en.wikipedia.org/wiki/Regression_analysis). Student's *t*-distribution also arises in the [Bayesian analysis](https://en.wikipedia.org/wiki/Bayesian_analysis) of data from a normal family.
@@ -163,11 +151,8 @@ If we take a sample of $n$ observations from a normal distribution, then the *$t
 
 The $t$-distribution is symmetric and bell-shaped, like the normal distribution. However, the $t$-distribution has heavier tails, meaning that it is more prone to producing values that fall far from its mean. This makes it useful for understanding the statistical behavior of certain types of ratios of random quantities, in which variation in the denominator is amplified and may produce outlying values when the denominator of the ratio falls close to zero. The Student's $t$-distribution is a special case of the [generalised hyperbolic distribution](https://en.wikipedia.org/wiki/Generalised_hyperbolic_distribution).
 
-
-
 #### 5.3 Probability Distribution Function
 
 $$
 \forall x\in\mathbb{R},\quad f_{\mathcal{T}(\nu)}(x)=\frac{\Gamma(\tfrac{n+1}{2})}{\sqrt{n\pi}\Gamma(\tfrac{n}{2})}\left(1+\frac{x^2}{2}\right)^{-\tfrac{n+1}{2}}
 $$
-

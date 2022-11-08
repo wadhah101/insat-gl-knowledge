@@ -17,8 +17,6 @@ For instance, a call center receives an average of 180 calls per hour, 24 hours 
 
 Another example is the number of decay events that occur from a radioactive source during a defined observation period.
 
-
-
 ### 4.3 Moments
 
 #### 4.3.1 Raw Moments
@@ -52,9 +50,6 @@ $$
 \end{align*}
 $$
 
-
-
-
 ## 5. Hyper-geometric Distribution
 
 ### 5.1 Prelude
@@ -74,7 +69,7 @@ $$
 
 ### 5.2 Significance
 
-In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [statistics](https://en.wikipedia.org/wiki/Statistics), the **hyper-geometric distribution** is a [discrete probability distribution](https://en.wikipedia.org/wiki/Probability_distribution#Discrete_probability_distribution) that describes the probability of $k$ successes (random draws for which the object drawn has a specified feature) in $n$ draws, *without* replacement, from a finite [population](https://en.wikipedia.org/wiki/Statistical_population) of size $N$ that contains exactly $K$ objects with that feature, wherein each draw is either a success or a failure. 
+In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [statistics](https://en.wikipedia.org/wiki/Statistics), the **hyper-geometric distribution** is a [discrete probability distribution](https://en.wikipedia.org/wiki/Probability_distribution#Discrete_probability_distribution) that describes the probability of $k$ successes (random draws for which the object drawn has a specified feature) in $n$ draws, *without* replacement, from a finite [population](https://en.wikipedia.org/wiki/Statistical_population) of size $N$ that contains exactly $K$ objects with that feature, wherein each draw is either a success or a failure.
 
 In contrast, the [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) describes the probability of successes in $n$ draws *with* replacement.
 
@@ -99,11 +94,7 @@ $$
 \end{align*}
 $$
 
-
-
 ### 5.4 Moments
-
-
 
 #### 5.4.1 Raw Moments
 
@@ -131,8 +122,8 @@ We will start by the variance $\mathbb{V}[X]:$
 $$
 \begin{align*}
 \mathbb{V}[X]&= \text{Cov}\left(S_n[S_N=K],S_n[S_N=K]\right) \\
-&= \text{Cov}\left(\left(\sum_{i=1}^n X_i\right)[S_N=K],\left(\sum_{j=1}^nX_j\right)[S_N=K]\right) \\
-&= \text{Cov}\left(\sum_{i=1}^n X_i[S_N=K],\sum_{j=1}^nX_j[S_N=K]\right) \\
+&= \text{Cov}\left(\left(\sum_{i=1}^n X_i\right)\left[S_N=K\right],\left(\sum_{j=1}^nX_j\right)\left[S_N=K\right]\right) \\
+&= \text{Cov}\left(\sum_{i=1}^n X_i [S_N=K],\sum_{j=1}^nX_j [S_N=K]\right) \\
 &= \sum_{i=1}^n \mathbb{V}[Y_i]+2\sum_{1\le i<j\le n }\text{Cov} \left(Y_i,Y_j\right)\\
 \forall i\neq j,\quad\text{Cov}(Y_i,Y_j)&=\mathbb{E}[Y_i \times Y_j]-\mathbb{E}[Y_i]\times \mathbb{E}[Y_j] \\
 &= \mathcal{P}\left[\left(Y_i\times Y_j\right) =1\right] -\frac{K^2}{N^2}\\
@@ -157,4 +148,3 @@ $$
 &=n\frac{K}{N}\cdot \frac{N-K}{N}\cdot \frac{N-n}{N-1}
 \end{align*}
 $$
-

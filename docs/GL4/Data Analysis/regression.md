@@ -38,10 +38,10 @@ $$
 
 For this case, we can even approach the problem probabilisticly.
 
-We will treat $y$ and $x$ as random variables   
+We will treat $y$ and $x$ as random variables.
 
-+ Let $\beta_0,\beta_1\in\mathbb{R}/\quad y=\beta_0+\beta_1 x+\varepsilon$ 
-+ We will assume that $\varepsilon \sim \mathcal{N}(0,\sigma^2)$ is independent of $x$
+- Let $\beta_0,\beta_1\in\mathbb{R}/\quad y=\beta_0+\beta_1 x+\varepsilon$
+- We will assume that $\varepsilon \sim \mathcal{N}(0,\sigma^2)$ is independent of $x$
 
 We have:
 $$
@@ -54,7 +54,7 @@ $$
 \end{cases}
 $$
 
-> This approach can be extended for $p>1.$ But this is beyond this scope. 
+> This approach can be extended for $p>1.$ But this is beyond this scope.
 
 ### 2.3 Probabilstic Approach: General Case
 
@@ -93,17 +93,15 @@ $$
 
 > If we have $n$ independent samples of $(\bold{x},y):\quad(\bold{x}_1,y_1),\dots,(\bold{x_n},y_n)$ treated as random variables.
 >
-> And if we use the appropriate estimators, this formula reduces to Linear Regression 
-
-
+> And if we use the appropriate estimators, this formula reduces to Linear Regression.
 
 ## 3. Significance of the model
 
 Let's call $\mathcal{M}$ our linear model
 
->  Assumption: the relation between $y$ and $\bold{x}$ is linear
+> Assumption: the relation between $y$ and $\bold{x}$ is linear
 
-We will use the $\mathcal{F}$-test 
+We will use the $\mathcal{F}$-test.
 
 ### 3.1 Null Hyptothesis: $H_0:\beta_i=0\quad\forall i>0$
 
@@ -113,7 +111,9 @@ We will statistically test this hypothesis using ANOVA
 
 ### 3.2 ANOVA
 
-**Theorem: **If the null hypothesis is true then:
+#### Theorem
+
+If the null hypothesis is true then:
 $$
 Z=\frac{\tfrac{(y- \bar{y})^T(y- \bar{y})}{p}}{\tfrac{(y- \langle\beta,\bold{x}\rangle-\beta_0)^T(y- \langle\beta,\bold{x}\rangle-\beta_0)}{n-p-1}}\sim\mathcal{F}(p,n-1-p)
 $$
@@ -136,19 +136,15 @@ $$
 
 Assuming a linear dependence between the variables, this result suggests that within a confidence of $(1-p)\%,$ $y$ is not a constant function of $\bold{x}.$  
 
-
-
 ## 4. Confidence interval of the prediction
 
->  Assumption: the relation between $y$ and $\bold{x}$ is linear
+> Assumption: the relation between $y$ and $\bold{x}$ is linear
 
-We will use student's $t$-test
-
-
+We will use student's $t$-test.
 
 ### 4.1 Confidence Interval of parameters
 
-**Theorem: **Let $\hat{\beta}$ be an estimator of $\beta.$ We have:
+Let $\hat{\beta}$ be an estimator of $\beta.$ We have:
 $$
 \boxed{\forall i\in\{0,\dots,p\}\quad, T_i=\frac{\hat{\beta}_i-\beta_i}{\hat{\sigma}_*^2\sqrt{\left(\left(X^TX\right)^{-1}\right)_{i,i}}}\sim \mathcal{T}_{n-1-p}}
 $$
@@ -161,17 +157,13 @@ $$
 2. Let $t\in \mathbb{R}_+$
 3. Let $\gamma=\in\mathbb{R}_+/\quad \mathcal{P}(\lvert T_i\rvert  \ge t)=\frac{\gamma}{2}$
 
-We say that $\beta_i=\hat{\beta}_i\pm t\hat{\sigma}^2_*\sqrt{\left(\left(X^TX\right)^{-1}\right)_{i,i}}$ within a confidence interval of $(1-\gamma)\%.$ 
-
-
+We say that $\beta_i=\hat{\beta}_i\pm t\hat{\sigma}^2_*\sqrt{\left(\left(X^TX\right)^{-1}\right)_{i,i}}$ within a confidence interval of $(1-\gamma)\%.$
 
 ### 4.2 Confidence Interval of prediction
 
 $$
 \boxed{y^*= \hat{y}^*+t\hat{\sigma}^2_*\sqrt{\begin{pmatrix}1\\\bold{x}\end{pmatrix}^T\left(X^TX\right)^{-1}\begin{pmatrix}1\\\bold{x}\end{pmatrix}}=\langle\beta,\bold{x}\rangle+\beta_0+t\hat{\sigma}^2_*\sqrt{\begin{pmatrix}1\\\bold{x}\end{pmatrix}^T\left(X^TX\right)^{-1}\begin{pmatrix}1\\\bold{x}\end{pmatrix}}}
 $$
-
-
 
 ### 4.3 Case of simple regression: $p=1$
 
@@ -180,7 +172,7 @@ $$
    \beta_0=\hat{\beta}_0\pm t\frac{\sum_{i=1}^{n}(y-\bar{y})^2}{\sqrt{\sum_{i=1}^{n}(x-\bar{x})^2}}=\hat{\beta}_0\pm t\frac{\hat{\text{ss}}(y)}{\sqrt{\text{ss}(x)}}
    $$
 
-2. The confidence interval of $\beta_1$ is: 
+2. The confidence interval of $\beta_1$ is:
    $$
    \beta_1=\hat{\beta}_1\pm t \text{ss}(y)\sqrt{\frac{1}{n}+\frac{\bar{x}^2}{\hat{\text{ss}}(x)}}
    $$

@@ -19,7 +19,6 @@ Their importance is partly due to the [central limit theorem](https://en.wikiped
 
 It is the normal distribution with unit mean and unit variance:
 
-
 $$
 \mathcal{S}\mathcal{N}=\mathcal{N}(0,1)
 $$
@@ -44,14 +43,11 @@ $$
 X\sim\mathcal{N}(0,1)\implies -X\sim \mathcal{N}(0,1)
 $$
 
-
 #### 1.4.2 Linear tranformation of a Normal random variable
 
 - Let $a\in\mathbb{R}^*_+,b\in\mathbb{R},\mu\in\mathbb{R},\sigma\in\mathbb{R}_+^*$
 
 - Let $X\sim \mathcal{N}(\mu,\sigma),Y=aX+b$
-
-  
 
 $$
 \begin{align*}
@@ -81,8 +77,6 @@ $$
   aX+b=(-a)(-X)+b\sim \mathcal{N}((-a)(-\mu)+b,(-a)^2\sigma^2)=\mathcal{N}(a\mu+b,a^2\sigma^2)
   $$
 
-- 
-
 As a conclusion:
 $$
 \boxed{X\sim \mathcal{N}(\mu,\sigma)\implies ax+b\sim\mathcal{N}\left(a\mu+b,a^2\sigma^2\right)}
@@ -92,7 +86,7 @@ $$
 
 #### 1.5.1 Moment of a centered Normal distribution
 
-Let $X\sim \mathcal{U}(0,\sigma^2)$ 
+Let $X\sim \mathcal{U}(0,\sigma^2),$ we have:
 $$
 \begin{align*}
 \forall n\in\mathbb{N}_{\ge 2},\quad \mathbb{E}[X^n] &=\int_{\mathbb{R}}x^{n}f_X(x)\space \text{dx}\\
@@ -117,7 +111,6 @@ $$
 \boxed{\mathbb{V}[X]=\sigma^2}
 $$
 
-
 #### 1.5.2 Central Moments
 
 Let $X\sim \mathcal{N}(\mu,\sigma^2)$
@@ -127,7 +120,6 @@ $$
 \forall n\in\mathbb{N}, \begin{cases}
 \mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{2n}\right]&= \frac{(2n)!}{2^nn!}\sigma^{2n}\\
 \mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{2n+1}\right]&=0
-
 \end{cases}
 $$
 
@@ -140,16 +132,12 @@ $$
 &=\sum_{k=0}^{2n}{2n \choose k}\mathbb{E}[X]^{2n-k}\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{k}\right] \\
 &=\sum_{k=0}^{n}{2n \choose 2k}\mathbb{E}[X]^{2n-2k}\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{2k}\right]\\
 &=\sum_{k=0}^{n}{2n \choose 2k}\frac{(2k)!}{2^kk!}\mu^{2n-2k}\sigma^{2k} \\
-
 \forall n\in\mathbb{N},\quad \mathbb{E}[X^{2n+1}]&=\mathbb{E}\left[\left(X-\mathbb{E}[X]+\mathbb{E}[X]\right)^{2n+1}\right] \\
 &=\sum_{k=0}^{2n+1}{2n+1 \choose k}\mathbb{E}[X]^{2n+1-k}\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{k}\right] \\
 &=\sum_{k=0}^{n}{2n+1 \choose 2k}\mathbb{E}[X]^{2n+1-2k}\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{2k}\right]\\
 &=\sum_{k=0}^{n}{2n+1 \choose 2k}\frac{(2k)!}{2^kk!}\mu^{2n+1-2k}\sigma^{2k}
 \end{align*}
 $$
-
-
-
 
 ### 1.6 Sum of independent normal variables
 
@@ -177,10 +165,10 @@ $$
 \end{align*}
 $$
 
-> Conclusion:
-> $$
-> Y\sim\mathcal{N}\left(0,\sigma_1^2+\sigma_2^2\right)
-> $$
+Conclusion:
+$$
+\boxed{Y\sim\mathcal{N}\left(0,\sigma_1^2+\sigma_2^2\right)}
+$$
 
 #### 1.6.2 Case of two independent normal variables
 
@@ -200,7 +188,7 @@ $$
 \boxed{Y=X_1+X_2\sim\mathcal{N}\left(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2\right)}
 $$
 
-#### 1.6.3 General Case:
+#### 1.6.3 General Case
 
 - Let $n\in\mathbb{N}^*$
 - Let $X_1\sim\mathcal{N}(\mu_1,\sigma_1^2),\dots,X_n\sim\mathcal{N}(\mu_n,\sigma_n^2)$  be $n$ independent random variables
@@ -209,8 +197,6 @@ It can be trivially concluded from $1.5.2$ that:
 $$
 \boxed{\sum_{i=1}^nX_i\sim\mathcal{N}\left(\sum_{i=1}^n\mu_i,\sum_{i=1}^n\sigma_i^2\right)}
 $$
-
-
 
 ## 2. $\Gamma$ distributions {#gamma-distribution}
 
@@ -277,13 +263,12 @@ $$
 \boxed{\mathbb{V}[X]=\frac{\alpha^2\Gamma(\alpha)-2\alpha\Gamma(\alpha+1)+\Gamma(\alpha+2)}{\beta^2 \Gamma(\alpha)}=\frac{\alpha^2-2\alpha^2+\alpha(\alpha+1)}{\beta^2}=\frac{\alpha}{\beta^2}}
 $$
 
-
 ### 2.5 Sum of gamma distributions
 
 #### 2.5.1 Two gamma distributions
 
 1. Let $\alpha_1,\alpha_2,\beta\in\mathbb{R}_+^*$
-2. Let $X\sim \Gamma(\alpha_1,\beta), Y\sim\Gamma(\alpha_2,\beta),$ two independent random variables and let $Z=X+Y$ 
+2. Let $X\sim \Gamma(\alpha_1,\beta), Y\sim\Gamma(\alpha_2,\beta),$ two independent random variables and let $Z=X+Y$.
 
 $$
 \begin{align*}
@@ -309,12 +294,12 @@ $$
 - Let $n\in\mathbb{N}^*$
 - Let $X_1\sim\Gamma(\alpha_1,\beta),\dots,X_n\sim\Gamma(\alpha_n,\beta)$  be $n$ independents gamma distributions that have the same $\beta$ parameter
 
-​	It can be proved by induction that:
+It can be proved by induction that:
 $$
 \boxed{\sum_{i=1}^nX_i\sim\Gamma\left(\sum_{i=1}^n\alpha_i,\beta\right)}
 $$
 
-### 2.6 Sum of Exponential distributions:
+### 2.6 Sum of Exponential distributions
 
 - Let $n\in\mathbb{N}^*,\lambda\in\mathbb{R}_+^*$
 - Let $X_1,\dots,X_n\sim\mathcal{E}(\lambda)$  be $n$ independent exponential random variables having the same parameter $\lambda$

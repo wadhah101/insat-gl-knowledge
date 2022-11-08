@@ -4,27 +4,23 @@
 
 This section will give how probability is formally defined.
 
-It is not required at all, but it gives insight when a probability question makes sense. 
+It is not required at all, but it gives insight when a probability question makes sense.
 
 Also it gives how to construct some random variables.
 
 **Be aware that this an advanced topic** :warning::warning::warning:.
 
-
-
 ### 1.1 Examples that have a meaning
 
-- *Choose $X$ uniformly from $[0,1]$* 
+- *Choose $X$ uniformly from $[0,1]$*
 
 - *Choose $X$ uniformly from $\{0,1,2,3\}$*
 
-- *Let $X\sim \mathcal{U}(0,1),$ what is the probability that $X\in \mathbb{Q}$?* 
+- *Let $X\sim \mathcal{U}(0,1),$ what is the probability that $X\in \mathbb{Q}$?*
 
 - Let $\bar{\mathbb{Q}}=\{\alpha\in\mathbb{R}/\quad \exists P\in\mathbb{Q}[x]/\quad P(\alpha)=0\}$ The set of all real numbers that are a solution to some polynomial function with rational coefficients. The statement below is a valid statement:
 
   *Let $X\sim \mathcal{N}(0,1)$, what is the probability that $X\in \bar{\mathbb{Q}}$?*
-
-
 
 ### 1.2 Examples that does not have a meaning
 
@@ -36,13 +32,11 @@ Also it gives how to construct some random variables.
 
   *Let $X\sim \mathcal{U}(0,1)$, what is the probability that $X\in\mathcal{V}$?*
 
-
-
 ### 1.3. Road Map
 
 To formally define a probability, we need:
 
-- A universe $\Omega$ 
+- A universe $\Omega$
 
 - set $\mathcal{F}$ of events.
 - Some probability function $\mu$ that assigns a probability $p\in[0,1]$ for every event $A\in\mathcal{F}.$
@@ -53,13 +47,11 @@ Then we will define some consistent probability functions $\mu$
 
 Finally, we will formally define a random variable.
 
-
-
 ## 2. Sigma Algebra {#sigma-algebra}
 
 ### 2.1 Definition
 
-Let $S$ be some set, and $\mathscr{P}(S)$ be its power set. 
+Let $S$ be some set, and $\mathscr{P}(S)$ be its power set.
 
 A subset $\Sigma \subseteq \mathscr{P}(S)$ is called a $\sigma$-algebra if:
 
@@ -69,7 +61,7 @@ A subset $\Sigma \subseteq \mathscr{P}(S)$ is called a $\sigma$-algebra if:
    $$
    \forall A\in \Sigma ,\quad \bar{A}= S\setminus A \in \Sigma
    $$
-   
+
 3. $\Sigma$  is closed under countable union:
    $$
    \forall (A_n)_{n\in\mathbb{N}}\in\Sigma^{\mathbb{N}},\quad \bigcup_{n\in\mathbb{N}}A_n \in \Sigma
@@ -81,15 +73,9 @@ For any set $S,$ $\mathscr{P}(S)$ and $\{\empty,S\}$ are both a sigma algebra
 
 ### 2.3 Importance
 
-A $\sigma$-algebra gives 
-
-
-
-
+In probability, A $\sigma$-algebra gives which events make sens. Those events can be aggregated using set union or set intersection.
 
 ## 3. Measurable Space {#measurable-space}
-
-
 
 ### 3.1 Definition
 
@@ -97,21 +83,15 @@ Let $S$ be some set and $\mathcal{F}$ be a [$\sigma$-algebra](#sigma-algebra) of
 
 The couple $(S,\mathcal{F})$ is called a **measurable space**
 
-
-
 ### 3.2 Significance
 
 A measurable space is on some sense a space on which it is possible to define a function defining the "size" of any set $A\in\mathcal{F}$
 
 This function will have some constraints that will be formalised next.
 
-
-
 ### 3.3 Examples
 
 For any set $S,$ $(S,\mathscr{P}(S))$ is a measurable set
-
-
 
 ### 3.4 Measurable Set
 
@@ -119,11 +99,7 @@ A set $U\in\mathscr{P}(S)$ is said to be measurable if $U\in \mathcal{F}$
 
 Any set $U\notin \mathcal{F}$ is called a non-measurable set.
 
-
-
 ## 4. Measure Space {#measure-space}
-
-
 
 ### 4.1 Definition
 
@@ -134,20 +110,15 @@ A **measure space** $(S,\mathcal{F},\mu)$ is a [*measurable space*](#measurable-
 2. The measure function is *non-negative*: $\forall A\in \mathcal{F}, \quad \mu(A)\ge 0$
 
 3. The measure function is *countably additive* with respect to *disjoint sets*:
-   $$
-   \forall (A_n)\in \mathcal{F}^\mathbb{N} \space \text{pairwise disjoint}, \quad \mu\left(\bigcup_{n\in\mathbb{N}} A_n\right)=\sum_{n\in\mathbb{N}}\mu(A_n)
-   $$
-   
+$$
+\forall (A_n)\in \mathcal{F}^\mathbb{N} \space \text{pairwise disjoint}, \quad \mu\left(\bigcup_{n\in\mathbb{N}} A_n\right)=\sum_{n\in\mathbb{N}}\mu(A_n)
+$$
 
 ### 4.2 Significance
 
 A measure space is a set $S$ with a function $\mu$ giving the size of measurable subsets $A\subseteq S$
 
-
-
 ### 4.3 Examples
-
-
 
 #### 4.3.1 Finite Set
 
@@ -162,8 +133,6 @@ We can verify that $(\mathcal{M},\mu)$ is a measure space.
 
 Also, with $p=\frac{\mu}{\lvert S \rvert}$, $(\mathcal{M},p)$ is also a measure space.
 
-
-
 #### 4.3.2 Natural numbers
 
 We will set $\mathcal{F}=\mathscr{P}(\mathbb{N})$
@@ -176,8 +145,6 @@ We can verify that $(\mathcal{M},\mu)$ is a measure space.
 
 As an example, $\mu(\{1,2,8\})=3.$
 
-
-
 We can also define another measure $\lambda$ as:
 $$
 \forall A\subseteq \mathbb{N}, \quad \mu(A)=\sum_{k\in A}2^{-k}
@@ -185,8 +152,6 @@ $$
 As an example, $\lambda(\{0,2\})=1+\frac{1}{4}=1.25$
 
 Also, $\lambda(\mathbb{N})=\sum_{n\in\mathbb{N}}2^{-n}=2$
-
-
 
 #### 4.3.2 Real Line
 
@@ -198,9 +163,7 @@ In fact:
 
 - $\mu$ gives the length of a set $A\in\mathcal{B}$
 - $\mathcal{B}$ is called a [Borel set](https://en.wikipedia.org/wiki/Borel_set), and its construction is a too advanced.
-- $\mathcal{B}\neq \mathscr{P}(\mathbb{R}),$ as it happens that the [Vitali set](https://en.wikipedia.org/wiki/Vitali_set) $\mathcal{V}$ defined at $1.2$ is not a Borel set. 
-
-
+- $\mathcal{B}\neq \mathscr{P}(\mathbb{R}),$ as it happens that the [Vitali set](https://en.wikipedia.org/wiki/Vitali_set) $\mathcal{V}$ defined at $1.2$ is not a Borel set.
 
 ### 4.3 Measurable Function
 
@@ -212,9 +175,6 @@ $$
 \forall U\in \mathcal{E},\quad f^{-1}(U)\in \mathcal{F}
 $$
 
-
-
-
 ## 5. Probability Space
 
 ### 5.1 Definition
@@ -223,11 +183,7 @@ A probability space is a [*measure space*](#measure-space) $(\Omega,\mathcal{F},
 
 ### 5.2 Terminology
 
-
-
 ### 5.3 Examples
-
-
 
 #### 5.3.1 Finite Sets
 
@@ -240,8 +196,6 @@ $$
 \forall A\subseteq \mathbb{N},\quad \phi(A)=\frac{\lambda(A)}{\lambda(\mathbb{N})}=\frac{1}{2}\sum_{k\in A}2^{-k}
 $$
 The measure $\mu$ from $3.3.2$ cannot induce a probability space like $\lambda$ as $\mu(\mathbb{N})=+\infty$
-
-
 
 #### 5.3.3 Real numbers
 
@@ -263,22 +217,16 @@ $$
 \end{cases}
 $$
 
-
-
 ## 6. Random Variable {#random-variable}
-
-
 
 ### 6.1 Definition
 
 - Let $(\Omega,\mathcal{F},\mu)$ be a probability space
 - Let $(E,\mathcal{E})$ a measurable space
 
-A function $X:\Omega\rightarrow E$ is called a random variable if it is measurable. 
+A function $X:\Omega\rightarrow E$ is called a random variable if it is measurable.
 
 In other words, that is if it is a measurable function whose domain constitute a probability space.
-
-
 
 ### 6.2 Probability of an event
 
@@ -288,6 +236,7 @@ We define the probability that $X\in U$, denoted by $\mathcal{P}(X\in U)$  as fo
 $$
 \mathcal{P}(X\in U)=\mu\left(\{\omega \in \Omega / \quad X(\omega)\in U\}\right)=\mu\left(X^{-1}(U)\right)
 $$
+
 ### 6.3 Distribution
 
 The probability function defined at 6.2 constitute a measure $\mathcal{D}$ of the measurable space $(E,\mathcal{E})$
@@ -298,7 +247,6 @@ If $X$ has a distribution $\mathcal{D}$, we say that $X$ follows a $\mathcal{D}$
 $$
 X\sim \mathcal{D}
 $$
-
 
 ### 6.4 Classification
 
@@ -314,7 +262,6 @@ A random variable $X$ is said to be continuous if:
 $$
 \forall \omega\in \Omega,\quad \mathcal{P}(X=\omega)=0
 $$
-
 
 ### 6.5 Examples
 
@@ -333,10 +280,7 @@ $$
 \forall s\in S,\quad \mathcal{P}(X=s)=p(X^{-1}(\omega))=p(\{\omega\})=\frac{1}{\lvert S \rvert}=\frac{1}{b-a+1}
 $$
 
-Note that as $X(S)=S$ is a countable set, this random variable is a discrete random variable. 
-
-
-
+Note that as $X(S)=S$ is a countable set, this random variable is a discrete random variable.
 
 #### 6.5.2 Bernoulli Random Variable
 
@@ -352,7 +296,6 @@ Note that as $X(S)=S$ is a countable set, this random variable is a discrete ran
   0& \text{otherwise}
   \end{cases}
   $$
-  
 
 We have:
 $$
@@ -367,11 +310,9 @@ $$
 &= 1-p
 \end{align*}
 $$
- With that, we can verify that $X\sim \mathcal{B}(p)$
+With that, we can verify that $X\sim \mathcal{B}(p)$
 
 Note that as $X(\mathbb{R})=\{0,1\}$ is a countable set, this random variable is a discrete random variable.
-
-
 
 #### 6.5.3 Continuous Uniform Variable
 
@@ -389,9 +330,7 @@ $$
 &=b-a
 \end{align*}
 $$
-This result essentially says that $X\sim \mathcal{U}(0,1).$ And we can verify that $X$ is a continuous random variable 
-
-
+This result essentially says that $X\sim \mathcal{U}(0,1).$ And we can verify that $X$ is a continuous random variable.
 
 Now we will calculate $\mathcal{P}(X\in \mathbb{Q})$
 
@@ -417,8 +356,6 @@ $$
 
 A random variable $X:\Omega \rightarrow E$ is said to be **discrete** if $X(\Omega)$ is *countable*
 
-
-
 ### 7.2 Probability Mass Function
 
 #### 7.2.1 Definition
@@ -441,7 +378,7 @@ $$
 &=\mathcal{P}(X\in A\cap X(\Omega) )
 \end{align*}
 $$
- As $A\cap X(\Omega)\subseteq X(\Omega)$ is countable, there [exists a bijective function](https://en.wikipedia.org/wiki/Countable_set) $\Phi: \mathcal{I}\rightarrow A \cap X(\Omega)$ with $\mathcal{I}\subseteq \mathbb{N}$. 
+ As $A\cap X(\Omega)\subseteq X(\Omega)$ is countable, there [exists a bijective function](https://en.wikipedia.org/wiki/Countable_set) $\Phi: \mathcal{I}\rightarrow A \cap X(\Omega)$ with $\mathcal{I}\subseteq \mathbb{N}$.
 
 And from that we can calculate the probability of $A:$
 $$
@@ -468,8 +405,6 @@ $$
 - The Discrete Uniform Variable shown in $6.5.1$
 - The Bernoulli Random Variable shown in $6.5.2$
 - Even when we expand the domain of the Bernoulli Random Variable to $E=\mathbb{R},\mathcal{E}=\mathcal{B}.$ It will always be a discrete random variable as $X(\Omega)=\{0,1\}$
-
-
 
 ## 8. Real Random Variable
 
@@ -501,7 +436,6 @@ x &\text{if} \space x\in[0,1]\\
 1 &\text{otherwise}
 \end{cases}
 $$
-
 
 ### 8.3 Probability Density Function
 

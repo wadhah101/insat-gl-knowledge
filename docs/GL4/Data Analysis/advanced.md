@@ -32,13 +32,7 @@ $$
 $$
 Which is a contradiction as $\mathbb{V}[X]=\sigma^2 \quad \blacksquare$
 
-
-
-
-
-
-
-## 2. Discrete Compound Distribution 
+## 2. Discrete Compound Distribution
 
 A discrete compound distribution is a discrete distribution whose parameter is a random variable $X$.
 
@@ -53,8 +47,8 @@ We will analyse two cases:
 
 #### 2.1.1 Definition
 
-- Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
-- Let $X$ be a discrete distribution with values on $Q\subseteq S$
++ Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
++ Let $X$ be a discrete distribution with values on $Q\subseteq S$
 
 a discrete random variable $Y$ is said to follow the compound distribution $\mathcal{D}(X)$ if:
 $$
@@ -69,13 +63,14 @@ $$
 
 #### 2.1.3 Example
 
-- Let $n\in\mathbb{N},p\in[0,1]$
-- Let $X\sim \mathcal{D}(1,n)$
-- Let $Y\sim \mathcal{D}(1,X).$ It can be thought as following a Bernoulli distribution with a random size $X$ 
++ Let $n\in\mathbb{N},p\in[0,1]$
++ Let $X\sim \mathcal{D}(1,n)$
++ Let $Y\sim \mathcal{D}(1,X).$ It can be thought as following a Bernoulli distribution with a random size $X$
 
-**Our goal is to calculate the probability distribution of $Y$, and then its expected value and variance**
+> **Our goal is to calculate the probability distribution of $Y$, and then its expected value and variance**
 
 We will start by the probability distribution function, as it represents the distribution of $Y$
+
 $$
 \begin{align*}
 \forall k \in \{1,\dots,n\},\quad \mathcal{P}(Y=k)&=\sum_{s=1}^n\mathcal{P}(Y=k \mid X=s)\mathcal{P}(X=s)\\
@@ -83,7 +78,9 @@ $$
 &=\frac{1}{n}\sum_{s=k}^n \frac{1}{s}\\
 \end{align*}
 $$
+
 For the expected value $\mathbb{E}[Y]$, we have:
+
 $$
 \begin{align*}
 \forall k\in\{1,\dots,n\},\quad \mathbb{E}[Y\mid X=k]&=\frac{k+1}{2}\\
@@ -94,14 +91,18 @@ $$
 &=\frac{n+3}{4}
 \end{align*}
 $$
+
 To calculate the variance, we will start by the conditional variance :
+
 $$
 \begin{align*}
 \forall k\in\{1,\dots,n\},\quad \mathbb{V}[Y\mid X=k]&=\frac{k^2-1}{12}\\
 \implies \mathbb{V}[Y\mid X]&=\frac{X^2-1}{12}
 \end{align*}
 $$
+
 Now, we will calculate the variance $\mathbb{V}[Y]$ using the theorem of total variance:
+
 $$
 \begin{align*}
 \mathbb{V}[Y]&=\mathbb{V}[\mathbb{E}[Y\mid X]] + \mathbb{E}[\mathbb{V}[Y\mid X]]\\
@@ -116,17 +117,12 @@ $$
 \end{align*}
 $$
 
-
-
-
-
-
 ### 2.2 Compounding with a continuous random variable
 
 #### 2.2.1 Definition
 
-- Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
-- Let $X$ be a continuous distribution with values on $Q\subseteq S$
++ Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
++ Let $X$ be a continuous distribution with values on $Q\subseteq S$
 
 a discrete random variable $Y$ is said to follow the compound distribution $\mathcal{D}(X)$ if:
 $$
@@ -139,16 +135,13 @@ $$
 \forall y \in A,\quad \mathcal{P}(Y=y)=\int_Q\mathcal{P}(Y=y\mid X=t)\cdot f_X(t)\space \text{dt}=\int_Q\mathcal{P}(Y[X=t]=y)\cdot f_X(t)\space \text{dt}
 $$
 
-
-
 #### 2.2.3 Example
 
-- Let $n\in\mathbb{N}$
++ Let $n\in\mathbb{N}$
++ Let $X\sim \mathcal{U}(0,1)$
++ Let $Y\sim \mathcal{B}(n,X).$ It can be thought as following a Bernoulli distribution with a random probability $X$
 
-- Let $X\sim \mathcal{U}(0,1)$
-- Let $Y\sim \mathcal{B}(n,X).$ It can be thought as following a Bernoulli distribution with a random probability $X$ 
-
-**Our goal is to calculate the probability distribution of $Y$, and then its expected value and variance**
+> **Our goal is to calculate the probability distribution of $Y$, and then its expected value and variance**
 
 We will start by the probability distribution function, as it represents the distribution of $Y$
 $$
@@ -164,7 +157,6 @@ $$
 \end{align*}
 $$
 
-
 The expected value and variance are:
 $$
 \begin{align*}
@@ -174,10 +166,7 @@ $$
 \end{align*}
 $$
 
-
-
-
-## 3. Discrete Compound Distribution 
+## 3. Discrete Compound Distribution
 
 A continuous compound distribution is a discrete distribution whose parameter is a random variable $X$.
 
@@ -192,8 +181,8 @@ We will analyse two cases:
 
 #### 3.1.1 Definition
 
-- Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
-- Let $X$ be a discrete distribution with values on $Q\subseteq S$
++ Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
++ Let $X$ be a discrete distribution with values on $Q\subseteq S$
 
 a continuous random variable $Y$ is said to follow the compound distribution $\mathcal{D}(X)$ if:
 $$
@@ -206,16 +195,13 @@ $$
 \forall y \in A,\quad f_Y(y)=\sum_{k\in Q}f_{Y[X=k]}(y)\cdot \mathcal{P}(X=k)
 $$
 
+#### 3.1.3 Example
 
++ Let $p\in\space ]0,1]$
++ Let $X\sim \mathcal{G}(p)$
++ Let $Y\sim \mathcal{U}(0,X).$ It can be thought as following a uniform distribution with a random parameter $X$
 
-#### 3.1.3 Example 
-
-- Let $p\in\space ]0,1]$
-
-- Let $X\sim \mathcal{G}(p)$
-- Let $Y\sim \mathcal{U}(0,X).$ It can be thought as following a uniform distribution with a random parameter $X$ 
-
-**Our goal is to calculate the probability distribution of $Y$, and then its expected value**
+> **Our goal is to calculate the probability distribution of $Y$, and then its expected value**
 
 We will start by the probability distribution function, as it represents the distribution of $Y$
 $$
@@ -244,8 +230,6 @@ $$
 \end{align*}
 $$
 
-
-
 It can be also calculated directly using the law of total expectation:
 $$
 \begin{align*}
@@ -268,8 +252,7 @@ $$
 \end{align*}
 $$
 
-
-*This example may illustrate how using the right tools can simplify your work and make your engineering life easier :smile:*
+> *This example may illustrate how using the right tools can simplify your work and make your engineering life easier :smile:*
 
 We can go further, and calculate the variance of $Y$
 
@@ -280,7 +263,6 @@ $$
 \implies \mathbb{V}[Y \mid X]&=\frac{1}{12}X^2
 \end{align*}
 $$
-
 
 Now using the law of total variance:
 $$
@@ -294,16 +276,12 @@ $$
 \end{align*}
 $$
 
-
-
-
-
 ### 3.2 Compounding by a continuous distribution
 
 #### 3.2.1 Definition
 
-- Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
-- Let $X$ be a continuous distribution with values on $Q\subseteq S$
++ Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
++ Let $X$ be a continuous distribution with values on $Q\subseteq S$
 
 a discrete random variable $Y$ is said to follow the compound distribution $\mathcal{D}(X)$ if:
 $$
@@ -316,15 +294,13 @@ $$
 \forall y \in A,\quad f_Y(y)=\int_Qf_{Y[X=t]}(y)\cdot f_X(t)\space \text{dt}
 $$
 
-
-
 #### 3.2.3 Example
 
-- Let $p\in[0,1]$
-- Let $X\sim \mathcal{U}(0,1)$
-- Let $Y\sim \mathcal{E}(X)$ is a compound distribution, it can be thought as following a gamma distribution with random parameter $X$
++ Let $p\in[0,1]$
++ Let $X\sim \mathcal{U}(0,1)$
++ Let $Y\sim \mathcal{E}(X)$ is a compound distribution, it can be thought as following a gamma distribution with random parameter $X$
 
-**Our goal is to represent the distribution of $Y$, its expected value and its variance**
+> **Our goal is to represent the distribution of $Y$, its expected value and its variance**
 
 We will start by the probability distribution function
 $$
@@ -341,8 +317,6 @@ f_Y(0)&=\int_{0}^1t\text{dt}\\
 \end{align*}
 $$
 
-
-
 For the expected value, we will use the theorem of total expectation:
 $$
 \begin{align*}
@@ -353,7 +327,7 @@ $$
 $$
 So this probability distribution does not have a mean value, and by extension it does not have a variance.
 
-*This example serves as a proof that not all distributions have a mean value and/or a variance*
+> *This example serves as a proof that not all distributions have a mean value and/or a variance*
 
 By contrast, the random variable $Z=\sqrt{Y}$ has a finite mean value, but does not have a variance (if it had one, $Y$ should then have a finite expected value):
 $$

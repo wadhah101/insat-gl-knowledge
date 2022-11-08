@@ -1,3 +1,7 @@
+---
+slug: /gl4/data-analysis/regression
+---
+
 # Linear Regression
 
 ## 1. Notations

@@ -1,3 +1,7 @@
+---
+slug: /gl4/data-analysis/advance
+---
+
 # Advanced Probability
 
 ## 1. Tchebychev Inequality

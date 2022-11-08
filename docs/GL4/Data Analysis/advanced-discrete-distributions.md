@@ -1,3 +1,7 @@
+---
+slug: /gl4/data-analysis/advanced-discrete-distributions
+---
+
 # Discrete Distributions 2
 
 ## 4. Poisson Distribution

@@ -1,3 +1,7 @@
+---
+slug: /gl4/data-analysis/statistics
+---
+
 # Estimating Statistics
 
 ## 1. Estimator

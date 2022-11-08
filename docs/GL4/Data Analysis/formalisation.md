@@ -1,3 +1,7 @@
+---
+slug: /gl4/data-analysis/formalisation
+---
+
 # Probability Formalisation
 
 ## 1. Importance

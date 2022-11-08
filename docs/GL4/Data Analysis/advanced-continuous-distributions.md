@@ -1,3 +1,7 @@
+---
+slug: /gl4/data-analysis/advanced-continuous-distributions
+---
+
 # Continuous Distributions 3
 
 ## 3. $\chi^2$ distributions

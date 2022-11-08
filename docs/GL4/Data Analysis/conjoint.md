@@ -1,3 +1,7 @@
+---
+slug: /gl4/data-analysis/conjoint
+---
+
 # Conjoint Probability
 
 ## 1. Discrete Random Variables

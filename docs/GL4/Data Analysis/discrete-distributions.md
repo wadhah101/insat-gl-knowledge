@@ -1,3 +1,7 @@
+---
+slug: /gl4/data-analysis/discrete-distributions
+---
+
 # Discrete Distributions 1
 
 ## 1. Uniform Distribution {#uniform-distribution}

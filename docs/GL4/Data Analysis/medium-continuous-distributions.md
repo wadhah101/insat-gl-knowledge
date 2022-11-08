@@ -1,3 +1,7 @@
+---
+slug: /gl4/data-analysis/medium-continuous-distributions
+---
+
 # Continuous Distributions 2
 
 ## 1. Normal Distribution {#normal-distribution}

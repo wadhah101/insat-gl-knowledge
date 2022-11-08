@@ -1,3 +1,7 @@
+---
+slug: /gl4/data-analysis/introduction
+---
+
 # Introduction
 
 ## 1 Probability Space

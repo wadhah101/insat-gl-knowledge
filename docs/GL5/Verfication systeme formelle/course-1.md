@@ -1,6 +1,7 @@
 ---
 slug: /gl5/verfication-systeme-formelle/course-1
 ---
+
 # Course 1
 
 Author [@ramizaouri](https://github.com/ramizouari)

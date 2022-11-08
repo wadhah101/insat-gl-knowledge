@@ -1,5 +1,5 @@
 ---
-slug: /gl2/sql/cheat-sheet-advance
+slug: /gl2/sql/cheat-sheet-advanced
 ---
 
 # Advanced SQL

@@ -9,16 +9,28 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  YARN_CACHE_FOLDER: $(Pipeline.Workspace)/.yarn
+
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
 
+- task: Cache@2
+  inputs:
+    key: '"yarn" | "$(Agent.OS)" | yarn.lock'
+    restoreKeys: |
+       yarn | "$(Agent.OS)"
+       yarn
+    path: $(YARN_CACHE_FOLDER)
+  displayName: Cache Yarn packages
+
 - script: |
     yarn install
-  displayName: 'npm install '
+  displayName: 'install '
 
 - script: |
     yarn build
-  displayName: 'npm build'
+  displayName: 'build'

@@ -45,22 +45,22 @@ KDD knowledge discovery process  is iterative and interactive, comprises of nine
 
 1. **Sample**
 
-Extracts samples from a large data set, in numbers large enough to contain the important information, but small enough to be quickly manipulated.
+    Extracts samples from a large data set, in numbers large enough to contain the important information, but small enough to be quickly manipulated.
 
 2. **Explore**
 
-Exploring the data by looking for unforeseen anomalies in order to better understand the data.
+    Exploring the data by looking for unforeseen anomalies in order to better understand the data.
 
 3. **Modify**
 
-Modifies data by creating, selecting and transforming variables to focus on the model selection process.
+    Modifies data by creating, selecting and transforming variables to focus on the model selection process.
 
 4. **Model**
 
-Models the data by allowing the software to automatically search for a combination of data that reliably predicts the desired outcome
+    Models the data by allowing the software to automatically search for a combination of data that reliably predicts the desired outcome
 
 5. **Assess**
- Assesses the usefulness and reliability of the results of the Data Mining process and assesses how it will perform
+    Assesses the usefulness and reliability of the results of the Data Mining process and assesses how it will perform
 
 ### CRISP-DM: CRoss-IndustryStandard Processfor Data Mining (By IBM)
 

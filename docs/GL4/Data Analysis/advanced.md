@@ -1,23 +1,15 @@
 # Advanced Probability
 
-## 1. Function {#random-variable-function} 
+## 1. Tchebychev Inequality
 
-Sometimes, 
-
-
-
-
-
-## 2. Tchebychev Inequality
-
-### 2.1 Statement
+### 1.1 Statement
 
 Let $X\sim \mathcal{D}$ with finite variance $\sigma^2$ and finite expectation $\mu.$ Then:
 $$
 \forall r\in\mathbb{R}_+^*,\quad \mathcal{P}\left(\lvert X-\mu \rvert \ge r\sigma\right) \le \frac{1}{r^2}
 $$
 
-### 2.2 Proof
+### 1.2 Proof
 
 Let $X\sim \mathcal{D}$ with finite variance $\sigma^2$ and finite expectation $\mu$
 
@@ -46,7 +38,7 @@ Which is a contradiction as $\mathbb{V}[X]=\sigma^2 \quad \blacksquare$
 
 
 
-## 3. Discrete Compound Distribution 
+## 2. Discrete Compound Distribution 
 
 A discrete compound distribution is a discrete distribution whose parameter is a random variable $X$.
 
@@ -57,9 +49,9 @@ We will analyse two cases:
 + The random variable $X$ is discrete
 + The random variable $X$ is continuous
 
-### 3.1 Compounding with a discrete random variable
+### 2.1 Compounding with a discrete random variable
 
-#### 3.1.1 Definition
+#### 2.1.1 Definition
 
 - Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
 - Let $X$ be a discrete distribution with values on $Q\subseteq S$
@@ -69,13 +61,13 @@ $$
 \forall k \in Q, \quad Y[X=k]\sim \mathcal{D}(k)
 $$
 
-#### 3.1.2 Probability Mass function
+#### 2.1.2 Probability Mass function
 
 $$
 \forall y \in A,\quad \mathcal{P}(Y=y)=\sum_{k\in Q}\mathcal{P}(Y=y\mid X=k)\cdot \mathcal{P}(X=k)=\sum_{k\in Q}\mathcal{P}(Y[X=k]=y)\cdot \mathcal{P}(X=k)
 $$
 
-#### 3.1.3 Example
+#### 2.1.3 Example
 
 - Let $n\in\mathbb{N},p\in[0,1]$
 - Let $X\sim \mathcal{D}(1,n)$
@@ -129,9 +121,9 @@ $$
 
 
 
-### 3.2 Compounding with a continuous random variable
+### 2.2 Compounding with a continuous random variable
 
-#### 3.2.1 Definition
+#### 2.2.1 Definition
 
 - Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
 - Let $X$ be a continuous distribution with values on $Q\subseteq S$
@@ -141,7 +133,7 @@ $$
 \forall k \in Q, \quad Y[X=k]\sim \mathcal{D}(k)
 $$
 
-#### 3.2.2 Probability Mass function
+#### 2.2.2 Probability Mass function
 
 $$
 \forall y \in A,\quad \mathcal{P}(Y=y)=\int_Q\mathcal{P}(Y=y\mid X=t)\cdot f_X(t)\space \text{dt}=\int_Q\mathcal{P}(Y[X=t]=y)\cdot f_X(t)\space \text{dt}
@@ -149,7 +141,7 @@ $$
 
 
 
-#### 3.2.3 Example
+#### 2.2.3 Example
 
 - Let $n\in\mathbb{N}$
 
@@ -185,7 +177,7 @@ $$
 
 
 
-## 4. Discrete Compound Distribution 
+## 3. Discrete Compound Distribution 
 
 A continuous compound distribution is a discrete distribution whose parameter is a random variable $X$.
 
@@ -196,9 +188,9 @@ We will analyse two cases:
 + The random variable $X$ is discrete
 + The random variable $X$ is continuous
 
-### 4.1 Compounding by a discrete distribution
+### 3.1 Compounding by a discrete distribution
 
-#### 4.1.1 Definition
+#### 3.1.1 Definition
 
 - Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
 - Let $X$ be a discrete distribution with values on $Q\subseteq S$
@@ -208,7 +200,7 @@ $$
 \forall k \in Q, \quad Y[X=k]\sim \mathcal{D}(k)
 $$
 
-#### 4.1.2 Probability Mass function
+#### 3.1.2 Probability Mass function
 
 $$
 \forall y \in A,\quad f_Y(y)=\sum_{k\in Q}f_{Y[X=k]}(y)\cdot \mathcal{P}(X=k)
@@ -216,7 +208,7 @@ $$
 
 
 
-#### 4.1.3 Example 
+#### 3.1.3 Example 
 
 - Let $p\in\space ]0,1]$
 
@@ -306,9 +298,9 @@ $$
 
 
 
-### 4.2 Compounding by a continuous distribution
+### 3.2 Compounding by a continuous distribution
 
-#### 4.2.1 Definition
+#### 3.2.1 Definition
 
 - Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
 - Let $X$ be a continuous distribution with values on $Q\subseteq S$
@@ -318,7 +310,7 @@ $$
 \forall k \in Q, \quad Y[X=k]\sim \mathcal{D}(k)
 $$
 
-#### 4.2.2 Probability Mass function
+#### 3.2.2 Probability Mass function
 
 $$
 \forall y \in A,\quad f_Y(y)=\int_Qf_{Y[X=t]}(y)\cdot f_X(t)\space \text{dt}
@@ -326,7 +318,7 @@ $$
 
 
 
-#### 4.2.3 Example
+#### 3.2.3 Example
 
 - Let $p\in[0,1]$
 - Let $X\sim \mathcal{U}(0,1)$

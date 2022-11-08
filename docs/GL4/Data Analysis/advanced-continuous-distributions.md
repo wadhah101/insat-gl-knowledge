@@ -1,4 +1,4 @@
-# Continuous Distributions 2
+# Continuous Distributions 3
 
 ## 3. $\chi^2$ distributions
 
@@ -30,7 +30,7 @@ $$
 &=\frac{\sqrt{2}}{\sqrt{\pi}}\int_{0}^{\sqrt{x}}e^{-\frac{t^2}{2}}\text{dt}\\
 \implies\forall x\in\mathbb{R}_+^*,f_Y(x)&=F_Y'(x)\\
 &=\frac{1}{2\sqrt{x}}\cdot\left(\frac{\sqrt{2}}{\sqrt{\pi}}e^{-\frac{(\sqrt x)^2}{2}}\right)\\
-&=\frac{1}{\sqrt{2\pi}}e^{-\frac{x}{2}}
+&=\frac{1}{\sqrt{2\pi x}}e^{-\frac{x}{2}}
 \end{align*}
 $$
 $\forall x\leq0,$ it is trivial that $F_Y(x)=0,$ So consequently $\forall x\leq 0,f_Y(x)=0$
@@ -64,6 +64,26 @@ $$
 $$
 
 This follows immediately from the sum of gamma distributions.
+
+### 3.6 Moment
+
+Let $X\sim\chi_n^2$
+
+As a $\chi^2$-distribution is a $\Gamma$-distribution, the calculation of the moments can be found [here](./continuous-distributions.md#gamma-distribution)
+
+We will list here essentially the expected value and the variance.
+
+#### 3.6.1 Expected Value:
+
+$$
+\mathbb{E}[X]=\frac{\frac{n}{2}}{\frac{1}{2}}=n
+$$
+
+#### 3.6.2 Variance:
+
+$$
+\mathbb{V}[X]=\frac{\frac{n}{2}}{\frac{1}{2^2}}=2n
+$$
 
 
 

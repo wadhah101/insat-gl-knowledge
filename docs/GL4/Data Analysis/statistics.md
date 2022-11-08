@@ -47,7 +47,7 @@ $$
 
 > Assumption: $X_1,\dots,X_n$ are independent.
 
-## 3.1 Trivial estimator $\hat{\sigma^2}$
+### 3.1 Trivial estimator $\hat{\sigma^2}$
 
 $$
 \hat{\sigma^2}(X_1,\dots,X_n)=\frac{1}{n}\sum_{i=1}^n\left(X_i-\hat{\mu}(X_1,\dots,X_n)\right)^2
@@ -69,14 +69,14 @@ $$
 $$
 Thus this estimator is biased.
 
-## 3.2 Bessel's Correction: $\hat{\sigma}_*^2$
+### 3.2 Bessel's Correction: $\hat{\sigma}_*^2$
 
 This is an unbiased estimator of the variance:
 $$
 \hat{\sigma}_*^2(X_1,\dots,X_n)=\frac{n}{n-1}\hat{\sigma}^2(X_1,\dots,X_n)=\frac{1}{n-1}\sum_{i=1}^n\left(X_i-\hat\mu(X_1,\dots,X_n)\right)^2
 $$
 
-## 3.3 God's Estimator
+### 3.3 God's Estimator
 
 This in an estimator depending on the prior knowledge of the mean:
 $$
@@ -96,8 +96,6 @@ Thus this estimator is unbiased
 ## 4. Estimating Covariance
 
 Let $Z_1,\dots,Z_n$ be $n$ independent and identically distributed contintuos random real vectors with mean $\mu$ and covariance matrix $C$
-
-
 
 ### 4.1 Naive Estimator
 

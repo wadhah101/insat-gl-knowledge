@@ -1,4 +1,4 @@
-# Discrete Distributions
+# Discrete Distributions 1
 
 
 
@@ -356,6 +356,74 @@ $$
 \end{align*}
 $$
 
+#### 4.4 Moments
+
+#### 4.4.1 Prelude
+
+Let $\varphi_n$ defined as:
+$$
+\begin{align*}
+\varphi_{n}:&\mathbb{R}^*\rightarrow \mathbb{R}\\
+&x\rightarrow \sum_{m\in\mathbb{N}}m^nx^m
+\end{align*}
+$$
+*This function will be a helper function for calculating $\mathbb{E}[X^n]$*
+
+In fact, $\varphi_n$ is differentiable and:
+$$
+\varphi'_n=\sum_{m\in\mathbb{N}^*}m^{n+1}x^{m-1}=\frac{1}{x}\varphi_{n+1}
+$$
+Which implies:
+$$
+\forall n\in\mathbb{N},\quad \varphi_{n+1}=x\varphi'_n
+$$
+And we have the following:
+$$
+\varphi_0=\sum_{m\in\mathbb{N}}x^m=\frac{1}{1-x}
+$$
+
+
+
+
+#### 4.4.2 Raw Moments
+
+$$
+\begin{align*}
+\forall n\in\mathbb{N},\quad \mathbb{E}[X^n]&=\sum_{m\in\mathbb{N}}m^np(1-p)^{n-1} \\
+&= \frac{p}{1-p}\varphi_n(1-p)
+\end{align*}
+$$
+
+With that, we can calculate the expected value $\mathbb{E}[X]$ as:
+$$
+\begin{align*}
+\forall x\in\mathbb{R}^*,\quad \varphi_1(x)&=x\varphi_0'(x)\\
+&=\frac{x}{(1-x)^2}\\
+\mathbb{E}[X]&=\frac{p}{1-p}\varphi_1(1-p) \\
+&=\frac{p}{1-p}\cdot \frac{1-p}{p^2}\\
+&=\frac{1}{p}
+\end{align*}
+$$
+
+#### 4.4.3 Variance
+
+The variance $\mathbb{V}[X]$ can be calculated as:
+$$
+\begin{align*}
+\forall x\in\mathbb{R}\setminus\{0,1\},\quad \varphi_2(x)&=x\varphi_1'(x)\\
+&=x\cdot \left(\frac{x}{(1-x)^2}\right)'\\
+&=x\cdot \frac{(1-x)^2+2(1-x)x}{(1-x)^4}\\
+&=x\cdot \frac{1-x+2x}{(1-x)^3}\\
+&=\frac{x(x+1)}{(1-x)^3}\\
+\mathbb{V}[X]&=\mathbb{E}[X^2]-\mathbb{E}[X]^2\\
+&=\frac{p}{1-p}\cdot \varphi_2(1-p)-\frac{1}{p^2}\\
+&=\frac{p}{1-p}\cdot \frac{(1-p)(2-p)}{p^3}-\frac{1}{p^2}\\
+&=\frac{2-p-1}{p^2}\\
+&=\frac{1-p}{p^2}
+\end{align*}
+$$
+
+
 
 
 
@@ -373,6 +441,8 @@ In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [s
 
 For example, we can define rolling a $6$ on a die as a success, and rolling any other number as a failure, and ask how many rolls will occur to get the third success $(r=3)$. In such a case, the probability distribution of the number of needed trials will be a negative binomial distribution. 
 
+
+
 ### 5.3 Probability mass function
 
 Let $S_{n,k}$ be the set of subsets of $I_n=\{1,\dots,n\}$ of size $k$
@@ -388,3 +458,51 @@ $$
 \end{align*}
 $$
 
+### 5.4 Moments
+
+#### 5.4.1 Raw Moments
+
+- Let $p\in[0,1]$
+
+- For $r\in\mathbb{N},$ let $X_r\sim \mathcal{NB}(r,p)$
+
+$$
+\begin{align*}
+\forall n\in\mathbb{N}^*,\quad \mathbb{E}[X_r^n]&=\sum_{m\in\mathbb{N}}{m-1 \choose r-1}m^np^r(1-p)^{m-r}\\
+&=\sum_{m\in\mathbb{N}}\frac{(m-1)!}{(m-r)!(r-1)!}m^np^r(1-p)^{m-r}\\
+&=\sum_{m\in\mathbb{N}}\frac{m!}{(m-r)!r!}rm^{n-1}p^r(1-p)^{m-r}\\
+&=\sum_{m\in\mathbb{N}}{m \choose r}rm^{n-1}p^r(1-p)^{m-r}\\
+&=\frac{r}{p}\sum_{m\in\mathbb{N}^*}{m-1\choose r}(m-1)^{n-1}p^{r+1}(1-p)^{m-1-r}\\
+&=\frac{r}{p}\sum_{m\in\mathbb{N}^*}{m-1\choose r}\sum_{s=0}^{n-1}{n-1\choose s}(-1)^{n-1-s}m^sp^{r+1}(1-p)^{m-1-r}\\
+&=\frac{r}{p}\sum_{s=0}^{n-1}(-1)^{n-1-s}{n-1\choose s}\sum_{m\in\mathbb{N}^*}{m-1\choose r}m^sp^{r+1}(1-p)^{m-1-r}\\
+&=\frac{r}{p}\sum_{s=0}^{n-1}(-1)^{n-1-s}{n-1\choose s}\mathbb{E}[X^s_{r+1}]
+\end{align*}
+$$
+
+In particular, the expected value is:
+$$
+\boxed{\mathbb{E}[X_r]=\frac{r}{p}\mathbb{E}[X^0_{r+1}]=\frac{r}{p}}
+$$
+
+#### 5.4.2 Central Moments
+
+We will start by the variance
+$$
+\begin{align*}
+\mathbb{E}[X_r^2]&=\frac{r}{p}\left(-\mathbb{E}[X_{r+1}^0]+\mathbb{E}[X_{r+1}]\right)\\
+&=\frac{r}{p}\cdot (\frac{r+1}{p}-1)\\
+&=\frac{r(r+1-p)}{p^2}\\
+\implies \mathbb{V}[X_r]&=\mathbb{E}[X_r^2]-\mathbb{E}[X_r]^2\\
+&=\frac{r(r+1-p)}{p^2}-\frac{r^2}{p^2}\\
+&=r\frac{1-p}{p^2}
+\end{align*}
+$$
+
+### 5.5 Relation to the Geometric Distribution
+
+The geometric distribution is a special case of the negative binomial distribution.
+
+In fact:
+$$
+\boxed{\forall p\in [0,1],\quad \mathcal{G}(p)=\mathcal{NB}(1,p)}
+$$

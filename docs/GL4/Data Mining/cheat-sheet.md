@@ -31,16 +31,11 @@ KDD knowledge discovery process  is iterative and interactive, comprises of nine
 
  1. **Building up an understanding of the application domain**
  2. **Choosing and creating a data set on which discovery will be performed**
-
  3. **Preprocessing and cleansing**
-
  4. **Data Transformation**
-
     In this stage, the creation of appropriate data for Data Mining is prepared and developed. Techniques here incorporate dimension reduction( for example, feature    selection and extraction and record sampling), also attribute transformation(for example, discretization of numerical attributes and functional transformation).
  5. **Prediction and description**
-
     We are now prepared to decide on which kind of Data Mining to use, for example, classification, regression, clustering, etc.
-
  6. **choose the right Data Mining algo**
  7. **Implement the algo**
  8. **Evaluation**
@@ -50,23 +45,22 @@ KDD knowledge discovery process  is iterative and interactive, comprises of nine
 
 1. **Sample**
 
-    Extracts samples from a large data set, in numbers large enough to contain the important information, but small enough to be quickly manipulated.
+Extracts samples from a large data set, in numbers large enough to contain the important information, but small enough to be quickly manipulated.
 
 2. **Explore**
 
-    Exploring the data by looking for unforeseen anomalies in order to better understand the data.
+Exploring the data by looking for unforeseen anomalies in order to better understand the data.
 
 3. **Modify**
 
-    Modifies data by creating, selecting and transforming variables to focus on the model selection process.
+Modifies data by creating, selecting and transforming variables to focus on the model selection process.
 
 4. **Model**
 
-    Models the data by allowing the software to automatically search for a combination of data that reliably predicts the desired outcome
+Models the data by allowing the software to automatically search for a combination of data that reliably predicts the desired outcome
 
 5. **Assess**
-
-Assesses the usefulness and reliability of the results of the Data Mining process and assesses how it will perform
+ Assesses the usefulness and reliability of the results of the Data Mining process and assesses how it will perform
 
 ### CRISP-DM: CRoss-IndustryStandard Processfor Data Mining (By IBM)
 
@@ -374,7 +368,7 @@ The larger the measure, the more similar the points.
 the metric used to calculate similarity is the distance
 The calculation of the distance depends on the data type:
 
-// edit to complete this part
+<-- edit to complete this part -->
 
 | Types     | Distance                                                                                                                                                                                                                                                                                                                                                                                    |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -406,24 +400,14 @@ The calculation of the distance depends on the data type:
 
 #### K-means
 
-  //edit to add
-
 #### K-Medoides
-
-  //edit to add
 
 ### Hierarchical Algorithms
 
 #### AGNES
 
- //edit to add
-
 #### DIANA
-
- // edit to add
 
 Implementation : <https://github.com/rihemebh/ML-Labs/blob/main/unspervised_learning/diana.py>
 
 ### Performance
-
-// adit to add

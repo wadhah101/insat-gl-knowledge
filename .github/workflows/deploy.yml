@@ -63,6 +63,8 @@ jobs:
 
       - name: generate contributors
         run: source generate_contributors.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build project
         run: yarn build

@@ -1,0 +1,63 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+
+# Check if user have imagemagick installed
+# Check on Linux, MacOS and Windows
+command -v magick >/dev/null 2>&1 || {
+  echo >&2 "imagemagick is not installed. Attempting to install it..."
+  echo >&2 "This is a one time fix..."
+  echo >&2 "If you are on Windows, please install imagemagick manually."
+  # If Host is linux, install imagemagick
+    if [ "$(uname)" == "Linux" ]; then
+        echo >&2 "Installing imagemagick..."
+        sudo apt-get install imagemagick
+    fi
+  # If Host Is Windows, install imagemagick
+    if [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+        echo >&2 "May god have mercy on your soul..."
+    fi
+    # If Host Is MacOS, install imagemagick
+    if [ "$(uname)" == "Darwin" ]; then
+        echo >&2 "Installing imagemagick..."
+        brew install imagemagick
+    fi
+  exit 1
+}
+echo >&2 "imagemagick is installed. Proceeding..."
+# check if there are no images to compress in git diff, then exit
+if ! git diff --cached --name-only | grep ".jpg\$"; then
+  echo >&2 "No images to compress. Skipping..."
+  exit 0
+fi
+git diff --diff-filter=ACMRT --cached --name-only | grep ".jpg\$" | while read -r file;
+do 
+    # store base name of the file without extension
+    # wrap the spaces in the file path with quotes
+    # to avoid errors
+    base=$(echo $file | cut -f 1 -d '.')
+    baseFileName=$(basename "$base")
+    echo "baseFileName: $baseFileName"
+    exec < /dev/tty 
+    read -p "Do you want to compress $file? [yN]: " yn 
+    case $yn in 
+        [Yy]* ) magick "$file" -quality 80 -define webp:lossless=true "$base.webp" 
+        # Search the closest .md file to the image
+        # try to find an image import in the .md file with the same name as the image
+        # if found, replace the image with the webp version
+
+        git diff --diff-filter=ACMRT --cached --name-only | grep ".md\$" | while read -r mdFile; do
+            echo "$mdFile"
+            cat "$mdFile" | grep -c $baseFileName
+            if [ $(cat "$mdFile" | grep -c $baseFileName) -gt 0 ]; then
+                # if found, replace the image with the webp version
+                # use sed to replace the image with the webp version
+                sed "s/'$baseFileName'.jpg/$baseFileName.webp/g" "$mdFile"
+                break
+            fi
+        done
+        ;;
+        * ) echo "Skipping $file";;
+    esac 
+done
+echo "done with all"

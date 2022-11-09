@@ -42,7 +42,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: "**/.yarn"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock', '**/docusaurus.config.js', '**/babel.config.js') }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock', '**/docusaurus.config.js') }}-${{ github.run_id }}
+        restore-keys: |
+          ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock', '**/docusaurus.config.js') }}
 
       - name: show webpack cache
         run: ls -lR .yarn/.cache || true

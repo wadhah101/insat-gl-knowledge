@@ -45,7 +45,7 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock', '**/docusaurus.config.js', '**/babel.config.js') }}
 
       - name: show webpack cache
-        run: ls -lR .yarn/.cache
+        run: ls -lR .yarn/.cache || true
 
       - name: Install deps
         run: yarn install --immutable

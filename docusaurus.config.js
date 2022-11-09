@@ -100,7 +100,7 @@ const config = async () => {
           items: [
             {
               type: "doc",
-              docId: "docusaurus",
+              docId: "intro",
               position: "left",
               label: "Docs",
             },
@@ -119,7 +119,7 @@ const config = async () => {
               items: [
                 {
                   label: "Tutorial",
-                  to: "/docs/docusaurus",
+                  to: "/docs/intro",
                 },
               ],
             },

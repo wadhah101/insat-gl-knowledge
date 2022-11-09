@@ -48,4 +48,4 @@ jobs:
         run: yarn install --immutable
 
       - name: Build project
-        run: yarn build
+        run: yarn build --no-minify

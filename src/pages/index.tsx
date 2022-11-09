@@ -59,10 +59,6 @@ const filteredContributors = contributors
   .sort((e1, e2) => e2.contributions - e2.contributions);
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
-
-  console.log(filteredContributors);
-
   return (
     <Layout title={`Home`} description="">
       <HomepageHeader />

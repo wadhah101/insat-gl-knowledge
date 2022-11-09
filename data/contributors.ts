@@ -1,5 +1,8 @@
 import { Contributor } from "@site/data/Contributors.interface";
 
+/**
+ * This is just a file for dev purposes, the real contributor list gets generated within the deployment pipeline using generate_contributors.sh
+ */
 export const contributors: Contributor[] = [
   {
     login: "wadhah101",

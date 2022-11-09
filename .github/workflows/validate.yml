@@ -56,8 +56,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-webpack
 
-      - name: show webpack cache
-        run: ls -lR .yarn/.cache || true
+      - name: show  cache
+        run: ls -lR .yarn || true
 
       - name: Install deps
         run: yarn install --immutable

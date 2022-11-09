@@ -1,4 +1,5 @@
 import { Contributor } from "@site/data/Contributors.interface";
+
 export const contributors: Contributor[] = [
   {
     login: "wadhah101",
@@ -22,7 +23,7 @@ export const contributors: Contributor[] = [
       "https://api.github.com/users/wadhah101/received_events",
     type: "User",
     site_admin: false,
-    contributions: 176,
+    contributions: 177,
   },
   {
     login: "rihemebh",

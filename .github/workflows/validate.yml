@@ -62,6 +62,9 @@ jobs:
       - name: show cache
         run: ls -la .yarn || true
 
+      - name: generate contributors
+        run: source generate_contributors.sh
+
       - name: Build project
         run: yarn build --no-minify
 

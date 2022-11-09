@@ -40,10 +40,16 @@ jobs:
       - name: cache node_modules
         uses: actions/cache@v3
         with:
-          path: "**/.yarn"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock', '**/docusaurus.config.js') }}-${{ github.run_id }}
+          path: "**/.yarn/cache"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: cache webpack modules
+        uses: actions/cache@v3
+        with:
+          path: "**/.yarn/.cache"
+          key: ${{ runner.os }}-webpack-${{ github.run_id }}
           restore-keys: |
-            ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock', '**/docusaurus.config.js') }}
+            ${{ runner.os }}-webpack
 
       - name: show webpack cache
         run: ls -lR .yarn/.cache || true

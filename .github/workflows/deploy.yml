@@ -43,7 +43,6 @@ jobs:
           path: |
             "**/.yarn/cache"
             "**/.yarn/unplugged"
-            "**/.yarn/sdks"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: cache webpack modules

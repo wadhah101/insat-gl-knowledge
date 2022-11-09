@@ -44,6 +44,9 @@ jobs:
           path: "**/.yarn"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
+      - name: debug
+        run: find . -maxdepth 5  -type f
+
       - name: Install deps
         run: yarn install --immutable
 

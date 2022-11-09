@@ -42,7 +42,6 @@ jobs:
         with:
           path: |
             "**/.yarn/cache"
-            "**/.yarn/sdks"
             "**/.yarn/unplugged"
             "**/.yarn/install-state.gz"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
@@ -60,6 +59,9 @@ jobs:
 
       - name: Install deps
         run: yarn install --immutable
+
+      - name: show cache
+        run: ls -lR .yarn || true
 
       - name: Build project
         run: yarn build

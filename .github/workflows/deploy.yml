@@ -40,24 +40,23 @@ jobs:
       - name: cache node_modules
         uses: actions/cache@v3
         with:
-          path: |
-            "**/.yarn/cache"
-            "**/.yarn/unplugged"
+          path: ".yarn"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: cache webpack modules
         uses: actions/cache@v3
         with:
-          path: "**/.yarn/.cache"
+          path: ".cache"
           key: ${{ runner.os }}-webpack-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-webpack
 
-      - name: show webpack cache
-        run: ls -lR .yarn/.cache || true
-
       - name: Install deps
         run: yarn install --immutable
+
+      - name: Move back Webpack cache
+
+        run: \[ -d ".cache" \] &&  mv .cache .yarn/.cache || echo "cache not found."
 
       - name: show cache
         run: ls -l .yarn || true
@@ -65,12 +64,5 @@ jobs:
       - name: Build project
         run: yarn build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload entire repository
-          path: "build"
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      - name: Move Webpack cache
+        run: mv .yarn/.cache .cache

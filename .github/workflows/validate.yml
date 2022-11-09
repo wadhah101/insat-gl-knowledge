@@ -60,7 +60,7 @@ jobs:
         run: \[ -d ".cache" \] &&  mv .cache .yarn/.cache || echo "cache not found."
 
       - name: show cache
-        run: ls -l .yarn || true
+        run: ls -la .yarn || true
 
       - name: Build project
         run: yarn build --no-minify

@@ -61,7 +61,7 @@ jobs:
         run: yarn install --immutable
 
       - name: show cache
-        run: ls -lR .yarn || true
+        run: ls -l .yarn || true
 
       - name: Build project
         run: yarn build

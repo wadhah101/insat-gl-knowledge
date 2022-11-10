@@ -71,7 +71,7 @@ This follows immediately from the sum of gamma distributions.
 
 Let $X\sim\chi_n^2$
 
-As a $\chi^2$-distribution is a $\Gamma$-distribution, the calculation of the moments can be found [here](continuous-distributions.md#gamma-distribution)
+As a $\chi^2$-distribution is a $\Gamma$-distribution, the calculation of the moments can be found [here](05-continuous-distributions.md#gamma-distribution)
 
 We will list here essentially the expected value and the variance.
 

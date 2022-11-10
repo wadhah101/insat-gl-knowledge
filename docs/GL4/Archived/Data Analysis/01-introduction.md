@@ -6,7 +6,7 @@ slug: /gl4/data-analysis/introduction
 
 ## 1 Probability Space
 
-> The Formal Definition is found at [Probability Space](formalisation.md#probability-space)
+> The Formal Definition is found at [Probability Space](02-formalisation.md#probability-space)
 
 ### 1.1 Definition
 
@@ -46,7 +46,7 @@ $$
 
 ## 2. Random Variable
 
-> The Formal Definition is found at [Random Variable](formalisation.md#random-variable)
+> The Formal Definition is found at [Random Variable](02-formalisation.md#random-variable)
 
 ### 2.1 Definition
 

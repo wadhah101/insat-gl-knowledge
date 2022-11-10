@@ -172,7 +172,7 @@ $$
 \mathbb{E}[Y\mid X]=\varphi(X)
 $$
 
-> To calculate its distribution, see [Function on a random variable](./advanced.md#random-variable-function)
+> To calculate its distribution, see [Function on a random variable](advanced.md#random-variable-function)
 
 ### 3.3 Law of Total Expectation
 
@@ -212,7 +212,7 @@ $$
 \mathbb{V}[Y\mid X]=\varphi(X)
 $$
 
-> To calculate its distribution, see [Function on a random variable](./advanced.md#random-variable-function)
+> To calculate its distribution, see [Function on a random variable](advanced.md#random-variable-function)
 
 ### 3.3 Law of Total Variance
 

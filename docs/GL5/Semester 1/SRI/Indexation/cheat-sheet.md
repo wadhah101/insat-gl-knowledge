@@ -28,7 +28,7 @@ document / retrouver ce document en réponse à une requête
 
 ##### Construction d'index
 
-![Construction](./assets/Construction.png)
+![Construction](assets/Construction.png)
 
 ##### Tokenisation
 
@@ -96,7 +96,7 @@ document / retrouver ce document en réponse à une requête
 
 - Composantes
 
-  ![IndexInverse](./assets/IndexInverse.png)
+  ![IndexInverse](assets/IndexInverse.png)
 
   **Dictionnaire :** en mémoire centrale permettant un accès rapide
   aux termes et leurs informations
@@ -106,13 +106,13 @@ document / retrouver ce document en réponse à une requête
 
   Ce qu'on stocke dépend du modèle de la recherche : + Recherche booléenne : L'identifiant du document est suffisant
 
-  ![Screenshot_93](./assets/Screenshot_93.png) + Recherche Rankée : Fréquence ou score du terme
+  ![Screenshot_93](assets/Screenshot_93.png) + Recherche Rankée : Fréquence ou score du terme
 
-  ![Screenshot_94](./assets/Screenshot_94.png) + Recherche de proximité / de séquence : Fréquence ou score du terme
+  ![Screenshot_94](assets/Screenshot_94.png) + Recherche de proximité / de séquence : Fréquence ou score du terme
 
-  ![Screenshot_95](./assets/Screenshot_95.png)
+  ![Screenshot_95](assets/Screenshot_95.png)
 
-  Les liste de posting peuvent être triées selon: + Document ID : ![Screenshot_97](./assets/Screenshot_97.png) + Term Frequency : ![Screenshot_96](./assets/Screenshot_96.png)
+  Les liste de posting peuvent être triées selon: + Document ID : ![Screenshot_97](assets/Screenshot_97.png) + Term Frequency : ![Screenshot_96](assets/Screenshot_96.png)
 
 - Construction d'un fichier inverse
 
@@ -124,11 +124,11 @@ document / retrouver ce document en réponse à une requête
 
   - Trier les termes par ordre alphabétique
 
-    ![Screenshot_99](./assets/Screenshot_99.png)
+    ![Screenshot_99](assets/Screenshot_99.png)
 
   - Indexation
 
-  - ![Screenshot_100](./assets/Screenshot_100.png) ![Screenshot_101](./assets/Screenshot_101.png)
+  - ![Screenshot_100](assets/Screenshot_100.png) ![Screenshot_101](assets/Screenshot_101.png)
   - Compression
 
     Minimiser le nombre de bits transférés

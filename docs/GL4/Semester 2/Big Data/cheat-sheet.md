@@ -50,7 +50,7 @@ It based on some points :
 - Prioritize in place data processing ( Data is processed where its stored trying to heavily avoid remote operations)
 - Clusters are horizontally scalable alongside data growth
 
-![intro](./assets/intro.png)
+![intro](assets/intro.png)
 
 Hadoop can also be used for :
 

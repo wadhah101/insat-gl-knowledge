@@ -18,7 +18,28 @@
     "received_events_url": "https://api.github.com/users/wadhah101/received_events",
     "type": "User",
     "site_admin": false,
-    "contributions": 180
+    "contributions": 186
+  },
+  {
+    "login": "MelekElloumi",
+    "id": 62803294,
+    "node_id": "MDQ6VXNlcjYyODAzMjk0",
+    "avatar_url": "https://avatars.githubusercontent.com/u/62803294?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/MelekElloumi",
+    "html_url": "https://github.com/MelekElloumi",
+    "followers_url": "https://api.github.com/users/MelekElloumi/followers",
+    "following_url": "https://api.github.com/users/MelekElloumi/following{/other_user}",
+    "gists_url": "https://api.github.com/users/MelekElloumi/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/MelekElloumi/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/MelekElloumi/subscriptions",
+    "organizations_url": "https://api.github.com/users/MelekElloumi/orgs",
+    "repos_url": "https://api.github.com/users/MelekElloumi/repos",
+    "events_url": "https://api.github.com/users/MelekElloumi/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/MelekElloumi/received_events",
+    "type": "User",
+    "site_admin": false,
+    "contributions": 16
   },
   {
     "login": "rihemebh",
@@ -61,27 +82,6 @@
     "type": "User",
     "site_admin": false,
     "contributions": 9
-  },
-  {
-    "login": "MelekElloumi",
-    "id": 62803294,
-    "node_id": "MDQ6VXNlcjYyODAzMjk0",
-    "avatar_url": "https://avatars.githubusercontent.com/u/62803294?v=4",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/MelekElloumi",
-    "html_url": "https://github.com/MelekElloumi",
-    "followers_url": "https://api.github.com/users/MelekElloumi/followers",
-    "following_url": "https://api.github.com/users/MelekElloumi/following{/other_user}",
-    "gists_url": "https://api.github.com/users/MelekElloumi/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/MelekElloumi/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/MelekElloumi/subscriptions",
-    "organizations_url": "https://api.github.com/users/MelekElloumi/orgs",
-    "repos_url": "https://api.github.com/users/MelekElloumi/repos",
-    "events_url": "https://api.github.com/users/MelekElloumi/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/MelekElloumi/received_events",
-    "type": "User",
-    "site_admin": false,
-    "contributions": 8
   },
   {
     "login": "ImgBotApp",

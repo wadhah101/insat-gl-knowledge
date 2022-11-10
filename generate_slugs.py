@@ -9,8 +9,8 @@ pattern = r"---\n([\S\s]*)---"
 for i in result:
     with open(i) as f:
         content = f.read()
-        # content = re.sub(pattern, '', content )
         contains_meta = re.search(pattern, content)
+    # TODO add the case where metadata exists and we just update the slug
     if not contains_meta:
         slug_with_ext = i.relative_to("docs").as_posix().lower().replace(" ", "-")
         slug = os.path.splitext(slug_with_ext)[0]

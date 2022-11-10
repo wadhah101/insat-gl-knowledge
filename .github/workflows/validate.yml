@@ -63,7 +63,7 @@ jobs:
         run: ls -la .yarn || true
 
       - name: generate contributors
-        run: source generate_contributors.sh
+        run: gh api repos/wadhah101/insat-gl-knowledge/contributors >>  data/contributors.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

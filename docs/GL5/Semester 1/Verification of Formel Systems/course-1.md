@@ -1,5 +1,5 @@
 ---
-slug: /gl5/verfication-systeme-formelle/course-1
+slug: /gl5/semester-1/verification-of-formel-systems/course-1
 ---
 
 # Course 1

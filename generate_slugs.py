@@ -30,9 +30,9 @@ for i in result:
                     f.write(content_updated_slug)
         else:
             groups = list(contains_meta.groups())
-            groups.insert(2, slug)
+            groups.insert(2, f"\nslug: {slug}")
             output = "".join(groups)
-            content_updated_slug = re.sub(contains_meta, output, content)
+            content_updated_slug = re.sub(has_meta_pattern, output, content)
             with open(i, "w") as f:
                 f.write(content_updated_slug)
 

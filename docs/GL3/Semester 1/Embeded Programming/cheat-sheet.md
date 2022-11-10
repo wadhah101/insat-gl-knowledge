@@ -1,5 +1,5 @@
 ---
-slug: /gl3/embeded-programming/cheat-sheet
+slug: /gl3/semester-1/embeded-programming/cheat-sheet
 ---
 
 # Cheat sheet

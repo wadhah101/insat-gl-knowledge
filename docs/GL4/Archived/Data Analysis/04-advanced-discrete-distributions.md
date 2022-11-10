@@ -1,5 +1,5 @@
 ---
-slug: /gl4/data-analysis/advanced-discrete-distributions
+slug: /gl4/archived/data-analysis/04-advanced-discrete-distributions
 ---
 
 # Discrete Distributions 2

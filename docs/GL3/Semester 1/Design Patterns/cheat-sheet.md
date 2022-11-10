@@ -1,5 +1,5 @@
 ---
-slug: /gl3/design-patterns/cheat-sheet
+slug: /gl3/semester-1/design-patterns/cheat-sheet
 ---
 
 # Design Patterns

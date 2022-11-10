@@ -1,5 +1,5 @@
 ---
-slug: /gl4/software-testing/cheat-sheet
+slug: /gl4/semester-2/software-testing/cheat-sheet
 ---
 
 # Cheat sheet

@@ -1,5 +1,5 @@
 ---
-slug: /gl4/big-data/cheat-sheet
+slug: /gl4/semester-2/big-data/cheat-sheet
 ---
 
 # Cheat sheet

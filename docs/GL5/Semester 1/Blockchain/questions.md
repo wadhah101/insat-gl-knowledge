@@ -1,5 +1,5 @@
 ---
-slug: /gl5/blockchain/questions
+slug: /gl5/semester-1/blockchain/questions
 ---
 
 # Questions

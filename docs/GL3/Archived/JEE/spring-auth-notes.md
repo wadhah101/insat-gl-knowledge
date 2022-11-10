@@ -1,5 +1,5 @@
 ---
-slug: /gl3/jee/spring-auth-notes
+slug: /gl3/archived/jee/spring-auth-notes
 ---
 
 # Spring boot explanation

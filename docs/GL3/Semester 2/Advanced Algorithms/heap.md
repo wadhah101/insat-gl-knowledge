@@ -1,5 +1,5 @@
 ---
-slug: /gl3/advanced-algorithms/heap
+slug: /gl3/semester-2/advanced-algorithms/heap
 ---
 
 # Heap & Priority queues

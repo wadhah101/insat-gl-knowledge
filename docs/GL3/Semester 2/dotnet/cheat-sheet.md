@@ -1,5 +1,5 @@
 ---
-slug: /gl3/dotnet/cheat-sheet
+slug: /gl3/semester-2/dotnet/cheat-sheet
 ---
 
 # .Net

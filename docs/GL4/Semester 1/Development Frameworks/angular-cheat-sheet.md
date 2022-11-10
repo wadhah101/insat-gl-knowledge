@@ -1,5 +1,5 @@
 ---
-slug: /gl4/development-frameworks/angular-cheat-sheet
+slug: /gl4/semester-1/development-frameworks/angular-cheat-sheet
 ---
 
 # Angular-Cheat-Sheet

@@ -1,5 +1,5 @@
 ---
-slug: /gl4/data-analysis/statistics
+slug: /gl4/archived/data-analysis/10-statistics
 ---
 
 # Estimating Statistics

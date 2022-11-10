@@ -1,5 +1,5 @@
 ---
-slug: /gl4/data-analysis/discrete-distributions
+slug: /gl4/archived/data-analysis/03-discrete-distributions
 ---
 
 # Discrete Distributions 1

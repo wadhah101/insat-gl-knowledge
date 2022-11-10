@@ -1,5 +1,5 @@
 ---
-slug: /gl4/data-mining/cheat-sheet
+slug: /gl4/semester-1/data-mining/cheat-sheet
 ---
 
 # Cheat sheet

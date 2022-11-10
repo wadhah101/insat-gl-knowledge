@@ -1,5 +1,5 @@
 ---
-slug: /gl3/complexity-theory/fibonacci
+slug: /gl3/semester-1/complexity-theory/fibonacci
 ---
 
 # Fibonacci Sequence Problem

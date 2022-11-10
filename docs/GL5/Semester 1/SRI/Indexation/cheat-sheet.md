@@ -1,5 +1,5 @@
 ---
-slug: /gl5/sri/indexation/cheat-sheet
+slug: /gl5/semester-1/sri/indexation/cheat-sheet
 ---
 
 # Cheat sheet

@@ -1,5 +1,5 @@
 ---
-slug: /gl4/security-of-information-systems/cheat-sheet
+slug: /gl4/semester-1/security-of-information-systems/cheat-sheet
 ---
 
 # Cheat sheet

@@ -1,5 +1,5 @@
 ---
-slug: /gl5/blockchain/cheat-sheet
+slug: /gl5/semester-1/blockchain/cheat-sheet
 ---
 
 # Cheat sheet

@@ -1,5 +1,5 @@
 ---
-slug: /gl4/data-analysis/formalisation
+slug: /gl4/archived/data-analysis/02-formalisation
 ---
 
 # Probability Formalisation

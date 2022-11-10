@@ -1,5 +1,5 @@
 ---
-slug: /gl4/data-analysis/conjoint
+slug: /gl4/archived/data-analysis/08-conjoint
 ---
 
 # Conjoint Probability

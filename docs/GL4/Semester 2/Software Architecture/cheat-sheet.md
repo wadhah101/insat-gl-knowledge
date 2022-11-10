@@ -1,5 +1,5 @@
 ---
-slug: /gl4/software-architecture/cheat-sheet
+slug: /gl4/semester-2/software-architecture/cheat-sheet
 ---
 
 # Cheat sheet

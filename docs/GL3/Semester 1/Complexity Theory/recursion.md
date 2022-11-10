@@ -1,5 +1,5 @@
 ---
-slug: /gl3/complexity-theory/recursion
+slug: /gl3/semester-1/complexity-theory/recursion
 ---
 
 # Recursive Algorithms

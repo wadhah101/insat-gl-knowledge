@@ -1,5 +1,5 @@
 ---
-slug: /gl3/jee/cheat-sheet-spring
+slug: /gl3/archived/jee/cheat-sheet-spring
 ---
 
 # Spring boot videos explanatiton

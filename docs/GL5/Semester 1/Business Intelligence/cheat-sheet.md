@@ -1,5 +1,5 @@
 ---
-slug: /gl5/business-intelligence/cheat-sheet
+slug: /gl5/semester-1/business-intelligence/cheat-sheet
 ---
 
 # Cheat sheet

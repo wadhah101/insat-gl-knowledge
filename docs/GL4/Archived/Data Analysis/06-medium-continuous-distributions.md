@@ -1,5 +1,5 @@
 ---
-slug: /gl4/data-analysis/medium-continuous-distributions
+slug: /gl4/archived/data-analysis/06-medium-continuous-distributions
 ---
 
 # Continuous Distributions 2

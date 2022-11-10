@@ -1,5 +1,5 @@
 ---
-slug: /gl4/data-analysis/introduction
+slug: /gl4/archived/data-analysis/01-introduction
 ---
 
 # Introduction

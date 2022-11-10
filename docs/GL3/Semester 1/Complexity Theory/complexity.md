@@ -1,5 +1,5 @@
 ---
-slug: /gl3/complexity-theory/complexity
+slug: /gl3/semester-1/complexity-theory/complexity
 ---
 
 # Complexity Theory

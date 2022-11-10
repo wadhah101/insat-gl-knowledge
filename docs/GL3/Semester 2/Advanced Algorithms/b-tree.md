@@ -1,5 +1,5 @@
 ---
-slug: /gl3/advanced-algorithms/b-tree
+slug: /gl3/semester-2/advanced-algorithms/b-tree
 ---
 
 # B-Trees

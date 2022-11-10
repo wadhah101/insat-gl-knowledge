@@ -1,5 +1,5 @@
 ---
-slug: /gl3/complexity-theory/advanced
+slug: /gl3/semester-1/complexity-theory/advanced
 ---
 
 # Advanced Formulation

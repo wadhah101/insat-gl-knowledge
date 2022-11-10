@@ -1,5 +1,5 @@
 ---
-slug: /gl4/security-of-information-systems/kerberos-project
+slug: /gl4/semester-1/security-of-information-systems/kerberos-project
 ---
 
 # Kerberos

@@ -1,5 +1,5 @@
 ---
-slug: /gl3/logic-programming/cheat-sheets/version-saif
+slug: /gl3/semester-2/logic-programming/cheat-sheets/version-saif
 ---
 
 # Cheat sheet - Saif

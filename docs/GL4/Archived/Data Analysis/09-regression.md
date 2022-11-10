@@ -1,5 +1,5 @@
 ---
-slug: /gl4/data-analysis/regression
+slug: /gl4/archived/data-analysis/09-regression
 ---
 
 # Linear Regression

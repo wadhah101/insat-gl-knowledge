@@ -1,5 +1,5 @@
 ---
-slug: /gl4/software-quality/cheat-sheet
+slug: /gl4/archived/software-quality/cheat-sheet
 ---
 
 

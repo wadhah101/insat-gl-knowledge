@@ -1,5 +1,5 @@
 ---
-slug: /gl3/engineering-of-networks-and-protocols/cheat-sheet
+slug: /gl3/semester-1/engineering-of-networks-and-protocols/cheat-sheet
 ---
 
 # Cheat Sheet

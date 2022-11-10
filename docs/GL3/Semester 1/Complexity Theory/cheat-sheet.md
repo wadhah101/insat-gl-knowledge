@@ -1,5 +1,5 @@
 ---
-slug: /gl3/complexity-theory/cheat-sheet
+slug: /gl3/semester-1/complexity-theory/cheat-sheet
 ---
 
 # Cheat sheet

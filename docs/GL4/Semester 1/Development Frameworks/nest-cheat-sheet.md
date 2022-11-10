@@ -1,5 +1,5 @@
 ---
-slug: /gl4/development-frameworks/nest-cheat-sheet
+slug: /gl4/semester-1/development-frameworks/nest-cheat-sheet
 ---
 
 # Nest Cheat Sheet

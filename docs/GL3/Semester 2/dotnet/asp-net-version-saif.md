@@ -1,5 +1,5 @@
 ---
-slug: /gl3/dotnet/asp-net-version-saif
+slug: /gl3/semester-2/dotnet/asp-net-version-saif
 ---
 
 # ASP.NET

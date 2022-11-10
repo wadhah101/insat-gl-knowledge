@@ -1,5 +1,5 @@
 ---
-slug: /gl3/distributed-systems/cheat-sheet
+slug: /gl3/semester-2/distributed-systems/cheat-sheet
 ---
 
 # Cheat sheet RabbitMQ

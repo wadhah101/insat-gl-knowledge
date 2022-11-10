@@ -1,5 +1,5 @@
 ---
-slug: /gl3/dotnet/c-sharp
+slug: /gl3/semester-2/dotnet/c-sharp
 ---
 
 # C## and .NET

@@ -27,8 +27,8 @@ Author [@rihemebh](https://github.com/rihemebh)
 
    Unit of Work is the concept related to the effective implementation of the Repository Pattern.  it is referred to as a single transaction that involves multiple operations .
 
-     The benefit of utilizing the Unit of Work in your DAL is to ensure data integrity ; 
-     if an issue arises partway through persisting a series of business objects as part of a transaction , 
+     The benefit of utilizing the Unit of Work in your DAL is to ensure data integrity ;
+     if an issue arises partway through persisting a series of business objects as part of a transaction ,
      all changes should be rolled back to ensure that the data remains in a valid state.
 
 ### [Ado.NET](https://github.com/rihemebh/.Net-cheat-sheets/tree/main/Ado.net)

@@ -32,7 +32,7 @@ namespace MvcMovie.Controllers
 {
     public class HelloWorldController : Controller
     {
-        // 
+        //
         // GET: /HelloWorld/
 
         public string Index()
@@ -40,8 +40,8 @@ namespace MvcMovie.Controllers
             return "This is my default action...";
         }
 
-        // 
-        // GET: /HelloWorld/Welcome/ 
+        //
+        // GET: /HelloWorld/Welcome/
 
         public string Welcome()
         {
@@ -83,7 +83,7 @@ app.UseEndpoints(endpoints =>
 - Change the `Welcome` method to include two parameters as shown in the following code.
 
 ```csharp
-// GET: /HelloWorld/Welcome/ 
+// GET: /HelloWorld/Welcome/
 // Requires using System.Text.Encodings.Web;
 public string Welcome(string name, int numTimes = 1)
 {
@@ -185,7 +185,7 @@ Navigate to `https://localhost:{PORT}/HelloWorld`:
 ### Change the title, footer, and menu link in the layout file
 
 ```html
-<title>@ViewData["Title"] - Movie App</title> 
+<title>@ViewData["Title"] - Movie App</title>
 <!-- ... -->
 <a class="navbar-brand" asp-controller="Movies" asp-action="Index">Movie App</a>
 <!-- ... -->
@@ -783,7 +783,7 @@ namespace MvcMovie.Models
 
 ```csharp
 // POST: Movies/Edit/5
-// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+// To protect from overposting attacks, please enable the specific properties you want to bind to, for
 // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 [HttpPost]
 [ValidateAntiForgeryToken]
@@ -1110,8 +1110,8 @@ public class Movie
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
-            </div>           
-       
+            </div>
+
         @*Markup removed for brevity.*@
 ```
 

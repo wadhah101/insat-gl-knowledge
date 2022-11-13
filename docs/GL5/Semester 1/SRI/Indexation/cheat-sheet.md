@@ -138,18 +138,18 @@ document / retrouver ce document en réponse à une requête
 Le bit du poids le plus fort est un **stop bit**
 
 - Exemple:
-  
+
   13 = 00000000 00000000 00000000 00001101
 
   VBE : 10001101
 
 - Exemple:
-  
+
   131 = 00000000 00000000 00000000 10000011
 
   VBE : 00000001 10000011
 - Exemple:
-  
+
   1337 = 00000000 00000000 00000101 00111001
 
   VBE : 00001010 10111001

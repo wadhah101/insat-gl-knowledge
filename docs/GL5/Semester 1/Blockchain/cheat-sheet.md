@@ -42,7 +42,7 @@ Both are working in the same way, the difference here who is allowed to particip
 - Open to everyone
 - Anyone could participate
 - Verifying transactions takes a lot of time due to the large number of participants.
-  
+
 ### Private Blockchain
 
 - Controlled by one entity that decides who is allowed to participate.
@@ -53,7 +53,7 @@ Both are working in the same way, the difference here who is allowed to particip
 
 - Hybrid form of public and private blockchains.
 - There is more than one central in-charge, or we can say more than one organization involved who provides access to pre-selected nodes for reading, writing, and auditing the blockchain.
-  
+
 ## Blockchain usecases examples
 
 - Banking and finance

@@ -9,12 +9,12 @@ slug: /Gl4/semester-2/compilation/files/CodeGenerator.md
 #define CODEGENERATOR_H
 
 static char * code_op [] = { "LDC", "LDV", "STORE", "APPEL", "ENTREE", "SORTIE", "RETOUR", "ADD", "MUL", "DIV",
-                            "SUB", "INF", "INFE", "SUP", "SUPE", "DIF", "EGAL"}; 
+                            "SUB", "INF", "INFE", "SUP", "SUPE", "DIF", "EGAL"};
 
 typedef struct entree_code {
     char* code_op;                                        // Code name
     int operande;                                         // value
-    char* function_name;     
+    char* function_name;
     char* designation;                             // function name
 } ENTREE_CODE;
 
@@ -33,7 +33,7 @@ int   get_next_empty_code(void);
 
 int   get_last_code_index(void);
 
-// check 
+// check
 
 void  check_code_int(void);
 
@@ -50,7 +50,7 @@ void change_signature(void);
 
 // visualization
 
-void print_codetab(void);    
+void print_codetab(void);
 
 
 #endif

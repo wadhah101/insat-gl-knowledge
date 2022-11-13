@@ -6,7 +6,7 @@ slug: /gl3/semester-2/logic-programming/cheat-sheets/version-saif
 
 Author [@Saief1999](https://github.com/Saief1999)
 
-## Introduction  
+## Introduction
 
 - Two standards of Prolog are used currently :
   - Edinburgh (old)
@@ -69,7 +69,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 Database :
 
 ```prolog
-likes(joe, fish). 
+likes(joe, fish).
 ikes(joe, mary).
 likes(mary, book).
 likes(john, book).
@@ -96,7 +96,7 @@ Database :
 ```prolog
 human(socrates).
 human(aristotle).
-athenian(socrates).   
+athenian(socrates).
 ```
 
 Questions :
@@ -248,7 +248,7 @@ Question 2 :
 
 ```prolog
 ?- sister_of(alice, X).
-X = edward ;                                                                                         X = alice.  
+X = edward ;                                                                                         X = alice.
 ```
 
 - a clause in the database : a **fact** or a **rule** .
@@ -481,15 +481,15 @@ X mod Y the remainder of X divided by Y
     - `[]`
 
   - it is a structure that has two components: the **head** and **tail**.
-  
+
   - the head of the list is the first element of the list.
-  
+
   - The tail of the list is a list that consists of every element except the first.
-  
+
     - Example : The head and tail of a list are components of the `functor` named “.”, which is the dot (called the period or full stop). Thus, the list consisting of one element “a” is “.(a,[])”
-  
+
       - the list consisting of the atoms a, b and c is written `.(a,.(b,.(c,[])))`,
-  
+
     - we can also use another notation , called the `list notation` : `[a]`
 
     | -                       | List       | Head               | Tail |
@@ -655,7 +655,7 @@ sometimes_better(Con1, Con2).
 The predicate **append** is defined as follows:
 
 ```prolog
-append([], L, L). 
+append([], L, L).
 append([X|L1], L2, [X|L3]) :- append(L1, L2, L3).
 ```
 
@@ -667,7 +667,7 @@ partsof(X, [X]) :- basicpart(X).
 partsof(X, P) :-
     assembly(X, Subparts),
     partsoflist(Subparts, P).
-    
+
 partsoflist([], []).
 partsoflist([P|Tail], Total) :-
     partsof(P, Headparts),
@@ -716,7 +716,7 @@ listlen(L, N) :- lenacc(L, 0, N). /* we start from 0 and we increment */
 % partsof(X, P) :- partsacc(X, [], P).
 
 partsacc(X, A, [X|A]) :- basicpart(X).
-partsacc(X, A, P) :- 
+partsacc(X, A, P) :-
  assembly(X, Subparts),
  partsacclist(Subparts, A, P).
 
@@ -843,7 +843,7 @@ sum_to(1, 1) :- !.
 sum_to(N, Res) :-
     N1 isN-1,
     sum_to(N1, Res1),
-    Res is Res1 + N. 
+    Res is Res1 + N.
 ```
 
 - If Prolog ever backtracks and comes to reconsider the choice of rule when applied to the number 1, it will find that the second rule is applicable.
@@ -941,7 +941,7 @@ threatening(x, x, e).
 Example :
 
 ```prolog
-?- append(X, Y, [a,b,c]). 
+?- append(X, Y, [a,b,c]).
 ```
 
 - This goal will match the head of the first rule, giving:
@@ -974,7 +974,7 @@ winnings(maloja, 356).
 - In addition, each node contains a **tail** (like the tail of a list) to a node containing a key whose name is alphabetically less than the name of the key in the node itself. Furthermore, the node contains **another tail**, to a node whose name is alphabetically greater than the key in the node.
 
 ```prolog
-% THIS NEEDS TO BE GIVEN IN PARAMETER : 
+% THIS NEEDS TO BE GIVEN IN PARAMETER :
 % LIKE lookup(H,w(....),G).
 % OTHERWISE, a new w will be created instead
 %w(massinga,858,w(braemar,385,w(adela,588,_,_),_),w(panorama,158,w(nettleweed,579,_,_),_)).

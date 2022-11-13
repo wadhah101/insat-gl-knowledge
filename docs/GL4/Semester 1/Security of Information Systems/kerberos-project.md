@@ -23,7 +23,7 @@ You will find in this repo a flask endpoint that needs kerberos authentication.
 In order to test it you need to configure 3 machines : KDC, Client and Server then generate a token from the ticket produced by the KDC and everything will work properly
 
   --Note: in the rest of this document I will only use 2 machines one for the KDC and the other will work as server and client
-  
+
 ## Prerequisite
 
 - Docker
@@ -40,7 +40,7 @@ In order to test it you need to configure 3 machines : KDC, Client and Server th
 Since the image doesn’t have any pre-installed dependencies you should first run :
 
 ```bash
-apt update && apt upgrade 
+apt update && apt upgrade
 ```
 
 then install whatever you need (in our case we'll need: nano,  host, ntp, ntpdate, python3, python3-pip )
@@ -102,7 +102,7 @@ We will use ``insat.tn`` as domain name.
 3. Configure KDC
 
 ```bash
-apt install krb5-kdc krb5-admin-server krb5-config 
+apt install krb5-kdc krb5-admin-server krb5-config
 ```
 
 When it's prompted :
@@ -121,10 +121,10 @@ krb5_newrealm
   - The Kerberos Keytab file contains mappings between Kerberos Principal names and DES-encrypted keys that are derived from the password used to log into the Kerberos Key Distribution Center (KDC).
 
 ```bash
-kadmin.local                              
-addprinc root/admin                       
-addprinc -randkey host/kdc.example.tn     
-ktadd host/kdc.example.tn                 
+kadmin.local
+addprinc root/admin
+addprinc -randkey host/kdc.example.tn
+ktadd host/kdc.example.tn
 ```
 
 ### 4. Configure Server
@@ -138,9 +138,9 @@ Then do the same thing for realm, kerberos service, administrative service
 - Add host :
 
 ```bash
-kadmin                                      
-addprinc -randkey host/server.insat.tn     
-ktadd host/server.insat.tn  
+kadmin
+addprinc -randkey host/server.insat.tn
+ktadd host/server.insat.tn
 ```
 
 - Install Flask and Flask-Kerberos with pip

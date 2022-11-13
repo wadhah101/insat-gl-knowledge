@@ -45,7 +45,7 @@ scp <filename> <username>@<hostname>:<path>
 
 |Attack|Description|Example|
 |---|---|---|
-|Birthday Attack|It is made against the Hash algorithms. (Belongs to a class of brute force)  
+|Birthday Attack|It is made against the Hash algorithms. (Belongs to a class of brute force)
 
  All hashed messages have a fixed length (independent from the input length) and they unique for that message. this attack refers to the probability of finding two random messages m1 and m2 that has the same Hash h(m1) = h(m2) so the attacker can safely replace the message by his own one|What is the relation with the birthday:
 
@@ -168,7 +168,7 @@ Use one shared encryption key between sender and receiver.
 - Get all the algos
 
 ```bash
- gpg --version 
+ gpg --version
 ```
 
 Examples of symmetric algorithms:
@@ -236,7 +236,7 @@ gpg --list -keys
 - Export a public key
 
 ```bash
-gpg -o KEY -a --export <KeyID> 
+gpg -o KEY -a --export <KeyID>
 ```
 
 - Import Key
@@ -260,7 +260,7 @@ gpg -o file.signed --sign-file
 - Verify a signature
 
 ```bash
-gpg --verify file.signed 
+gpg --verify file.signed
 ```
 
 - Decrypt
@@ -296,7 +296,7 @@ Authentication Protocole
 
 **Problem**:
 
-This algo could easly be attacked by the Man in the midlle  
+This algo could easly be attacked by the Man in the midlle
 
 **Solution**:
 
@@ -324,7 +324,7 @@ M = ![\Large C^d](https://latex.codecogs.com/svg.latex?\Large&space;C^d) mod N
 
 #### ELGamal
 
-DLP : Discrete logarithm problem  
+DLP : Discrete logarithm problem
 
 **Public Infos**:
 
@@ -336,7 +336,7 @@ Gq: cyclic group
 
 g: generator of Gq
 
-- Choose a private key X from Gq  
+- Choose a private key X from Gq
 - Public Key: y = g^X mod p
 
 **Encryption** :
@@ -344,7 +344,7 @@ g: generator of Gq
 1. Choose a number k from Gq
 2. u = g^k mod p
 3. v = y^k M mod p ( M : message )
-4. publish : (u,v)  
+4. publish : (u,v)
 
 **Decryption**:
 
@@ -465,9 +465,9 @@ Signing with ECDSA is also much faster than signing with RSA (though signature v
 
 Hash is used to garantee Integrity : We use non-bijective functions to hash the message.
 
-Whatever the size of the real message, the size of a hash message is always the same.  
+Whatever the size of the real message, the size of a hash message is always the same.
 
-**Examples of Hash functions** : sha, sha256, md5  
+**Examples of Hash functions** : sha, sha256, md5
 
 - Hash a file
 
@@ -521,7 +521,7 @@ openssl genrsa -out mykey 2048
 - Generate RSA params:
 
 ```bash
-openssl rsa -in mykey -text -noout 
+openssl rsa -in mykey -text -noout
 ```
 
 -noout : print the output in the terminal
@@ -529,25 +529,25 @@ openssl rsa -in mykey -text -noout
 - Generate a public key from a private key
 
 ```bash
-openssl rsa -in mykey -pubout -out pub 
+openssl rsa -in mykey -pubout -out pub
 ```
 
 - Private Key Encryption :
 
 ```bash
-openssl rsa -in mykey -des -out mykey.enc 
+openssl rsa -in mykey -des -out mykey.enc
 ```
 
 - Encrypt with public key
 
 ```bash
-openssl rsault -encrypt -pubin -inkey PUB -in file -out file.enc 
+openssl rsault -encrypt -pubin -inkey PUB -in file -out file.enc
 ```
 
 - Decrypt
 
 ```bash
-openssl rsautl -decrypt -inkey mykey.enc -in file -out rsa.enc 
+openssl rsautl -decrypt -inkey mykey.enc -in file -out rsa.enc
 ```
 
 #### Signature
@@ -555,7 +555,7 @@ openssl rsautl -decrypt -inkey mykey.enc -in file -out rsa.enc
 - Sign with the private key
 
 ```bash
-openssl rsault -sign -inkey myKey.enc -in file -out fileRSA.sign 
+openssl rsault -sign -inkey myKey.enc -in file -out fileRSA.sign
 ```
 
 - Verify signature
@@ -567,7 +567,7 @@ openssl rsault -verify -pubin -inkey PUB -in fileRSA.sign
 - Encrypt + Sign
 
 ```bash
-openssl dgst -sha256 -verify PUB -signature fileHashSign file 
+openssl dgst -sha256 -verify PUB -signature fileHashSign file
 ```
 
 #### Certificate
@@ -627,7 +627,7 @@ openssl genrsa -des3 -out gl4.key 3072
 - Create request for a certiif from INSAT
 
 ```bash
-openssl req -new  -key gl4.key -out gl4.req 
+openssl req -new  -key gl4.key -out gl4.req
 ```
 
 - Generate a Certificate for GL4:

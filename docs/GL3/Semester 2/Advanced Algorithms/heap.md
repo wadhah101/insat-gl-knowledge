@@ -93,7 +93,7 @@ heap create(int size) {
 
 * Insert the element at the end of the table.
 * Keep swapping withe the parent until the priority constraint is respected.
-  
+
 ``` c
 heap insert(node o, heap h) {
  h.t[h.size] = o;
@@ -124,7 +124,7 @@ heap insert(node o, heap h) {
 * Assign the value of the last node to the root.
 * Delete the last node.
 * Swap with the child node with lowest priority until the priority constraint is respected.
-  
+
 ``` c
 heap delete (heap h, node* o) {
  *o = h.t[0];

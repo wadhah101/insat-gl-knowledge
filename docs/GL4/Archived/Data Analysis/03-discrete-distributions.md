@@ -224,7 +224,7 @@ So $Y\sim \mathcal{P}(0.4)$
 ### Example 2
 
 - We will define $X_1,X_2$ and $F$ as the first example
-- Let $X_3=X_1\vee X_2$ the random variable equal to $1$ if $X_1=1 \or X_2=1$  
+- Let $X_3=X_1\vee X_2$ the random variable equal to $1$ if $X_1=1 \or X_2=1$
 - Let $Y=F(X_1,X_2,X_3)$
 
 $$

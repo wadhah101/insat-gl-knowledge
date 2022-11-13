@@ -10,29 +10,29 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 | With Select                                                                                                                                                                                                                                                                         | With Update                                                                | With Insert                                                                                           | With Delete                                              |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| ``SELECT (SELECT query that returns one value) FROM table  WHERE conditions``  
+| ``SELECT (SELECT query that returns one value) FROM table  WHERE conditions``
 
- ``SELECT columns FROM (SELECT query that retuns multiple rows ) WHERE condition``  
+ ``SELECT columns FROM (SELECT query that retuns multiple rows ) WHERE condition``
 
   ``SELECT column_name FROM   tables  WHERE  column_name OPERATOR  (SELECT Query)`` | ``UPDATE table SET column_name = new_value WHERE OPERATOR (SELECT Query)`` | ``INSERT INTO table_name [ (columns..) ]  VALUES (SELECT Query that reurns one value , [val , ...])`` | ``DELETE FROM TABLE_NAME WHERE OPERATOR (SELECT Query)`` |
 <!--## With Select
-       SELECT ( SELECT Query that returns one value 
+       SELECT ( SELECT Query that returns one value
       // Don't forget to make the join condition with the table called in the main select )
-       FROM table 
-       WHERE conditions 
-       SELECT columns 
+       FROM table
+       WHERE conditions
+       SELECT columns
        FROM (SELECT query that retuns multiple values )
        WHERE condition
       SELECT column_name
-      FROM   tables 
+      FROM   tables
       WHERE  column_name OPERATOR  (SELECT Query)
-## With Update 
+## With Update
        UPDATE table
       SET column_name = new_value
       WHERE OPERATOR [ VALUE ] (SELECT Query)
-## With Insert 
-       INSERT INTO table_name [ (columns..) ] 
-       VALUES (SELECT Query that reurns one value , [val , ...]) 
+## With Insert
+       INSERT INTO table_name [ (columns..) ]
+       VALUES (SELECT Query that reurns one value , [val , ...])
    ## With Delete
        DELETE FROM TABLE_NAME
        WHERE OPERATOR (SELECT Query)
@@ -60,11 +60,11 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ```sql
      WITH [RECURSIVE] name AS (
-     Initialisation Query 
+     Initialisation Query
      UNION ALL
-     Recursive Query with terminate condition in where 
+     Recursive Query with terminate condition in where
      )
-     SELECT * from name; -- Displaying result data 
+     SELECT * from name; -- Displaying result data
 ```
 
 - PostgreSQL requires the RECURSIVE keyword in recursive definitions but it is optional for other databases.
@@ -120,7 +120,7 @@ Author [@rihemebh](https://github.com/rihemebh)
 ``$$ LANGUAGE plpgsql;`` |
 
 #### Procedures
-  
+
   | Oracle                                                                                                                                                                                                                                                            | PostgreSQL                                                                                                                                                                       |
   | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
   | ``CREATE procedure proc_name[(in / out / in out parms)] AS``
@@ -172,17 +172,17 @@ var_name    var_type ,
 
 ```sql
 CREATE OR REPLACE function cat() RETURNS setof varchar language plpgsql as $$
-DECLARE 
+DECLARE
   liste CURSOR for SELECT tablename FROM pg_tables where tableowner='root';
   tablename RECORD ;
   BEGIN
 
-  for tablename in liste 
-  loop 
+  for tablename in liste
+  loop
   return NEXT tablename.tablename ;
   end loop;
 
-  END 
+  END
     $$;
 ```
 
@@ -194,10 +194,10 @@ DECLARE
        ON table_name
        [REFERENCING {OLD | NEW | PARENT } [ROW] [AS] alias]
        [FOR EACH ROW]
-          
-        --trigger_body (pl/sql bloc) 
+
+        --trigger_body (pl/sql bloc)
         or
-        --calling a function (EXECUTE PROCEDURE func_name();) ; 
+        --calling a function (EXECUTE PROCEDURE func_name();) ;
         this function should RETURN a TRIGGER
 ```
 
@@ -240,19 +240,19 @@ In PostgreSQL : we should open the Cursor after Declation
 we add exceptions within a PL/SQL bloc :
 
 ```sql
-DECLARE 
+DECLARE
 -- Variables, curseurs, exceptions définies par l'utilisateur
 BEGIN *
 
--- Instructions 
+-- Instructions
 
 EXCEPTION (facultatif)
 -- Actions à effectuer lorsque des erreurs se produisent
-END; 
+END;
 ```
 
 ```sql
-EXCEPTION 
+EXCEPTION
 WHEN DefinedException | costum exception THEN
 statement;
 ...

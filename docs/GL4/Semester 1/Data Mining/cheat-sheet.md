@@ -117,7 +117,7 @@ KDD knowledge discovery process  is iterative and interactive, comprises of nine
  response variable                                                                                                                                                                                                                                                             |
 | Overfitting                         | e talk about  overfitting when a model has learned too much the particularities of each of the examples provided as an example. It then presents a very high success rate on the training data (which can reach up to 100%), but does not generalize well (less good performance on the test data). |
 | Underfitting                        | An algorithm that does not learn enough from the learning phase (poor performance on the training set)                                                                                                                                                                                              |
-| Positive                            | We consider the positive is the less recent case in other words what our task is searching for  
+| Positive                            | We consider the positive is the less recent case in other words what our task is searching for
 
  Example: if our task is to pridict the spam emails so the positive is an email is spam                                                                                                        |
 | Negative                            | The more recent case: which is generally the normal case                                                                                                                                                                                                                                            |
@@ -190,7 +190,7 @@ X_new = np.array([[5.6, 2.8, 3.9, 1.1],       [5.7, 2.6, 3.8, 1.3],       [4.7, 
 prediction = knn.predict(X_new)
 
 print('Prediction: {}’.format(prediction))
-## output: 
+## output:
 Prediction: [1 1 0]
 ```
 
@@ -239,11 +239,11 @@ We have 3 rules for the classification
 
 - **Majority rule**
 
-=> We choose the class that has the maximum P(class)  
+=> We choose the class that has the maximum P(class)
 
 - **Maximum rule**
 
- => We choose the class that has the maximum P(class|feature)  
+ => We choose the class that has the maximum P(class|feature)
 
 - **Bayes rule**
 
@@ -278,7 +278,7 @@ P = nb.predict(irisData.data[:])
 
 Y = irisData.target
 
-#Calculate score 
+#Calculate score
 #Method 1
 ea = 0
 for i in range(len(irisData.data)):
@@ -291,7 +291,7 @@ print("Error using sum function :",ea/len(irisData.data))
 #Non-zero values represent errors made by the model. So we can use the count_nonzero() function from the numpy package.
 print("Error using numpy :",np.count_nonzero(P-Y)/len(irisData.data))
 
-# Method 3 
+# Method 3
 
 print("Accuracy : ",nb.score(irisData.data,Y))
 ```
@@ -310,7 +310,7 @@ The mean and standard deviation of performance scores can be calculated to estim
 ``` python
 
 from sklearn.model_selection import cross_val_score
-from sklearn.linear_model import LinearRegression 
+from sklearn.linear_model import LinearRegression
 reg = LinearRegression()
 cv_results = cross_val_score(reg, X, y, cv=5)
 print(cv_results)

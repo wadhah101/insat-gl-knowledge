@@ -9,7 +9,7 @@ slug: /gl4/archived/data-analysis/09-regression
 - Let $p\in\mathbb{N}^*$ be the number of features
 - Let $n\in\mathbb{N}^*$ be the number of observations
 - Let $(X_1,Y_1),\dots ,(X_n,Y_n)\in\mathbb{R}^p\times \mathbb{R}$ be the observations
-- Let $X=\begin{pmatrix}1&X_1^T\\1&X_2^T\\\vdots\\1&X_n^T\end{pmatrix},Y=\begin{pmatrix}Y_1\\Y_2\\ \vdots \\Y_n\end{pmatrix}$  
+- Let $X=\begin{pmatrix}1&X_1^T\\1&X_2^T\\\vdots\\1&X_n^T\end{pmatrix},Y=\begin{pmatrix}Y_1\\Y_2\\ \vdots \\Y_n\end{pmatrix}$
 
 We want to find the best vector $\beta\in\mathbb{R}^{p+1}$ that minimizes the distance:
 $$
@@ -138,7 +138,7 @@ $$
 
 ### 3.3 Significance
 
-Assuming a linear dependence between the variables, this result suggests that within a confidence of $(1-p)\%,$ $y$ is not a constant function of $\bold{x}.$  
+Assuming a linear dependence between the variables, this result suggests that within a confidence of $(1-p)\%,$ $y$ is not a constant function of $\bold{x}.$
 
 ## 4. Confidence interval of the prediction
 

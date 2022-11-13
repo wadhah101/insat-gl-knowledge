@@ -23,7 +23,7 @@ By default we will use the **Random Access Machine** model in which we will pose
 - Each Bit-wise Instruction can be executed no more than a constant time for standard types.
 - Each Boolean Test can be executed no more than a constant time for standard types.
 
-Here by standard types, we mean Integers with no more than $m_{\text{integer}}=64$  bits, and Floating point types with no more than $m_{\text{Float}}=128$ bits  
+Here by standard types, we mean Integers with no more than $m_{\text{integer}}=64$  bits, and Floating point types with no more than $m_{\text{Float}}=128$ bits
 
 ### 2.2 Algorithm Cost
 

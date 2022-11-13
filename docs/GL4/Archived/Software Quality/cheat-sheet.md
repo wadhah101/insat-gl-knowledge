@@ -122,7 +122,7 @@ Example :
 //@RepeatedTest takes in an integer which tells JUnit to run the test called “test” 6 times.
 @RepeatedTest(6)
 public void test()
-{ 
+{
 // selenium test
 }
 ```

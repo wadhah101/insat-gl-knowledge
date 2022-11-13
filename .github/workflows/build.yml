@@ -2,7 +2,7 @@
 name: Check build status
 
 concurrency:
-  groups: preview-${{ github.ref }}
+  group: preview-${{ github.ref }}
   cancel-in-progress: true
 
 on:

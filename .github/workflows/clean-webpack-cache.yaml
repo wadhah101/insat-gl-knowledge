@@ -17,16 +17,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Get active branches
+        run: |
+          BRANCHES=($(git show-ref --heads | cut -d " " -f2))
+          echo $BRANCHES
+
       - name: Clean cache
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          BRANCHES=($(git show-ref --heads | cut -d " " -f2))
-
           for BRANCH in $BRANCHES
           do
             CACHES=($(gh actions-cache list -B $BRANCH --limit 100 | grep Linux-webpack |  cut -d$'\t' -f1))
-
+            echo $CACHES
             if [ ${#CACHES[@]:1} -eq 0 ]; then
               echo "$BRANCH : no cache to delete"
             else

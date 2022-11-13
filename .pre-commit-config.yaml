@@ -1,3 +1,6 @@
+ci:
+  skip: [shellcheck]
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
@@ -18,8 +21,8 @@ repos:
         types: [markdown]
         minimum_pre_commit_version: 0.15.0
 
-  - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 38980559e3a605691d6579f96222c30778e5a69e
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.8.0
     hooks:
       - id: shellcheck
         args: ["--severity=style"]

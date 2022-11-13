@@ -110,6 +110,7 @@ const config = async () => {
           logo: {
             alt: "My Site Logo",
             src: "img/logo.svg",
+            srcDark: "img/logo-dark.svg",
           },
           items: [
             {

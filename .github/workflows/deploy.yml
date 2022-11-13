@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+    paths:
+      - "docs"
+      - "src"
+      - "data"
   workflow_dispatch:
 
 permissions:
@@ -58,7 +62,7 @@ jobs:
       - name: generate contributors
         run: |
           gh api repos/wadhah101/insat-gl-knowledge/contributors > data/contributors.json
-          jq ".[] | { login: .login, contributions: .contributions  }" data/contributors.json
+          jq ".[] | { login, contributions }" data/contributors.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

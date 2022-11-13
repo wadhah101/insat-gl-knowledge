@@ -17,6 +17,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Bash version
+        run: bash --version
+
       - name: Clean cache
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

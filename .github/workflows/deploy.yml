@@ -69,12 +69,10 @@ jobs:
         run: mv .yarn/.cache .cache
 
       - name: Upload artifact
-        if: ${{ github.ref != 'refs/heads/master' }}
         uses: actions/upload-pages-artifact@v1
         with:
           path: "build"
 
       - name: Deploy to GitHub Pages
-        if: ${{ github.ref != 'refs/heads/master' }}
         id: deployment
         uses: actions/deploy-pages@v1

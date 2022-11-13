@@ -4,6 +4,8 @@ slug: /gl3/semester-2/advanced-algorithms/heap
 
 # Heap & Priority queues
 
+Author [@hajali-amine](https://github.com/hajali-amine)
+
 ## Priority queues
 
 Let *E* be a set mapped by a priority function *p*. We call a priority queue a data type that allows us to:

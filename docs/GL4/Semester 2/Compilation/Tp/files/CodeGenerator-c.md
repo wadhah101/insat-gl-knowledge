@@ -4,7 +4,6 @@ slug: /Gl4/semester-2/compilation/files/CodeGenerator-c.md
 
 # CodeGenerator.c
 
-
 ```c
 #include <ctype.h>
 #include <stdio.h>

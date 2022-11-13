@@ -4,7 +4,6 @@ slug: /Gl4/semester-2/compilation/files/Symtab.md
 
 # Symtab.h
 
-
 ```c
 #ifndef SYMTAB_H
 #define SYMTAB_H

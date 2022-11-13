@@ -22,12 +22,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCHES=($(git ls-remote --heads | cut -d$'\t' -f2))
-          echo ${BRANCHES[@]}
+          echo branches : ${BRANCHES[@]}
 
           for BRANCH in $BRANCHES
           do
             CACHES=($(gh actions-cache list -B $BRANCH --limit 100 | grep Linux-webpack |  cut -d$'\t' -f1))
-            echo $CACHES
+            echo "${CACHES[@]}"
             if [ "${#CACHES[@]}" -lt < 2 ]; then
               echo "$BRANCH : no cache to delete"
             else

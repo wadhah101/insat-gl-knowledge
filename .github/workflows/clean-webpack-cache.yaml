@@ -28,7 +28,7 @@ jobs:
           do
             CACHES=($(gh actions-cache list -B $BRANCH --limit 100 | grep Linux-webpack |  cut -d$'\t' -f1))
             echo $CACHES
-            if [ ${#CACHES[@]:1} -eq 0 ]; then
+            if [ "${#CACHES[@]}" -lt < 2 ]; then
               echo "$BRANCH : no cache to delete"
             else
               echo "$BRANCH : deleting irrelevant cache"

@@ -10,7 +10,7 @@ do
 
   echo $CACHES
 
-  if [ ${#CACHES[@]:1} -eq 0 ]; then
+  if [ "${#CACHES[@]:1}" -eq 0 ]; then
     echo "$BRANCH : no cache to delete"
   else
     echo "$BRANCH : deleting irrelevant cache"

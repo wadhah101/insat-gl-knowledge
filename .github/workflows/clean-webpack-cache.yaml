@@ -1,0 +1,26 @@
+on:
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean cache
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCHES=($(git ls-remote --heads | cut -d$'\t' -f2))
+
+          for BRANCH in $BRANCHES
+          do
+            CACHES=($(gh actions-cache list -B $BRANCH --limit 100 | grep Linux-webpack |  cut -d$'\t' -f1))
+
+            if [ ${#CACHES[@]:1} -eq 0 ]; then
+              echo "$BRANCH : no cache to delete"
+            else
+              echo "$BRANCH : deleting irrelevant cache"
+              parallel -j 5 gh actions-cache delete --confirm ::: ${CACHES[@]:1}
+            fi
+          done

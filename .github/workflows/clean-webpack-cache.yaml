@@ -20,7 +20,7 @@ jobs:
       - name: Get active branches
         run: |
           export BRANCHES=($(git ls-remote --heads | cut -d$'\t' -f2))
-          echo $BRANCHES
+          echo ${BRANCHES[@]}
 
       - name: Clean cache
         env:

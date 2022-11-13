@@ -17,23 +17,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Get active branches
-        run: |
-          export BRANCHES=($(git ls-remote --heads | cut -d$'\t' -f2))
-          echo ${BRANCHES[@]}
-
       - name: Clean cache
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          for BRANCH in $BRANCHES
-          do
-            CACHES=($(gh actions-cache list -B $BRANCH --limit 100 | grep Linux-webpack |  cut -d$'\t' -f1))
-            echo $CACHES
-            if [ ${#CACHES[@]:1} -eq 0 ]; then
-              echo "$BRANCH : no cache to delete"
-            else
-              echo "$BRANCH : deleting irrelevant cache"
-              parallel -j 5 gh actions-cache delete --confirm ::: ${CACHES[@]:1}
-            fi
-          done
+        run: bash scripts/cleanup_cache_manual.sh

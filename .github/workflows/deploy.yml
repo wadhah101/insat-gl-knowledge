@@ -65,14 +65,14 @@ jobs:
         run: mv .yarn/.cache .cache
 
       - name: Upload artifact
-        if: ${{ github.ref == "refs/heads/main" }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         uses: actions/upload-pages-artifact@v1
         with:
           path: "build"
 
   deploy:
     needs: build
-    if: ${{ github.ref == "refs/heads/main" }}
+    if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
 
     permissions:

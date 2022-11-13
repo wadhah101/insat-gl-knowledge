@@ -17,3 +17,9 @@ repos:
         language: node
         types: [markdown]
         minimum_pre_commit_version: 0.15.0
+
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.7.2
+    hooks:
+      - id: shellcheck
+        args: ["--severity=style"]

@@ -17,16 +17,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Get active branches
-        run: |
-          export BRANCHES=($(git ls-remote --heads | cut -d$'\t' -f2))
-          echo ${BRANCHES[@]}
-          echo "::set-env name=BRANCHES::$BRANCHES"
-
       - name: Clean cache
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          BRANCHES=($(git ls-remote --heads | cut -d$'\t' -f2))
+          echo ${BRANCHES[@]}
+
           for BRANCH in $BRANCHES
           do
             CACHES=($(gh actions-cache list -B $BRANCH --limit 100 | grep Linux-webpack |  cut -d$'\t' -f1))

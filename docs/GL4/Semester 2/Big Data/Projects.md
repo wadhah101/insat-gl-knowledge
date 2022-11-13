@@ -1,3 +1,7 @@
+---
+slug: /gl4/semester-2/big-data/projects
+---
+
 # Projects
 
 Edit this page and make a PR to add your project !

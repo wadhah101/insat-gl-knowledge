@@ -1,3 +1,5 @@
+name: Clean webpack cache
+
 on:
   schedule:
     - cron: "0 18 * * *"

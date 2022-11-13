@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - "docs"
-      - "src"
-      - "data"
   workflow_dispatch:
 
 permissions:

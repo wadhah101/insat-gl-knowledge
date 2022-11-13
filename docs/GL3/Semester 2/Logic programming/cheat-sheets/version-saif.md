@@ -4,6 +4,8 @@ slug: /gl3/semester-2/logic-programming/cheat-sheets/version-saif
 
 # Cheat sheet - Saif
 
+Author [@Saief1999](https://github.com/Saief1999)
+
 ## Introduction  
 
 - Two standards of Prolog are used currently :

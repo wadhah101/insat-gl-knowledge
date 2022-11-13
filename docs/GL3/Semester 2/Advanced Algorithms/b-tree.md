@@ -4,6 +4,8 @@ slug: /gl3/semester-2/advanced-algorithms/b-tree
 
 # B-Trees
 
+Author [@hajali-amine](https://github.com/hajali-amine)
+
 B-trees are **self-balanced search trees**, they are commonly used in databases.
 
 ## Definition

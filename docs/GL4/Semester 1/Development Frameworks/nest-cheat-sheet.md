@@ -173,7 +173,7 @@ nest generate service <service name>
 ```
 
 or
-  
+
 ```bash
 nest g s <service name>
 ```
@@ -250,7 +250,7 @@ adapt.
 - [Cors](https://www.npmjs.com/package/cors#enable-cors-for-a-single-route): allows you to manage permissions to resources from another domain.
   - ``app.enableCors()`` : this function accepts an optional object where we could specify the origin domain / HTTP methods / allowed headers / optionsSuccessStatus : (200-201..)
   - Alternatively, enable CORS via the create() method's options object: ``const app = await NestFactory.create(AppModule, { cors: true });`` : only applies to **REST** endpoints
-  
+
 #### Global Middlewares
 
 You can declare the middleware in the ``use(<middlewarename>)``  function of main.js
@@ -342,11 +342,11 @@ export class MyFirstInterceptor implements NestInterceptor {
 
 intercept(context: ExecutionContext, next: CallHandler): Observable<any>
 {
- // code executed before the request 
- 
-return next.handle().pipe(tap(() => 
+ // code executed before the request
 
-// code executed after the request 
+return next.handle().pipe(tap(() =>
+
+// code executed after the request
 
 ));
 }
@@ -396,7 +396,7 @@ NestJs comes with his own exception management layer that handles all the HTTP e
 - If you don't handle the exception Nest will do it for you
 - If an exception isn't recognized by this filter a default exception is triggered : the famous "Internal  server error" with the "500 status"
   HttpException is a class given by Nest to handle all the HTTP exceptions, its constructor takes 2 arguments : response and status
-  
+
   Example
 
  ```typescript
@@ -410,7 +410,7 @@ NestJs comes with his own exception management layer that handles all the HTTP e
 - Implement th ``ExceptionFilter`` interface
 - Annotate the class with ``@Catch(<exception type>)``
 - Implement the ``catch(<exception>,ArgumentHost)`` method : ArgumentHost imported from ``@nestjs/common``
-  
+
 Example:
 
 ```typescript
@@ -423,7 +423,7 @@ catch(exception: HttpException, host: ArgumentsHost): any {
   const response = ctx.getResponse<Response>();
   const request = ctx.getRequest<Request>();
   const exceptionResponse = exception.getResponse();
-  
+
   response
   .status(status)
   .json({
@@ -432,7 +432,7 @@ catch(exception: HttpException, host: ArgumentsHost): any {
     timestamp: new Date().toISOString(),
     path: request.url,
   });
-  
+
 return response;
 }
 ```
@@ -454,11 +454,11 @@ return response;
   ```typescript
   app.useGlobalFilters(new CustomFilter())
   ```
-  
+
 - To attach a filter to a specific method use ``@UseFilter(<filter instance/class>)`` : note that if we don't write any parameter this method will use all filters
 
 Prefer applying filters by using classes instead of instances when possible. It reduces memory usage since Nest can easily reuse instances of the same class across your entire module.
-  
+
 ## Database Access
 
 ### ORM

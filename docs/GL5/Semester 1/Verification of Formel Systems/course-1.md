@@ -20,7 +20,7 @@ Une automate est un quintuplé $\mathcal{A}=(V,\Sigma,q_0,F,\delta)$ avec:
 
 ### 1.2 Transition
 
-On dit que $e=(u,a,v)$ est une transition si $e\in \delta$  
+On dit que $e=(u,a,v)$ est une transition si $e\in \delta$
 
 Informellement, si l'automate est dans un état $u$ et elle reçoit $a$ , un des états possibles qu'elle peut passer à est l'état $v$
 
@@ -131,7 +131,7 @@ Le produit cartésien entre $\mathcal{A}_1$ et $\mathcal{A}_2$ est l'automate $\
   \delta_3\left((u,u'),a,(v,v')\right)  \iff
   \delta_1(u,a,v) \ \text{and} \ u'=v'  \ \text{or} \ \delta_2(u',a,v') \ \text{ and } u=v
   $$
-  
+
 ### 2.2 Explication Informelle
 
 Informellement, le produit construit une automate "système" $\mathcal{A}_3$ représentant les deux automates ensembles.
@@ -149,13 +149,13 @@ flowchart LR
  u1 --b--> u2
  u1 --b--> u1
  u2 --c--> u0
- 
+
  start1[( )] --> v0
  v0 --e--> v1
  v1 --e--> v2
  v1 --d--> v1
  v2 --b--> v0
- 
+
     style u2 fill:#F70,stroke:#333,stroke-width:3px
     style u0 fill:#F70,stroke:#333,stroke-width:3px
     style start0 fill:#FFF,stroke:#FFF
@@ -229,7 +229,7 @@ La composition parallèle entre $\mathcal{A}_1$ et $\mathcal{A}_2$ est l'automat
   \delta_1(u,a,v) \ \text{and} \ \delta_2(u',a,v') \ \text{and} \ a\in \Sigma_\cap
   \end{cases}
   $$
-  
+
 ### 3.3 Explication Informelle
 
 Informellement, le produit synchronisé construit une automate "système" $\mathcal{A}_3$ représentant les deux automates ensembles.
@@ -252,13 +252,13 @@ flowchart LR
  u1 --b--> u2
  u1 --b--> u1
  u2 --c--> u0
- 
+
  start1[( )] --> v0
  v0 --e--> v1
  v1 --e--> v2
  v1 --d--> v1
  v2 --b--> v0
- 
+
     style u2 fill:#F70,stroke:#333,stroke-width:3px
     style u0 fill:#F70,stroke:#333,stroke-width:3px
     style start0 fill:#FFF,stroke:#FFF
@@ -328,7 +328,7 @@ Les transitions en **verts** sont les transitions synchrones.
   $$
   F(k,x_0,\dots,x_{m-1})=\prod_{i=0}^{m-1}e(x_i,b_{k,i})=\prod_{b_{k,i}=0}x_i \times \prod_{b_{k,i}=1}\bar x_i
   $$
-  
+
 ### 4.2 Fonction booléenne à partir d'un graphe
 
 On définit la fonction $f$ par:

@@ -86,19 +86,19 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ```sql
   SELECT {DISTINCT | ALL} columns
-  FROM tables 
+  FROM tables
   WHERE conditions
-  GROUP BY columns 
+  GROUP BY columns
   HAVING conditions
   [UNION | INTERSECT | MINUS <sub-Query>]
-  ORDER BY columns 
+  ORDER BY columns
 ```
 
 #### Operations can be used in ``WHERE`` and ``HAVING`` clause
 
  |< , > , = ,<= , >= |LIKE|IS NULL|IN (va1, val)|BETWEEN n1 AND n2|
  | --- | --- | --- | --- | --- |
-  
+
 #### Functions can be used in ``SELECT`` statement, ``WHERE`` and ``ORDER BY`` clause
 
 1 - **Multiple-Row Functions** : Aggregate Functions

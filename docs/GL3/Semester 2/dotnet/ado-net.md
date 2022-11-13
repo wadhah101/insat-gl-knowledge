@@ -41,15 +41,15 @@ SqlCommand cmd = new SqlCommand()
     CommandText = "<stored procedure namme>",
     Connection = connection_var,
     CommandType = CommandType.StoredProcedure
-  
+
 };
 
-//with parameters : 
+//with parameters :
 
   SqlParameter param = new SqlParameter
 {
-    ParameterName = "@paramname", 
-    SqlDbType = SqlDbType.<type>, 
+    ParameterName = "@paramname",
+    SqlDbType = SqlDbType.<type>,
     Value = "<VALUE>",
     Direction = ParameterDirection.Input (or output)
 };
@@ -84,7 +84,7 @@ Storage model.
 ##### 1- Create Models
 
 - DataAnnotions : [annotions details]
-  
+
 |Key |Column("Name", TypeName="ntext") |ForignKey("fkname")|NotMapped|
 |---|---|---|---|
 |Specifies the primary key of the table|Specifies the column name and type|Foreign kety name |will not be mapped in the db |
@@ -188,7 +188,7 @@ Entity framework Code First had different database initialization strategies pri
   - down() : contains the opposite of the up() method
 - **update-database** :This helps you add all the updates to your server
 
-#### EDM  
+#### EDM
 
 - EDM Structure :
   - **EntityContainer** : EntityContainer EntityContainer is a wrapper for EntitySets and AssociationSets . It is an entry point for querying the model.
@@ -202,13 +202,13 @@ Entity framework Code First had different database initialization strategies pri
   - LinQ Method
 
    ```csharp
-   //Student is a model 
+   //Student is a model
    using( var context = new SchoolDBStudents() ) {
-   
+
     var query = context.Students.Where(s=>s.StudentName ==  "Bill").FirstOrDefault<Student>();
    }
-  
-   
+
+
    ```
 
   - LinQ Query
@@ -280,7 +280,7 @@ var student = ctx.Students.SqlQuery("Select * from Students where StudentId=@id"
   dbCtx.SaveChanges();
   }
 ```
-  
+
 ###### 2. Update
 
    ```csharp
@@ -305,7 +305,7 @@ dbCtx.SaveChanges();
 
 ```csharp
 using (var context = new SchoolDBEntities())
-{ 
+{
     context.Entry(disconnectedTeacher).State =
     System.Data.EntityState.Deleted;
     context.SaveChanges();

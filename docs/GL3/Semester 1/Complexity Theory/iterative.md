@@ -50,7 +50,7 @@ if x==0:
 else:
     for i in range(n):
         R+=i
-            
+
 ```
 
 - If we know that $x=0$, then the complexity is $\mathcal{O}(n^2)$

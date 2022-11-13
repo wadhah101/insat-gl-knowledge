@@ -44,20 +44,20 @@ We could Pass parameters to actions by :
 #### 1.2. Passing data to the view
 
 ##### Adding Information: (In the controller)
-  
+
 ###### ViewBag
 
 ```csharp
 ViewBag.Message = “some text”;
 ViewBag.ServerTime = DateTime.Now;
-```  
+```
 
 ###### ViewData
 
 ```csharp
 ViewData["Message"] = "some text";
 ViewData["ServerTime"] = DateTime.Now;
-```  
+```
 
 ##### Retrieving Information: (In the view)
 
@@ -70,7 +70,7 @@ Message is: @ViewBag.Message
 Server time is: @ViewBag.ServerTime.ToString()
 </p>
 ```
-  
+
 ###### Retrieving Information ViewData
 
 ```cshtml
@@ -81,7 +81,7 @@ Server time is: @ViewBag.ServerTime.ToString()
 ```
 
 *Ps : @ in the html file means server-side code* [see more](https://github.com/rihemebh/.Net-cheat-sheets/blob/main/ASP.net/README.md#21-razor)
-  
+
 #### 1.3. Routing
 
 Routing is responsible for matching incoming HTTP requests and dispatching those requests to the app's executable endpoints.
@@ -125,10 +125,10 @@ Example:
          public IActionResult GetProduct(int id)
       {
         ...
-    
-      
+
+
     }
-    
+
     [Route("api")]
    public class CtegoryController : Controller
       {
@@ -184,8 +184,8 @@ Razor Generate html code from helpers
 ##### @HTML.ActionLink()
 
 ```cshtml
-@HTML.ActionLink("Click here to view photo 1", "Display" , "Photo" , new { id = 1}) 
- 
+@HTML.ActionLink("Click here to view photo 1", "Display" , "Photo" , new { id = 1})
+
 @* equivalent to *@
 
 <a href="/photo/display/1">Click here to view photo 1<a/>
@@ -195,7 +195,7 @@ Razor Generate html code from helpers
 
 ```cshtml
 <img src="@Url.Action('GetImage', new {id = 1})" />
- 
+
 @* equivalent to *@
 
 <img src="/photo/getimage/1" />
@@ -205,8 +205,8 @@ Razor Generate html code from helpers
 
 ```csharp
 public class Student
-{   
-    
+{
+
     public int StudentId { get; set; }
     public string Name { get; set;  }
     public int Age { get; set;  }
@@ -215,7 +215,7 @@ public class Student
     public string Email { get; set;  }
     public bool State { get; set;  }
 }
- 
+
 ```
 
 **In the Controller :**
@@ -251,7 +251,7 @@ return View("<htmlFileName>", Student);
 #### Specify the action to be executed after submit
 
 ```csharp
-Html.BeginForm("<actionName>","<ControllerName>") 
+Html.BeginForm("<actionName>","<ControllerName>")
 ```
 
 #### Annotions
@@ -260,24 +260,24 @@ Html.BeginForm("<actionName>","<ControllerName>")
 
 ```csharp
 public class Student
-{   
+{
     public int StudentId { get; set; }
     [Required]
-    [Display(Name="My Name")] // to costumize the label in the form 
+    [Display(Name="My Name")] // to costumize the label in the form
     public string Name { get; set;  }
-    
+
     [Range(0,100)] // specify min nd max
     public int Age { get; set;  }
-    
-    [DataType(DataType.multilineText)] // to generate a textarea in the form 
+
+    [DataType(DataType.multilineText)] // to generate a textarea in the form
     public string Description { get; set;  }
-    
-    [StringLength(8)] 
+
+    [StringLength(8)]
     public string phone { get; set;  }
-    
-    [RegularExpression("^.+@.+(\.).+$")] 
+
+    [RegularExpression("^.+@.+(\.).+$")]
     public string email { get; set;  }
-    
+
     public bool State { get; set;  }
-} 
+}
 ```

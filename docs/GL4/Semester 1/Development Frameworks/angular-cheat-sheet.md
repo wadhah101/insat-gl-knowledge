@@ -81,7 +81,7 @@ we can call a method using:
 - The [hero] property binding passes the value of selectedHero from the parent HeroListComponent to the hero property of the child HeroDetailComponent.
 
 - The (click) event binding calls the component's selectHero method when the user clicks a hero's name.
-  
+
 #### Tow-way Binding (DOM <-> Component)
 
 Angular supports two-way data binding that allows interctions from DOM to component and component to DOM using directives **ngModel**.
@@ -118,7 +118,7 @@ Angular supports two-way data binding that allows interctions from DOM to compon
   |---|
 
    ** View is a data structure created with every bind
-  
+
 ## Interaction between parent and child component
 
 - By default every component could see only its properties
@@ -239,7 +239,7 @@ We need to Import ``FormsModule`` and add it to the NgModule's imports list.
      ```html
       <p appHighlight>Highlight me!</p>
      ```
-  
+
 - **HostBinding** : associate a property to a directive
 
 ```typescript
@@ -281,9 +281,9 @@ ng g p <pipe-name>
 ```
 
 ## Services
-  
+
 Classes decorated by ``@Injectable()`` allowing to encapsulate business processes
-  
+
 ```typescript
 import { Injectable } from '@angular/core';
 
@@ -293,19 +293,19 @@ import { Injectable } from '@angular/core';
 export class HeroService {
   constructor() { }
 }
-  
+
   ```
 
   By default, the Angular CLI command ``ng generate service`` registers a provider with the root injector for your service by including provider metadata, that is ``providedIn: 'root'`` in the ``@Injectable()`` decorator.
-  
+
 ## Routes
 
  Before we start we need to:
 
-  1. Create a routing file : ``app.routing.ts``  
+  1. Create a routing file : ``app.routing.ts``
   2. Import the RouteModule
   3. Define our routes
-  
+
  In the template use :
 
  ```html
@@ -319,8 +319,8 @@ export class HeroService {
     ```html
            <a [routerLink]="[‘home’]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >
      home  </a>
-           <!--We use : [routerLinkActiveOptions]="{exact: true}" 
-            to tell angular that we want only this link to be 
+           <!--We use : [routerLinkActiveOptions]="{exact: true}"
+            to tell angular that we want only this link to be
              active and not its parent (dropdown button case) -->
     ```
 
@@ -340,7 +340,7 @@ export class HeroService {
 
        ```typescript
            This.router.activatedRoute.params.subscribe(params=>{this.monParam=params['param']});
-            // subscribe to an observable so you have do insubscribe from it in the ngOnDestroy() 
+            // subscribe to an observable so you have do insubscribe from it in the ngOnDestroy()
         ```
 
   [Learn more about oservable](#observable)
@@ -351,7 +351,7 @@ Example : all routes related to user management should start with "/user"
 
 ```typescript
   path: ‘user’,
-  Children :[ 
+  Children :[
   {path: “delete/:id”, compoennet: “component1”},
   {path: “add”, compoennet: “component2”}
         ]
@@ -448,7 +448,7 @@ observer.complete();
 observer.next(i--);
 }, 1000);
 });
- 
+
 // subscribe to an observable and define the next() function
 observable.subscribe(
 (val) => {
@@ -481,9 +481,9 @@ Inject the service:
 get is a HTTP function that returns an Observable
 
 ```typescript
-this.http.get(API_URL).subscribe( 
- (response:Response)=>{ //ToDo with DATA }, 
- (err:Error)=>{ //ToDo with error }, 
+this.http.get(API_URL).subscribe(
+ (response:Response)=>{ //ToDo with DATA },
+ (err:Error)=>{ //ToDo with error },
  () => { console.log('Data transmission complete'); } );
 ```
 

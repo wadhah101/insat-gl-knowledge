@@ -107,7 +107,7 @@ os.system("gcc -o app SyntaxAnalyzer.tab.c lex.yy.c symtab.c codeGenerator.c")
 then in **cmd**
 
 ```py
-python script.py 
+python script.py
 ```
 
 ### How to use the generated app.exe
@@ -138,7 +138,7 @@ class Calculator1{
     public int calculate (){
         int x;                          // @ 2
         int y;                          // @ 3
-        x = 5;                                   
+        x = 5;
         y = 6;
         somme = x * 10;
         y = somme + 15;
@@ -152,10 +152,10 @@ class Calculator1{
                 y = y + 1;
         }
 
-            
+
         return x ;
     }
-} 
+}
 ```
 
 Use it as input for the generated app.exe:

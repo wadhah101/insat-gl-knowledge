@@ -31,7 +31,7 @@ A B-tree of **order m** follows the following rules;
 ### Structure
 
 ``` c
-typedef struc bNode{ 
+typedef struc bNode{
     bNode* children[2*m];
     int key[2*m-1];
     int size; // Number of keys, we can always determine later on number of children by doing size+1.
@@ -47,7 +47,7 @@ bTree create(){
     for (int i = 0; i < 2*m; i++){
         t->children[i] = NULL;
     }
-    t->size = 0; 
+    t->size = 0;
     return t
 }
 ```
@@ -170,8 +170,8 @@ void borrowRight(bTree t, int nodeIndex){
     t->key[nodeIndex] = tRight->key[0];
     for(int i = 0; i < tRight->size - 1; i++){
         tRight->key[i] = tRight->key[i + 1];
-        tRight->children[i] = tRight->children[i+1]; 
-    }   
+        tRight->children[i] = tRight->children[i+1];
+    }
     tRight->children[tRight->size - 1] = tRight->children[tRight->size];
     tRight->size--;
 }
@@ -191,7 +191,7 @@ void fusionRight(bTree t, int nodeIndex){
     tLeft->key[2*m-1] = tRight->children[tRight->size];
     tLeft->size = 2*m-1;
     free(tRight);
-    for(int i = nodeIndex; i < t->size - 1; i++){ 
+    for(int i = nodeIndex; i < t->size - 1; i++){
         t->key[i] = t->key[i + 1];
         t->children[i] = t->children[i + 1];
     }
@@ -225,7 +225,7 @@ bTree internalDelete(bTree t, int key){
     int i = 0;
     if (t->children[0] == NULL){
         while(i < t->size - 1 && key > t->key[i])
-            i++;                          //i points to the key 
+            i++;                          //i points to the key
         if (key == t->key[i])
             for (int j = i; j < t->size - 1; j++)
                 t->key[i] = t->key[i+1];
@@ -236,7 +236,7 @@ bTree internalDelete(bTree t, int key){
         }
     }else{                            //root is not a leaf
         while(i < t->size && key > t->key[i])
-            i++;                  
+            i++;
         if(i < t->size && key == t->key[i]){ // key exists in root
             if(t->children[i]->size >= m){
                 t->key[i] = deletePred(t->children[i]);
@@ -247,7 +247,7 @@ bTree internalDelete(bTree t, int key){
                 t = internalDelete(t, key);
             }
         }else{                                       // key doesn't exist in t
-            if(t->children[i]->size >= m){          // no need to restructure the tree   
+            if(t->children[i]->size >= m){          // no need to restructure the tree
                 t->children[i] = internalDelete(t->children[i], key);
             }else{                                   // need to restructure tree
                 if(i == 0){                          // there are no left child
@@ -258,7 +258,7 @@ bTree internalDelete(bTree t, int key){
                         fusionRight(t, 0);
                         t->children[0] = internalDelete(t->children[0], key);
                     }
-                }else{// (i > 0)                     // there is a left child 
+                }else{// (i > 0)                     // there is a left child
                     if(t->children[i-1]->size >= m){
                         borrowLeft(t, i);
                         t->children[i+1] = internalDelete(t->children[i+1], key);

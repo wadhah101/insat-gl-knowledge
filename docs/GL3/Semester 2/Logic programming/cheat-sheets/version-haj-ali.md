@@ -82,7 +82,7 @@ __Usual operators:__
 | ``//``   | Integer division |
 | ``/``    | Float division   |
 | ``mod``  | Rest of division |
-  
+
 __Predefined mathematical functions:__
 
 | Function      | Description                                 |
@@ -333,14 +333,14 @@ _H:-B1,B2,...,Bi,!,Bi+1,...,Bm._
 __Why use cut?__
 
 * To stop useless explorations.
-  
+
 ``` prolog
 member(X,[X|Y_]):-!.
 member(X,[_|Xs]):-member(X,Xs).
 ```
 
 * If else statements.
-  
+
 ``` prolog
 f(X,0):-X < 3,!.
 f(X,2):-X < 6,!.
@@ -348,7 +348,7 @@ f(X,4).
 ```
 
 * Expression of the negation in Prolog.
-  
+
 ``` prolog
 different(X,Y):-X = Y,!,fail.
 different(X,Y).
@@ -405,7 +405,7 @@ Each time we use the ``not/1``, we have to create another search tree;
 The following tree can be implemented as;
 
 ``` prolog
-t(6,t(4,t(2,nil,nil),t(5,nil,nil)),t(9,t(nil,nil,10),nil)). 
+t(6,t(4,t(2,nil,nil),t(5,nil,nil)),t(9,t(nil,nil,10),nil)).
 ```
 
 ``member_tree/2``

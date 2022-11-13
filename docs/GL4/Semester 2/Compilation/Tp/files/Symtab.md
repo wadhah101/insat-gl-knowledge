@@ -28,14 +28,14 @@ typedef struct node {
     int param_index ;                                       //  current index
     int class_id;                                           // class id
     int line;
-   
+
 } NODE;
 
 #define SYMBOL_TABLE_LENGTH 300
 
 NODE symbol_table[SYMBOL_TABLE_LENGTH];
 
-// check main 
+// check main
 
 void check_main(void);
 
@@ -51,7 +51,7 @@ int   get_next_empty_element(void);
 
 int   get_last_element_index(void);
 
-// check 
+// check
 
 int   lookup_variable(char* name,char* type,int level, int class_id);
 
@@ -66,7 +66,7 @@ void            set_param(char* name, char* type);
 
 // visualization
 
-void print_symtab(void);    
+void print_symtab(void);
 
 
 #endif

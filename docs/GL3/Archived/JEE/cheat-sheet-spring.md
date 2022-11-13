@@ -785,7 +785,7 @@ In `pom.xml` :
 
 ### Video 4.3 : Creating a Data Model
 
-- **Data Model** :  
+- **Data Model** :
   - Java class representing an entity/object in the database.
 - **JPA Annotations** : used for database model creation
   - **@Entity** : marks a java class as an Entity stored in DB
@@ -883,7 +883,7 @@ public interface CustomerRepository extends JpaRepository<Customer,Long> {
 }
 ```
 
-- In `RestController.java` : We **Autowire** the Repository  
+- In `RestController.java` : We **Autowire** the Repository
 
 ```java
 package com.demo;

@@ -6,12 +6,12 @@ slug: /Gl4/semester-2/compilation/files/LexicalAnalyzer.md
 
 ```c
 %{
-     #include <stdio.h> 
-     #include <stdlib.h> 
+     #include <stdio.h>
+     #include <stdlib.h>
      #include <string.h>
-     #include "SyntaxAnalyzer.tab.h"                                                                           
-     #include <math.h> 
-     
+     #include "SyntaxAnalyzer.tab.h"
+     #include <math.h>
+
      #define YYSTYPE char*
 
      int line = 1;
@@ -32,16 +32,16 @@ openBraces                              (\{)
 closeBraces                             (\})
 COMMENT_LINE                            "//"
 
-identifier                              ([A-Za-z_][A-Za-z0-9_]*)                                                     
-integerLiteral                          ({numberNN}{numberN}*)                                                          
-booleanLiteral                          "true"|"false"                                                                 
-illegalIdentifier                       {numberN}({lettre}|{numberN})*                                                  
+identifier                              ([A-Za-z_][A-Za-z0-9_]*)
+integerLiteral                          ({numberNN}{numberN}*)
+booleanLiteral                          "true"|"false"
+illegalIdentifier                       {numberN}({lettre}|{numberN})*
 
-dataType                                {primtiveType}|tableType                                                        
-primtiveType                            "int"|"bool"|"String"|"byte"|"char"|"short"|"long"|"float"|"double"  
+dataType                                {primtiveType}|tableType
+primtiveType                            "int"|"bool"|"String"|"byte"|"char"|"short"|"long"|"float"|"double"
 tableType                               ({primtiveType}{bl}{openSquareBrackets}{bl0}{closeSquareBrackets})
 
-%%   
+%%
 
 {bl}                                    /* pas d'actions */
 "\n"                                    line++;
@@ -92,7 +92,7 @@ tableType                               ({primtiveType}{bl}{openSquareBrackets}{
 "<"|">"|"<="|">="|"=="|"!="             { yylval = (int)strdup(yytext); return  _COMPOP;            }
 
 
- 
+
 {booleanLiteral}                        { yylval = (int)strdup(yytext); return  _BOOLVALUE;         }
 {integerLiteral}                        { yylval = (int)strdup(yytext); return  _INTEGERVALUE;      }
 {identifier}                            { yylval = (int)strdup(yytext); return  _IDENT;             }

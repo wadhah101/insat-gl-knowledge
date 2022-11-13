@@ -22,7 +22,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCHES=($(git ls-remote --heads | cut -d$'\t' -f2))
-          echo "branches : ${BRANCHES[@]}\n"
+          echo "branches : ${BRANCHES[@]} \n"
 
           for BRANCH in "${BRANCHES[@]}"
           do

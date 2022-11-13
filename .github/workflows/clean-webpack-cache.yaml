@@ -21,6 +21,7 @@ jobs:
         run: |
           export BRANCHES=($(git ls-remote --heads | cut -d$'\t' -f2))
           echo ${BRANCHES[@]}
+          echo "::set-env name=BRANCHES::$BRANCHES"
 
       - name: Clean cache
         env:

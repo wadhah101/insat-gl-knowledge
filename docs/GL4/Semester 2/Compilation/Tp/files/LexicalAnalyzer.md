@@ -1,5 +1,5 @@
 ---
-slug: /Gl4/semester-2/compilation/files/LexicalAnalyzer.md
+slug: /gl4/semester-2/compilation/tp/files/lexicalanalyzer
 ---
 
 # LexicalAnalyzer.lex

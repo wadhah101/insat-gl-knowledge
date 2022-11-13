@@ -1,5 +1,5 @@
 ---
-slug: /Gl4/semester-2/compilation/files/CodeGenerator-c.md
+slug: /gl4/semester-2/compilation/tp/files/codegenerator-c
 ---
 
 # CodeGenerator.c

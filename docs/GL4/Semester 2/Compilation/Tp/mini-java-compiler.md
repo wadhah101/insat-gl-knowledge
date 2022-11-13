@@ -1,5 +1,5 @@
 ---
-slug: /Gl4/semester-2/compilation/mini-java-compiler
+slug: /gl4/semester-2/compilation/tp/mini-java-compiler
 ---
 
 

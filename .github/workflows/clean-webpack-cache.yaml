@@ -20,4 +20,4 @@ jobs:
       - name: Clean cache
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bash cleanup_cache_manual.sh
+        run: bash scripts/cleanup_cache_manual.sh

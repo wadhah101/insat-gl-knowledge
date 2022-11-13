@@ -32,7 +32,7 @@ For this lab we assume one *Head Office (HO)* and *3 Branch offices (BO)* for sa
 | 2021-05-01 | East | Paper | 21 | 12.95 | 271.95 | 19.04 | 290.99 |
 | 2021-05-01 | West | Paper | 10 | 12.95 | 129.50 | 9.07 | 138.57 |
 
-The main of this lab is to create a distributed application that synchronisation databases from the product sales tables. This application needs to use the __RabbitMQ__ to send data on the related queues. We run 3 distributed processes that synchronise data from the first BO to HO, the second BO to the HO and the third BO to HO. For this lab we use Java with JDBC connector for __PostgreSQL__ databases for sales. So, 4 databases are needed for the 3 BO and one HO. *The synchronisation is made by the 3 BO.*
+The main of this lab is to create a distributed application that synchronisation databases from the product sales tables. This application needs to use the **RabbitMQ** to send data on the related queues. We run 3 distributed processes that synchronise data from the first BO to HO, the second BO to the HO and the third BO to HO. For this lab we use Java with JDBC connector for **PostgreSQL** databases for sales. So, 4 databases are needed for the 3 BO and one HO. *The synchronisation is made by the 3 BO.*
 
 ## Project's design
 

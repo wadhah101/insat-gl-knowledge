@@ -6,9 +6,8 @@ slug: /gl5/semester-1/deep-learning/linear-reg
 
 4 things to take in consideration:
 
-
 1. __Dataset:__
-    
+
     ($x$, $y$) with $x$ being the feature and $y$ being the target.
 
 2. __Model:__
@@ -29,11 +28,11 @@ slug: /gl5/semester-1/deep-learning/linear-reg
 
     $\alpha$ being the _learning rate_.
 
-## Transform this to a problem using matrices!
+## Transform this to a problem using matrices
 
-Let's $n$ is the number of features, $m$ is the number of rows. 
+Let's $n$ is the number of features, $m$ is the number of rows.
 
-$x$ = 
+$x$ =
 $
 \begin{pmatrix}
     x_{1}^{(1)} & x_{2}^{(1)} & x_{3}^{(1)} & \dots  & x_{n}^{(1)} \\
@@ -41,8 +40,8 @@ $
     \vdots & \vdots & \vdots & \ddots & \vdots \\
     x_{1}^{(m)} & x_{2}^{(m)} & x_{3}^{(m)} & \dots  & x_{n}^{(m)}
 \end{pmatrix}
-$ 
-thus $X$ = 
+$
+thus $X$ =
 $
 \begin{pmatrix}
     x_{1}^{(1)} & x_{2}^{(1)} & x_{3}^{(1)} & \dots  & x_{n}^{(1)} & 1 \\
@@ -50,10 +49,10 @@ $
     \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
     x_{1}^{(m)} & x_{2}^{(m)} & x_{3}^{(m)} & \dots  & x_{n}^{(m)}  & 1
 \end{pmatrix}
-$ 
+$
 $\in {\rm I\!R}^{m \times (n+1)}$
 
-$y$ = 
+$y$ =
 $
 \begin{pmatrix}
     y^{(1)} \\
@@ -61,10 +60,10 @@ $
     \vdots \\
     y^{(m)}
 \end{pmatrix}
-$ 
+$
 $\in {\rm I\!R}^{m \times 1}$
 
-And the parameters $\theta$ = 
+And the parameters $\theta$ =
 $
 \begin{pmatrix}
     a_{1} \\
@@ -73,9 +72,8 @@ $
     a_{n} \\
     b
 \end{pmatrix}
-$ 
+$
 $\in {\rm I\!R}^{(n+1) \times 1}$
-
 
 Finally we get the model $F = X\theta \in {\rm I\!R}^{m \times 1}$
 
@@ -84,8 +82,6 @@ As for the cost function $J(\theta) = {{1 \over{2m}} \sum_{i=1}^{m} (F - y)^2 } 
 As for the gradient $\frac{\partial J}{\partial \theta}(\theta) = {{1 \over{m}} X^T(X\theta - y) } \in {\rm I\!R^{(n+1) \times 1}}$
 
 Thus $\theta = \theta - \alpha \frac{\partial J}{\partial \theta}$
-
-
 
 ```python
 import numpy as np
@@ -97,60 +93,35 @@ x.shape, y.shape
 
 ```
 
-
-
-
-    ((100, 1), (100, 1))
-
-
-
+((100, 1), (100, 1))
 
 ```python
+
 import matplotlib.pyplot as plt
 
 plt.scatter(x, y)
+
 ```
 
-
-
-
-    <matplotlib.collections.PathCollection at 0x7f179cdc6940>
-
-
-
-
-    
+<matplotlib.collections.PathCollection at 0x7f179cdc6940>
 ![png](assets/output_3_1.png)
-    
-
-
 
 ```python
+
 X = np.hstack((x, np.ones((x.shape[0], 1))))
 X.shape
+
 ```
 
-
-
-
-    (100, 2)
-
-
-
+(100, 2)
 
 ```python
+
 theta = np.random.randn(X.shape[1], 1)
 theta
 ```
 
-
-
-
-    array([[-1.11140959],
-           [ 0.15718568]])
-
-
-
+array([[-1.11140959],[ 0.15718568]])
 
 ```python
 def model(X, theta):
@@ -160,19 +131,9 @@ plt.scatter(x, y, c='g')
 plt.plot(x, model(X, theta), c='orange')
 ```
 
+[<matplotlib.lines.Line2D at 0x7f179afe2550>]
 
-
-
-    [<matplotlib.lines.Line2D at 0x7f179afe2550>]
-
-
-
-
-    
 ![png](assets/output_6_1.png)
-    
-
-
 
 ```python
 def cost_function(theta, X, y):
@@ -180,13 +141,7 @@ def cost_function(theta, X, y):
 cost_function(theta, X, y)
 ```
 
-
-
-
-    2466.3199193827004
-
-
-
+2466.3199193827004
 
 ```python
 def gradients(theta, X, y):
@@ -194,14 +149,8 @@ def gradients(theta, X, y):
 gradients(theta, X, y)
 ```
 
-
-
-
-    array([[-76.34230311],
+array([[-76.34230311],
            [ -4.87819021]])
-
-
-
 
 ```python
 def gradient_descent(theta, X, y, learning_rate, n):
@@ -211,31 +160,20 @@ def gradient_descent(theta, X, y, learning_rate, n):
 final_theta =  gradient_descent(theta, X, y, 0.01, 1000)
 ```
 
-
 ```python
 plt.scatter(x, y, c='g')
 plt.plot(x, model(X, final_theta), c='orange')
 ```
 
+[<matplotlib.lines.Line2D at 0x7f179af63e80>]
 
-
-
-    [<matplotlib.lines.Line2D at 0x7f179af63e80>]
-
-
-
-
-    
 ![png](assets/output_10_1.png)
-    
-
 
 And there you have it, we have created a linear model that represents our data!
 
 Now, let's study the learning process.
 
 Let's visualize the _cost function_'s variation, and the _linear model_ variation!
-
 
 ```python
 def gradient_descent_v2(theta, X, y, learning_rate, n):
@@ -248,29 +186,17 @@ def gradient_descent_v2(theta, X, y, learning_rate, n):
     return {"theta": theta, "costs": costs, "thetas": thetas}
 ```
 
-
 ```python
 result = gradient_descent_v2(theta, X, y, 0.01, 1000)
 ```
-
 
 ```python
 plt.plot(range(1000), result["costs"])
 ```
 
+[<matplotlib.lines.Line2D at 0x7f179add55e0>]
 
-
-
-    [<matplotlib.lines.Line2D at 0x7f179add55e0>]
-
-
-
-
-    
 ![png](assets/output_14_1.png)
-    
-
-
 
 ```python
 plt.scatter(x, y, c='g')
@@ -280,37 +206,21 @@ for i in range(10):
    plt.plot(x, model(X, result["thetas"][i * 100]), c=c)
 ```
 
-
-    
 ![png](assets/output_15_0.png)
-    
-
 
 What we can conclude is $n = 200$ is sufficient to train the model. Let's test it!
-
 
 ```python
 result = gradient_descent_v2(theta, X, y, 0.01, 200)
 ```
 
-
 ```python
 plt.plot(range(200), result["costs"])
 ```
 
+[<matplotlib.lines.Line2D at 0x7f179ad34430>]
 
-
-
-    [<matplotlib.lines.Line2D at 0x7f179ad34430>]
-
-
-
-
-    
 ![png](assets/output_18_1.png)
-    
-
-
 
 ```python
 plt.scatter(x, y, c='g')
@@ -320,10 +230,4 @@ for i in range(10):
    plt.plot(x, model(X, result["thetas"][i * 20 + 19]), c=c)
 ```
 
-
-    
 ![png](assets/output_19_0.png)
-    
-
-
-

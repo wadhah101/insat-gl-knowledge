@@ -2,12 +2,16 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches:
+      - master
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - master
+  workflow_dispatch:
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -21,11 +25,24 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
+  lint-md:
+    name: Lint markdown
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: markdownlint-cli
+        uses: nosborn/github-action-markdown-cli@v3.2.0
+        with:
+          files: docs
+          config_file: .markdownlint.yaml
+          ignore_path: .markdownlintignore
+
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps?.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -73,10 +90,12 @@ jobs:
         run: mv .yarn/.cache .cache
 
       - name: Upload artifact
+        if: ${{ github.ref != 'refs/heads/master' }}
         uses: actions/upload-pages-artifact@v1
         with:
           path: "build"
 
       - name: Deploy to GitHub Pages
+        if: ${{ github.ref != 'refs/heads/master' }}
         id: deployment
         uses: actions/deploy-pages@v1

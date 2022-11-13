@@ -1,33 +1,18 @@
-# A simple workflow for validating Mardown docs
-name: Validate
+name: Check build status
+
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
     types: [opened, reopened, synchronize]
     branches:
       - master
 
 jobs:
-  lint-md:
-    name: Lint markdown
+  deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: markdownlint-cli
-        uses: nosborn/github-action-markdown-cli@v3.2.0
-        with:
-          files: docs
-          config_file: .markdownlint.yaml
-          ignore_path: .markdownlintignore
-
-  build:
-    runs-on: ubuntu-latest
-    if: ${{ github.ref != 'refs/heads/master' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -63,12 +48,14 @@ jobs:
         run: ls -la .yarn || true
 
       - name: generate contributors
-        run: gh api repos/wadhah101/insat-gl-knowledge/contributors > data/contributors.json
+        run: |
+          gh api repos/wadhah101/insat-gl-knowledge/contributors > data/contributors.json
+          jq ".[] | { login: .login, contributions: .contributions  }" data/contributors.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build project
-        run: yarn build --no-minify
+        run: yarn build
 
       - name: Move Webpack cache
         run: mv .yarn/.cache .cache

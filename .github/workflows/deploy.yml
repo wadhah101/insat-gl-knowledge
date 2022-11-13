@@ -1,28 +1,22 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches:
+      - master
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
+  build:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -62,7 +56,9 @@ jobs:
         run: ls -la .yarn || true
 
       - name: generate contributors
-        run: gh api repos/wadhah101/insat-gl-knowledge/contributors > data/contributors.json
+        run: |
+          gh api repos/wadhah101/insat-gl-knowledge/contributors > data/contributors.json
+          jq ".[] | { login: .login, contributions: .contributions  }" data/contributors.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -73,10 +69,12 @@ jobs:
         run: mv .yarn/.cache .cache
 
       - name: Upload artifact
+        if: ${{ github.ref != 'refs/heads/master' }}
         uses: actions/upload-pages-artifact@v1
         with:
           path: "build"
 
       - name: Deploy to GitHub Pages
+        if: ${{ github.ref != 'refs/heads/master' }}
         id: deployment
         uses: actions/deploy-pages@v1

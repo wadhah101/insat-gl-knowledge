@@ -19,7 +19,7 @@ jobs:
 
       - name: Get active branches
         run: |
-          BRANCHES=($(git show-ref --heads | cut -d " " -f2))
+          export BRANCHES=($(git show-ref --heads | cut -d " " -f2))
           echo $BRANCHES
 
       - name: Clean cache

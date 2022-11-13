@@ -103,7 +103,6 @@ plt.scatter(x, y)
 
 ```
 
-<matplotlib.collections.PathCollection at 0x7f179cdc6940>
 ![png](assets/output_3_1.png)
 
 ```python
@@ -130,8 +129,6 @@ def model(X, theta):
 plt.scatter(x, y, c='g')
 plt.plot(x, model(X, theta), c='orange')
 ```
-
-[<matplotlib.lines.Line2D at 0x7f179afe2550>]
 
 ![png](assets/output_6_1.png)
 
@@ -165,8 +162,6 @@ plt.scatter(x, y, c='g')
 plt.plot(x, model(X, final_theta), c='orange')
 ```
 
-[<matplotlib.lines.Line2D at 0x7f179af63e80>]
-
 ![png](assets/output_10_1.png)
 
 And there you have it, we have created a linear model that represents our data!
@@ -194,8 +189,6 @@ result = gradient_descent_v2(theta, X, y, 0.01, 1000)
 plt.plot(range(1000), result["costs"])
 ```
 
-[<matplotlib.lines.Line2D at 0x7f179add55e0>]
-
 ![png](assets/output_14_1.png)
 
 ```python
@@ -217,8 +210,6 @@ result = gradient_descent_v2(theta, X, y, 0.01, 200)
 ```python
 plt.plot(range(200), result["costs"])
 ```
-
-[<matplotlib.lines.Line2D at 0x7f179ad34430>]
 
 ![png](assets/output_18_1.png)
 

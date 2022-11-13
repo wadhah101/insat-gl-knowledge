@@ -2,7 +2,9 @@
 slug: /gl3/semester-2/logic-programming/cheat-sheets/version-haj-ali
 ---
 
-# Cheat sheet - Haj ali
+# Cheat sheet
+
+Author [@hajali-amine](https://github.com/hajali-amine)
 
 ## SLD Resolution
 
@@ -121,11 +123,7 @@ This is easily explained by the fact that expressions are represented with __tre
 
 | Comparaison                                       | Unification |
 | ------------------------------------------------- | ----------- |
-| ``X == Y``, is successful if X is identical to Y. |
-
-``X \== Y``, is successful if X is not identical to Y. | ``X = Y``, unifies X with Y.
-
-``X \= Y``, is successful if X is not unifiable with Y. |
+| ``X == Y``, is successful if X is identical to Y whereas ``X \== Y``, is successful if X is not identical to Y. | ``X = Y``, unifies X with Y whereas ``X \= Y``, is successful if X is not unifiable with Y. |
 
 ``` prolog
 X is 9 mod 4.

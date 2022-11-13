@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Simple script to cleanup useless github action cache periodically
+# requires bash > 4.4
 
 mapfile -t BRANCHES < <(git ls-remote --heads | cut -d$'\t' -f2)
 printf "branches :  %s\n" "${BRANCHES[@]}"

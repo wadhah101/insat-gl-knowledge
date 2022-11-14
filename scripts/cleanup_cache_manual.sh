@@ -3,10 +3,10 @@
 # Simple script to cleanup useless github action cache periodically
 # requires bash > 4.4
 
-if [ -z "$GITHUB_REF" ]; then
+if [ -z "$TARGET_REF" ]; then
   mapfile -t BRANCHES < <(gh actions-cache list | grep -E "Linux-webpack.*ref" | cut -d$'\t' -f3 | uniq)
 else
-  BRANCHES=("$GITHUB_REF")
+  BRANCHES=("$TARGET_REF")
 fi
 
 printf "branches :  %s\n" "${BRANCHES[@]}"

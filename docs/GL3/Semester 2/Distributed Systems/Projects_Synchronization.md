@@ -1,5 +1,5 @@
 ---
-slug: /gl4/semester-1/security-of-information-systems/projects
+slug: /gl3/semester-2/distributed-systems/projects_synchronization
 ---
 
 # Text Editor Projects

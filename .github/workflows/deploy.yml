@@ -90,6 +90,7 @@ jobs:
         uses: actions/deploy-pages@v1
 
   clean:
+    needs: build
     continue-on-error: true
     runs-on: ubuntu-latest
     steps:

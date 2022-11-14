@@ -107,4 +107,5 @@ jobs:
       - name: Clean cache
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REF: ${{ github.ref }}
         run: bash scripts/cleanup_cache_manual.sh

@@ -9,6 +9,7 @@ slug: /gl4/archived/data-analysis/06-medium-continuous-distributions
 ### 1.1 Definition
 
 A continuous random variable $X$ is said to follow the normal distribution with mean $\mu$ and variance $\sigma^2$ if:
+
 $$
 f_X(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 $$
@@ -32,6 +33,7 @@ $$
 #### 1.4.1 Opposite of standard normal random variable
 
 Let $X\sim\mathcal{N}(0,1)$
+
 $$
 \begin{align*}
 \forall x\in\mathbb{R},F_{-X}(x)&=\mathcal{P}(-X<x)\\
@@ -42,7 +44,9 @@ $$
 &=F_X(x)
 \end{align*}
 $$
+
 As a conclusion:
+
 $$
 X\sim\mathcal{N}(0,1)\implies -X\sim \mathcal{N}(0,1)
 $$
@@ -68,6 +72,7 @@ $$
 $$
 
 In particular:
+
 $$
 \boxed{X\sim\mathcal{N}(\mu,\sigma^2)\iff \frac{X-\mu}{\sigma}=\frac{X-\mathbb{E}[X]}{\sqrt{\mathbb{V}[X]}}\sim\mathcal{N}(0,1)}
 $$
@@ -77,11 +82,13 @@ $$
   We have then, $-X+\mu\sim\mathcal{N}(0,\sigma^2)\implies -X\sim\mathcal{N}(-\mu,\sigma^2).$
 
   Which implies the following:
+
   $$
   aX+b=(-a)(-X)+b\sim \mathcal{N}((-a)(-\mu)+b,(-a)^2\sigma^2)=\mathcal{N}(a\mu+b,a^2\sigma^2)
   $$
 
 As a conclusion:
+
 $$
 \boxed{X\sim \mathcal{N}(\mu,\sigma)\implies ax+b\sim\mathcal{N}\left(a\mu+b,a^2\sigma^2\right)}
 $$
@@ -91,6 +98,7 @@ $$
 #### 1.5.1 Moment of a centered Normal distribution
 
 Let $X\sim \mathcal{U}(0,\sigma^2),$ we have:
+
 $$
 \begin{align*}
 \forall n\in\mathbb{N}_{\ge 2},\quad \mathbb{E}[X^n] &=\int_{\mathbb{R}}x^{n}f_X(x)\space \text{dx}\\
@@ -106,11 +114,15 @@ $$
 \forall n\in\mathbb{N},\mathbb{E}[X^{2n+1}]&=0 \quad \text{because} \space \mathcal{N}(0,\sigma^2) \space \text{is symmetric}
 \end{align*}
 $$
+
 In particular, the expected value $\mathbb{E}[X]$ is:
+
 $$
 \boxed{\mathbb{E}[X]=0}
 $$
+
 Also, the variance:
+
 $$
 \boxed{\mathbb{V}[X]=\sigma^2}
 $$
@@ -120,6 +132,7 @@ $$
 Let $X\sim \mathcal{N}(\mu,\sigma^2)$
 
 As $\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)\right] \sim \mathcal{N}(0,\sigma^2)$
+
 $$
 \forall n\in\mathbb{N}, \begin{cases}
 \mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^{2n}\right]&= \frac{(2n)!}{2^nn!}\sigma^{2n}\\
@@ -130,6 +143,7 @@ $$
 ### 1.5.3 Non-central moments
 
 Let $X\sim \mathcal{N}(\mu,\sigma^2)$
+
 $$
 \begin{align*}
 \forall n\in\mathbb{N},\quad \mathbb{E}[X^{2n}]&=\mathbb{E}\left[\left(X-\mathbb{E}[X]+\mathbb{E}[X]\right)^{2n}\right] \\
@@ -170,6 +184,7 @@ $$
 $$
 
 Conclusion:
+
 $$
 \boxed{Y\sim\mathcal{N}\left(0,\sigma_1^2+\sigma_2^2\right)}
 $$
@@ -180,6 +195,7 @@ $$
 - Let $Y=X_1+X_2$
 
 We have:
+
 $$
 \begin{cases}
 X_1-\mu_1 \sim\mathcal{N}(0,\sigma_1^2)\\
@@ -187,7 +203,9 @@ X_2-\mu_2 \sim\mathcal{N}(0,\sigma_2^2)
 \end{cases}
 \implies (X_1-\mu_1)+(X_2-\mu_2)\sim\mathcal{N}\left(0,\sigma_1^2+\sigma_2^2\right)
 $$
+
 So we can conclude that:
+
 $$
 \boxed{Y=X_1+X_2\sim\mathcal{N}\left(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2\right)}
 $$
@@ -195,9 +213,10 @@ $$
 #### 1.6.3 General Case
 
 - Let $n\in\mathbb{N}^*$
-- Let $X_1\sim\mathcal{N}(\mu_1,\sigma_1^2),\dots,X_n\sim\mathcal{N}(\mu_n,\sigma_n^2)$  be $n$ independent random variables
+- Let $X_1\sim\mathcal{N}(\mu_1,\sigma_1^2),\dots,X_n\sim\mathcal{N}(\mu_n,\sigma_n^2)$ be $n$ independent random variables
 
 It can be trivially concluded from $1.5.2$ that:
+
 $$
 \boxed{\sum_{i=1}^nX_i\sim\mathcal{N}\left(\sum_{i=1}^n\mu_i,\sum_{i=1}^n\sigma_i^2\right)}
 $$
@@ -211,10 +230,13 @@ $$
 2. Let $X$ a continuous random variable
 
 By definition, $X$ is said to follow the gamma distribution of parameters $(\alpha,\beta)$ if:
+
 $$
 f_X(x)=\frac{x^{\alpha-1}\beta^\alpha e^{-\beta x}}{\Gamma(\alpha)}
 $$
- We denote it by:
+
+We denote it by:
+
 $$
 X\sim \Gamma(\alpha,\beta)
 $$
@@ -230,6 +252,7 @@ In wireless communication, the gamma distribution is used to model the [multi-pa
 ### 2.3 Exponential Distribution as a Gamma Distribution
 
 We have:
+
 $$
 \mathcal{E}(\lambda)=\Gamma(1,\lambda)
 $$
@@ -239,6 +262,7 @@ $$
 #### 2.4.1 Non-Central moments
 
 Let $X\sim \Gamma(\alpha,\beta)$
+
 $$
 \begin{align*}
 \forall n\in\mathbb{N},\quad \mathbb{E}[X^n]&=\int_{\mathbb{R}_+}x^nf_X(x) \space \text{dx}\\
@@ -248,7 +272,9 @@ $$
 &=\beta^{-n}\prod_{i=0}^{n-1}\alpha+i
 \end{align*}
 $$
+
 In particular, The expected value $\mathbb{E}[X]$ is:
+
 $$
 \boxed{\mathbb{E}[X]=\frac{\alpha}{\beta}}
 $$
@@ -263,6 +289,7 @@ $$
 $$
 
 In particular, the variance $\mathbb{V}[X]$ is:
+
 $$
 \boxed{\mathbb{V}[X]=\frac{\alpha^2\Gamma(\alpha)-2\alpha\Gamma(\alpha+1)+\Gamma(\alpha+2)}{\beta^2 \Gamma(\alpha)}=\frac{\alpha^2-2\alpha^2+\alpha(\alpha+1)}{\beta^2}=\frac{\alpha}{\beta^2}}
 $$
@@ -289,6 +316,7 @@ $$
 $$
 
 So we can conclude that:
+
 $$
 \boxed{Z=X+Y\sim \Gamma(\alpha_1+\alpha_2,\beta)}
 $$
@@ -296,9 +324,10 @@ $$
 #### 2.5.2 General Case
 
 - Let $n\in\mathbb{N}^*$
-- Let $X_1\sim\Gamma(\alpha_1,\beta),\dots,X_n\sim\Gamma(\alpha_n,\beta)$  be $n$ independents gamma distributions that have the same $\beta$ parameter
+- Let $X_1\sim\Gamma(\alpha_1,\beta),\dots,X_n\sim\Gamma(\alpha_n,\beta)$ be $n$ independents gamma distributions that have the same $\beta$ parameter
 
 It can be proved by induction that:
+
 $$
 \boxed{\sum_{i=1}^nX_i\sim\Gamma\left(\sum_{i=1}^n\alpha_i,\beta\right)}
 $$
@@ -306,9 +335,10 @@ $$
 ### 2.6 Sum of Exponential distributions
 
 - Let $n\in\mathbb{N}^*,\lambda\in\mathbb{R}_+^*$
-- Let $X_1,\dots,X_n\sim\mathcal{E}(\lambda)$  be $n$ independent exponential random variables having the same parameter $\lambda$
+- Let $X_1,\dots,X_n\sim\mathcal{E}(\lambda)$ be $n$ independent exponential random variables having the same parameter $\lambda$
 
 This is a special case of $2.4:$
+
 $$
 \boxed{\sum_{i=1}^nX_i\sim\Gamma\left(n,\lambda\right)}
 $$
@@ -319,6 +349,7 @@ $$
 - Let $X\sim \Gamma(\alpha,\beta)$ and $Y=kX$
 
 We have:
+
 $$
 \begin{align*}
 \forall x\in\mathbb{R}_+^*, \quad f_Y(x)&=\frac{1}{k}f\left(\frac{x}{k}\right)\\
@@ -326,7 +357,9 @@ $$
 &=\frac{\left(\frac{\beta}{k}\right)^{\alpha}x^{\alpha-1}e^{\frac{-\beta}{k}x}}{\Gamma(\alpha)}
 \end{align*}
 $$
+
 So we have $Y\sim \Gamma(\alpha,\frac{\beta}{k})$:
+
 $$
 \boxed{\forall k\in\mathbb{R}_+^*,\quad X\sim\Gamma(\alpha,\beta)\iff kX\sim \Gamma\left(\alpha,\frac{\beta}{k}\right)}
 $$

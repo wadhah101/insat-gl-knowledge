@@ -22,7 +22,7 @@ You will find in this repo a flask endpoint that needs kerberos authentication.
 
 In order to test it you need to configure 3 machines : KDC, Client and Server then generate a token from the ticket produced by the KDC and everything will work properly
 
-  --Note: in the rest of this document I will only use 2 machines one for the KDC and the other will work as server and client
+--Note: in the rest of this document I will only use 2 machines one for the KDC and the other will work as server and client
 
 ## Prerequisite
 
@@ -33,8 +33,8 @@ In order to test it you need to configure 3 machines : KDC, Client and Server th
 
 ## How it works?
 
-1. Pull docker image  : ``docker pull ubuntu``
-2. Create network bridge to create a private netwok between containers so they can communicate with each others  : ``docker network create --driver=bridge <network name>``
+1. Pull docker image : `docker pull ubuntu`
+2. Create network bridge to create a private netwok between containers so they can communicate with each others : `docker network create --driver=bridge <network name>`
 3. Create 2 containers from that image
 
 Since the image doesn’t have any pre-installed dependencies you should first run :
@@ -43,61 +43,62 @@ Since the image doesn’t have any pre-installed dependencies you should first r
 apt update && apt upgrade
 ```
 
-then install whatever you need (in our case we'll need: nano,  host, ntp, ntpdate, python3, python3-pip )
+then install whatever you need (in our case we'll need: nano, host, ntp, ntpdate, python3, python3-pip )
 
 ## Machines' Setup
 
-We will use ``insat.tn`` as domain name.
+We will use `insat.tn` as domain name.
 
-1. In each machine match different ips to their sub domain name in ``/etc/hosts``
+1. In each machine match different ips to their sub domain name in `/etc/hosts`
 
-    ```bash
-    172.21.0.2      kdc.insat.tn kdc
-    172.21.0.3      server.insat.tn server
-    ```
+   ```bash
+   172.21.0.2      kdc.insat.tn kdc
+   172.21.0.3      server.insat.tn server
+   ```
 
-    To test if everything is working properly try this command on each sub-domain:
+   To test if everything is working properly try this command on each sub-domain:
 
-    ```bash
-    host kdc.insat.tn
-    ```
+   ```bash
+   host kdc.insat.tn
+   ```
 
 2. Synchronize date between machines with ntp and ntpdate :
 
-      - Why ?
-        - Kerberos is time sensitive. It uses timestamps mechanism to check the validity of a ticket.Thus, we will create our own time server and synchronize all the machines.
+   - Why ?
 
-      - On the Kdc machine edit the ``/etc/ntp.conf`` and add the lines below:
+     - Kerberos is time sensitive. It uses timestamps mechanism to check the validity of a ticket.Thus, we will create our own time server and synchronize all the machines.
 
-      ```bash
-      restrict 127.0.0.1
-      restrict ::1
-      restrict 192.168.56.110 mask 255.255.255.0
-      nomodify notrap
-      server 127.127.1.0 stratum 10
-      listen on *
-      ```
+   - On the Kdc machine edit the `/etc/ntp.conf` and add the lines below:
 
-      - On the server install ntp and ntpdate:
+   ```bash
+   restrict 127.0.0.1
+   restrict ::1
+   restrict 192.168.56.110 mask 255.255.255.0
+   nomodify notrap
+   server 127.127.1.0 stratum 10
+   listen on *
+   ```
 
-      ```bash
-      apt install ntp
-      apt install ntpdate
-      ```
+   - On the server install ntp and ntpdate:
 
-      - then edit the ``/etc/ntp.conf`` and add the lines below:
+   ```bash
+   apt install ntp
+   apt install ntpdate
+   ```
 
-      ```bash
-      pool ntp.ubuntu.com
-      server 192.168.56.110
-      server obelix
-      ````
+   - then edit the `/etc/ntp.conf` and add the lines below:
 
-      - Synchronize time by running the below command on the server machine:
+   ```bash
+   pool ntp.ubuntu.com
+   server 192.168.56.110
+   server obelix
+   ```
 
-      ```bash
-      ntpdate -dv 192.168.56.110
-      ```
+   - Synchronize time by running the below command on the server machine:
+
+   ```bash
+   ntpdate -dv 192.168.56.110
+   ```
 
 3. Configure KDC
 
@@ -106,9 +107,9 @@ apt install krb5-kdc krb5-admin-server krb5-config
 ```
 
 When it's prompted :
-   -> realm : INSAT.TN
-   -> kerberos server : kdc.insat.tn
-   -> Administrative Service: kdc.insat.tn
+-> realm : INSAT.TN
+-> kerberos server : kdc.insat.tn
+-> Administrative Service: kdc.insat.tn
 
 - Create the realm: A Kerberos realm is the domain over which a Kerberos authentication server has the authority to authenticate a user, host or service.
 
@@ -163,28 +164,28 @@ pip install flask_kerberos
 
 ```
 
-=>  Now your machines are ready to use the flask service
+=> Now your machines are ready to use the flask service
 
 ## Integrating Kerberos to a Flask Endpoint
 
- Since Kerberos is based on ticket granting and not passwords so we need first to grant a ticket for the user to access the service
+Since Kerberos is based on ticket granting and not passwords so we need first to grant a ticket for the user to access the service
 
 ### Tickets
 
- We have 2 types of tickets
+We have 2 types of tickets
 
 - TGT (ticket granting ticket) : the ticket that will allow you to get tickets for services
 - TGS (ticket granting service) allow you to access a service secured by kerberos
 
 ### Steps
 
- In order to test the endpoint you need to follow these steps:
+In order to test the endpoint you need to follow these steps:
 
- 1. Generate a ticket : ``kinit``.
- 2. Get the List of tickets with some details about them like expiration date : ``klist``.
- 3. Change the diffrent domain names in files  "requestHandler" and "index" with your ones.
- 4. Run the server ``./index.py``
- 5. Execute the requestHandler.py file : its role is to generate a negotiate token and add the header to the url.
+1. Generate a ticket : `kinit`.
+2. Get the List of tickets with some details about them like expiration date : `klist`.
+3. Change the diffrent domain names in files "requestHandler" and "index" with your ones.
+4. Run the server `./index.py`
+5. Execute the requestHandler.py file : its role is to generate a negotiate token and add the header to the url.
 
 ## References
 

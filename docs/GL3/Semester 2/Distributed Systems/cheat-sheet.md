@@ -13,17 +13,19 @@ slug: /gl3/semester-2/distributed-systems/cheat-sheet
 ## Exchanges
 
 - what we covered in the previous tutorials:
-  - A *producer* is a user application that sends messages.
-  - A *queue* is a buffer that stores messages.
-  - A *consumer* is a user application that receives messages.
 
-- the producer can only send messages to an *exchange*.
+  - A _producer_ is a user application that sends messages.
+  - A _queue_ is a buffer that stores messages.
+  - A _consumer_ is a user application that receives messages.
+
+- the producer can only send messages to an _exchange_.
 
 - An exchange is a very simple thing. On one side it receives messages from producers and the other side it pushes them to queues.
 
-- The exchange must know exactly what to do with a message it receives. Should it be appended to a particular queue? Should it be appended to many queues? Or should it get discarded. The rules for that are defined by the *exchange type*.
+- The exchange must know exactly what to do with a message it receives. Should it be appended to a particular queue? Should it be appended to many queues? Or should it get discarded. The rules for that are defined by the _exchange type_.
 
 - There are a few exchange types available:
+
   - **direct**
   - **topic**
   - **headers**
@@ -55,7 +57,7 @@ Recall how we published a message before:
 channel.basicPublish("", "hello", null, message.getBytes());
 ```
 
-The first parameter is the name of the exchange. The empty string denotes the default or *nameless* exchange: messages are routed to the queue with the name specified by `routingKey`, if it exists.
+The first parameter is the name of the exchange. The empty string denotes the default or _nameless_ exchange: messages are routed to the queue with the name specified by `routingKey`, if it exists.
 
 Now, we can publish to our named exchange instead:
 
@@ -76,7 +78,7 @@ String queueName = channel.queueDeclare().getQueue();
 
 #### Bindings
 
-We've already created a fanout exchange and a queue. Now we need to tell the exchange to send messages to our queue. That relationship between exchange and a queue is called a *binding*.
+We've already created a fanout exchange and a queue. Now we need to tell the exchange to send messages to our queue. That relationship between exchange and a queue is called a _binding_.
 
 ```java
 channel.queueBind(queueName, "logs", "");
@@ -88,7 +90,7 @@ From now on the `logs` exchange will append messages to our queue.
 
 - We created one publisher , many subscribers
   - we have many temporary queues , each subscribers is related to one queue. all queues are related to the exchange with : `channel.queueBind(queueName, "logs", "");`
-  - The **declaration** of the exchange is  in the publisher class , in addition to relating **it to the publisher**
+  - The **declaration** of the exchange is in the publisher class , in addition to relating **it to the publisher**
     - first : `channel.exchangeDeclare("logs", "fanout");`
     - and then : `channel.basicPublish( "logs", "", null, message.getBytes());`
 - before this , we created 1 producer and 2 consumers ( with work queues)
@@ -160,4 +162,4 @@ for(String severity : argv){
 Final Notes :
 
 - One Queue two consumers (workers) : they get the messages in a round robin way , to prevent this we change the prefetch config , however each consumer consumes exactly one message from the queue.
-- To make many consumers get the same message , we use one queue per consumer and we relate them to an exchange , we make that exchange fanout/direct/topic  ....
+- To make many consumers get the same message , we use one queue per consumer and we relate them to an exchange , we make that exchange fanout/direct/topic ....

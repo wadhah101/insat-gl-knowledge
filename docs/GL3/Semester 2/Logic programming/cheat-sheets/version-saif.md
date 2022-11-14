@@ -40,7 +40,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 ### 1.4 Facts
 
 - Suppose we want to tell Prolog the fact that “John likes Mary”. This fact consists of two objects, called “Mary” and “John”, and a relationship, called “likes”
-- Syntax :```likes(john, mary).```
+- Syntax :`likes(john, mary).`
 
 - **Important Points** :
   - The names of all relationships and objects must begin with a lower-case letter. For example, `likes`, `john`, `mary`.
@@ -49,6 +49,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 - the fact `likes(john, mary)` is not the same thing as `likes(mary, john)`
 
 - A name can have several interpretations:
+
   - `valuable(gold)` could mean that this particular lump of gold, which we have named gold, is valuable.
   - `valuable(gold)` could would mean that the chemical element Gold is valuable.
 
@@ -87,7 +88,7 @@ no
 yes
 ```
 
-- **no** :  nothing **unifies** with the question.
+- **no** : nothing **unifies** with the question.
 - **no** is the same as **false**.
 - Example 3 :
 
@@ -158,7 +159,7 @@ X = paul ;
 no
 ```
 
-- IMPORTANT : in SWI-Prolog, we have this output  (will stop searching if there's not more instantiations available)
+- IMPORTANT : in SWI-Prolog, we have this output (will stop searching if there's not more instantiations available)
 
 ```prolog
 ?- likes(X, mary).
@@ -199,7 +200,7 @@ false.
   - Prolog answers the question by attempting to satisfy the first goal. If the **first goal** is in the database, then Prolog will **mark** the place in the database, and **attempt** to satisfy the second goal.
   - If the second goal is **satisfied**, then Prolog marks that goal’s place in the database, and we have found a solution that satisfies both goals. It is most important to remember that each goal keeps its own **place-marker**.
   - If the second goal of a conjunction is not satisfied, then Prolog will attempt to re-satisfy the previous goal (in this case the first goal). **Starting from the goal’s own place-marker**. then will try to satisfy the next goal **starting from the top of the database** (basically backtracking).
-- Example ( explanation page 12 &13 )  :
+- Example ( explanation page 12 &13 ) :
 
 ```prolog
 ?- likes(mary, X), likes(john, X).
@@ -272,7 +273,7 @@ X = edward ;                                                                    
       - they generally begin with a lower case letter
       - Examples : `likes mary john book wine owns jewels can_steal`
     - atoms made up from signs
-      - Examples :  `?-` , `:-` , `-->`
+      - Examples : `?-` , `:-` , `-->`
   - we can put atoms between ``` ` then they may have **any** character in their name.
     - Example `’george-smith’`
 - Numbers :
@@ -280,9 +281,9 @@ X = edward ;                                                                    
 
 #### 2.1.2 Variables
 
-- Variables look like atoms, except they have names beginning with a **capital letter** or an **underline sign** “_”.
+- Variables look like atoms, except they have names beginning with a **capital letter** or an **underline sign** “\_”.
 - stands for some object that we are unable or unwilling to name at the time we write the program.
-- Examples :  `Answer Input Gross_Pay _3_blind_mice A_very_long_variable_name`
+- Examples : `Answer Input Gross_Pay _3_blind_mice A_very_long_variable_name`
 - **anonymous variables** :
   - when we needs to use a variable, but its name will never be used.
   - Example :
@@ -314,7 +315,7 @@ X = edward ;                                                                    
 - If we had to write the arithmetic expression `x + y * z` in the normal way for structures, it would look like this: `+(x,*(y,z))`, and this would be a legal Prolog term.
 - in Prolog, 3+4 does not mean the same thing as 7. The term 3+4 is another way to write the term +(3,4), which is a **data structure**.
 - Types of operators :
-  - Operators like plus (+), hyphen (-), asterisk (*), and slash (/) are written between their arguments, so we call them **infix operators**.
+  - Operators like plus (+), hyphen (-), asterisk (\*), and slash (/) are written between their arguments, so we call them **infix operators**.
   - It is also possible to put operators before their arguments, as in “-x + y”, where the hyphen before the x is used in to denote **negation**. Operators that come before their arguments are called **prefix operators**.
   - Operators that are written after their arguments( the factorial of x is written “x!” ) are called **postfix operators**.
 - The **precedence** of an operator is used to indicate which operation is carried out first. Each operator that is used in Prolog has a precedence class associated with it (an integer value associated with an operator)
@@ -356,7 +357,7 @@ X = edward ;                                                                    
 
     - whenever one of them becomes instantiated to some term, the other one automatically is instantiated to the same term.
 
-  - **NOTES**  : An X = Y goal will always succeed if either argument is `uninstantiated`.
+  - **NOTES** : An X = Y goal will always succeed if either argument is `uninstantiated`.
 
 ### 2.5 Arithmetic
 
@@ -425,6 +426,7 @@ Y is P / A.
 ```
 
 - The rule is read as follows:
+
   - The population density of country X is Y, if:
     - The population of X is P
     - and The area of X is A,
@@ -476,6 +478,7 @@ X mod Y the remainder of X divided by Y
 - The list is an ordered sequence of elements that can have any length.
 - The “elements” of a list may be any terms — constants, variables, structures — which of course includes other lists.
 - A list is either :
+
   - an empty list, having no element :
 
     - `[]`
@@ -493,7 +496,7 @@ X mod Y the remainder of X divided by Y
     - we can also use another notation , called the `list notation` : `[a]`
 
     | -                       | List       | Head               | Tail |
-    | ----------------------- | ---------- | ------------------ |
+    | ----------------------- | ---------- | ------------------ | ---- |
     | [a,b,c]                 | a          | [b,c]              |
     | []                      | (none)     | (none)             |
     | [[the, cat], sat]       | [the, cat] | [sat]              |
@@ -527,11 +530,11 @@ Examples 2 :
 | [vale, horse] | [horse, X]              | (NONE)                           |
 | [white\|Q]    | [P\|horse]              | P = white Q = horse              |
 
-- it is possible to use the list notation to create structures that resemble lists, but which do not terminate with the empty list.  One such structure, `[white|horse]`,
+- it is possible to use the list notation to create structures that resemble lists, but which do not terminate with the empty list. One such structure, `[white|horse]`,
 
 ### 3.3 Recursive Search
 
-Example  :
+Example :
 
 ```prolog
 member(X, [X|_]).
@@ -642,9 +645,11 @@ sometimes_better(Con1, Con2).
 #### Append
 
 - The list processing predicate append is used to join two lists together to form another, new, list. For example, it is true that :
+
   - `append([a, b, c], [3, 2, 1], [a, b, c, 3, 2, 1]).`
 
 - The predicate append is most often used to create a new list from concatenating two others, like this:
+
   - `?- append([alpha, beta], [gamma, delta], X).`
     `X = [alpha, beta, gamma, delta]`
 
@@ -857,7 +862,7 @@ go :- sum_to(1, X), foo(apples).
 ?- go.
 ```
 
-- the goal foo(apples) fails, then at the point of failure we will jump past  sum_to(1,X), because both its goals cannot be satisfied (because of the cut inside), then it will backtrack past that point and will try to find another definition for { `go`
+- the goal foo(apples) fails, then at the point of failure we will jump past sum_to(1,X), because both its goals cannot be satisfied (because of the cut inside), then it will backtrack past that point and will try to find another definition for { `go`
 
 #### `\+` Predicate
 

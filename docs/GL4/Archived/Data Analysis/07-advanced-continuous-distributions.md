@@ -11,6 +11,7 @@ slug: /gl4/archived/data-analysis/07-advanced-continuous-distributions
 Let $X$ be a continuous random variable.
 
 By definition, $X$ is said to follow the $\chi^2$ distribution with $k$ degrees of freedom if
+
 $$
 X\sim \Gamma(\frac{k}{2},\frac{1}{2})=\chi^2_k
 $$
@@ -26,6 +27,7 @@ The chi-squared distribution is used in the common [chi-squared tests](https://e
 ### 3.3 Square of a standard normal random variable
 
 Let $X\in\mathcal{N}(0,1),$ and let $Y=X^2$
+
 $$
 \begin{align*}
 \forall x\in\mathbb{R}_+^*,F_Y(x)&=\mathcal{P}(X^2<x)\\
@@ -37,9 +39,11 @@ $$
 &=\frac{1}{\sqrt{2\pi x}}e^{-\frac{x}{2}}
 \end{align*}
 $$
+
 $\forall x\leq0,$ it is trivial that $F_Y(x)=0,$ So consequently $\forall x\leq 0,f_Y(x)=0$
 
 So we can conclude that:
+
 $$
 \boxed{X^2\sim\Gamma(\frac{1}{2},\frac{1}{2})=\chi^2_1}
 $$
@@ -95,25 +99,29 @@ $$
 - $X$ a continuous random variable
 
 By definition, we say that $X$ follows the $F$ distribution with parameters $(d_1,d_2)$ if there exists $X_1\sim\chi^2_{d_1},X_2\sim \chi^2_{d_2}$ such that $X_1,X_2$ are independents and:
+
 $$
 X=\frac{\tfrac{X_1}{d_1}}{\tfrac{X_2}{d_2}}
 $$
+
 By definition:
+
 $$
 \boxed{\forall d_1,d_2\in\mathbb{N}^*,\quad\forall X_1\sim\chi^2_{d_1},\forall X_2\sim\chi^2_{d_2} \text{ independents}:\quad \frac{\tfrac{X_1}{d_1}}{\tfrac{X_2}{d_2}}\sim\mathcal{F}(d_1,d_2)}
 $$
 
 ### 4.2 Significance
 
-the $F$-distribution arises frequently as the [null distribution](https://en.wikipedia.org/wiki/Null_distribution) of a [test statistic](https://en.wikipedia.org/wiki/Test_statistic), most notably in the [analysis of variance](https://en.wikipedia.org/wiki/Analysis_of_variance) (ANOVA) and other [*F*-tests](https://en.wikipedia.org/wiki/F-test).
+the $F$-distribution arises frequently as the [null distribution](https://en.wikipedia.org/wiki/Null_distribution) of a [test statistic](https://en.wikipedia.org/wiki/Test_statistic), most notably in the [analysis of variance](https://en.wikipedia.org/wiki/Analysis_of_variance) (ANOVA) and other [_F_-tests](https://en.wikipedia.org/wiki/F-test).
 
-A [random variate](https://en.wikipedia.org/wiki/Random_variate) of the *F*-distribution with parameters $d_1$ and $d_2$ arises as the ratio of two appropriately scaled [chi-squared](https://en.wikipedia.org/wiki/Chi-squared_distribution) variates with respective degree of freedoms $d_1$ and $d_2$.
+A [random variate](https://en.wikipedia.org/wiki/Random_variate) of the _F_-distribution with parameters $d_1$ and $d_2$ arises as the ratio of two appropriately scaled [chi-squared](https://en.wikipedia.org/wiki/Chi-squared_distribution) variates with respective degree of freedoms $d_1$ and $d_2$.
 
 ### 4.3 Probability Distribution Function
 
 Let $d_1,d_2\in\mathbb{N}^*$
 
 We have $\chi_{d_1}^2,\chi_{d_2}^2> 0$, So:
+
 $$
 \begin{align*}
 \forall x \in \mathbb{R}_+^*,f_{\mathcal{F}(d_1,d_2)}(x)&=\int_{\mathbb{R}_+^*}tf_{\chi^2_{d_1}/d_1}(xt)f_{\chi^2_{d_2}/d_2}(t)\text{dt}\\
@@ -139,19 +147,22 @@ In [probability](https://en.wikipedia.org/wiki/Probability) and [statistics](htt
 - $X$ a continuous random variable
 
 By definition, we say that $X$ follows the $t$ distribution with $\nu$ degrees of freedom if there exists $P\sim\mathcal{N}(0,1),S\sim \chi^2_{\nu}$ such that $X,S$ are independents and:
+
 $$
 X=\frac{P}{\sqrt{\tfrac{S}{\nu}}}
 $$
+
 By definition:
+
 $$
 \boxed{\forall \nu\in\mathbb{N}^*,\quad\forall P\sim\mathcal{N}(0,1),\forall S\sim\chi^2_{\nu} \text{ independents}:\quad \frac{P}{\sqrt{\tfrac{S}{\nu}}}\sim\mathcal{T}(\nu)}
 $$
 
 ### 5.2 Significance
 
-The $t$-distribution plays a role in a number of widely used statistical analyses, including [Student's *t*-test](https://en.wikipedia.org/wiki/Student's_t-test) for assessing the [statistical significance](https://en.wikipedia.org/wiki/Statistical_significance) of the difference between two sample means, the construction of [confidence intervals](https://en.wikipedia.org/wiki/Confidence_interval) for the difference between two population means, and in linear [regression analysis](https://en.wikipedia.org/wiki/Regression_analysis). Student's *t*-distribution also arises in the [Bayesian analysis](https://en.wikipedia.org/wiki/Bayesian_analysis) of data from a normal family.
+The $t$-distribution plays a role in a number of widely used statistical analyses, including [Student's _t_-test](https://en.wikipedia.org/wiki/Student's_t-test) for assessing the [statistical significance](https://en.wikipedia.org/wiki/Statistical_significance) of the difference between two sample means, the construction of [confidence intervals](https://en.wikipedia.org/wiki/Confidence_interval) for the difference between two population means, and in linear [regression analysis](https://en.wikipedia.org/wiki/Regression_analysis). Student's _t_-distribution also arises in the [Bayesian analysis](https://en.wikipedia.org/wiki/Bayesian_analysis) of data from a normal family.
 
-If we take a sample of $n$ observations from a normal distribution, then the *$t$*-distribution with $\nu=n-1$ [degrees of freedom](https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)) can be defined as the distribution of the location of the sample mean relative to the true mean, divided by the sample standard deviation, after multiplying by the standardizing term $\sqrt{n}$. In this way, the *t*-distribution can be used to construct a [confidence interval](https://en.wikipedia.org/wiki/Confidence_interval) for the true mean.
+If we take a sample of $n$ observations from a normal distribution, then the _$t$_-distribution with $\nu=n-1$ [degrees of freedom](<https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)>) can be defined as the distribution of the location of the sample mean relative to the true mean, divided by the sample standard deviation, after multiplying by the standardizing term $\sqrt{n}$. In this way, the _t_-distribution can be used to construct a [confidence interval](https://en.wikipedia.org/wiki/Confidence_interval) for the true mean.
 
 The $t$-distribution is symmetric and bell-shaped, like the normal distribution. However, the $t$-distribution has heavier tails, meaning that it is more prone to producing values that fall far from its mean. This makes it useful for understanding the statistical behavior of certain types of ratios of random quantities, in which variation in the denominator is amplified and may produce outlying values when the denominator of the ratio falls close to zero. The Student's $t$-distribution is a special case of the [generalised hyperbolic distribution](https://en.wikipedia.org/wiki/Generalised_hyperbolic_distribution).
 

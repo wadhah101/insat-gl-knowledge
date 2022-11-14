@@ -9,6 +9,7 @@ slug: /gl4/archived/data-analysis/03-discrete-distributions
 ### 1.1 Definition
 
 A discrete random variable $X$ is said to follow the uniform distribution $\mathcal{D}(a,b)$ if:
+
 $$
 \forall k\in\{a,\dots,b\},\quad \mathcal{P}(X=k)=\frac{1}{b-a+1}
 $$
@@ -24,6 +25,7 @@ $$
 $$
 
 In particular, the expected value $\mathbb{E}[X]$ is:
+
 $$
 \boxed{\mathbb{E}[X]=\frac{1}{b-a+1}\sum_{k=a}^bk=\frac{(b-a+1)(a+b)}{2(b-a+1)}=\frac{a+b}{2}}
 $$
@@ -35,6 +37,7 @@ $$
 $$
 
 To get the exact expression of the variance, we will start by calculating the following quantity
+
 $$
 \begin{align*}
 \sum_{k=a}^b(k+1)^3&= \sum_{k=a}^b k^3+3k^2+3k+1\\
@@ -48,6 +51,7 @@ $$
 $$
 
 From that, we can directly calculate the variance $\mathbb{V}[X]$ as follow:
+
 $$
 \begin{align*}
 \mathbb{V}[X]&=\mathbb{E}[X^2]-\mathbb{E}[X]^2\\
@@ -66,6 +70,7 @@ $$
 ### 2.1 Definition
 
 A discrete random variable $X$ is said to follow the Bernoulli distribution $\mathcal{B}(p)$ if:
+
 $$
 \begin{cases}
 \mathcal{P}(X=1)&=p \\
@@ -79,7 +84,7 @@ In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [s
 
 Less formally, it can be thought of as a model for the set of possible outcomes of any single [experiment](https://en.wikipedia.org/wiki/Experiment) that asks a [yes–no question](https://en.wikipedia.org/wiki/Yes–no_question).
 
-Such questions lead to [outcomes](https://en.wikipedia.org/wiki/Outcome_(probability)) that are [boolean](https://en.wikipedia.org/wiki/Boolean-valued_function)-valued: a single [bit](https://en.wikipedia.org/wiki/Bit) whose value is success/[yes](https://en.wikipedia.org/wiki/Yes_and_no)/[true](https://en.wikipedia.org/wiki/Truth)/[one](https://en.wikipedia.org/wiki/One) with [probability](https://en.wikipedia.org/wiki/Probability) $p$ and failure/no/[false](https://en.wikipedia.org/wiki/False_(logic))/[zero](https://en.wikipedia.org/wiki/Zero) with probability $q$.
+Such questions lead to [outcomes](<https://en.wikipedia.org/wiki/Outcome_(probability)>) that are [boolean](https://en.wikipedia.org/wiki/Boolean-valued_function)-valued: a single [bit](https://en.wikipedia.org/wiki/Bit) whose value is success/[yes](https://en.wikipedia.org/wiki/Yes_and_no)/[true](https://en.wikipedia.org/wiki/Truth)/[one](https://en.wikipedia.org/wiki/One) with [probability](https://en.wikipedia.org/wiki/Probability) $p$ and failure/no/[false](<https://en.wikipedia.org/wiki/False_(logic)>)/[zero](https://en.wikipedia.org/wiki/Zero) with probability $q$.
 
 It can be used to represent a (possibly biased) [coin toss](https://en.wikipedia.org/wiki/Coin_toss) where $1$ and $0$ would represent "heads" and "tails", respectively, and $p$ would be the probability of the coin landing on heads (or vice versa where $1$ would represent tails and $p$ would be the probability of tails).
 
@@ -90,6 +95,7 @@ In particular, unfair coins would have $p\neq \frac{1}{2}$
 #### 2.3.1 Idempotence
 
 The Bernoulli distribution is idempotent:
+
 $$
 \forall n\in\mathbb{N}^*,\quad X^n=X
 $$
@@ -116,6 +122,7 @@ $$
 $$
 
 In particular, the variance $\mathbb{V}[X]$ is equal to:
+
 $$
 \boxed{\mathbb{V}[X]=p(1-p)}
 $$
@@ -129,10 +136,13 @@ $$
 - Let $X_1\sim \mathcal{B}(p_1),\dots,X_n\sim \mathcal{B}(p_n)$
 
 The random variable $P=\prod_{i=1}^nX_i$ follows a Bernoulli distribution $\mathcal{B}(p)$ with:
+
 $$
 p=\mathcal{P}\left(\bigwedge_{i=1}^n X_i=1\right)
 $$
+
 If the random variables are independent, then:
+
 $$
 p=\prod_{i=1}^n X_i
 $$
@@ -146,6 +156,7 @@ $$
 - Let $P=X_1X_2X_3$
 
 The probability distribution function of $P$ is:
+
 $$
 \mathcal{P}(P=k)=\begin{cases}
 0.105 & k=1 \\
@@ -178,10 +189,13 @@ So $P\sim \mathbb{B}(0.35)$
 - Let $F:\{0,1\}^n\rightarrow \{0,1\}$ be a binary function
 
 Then the random variable $Y=F(X_1,\dots,X_n)$ follows a Bernoulli distribution $\mathcal{B}(p)$ with:
+
 $$
 p=\mathcal{P}\left((X_1,\dots,X_n)\in F^{-1}(1)\right)
 $$
+
 If the random variables are independent, then:
+
 $$
 p=\sum_{U\in F^{-1}(1)}\prod_{i=1}^n\mathcal{P}(X_i=U_i)
 $$
@@ -208,6 +222,7 @@ $$
 - Let $Y=F(X_1,X_2,X_3)$
 
 We have:
+
 $$
 \begin{align*}
 \mathcal{P}(Y=1)&= \mathcal{P}(X_1 =0 \wedge X_2=0\wedge X_3=0) +\mathcal{P}(X_1 =0 \wedge X_2=1\wedge X_3=0) \\
@@ -219,6 +234,7 @@ $$
 \mathcal{P}(Y=0)&=0.6
 \end{align*}
 $$
+
 So $Y\sim \mathcal{P}(0.4)$
 
 ### Example 2
@@ -247,7 +263,8 @@ $$
 - Let $p\in[0,1]$
 - Let $X$ be a Bernoulli distribution, and $\mathcal{A}$ an event
 
-The random variable $Y$ defined by $\mathcal{P}(Y=k)=\mathcal{P}(X=k\mid \mathcal{A})$  follows the Bernoulli distribution $\mathcal{B}(p)$ with:
+The random variable $Y$ defined by $\mathcal{P}(Y=k)=\mathcal{P}(X=k\mid \mathcal{A})$ follows the Bernoulli distribution $\mathcal{B}(p)$ with:
+
 $$
 p=\mathcal{P}(X=1\mid \mathcal{A})
 $$
@@ -257,23 +274,27 @@ $$
 ### 3.1 Definition
 
 A random variable $X$ is said to follow the binomial distribution $\mathcal{B}(n,p)$ with parametes $n\in\mathbb{N}$ and $p\in[0,1]$ if:
+
 $$
 \exists X_1,\dots,X_n \sim \mathcal{B}(p) \space \text{i.i.d} /\quad X=\sum_{k=0}^nX_i
 $$
 
 ### 3.2 Significance
 
-In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [statistics](https://en.wikipedia.org/wiki/Statistics), the **binomial distribution** with parameters *n* and *p* is the [discrete probability distribution](https://en.wikipedia.org/wiki/Discrete_probability_distribution) of the number of successes in a sequence of *n* [independent](https://en.wikipedia.org/wiki/Statistical_independence) [experiments](https://en.wikipedia.org/wiki/Experiment_(probability_theory)), each asking a [yes–no question](https://en.wikipedia.org/wiki/Yes–no_question), and each with its own [Boolean](https://en.wikipedia.org/wiki/Boolean-valued_function)-valued [outcome](https://en.wikipedia.org/wiki/Outcome_(probability)): *success* (with probability $p$) or *failure* (with probability $q=1-p$)
+In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [statistics](https://en.wikipedia.org/wiki/Statistics), the **binomial distribution** with parameters _n_ and _p_ is the [discrete probability distribution](https://en.wikipedia.org/wiki/Discrete_probability_distribution) of the number of successes in a sequence of _n_ [independent](https://en.wikipedia.org/wiki/Statistical_independence) [experiments](<https://en.wikipedia.org/wiki/Experiment_(probability_theory)>), each asking a [yes–no question](https://en.wikipedia.org/wiki/Yes–no_question), and each with its own [Boolean](https://en.wikipedia.org/wiki/Boolean-valued_function)-valued [outcome](<https://en.wikipedia.org/wiki/Outcome_(probability)>): _success_ (with probability $p$) or _failure_ (with probability $q=1-p$)
 
 ### 3.3 Probability mass function
 
 Let $S_k$ be the set of subsets of $I=\{1,\dots,n\}$ of size $k$
 
 The number of such sets is:
+
 $$
 \lvert S_k \vert = {n \choose k}
 $$
+
 With that, the probability mass function is:
+
 $$
 \begin{align*}
 \forall k\in\{0,\dots,n\},\quad \mathcal{P}(X=k)&=   \sum_{A\in S_k}\mathcal{P}\left(\bigwedge_{s\in A} X_s=1 \space \text{and} \space \bigwedge_{s\in I \setminus A} X_s=0 \right) \\
@@ -291,10 +312,13 @@ $$
 #### 3.4.1 Raw Moments
 
 The expected value can be calculated directly from the definition:
+
 $$
 \boxed{\mathbb{E}[X]=\sum_{k=1}^n\mathbb{E}[X_k]=np}
 $$
+
 For higher order moments:
+
 $$
 \begin{align*}
 \forall m\in\mathbb{N}^*,\quad \mathbb{E}[X^m]&= \sum_{k=1}^n{n \choose k}k^mp^k(1-p)^{n-k}
@@ -304,10 +328,13 @@ $$
 #### 3.4.2 Central Moments
 
 The variance can be calculated directly from the definition:
+
 $$
 \boxed{\mathbb{V}[X]=\sum_{k=1}^n\mathbb{V}[X_k]=np(1-p)}
 $$
+
 For higher order central moments:
+
 $$
 \begin{align*}
 \forall m\in\mathbb{N}^*,\quad \mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^m \right]&= \sum_{k=1}^n{n \choose k}(k-np)^mp^k(1-p)^{n-k}
@@ -319,6 +346,7 @@ $$
 ### 4.1 Definition
 
 A random variable $X$ is said to follow the geometric distribution $\mathcal{G}(p)$ if:
+
 $$
 \exists X_1,\dots \sim \mathcal{B}(p) \space \text{i.i.d} / \quad X=\arg\min_{n\in\mathbb{N}^*} \{X_n=1\}
 $$
@@ -345,23 +373,30 @@ $$
 #### 4.4.1 Prelude
 
 Let $\varphi_n$ defined as:
+
 $$
 \begin{align*}
 \varphi_{n}:&\mathbb{R}^*\rightarrow \mathbb{R}\\
 &x\rightarrow \sum_{m\in\mathbb{N}}m^nx^m
 \end{align*}
 $$
-*This function will be a helper function for calculating $\mathbb{E}[X^n]$*
+
+This function will be a helper function for calculating $\mathbb{E}[X^n]$
 
 In fact, $\varphi_n$ is differentiable and:
+
 $$
 \varphi'_n=\sum_{m\in\mathbb{N}^*}m^{n+1}x^{m-1}=\frac{1}{x}\varphi_{n+1}
 $$
+
 Which implies:
+
 $$
 \forall n\in\mathbb{N},\quad \varphi_{n+1}=x\varphi'_n
 $$
+
 And we have the following:
+
 $$
 \varphi_0=\sum_{m\in\mathbb{N}}x^m=\frac{1}{1-x}
 $$
@@ -376,6 +411,7 @@ $$
 $$
 
 With that, we can calculate the expected value $\mathbb{E}[X]$ as:
+
 $$
 \begin{align*}
 \forall x\in\mathbb{R}^*,\quad \varphi_1(x)&=x\varphi_0'(x)\\
@@ -389,6 +425,7 @@ $$
 #### 4.4.3 Variance
 
 The variance $\mathbb{V}[X]$ can be calculated as:
+
 $$
 \begin{align*}
 \forall x\in\mathbb{R}\setminus\{0,1\},\quad \varphi_2(x)&=x\varphi_1'(x)\\
@@ -406,7 +443,8 @@ $$
 
 ## 5. Negative Binomial Distribution {#negative-binomial-distribution}
 
-A random variable $X$ is said to follow the negative binomial distribution $\mathcal{NB}(r,p)$  with paramters $r\in\mathbb{N}^*$  and $p\in[0,1]$ if:
+A random variable $X$ is said to follow the negative binomial distribution $\mathcal{NB}(r,p)$ with paramters $r\in\mathbb{N}^*$ and $p\in[0,1]$ if:
+
 $$
 \exists X_1,\dots \sim \mathcal{B}(p) \space \text{i.i.d} / \quad X=\arg\min_{n\in\mathbb{N}} \left\{\sum_{k=1}^nX_k=r\right\}
 $$
@@ -420,6 +458,7 @@ For example, we can define rolling a $6$ on a die as a success, and rolling any 
 ### 5.3 Probability mass function
 
 Let $S_{n,k}$ be the set of subsets of $I_n=\{1,\dots,n\}$ of size $k$
+
 $$
 \begin{align*}
 \forall n\in\mathbb{N},\quad \mathcal{P}(X=n) &= \mathcal{P}\left(\arg\min_{n\in\mathbb{N}} \left\{\sum_{k=1}^nX_k=r\right\}\right) \\
@@ -453,6 +492,7 @@ $$
 $$
 
 In particular, the expected value is:
+
 $$
 \boxed{\mathbb{E}[X_r]=\frac{r}{p}\mathbb{E}[X^0_{r+1}]=\frac{r}{p}}
 $$
@@ -460,6 +500,7 @@ $$
 #### 5.4.2 Central Moments
 
 We will start by the variance
+
 $$
 \begin{align*}
 \mathbb{E}[X_r^2]&=\frac{r}{p}\left(-\mathbb{E}[X_{r+1}^0]+\mathbb{E}[X_{r+1}]\right)\\
@@ -476,6 +517,7 @@ $$
 The geometric distribution is a special case of the negative binomial distribution.
 
 In fact:
+
 $$
 \boxed{\forall p\in [0,1],\quad \mathcal{G}(p)=\mathcal{NB}(1,p)}
 $$

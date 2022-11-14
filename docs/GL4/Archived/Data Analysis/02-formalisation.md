@@ -16,25 +16,25 @@ Also it gives how to construct some random variables.
 
 ### 1.1 Examples that have a meaning
 
-- *Choose $X$ uniformly from $[0,1]$*
+- _Choose $X$ uniformly from $[0,1]$_
 
-- *Choose $X$ uniformly from $\{0,1,2,3\}$*
+- _Choose $X$ uniformly from $\{0,1,2,3\}$_
 
-- *Let $X\sim \mathcal{U}(0,1),$ what is the probability that $X\in \mathbb{Q}$?*
+- _Let $X\sim \mathcal{U}(0,1),$ what is the probability that $X\in \mathbb{Q}$?_
 
 - Let $\bar{\mathbb{Q}}=\{\alpha\in\mathbb{R}/\quad \exists P\in\mathbb{Q}[x]/\quad P(\alpha)=0\}$ The set of all real numbers that are a solution to some polynomial function with rational coefficients. The statement below is a valid statement:
 
-  *Let $X\sim \mathcal{N}(0,1)$, what is the probability that $X\in \bar{\mathbb{Q}}$?*
+  _Let $X\sim \mathcal{N}(0,1)$, what is the probability that $X\in \bar{\mathbb{Q}}$?_
 
 ### 1.2 Examples that does not have a meaning
 
-- *Choose $X$ uniformly from $\mathbb{N}$*
+- _Choose $X$ uniformly from $\mathbb{N}$_
 
-- *Choose $X$ uniformly from $\mathbb{R}$*
+- _Choose $X$ uniformly from $\mathbb{R}$_
 
 - Let $\mathcal{V}\subseteq \mathbb{R}$ a set such that $\forall x\in\mathbb{R},\exists!y\in\mathcal{V}/\quad x-y \in\mathbb{Q}\cap[0,1].$ Such set is called a [Vitali set](https://en.wikipedia.org/wiki/Vitali_set). The statement below does not have a meaning
 
-  *Let $X\sim \mathcal{U}(0,1)$, what is the probability that $X\in\mathcal{V}$?*
+  _Let $X\sim \mathcal{U}(0,1)$, what is the probability that $X\in\mathcal{V}$?_
 
 ### 1.3. Road Map
 
@@ -51,7 +51,7 @@ Then we will define some consistent probability functions $\mu$
 
 Finally, we will formally define a random variable.
 
-## 2. Sigma Algebra  {#sigma-algebra}
+## 2. Sigma Algebra {#sigma-algebra}
 
 ### 2.1 Definition
 
@@ -62,11 +62,12 @@ A subset $\Sigma \subseteq \mathscr{P}(S)$ is called a $\sigma$-algebra if:
 1. $S\in \Sigma$
 
 2. $\Sigma$ is closed under set complementation:
+
    $$
    \forall A\in \Sigma ,\quad \bar{A}= S\setminus A \in \Sigma
    $$
 
-3. $\Sigma$  is closed under countable union:
+3. $\Sigma$ is closed under countable union:
    $$
    \forall (A_n)_{n\in\mathbb{N}}\in\Sigma^{\mathbb{N}},\quad \bigcup_{n\in\mathbb{N}}A_n \in \Sigma
    $$
@@ -82,6 +83,7 @@ In probability, A $\sigma$-algebra gives which events make sens. Those events ca
 ## 3. Measurable Space {#measurable-space}
 
 ### 3.1 Definition
+
 <!-- markdownlint-disable-next-line MD051 -->
 Let $S$ be some set and $\mathcal{F}$ be a [$\sigma$-algebra](#sigma-algebra) of $S$
 
@@ -108,16 +110,16 @@ Any set $U\notin \mathcal{F}$ is called a non-measurable set.
 ### 4.1 Definition
 
 <!-- markdownlint-disable-next-line MD051 -->
-A **measure space** $(S,\mathcal{F},\mu)$ is a [*measurable space*](#measurable-space) $(S,\mathcal{F})$ with an additional *real valued function* $\mu:\mathcal{F}\rightarrow \bar{\mathbb{R}}$ called measure satisfying the following conditions:
+A **measure space** $(S,\mathcal{F},\mu)$ is a [_measurable space_](#measurable-space) $(S,\mathcal{F})$ with an additional _real valued function_ $\mu:\mathcal{F}\rightarrow \bar{\mathbb{R}}$ called measure satisfying the following conditions:
 
-1. The measure of the empty set is *null*: $\mu(\emptyset)=0$
+1. The measure of the empty set is _null_: $\mu(\emptyset)=0$
 
-2. The measure function is *non-negative*: $\forall A\in \mathcal{F}, \quad \mu(A)\ge 0$
+2. The measure function is _non-negative_: $\forall A\in \mathcal{F}, \quad \mu(A)\ge 0$
 
-3. The measure function is *countably additive* with respect to *disjoint sets*:
-$$
-\forall (A_n)\in \mathcal{F}^\mathbb{N} \space \text{pairwise disjoint}, \quad \mu\left(\bigcup_{n\in\mathbb{N}} A_n\right)=\sum_{n\in\mathbb{N}}\mu(A_n)
-$$
+3. The measure function is _countably additive_ with respect to _disjoint sets_:
+   $$
+   \forall (A_n)\in \mathcal{F}^\mathbb{N} \space \text{pairwise disjoint}, \quad \mu\left(\bigcup_{n\in\mathbb{N}} A_n\right)=\sum_{n\in\mathbb{N}}\mu(A_n)
+   $$
 
 ### 4.2 Significance
 
@@ -131,9 +133,11 @@ A measure space is a set $S$ with a function $\mu$ giving the size of measurable
 - Let $\mathcal{M}=(S,\mathscr{P}(S))$ be a measurable space
 
 We will define $\mu$ as follow:
+
 $$
 \forall A\subseteq S, \quad \mu(A)=\vert A \rvert
 $$
+
 We can verify that $(\mathcal{M},\mu)$ is a measure space.
 
 Also, with $p=\frac{\mu}{\lvert S \rvert}$, $(\mathcal{M},p)$ is also a measure space.
@@ -143,17 +147,21 @@ Also, with $p=\frac{\mu}{\lvert S \rvert}$, $(\mathcal{M},p)$ is also a measure 
 We will set $\mathcal{F}=\mathscr{P}(\mathbb{N})$
 
 We will define $\mu$ as follow:
+
 $$
 \forall A\subseteq \mathbb{N} \quad \text{finite}, \quad \mu(A)=\vert A \rvert
 $$
+
 We can verify that $(\mathcal{M},\mu)$ is a measure space.
 
 As an example, $\mu(\{1,2,8\})=3.$
 
 We can also define another measure $\lambda$ as:
+
 $$
 \forall A\subseteq \mathbb{N}, \quad \mu(A)=\sum_{k\in A}2^{-k}
 $$
+
 As an example, $\lambda(\{0,2\})=1+\frac{1}{4}=1.25$
 
 Also, $\lambda(\mathbb{N})=\sum_{n\in\mathbb{N}}2^{-n}=2$
@@ -161,9 +169,11 @@ Also, $\lambda(\mathbb{N})=\sum_{n\in\mathbb{N}}2^{-n}=2$
 #### 4.3.2 Real Line
 
 $\mathbb{R}$ can be augmented to a measure space $(\mathbb{R},\mathcal{B},\mu)$ with $\mu$ defined as:
+
 $$
 \forall a\le b,\quad \mu(]a,b[)=b-a
 $$
+
 In fact:
 
 - $\mu$ gives the length of a set $A\in\mathcal{B}$
@@ -176,6 +186,7 @@ In fact:
 - Let $(E,\mathcal{E})$ be a measurable space
 
 A function $f:S\rightarrow E$ is said to be measurable if the pre-image of any measurable set is measurable:
+
 $$
 \forall U\in \mathcal{E},\quad f^{-1}(U)\in \mathcal{F}
 $$
@@ -185,7 +196,7 @@ $$
 ### 5.1 Definition
 
 <!-- markdownlint-disable-next-line MD051 -->
-A probability space is a [*measure space*](#measure-space) $(\Omega,\mathcal{F},\mu)$ with the additional constraint that $\mu(\Omega)=1$
+A probability space is a [_measure space_](#measure-space) $(\Omega,\mathcal{F},\mu)$ with the additional constraint that $\mu(\Omega)=1$
 
 ### 5.2 Terminology
 
@@ -198,9 +209,11 @@ The measure space $(\mathcal{M},p)$ from the example $4.3.1$ is a probability sp
 #### 5.3.2 Natural numbers
 
 The measure $\lambda$ from $3.3.2$ is not a probability measure, but it induces a probability measure $\phi$ defined by:
+
 $$
 \forall A\subseteq \mathbb{N},\quad \phi(A)=\frac{\lambda(A)}{\lambda(\mathbb{N})}=\frac{1}{2}\sum_{k\in A}2^{-k}
 $$
+
 The measure $\mu$ from $3.3.2$ cannot induce a probability space like $\lambda$ as $\mu(\mathbb{N})=+\infty$
 
 #### 5.3.3 Real numbers
@@ -208,14 +221,17 @@ The measure $\mu$ from $3.3.2$ cannot induce a probability space like $\lambda$ 
 Let $(\mathbb{R},\mathcal{B},\mu)$ the measure space defined in $4.3.3$
 
 We will define another measure $\lambda$ defined as follow:
+
 $$
 \forall a\le b,\quad \lambda(\mathopen]a,b\mathclose[)=\mu([0,1]\cap\mathopen]a,b\mathclose[)
 $$
+
 With that, $(\mathbb{R},\mathcal{B},\lambda)$ is a probability space.
 
 #### 5.3.4 Dirac Measure
 
 Let $(\mathbb{R},\mathscr{P}(\mathbb{R}),\delta),$ with $\delta$ defined as:
+
 $$
 \forall A\subseteq \mathbb{R},\quad \delta(A)=\begin{cases}
 1 &\text{if} \space 0\in A\\
@@ -238,7 +254,8 @@ In other words, that is if it is a measurable function whose domain constitute a
 
 Let $U\in\mathcal{E}$ an event.
 
-We define the probability that $X\in U$, denoted by $\mathcal{P}(X\in U)$  as follow:
+We define the probability that $X\in U$, denoted by $\mathcal{P}(X\in U)$ as follow:
+
 $$
 \mathcal{P}(X\in U)=\mu\left(\{\omega \in \Omega / \quad X(\omega)\in U\}\right)=\mu\left(X^{-1}(U)\right)
 $$
@@ -250,6 +267,7 @@ The probability function defined at 6.2 constitute a measure $\mathcal{D}$ of th
 This measure is defined as: $\forall U\in \mathcal{E},\quad\mathcal{D}(U)=\mu(X^{-1}(U)),$ and it is called the distribution of $X.$
 
 If $X$ has a distribution $\mathcal{D}$, we say that $X$ follows a $\mathcal{D}$ distribution, and we note it as:
+
 $$
 X\sim \mathcal{D}
 $$
@@ -265,6 +283,7 @@ A random variable is said to be discrete if $X(\Omega)$ is countable
 #### 6.4.2 Continuous Random Variable
 
 A random variable $X$ is said to be continuous if:
+
 $$
 \forall \omega\in \Omega,\quad \mathcal{P}(X=\omega)=0
 $$
@@ -282,6 +301,7 @@ This examples show the formal construction of some random variables.
 - Let $X:S\rightarrow S$ defined by $X(\omega)=\omega$
 
 We have:
+
 $$
 \forall s\in S,\quad \mathcal{P}(X=s)=p(X^{-1}(\omega))=p(\{\omega\})=\frac{1}{\lvert S \rvert}=\frac{1}{b-a+1}
 $$
@@ -304,6 +324,7 @@ Note that as $X(S)=S$ is a countable set, this random variable is a discrete ran
   $$
 
 We have:
+
 $$
 \begin{align*}
 \mathcal{P}(X=1)&=\lambda(X^{-1}(1)) \\
@@ -316,6 +337,7 @@ $$
 &= 1-p
 \end{align*}
 $$
+
 With that, we can verify that $X\sim \mathcal{B}(p)$
 
 Note that as $X(\mathbb{R})=\{0,1\}$ is a countable set, this random variable is a discrete random variable.
@@ -327,6 +349,7 @@ Note that as $X(\mathbb{R})=\{0,1\}$ is a countable set, this random variable is
 - Let $X:\mathbb{R}\rightarrow \mathbb{R}$ defined as $W(\omega)=\omega$
 
 We have:
+
 $$
 \begin{align*}
 \forall a,b\in[0,1] /a\le b,\quad \mathcal{P}(X\in [a,b])&=\lambda(X^{-1}([a,b]))\\
@@ -336,13 +359,15 @@ $$
 &=b-a
 \end{align*}
 $$
+
 This result essentially says that $X\sim \mathcal{U}(0,1).$ And we can verify that $X$ is a continuous random variable.
 
 Now we will calculate $\mathcal{P}(X\in \mathbb{Q})$
 
 As $X$ is a continuous random variable, we have: $\forall x \in\mathbb{R},\quad \mathcal{P}(X=x)=0.$
 
-Furthermore,  as $\mathbb{Q}$ is [infinitely countable](https://proofwiki.org/wiki/Rational_Numbers_are_Countably_Infinite), there exists a bijective function $\Phi:\mathbb{N}\rightarrow \mathbb{Q}$. with that:
+Furthermore, as $\mathbb{Q}$ is [infinitely countable](https://proofwiki.org/wiki/Rational_Numbers_are_Countably_Infinite), there exists a bijective function $\Phi:\mathbb{N}\rightarrow \mathbb{Q}$. with that:
+
 $$
 \begin{align*}
 \mathcal{P}(X\in\mathbb{Q})&=\lambda(\mathbb{Q})\\
@@ -360,21 +385,24 @@ $$
 - Let $(\Omega,\mathcal{F},\mu)$ be a probability space
 - Let $(E,\mathcal{E})$ a measurable space
 
-A random variable $X:\Omega \rightarrow E$ is said to be **discrete** if $X(\Omega)$ is *countable*
+A random variable $X:\Omega \rightarrow E$ is said to be **discrete** if $X(\Omega)$ is _countable_
 
 ### 7.2 Probability Mass Function
 
 #### 7.2.1 Definition
 
 The probability mass function $M_X$ is defined as:
+
 $$
 M_X(\omega)=\mathcal{P}(X=\omega)
 $$
+
 Now we will recover the probability of an event from its mass function.
 
 #### 7.2.2 Probability of an event
 
 Let $A\in \mathcal{E},$ we have the following:
+
 $$
 \begin{align*}
 \mathcal{P}(X\in A)&=\mu(X^{-1}(A))\\
@@ -384,9 +412,11 @@ $$
 &=\mathcal{P}(X\in A\cap X(\Omega) )
 \end{align*}
 $$
- As $A\cap X(\Omega)\subseteq X(\Omega)$ is countable, there [exists a bijective function](https://en.wikipedia.org/wiki/Countable_set) $\Phi: \mathcal{I}\rightarrow A \cap X(\Omega)$ with $\mathcal{I}\subseteq \mathbb{N}$.
+
+As $A\cap X(\Omega)\subseteq X(\Omega)$ is countable, there [exists a bijective function](https://en.wikipedia.org/wiki/Countable_set) $\Phi: \mathcal{I}\rightarrow A \cap X(\Omega)$ with $\mathcal{I}\subseteq \mathbb{N}$.
 
 And from that we can calculate the probability of $A:$
+
 $$
 \begin{align*}
 \mathcal{P}(X\in A)&=\mathcal{P}(X\in A\cap X(\Omega))\\
@@ -401,7 +431,9 @@ $$
 &=\sum_{\omega\in A}\mathcal{P}(X=\omega) \quad \text{it makes sense as only countably many terms are non-zero}
 \end{align*}
 $$
+
 By that, for every event $A\in\mathcal{E}$ we have:
+
 $$
 \mathcal{P}(X\in A)=\sum_{\omega \in A}\mathcal{P}(X=\omega)=\sum_{\omega \in A}M_X(\omega)
 $$
@@ -421,13 +453,14 @@ $$
 <!-- markdownlint-disable-next-line MD051 -->
 - Let $E=\mathbb{R},\mathcal{E}=\mathcal{B}$ so that $(\mathbb{R},\mathcal{B})$ is a [measurable space](#measurable-space)
 
-A **real random variable** is a  random variable $X:\Omega\rightarrow \mathbb{R}$
+A **real random variable** is a random variable $X:\Omega\rightarrow \mathbb{R}$
 
 Furthermore, if it is continuous, it is said to be a continuous real random variable
 
 ### 8.2 Cumulative Distribution Function
 
 For a random variable $X$, its cumulative distribution function $F_X$ is defined by:
+
 $$
 \forall x\in\mathbb{R},\quad F_X(x)=\mathcal{P}(X\le x)=\mathcal{P}(X\in\mathopen]-\infty,x\mathclose])
 $$
@@ -437,6 +470,7 @@ $$
 Let $X\sim \mathcal{U}(0,1)$
 
 The cumulative distribution function of $X$ is:
+
 $$
 F_X(x)=\begin{cases}
 0 &\text{if} \space x <0 \\
@@ -450,6 +484,7 @@ $$
 #### 8.3.1 Definition
 
 Where it can be defined, the probability Density function $f_X$ is the derivative of the $F_X:$
+
 $$
 f_X=F_X'
 $$
@@ -457,10 +492,13 @@ $$
 #### 8.3.2 Probability of an event
 
 If $F_X$ is differentiable almost everywhere, then for every event $A\in\mathcal{B}:$
+
 $$
 \mathcal{P}(X\in A)=\int_{A}f_X(x)\space \text{dx}
 $$
+
 In particular, for every interval $[a,b]:$
+
 $$
 \mathcal{P}(X\in[a,b])=\int_{a}^bf_X(x)\space \text{dx}
 $$
@@ -470,6 +508,7 @@ $$
 Let $X\sim \mathcal{U}(0,1)$
 
 The probability density function $f_X$ can be defined as:
+
 $$
 f_X(x)=\begin{cases}
 0 &\text{if} \space x <0 \\

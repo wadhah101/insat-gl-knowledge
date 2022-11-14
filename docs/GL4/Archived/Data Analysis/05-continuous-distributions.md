@@ -8,7 +8,8 @@ slug: /gl4/archived/data-analysis/05-continuous-distributions
 
 ### 1.1 Definition
 
-A continuous random variable $X$ is said to follow the uniform distribution on an interval $[a,b]$ with $a<b$  denoted by $\mathcal{U}(a,b)$ if:
+A continuous random variable $X$ is said to follow the uniform distribution on an interval $[a,b]$ with $a<b$ denoted by $\mathcal{U}(a,b)$ if:
+
 $$
 f_X(x)=\begin{cases}
 \frac{1}{b-a} &x\in[a,b]\\
@@ -18,11 +19,12 @@ $$
 
 ## 1.2 Significance
 
-In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [statistics](https://en.wikipedia.org/wiki/Statistics), the **continuous uniform distribution** or **rectangular distribution** is a family of [symmetric](https://en.wikipedia.org/wiki/Symmetric_distribution) [probability distributions](https://en.wikipedia.org/wiki/Probability_distributions). The distribution describes an experiment where there is an arbitrary outcome that lies between certain bounds. The bounds are defined by the parameters, *a* and *b*, which are the minimum and maximum values. The interval can either be [closed](https://en.wikipedia.org/wiki/Closed_interval) (e.g. $[a,b]$) or [open](https://en.wikipedia.org/wiki/Open_Interval) (e.g. $]a,b[$).
+In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [statistics](https://en.wikipedia.org/wiki/Statistics), the **continuous uniform distribution** or **rectangular distribution** is a family of [symmetric](https://en.wikipedia.org/wiki/Symmetric_distribution) [probability distributions](https://en.wikipedia.org/wiki/Probability_distributions). The distribution describes an experiment where there is an arbitrary outcome that lies between certain bounds. The bounds are defined by the parameters, _a_ and _b_, which are the minimum and maximum values. The interval can either be [closed](https://en.wikipedia.org/wiki/Closed_interval) (e.g. $[a,b]$) or [open](https://en.wikipedia.org/wiki/Open_Interval) (e.g. $]a,b[$).
 
 ### 1.2 Standard Uniform distribution
 
 It is the uniform distribution on the interval $[0,1]$:
+
 $$
 \mathcal{U}=\mathcal{U}(0,1)
 $$
@@ -30,6 +32,7 @@ $$
 ### 1.2 Opposite of Uniform Random Variable
 
 Let $X \sim \mathcal{U}(a,b)$
+
 $$
 \begin{align*}
 \forall x\in\mathbb{R},F_{-X}(x)&=\mathcal{P}(-X<x)\\
@@ -44,9 +47,9 @@ $$
 
 ### 1.3 Linear Transformation of a Uniform Random Variable
 
-+ Let $\alpha \in\mathbb{R}_+^*,\beta\in\mathbb{R}$
-+ Let $a,b\in\mathbb{R}$ with  $a<b$
-+ Let $X\sim \mathcal{U}(a,b)$ and $Y=\alpha X+b$
+- Let $\alpha \in\mathbb{R}_+^*,\beta\in\mathbb{R}$
+- Let $a,b\in\mathbb{R}$ with $a<b$
+- Let $X\sim \mathcal{U}(a,b)$ and $Y=\alpha X+b$
 
 $$
 \begin{align*}
@@ -64,12 +67,15 @@ $$
 $$
 
 In particular:
+
 $$
 \boxed{X\sim\mathcal{U}(a,b)\iff \frac{X-a}{b-a}\sim\mathcal{U}(0,1)}
 $$
+
 For $\alpha < 0$, We have $Y=\alpha X+\beta=-\left(-\alpha X-\beta\right).$
 
 We have:
+
 $$
 -\alpha X -\beta \sim \mathcal{U}(-\alpha a-\beta,-\alpha b-\beta) \implies \alpha X+\beta \sim\mathcal{U}(\alpha b+\beta,\alpha a+\beta)
 $$
@@ -85,6 +91,7 @@ $$
 $$
 
 In particular, the expected value $\mathbb{E}[X]$ is
+
 $$
 \boxed{\mathbb{E}[X]=\frac{a+b}{2}}
 $$
@@ -94,12 +101,15 @@ $$
 For $n\in\mathbb{N}^*$, the $n^\text{th}$-central moment of $X$ is the $n^\text{th}$-moment of $X-\mathbb{E}[X]$
 
 But $X-\mathbb{E}[X]\sim \mathcal{U}(\frac{a-b}{2},\frac{b-a}{2})$
+
 $$
 \begin{align*} \forall n \in\mathbb{N}^*,\quad \mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^n\right]&=\frac{(\frac{b-a}{2})^{n+1}-(\frac{a-b}{2})^{n+1}}{(n+1)(\frac{b-a}{2}-\frac{a-b}{2})} \\
 &=\frac{1-(-1)^{n+1}}{2^n(n+1)}\cdot\frac{(b-a)^n}{b-a}
 \end{align*}
 $$
+
 In particular, the variance $\mathbb{V}[X]$ is:
+
 $$
 \boxed{\mathbb{V}[X]=\frac{(b-a)^2}{12}}
 $$
@@ -109,6 +119,7 @@ $$
 ### 2.1 Definition
 
 A continuous random variable $X$ is said to follow the exponential distribution with paramter $\lambda\in\mathbb{R}_+^*$ if:
+
 $$
 f_X(x)=\begin{cases}
 \lambda e^{-\lambda x} &x \in\mathbb{R}_+ \\
@@ -117,6 +128,7 @@ f_X(x)=\begin{cases}
 $$
 
 We denote it by:
+
 $$
 X \sim \mathcal{E}(\lambda)
 $$
@@ -142,11 +154,12 @@ $$
 $$
 
 In particular, the expected value $\mathbb{E}[X]$ is:
+
 $$
 \boxed{\mathbb{E}[X]=\frac{1}{\lambda}}
 $$
 
-#### 2.3.2  Central moments
+#### 2.3.2 Central moments
 
 $$
 \begin{align*}
@@ -157,6 +170,7 @@ $$
 $$
 
 In particular, the variance $\mathbb{V}[X]$ is:
+
 $$
 \boxed{\mathbb{V}[X]=\mathbb{E}[X^2]-\mathbb{E}[X]^2=\frac{2}{\lambda^2}-\frac{1}{\lambda^2}=\frac{1}{\lambda^2}}
 $$
@@ -164,10 +178,13 @@ $$
 ### 2.4 Memoryless
 
 Memory-less is a fundamental property in the exponential distribution, It states:
+
 $$
 \forall T,r\in\mathbb{R}_+,\quad \mathcal{P}(X \ge T+r \mid X\ge T)=\mathcal{P}(X\ge r)
 $$
+
 The proof is as follow:
+
 $$
 \begin{align*}
 \forall T,r\in\mathbb{R}_+,\quad \mathcal{P}(X \ge T+r \mid X\ge T)&=\frac{\mathcal{P}(X \ge T+r)}{\mathcal{P}(X\ge T)}\\
@@ -180,17 +197,20 @@ $$
 
 ### 2.5 Scaling
 
-+ Let $k\in\mathbb{R}_+^*$
-+ Let $X\sim \mathcal{E}(\lambda)$ and $Y=kX$
+- Let $k\in\mathbb{R}_+^*$
+- Let $X\sim \mathcal{E}(\lambda)$ and $Y=kX$
 
 We will calculate the probability distribution function of $Y:$
+
 $$
 \begin{align*}
 \forall x\in\mathbb{R}_+,\quad f_Y(x)&=\frac{1}{k}f_X\left(\frac{x}{k}\right)\\
 &=\frac{\lambda}{k}e^{-\frac{\lambda}{k}x}
 \end{align*}
 $$
+
 By that:
+
 $$
 \boxed{\forall k\in\mathbb{R}_+^*,\quad X\sim \mathcal{E}(\lambda) \iff kX\sim \mathcal{E}\left(\frac{\lambda}{k}\right)}
 $$

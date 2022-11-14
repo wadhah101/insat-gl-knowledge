@@ -29,7 +29,7 @@ Modules include :
 
 ### Video 1.3 : Choosing an IDE ?
 
-- List of tools are available in this link  <https://Spring.io/tools> .
+- List of tools are available in this link <https://Spring.io/tools> .
 - in this tutorial we're gonna use **IntelliJ**
 
 > check student pack for IntelliJ ultimate version
@@ -43,7 +43,7 @@ Modules include :
 - Maven: Software project build management tool providing a standard way for creating and managing java projects .
 - dependencies : packages you software relies on.
 
-#### Adding  dependencies
+#### Adding dependencies
 
 We start by copying this dependency from <https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent>
 
@@ -169,24 +169,25 @@ public class RestController {
 
 A printer that uses a document
 
-Instead of using the `Document`  in the `Printer` as an attribute. We create a `DocumentInterface` and we use it inside the Printer instead.
+Instead of using the `Document` in the `Printer` as an attribute. We create a `DocumentInterface` and we use it inside the Printer instead.
 
 #### Video 2.2 : Dependency Injection with Annotations
 
 - **Annotations** : metadata that is added to java source Code
-  - Examples : `@override`  and `@SuppressWarnings`
+  - Examples : `@override` and `@SuppressWarnings`
   - Are processed by annotation processors
 
 ##### Annotations in Spring
 
 - to inject dependencies, the `@Autowired` annotation is commonly used in spring
-- In addition we have (will be explained later)  :
+- In addition we have (will be explained later) :
   - `@Qualifier` (DI by qualifier)
   - `@Component` and `@ComponentScan` (DI by name)
 
 #### Video 2.3 : Introduction to the @Component Annotation
 
 - **Spring Beans** :
+
   - Custom objects instantiated and managed by the Spring IOC container.
   - every bean require a definition for creating the actual instances of the bean object later
 
@@ -203,7 +204,7 @@ Instead of using the `Document`  in the `Printer` as an attribute. We create a `
 
 In `/src/main/java/com.demo/Greeter.java`
 
-``` java
+```java
 package com.demo;
 import org.springframework.stereotype.Component;
 
@@ -263,7 +264,7 @@ This will work without exceptions !
 
 - the `@Autowired` annotation has different executions paths that define which way `@Autowired` dependencies are resolved
   - Match via the type (default)
-  - match via  the field name
+  - match via the field name
   - Match via the qualifier by an additional `@Qualifier` and using `@Component(value=specifiedValue)`
 
 #### Example
@@ -334,7 +335,7 @@ In `RestController.java`
 //...
 ```
 
-***IMPORTANT*** :
+**_IMPORTANT_** :
 
 - In this case, spring uses the **Attribute Name** as an indication for **the bean that needs to be instantiated**
 - If we change the **Attribute Name** (`friendlyGreeter` to `friendlyGreeter1` for example) Spring won't be able to recognize which class (Already two components implement this interface ).
@@ -391,7 +392,7 @@ public class Greeter implements GreetInterface{
 - **@Bean**
   - Can be used for methods in configuration classes ( annotated with `@Configuration` ), to register the **return value of a method** as a **Spring Bean**.
   - Declared at the **method** level (whereas `@Component` is declared at **class** level )
-  - the bean name is the **same** as the method name  (default)
+  - the bean name is the **same** as the method name (default)
 
 ##### Example : Class Based Configuration of components
 
@@ -441,7 +442,7 @@ public class GreeterConfiguration {
 
 - Most commonly used
 
-  - **Singleton** **(Default)**  : only a single instance of an object exists in an application context
+  - **Singleton** **(Default)** : only a single instance of an object exists in an application context
   - **Prototype** : A new instance is created every time the bean is requested from the IOC container.
 
 - Less commonly used
@@ -455,101 +456,105 @@ public class GreeterConfiguration {
 #### Singleton and Request Scopes (Example)
 
 1. In `GreeterConfiguration.java` :
+
    - We add @Scope from both Methods
    - We change the return types ( so we can change our attribute names later on )
 
-    ```java
-    @Configuration
-    public class GreeterConfiguration {
+   ```java
+   @Configuration
+   public class GreeterConfiguration {
 
-        @Bean
-        @Scope(value = "prototype")
-        public Greeter greeter()
-        {
-            return new Greeter() ;
-        }
+       @Bean
+       @Scope(value = "prototype")
+       public Greeter greeter()
+       {
+           return new Greeter() ;
+       }
 
-        @Bean
-        @Scope(value="singleton")
-        public FriendlyGreeter friendlyGreeter()
-        {
-            return new FriendlyGreeter() ;
-        }
-    }
-    ```
+       @Bean
+       @Scope(value="singleton")
+       public FriendlyGreeter friendlyGreeter()
+       {
+           return new FriendlyGreeter() ;
+       }
+   }
+   ```
 
 2. In `GreeterBase.java` We add a variable to observe the scope of our beans
 
-    ```java
-    package com.demo;
+   ```java
+   package com.demo;
 
-    public abstract class GreeterBase implements GreetInterface{
+   public abstract class GreeterBase implements GreetInterface{
 
-        protected int greetCount = 0 ;
-    }
-    ```
+       protected int greetCount = 0 ;
+   }
+   ```
 
 3. In `Greeter` and `FriendlyGreeter` :
+
    - We extends the abstract class
    - we increment the variable at each call
 
-    ```java
-    package com.demo;
+   ```java
+   package com.demo;
 
-    public class Greeter extends GreeterBase{
+   public class Greeter extends GreeterBase{
 
-        @Override
-        public String greet()
-        {
-            greetCount ++ ;
-            return "hello " + greetCount;
-        }
-    }
-    ```
+       @Override
+       public String greet()
+       {
+           greetCount ++ ;
+           return "hello " + greetCount;
+       }
+   }
+   ```
 
 4. In `RestController.java`
+
    - we add new attributes
    - We add necessary endpoints
    - We change attribute types
 
-    ```java
-    @Autowired
-    private Greeter greeter1 ;
-    @Autowired
-    private FriendlyGreeter friendlyGreeter1 ;
-    @Autowired
-    private Greeter greeter2 ;
-    @Autowired
-    private FriendlyGreeter friendlyGreeter2 ;
-    ```
+   ```java
+   @Autowired
+   private Greeter greeter1 ;
+   @Autowired
+   private FriendlyGreeter friendlyGreeter1 ;
+   @Autowired
+   private Greeter greeter2 ;
+   @Autowired
+   private FriendlyGreeter friendlyGreeter2 ;
+   ```
 
-    ```java
-    @RequestMapping("/hellofriendly1")
-    public String helloFriendly(){
-        return friendlyGreeter1.greet()  ;
-    }
+   ```java
+   @RequestMapping("/hellofriendly1")
+   public String helloFriendly(){
+       return friendlyGreeter1.greet()  ;
+   }
 
-    @RequestMapping("/hello1")
-    public String helloWorld(){
-        return greeter1.greet();
-    }
+   @RequestMapping("/hello1")
+   public String helloWorld(){
+       return greeter1.greet();
+   }
 
-    @RequestMapping("/hellofriendly2")
-    public String helloFriendly2(){
-        return friendlyGreeter2.greet()  ;
-    }
+   @RequestMapping("/hellofriendly2")
+   public String helloFriendly2(){
+       return friendlyGreeter2.greet()  ;
+   }
 
 
-    @RequestMapping("/hello2")
-    public String helloWorld2(){
-        return greeter2.greet();
-    }
-    ```
+   @RequestMapping("/hello2")
+   public String helloWorld2(){
+       return greeter2.greet();
+   }
+   ```
 
 **NOTES** :
 
-- when we go to `/hello1` : it keeps incrementing (instance of the bean greeter requested only once  )
+- when we go to `/hello1` : it keeps incrementing (instance of the bean greeter requested only once )
 - when we go to `/hello2` :
+
   - a new instance for the bean greeter is requested , it's scope is **prototype** so a new object will be created .
   - We have a new Greeter with a new Counter , That keeps incrementing **independently of** `/hello1`
 
@@ -576,6 +581,7 @@ public FriendlyGreeter friendlyGreeter()
 ### Video 3.4 : Spring Bean Life Cycle and Callbacks
 
 - Spring bean life cycle :
+
   - describes the entire span of existence of a spring bean
   - This starts with the bean creation by the IOC container , ends with its destruction.
 
@@ -622,8 +628,8 @@ public class FriendlyGreeter extends GreeterBase implements InitializingBean, Di
 **Notes :**
 
 - The bean scope is **request** .So for each request a new instance is created then destroyed . For each request we see :
-`afterPropertiesSet`
-`destroy`
+  `afterPropertiesSet`
+  `destroy`
 - If the bean scope is **singleton (default)**. the bean will be instantiated ( `afterPropertiesSet` shows up ) **with application startup** . and will be deleted ( `destroy` will show up ) with **application shutdown**.
 
 #### Example (Annotations)
@@ -747,6 +753,7 @@ private DatabaseConfiguration config ;
   - simplifies database implementation
   - provides an abstract, interchangeable and consistent way for data access
 - **spring data supports** this database solutions:
+
   - JDBC
   - java persistence API (JPA)
   - MongoDB
@@ -844,16 +851,19 @@ public class Customer {
 ### Video 4.4 : Setting Up a Repository
 
 - **Repository<T, ID>** :generic interface all repositories inherit from
+
   - **T** : data type the repository stores
   - **ID** : type of the identifier ( annotated with @Id in the model )
 
 - **CrudRepository<T, ID>** extends Repository(T,ID) : generic interface supporting CRUD operations
+
   - Create -> `save(...)`
   - Read -> `find(...)`
   - Update -> `save(...)`
   - Delete -> `delete (...)`
 
 - **PagingAndSortingRepository<T, ID>** extends CrudRepository <T,ID>
+
   - supports key aspects of pagination
   - finding entities matching certain conditions -> `findAll(...)`
 
@@ -1051,8 +1061,8 @@ public class CustomerController {
 
 ```json
 {
-    "name" : "Tom",
-    "age" : 26
+  "name": "Tom",
+  "age": 26
 }
 ```
 
@@ -1060,9 +1070,9 @@ public class CustomerController {
 
 ```json
 {
-    "id" : 1,
-    "name" : "Tommy",
-    "age" : 27
+  "id": 1,
+  "name": "Tommy",
+  "age": 27
 }
 ```
 
@@ -1078,18 +1088,18 @@ public class CustomerController {
 
 #### Creating endpoints for Sending and Deleting Data Example
 
-  ```java
-  @RequestMapping(value ="/customer/{id}", method=RequestMethod.GET)
-      public Customer get(@PathVariable Long id)
-      {
-          return repository.findById(id).orElse(null); // we can use .get()
-      }
-      @RequestMapping(value="customer/{id}",method=RequestMethod.DELETE)
-      public void delete(@PathVariable Long id)
-      {
-          repository.deleteById(id);
-      }
-  ```
+```java
+@RequestMapping(value ="/customer/{id}", method=RequestMethod.GET)
+    public Customer get(@PathVariable Long id)
+    {
+        return repository.findById(id).orElse(null); // we can use .get()
+    }
+    @RequestMapping(value="customer/{id}",method=RequestMethod.DELETE)
+    public void delete(@PathVariable Long id)
+    {
+        repository.deleteById(id);
+    }
+```
 
 Notes:
 
@@ -1116,7 +1126,7 @@ Notes:
     - Mono\&lt;T&gt; : for handling 0 or 1 element
     - Flux &lt;T&gt; : fir handling 0 to N element(s)
   - Flux can return a list of elements, or indefinitely emit new elements to the stream
-  - API is **reactive**  it it returns objects wrapped in `Mono` or `Flux`
+  - API is **reactive** it it returns objects wrapped in `Mono` or `Flux`
 
 #### Adding the Webflux Dependency
 

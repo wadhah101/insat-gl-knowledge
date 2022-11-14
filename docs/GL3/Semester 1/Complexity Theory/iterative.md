@@ -66,6 +66,7 @@ We will suppose that we will iterate over a multiset $S$
 Let $f(x)$ be the cost of the body of the loop as a function of the loop variable $x$.
 
 The cost of the loop is then:
+
 $$
 \sum_{k\in S} f(k)
 $$
@@ -79,6 +80,7 @@ for i in range(n):
 ```
 
 The complexity of this algorithm is:
+
 $$
 \mathcal{O}(n)
 $$
@@ -97,6 +99,7 @@ We have $S=\{\lfloor \frac{n}{2^k}\rfloor, \quad k\in\mathbb{N}\}$
 We have $f(x)=\mathcal{O}(1).$ and $\lvert S \rvert= \log n$
 
 So the complexity of the algorithm is:
+
 $$
 \mathcal{O}(\log n)
 $$
@@ -127,6 +130,7 @@ Let $f_1(k)$ is the cost of the inner loop
 We have $S_2=\{0,\dots,\lfloor \frac{n}{k}\rfloor -1 \}$
 
 The complexity of the inner loop is:
+
 $$
 \mathcal{O}\left(\frac{n}{k}\right)
 $$
@@ -134,6 +138,7 @@ $$
 #### 3.4.3 Complexity of the Algorithm
 
 We have:
+
 $$
 \begin{align*}
 \sum_{k\in S_1}f_1(k)
@@ -145,6 +150,7 @@ $$
 \implies \sum_{k\in S_1}f_1(k)&=\mathcal{O}(n)
 \end{align*}
 $$
+
 So the algorithm is $\mathcal{O}(n)$
 
 ### 3.5 Example 4
@@ -160,6 +166,7 @@ for i in range(42):
 ```
 
 The complexity of such algorithm is:
+
 $$
 \mathcal{O}(\sqrt n)
 $$

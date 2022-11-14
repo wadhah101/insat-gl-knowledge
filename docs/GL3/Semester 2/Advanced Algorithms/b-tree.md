@@ -12,25 +12,25 @@ B-trees are **self-balanced search trees**, they are commonly used in databases.
 
 A B-tree of **order m** follows the following rules;
 
-* the **root node** has *k* keys, ``1<=k<=2m-1``,
-* the **other nodes** have *k* keys, ``m-1<=k<=2m-1``,
-* the leaves are of the *same depth*,
-* if the tree has *more than one leaf*, the root has ``at least two children`` and ``at most 2m children``.
+- the **root node** has _k_ keys, `1<=k<=2m-1`,
+- the **other nodes** have _k_ keys, `m-1<=k<=2m-1`,
+- the leaves are of the _same depth_,
+- if the tree has _more than one leaf_, the root has `at least two children` and `at most 2m children`.
 
 ## Node's structure
 
 ![node.png](assets/node.png)
 
-* p*i* is a pointer to a node that has keys, ``keys<ki``,
-* a node that has ``2m children`` is called a **complete node**,
-* the size of a node is usually the size of a **page**,
-* satellite information are stored with corresponding keys or in an another page.
+- p*i* is a pointer to a node that has keys, `keys<ki`,
+- a node that has `2m children` is called a **complete node**,
+- the size of a node is usually the size of a **page**,
+- satellite information are stored with corresponding keys or in an another page.
 
 ![example](assets/example.png)
 
 ### Structure
 
-``` c
+```c
 typedef struc bNode{
     bNode* children[2*m];
     int key[2*m-1];
@@ -41,7 +41,7 @@ typedef node* bTree;
 
 ## Creating an empty tree
 
-``` c
+```c
 bTree create(){
     bTree t = malloc(sizeof(node));
     for (int i = 0; i < 2*m; i++){
@@ -54,7 +54,7 @@ bTree create(){
 
 ## Searching a key in a B-Tree
 
-``` c
+```c
 bTree search(bTree t, int key){
     if(t == NULL) return NULL;
     int i = 0;
@@ -69,7 +69,7 @@ bTree search(bTree t, int key){
 
 ### Seperating the node in case it exceeds 2m-1 keys
 
-``` c
+```c
 void seperate(bTree t, int nodeIndex)
 {
     bTree newTree = create(M);
@@ -101,7 +101,7 @@ void seperate(bTree t, int nodeIndex)
 
 ### Inserting in an incomplete node
 
-``` c
+```c
 void insertIncomplete(bTree t, int key)
 {
     if (t->children[0] == NULL) // if t is a Leaf Node
@@ -134,7 +134,7 @@ void insertIncomplete(bTree t, int key)
 
 ### Insertion in a B Tree
 
-``` c
+```c
 bTree insert(bTree t, int key){
     if (t->size == 2 * M - 1)
     { // if the root node t is full on keys seperate then insert properly. Note that using this way, the tree will grow upwards and sideways everytime we add a key.
@@ -154,13 +154,13 @@ bTree insert(bTree t, int key){
 
 ## Removing a key in a B Tree
 
-| IMPORTANT                                                                                                                                                                                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| In here you will find two functions ``borrowRight``, ``fusionRight`` and ``deletePred``, you should know that there are also two other ``borrowLeft``, ``fusionRight`` and ``deleteSucc`` that are basically symetrical to the right version. **You should implement them**. |
+| IMPORTANT                                                                                                                                                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| In here you will find two functions `borrowRight`, `fusionRight` and `deletePred`, you should know that there are also two other `borrowLeft`, `fusionRight` and `deleteSucc` that are basically symetrical to the right version. **You should implement them**. |
 
 ### Borrowing a key from a right child
 
-``` c
+```c
 void borrowRight(bTree t, int nodeIndex){
     bTree tLeft = t->children[nodeIndex];
     bTree tRight = t->children[nodeIndex + 1];
@@ -179,7 +179,7 @@ void borrowRight(bTree t, int nodeIndex){
 
 ### Connecting the elements of the right sibling to his left
 
-``` c
+```c
 void fusionRight(bTree t, int nodeIndex){
     bTree tLeft = t->children[nodeIndex];
     bTree tRight = t->children[nodeIndex + 1];
@@ -202,7 +202,7 @@ void fusionRight(bTree t, int nodeIndex){
 
 ### Remove the last element of the left child and put it in place of the key-to-delete
 
-``` c
+```c
 int deletePred(bTree t){
     if(t->children[0] == NULL){
         t->size = t->size - 1;
@@ -220,7 +220,7 @@ int deletePred(bTree t){
 
 ### Remove key from an internal node
 
-``` c
+```c
 bTree internalDelete(bTree t, int key){
     int i = 0;
     if (t->children[0] == NULL){

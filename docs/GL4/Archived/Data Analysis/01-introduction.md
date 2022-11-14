@@ -17,6 +17,7 @@ A probability space is a triplet $\mathfrak{P}=\left(\Omega,\mathcal{F},\mu\righ
 - $\mu:\mathcal{F}\rightarrow [0,1]$ is a probability function that assigns a probability to each event.
 
 We define the probability of an event $A\in\mathcal{F}$ as follow:
+
 $$
 \mathcal{P}(A)=\mu(A)
 $$
@@ -40,6 +41,7 @@ We will first create a mathematical model for this problem.
 - Let $C_{i,j}$ be the event: $\texttt{The first dice has the value i, and the second dice has the value j}$.
 
 Mathematically, $C_{i,j}=A_i\cap B_j=\{(i,j)\},$ its probability is:
+
 $$
 \mathcal{P}(C_{i,j})=\frac{\lvert C_{i,j}\rvert}{\lvert \Omega \rvert}=\frac{1}{36}
 $$
@@ -53,6 +55,7 @@ $$
 A random variable is a function $X:\Omega\rightarrow S$.
 
 In some sense, the probability that $X\in A$ from some $A\subseteq S$ is defined as:
+
 $$
 \mu(X^{-1}\left(A\right))
 $$
@@ -69,16 +72,16 @@ Let $X$ be the random variable denoting the signed value of the steps that will 
 
 We will generate a table of values of possible sums each with its corresponding step:
 
-|      | $1$                      | $2$                      | $3$                      | $4$                       | $5$                       | $6$                       |
-| ---- | ------------------------ | ------------------------ | ------------------------ | ------------------------- | ------------------------- | ------------------------- |
-| $1$  | Sum is $2$, Step is $2$  | Sum is $3$, Step is $3$  | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$   | Sum is $6$, Step is $-3$  | Sum is $7$, Step is $7$   |
-| $2$  | Sum is $3$, Step is $3$  | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$  | Sum is $6$, Step is $-3$  | Sum is $7$, Step is $7$   | Sum is $8$, Step is $-2$  |
-| $3$  | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$  | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$   | Sum is $8$, Step is $-2$  | Sum is $9$, Step is $-3$  |
-| $4$  | Sum is $5$, Step is $5$  | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$  | Sum is $8$, Step is $-2$  | Sum is $9$, Step is $-3$  | Sum is $10$, Step is $-5$ |
-| $5$  | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$  | Sum is $8$, Step is $-2$ | Sum is $9$, Step is $-3$  | Sum is $10$, Step is $-5$ | Sum is $11$, Step is $11$ |
-| $6$  | Sum is $7$, Step is $7$  | Sum is $8$, Step is $-2$ | Sum is $9$, Step is $-3$ | Sum is $10$, Step is $-5$ | Sum is $11$, Step is $11$ | Sum is $12$, Step is $-3$ |
+|     | $1$                      | $2$                      | $3$                      | $4$                       | $5$                       | $6$                       |
+| --- | ------------------------ | ------------------------ | ------------------------ | ------------------------- | ------------------------- | ------------------------- |
+| $1$ | Sum is $2$, Step is $2$  | Sum is $3$, Step is $3$  | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$   | Sum is $6$, Step is $-3$  | Sum is $7$, Step is $7$   |
+| $2$ | Sum is $3$, Step is $3$  | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$  | Sum is $6$, Step is $-3$  | Sum is $7$, Step is $7$   | Sum is $8$, Step is $-2$  |
+| $3$ | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$  | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$   | Sum is $8$, Step is $-2$  | Sum is $9$, Step is $-3$  |
+| $4$ | Sum is $5$, Step is $5$  | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$  | Sum is $8$, Step is $-2$  | Sum is $9$, Step is $-3$  | Sum is $10$, Step is $-5$ |
+| $5$ | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$  | Sum is $8$, Step is $-2$ | Sum is $9$, Step is $-3$  | Sum is $10$, Step is $-5$ | Sum is $11$, Step is $11$ |
+| $6$ | Sum is $7$, Step is $7$  | Sum is $8$, Step is $-2$ | Sum is $9$, Step is $-3$ | Sum is $10$, Step is $-5$ | Sum is $11$, Step is $11$ | Sum is $12$, Step is $-3$ |
 
- We have:
+We have:
 
 - $X^{-1}(2)=\{(1,1)\}$
 - $X^{-1}(3)=\{(1,2),(2,1)\}$
@@ -111,14 +114,17 @@ The expected value of $X$, denoted $\mathbb{E}[X]$, if it exists, defines in som
 ### 2.1 Discrete Case
 
 If $\mathcal{D}$ is a discrete distribution, then:
+
 $$
 \mathbb{E}[X]=\sum_{k\in S}k\mathcal{P}(X=k)
 $$
+
 With $S$ defined as the support of $X$
 
 ### 2.2 Continuous Case
 
 If $\mathcal{D}$ is a continuous distribution, then:
+
 $$
 \mathbb{E}[X]=\int_{S}xf(x)\space \text{dx}
 $$
@@ -131,6 +137,7 @@ $$
 - Let $X,Y$ two random variables
 
 The expected value is linear:
+
 $$
 \mathbb{E}[aX+bY]=a\mathbb{E}[X]+b\mathbb{E}[Y]
 $$
@@ -143,6 +150,7 @@ $$
 - Let $Y=\sum_{k=1}^n a_kX_k$
 
 We have:
+
 $$
 \mathbb{E}[Y]=\mathbb{E}\left[\sum_{k=1}^na_kX_k\right]=\sum_{k=1}^na_k\mathbb{E}[X_k]
 $$
@@ -150,6 +158,7 @@ $$
 ### 2.4 Example: Dice Game 3
 
 We want to calculate the expected number of steps taken on each step:
+
 $$
 \begin{align*}
 \mathbb{E}[X]&=\sum_{k\in X(\Omega)}k\mathcal{P}(X=k) \\
@@ -167,6 +176,7 @@ Let $X$ be a random variable following some distribution $\mathcal{D}.$
 The variance of $X$, denoted $\mathbb{V}[X]$, if it exists, defines in some sense how far is $X$ from its expected value, on average.
 
 It is defined as follow:
+
 $$
 \mathbb{V}[X]=\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)^2\right]=\mathbb{E}[X^2]-\mathbb{E}[X]^2
 $$
@@ -174,14 +184,17 @@ $$
 ### 3.1 Discrete Case
 
 If $\mathcal{D}$ is a discrete distribution, then:
+
 $$
 \mathbb{V}[X]=\sum_{k\in S}(k-\mathbb{E}[X])^2\mathcal{P}(X=k)
 $$
+
 With $S$ defined as the support of $X$
 
 ### 3.2 Continuous Case
 
 If $\mathcal{D}$ is a continuous distribution, then:
+
 $$
 \mathbb{E}[X]=\int_{S}(x-\mathbb{E}[X])^2f(x)\space \text{dx}
 $$
@@ -194,6 +207,7 @@ $$
 - Let $X,Y$ two independent random variables.
 
 The expected value is linear:
+
 $$
 \mathbb{V}[aX+bY]=a^2\mathbb{V}[X]+b^2\mathbb{V}[Y]
 $$
@@ -206,6 +220,7 @@ $$
 - Let $Y=\sum_{k=1}^n a_kX_k$
 
 We have:
+
 $$
 \mathbb{V}[Y]=\mathbb{V}\left[\sum_{k=1}^na_kX_k\right]=\sum_{k=1}^na_k^2\mathbb{V}[X_k]
 $$
@@ -233,6 +248,7 @@ Let $X,Y$ be two random variables.
 The co-variance of $X$ and $Y$, denoted $\text{Cov}[X,Y]$, if it exists, defines in some sense how $X$ and $Y$ varies together.
 
 It is defined as follow:
+
 $$
 \text{Cov}[X,Y]=\mathbb{E}\left[\left(X-\mathbb{E}[X]\right)\cdot \left(Y-\mathbb{E}[Y]\right)\right]=\mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y]
 $$
@@ -240,14 +256,17 @@ $$
 ### 4.1 Discrete Case
 
 If $\mathcal{D}$ is a discrete distribution, then:
+
 $$
 \text{Cov}[X,Y]=\sum_{u\in S_1}\sum_{v\in S_2}(u-\mathbb{E}[X])(v-\mathbb{E}[Y])\mathcal{P}(X=u\wedge Y=v)
 $$
+
 With $S$ defined as the support of $X$
 
 ### 4.2 Continuous Case
 
 If $\mathcal{D}$ is a continuous distribution, then:
+
 $$
 \text{Cov}[X,Y]=\iint_{S_1\times S_2}(x-\mathbb{E}[X])(y-\mathbb{E}[Y])f(x,y)\space \text{dydx}
 $$
@@ -260,11 +279,13 @@ $$
 - Let $X,Y,Z$ three random variables
 
 The co-variance is left-linear:
+
 $$
 \text{Cov}[aX+bY,Z]=a\text{Cov}[X,Z]+b\text{Cov}[Y,Z]
 $$
 
 The co-variance is right-linear:
+
 $$
 \text{Cov}[X,aY+bZ]=a\text{Cov}[X,Y]+b\text{Cov}[X,Z]
 $$
@@ -276,6 +297,7 @@ $$
 - Let $X_1,\dots,X_n,Y_1,\dots,Y_m$ be $n+m$ random variables
 
 We have:
+
 $$
 \text{Cov}\left[\sum_{i=1}^na_iX_i,\sum_{j=1}^mb_jY_j\right]=\sum_{i=1}^n\sum_{j=1}^ma_ib_j\text{Cov}\left[X_i,Y_j\right]
 $$
@@ -283,6 +305,7 @@ $$
 #### 4.3.4 Symmetry
 
 In fact, $\text{Cov}$ is also symmetric as:
+
 $$
 \text{Cov}[X,Y]=\text{Cov}[Y,X]
 $$
@@ -290,6 +313,7 @@ $$
 #### 4.3.5 Positive semi-definite
 
 More than that, $\text{Cov}$ is positive semi-definite as:
+
 $$
 \text{Cov}[X,X]=\mathbb{V}[X]\ge 0
 $$
@@ -297,10 +321,12 @@ $$
 #### 4.3.6 Orthogonality between independent random variables
 
 Let $X,Y$ two independent random variables. We have:
+
 $$
 \text{Cov}[X,Y]=0
 $$
-*The converse does not generally hold*
+
+The converse does not generally hold
 
 ### 4.4 Relation to Variance
 
@@ -309,6 +335,7 @@ $$
 Let $X$ a random variable.
 
 The variance of $X$ is in fact equal to:
+
 $$
 \mathbb{V}[X]=\text{Cov}[X,X]
 $$
@@ -321,6 +348,7 @@ $$
 - Let $Y=\sum_{k=1}^n a_kX_k$
 
 The variance of $Y$ is:
+
 $$
 \begin{align*}
 \mathbb{V}[Y]&=\text{Cov}\left[\sum_{i=1}^na_iX_i,\sum_{j=1}^na_jX_j\right]\\

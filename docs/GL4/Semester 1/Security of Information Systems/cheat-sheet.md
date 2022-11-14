@@ -8,20 +8,20 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ## Some important notions
 
-|name|description|
-|---|---|
-|Identification|Who are you ?|
-|Authentication|Prove it|
-|Authorization|Do you have the right to do something ?|
-|Audit| What did you do ?|
-|FootPrint|Recognition|
-|Integrity|Ensuring that information cannot be changed|
-|Confidentiality|Ensuring that information can be accessed (read) only by authorized persons|
-|DLP| Discret Logarithm Problem : finding the number y where x = g^y mod, g is given and p is a large prime number |
+| name            | description                                                                                                  |
+| --------------- | ------------------------------------------------------------------------------------------------------------ |
+| Identification  | Who are you ?                                                                                                |
+| Authentication  | Prove it                                                                                                     |
+| Authorization   | Do you have the right to do something ?                                                                      |
+| Audit           | What did you do ?                                                                                            |
+| FootPrint       | Recognition                                                                                                  |
+| Integrity       | Ensuring that information cannot be changed                                                                  |
+| Confidentiality | Ensuring that information can be accessed (read) only by authorized persons                                  |
+| DLP             | Discret Logarithm Problem : finding the number y where x = g^y mod, g is given and p is a large prime number |
 
 ### Frequently used CMDs
 
-``gpg`` :  is the cmd for encryption
+`gpg` : is the cmd for encryption
 
 - Get Hostname
 
@@ -43,25 +43,25 @@ scp <filename> <username>@<hostname>:<path>
 
 ## Attacks
 
-|Attack|Description|Example|
-|---|---|---|
-|Birthday Attack|It is made against the Hash algorithms. (Belongs to a class of brute force)
+| Attack          | Description                                                                 | Example |
+| --------------- | --------------------------------------------------------------------------- | ------- |
+| Birthday Attack | It is made against the Hash algorithms. (Belongs to a class of brute force) |
 
- All hashed messages have a fixed length (independent from the input length) and they unique for that message. this attack refers to the probability of finding two random messages m1 and m2 that has the same Hash h(m1) = h(m2) so the attacker can safely replace the message by his own one|What is the relation with the birthday:
+All hashed messages have a fixed length (independent from the input length) and they unique for that message. this attack refers to the probability of finding two random messages m1 and m2 that has the same Hash h(m1) = h(m2) so the attacker can safely replace the message by his own one|What is the relation with the birthday:
 
- Since we have a finite number of days in one year (365) there is a big chance to have 2 persons with the same birthday in a finite number of persons.|
+Since we have a finite number of days in one year (365) there is a big chance to have 2 persons with the same birthday in a finite number of persons.|
 |Password attack|Trying to guess the password or having a databse of passwords called dictionnary|- **Brute Force** : using a random approach by trying different passwords and hoping that one work Some logic can be applied by trying passwords related to the person’s name, job title, hobbies or similar items.
 
 - **Dictionary attack**: dictionary of common passwords is used to attempt to gain access to a user’s computer and network. One approach is to copy an encrypted file that contains the passwords, apply the same encryption to a dictionary of commonly used passwords, and compare the results.|
-|Man in the middle|occurs when a hacker inserts itself between the communications of a client and a server|Session hijacking
+  |Man in the middle|occurs when a hacker inserts itself between the communications of a client and a server|Session hijacking
 
 ![mitm1](assets/mitm1.PNG)
 
 ![mitm2](assets/mitm2.PNG)
 
-|SQL Injection|SQL commands are inserted into data-plane input (for example, instead of the login or password) in order to run predefined SQL commands|“SELECT * FROM users WHERE account = ‘’ or ‘1’ = ‘1’;”
+|SQL Injection|SQL commands are inserted into data-plane input (for example, instead of the login or password) in order to run predefined SQL commands|“SELECT \* FROM users WHERE account = ‘’ or ‘1’ = ‘1’;”
 
- Because ‘1’ = ‘1’ always evaluates to TRUE, the database will return the data for all users instead of just a single user.|
+Because ‘1’ = ‘1’ always evaluates to TRUE, the database will return the data for all users instead of just a single user.|
 |Cross-site scripting (XSS)|Use third-party web resources to run scripts in the victim’s web browser or scriptable application|
 
 ![xss](assets/xss.PNG)
@@ -82,7 +82,7 @@ Netfilter is a Linux kernel module that provides the ability to monitor, modify 
 
 ### IpTables
 
-IpTable in a  CMD interface to configure Netfilter
+IpTable in a CMD interface to configure Netfilter
 
 #### Commands
 
@@ -153,17 +153,18 @@ Encryption is used to garantee Confidentiality.
 Use one shared encryption key between sender and receiver.
 
 - Encrypt the file :
+
   - Binary format (default)
 
-     ```bash
-     gpg -c <filename>
-     ```
+    ```bash
+    gpg -c <filename>
+    ```
 
   - ASCII format
 
-     ```bash
-     gpg -c --armor(or -a) <filename>
-     ```
+    ```bash
+    gpg -c --armor(or -a) <filename>
+    ```
 
 - Get all the algos
 
@@ -187,11 +188,11 @@ gpg -c -a --cipher-algo <filename>
 gpg -d <filename>
 ```
 
-|Advantages ++ |Disadvantages -- |
-|---|---|
-|Fast|non secure key|
-|-|Large number of keys|
-|-|Without signature|
+| Advantages ++ | Disadvantages --     |
+| ------------- | -------------------- |
+| Fast          | non secure key       |
+| -             | Large number of keys |
+| -             | Without signature    |
 
 #### Feistel
 
@@ -204,7 +205,7 @@ gpg -d <filename>
 
 ![feistel](assets/feistel.PNG)
 
-f : is the the encryption function  that takes (data block) as input and returns one output of the same size as the data block.
+f : is the the encryption function that takes (data block) as input and returns one output of the same size as the data block.
 
 **Decryption Algorithm** :
 
@@ -269,11 +270,11 @@ gpg --verify file.signed
 gpg -o file --decrypt file.enc
 ```
 
-|Advantages ++ |Disadvantages -- |
-|---|---|
-|Secured|Slow|
-|Signature||
-|Less number of keys||
+| Advantages ++       | Disadvantages -- |
+| ------------------- | ---------------- |
+| Secured             | Slow             |
+| Signature           |                  |
+| Less number of keys |                  |
 
 #### Needham-Schroeder
 
@@ -311,10 +312,10 @@ NP-complete problem
 **Parameters**:
 
 1. choose 2 prime numbers p & q
-2. N= p*q
-3. L = (p-1)*(q-1)
+2. N= p\*q
+3. L = (p-1)\*(q-1)
 4. Generate the public Key (e,N): e is between 1 and L and coprime with N and L
-5. private key (d,N) : d*e mod L =1
+5. private key (d,N) : d\*e mod L =1
 
 **Encryption** :
 ![\Large M^e](https://latex.codecogs.com/svg.latex?\Large&space;M^e) mod N = C
@@ -364,7 +365,7 @@ p (prime number) and g are public infos
 4. Key of B : Kb= ![\Large u^b](https://latex.codecogs.com/svg.latex?\Large&space;u^b) = ![\Large g^ab](https://latex.codecogs.com/svg.latex?\Large&space;g^ab) mod p
 5. Key of A : Ka= ![\Large v^a](https://latex.codecogs.com/svg.latex?\Large&space;v^a) = ![\Large g^ba](https://latex.codecogs.com/svg.latex?\Large&space;g^ba) mod p
 
- => Ka = Kb
+=> Ka = Kb
 
 ### Kerberos
 
@@ -419,7 +420,7 @@ public Key P = dG
 
 #### Signature Verification
 
-1. compute w = 1/s  = k / (h+rd) mod n
+1. compute w = 1/s = k / (h+rd) mod n
 2. wh = hk(h+rd) = u
 3. wr = rk(h+rd) = v
 4. Q = uG + vP
@@ -432,7 +433,7 @@ We have:
 
 - (q ,G, G1, e), P un point de la CE E tq q divise p^k - 1
 - n longueur du message
-- H1 : (0, 1)*-> G*
+- H1 : (0, 1)_-> G_
 - H2 : G1 -> (0, 1)^n
 - PKG : calcule P pub = rP
 
@@ -481,7 +482,7 @@ sha256sum file
 
 #### Definition
 
-SSL  (Secure Sockets Layer)
+SSL (Secure Sockets Layer)
 
 - Is an encryption-based protocol
 - Ensure confidentiality,,Authentication and Integrity
@@ -574,6 +575,7 @@ openssl dgst -sha256 -verify PUB -signature fileHashSign file
 
 - Digital Certificates are verifiable small data files that contain identity credentials to help websites, people, and devices represent their authentic online identity.
 - Digital certificates cover three main uses:
+
   - Authentication: used to validate the identity of issuers as part of an authentication process, a crucial element of computer network security.
   - Signing: sed to sign a document or a file and to guarantee its integrity
   - Encryption: Garantee the security and integrity of information exchanged between a website and a browser, by means of a cryptographic key enabling a secure session to be activated (HTTPS protocol)
@@ -588,7 +590,7 @@ openssl s_client www.google.com:443
 
 - Get the authority of a certification :
 
- google.cert is the file that contains google certification : output of the above cmd
+google.cert is the file that contains google certification : output of the above cmd
 
 ```bash
 openssl x509 -in google.cert -subject -issuer -noout
@@ -646,10 +648,10 @@ openssl pkcs12 -export -out gl4.pfx -in gl4.cert -inkey gl4.key -name "certifica
 
 - Import it
 
-|preference -> certificate manager -> my Certificates -> import |
-|---|
+| preference -> certificate manager -> my Certificates -> import |
+| -------------------------------------------------------------- |
 
 - Add Authority
 
 | preference -> certificate manager -> Authorities -> import -> choose INSAT.cert |
-|---|
+| ------------------------------------------------------------------------------- |

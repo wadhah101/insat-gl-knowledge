@@ -22,7 +22,7 @@ slug: /gl3/semester-2/dotnet/c-sharp
 
 ## Chapter 2
 
-Comments : // or /**/
+Comments : // or /\*\*/
 
 | Naming Convention | Examples                                        | Use for                                                    |
 | ----------------- | ----------------------------------------------- | ---------------------------------------------------------- |
@@ -33,7 +33,7 @@ Comments : // or /**/
 - **Verbatim string**: A literal string prefixed with @ to disable escape characters so that a backslash is a backslash. (`@"\t"` will show `\t` and not a tab)
 - **Interpolated string**: A literal string prefixed with $ to enable embedded formatted variables. You will learn more about this later in this chapter.
 
-- **decimal Type**  : The decimal type is accurate because it stores the number as a large integer and shifts the decimal point. For example, 0.1 is stored as 1, with a note to shift the decimal point one place to the left. 12.75 is stored as 1275, with a note to shift the decimal point two places to the left.
+- **decimal Type** : The decimal type is accurate because it stores the number as a large integer and shifts the decimal point. For example, 0.1 is stored as 1, with a note to shift the decimal point one place to the left. 12.75 is stored as 1275, with a note to shift the decimal point two places to the left.
 
 ```csharp
 int population = 66_000_000; // 66 million in UK
@@ -47,9 +47,9 @@ Console.WriteLine($"{name} has {length2} characters."); // interpolated string
 
 - `Var` You can use the `var` keyword to declare local variables. The compiler will infer the type from the value that you assign after the assignment.
 
-- `dynamic`  : type changes with each assignment
+- `dynamic` : type changes with each assignment
 
-- **Default values for types**  :
+- **Default values for types** :
 
   - references : null
   - bool : False

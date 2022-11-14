@@ -21,6 +21,7 @@ An estimator of $s,$ denoted $\hat{s}$ (when there is no confusion) is a functio
 Informally, this function estimates $s$ from the observed data.
 
 The estimator is said to be unbiased if:
+
 $$
 \forall X_1,\dots,X_n\in\mathcal{A},\quad\mathbb{E}[\hat{s}(X_1,\dots,X_n)]=s
 $$
@@ -28,21 +29,28 @@ $$
 ## 2. Estimating mean
 
 The trivial mean estimator is:
+
 $$
 \hat{\mu}(X_1,\dots,X_n)=\frac{1}{n}\sum_{i=1}^nX_i
 $$
+
 We have:
+
 $$
 \mathbb{E}[\hat{\mu}(X_1,\dots,X_n)]=\mathbb{E}\left[\frac{1}{n}\sum_{i=1}^nX_i\right]=\frac{1}{n}\sum_{i=1}^n\mathbb{E}[X_i]=\mu
 $$
+
 So $\hat{\mu}$ is unbiased. Furthermore:
+
 $$
 \begin{align*}
 \mathbb{V}[\hat{\mu}(X_1,\dots,X_n)]&=\text{Cov}\left[\frac{1}{n}\sum_{i=1}^nX_i,\frac{1}{n}\sum_{i=1}^nX_i\right]\\
 &=\frac{1}{n^2}\sum_{1\leq i,j\leq n}\text{Cov}[X_i,X_j]\\
 \end{align*}
 $$
+
 Assuming that $X_1,\dots,X_n$ are independent, we have:
+
 $$
 \boxed{\mathbb{V}[X]=\frac{1}{n^2}\sum_{i=1}^n\mathbb{V}[X_i]=\frac{\sigma^2}{n}}
 $$
@@ -58,6 +66,7 @@ $$
 $$
 
 the mean of this estimator is:
+
 $$
 \begin{align*}
 \mathbb{E}\left[\hat{\sigma^2}(X_1,\dots,X_n)\right]&=\mathbb{E}\left[\frac{1}{n}\sum_{i=1}^n\left(X_i-\hat{\mu}(X_1,\dots,X_n)\right)^2\right]\\
@@ -71,11 +80,13 @@ $$
 &=\frac{n-1}{n}\sigma^2
 \end{align*}
 $$
+
 Thus this estimator is biased.
 
 ### 3.2 Bessel's Correction: $\hat{\sigma}_*^2$
 
 This is an unbiased estimator of the variance:
+
 $$
 \hat{\sigma}_*^2(X_1,\dots,X_n)=\frac{n}{n-1}\hat{\sigma}^2(X_1,\dots,X_n)=\frac{1}{n-1}\sum_{i=1}^n\left(X_i-\hat\mu(X_1,\dots,X_n)\right)^2
 $$
@@ -83,10 +94,13 @@ $$
 ### 3.3 God's Estimator
 
 This in an estimator depending on the prior knowledge of the mean:
+
 $$
 \hat{\sigma^2_G}(X_1,\dots,X_n)=\frac{1}{n}\sum_{i=1}^n(X_i-\mu)^2
 $$
+
 The expected value of this estimator is:
+
 $$
 \begin{align*}\mathbb{E}\left[\hat{\sigma^2_G}(X_1,\dots,X_n)\right]&=\mathbb{E}\left[\frac{1}{n}\sum_{i=1}^n\left(X_i-\mu\right)^2\right]\\
 &=\frac{1}{n}\sum_{i=1}^n\mathbb{E}[X_i^2]-2\mathbb{E}[\mu X_i]+\mathbb{E}[\mu^2]\\
@@ -95,6 +109,7 @@ $$
 &=\sigma^2
 \end{align*}
 $$
+
 Thus this estimator is unbiased
 
 ## 4. Estimating Covariance
@@ -108,6 +123,7 @@ $$
 $$
 
 The expected value of this estimator is:
+
 $$
 \begin{align*}
 \mathbb{E}[\hat{\text{Cov}}(Z_1,\dots,Z_n)]&=\frac{1}{n}\sum_{i=1}^n\mathbb{E}\left[\left(Z_i-\hat{\mu}(Z_1,\dots,Z_n)\right)\left(Z_i-\hat{\mu}(Z_1,\dots,Z_n)\right)^T\right]\\
@@ -121,23 +137,29 @@ $$
 &=\frac{n-1}{n}C
 \end{align*}
 $$
+
 Thus this estimator is biased.
 
 ### 4.2 Bessel's Correction
 
 This is the same correction as the sample variance's correction:
+
 $$
 \hat{\text{Cov}_*}(Z_1,\dots,Z_n)=\frac{n}{n-1}\hat{\text{Cov}}(Z_1,\dots,Z_n)=\frac{1}{n-1}\sum_{i=1}^n(Z_i-\hat{\mu}(Z_1,\dots,Z_n))\cdot(Z_i-\hat{\mu}(Z_1,\dots,Z_n))^T
 $$
+
 This estimator is an unbiased estimator of the covariance matrix
 
 ### 4.3 God's Estimator
 
 This in an estimator depending on the prior knowledge of the mean:
+
 $$
 \hat{\text{Cov}}_G(Z_1,\dots,Z_n)=\frac{1}{n}\sum_{i=1}^n\left(Z_i-\mu\right)\left(Z_i-\mu\right)^T
 $$
+
 Its expected values is:
+
 $$
 \begin{align*}
 \mathbb{E}\left[\hat{\text{Cov}}_G(Z_1,\dots,Z_n)\right]&=\frac{1}{n}\sum_{i=1}^n\mathbb{E}\left[\left(Z_i-\mu\right)\left(Z_i-\mu\right)^T\right]\\

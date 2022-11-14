@@ -12,24 +12,24 @@ It is a module of .Net Framework which is used to establish connection between a
 
 ADO.NET has two main components that are used for accessing and manipulating data are:
 
-|Data provider | DataSet|
-| --- | --- |
-|It is used to connect to the database, execute commands and retrieve the record. |It is a collection of data tables that contain the data. It is used to fetch data without interacting with a Data Source that's why, it also known as disconnected data access method.|
+| Data provider                                                                    | DataSet                                                                                                                                                                                |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| It is used to connect to the database, execute commands and retrieve the record. | It is a collection of data tables that contain the data. It is used to fetch data without interacting with a Data Source that's why, it also known as disconnected data access method. |
 
 ## Connected Mode
 
-``SqlConnection`` : It is used to establish a connection to a specific data source
+`SqlConnection` : It is used to establish a connection to a specific data source
 
-``SqlCommand`` : It is used to execute queries to perform database operations
+`SqlCommand` : It is used to execute queries to perform database operations
 
-``SqlDataReader``: It is used to read data from data source
+`SqlDataReader`: It is used to read data from data source
 
-|``SqlDataAdapter``: It works as a bridge between a DataSet and a data source to retrieve data.It can be used to fill the DataSet and update the data source|
-|---|
+| `SqlDataAdapter`: It works as a bridge between a DataSet and a data source to retrieve data.It can be used to fill the DataSet and update the data source |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ### Disconnected Mode
 
-``DataSet``: It is used to initialize a new instance of the DataSet class
+`DataSet`: It is used to initialize a new instance of the DataSet class
 
 ### Stored Procedures
 
@@ -70,14 +70,14 @@ Storage model.
 
 **LINQ** to Entities: is a query language used to write queries against the object model. It returns entities, which are defined in the conceptual model.
 
-**Entity SQL**:  is another query language just like LINQ to Entities.|
-|---|---|
+| **Entity SQL**: is another query language just like LINQ to Entities. |
+| --------------------------------------------------------------------- |
 
 ### Workflow
 
- |ModelFirst|DatabaseFirst| CodeFirst |
- | --- | --- | --- |
- |Working on a visual diagram using the EF Designer and letting the Entity Framework create/update the rest accordingly|building the Database and letting Entity Framework create/update the rest accordingly|writing the Data Model entity classes and let Entity Framework generate the Database accordingly|
+| ModelFirst                                                                                                            | DatabaseFirst                                                                         | CodeFirst                                                                                        |
+| --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Working on a visual diagram using the EF Designer and letting the Entity Framework create/update the rest accordingly | building the Database and letting Entity Framework create/update the rest accordingly | writing the Data Model entity classes and let Entity Framework generate the Database accordingly |
 
 #### Code First
 
@@ -85,57 +85,57 @@ Storage model.
 
 - DataAnnotions : [annotions details]
 
-|Key |Column("Name", TypeName="ntext") |ForignKey("fkname")|NotMapped|
-|---|---|---|---|
-|Specifies the primary key of the table|Specifies the column name and type|Foreign kety name |will not be mapped in the db |
+| Key                                    | Column("Name", TypeName="ntext")   | ForignKey("fkname") | NotMapped                    |
+| -------------------------------------- | ---------------------------------- | ------------------- | ---------------------------- |
+| Specifies the primary key of the table | Specifies the column name and type | Foreign kety name   | will not be mapped in the db |
 
 - Relations :
 
-###### 1.  One To One
+###### 1. One To One
 
- ```csharp
- class c1 {
- public int id {get; set;}
- public virtual c2 c {get; set;}
- }
- class c2 {
- [Key, ForeignKey("c1")]
- public int id {get; set;}
- public virtual c1 c {get; set;}
- }
- ```
+```csharp
+class c1 {
+public int id {get; set;}
+public virtual c2 c {get; set;}
+}
+class c2 {
+[Key, ForeignKey("c1")]
+public int id {get; set;}
+public virtual c1 c {get; set;}
+}
+```
 
-###### 2.  One To Many
+###### 2. One To Many
 
-  ```csharp
- class c1 {
- public int id {get; set;}
- public virtual ICollection<c2> cs {get; set;}
- }
- class c2 {
+```csharp
+class c1 {
+public int id {get; set;}
+public virtual ICollection<c2> cs {get; set;}
+}
+class c2 {
 
- public int id {get; set;}
- public virtual c1 c {get; set;}
- }
- ```
+public int id {get; set;}
+public virtual c1 c {get; set;}
+}
+```
 
-###### 3.  Many To Many
+###### 3. Many To Many
 
-  ```csharp
- class c1 {
- public int id {get; set;}
- public virtual ICollection<c2> cs {get; set;}
- }
- class c2 {
+```csharp
+class c1 {
+public int id {get; set;}
+public virtual ICollection<c2> cs {get; set;}
+}
+class c2 {
 
- public int id {get; set;}
- public virtual ICollection<c1> c {get; set;}
- }
- ```
+public int id {get; set;}
+public virtual ICollection<c1> c {get; set;}
+}
+```
 
 ##### 2. Create a DBcontext for your database
 
-you should first create a database in the sql server  than add the connectionString to your dbcontext class
+you should first create a database in the sql server than add the connectionString to your dbcontext class
 
 ###### dbcontext calss
 
@@ -160,13 +160,13 @@ public DbSet<Tag> Tags { get; set; }
 
 ####### Methods Of DBContext
 
-|Entry|Entry\<TEntity\>|Set(Type)|Set\<TEntity\>()|SaveChanges()|
-|---|---|---|---|---|
+| Entry | Entry\<TEntity\> | Set(Type) | Set\<TEntity\>() | SaveChanges() |
+| ----- | ---------------- | --------- | ---------------- | ------------- |
 
 ####### Methods Of DBSet
 
-|Add|Attach(Entity)|Create|Find(int)|Include|Remove|SqlQuery|
-|---|---|---|---|---|---|---|
+| Add | Attach(Entity) | Create | Find(int) | Include | Remove | SqlQuery |
+| --- | -------------- | ------ | --------- | ------- | ------ | -------- |
 
 ##### 3- Migrations
 
@@ -174,13 +174,13 @@ public DbSet<Tag> Tags { get; set; }
 
 Entity framework Code First had different database initialization strategies prior to EF 4.3 like:
 
-- ``CreateDatabaseIfNotExists``
-- ``DropCreateDatabaseIfModelChanges``
-- ``DropCreateDatabaseAlways``
+- `CreateDatabaseIfNotExists`
+- `DropCreateDatabaseIfModelChanges`
+- `DropCreateDatabaseAlways`
 
 ###### Automated Migrations
 
-  In your package manager tap those cmd:
+In your package manager tap those cmd:
 
 - **enable-migrations**
 - **add-migration "migration_name"** : this will create a migration for you that has 2 methods
@@ -199,17 +199,18 @@ Entity framework Code First had different database initialization strategies pri
 ##### Quering with EDM
 
 - LinQ to Entity
+
   - LinQ Method
 
-   ```csharp
-   //Student is a model
-   using( var context = new SchoolDBStudents() ) {
+  ```csharp
+  //Student is a model
+  using( var context = new SchoolDBStudents() ) {
 
-    var query = context.Students.Where(s=>s.StudentName ==  "Bill").FirstOrDefault<Student>();
-   }
+   var query = context.Students.Where(s=>s.StudentName ==  "Bill").FirstOrDefault<Student>();
+  }
 
 
-   ```
+  ```
 
   - LinQ Query
 
@@ -227,13 +228,14 @@ var student = query.FirstOrDefault<Student>();
 
 -Projection
 
-|First/FirstOrDefault|Single/SingleOrDefault|ToList|GroupBy|OrderBy|
-|---|---|---|---|---|
+| First/FirstOrDefault | Single/SingleOrDefault | ToList | GroupBy | OrderBy |
+| -------------------- | ---------------------- | ------ | ------- | ------- |
+
 |Returns the first row from the query result
 
 The difference = First() will throw an exception and FirstOrDefault () returns default value (null) if there is no result data|when we are sure that the result would contain only one element
 
- Single or SingleOrDefault will throw  anexception, if the result contains more than one element.|Converts the result to a list|Groups the result by a creteria|Sort the result by a criteria|
+Single or SingleOrDefault will throw anexception, if the result contains more than one element.|Converts the result to a list|Groups the result by a creteria|Sort the result by a criteria|
 
 - Entity SQL : It returns ObjectQuery instead of Iqueryable
 
@@ -283,8 +285,8 @@ var student = ctx.Students.SqlQuery("Select * from Students where StudentId=@id"
 
 ###### 2. Update
 
-   ```csharp
- Student stud ;
+```csharp
+Student stud ;
 // Get student from DB
 using (var ctx = new SchoolDBEntities())
 { stud = ctx.Students.Where(s => s.StudentName == "New
@@ -299,7 +301,7 @@ using (var dbCtx = new SchoolDBEntities())
 dbCtx.Entry(stud).State = System.Data.EntityState.Modified;
 dbCtx.SaveChanges();
 }
-  ```
+```
 
 ###### 3. Delete
 

@@ -10,5 +10,6 @@
       "file:///home/wa101/Project/insat-gl-knowledge/.github/workflows/deploy.yml",
       "file:///home/wa101/Project/insat-gl-knowledge/.github/workflows/build.yml"
     ]
-  }
+  },
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
 }

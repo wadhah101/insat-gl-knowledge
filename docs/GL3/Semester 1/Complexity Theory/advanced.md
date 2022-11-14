@@ -38,6 +38,7 @@ A deterministic algorithm is an algorithm that gives the same output for the sam
 ### 3.4 $\mathcal{O}$ Notation
 
 By definition, we say that $\mathcal{A}$ has time complexity $g$ if:
+
 $$
 C_\mathcal{A} =\mathcal{O}(g)
 $$
@@ -45,6 +46,7 @@ $$
 ### 2.2 $\Omega$ Notation
 
 By definition, we say that $\mathcal{A}$ has time complexity bound from below by g if:
+
 $$
 C_\mathcal{A} =\Omega(g)
 $$
@@ -69,6 +71,7 @@ def sum(arr: Array[int]):
   $$
 
 So we have:
+
 $$
 \begin{cases}
 C_{\texttt{sum}}=\mathcal{O}(n)\\
@@ -86,16 +89,20 @@ $$
 
 - Let $E(p)$ be the total cost of instructions that are executed on the path $p$
 
-- Let $ C^{W}_{\mathcal{A}}(x)$ defined as follow:
+- Let $ C^{W}\_{\mathcal{A}}(x)$ defined as follow:
+
   $$
   C^{W}_{\mathcal{A}}(x)=\sup_{\mathcal{S}(X)\le x}\sup_{p\in\mathscr{P}(\mathcal{A},X)}E(p)
   $$
+
   It is maximum number of elementary instructions executed while working on input with size $\le x$ executed on the worst path
 
-- Let $ C^{B}_{\mathcal{A}}(x)$ defined as follow:
+- Let $ C^{B}\_{\mathcal{A}}(x)$ defined as follow:
+
   $$
   C_{W,\mathcal{A}}(x)=\sup_{\mathcal{S}(X)\le x}\inf_{p\in\mathscr{P}(\mathcal{A},X)}E(p)
   $$
+
   It is maximum number of elementary instructions executed while working on input with size $\le x$ executed on the best path
 
 - Let $g\in\mathscr{F}(\mathbb{R}_+,\mathbb{R}_+)$ some real valued function that is eventually strictly positive
@@ -118,10 +125,12 @@ In many cases, for every input $X$, the non-deterministic algorithm will have a 
 
 - Let $E(\Phi)$ be the total cost of instructions that are executed on a random path
 
-- Let $ \tilde{C}_{\mathcal{A}}(x)$ defined as follow:
+- Let $ \tilde{C}\_{\mathcal{A}}(x)$ defined as follow:
+
   $$
   \tilde{C}_{\mathcal{A}}(x)=\sup_{\mathcal{S}(X)\le x} \mathbb{E}\big[E(\Phi(X))\big]
   $$
+
   It is maximum number of elementary instructions executed on average while working on input with size $\le x$
 
 - Let $g\in\mathscr{F}(\mathbb{R}_+,\mathbb{R}_+)$ some real valued function that is eventually strictly positive
@@ -132,7 +141,7 @@ In many cases, for every input $X$, the non-deterministic algorithm will have a 
 
 In many cases, the input itself will follow some distribution $\mathcal{D}.$
 
-In that case, doing a supremum over all inputs of size $\le x$  is a pessimistic measure of complexity.
+In that case, doing a supremum over all inputs of size $\le x$ is a pessimistic measure of complexity.
 
 With the knowledge of $\mathcal{D},$ we can estimate the average case complexity
 
@@ -161,7 +170,7 @@ $$
 
 In many cases, the input itself will follow some distribution $\mathcal{D}.$
 
-In that case, doing a supremum over all inputs of size $\le x$  is a pessimistic measure of complexity.
+In that case, doing a supremum over all inputs of size $\le x$ is a pessimistic measure of complexity.
 
 With the knowledge of $\mathcal{D},$ we can estimate the average case complexity
 
@@ -175,7 +184,8 @@ With the knowledge of $\mathcal{D},$ we can estimate the average case complexity
 
 - Let $E(\mathcal{A},X)$ be the total cost of instructions that are executed on $\mathcal{A}$ while accepting $X$
 
-- Let $ \tilde{C}_{\mathcal{A}}(x)$ defined as follow:
+- Let $ \tilde{C}\_{\mathcal{A}}(x)$ defined as follow:
+
   $$
   \tilde{C}_{\mathcal{A}}(x)=\sup_{r\le x} \mathbb{E}\big[E(\mathcal{A},\mathcal{X}) \mid S(\mathcal{X})=r\big]
   $$
@@ -184,18 +194,22 @@ With the knowledge of $\mathcal{D},$ we can estimate the average case complexity
 
 - Let $E(p)$ be the total cost of instructions that are executed on the path $p$
 
-- Let $ C^{W}_{\mathcal{A}}(x)$ defined as follow:
+- Let $ C^{W}\_{\mathcal{A}}(x)$ defined as follow:
+
   $$
   C^{W}_{\mathcal{A}}(x)
   =\sup_{r\le x} \mathbb{E}\left[\sup_{p\in\mathscr{P}(\mathcal{A},\mathcal{X})}E(p) \mid S(\mathcal{X})=r\right]
   $$
+
   It is maximum number of elementary instructions executed while working on input with size $\le x$ executed on the worst path
 
-- Let $ C^{B}_{\mathcal{A}}(x)$ defined as follow:
+- Let $ C^{B}\_{\mathcal{A}}(x)$ defined as follow:
+
   $$
   C^{W}_{\mathcal{A}}(x)
   =\sup_{r\le x} \mathbb{E}\left[\inf_{p\in\mathscr{P}(\mathcal{A},\mathcal{X})}E(p) \mid S(\mathcal{X})=r\right]
   $$
+
   It is maximum number of elementary instructions executed while working on input with size $\le x$ executed on the best path
 
 - Let $g\in\mathscr{F}(\mathbb{R}_+,\mathbb{R}_+)$ some real valued function that is eventually strictly positive
@@ -218,7 +232,7 @@ $$
 
 In many cases, the input itself will follow some distribution $\mathcal{D}.$
 
-In that case, doing a supremum over all inputs of size $\le x$  is a pessimistic measure of complexity.
+In that case, doing a supremum over all inputs of size $\le x$ is a pessimistic measure of complexity.
 
 With the knowledge of $\mathcal{D},$ we can estimate the average case complexity
 
@@ -230,11 +244,13 @@ With the knowledge of $\mathcal{D},$ we can estimate the average case complexity
 - Let $\Phi(X)$ be a random execution while accepting $X$
 - Let $E(\Phi)$ be the total cost of instructions that are executed on a random path
 
-- Let $ C^{B}_{\mathcal{A}}(x)$ defined as follow:
+- Let $ C^{B}\_{\mathcal{A}}(x)$ defined as follow:
+
   $$
   C^{W}_{\mathcal{A}}(x)
   =\sup_{r\le x} \mathbb{E}_{\mathcal{X}}\left[\mathbb{E}_{\Phi}\left[E(\Phi(\mathcal{X}))\right] \mid S(\mathcal{X})=r\right]
   $$
+
   It is maximum number of elementary instructions executed while working on input with size $\le x$ executed on the best path
 
 - Let $g\in\mathscr{F}(\mathbb{R}_+,\mathbb{R}_+)$ some real valued function that is eventually strictly positive

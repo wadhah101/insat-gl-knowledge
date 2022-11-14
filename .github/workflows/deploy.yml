@@ -110,18 +110,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TARGET_REF: ${{ github.ref }}
         run: bash scripts/cleanup_cache_manual.sh
-
-  index:
-    needs: deploy
-    name: Index site with agolia
-    runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Docker run
-        run: docker run -e "CONFIG=$(jq -r tostring <agolia.json)" -e APPLICATION_ID=${{ secrets.APPLICATION_ID }} -e API_KEY=${{ secrets.AGOLIA_API_KEY }} algolia/docsearch-scraper

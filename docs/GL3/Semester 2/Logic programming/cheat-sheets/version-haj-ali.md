@@ -2,7 +2,7 @@
 slug: /gl3/semester-2/logic-programming/cheat-sheets/version-haj-ali
 ---
 
-# Cheat sheet
+# Cheat sheet - Haj Ali
 
 Author [@hajali-amine](https://github.com/hajali-amine)
 

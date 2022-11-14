@@ -10,7 +10,6 @@ else
 fi
 
 printf "branches :  %s\n" "${BRANCHES[@]}"
-echo
 
 for BRANCH in "${BRANCHES[@]}"; do
   # useless calls to gh api, if we group "gh actions-cache list" by branch name and then filter the array from the latest element, too much work, this script works fast enough

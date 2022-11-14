@@ -123,7 +123,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: addnab/docker-run-action@v3
-        with:
-          image: algolia/docsearch-scraper
-          options: -e CONFIG=$(jq -r tostring <agolia.json) -e APPLICATION_ID=${{ secrets.APPLICATION_ID }} -e API_KEY=${{ secrets.AGOLIA_API_KEY }}
+      - name: Docker run
+        run: docker run -e CONFIG=$(jq -r tostring <agolia.json) -e APPLICATION_ID=${{ secrets.APPLICATION_ID }} -e API_KEY=${{ secrets.AGOLIA_API_KEY }} algolia/docsearch-scraper

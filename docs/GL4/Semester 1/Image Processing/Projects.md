@@ -1,5 +1,5 @@
 ---
-slug: /gl4/semester-1/image-processing/ds/projects
+slug: /gl4/semester-1/image-processing/projects
 ---
 
 # Projects

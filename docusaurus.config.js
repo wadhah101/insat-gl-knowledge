@@ -16,7 +16,7 @@ const config = async () => {
     tagline:
       "A Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
     url: "https://wadhah101.github.io",
-    baseUrl: process.env.BASE_URL ?? "",
+    baseUrl: process.env.BASE_URL ?? "/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",

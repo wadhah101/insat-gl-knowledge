@@ -1,6 +1,7 @@
 {
   "plugins": [
     "prettier-plugin-sh",
-    "prettier-plugin-java"
+    "prettier-plugin-java",
+    "@prettier/plugin-xml"
   ]
 }

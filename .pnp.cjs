@@ -52,6 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.4.18"],\
             ["prettier", "npm:2.7.1"],\
             ["prettier-plugin-java", "npm:1.6.2"],\
+            ["prettier-plugin-sh", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.12.8"],\
             ["prism-react-renderer", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:17.0.2"],\
@@ -4360,6 +4361,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@npmcli/move-file", "npm:2.0.1"],\
             ["mkdirp", "npm:1.0.4"],\
             ["rimraf", "npm:3.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@pkgr/utils", [\
+        ["npm:2.3.1", {\
+          "packageLocation": "./.yarn/cache/@pkgr-utils-npm-2.3.1-c89c217c08-118a197112.zip/node_modules/@pkgr/utils/",\
+          "packageDependencies": [\
+            ["@pkgr/utils", "npm:2.3.1"],\
+            ["cross-spawn", "npm:7.0.3"],\
+            ["is-glob", "npm:4.0.3"],\
+            ["open", "npm:8.4.0"],\
+            ["picocolors", "npm:1.0.0"],\
+            ["tiny-glob", "npm:0.2.9"],\
+            ["tslib", "npm:2.4.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9676,6 +9692,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["globalyzer", [\
+        ["npm:0.1.0", {\
+          "packageLocation": "./.yarn/cache/globalyzer-npm-0.1.0-3982d25961-419a0f95ba.zip/node_modules/globalyzer/",\
+          "packageDependencies": [\
+            ["globalyzer", "npm:0.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["globby", [\
         ["npm:11.1.0", {\
           "packageLocation": "./.yarn/cache/globby-npm-11.1.0-bdcdf20c71-b4be8885e0.zip/node_modules/globby/",\
@@ -9699,6 +9724,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ignore", "npm:5.2.0"],\
             ["merge2", "npm:1.4.1"],\
             ["slash", "npm:4.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["globrex", [\
+        ["npm:0.1.2", {\
+          "packageLocation": "./.yarn/cache/globrex-npm-0.1.2-ddda94f2d0-adca162494.zip/node_modules/globrex/",\
+          "packageDependencies": [\
+            ["globrex", "npm:0.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10461,6 +10495,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.4.18"],\
             ["prettier", "npm:2.7.1"],\
             ["prettier-plugin-java", "npm:1.6.2"],\
+            ["prettier-plugin-sh", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.12.8"],\
             ["prism-react-renderer", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:17.0.2"],\
@@ -11936,6 +11971,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["multicast-dns", "npm:7.2.5"],\
             ["dns-packet", "npm:5.4.0"],\
             ["thunky", "npm:1.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["mvdan-sh", [\
+        ["npm:0.10.1", {\
+          "packageLocation": "./.yarn/cache/mvdan-sh-npm-0.10.1-d68cb00b7b-32ac3ad9ad.zip/node_modules/mvdan-sh/",\
+          "packageDependencies": [\
+            ["mvdan-sh", "npm:0.10.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13684,6 +13728,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["prettier-plugin-sh", [\
+        ["npm:0.12.8", {\
+          "packageLocation": "./.yarn/cache/prettier-plugin-sh-npm-0.12.8-a538096f18-a610fa5fdb.zip/node_modules/prettier-plugin-sh/",\
+          "packageDependencies": [\
+            ["prettier-plugin-sh", "npm:0.12.8"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.12.8", {\
+          "packageLocation": "./.yarn/__virtual__/prettier-plugin-sh-virtual-4333091487/0/cache/prettier-plugin-sh-npm-0.12.8-a538096f18-a610fa5fdb.zip/node_modules/prettier-plugin-sh/",\
+          "packageDependencies": [\
+            ["prettier-plugin-sh", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.12.8"],\
+            ["@types/prettier", null],\
+            ["mvdan-sh", "npm:0.10.1"],\
+            ["prettier", "npm:2.7.1"],\
+            ["sh-syntax", "npm:0.3.7"],\
+            ["synckit", "npm:0.8.4"]\
+          ],\
+          "packagePeers": [\
+            "@types/prettier",\
+            "prettier"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["pretty-bytes", [\
         ["npm:5.6.0", {\
           "packageLocation": "./.yarn/cache/pretty-bytes-npm-5.6.0-0061079c9f-9c082500d1.zip/node_modules/pretty-bytes/",\
@@ -15252,6 +15321,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["sh-syntax", [\
+        ["npm:0.3.7", {\
+          "packageLocation": "./.yarn/cache/sh-syntax-npm-0.3.7-9fcfb0307f-cc2e7733b4.zip/node_modules/sh-syntax/",\
+          "packageDependencies": [\
+            ["sh-syntax", "npm:0.3.7"],\
+            ["tslib", "npm:2.4.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["shallow-clone", [\
         ["npm:3.0.1", {\
           "packageLocation": "./.yarn/cache/shallow-clone-npm-3.0.1-dab5873d0d-39b3dd9630.zip/node_modules/shallow-clone/",\
@@ -15894,6 +15973,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["synckit", [\
+        ["npm:0.8.4", {\
+          "packageLocation": "./.yarn/cache/synckit-npm-0.8.4-ee1ab9a997-83e054fe44.zip/node_modules/synckit/",\
+          "packageDependencies": [\
+            ["synckit", "npm:0.8.4"],\
+            ["@pkgr/utils", "npm:2.3.1"],\
+            ["tslib", "npm:2.4.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["tailwindcss", [\
         ["npm:3.2.2", {\
           "packageLocation": "./.yarn/cache/tailwindcss-npm-3.2.2-1bcb74541c-4f29f9d7be.zip/node_modules/tailwindcss/",\
@@ -16084,6 +16174,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/thunky-npm-1.1.0-2d25531f44-993096c472.zip/node_modules/thunky/",\
           "packageDependencies": [\
             ["thunky", "npm:1.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["tiny-glob", [\
+        ["npm:0.2.9", {\
+          "packageLocation": "./.yarn/cache/tiny-glob-npm-0.2.9-068f4ab3f8-aea5801eb6.zip/node_modules/tiny-glob/",\
+          "packageDependencies": [\
+            ["tiny-glob", "npm:0.2.9"],\
+            ["globalyzer", "npm:0.1.0"],\
+            ["globrex", "npm:0.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\

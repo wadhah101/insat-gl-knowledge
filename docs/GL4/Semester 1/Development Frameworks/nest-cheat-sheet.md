@@ -39,7 +39,7 @@ nest start –watch
 ### Creation
 
 ```bash
-  nest g mo ModuleName
+nest g mo ModuleName
 ```
 
 ### Parameters

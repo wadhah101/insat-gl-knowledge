@@ -52,8 +52,8 @@ We will use `insat.tn` as domain name.
 1. In each machine match different ips to their sub domain name in `/etc/hosts`
 
    ```bash
-   172.21.0.2      kdc.insat.tn kdc
-   172.21.0.3      server.insat.tn server
+   172.21.0.2 kdc.insat.tn kdc
+   172.21.0.3 server.insat.tn server
    ```
 
    To test if everything is working properly try this command on each sub-domain:
@@ -161,7 +161,6 @@ apt-get install libsasl2-modules-gssapi-mit
 pip install requests_kerberos
 
 pip install flask_kerberos
-
 ```
 
 => Now your machines are ready to use the flask service

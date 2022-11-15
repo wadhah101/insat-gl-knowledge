@@ -169,7 +169,7 @@ Use one shared encryption key between sender and receiver.
 - Get all the algos
 
 ```bash
- gpg --version
+gpg --version
 ```
 
 Examples of symmetric algorithms:
@@ -249,7 +249,7 @@ gpg --import KEY
 - Encryption
 
 ```bash
-gpg -o file.enc -a -r <publicKey> -encrypt file
+gpg -o file.enc -a -r file < publicKey > -encrypt
 ```
 
 - Sign
@@ -509,14 +509,13 @@ openssl enc -aes-128-cbc -iter 2 -in file -out file.enc
 
 ```bash
 openssl enc -d -aes-128-cbc -in file.enc -out filerestored
-openssl enc -d -aes-128-cbc  -iter 2 -in file.enc -out filerestored
+openssl enc -d -aes-128-cbc -iter 2 -in file.enc -out filerestored
 ```
 
 - Generate RSA Key:
 
 ```bash
 openssl genrsa -out mykey 2048
-
 ```
 
 - Generate RSA params:
@@ -629,7 +628,7 @@ openssl genrsa -des3 -out gl4.key 3072
 - Create request for a certiif from INSAT
 
 ```bash
-openssl req -new  -key gl4.key -out gl4.req
+openssl req -new -key gl4.key -out gl4.req
 ```
 
 - Generate a Certificate for GL4:

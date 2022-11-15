@@ -69,6 +69,7 @@ jobs:
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
+          alias: deploy-preview-${{ github.event.number }}
           enable-pull-request-comment: true
           enable-commit-comment: false
         env:

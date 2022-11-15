@@ -88,11 +88,11 @@ The Master Theorem will give a sharp estimate for the asymptotic behaviour of $(
 
 Let $c_*=\log_b a$
 
-| Description                                                     | Condition                                                       | Result                                         |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------- |
-| Work to split/recombine a problem is dwarfed by subproblems.    | $f(n)=\mathcal{O}(n^c)$ with $c<c_*$                            | $T_n=\Theta(n^c)$                              |
+| Description | Condition | Result |
+| --- | --- | --- |
+| Work to split/recombine a problem is dwarfed by subproblems. | $f(n)=\mathcal{O}(n^c)$ with $c<c_*$ | $T_n=\Theta(n^c)$ |
 | Work to split/recombine a problem is comparable to subproblems. | $f(n)=\mathcal{O}\left(n^{c_*} (\log n)^k\right)$ with $k\ge 0$ | $T_n=\Theta(n^{c_*}\left(\log n\right)^{k+1})$ |
-| Work to split/recombine a problem dominates subproblems.        | $f(n)=\mathcal{O}(n^c)$ with $c>c_*$                            | $T_n=\Theta(f(n))$                             |
+| Work to split/recombine a problem dominates subproblems. | $f(n)=\mathcal{O}(n^c)$ with $c>c_*$ | $T_n=\Theta(f(n))$ |
 
 ### 2.3 Merge Sort example
 

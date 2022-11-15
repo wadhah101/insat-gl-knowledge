@@ -13,7 +13,7 @@ Author [@rihemebh](https://github.com/rihemebh)
 - Privileges:
 
 | `ALL PREVILEGES` | `UPDATE (columns)` | `SELECT (columns)` | `INSERT (columns)` | `DELETE (columns)` | `ALTER (columns)` | `INDEX` |
-| ---------------- | ------------------ | ------------------ | ------------------ | ------------------ | ----------------- | ------- |
+| --- | --- | --- | --- | --- | --- | --- |
 
 ### ROLES
 
@@ -37,8 +37,7 @@ Author [@rihemebh](https://github.com/rihemebh)
 
   - **TABLE CONSTRAINT** :
     - `CONSTRAINT` const_name `CONST_TYPE` (Column1, column2,... )
-  - **COLUMN CONSTRAINT**:
-    [CONSTRAINT constraint_name]
+  - **COLUMN CONSTRAINT**: [CONSTRAINT constraint_name]
 
     - `AUTO_INCREMENT`
     - `UNIQUE`

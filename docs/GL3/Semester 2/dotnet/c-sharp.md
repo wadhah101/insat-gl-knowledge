@@ -24,10 +24,10 @@ slug: /gl3/semester-2/dotnet/c-sharp
 
 Comments : // or /\*\*/
 
-| Naming Convention | Examples                                        | Use for                                                    |
-| ----------------- | ----------------------------------------------- | ---------------------------------------------------------- |
-| camel Case        | `cost`, `orderDetail`, `dateOfBirth`            | Local variables, private fields.                           |
-| Pascal Case       | `String`, `Int32`, `Cost`, `DateOfBirth`, `Run` | Types, non-private fields, and other members like methods. |
+| Naming Convention | Examples | Use for |
+| --- | --- | --- |
+| camel Case | `cost`, `orderDetail`, `dateOfBirth` | Local variables, private fields. |
+| Pascal Case | `String`, `Int32`, `Cost`, `DateOfBirth`, `Run` | Types, non-private fields, and other members like methods. |
 
 - **Literal string**: Characters enclosed in double-quote characters. They can use escape characters like \t for tab.
 - **Verbatim string**: A literal string prefixed with @ to disable escape characters so that a backslash is a backslash. (`@"\t"` will show `\t` and not a tab)

@@ -121,40 +121,40 @@ Lets consider this test code:
   TP1 - ift2030 - automne 2002
   ============================================================ */
 
-class Calculator{
-    public static void main(String[] a){
-        System.out.println(new Calculator1().calculate());
-    }
+class Calculator {
+
+  public static void main(String[] a) {
+    System.out.println(new Calculator1().calculate());
+  }
 }
 
 /* ====================================================
    Classe Calculator1
    ==================================================== */
 
-class Calculator1{
-    bool test;                          // @ 0
-    int somme;                          // @ 1
-    public int calculate (){
-        int x;                          // @ 2
-        int y;                          // @ 3
-        x = 5;
-        y = 6;
-        somme = x * 10;
-        y = somme + 15;
-        somme = x / y;
+class Calculator1 {
 
-        if (x < 1)
-            y = 1 ;
-        else {
-            x = x + 1 ;
-            while (x > somme)
-                y = y + 1;
-        }
+  bool test; // @ 0
+  int somme; // @ 1
 
+  public int calculate() {
+    int x; // @ 2
+    int y; // @ 3
+    x = 5;
+    y = 6;
+    somme = x * 10;
+    y = somme + 15;
+    somme = x / y;
 
-        return x ;
+    if (x < 1) y = 1; else {
+      x = x + 1;
+      while (x > somme) y = y + 1;
     }
+
+    return x;
+  }
 }
+
 ```
 
 Use it as input for the generated app.exe:

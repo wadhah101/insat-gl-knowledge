@@ -72,14 +72,14 @@ Let $X$ be the random variable denoting the signed value of the steps that will 
 
 We will generate a table of values of possible sums each with its corresponding step:
 
-|     | $1$                      | $2$                      | $3$                      | $4$                       | $5$                       | $6$                       |
-| --- | ------------------------ | ------------------------ | ------------------------ | ------------------------- | ------------------------- | ------------------------- |
-| $1$ | Sum is $2$, Step is $2$  | Sum is $3$, Step is $3$  | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$   | Sum is $6$, Step is $-3$  | Sum is $7$, Step is $7$   |
-| $2$ | Sum is $3$, Step is $3$  | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$  | Sum is $6$, Step is $-3$  | Sum is $7$, Step is $7$   | Sum is $8$, Step is $-2$  |
-| $3$ | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$  | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$   | Sum is $8$, Step is $-2$  | Sum is $9$, Step is $-3$  |
-| $4$ | Sum is $5$, Step is $5$  | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$  | Sum is $8$, Step is $-2$  | Sum is $9$, Step is $-3$  | Sum is $10$, Step is $-5$ |
-| $5$ | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$  | Sum is $8$, Step is $-2$ | Sum is $9$, Step is $-3$  | Sum is $10$, Step is $-5$ | Sum is $11$, Step is $11$ |
-| $6$ | Sum is $7$, Step is $7$  | Sum is $8$, Step is $-2$ | Sum is $9$, Step is $-3$ | Sum is $10$, Step is $-5$ | Sum is $11$, Step is $11$ | Sum is $12$, Step is $-3$ |
+|  | $1$ | $2$ | $3$ | $4$ | $5$ | $6$ |
+| --- | --- | --- | --- | --- | --- | --- |
+| $1$ | Sum is $2$, Step is $2$ | Sum is $3$, Step is $3$ | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$ | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$ |
+| $2$ | Sum is $3$, Step is $3$ | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$ | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$ | Sum is $8$, Step is $-2$ |
+| $3$ | Sum is $4$, Step is $-2$ | Sum is $5$, Step is $5$ | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$ | Sum is $8$, Step is $-2$ | Sum is $9$, Step is $-3$ |
+| $4$ | Sum is $5$, Step is $5$ | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$ | Sum is $8$, Step is $-2$ | Sum is $9$, Step is $-3$ | Sum is $10$, Step is $-5$ |
+| $5$ | Sum is $6$, Step is $-3$ | Sum is $7$, Step is $7$ | Sum is $8$, Step is $-2$ | Sum is $9$, Step is $-3$ | Sum is $10$, Step is $-5$ | Sum is $11$, Step is $11$ |
+| $6$ | Sum is $7$, Step is $7$ | Sum is $8$, Step is $-2$ | Sum is $9$, Step is $-3$ | Sum is $10$, Step is $-5$ | Sum is $11$, Step is $11$ | Sum is $12$, Step is $-3$ |
 
 We have:
 

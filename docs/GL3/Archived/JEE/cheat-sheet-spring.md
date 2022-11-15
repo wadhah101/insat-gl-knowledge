@@ -10,8 +10,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 
 ### Video 1.2 : what is spring ?
 
-**Spring** : an open source java based application framework, the latest major
-stable release is version 5.0 . It is module based.
+**Spring** : an open source java based application framework, the latest major stable release is version 5.0 . It is module based.
 
 Modules include :
 
@@ -94,10 +93,12 @@ In `src/main/java/main.java`
 
 ```java
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello");
-    }
+
+  public static void main(String[] args) {
+    System.out.println("Hello");
+  }
 }
+
 ```
 
 #### adding Run Configuration
@@ -123,10 +124,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Main {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Main.class,args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(Main.class, args);
+  }
 }
+
 ```
 
 #### Creating a Rest Controller
@@ -141,12 +143,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 
-    @RequestMapping("/hello")
-    public String helloWorld(){
-        return "hello World"; // this will return hello world as html
-
-    }
+  @RequestMapping("/hello")
+  public String helloWorld() {
+    return "hello World"; // this will return hello world as html
+  }
 }
+
 ```
 
 ### Section 2 : Working with Spring IOC
@@ -206,15 +208,17 @@ In `/src/main/java/com.demo/Greeter.java`
 
 ```java
 package com.demo;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class Greeter {
-    String greet()
-    {
-        return hello ;
-    }
+
+  String greet() {
+    return hello;
+  }
 }
+
 ```
 
 ### Video 2.4 : Introduction to the @Autowired Annotation
@@ -245,8 +249,9 @@ In `/src/main/java/com.demo/NotABean.java`
 
 ```java
 package com.demo;
-public class NotABean {
-}
+
+public class NotABean {}
+
 ```
 
 In `/src/main/java/com.demo/RestController.java`
@@ -275,8 +280,9 @@ In `GreetInterface.java`
 
 ```java
 package com.demo;
+
 public interface GreetInterface {
-    String greet()  ;
+  String greet();
 }
 
 ```
@@ -288,13 +294,14 @@ In `FriendlyGreeter.java`
 ```java
 package com.demo;
 
-public class FriendlyGreeter implements GreetInterface{
+public class FriendlyGreeter implements GreetInterface {
 
-    @Override
-    public String greet() {
-        return "Friendly Greeting" ;
-    }
+  @Override
+  public String greet() {
+    return "Friendly Greeting";
+  }
 }
+
 ```
 
 In `Greeter.java`
@@ -305,14 +312,14 @@ package com.demo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Greeter implements GreetInterface{
+public class Greeter implements GreetInterface {
 
-    @Override
-    public String greet()
-    {
-        return "hello" ;
-    }
+  @Override
+  public String greet() {
+    return "hello";
+  }
 }
+
 ```
 
 In `RestController.java`
@@ -376,11 +383,12 @@ private GreetInterface friendlyGreeter1 ;
 In `Greeter.java` : We add `value` Field for `@Component`
 
 ```java
-@Component()
+@Component
 @Primary
-public class Greeter implements GreetInterface{
-    //class body
+public class Greeter implements GreetInterface {
+  //class body
 }
+
 ```
 
 - In case of a conflict, the Primary bean will be instantiated.
@@ -408,24 +416,24 @@ public class Greeter implements GreetInterface{
 
 ```java
 package com.demo;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class GreeterConfiguration {
 
-    @Bean
-    public GreetInterface greeter() // first letter lowercase like the attribute name !
-    {
-        return new Greeter() ;
-    }
+  @Bean
+  public GreetInterface greeter() { // first letter lowercase like the attribute name !
+    return new Greeter();
+  }
 
-    @Bean
-    public GreetInterface friendlyGreeter()
-    {
-        return new FriendlyGreeter() ;
-    }
+  @Bean
+  public GreetInterface friendlyGreeter() {
+    return new FriendlyGreeter();
+  }
 }
+
 ```
 
 **IMPORTANT** :
@@ -464,20 +472,19 @@ public class GreeterConfiguration {
    @Configuration
    public class GreeterConfiguration {
 
-       @Bean
-       @Scope(value = "prototype")
-       public Greeter greeter()
-       {
-           return new Greeter() ;
-       }
+     @Bean
+     @Scope(value = "prototype")
+     public Greeter greeter() {
+       return new Greeter();
+     }
 
-       @Bean
-       @Scope(value="singleton")
-       public FriendlyGreeter friendlyGreeter()
-       {
-           return new FriendlyGreeter() ;
-       }
+     @Bean
+     @Scope(value = "singleton")
+     public FriendlyGreeter friendlyGreeter() {
+       return new FriendlyGreeter();
+     }
    }
+
    ```
 
 2. In `GreeterBase.java` We add a variable to observe the scope of our beans
@@ -485,10 +492,11 @@ public class GreeterConfiguration {
    ```java
    package com.demo;
 
-   public abstract class GreeterBase implements GreetInterface{
+   public abstract class GreeterBase implements GreetInterface {
 
-       protected int greetCount = 0 ;
+     protected int greetCount = 0;
    }
+
    ```
 
 3. In `Greeter` and `FriendlyGreeter` :
@@ -499,15 +507,15 @@ public class GreeterConfiguration {
    ```java
    package com.demo;
 
-   public class Greeter extends GreeterBase{
+   public class Greeter extends GreeterBase {
 
-       @Override
-       public String greet()
-       {
-           greetCount ++ ;
-           return "hello " + greetCount;
-       }
+     @Override
+     public String greet() {
+       greetCount++;
+       return "hello " + greetCount;
+     }
    }
+
    ```
 
 4. In `RestController.java`
@@ -605,31 +613,35 @@ public FriendlyGreeter friendlyGreeter()
 In `FriendlyGreeter.java`
 
 ```java
-public class FriendlyGreeter extends GreeterBase implements InitializingBean, DisposableBean {
+public class FriendlyGreeter
+  extends GreeterBase
+  implements InitializingBean, DisposableBean {
 
-    @Override
-    public String greet() {
-        greetCount++ ;
-        return "Friendly Greeting "+greetCount ;
-    }
+  @Override
+  public String greet() {
+    greetCount++;
+    return "Friendly Greeting " + greetCount;
+  }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("afterPropertiesSet");
-    }
+  @Override
+  public void afterPropertiesSet() throws Exception {
+    System.out.println("afterPropertiesSet");
+  }
 
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("destroy");
-    }
+  @Override
+  public void destroy() throws Exception {
+    System.out.println("destroy");
+  }
 }
+
 ```
 
 **Notes :**
 
 - The bean scope is **request** .So for each request a new instance is created then destroyed . For each request we see :
-  `afterPropertiesSet`
-  `destroy`
+
+  `afterPropertiesSet` `destroy`
+
 - If the bean scope is **singleton (default)**. the bean will be instantiated ( `afterPropertiesSet` shows up ) **with application startup** . and will be deleted ( `destroy` will show up ) with **application shutdown**.
 
 #### Example (Annotations)
@@ -688,28 +700,29 @@ database:
 
 ```java
 @Component
-@ConfigurationProperties(prefix="database")
+@ConfigurationProperties(prefix = "database")
 public class DatabaseConfiguration {
 
-    private String url ;
-    private String username ;
+  private String url;
+  private String username;
 
-    public String getUrl() {
-        return url;
-    }
+  public String getUrl() {
+    return url;
+  }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+  public void setUrl(String url) {
+    this.url = url;
+  }
 
-    public String getUsername() {
-        return username;
-    }
+  public String getUsername() {
+    return username;
+  }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 }
+
 ```
 
 - in `GreeterConfig.java` :
@@ -813,39 +826,39 @@ import javax.persistence.Id;
 @Entity
 public class Customer {
 
-    @Id
-    @GeneratedValue
-    private Long id ;
+  @Id
+  @GeneratedValue
+  private Long id;
 
-    private String name ;
+  private String name;
 
-    private int age  ;
+  private int age;
 
+  public Long getId() {
+    return id;
+  }
 
-    public Long getId() {
-        return id;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public int getAge() {
+    return age;
+  }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
+  public void setAge(int age) {
+    this.age = age;
+  }
 }
+
 ```
 
 ### Video 4.4 : Setting Up a Repository
@@ -889,8 +902,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer,Long> {
-}
+public interface CustomerRepository extends JpaRepository<Customer, Long> {}
+
 ```
 
 - In `RestController.java` : We **Autowire** the Repository
@@ -903,9 +916,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 
-    @Autowired
-    private CustomerRepository customerRepository ;
-
+  @Autowired
+  private CustomerRepository customerRepository;
 }
 
 ```
@@ -934,8 +946,8 @@ In `src/test/java` : We create `CustomerRepositoryTest.java`
 
 ```java
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
-}
+public interface CustomerRepository extends JpaRepository<Customer, Long> {}
+
 ```
 
 then to use the repository in a controller / unit test we do
@@ -955,33 +967,34 @@ import static org.junit.Assert.assertEquals;
 @SpringBootTest(classes = Main.class)
 public class CustomerRepositoryTest {
 
-    @Autowired
-    private CustomerRepository repository;
+  @Autowired
+  private CustomerRepository repository;
 
-    @Test
-    public void testRepository() {
-        Customer customer = new Customer();
-        customer.setName("Tom");
-        customer.setAge(40);
+  @Test
+  public void testRepository() {
+    Customer customer = new Customer();
+    customer.setName("Tom");
+    customer.setAge(40);
 
-        repository.save(customer);
-        assertEquals(1, repository.findAll().size()); // confirm save
+    repository.save(customer);
+    assertEquals(1, repository.findAll().size()); // confirm save
 
-        Customer loadedCustomer = repository.findById(customer.getId()).get(); // load / read by id
-        assertEquals("Tom", loadedCustomer.getName());
-        assertEquals(40, loadedCustomer.getAge());
+    Customer loadedCustomer = repository.findById(customer.getId()).get(); // load / read by id
+    assertEquals("Tom", loadedCustomer.getName());
+    assertEquals(40, loadedCustomer.getAge());
 
-        customer.setName("Peter"); // change name
-        repository.save(customer); // update
+    customer.setName("Peter"); // change name
+    repository.save(customer); // update
 
-        Customer updatedCustomer = repository.findById(customer.getId()).get(); // reload by id
-        assertEquals("Peter", updatedCustomer.getName()); // check name updated correctly
-        assertEquals(40, updatedCustomer.getAge()); // check age unchanged
+    Customer updatedCustomer = repository.findById(customer.getId()).get(); // reload by id
+    assertEquals("Peter", updatedCustomer.getName()); // check name updated correctly
+    assertEquals(40, updatedCustomer.getAge()); // check age unchanged
 
-        repository.delete(customer);
-        assertEquals(0, repository.findAll().size()); // confirm deletion
-    }
+    repository.delete(customer);
+    assertEquals(0, repository.findAll().size()); // confirm deletion
+  }
 }
+
 ```
 
 ## Section 5 : Creating a Rest API
@@ -1013,10 +1026,10 @@ In `CustomerController.java`
 @RestController
 public class CustomerController {
 
-    @Autowired
-    private CustomerRepository repository ;
-
+  @Autowired
+  private CustomerRepository repository;
 }
+
 ```
 
 ### Video 5.3 : Creating endpoints for receiving data
@@ -1032,23 +1045,21 @@ public class CustomerController {
 @RestController
 public class CustomerController {
 
-    @Autowired
-    private CustomerRepository repository ;
+  @Autowired
+  private CustomerRepository repository;
 
+  @RequestMapping(value = "/customer", method = RequestMethod.POST)
+  public Customer save(@RequestBody Customer customer) {
+    return repository.save(customer);
+  }
 
-    @RequestMapping(value = "/customer",method = RequestMethod.POST)
-    public Customer save(@RequestBody Customer customer)
-    {
-        return repository.save(customer);
-    }
+  @RequestMapping(value = "/customer", method = RequestMethod.PUT)
+  public Customer update(@RequestBody Customer customer) {
+    return repository.save(customer);
+  }
+  //...
+}
 
-    @RequestMapping(value ="/customer", method=RequestMethod.PUT)
-    public Customer update(@RequestBody Customer customer)
-    {
-        return repository.save(customer);
-    }
-    //...
-    }
 ```
 
 **IMPORANT** :
@@ -1146,36 +1157,35 @@ In `pom.xml`
 ```java
 package com.demo;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import java.util.HashMap;
-import java.util.Map;
 
 @Repository
 public class ReactiveCustomerRepository {
 
-    private static Map<Long, Customer> customers = new HashMap<>();
+  private static Map<Long, Customer> customers = new HashMap<>();
 
-    Mono<Customer> save(Customer customer)
-    {
-        customers.put(customer.getId(),customer) ;
-        return Mono.justOrEmpty(customer);
-    }
+  Mono<Customer> save(Customer customer) {
+    customers.put(customer.getId(), customer);
+    return Mono.justOrEmpty(customer);
+  }
 
-    Mono<Customer> findById(Long id)
-    {
-        return Mono.justOrEmpty(customers.get(id));
-    }
+  Mono<Customer> findById(Long id) {
+    return Mono.justOrEmpty(customers.get(id));
+  }
 
-    Flux<Customer> findAll(){
-        return Flux.fromIterable(customers.values());
-    }
+  Flux<Customer> findAll() {
+    return Flux.fromIterable(customers.values());
+  }
 
-    Mono<Customer> deleteById(Long id){
-        return Mono.justOrEmpty(customers.remove(id));
-    }
+  Mono<Customer> deleteById(Long id) {
+    return Mono.justOrEmpty(customers.remove(id));
+  }
 }
+
 ```
 
 ### Video 6.3 : Creating a Reactive RestController
@@ -1184,40 +1194,33 @@ public class ReactiveCustomerRepository {
 @RestController
 public class CustomerController {
 
-    @Autowired
-    private ReactiveCustomerRepository repository ;
+  @Autowired
+  private ReactiveCustomerRepository repository;
 
+  @RequestMapping(value = "/customer", method = RequestMethod.POST)
+  public Mono<Customer> save(@RequestBody Customer customer) {
+    return repository.save(customer);
+  }
 
-    @RequestMapping(value = "/customer",method = RequestMethod.POST)
-    public Mono<Customer> save(@RequestBody Customer customer)
-    {
-        return repository.save(customer);
-    }
+  @RequestMapping(value = "/customer", method = RequestMethod.PUT)
+  public Mono<Customer> update(@RequestBody Customer customer) {
+    return repository.save(customer);
+  }
 
-    @RequestMapping(value ="/customer", method=RequestMethod.PUT)
-    public Mono<Customer> update(@RequestBody Customer customer)
-    {
-        return repository.save(customer);
-    }
+  @RequestMapping(value = "/customer/{id}", method = RequestMethod.GET)
+  public Mono<Customer> get(@PathVariable Long id) {
+    return repository.findById(id);
+  }
 
+  @RequestMapping(value = "/customer", method = RequestMethod.GET)
+  public Flux<Customer> getAll() {
+    return repository.findAll();
+  }
 
-    @RequestMapping(value ="/customer/{id}", method=RequestMethod.GET)
-    public Mono<Customer> get(@PathVariable Long id)
-    {
-        return repository.findById(id);
-    }
-
-    @RequestMapping(value="/customer",method=RequestMethod.GET)
-    public Flux<Customer> getAll()
-    {
-        return repository.findAll() ;
-    }
-
-    @RequestMapping(value="customer/{id}",method=RequestMethod.DELETE)
-    public void delete(@PathVariable Long id)
-    {
-        repository.deleteById(id);
-    }
-
+  @RequestMapping(value = "customer/{id}", method = RequestMethod.DELETE)
+  public void delete(@PathVariable Long id) {
+    repository.deleteById(id);
+  }
 }
+
 ```

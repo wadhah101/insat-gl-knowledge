@@ -650,12 +650,10 @@ sometimes_better(Con1, Con2).
 
 - The predicate append is most often used to create a new list from concatenating two others, like this:
 
-  - `?- append([alpha, beta], [gamma, delta], X).`
-    `X = [alpha, beta, gamma, delta]`
+  - `?- append([alpha, beta], [gamma, delta], X).` `X = [alpha, beta, gamma, delta]`
 
 - But it can also be used in other ways:
-  - `?- append(X, [b,c,d], [a,b,c,d]).`
-    `X=[a]`
+  - `?- append(X, [b,c,d], [a,b,c,d]).` `X=[a]`
 
 The predicate **append** is defined as follows:
 

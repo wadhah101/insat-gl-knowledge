@@ -61,14 +61,14 @@ $$
 
 ### 3.2 Properties
 
-| Name           | Equation                                                                                                    | Utility                   |
-| -------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------- |
-| Reflexive      | $f=\mathcal{O}(f)$                                                                                          | Generally not useful      |
-| Transitive     | $f=\mathcal{O}(g) \ \text{and} \ g=\mathcal{O}(h) \implies f=\mathcal{O}(h)$                                | Get an easier upper bound |
-| Sum            | $$ f_1+f_2=\mathcal{O}(\max(f_1,f_2))$$                                                                     | Get an easier upper bound |
-| Scaling        | $f=\mathcal{O}(g) \implies f=\mathcal{O}(k\cdot g) \quad \forall k\in\mathbb{R}_+^*$                        | Remove constants          |
-| Product        | $\begin{cases} f_1=\mathcal{O}(g_1) \\ f_2=\mathcal{O}(g_2)\end{cases} \implies f_1f_2=\mathcal{O}(g_1g_2)$ | Simplify products         |
-| Cumulative Sum | $f \ \text{increasing} \implies \sum_{i=1}^nf(i)=\mathcal{O}\left(\int_{1}^{n+1} f(x)dx\right)$             |                           |
+| Name | Equation | Utility |
+| --- | --- | --- |
+| Reflexive | $f=\mathcal{O}(f)$ | Generally not useful |
+| Transitive | $f=\mathcal{O}(g) \ \text{and} \ g=\mathcal{O}(h) \implies f=\mathcal{O}(h)$ | Get an easier upper bound |
+| Sum | $$ f_1+f_2=\mathcal{O}(\max(f_1,f_2))$$ | Get an easier upper bound |
+| Scaling | $f=\mathcal{O}(g) \implies f=\mathcal{O}(k\cdot g) \quad \forall k\in\mathbb{R}_+^*$ | Remove constants |
+| Product | $\begin{cases} f_1=\mathcal{O}(g_1) \\ f_2=\mathcal{O}(g_2)\end{cases} \implies f_1f_2=\mathcal{O}(g_1g_2)$ | Simplify products |
+| Cumulative Sum | $f \ \text{increasing} \implies \sum_{i=1}^nf(i)=\mathcal{O}\left(\int_{1}^{n+1} f(x)dx\right)$ |  |
 
 ## 4. Big $\Omega$-Notation
 
@@ -98,15 +98,15 @@ $$
 
 ### 3.3 Properties
 
-| Name           | Equation                                                                                     | Utility                   |
-| -------------- | -------------------------------------------------------------------------------------------- | ------------------------- |
-| Reflexive      | $f=\Omega(f)$                                                                                | Generally not useful      |
-| Transitive     | $f=\Omega(g) \ \text{and} \ g=\Omega(h) \implies f=\Omega(h)$                                | Get an easier upper bound |
-| Sum            | $f_1+f_2=\Omega(\min(f_1,f_2))$                                                              | Get an easier upper bound |
-| Scaling        | $f=\Omega(g) \implies f=\Omega(k\cdot g) \quad \forall k\in\mathbb{R}_+^*$                   | Remove constants          |
-| Product        | $\begin{cases} f_1=\Omega(g_1) \\ f_2=\Omega(g_2)\end{cases} \implies f_1f_2=\Omega(g_1g_2)$ | Simplify products         |
-| Cumulative Sum | $f \ \text{increasing} \implies \sum_{i=1}^nf(i)=\Omega\left(\int_{1}^{n} f(x)dx\right)$     |                           |
-| Duality        | $f=\mathcal{O}(g) \iff g=\Omega(f)$                                                          |                           |
+| Name | Equation | Utility |
+| --- | --- | --- |
+| Reflexive | $f=\Omega(f)$ | Generally not useful |
+| Transitive | $f=\Omega(g) \ \text{and} \ g=\Omega(h) \implies f=\Omega(h)$ | Get an easier upper bound |
+| Sum | $f_1+f_2=\Omega(\min(f_1,f_2))$ | Get an easier upper bound |
+| Scaling | $f=\Omega(g) \implies f=\Omega(k\cdot g) \quad \forall k\in\mathbb{R}_+^*$ | Remove constants |
+| Product | $\begin{cases} f_1=\Omega(g_1) \\ f_2=\Omega(g_2)\end{cases} \implies f_1f_2=\Omega(g_1g_2)$ | Simplify products |
+| Cumulative Sum | $f \ \text{increasing} \implies \sum_{i=1}^nf(i)=\Omega\left(\int_{1}^{n} f(x)dx\right)$ |  |
+| Duality | $f=\mathcal{O}(g) \iff g=\Omega(f)$ |  |
 
 ## 5. Big $\Theta$- Notation
 
@@ -120,12 +120,12 @@ By definition, we say that $f=\Theta(g)$ if $f=\mathcal{O}(g)$ and $f=\Omega(g)$
 
 ## 6. Examples
 
-| Function                        | Big $\mathcal{O}$         | Big $\Omega$        | Big $\Theta$  |
-| ------------------------------- | ------------------------- | ------------------- | ------------- |
-| $f(n)=n^5+10n-50$               | $\mathcal{O}(n^5)$        | $\Omega(n^5)$       | $\Theta(n^5)$ |
-| $f(n)= n-\frac{1}{n}$           | $\mathcal{O}(n)$          | $\Omega(n)$         | $\Theta(n)$   |
-| $f(n)= e^n-n$                   | $\mathcal{O}(e^n)$        | $\Omega(e^n)$       | $\Theta(e^n)$ |
-| $f(n)=2+\sin n$                 | $\mathcal{O}(1)$          | $\Omega(1)$         | $\Theta(1)$   |
-| $f(n)=\exp(\sin^2 n^{10})+ n^2$ | $\mathcal{O}(n^2)$        | $\Omega(n^2)$       | $\Theta(n^2)$ |
-| $f(n)=\sum_{k=1}^n3^k$          | $\mathcal{O}(3^n)$        | $\Omega(3^n)$       | $\Theta(3^n)$ |
-| $f(n)=\exp(n^2(\sin n+2))$      | $\mathcal{O}(\exp(3n^2))$ | $\Omega(\exp(n^2))$ |               |
+| Function | Big $\mathcal{O}$ | Big $\Omega$ | Big $\Theta$ |
+| --- | --- | --- | --- |
+| $f(n)=n^5+10n-50$ | $\mathcal{O}(n^5)$ | $\Omega(n^5)$ | $\Theta(n^5)$ |
+| $f(n)= n-\frac{1}{n}$ | $\mathcal{O}(n)$ | $\Omega(n)$ | $\Theta(n)$ |
+| $f(n)= e^n-n$ | $\mathcal{O}(e^n)$ | $\Omega(e^n)$ | $\Theta(e^n)$ |
+| $f(n)=2+\sin n$ | $\mathcal{O}(1)$ | $\Omega(1)$ | $\Theta(1)$ |
+| $f(n)=\exp(\sin^2 n^{10})+ n^2$ | $\mathcal{O}(n^2)$ | $\Omega(n^2)$ | $\Theta(n^2)$ |
+| $f(n)=\sum_{k=1}^n3^k$ | $\mathcal{O}(3^n)$ | $\Omega(3^n)$ | $\Theta(3^n)$ |
+| $f(n)=\exp(n^2(\sin n+2))$ | $\mathcal{O}(\exp(3n^2))$ | $\Omega(\exp(n^2))$ |  |

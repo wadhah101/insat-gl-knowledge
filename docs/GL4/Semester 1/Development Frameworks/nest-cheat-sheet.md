@@ -39,7 +39,7 @@ nest start –watch
 ### Creation
 
 ```bash
-  nest g mo ModuleName
+nest g mo ModuleName
 ```
 
 ### Parameters
@@ -75,14 +75,14 @@ A route will identify the uri associated to an action.
 
 ### Annotations
 
-| name                                                      | description                    |
-| --------------------------------------------------------- | ------------------------------ |
-| `@Post()` , `@Get()` , `@Delete()`, `@Put()` , `@Patch()` | Accepts a HTTP request         |
-| `@Body()`                                                 | retrieve the POST request body |
-| `@Res()`                                                  | response                       |
-| `@HttpCode(code)`                                         | customize the HTTP code        |
-| `@Header()`                                               |                                |
-| `@Param(<name>)`                                          | retirive params from the uri   |
+| name | description |
+| --- | --- |
+| `@Post()` , `@Get()` , `@Delete()`, `@Put()` , `@Patch()` | Accepts a HTTP request |
+| `@Body()` | retrieve the POST request body |
+| `@Res()` | response |
+| `@HttpCode(code)` | customize the HTTP code |
+| `@Header()` |  |
+| `@Param(<name>)` | retirive params from the uri |
 
 #### Generic URI
 
@@ -102,14 +102,14 @@ A route will identify the uri associated to an action.
 - DTOs are not the models, in many cases the model and data you wish to receive is different.
 
 | They can be defined using classes or interfaces, but Nest recommends using classes as TypeScript does not save metadata for generics and interfaces |
-| --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --- |
 
 ## Dependency Injection (DI)
 
 Nest is built around the strong design pattern commonly known as Dependency injection
 
 | Dependencies are services or objects that a class needs to perform its function. Dependency injection, or DI, is a design pattern in which a class requests dependencies from external sources rather than creating them. |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --- |
 
 ### How the DI container works ?
 
@@ -146,9 +146,7 @@ When the application shuts down, each provider will be destroyed.
 constructor(private catsService: CatsService) {}
 ```
 
-The CatsService is injected through the class constructor.
-Notice the use of the private syntax.
-This shorthand allows us to both declare and initialize the catsService member immediately in the same location.
+The CatsService is injected through the class constructor. Notice the use of the private syntax. This shorthand allows us to both declare and initialize the catsService member immediately in the same location.
 
 #### 2. Property-based injection
 
@@ -166,8 +164,7 @@ If your class doesn't extend another provider, you should always prefer using co
 
 ### Services
 
-The only role of a controller should be : **Accept the client requests**
-what we will going to do with this request should be transfered to the business layer that's why we have **Services**
+The only role of a controller should be : **Accept the client requests** what we will going to do with this request should be transfered to the business layer that's why we have **Services**
 
 ```bash
 nest generate service <service name>
@@ -246,8 +243,7 @@ A Middleware could be a class or a function
 
 And you could use all express middlewares like :
 
-- [Morgan](https://www.npmjs.com/package/morgan): offers a logging feature on the requests.and it has several log formats that you can configure and
-  adapt. -`app.use(morgan('dev'));`
+- [Morgan](https://www.npmjs.com/package/morgan): offers a logging feature on the requests.and it has several log formats that you can configure and adapt. -`app.use(morgan('dev'));`
 - [Helmet](https://www.npmjs.com/package/helmet): secure your requests by adding HTTP headers.
   - `app.use(helmet());`
 - [Cors](https://www.npmjs.com/package/cors#enable-cors-for-a-single-route): allows you to manage permissions to resources from another domain.
@@ -262,16 +258,9 @@ You can declare the middleware in the `use(<middlewarename>)` function of main.j
 
 - Nest calls the pipe just before invoking a method to transform or evaluate its params
 
-We have 2 different types of pipes
-| | Transformation Pipes | Validation Pipes |
-| ------------ | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| Explanation | Transform input data to the desired form (e.g., from string to integer) | Evaluate the input data and throw an exception if invalid |
-| Installation | auto | `npm i --save class-validator class-transformer` |
-| Where ? | Add it to the property that we want to pipe (Body , Param , Query ...) | Annotate properties |
-| Activation | auto | Globally : `app.useGlobalPipes(new ValidationPipe({transform: true, whitelist: true}))` |
+We have 2 different types of pipes | | Transformation Pipes | Validation Pipes | | ------------ | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | | Explanation | Transform input data to the desired form (e.g., from string to integer) | Evaluate the input data and throw an exception if invalid | | Installation | auto | `npm i --save class-validator class-transformer` | | Where ? | Add it to the property that we want to pipe (Body , Param , Query ...) | Annotate properties | | Activation | auto | Globally : `app.useGlobalPipes(new ValidationPipe({transform: true, whitelist: true}))` |
 
-In a specific route: `@UsePipes(PipeClass1, PipeClass2,…)` |
-| Example of use
+In a specific route: `@UsePipes(PipeClass1, PipeClass2,…)` | | Example of use
 
 1. With dependecy injection
 
@@ -398,8 +387,7 @@ Filters are used to manage exceptions
 NestJs comes with his own exception management layer that handles all the HTTP exceptions .
 
 - If you don't handle the exception Nest will do it for you
-- If an exception isn't recognized by this filter a default exception is triggered : the famous "Internal server error" with the "500 status"
-  HttpException is a class given by Nest to handle all the HTTP exceptions, its constructor takes 2 arguments : response and status
+- If an exception isn't recognized by this filter a default exception is triggered : the famous "Internal server error" with the "500 status" HttpException is a class given by Nest to handle all the HTTP exceptions, its constructor takes 2 arguments : response and status
 
   Example
 

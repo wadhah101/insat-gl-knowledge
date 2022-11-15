@@ -52,8 +52,8 @@ We will use `insat.tn` as domain name.
 1. In each machine match different ips to their sub domain name in `/etc/hosts`
 
    ```bash
-   172.21.0.2      kdc.insat.tn kdc
-   172.21.0.3      server.insat.tn server
+   172.21.0.2 kdc.insat.tn kdc
+   172.21.0.3 server.insat.tn server
    ```
 
    To test if everything is working properly try this command on each sub-domain:
@@ -106,10 +106,7 @@ We will use `insat.tn` as domain name.
 apt install krb5-kdc krb5-admin-server krb5-config
 ```
 
-When it's prompted :
--> realm : INSAT.TN
--> kerberos server : kdc.insat.tn
--> Administrative Service: kdc.insat.tn
+When it's prompted : -> realm : INSAT.TN -> kerberos server : kdc.insat.tn -> Administrative Service: kdc.insat.tn
 
 - Create the realm: A Kerberos realm is the domain over which a Kerberos authentication server has the authority to authenticate a user, host or service.
 
@@ -161,7 +158,6 @@ apt-get install libsasl2-modules-gssapi-mit
 pip install requests_kerberos
 
 pip install flask_kerberos
-
 ```
 
 => Now your machines are ready to use the flask service

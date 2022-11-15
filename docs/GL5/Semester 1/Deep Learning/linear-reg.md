@@ -32,39 +32,32 @@ slug: /gl5/semester-1/deep-learning/linear-reg
 
 Let's $n$ is the number of features, $m$ is the number of rows.
 
-$x$ =
-$
+$x$ = $
 \begin{pmatrix}
     x_{1}^{(1)} & x_{2}^{(1)} & x_{3}^{(1)} & \dots  & x_{n}^{(1)} \\
     x_{1}^{(2)} & x_{2}^{(2)} & x_{3}^{(2)} & \dots  & x_{n}^{(2)} \\
     \vdots & \vdots & \vdots & \ddots & \vdots \\
     x_{1}^{(m)} & x_{2}^{(m)} & x_{3}^{(m)} & \dots  & x_{n}^{(m)}
 \end{pmatrix}
-$
-thus $X$ =
-$
+$ thus $X$ = $
 \begin{pmatrix}
     x_{1}^{(1)} & x_{2}^{(1)} & x_{3}^{(1)} & \dots  & x_{n}^{(1)} & 1 \\
     x_{1}^{(2)} & x_{2}^{(2)} & x_{3}^{(2)} & \dots  & x_{n}^{(2)} & 1 \\
     \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
     x_{1}^{(m)} & x_{2}^{(m)} & x_{3}^{(m)} & \dots  & x_{n}^{(m)}  & 1
 \end{pmatrix}
-$
-$\in {\rm I\!R}^{m \times (n+1)}$
+$ $\in {\rm I\!R}^{m \times (n+1)}$
 
-$y$ =
-$
+$y$ = $
 \begin{pmatrix}
     y^{(1)} \\
     y^{(2)} \\
     \vdots \\
     y^{(m)}
 \end{pmatrix}
-$
-$\in {\rm I\!R}^{m \times 1}$
+$ $\in {\rm I\!R}^{m \times 1}$
 
-And the parameters $\theta$ =
-$
+And the parameters $\theta$ = $
 \begin{pmatrix}
     a_{1} \\
     a_{2} \\
@@ -72,8 +65,7 @@ $
     a_{n} \\
     b
 \end{pmatrix}
-$
-$\in {\rm I\!R}^{(n+1) \times 1}$
+$ $\in {\rm I\!R}^{(n+1) \times 1}$
 
 Finally we get the model $F = X\theta \in {\rm I\!R}^{m \times 1}$
 
@@ -146,8 +138,7 @@ def gradients(theta, X, y):
 gradients(theta, X, y)
 ```
 
-array([[-76.34230311],
-           [ -4.87819021]])
+array([[-76.34230311],            [ -4.87819021]])
 
 ```python
 def gradient_descent(theta, X, y, learning_rate, n):

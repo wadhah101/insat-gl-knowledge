@@ -8,16 +8,16 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ## Some important notions
 
-| name            | description                                                                                                  |
-| --------------- | ------------------------------------------------------------------------------------------------------------ |
-| Identification  | Who are you ?                                                                                                |
-| Authentication  | Prove it                                                                                                     |
-| Authorization   | Do you have the right to do something ?                                                                      |
-| Audit           | What did you do ?                                                                                            |
-| FootPrint       | Recognition                                                                                                  |
-| Integrity       | Ensuring that information cannot be changed                                                                  |
-| Confidentiality | Ensuring that information can be accessed (read) only by authorized persons                                  |
-| DLP             | Discret Logarithm Problem : finding the number y where x = g^y mod, g is given and p is a large prime number |
+| name | description |
+| --- | --- |
+| Identification | Who are you ? |
+| Authentication | Prove it |
+| Authorization | Do you have the right to do something ? |
+| Audit | What did you do ? |
+| FootPrint | Recognition |
+| Integrity | Ensuring that information cannot be changed |
+| Confidentiality | Ensuring that information can be accessed (read) only by authorized persons |
+| DLP | Discret Logarithm Problem : finding the number y where x = g^y mod, g is given and p is a large prime number |
 
 ### Frequently used CMDs
 
@@ -43,17 +43,15 @@ scp <filename> <username>@<hostname>:<path>
 
 ## Attacks
 
-| Attack          | Description                                                                 | Example |
-| --------------- | --------------------------------------------------------------------------- | ------- |
+| Attack | Description | Example |
+| --- | --- | --- |
 | Birthday Attack | It is made against the Hash algorithms. (Belongs to a class of brute force) |
 
 All hashed messages have a fixed length (independent from the input length) and they unique for that message. this attack refers to the probability of finding two random messages m1 and m2 that has the same Hash h(m1) = h(m2) so the attacker can safely replace the message by his own one|What is the relation with the birthday:
 
-Since we have a finite number of days in one year (365) there is a big chance to have 2 persons with the same birthday in a finite number of persons.|
-|Password attack|Trying to guess the password or having a databse of passwords called dictionnary|- **Brute Force** : using a random approach by trying different passwords and hoping that one work Some logic can be applied by trying passwords related to the person’s name, job title, hobbies or similar items.
+Since we have a finite number of days in one year (365) there is a big chance to have 2 persons with the same birthday in a finite number of persons.| |Password attack|Trying to guess the password or having a databse of passwords called dictionnary|- **Brute Force** : using a random approach by trying different passwords and hoping that one work Some logic can be applied by trying passwords related to the person’s name, job title, hobbies or similar items.
 
-- **Dictionary attack**: dictionary of common passwords is used to attempt to gain access to a user’s computer and network. One approach is to copy an encrypted file that contains the passwords, apply the same encryption to a dictionary of commonly used passwords, and compare the results.|
-  |Man in the middle|occurs when a hacker inserts itself between the communications of a client and a server|Session hijacking
+- **Dictionary attack**: dictionary of common passwords is used to attempt to gain access to a user’s computer and network. One approach is to copy an encrypted file that contains the passwords, apply the same encryption to a dictionary of commonly used passwords, and compare the results.| |Man in the middle|occurs when a hacker inserts itself between the communications of a client and a server|Session hijacking
 
 ![mitm1](assets/mitm1.PNG)
 
@@ -61,11 +59,9 @@ Since we have a finite number of days in one year (365) there is a big chance to
 
 |SQL Injection|SQL commands are inserted into data-plane input (for example, instead of the login or password) in order to run predefined SQL commands|“SELECT \* FROM users WHERE account = ‘’ or ‘1’ = ‘1’;”
 
-Because ‘1’ = ‘1’ always evaluates to TRUE, the database will return the data for all users instead of just a single user.|
-|Cross-site scripting (XSS)|Use third-party web resources to run scripts in the victim’s web browser or scriptable application|
+Because ‘1’ = ‘1’ always evaluates to TRUE, the database will return the data for all users instead of just a single user.| |Cross-site scripting (XSS)|Use third-party web resources to run scripts in the victim’s web browser or scriptable application|
 
-![xss](assets/xss.PNG)
-|Ransomware|Ransomware is a type of malware from cryptovirology that threatens to publish the victim's personal data or perpetually block access to it unless a ransom is paid. While some simple ransomware may lock the system without damaging any files, more advanced malware uses a technique called cryptoviral extortion.|
+![xss](assets/xss.PNG) |Ransomware|Ransomware is a type of malware from cryptovirology that threatens to publish the victim's personal data or perpetually block access to it unless a ransom is paid. While some simple ransomware may lock the system without damaging any files, more advanced malware uses a technique called cryptoviral extortion.|
 
 ## Firewalls
 
@@ -169,7 +165,7 @@ Use one shared encryption key between sender and receiver.
 - Get all the algos
 
 ```bash
- gpg --version
+gpg --version
 ```
 
 Examples of symmetric algorithms:
@@ -249,7 +245,7 @@ gpg --import KEY
 - Encryption
 
 ```bash
-gpg -o file.enc -a -r <publicKey> -encrypt file
+gpg -o file.enc -a -r file < publicKey > -encrypt
 ```
 
 - Sign
@@ -317,11 +313,9 @@ NP-complete problem
 4. Generate the public Key (e,N): e is between 1 and L and coprime with N and L
 5. private key (d,N) : d\*e mod L =1
 
-**Encryption** :
-![\Large M^e](https://latex.codecogs.com/svg.latex?\Large&space;M^e) mod N = C
+**Encryption** : ![\Large M^e](https://latex.codecogs.com/svg.latex?\Large&space;M^e) mod N = C
 
-**Decryption** :
-M = ![\Large C^d](https://latex.codecogs.com/svg.latex?\Large&space;C^d) mod N
+**Decryption** : M = ![\Large C^d](https://latex.codecogs.com/svg.latex?\Large&space;C^d) mod N
 
 #### ELGamal
 
@@ -394,8 +388,7 @@ ECC is based on the elliptic curve discrete logarithm problem, or (ECDLP), Inste
 
 #### ECC Auth
 
-The standard algorithm used for signing with ECC is ECDSA, which stands for elliptic curve digital signature algorithm.
-This algorithm has replaced RSA signatures and classical DSA signatures in many applications. It is, for example, the only signature algorithm used in Bitcoin and is supported by many TLS and SSH implementations.
+The standard algorithm used for signing with ECC is ECDSA, which stands for elliptic curve digital signature algorithm. This algorithm has replaced RSA signatures and classical DSA signatures in many applications. It is, for example, the only signature algorithm used in Bitcoin and is supported by many TLS and SSH implementations.
 
 #### Signature generation
 
@@ -449,8 +442,7 @@ Elliptic curve cryptography is often viewed as an alternative to RSA for public-
 
 RSA is only used for encryption and signatures, whereas ECC is a family of algorithms that can be used to perform encryption, generate signatures, perform key agreement, and offer advanced cryptographic functionalities such as identity-based encryption.
 
-The significant difference:
-**=> The same level of security with small numbers**
+The significant difference: **=> The same level of security with small numbers**
 
 ![cryptography](assets/elliptic-curve-cryptography.png)
 
@@ -490,8 +482,7 @@ SSL (Secure Sockets Layer)
 
 => A website that implements SSL / TLS has an “HTTPS” in its URL instead of an “HTTP”.
 
-OpenSSL is a software library for applications that secure communications over computer networks against eavesdropping or need to identify the party at the other end.
-It contains an open-source implementation of the SSL and TLS protocols. The core library, written in C programming language, implements basic cryptographic functions and provides various utility functions.
+OpenSSL is a software library for applications that secure communications over computer networks against eavesdropping or need to identify the party at the other end. It contains an open-source implementation of the SSL and TLS protocols. The core library, written in C programming language, implements basic cryptographic functions and provides various utility functions.
 
 #### CMD
 
@@ -509,14 +500,13 @@ openssl enc -aes-128-cbc -iter 2 -in file -out file.enc
 
 ```bash
 openssl enc -d -aes-128-cbc -in file.enc -out filerestored
-openssl enc -d -aes-128-cbc  -iter 2 -in file.enc -out filerestored
+openssl enc -d -aes-128-cbc -iter 2 -in file.enc -out filerestored
 ```
 
 - Generate RSA Key:
 
 ```bash
 openssl genrsa -out mykey 2048
-
 ```
 
 - Generate RSA params:
@@ -629,7 +619,7 @@ openssl genrsa -des3 -out gl4.key 3072
 - Create request for a certiif from INSAT
 
 ```bash
-openssl req -new  -key gl4.key -out gl4.req
+openssl req -new -key gl4.key -out gl4.req
 ```
 
 - Generate a Certificate for GL4:
@@ -654,4 +644,4 @@ openssl pkcs12 -export -out gl4.pfx -in gl4.cert -inkey gl4.key -name "certifica
 - Add Authority
 
 | preference -> certificate manager -> Authorities -> import -> choose INSAT.cert |
-| ------------------------------------------------------------------------------- |
+| --- |

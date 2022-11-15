@@ -131,9 +131,7 @@ Data stores in two persistent structures:
   - Regular operation are stored here first
   - A checkpoint is regularly written to FsImage in regular times or when a certain limit of log files are present to avoid large EditLog size
 
-FsImage generation is very resource heavy and may take minutes while at the same time data must be ready for user access
-Hadoop relies on another node for that operation named StandBy NameNode
-or secondary NameNode
+FsImage generation is very resource heavy and may take minutes while at the same time data must be ready for user access Hadoop relies on another node for that operation named StandBy NameNode or secondary NameNode
 
 #### Checkpoint with 2NN
 
@@ -156,8 +154,7 @@ Two Type of workers:
 - Mappers:
   - Mapper are scoped to single item operations, they strictly must only rely on it, Runs on parallel
   - Mapper must return Key, Value couple
-- Reducer: Reducer has a wider context and access to multiples items
-  ![MR](assets/map-reduce.png)
+- Reducer: Reducer has a wider context and access to multiples items ![MR](assets/map-reduce.png)
 
 ### MRv1
 
@@ -201,8 +198,7 @@ Potential Problems :
   - API
   - Resource management
 
-No slots, Resource are allocated just in time.
-Multiple masters in cluster
+No slots, Resource are allocated just in time. Multiple masters in cluster
 
 Daemons :
 

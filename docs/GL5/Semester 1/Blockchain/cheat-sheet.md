@@ -23,15 +23,15 @@ If two parties **agree to a transaction**, this information is **broadcast** to 
 
 ## Keywords to know
 
-| Keyword     | Explanation                                                                                                                                                                                                    |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Transaction | Transaction in blockchain chould be anything not only money                                                                                                                                                    |
-| Nodes       | are the computers uses in the network                                                                                                                                                                          |
-| Ledger      | A ledger is a book or collection of accounts in which account transactions are recorded                                                                                                                        |
-| Bitcoin     | The first and most popular cryptocurrency based off the decentralized ledger of blockchain                                                                                                                     |
-| Coin        | Representation of a digital asset built on a new blockchain                                                                                                                                                    |
-| Ethereum    | Blockchain application that uses a built-in programming language that allows users to build decentralized ledgers modified to their own needs. Smart contracts are used to validate transactions in the ledger |
-| Gossip      | It is a peer-to-peer communication mechanism in which nodes periodically exchange state information about themselves and other nodes they know                                                                 |
+| Keyword | Explanation |
+| --- | --- |
+| Transaction | Transaction in blockchain chould be anything not only money |
+| Nodes | are the computers uses in the network |
+| Ledger | A ledger is a book or collection of accounts in which account transactions are recorded |
+| Bitcoin | The first and most popular cryptocurrency based off the decentralized ledger of blockchain |
+| Coin | Representation of a digital asset built on a new blockchain |
+| Ethereum | Blockchain application that uses a built-in programming language that allows users to build decentralized ledgers modified to their own needs. Smart contracts are used to validate transactions in the ledger |
+| Gossip | It is a peer-to-peer communication mechanism in which nodes periodically exchange state information about themselves and other nodes they know |
 
 ## Public, Private & consortium Blockchain
 
@@ -73,13 +73,11 @@ Both are working in the same way, the difference here who is allowed to particip
 
 ## Block
 
-Each block contains a set of transactions and other essential details.
-Each block header contains the **previous block hash**, **current block hash**, **nonce** (for bitwoin blocks), **Merkle root** (the address to the tree that contains the transactions' hashes), and other details. The number of transactions in the block varies and so do the fees associated with.
+Each block contains a set of transactions and other essential details. Each block header contains the **previous block hash**, **current block hash**, **nonce** (for bitwoin blocks), **Merkle root** (the address to the tree that contains the transactions' hashes), and other details. The number of transactions in the block varies and so do the fees associated with.
 
 ## Bitcoin
 
-The cryptocurrency was invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto
-To have an account we choose a private key based on which our address is calculated : This private key is our only way to access our address which is public.
+The cryptocurrency was invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto To have an account we choose a private key based on which our address is calculated : This private key is our only way to access our address which is public.
 
 - BTC uses POW as a consensus : each block contains a sha256 hash.
 

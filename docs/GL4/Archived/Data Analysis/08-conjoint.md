@@ -8,9 +8,7 @@ slug: /gl4/archived/data-analysis/08-conjoint
 
 ### 1.1 Definition
 
-Let $X, Y$ be two discrete Random Variables with finite co-domains.
-Let $U=\{x_1,\dots,x_n\},V=\{y_1,\dots,y_m\}$ be the possible values of X and Y respectively
-We define the random variable $Z=(X, Y)$ as a joint random variable defined by the law:
+Let $X, Y$ be two discrete Random Variables with finite co-domains. Let $U=\{x_1,\dots,x_n\},V=\{y_1,\dots,y_m\}$ be the possible values of X and Y respectively We define the random variable $Z=(X, Y)$ as a joint random variable defined by the law:
 
 $$
 \forall (x,y)\in U\times V,\quad \mathcal{P}(Z=(x,y))=\mathcal{P}(X=x \wedge Y=y)
@@ -61,8 +59,7 @@ $$
 
 #### 1.5.1 Marginal Distribution of $X$
 
-The marginal distribution of $X$ is the probability distribution of X determined
-from $(X, Y)$
+The marginal distribution of $X$ is the probability distribution of X determined from $(X, Y)$
 
 $$
 \forall x\in U,\quad \mathcal{P}(X=x)=\sum_{y\in V}\mathcal{P}(X=x\wedge Y=y)
@@ -70,8 +67,7 @@ $$
 
 #### 1.5.2 Marginal Distribution of $Y$
 
-The marginal distribution of $Y$ is the probability distribution of X determined
-from $(X, Y)$
+The marginal distribution of $Y$ is the probability distribution of X determined from $(X, Y)$
 
 $$
 \forall x\in V,\quad \mathcal{P}(Y=y)=\sum_{x\in U}\mathcal{P}(X=x\wedge Y=y)
@@ -95,8 +91,7 @@ $$
 
 ### 2.1 Definition
 
-Let $X, Y$ be two continuous Random Variables with a joint probability density function $f_{X,Y}$.
-We define the random variable $Z=(X, Y)$ as a joint random variable defined by the law:
+Let $X, Y$ be two continuous Random Variables with a joint probability density function $f_{X,Y}$. We define the random variable $Z=(X, Y)$ as a joint random variable defined by the law:
 
 $$
 \forall (x,y)\in \mathbb{R}^2,\quad F_Z(Z \le (x,y))=\mathcal{P}(X \le x \wedge Y\le y)=\int_{-\infty}^x\int_{-\infty}^y f_{X,Y}(u,v)\space\text{dvdu}=\iint_{\mathopen]-\infty,x\mathclose]\times \mathopen]-\infty,y\mathclose]}f_{X,Y}(u)\space \text{du}
@@ -127,8 +122,7 @@ $$
 
 #### 2.5.1 Marginal Distribution of $X$
 
-The marginal distribution of $X$ is the probability distribution of $X$ determined
-from $(X, Y)$
+The marginal distribution of $X$ is the probability distribution of $X$ determined from $(X, Y)$
 
 $$
 \forall x\in \mathbb{R},\quad f_X(x)=\int_{y\in\mathbb{R}}f_{X,Y}(x,y)\text{dy}
@@ -136,8 +130,7 @@ $$
 
 #### 2.5.2 Marginal Distribution of $Y$
 
-The marginal distribution of $Y$ is the probability distribution of $Y$ determined
-from $(X, Y)$
+The marginal distribution of $Y$ is the probability distribution of $Y$ determined from $(X, Y)$
 
 $$
 \forall y\in \mathbb{R},\quad f_Y(y)=\int_{x\in\mathbb{R}}f_{X,Y}(x,y)\text{dx}

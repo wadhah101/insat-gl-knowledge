@@ -5,6 +5,7 @@ slug: /gl5/semester-1/blockchain/questions
 # Questions
 
 partie QCM
+
 question / reponse
 
 etheurium vs bitcoin research
@@ -26,11 +27,17 @@ node types :
 - full nodes: Contain the entire ledger history, starting form the genesis block. This results in more memory/computation requirements. Generally used for validators/miners.
 
 research proof of work, how it works, its problems: 51 attack, energy intensive
+
 research proof of stake
+
 research how bitcoin transaction works and etherium
+
 research how smart contract works
+
 research smart contract transactions in etherium
+
 can we cancel a smart contract ?
+
 research transaction fees / gaz
 
 how to deploy smart contract ?
@@ -47,5 +54,4 @@ Architecture Blockchain:
 - procotols : consensus
 - infrascture : network, p2p, digital signature
 
-difference between cloud and blockchain ?
-the problems with etherium fork ?
+difference between cloud and blockchain ? the problems with etherium fork ?

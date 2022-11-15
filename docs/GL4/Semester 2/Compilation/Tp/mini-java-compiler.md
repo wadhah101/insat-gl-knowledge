@@ -1,7 +1,6 @@
 ---
-slug: /Gl4/semester-2/compilation/mini-java-compiler
+slug: /gl4/semester-2/compilation/tp/mini-java-compiler
 ---
-
 
 # Mini-Java-Compiler
 
@@ -67,9 +66,9 @@ Identifier ::= <IDENTIFIER>
 
 Where
 
-- **identifier** follows the regex expression ```? /([A-Za-z_][A-Za-z0-9_]*)/ ?```
-- **<INTEGER_LITERAL>** follows the regex expression ```? /(-?[1-9][0-9]*)/ ?```
-- **<BOOLEAN_LITERAL>** follows the regex expression ```= ? /(true|false)/ ?```
+- **identifier** follows the regex expression `? /([A-Za-z_][A-Za-z0-9_]*)/ ?`
+- **<INTEGER_LITERAL>** follows the regex expression `? /(-?[1-9][0-9]*)/ ?`
+- **<BOOLEAN_LITERAL>** follows the regex expression `= ? /(true|false)/ ?`
 
 ## Technologies
 

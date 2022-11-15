@@ -99,7 +99,7 @@ The preceding code:
 
 ![Browser window showing an application response of Hello Rick, NumTimes is: 4](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-controller/_static/rick4.png?view=aspnetcore-5.0)
 
-### Example 2  (Important)
+### Example 2 (Important)
 
 ```csharp
 public string Welcome(string name, int ID = 1)
@@ -127,7 +127,7 @@ Run the app and enter the following URL: `https://localhost{PORT}/HelloWorld/Wel
 
 View templates are created using Razor. Razor-based view templates:
 
-- Have a *`.cshtml`* file extension.
+- Have a _`.cshtml`_ file extension.
 - Provide an elegant way to create HTML output with C#.
 
 ```csharp
@@ -144,15 +144,13 @@ The preceding code:
 
 Controller methods:
 
-- Are referred to as *action methods*. For example, the `Index` action method in the preceding code.
+- Are referred to as _action methods_. For example, the `Index` action method in the preceding code.
 - Generally return an [IActionResult](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.iactionresult) or a class derived from [ActionResult](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.actionresult), not a type like `string`.
 
 ### Add a view
 
 ```html
-@{
-    ViewData["Title"] = "Index";
-}
+@{ ViewData["Title"] = "Index"; }
 
 <h2>Index</h2>
 
@@ -173,14 +171,12 @@ Navigate to `https://localhost:{PORT}/HelloWorld`:
 ```html
 <!-- ... -->
 <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+  <main role="main" class="pb-3">@RenderBody()</main>
+</div>
 <!-- ... -->
 ```
 
-- `RenderBody` is a placeholder where all the view-specific pages you create show up, *wrapped* in the layout page. For example, if you select the **Privacy** link, the **Views/Home/Privacy.cshtml** view is rendered inside the `RenderBody` method.
+- `RenderBody` is a placeholder where all the view-specific pages you create show up, _wrapped_ in the layout page. For example, if you select the **Privacy** link, the **Views/Home/Privacy.cshtml** view is rendered inside the `RenderBody` method.
 
 ### Change the title, footer, and menu link in the layout file
 
@@ -190,8 +186,9 @@ Navigate to `https://localhost:{PORT}/HelloWorld`:
 <a class="navbar-brand" asp-controller="Movies" asp-action="Index">Movie App</a>
 <!-- ... -->
 <div class="container">
-            &copy; 2020 - Movie App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+  &copy; 2020 - Movie App -
+  <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+</div>
 ```
 
 The preceding markup made the following changes:
@@ -204,19 +201,15 @@ In the preceding markup, the `asp-area=""` [anchor Tag Helper attribute](https:/
 - **Examine** the `Views/_ViewStart.cshtml` file:
 
 ```html
-@{
-    Layout = "_Layout";
-}
+@{ Layout = "_Layout"; }
 ```
 
-The *`Views/_ViewStart.cshtml`* file brings in the *`Views/Shared/_Layout.cshtml`* file to each view. The `Layout` property **can be used to set a different layout view**, or set it to `null` so no layout file will be used.
+The _`Views/_ViewStart.cshtml`_ file brings in the _`Views/Shared/_Layout.cshtml`_ file to each view. The `Layout` property **can be used to set a different layout view**, or set it to `null` so no layout file will be used.
 
 - **Examine** the `Views/_ViewStart.cshtml` file:
 
 ```html
-@{
-    ViewData["Title"] = "Movie List";
-}
+@{ ViewData["Title"] = "Movie List"; }
 
 <h2>My Movie List</h2>
 
@@ -225,7 +218,7 @@ The *`Views/_ViewStart.cshtml`* file brings in the *`Views/Shared/_Layout.cshtml
 
 `ViewData["Title"] = "Movie List";` in the code above sets the `Title` property of the `ViewData` dictionary to "Movie List". The `Title` property is used in the `<title>` HTML element in the layout page:
 
-he content in the *`Index.cshtml`* view template is merged with the *`Views/Shared/_Layout.cshtml`* view template. A single HTML response is sent to the browser. Layout templates make it easy to make changes that apply across all of the pages in an app.
+he content in the _`Index.cshtml`_ view template is merged with the _`Views/Shared/_Layout.cshtml`_ view template. A single HTML response is sent to the browser. Layout templates make it easy to make changes that apply across all of the pages in an app.
 
 #### Passing Data from the Controller to the View
 
@@ -256,7 +249,7 @@ Rather than have the controller render this response as a string, change the con
 
 The `ViewData` dictionary object contains data that will be passed to the view.
 
-- In *`Views/HelloWorld/Welcome.cshtml`*
+- In _`Views/HelloWorld/Welcome.cshtml`_
 
 ```csharp
 @{
@@ -311,7 +304,7 @@ Install-Package Microsoft.EntityFrameworkCore.SqlServer
 
 A database context class is needed to coordinate EF Core functionality (Create, Read, Update, Delete) for the `Movie` model. The database context is derived from [`Microsoft.EntityFrameworkCore.DbContext`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext) and specifies the entities to include in the data model.
 
-- In *`Data/MvcMovieContext.cs`*
+- In _`Data/MvcMovieContext.cs`_
 
 ```csharp
 using Microsoft.EntityFrameworkCore;
@@ -337,7 +330,7 @@ The preceding code creates a [`DbSet`](https://docs.microsoft.com/en-us/dotnet/a
 
 ASP.NET Core is built with [dependency injection (DI)](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0). Services (such as the EF Core DB context) must be registered with DI during application startup. Components that require these services (such as Razor Pages) are provided these services via constructor parameters. The constructor code that gets a DB context instance is shown later in the tutorial. In this section, you register the database context with the DI container.
 
-Add the following `using` statements at the top of *Startup.cs*:
+Add the following `using` statements at the top of _Startup.cs_:
 
 ```csharp
 using MvcMovie.Data;
@@ -356,7 +349,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-The name of the connection string is passed in to the context by calling a method on a [`DbContextOptions`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions) object. For local development, the [ASP.NET Core configuration system](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.0) reads the connection string from the *`appsettings.json`* file.
+The name of the connection string is passed in to the context by calling a method on a [`DbContextOptions`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions) object. For local development, the [ASP.NET Core configuration system](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.0) reads the connection string from the _`appsettings.json`_ file.
 
 ### Add a database connection string
 
@@ -391,9 +384,9 @@ Add-Migration InitialCreate
 Update-Database
 ```
 
-- `Add-Migration InitialCreate`: Generates a *`Migrations/{timestamp}_InitialCreate.cs`* migration file. The `InitialCreate` argument is the migration name. Any name can be used, but by convention, a name is selected that describes the migration. Because this is the first migration, the generated class contains code to create the database schema. The database schema is based on the model specified in the `MvcMovieContext` class.
+- `Add-Migration InitialCreate`: Generates a _`Migrations/{timestamp}_InitialCreate.cs`_ migration file. The `InitialCreate` argument is the migration name. Any name can be used, but by convention, a name is selected that describes the migration. Because this is the first migration, the generated class contains code to create the database schema. The database schema is based on the model specified in the `MvcMovieContext` class.
 
-- `Update-Database`: Updates the database to the latest migration, which the previous command created. This command runs the `Up` method in the *`Migrations/{time-stamp}_InitialCreate.cs`* file, which creates the database.
+- `Update-Database`: Updates the database to the latest migration, which the previous command created. This command runs the `Up` method in the _`Migrations/{time-stamp}_InitialCreate.cs`_ file, which creates the database.
 
 ### Dependency injection in the controller
 
@@ -414,7 +407,7 @@ The constructor uses [Dependency Injection](https://docs.microsoft.com/en-us/asp
 
 MVC (in addition to `ViewData`) also provides the ability to pass strongly typed model objects to a view. This strongly typed approach enables compile time code checking. The scaffolding mechanism used this approach (that is, passing a strongly typed model) with the `MoviesController` class and views.
 
-- Examine the generated `Details` method in the *Controllers/MoviesController.cs* file:
+- Examine the generated `Details` method in the _Controllers/MoviesController.cs_ file:
 
 ```csharp
 // GET: Movies/Details/5
@@ -455,50 +448,30 @@ If a movie is found, an instance of the `Movie` model is passed to the `Details`
 return View(movie);
 ```
 
-- **Examine** the contents of the *`Views/Movies/Details.cshtml`* file:
+- **Examine** the contents of the _`Views/Movies/Details.cshtml`_ file:
 
 ```html
-@model MvcMovie.Models.Movie
-
-@{
-    ViewData["Title"] = "Details";
-}
+@model MvcMovie.Models.Movie @{ ViewData["Title"] = "Details"; }
 
 <h1>Details</h1>
 
 <div>
-    <h4>Movie</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ReleaseDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Genre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Genre)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-    </dl>
+  <h4>Movie</h4>
+  <hr />
+  <dl class="row">
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Title)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Title)</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.ReleaseDate)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.ReleaseDate)</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Genre)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Genre)</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Price)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Price)</dd>
+  </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+  <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+  <a asp-action="Index">Back to List</a>
 </div>
 ```
 
@@ -508,11 +481,11 @@ The `@model` statement at the top of the view file specifies the type of object 
 @model MvcMovie.Models.Movie
 ```
 
-This `@model` directive **allows access to the movie that the controller passed to the view**. The `Model` object is strongly typed. For example, in the *`Details.cshtml`* view, the code passes each movie field to the `DisplayNameFor` and `DisplayFor` HTML Helpers with the strongly typed `Model` object. The `Create` and `Edit` methods and views also pass a `Movie` model object.
+This `@model` directive **allows access to the movie that the controller passed to the view**. The `Model` object is strongly typed. For example, in the _`Details.cshtml`_ view, the code passes each movie field to the `DisplayNameFor` and `DisplayFor` HTML Helpers with the strongly typed `Model` object. The `Create` and `Edit` methods and views also pass a `Movie` model object.
 
 #### Listing
 
-Examine the *`Index.cshtml`* view and the `Index` method in the Movies controller. Notice how the code creates a `List` object when it calls the `View` method. The code passes this `Movies` list from the `Index` action method to the view:
+Examine the _`Index.cshtml`_ view and the `Index` method in the Movies controller. Notice how the code creates a `List` object when it calls the `View` method. The code passes this `Movies` list from the `Index` action method to the view:
 
 ```csharp
 // GET: Movies
@@ -522,75 +495,57 @@ public async Task<IActionResult> Index()
 }
 ```
 
-When the movies controller was created, scaffolding included the following `@model` statement at the top of the *`Index.cshtml`* file:
+When the movies controller was created, scaffolding included the following `@model` statement at the top of the _`Index.cshtml`_ file:
 
 ```cshtml
 @model IEnumerable<MvcMovie.Models.Movie>
 ```
 
-The `@model` directive allows you to access the list of movies that the controller passed to the view by using a `Model` object that's strongly typed. For example, in the *`Index.cshtml`* view, the code loops through the movies with a `foreach` statement over the strongly typed `Model` object:
+The `@model` directive allows you to access the list of movies that the controller passed to the view by using a `Model` object that's strongly typed. For example, in the _`Index.cshtml`_ view, the code loops through the movies with a `foreach` statement over the strongly typed `Model` object:
 
 ```html
 @model IEnumerable<MvcMovie.Models.Movie>
+  @{ ViewData["Title"] = "Index"; }
 
-@{
-    ViewData["Title"] = "Index";
-}
+  <h1>Index</h1>
 
-<h1>Index</h1>
-
-<p>
+  <p>
     <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+  </p>
+  <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReleaseDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th></th>
-        </tr>
+      <tr>
+        <th>@Html.DisplayNameFor(model => model.Title)</th>
+        <th>@Html.DisplayNameFor(model => model.ReleaseDate)</th>
+        <th>@Html.DisplayNameFor(model => model.Genre)</th>
+        <th>@Html.DisplayNameFor(model => model.Price)</th>
+        <th></th>
+      </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+      @foreach (var item in Model) {
+      <tr>
+        <td>@Html.DisplayFor(modelItem => item.Title)</td>
+        <td>@Html.DisplayFor(modelItem => item.ReleaseDate)</td>
+        <td>@Html.DisplayFor(modelItem => item.Genre)</td>
+        <td>@Html.DisplayFor(modelItem => item.Price)</td>
+        <td>
+          <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+          <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+          <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>
+      </tr>
+      }
     </tbody>
-</table>
+  </table></MvcMovie.Models.Movie
+>
 ```
 
 Because the `Model` object is strongly typed (as an `IEnumerable<Movie>` object), each item in the loop is typed as `Movie`. Among other benefits, this means that you get compile time checking of the code.
 
 ## Part 5, work with a database
 
-The `MvcMovieContext` object handles the task of connecting to the database and mapping `Movie` objects to database records. The database context is registered with the [Dependency Injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0) container in the `ConfigureServices` method in the *`Startup.cs`* file:
+The `MvcMovieContext` object handles the task of connecting to the database and mapping `Movie` objects to database records. The database context is registered with the [Dependency Injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.0) container in the `ConfigureServices` method in the _`Startup.cs`_ file:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -602,7 +557,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-The ASP.NET Core [Configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.0) system reads the `ConnectionString`. For local development, it gets the connection string from the *`appsettings.json`* file:
+The ASP.NET Core [Configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.0) system reads the `ConnectionString`. For local development, it gets the connection string from the _`appsettings.json`_ file:
 
 ```json
 "ConnectionStrings": {
@@ -614,7 +569,7 @@ By default, EF will make a property named `ID` the primary key.
 
 ### Seed the database
 
-Create a new class named `SeedData` in the *Models* folder. Replace the generated code with the following:
+Create a new class named `SeedData` in the _Models_ folder. Replace the generated code with the following:
 
 ```csharp
 using Microsoft.EntityFrameworkCore;
@@ -690,7 +645,7 @@ if (context.Movie.Any())
 
 #### Add the seed initializer
 
-In *`Program.cs`* :
+In _`Program.cs`_ :
 
 ```csharp
 using Microsoft.AspNetCore.Hosting;
@@ -738,7 +693,7 @@ namespace MvcMovie
 
 ## Part 6, controller methods and views (Important)
 
-- In *`Models/Movie.cs`*
+- In _`Models/Movie.cs`_
 
 ```csharp
 using System;
@@ -767,7 +722,7 @@ namespace MvcMovie.Models
 
 - The `[Column(TypeName = "decimal(18, 2)")]` data annotation is required so Entity Framework Core can correctly map `Price` to currency in the database. For more information, see [Data Types](https://docs.microsoft.com/en-us/ef/core/modeling/relational/data-types).
 
-- In *`Views/Movies/Index.cshtml`*
+- In _`Views/Movies/Index.cshtml`_
 
 ```html
         <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
@@ -820,7 +775,7 @@ public async Task<IActionResult> Edit(int id, [Bind("ID,Title,ReleaseDate,Genre,
 
 The `[Bind]` attribute is one way to protect against [over-posting](https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost). You should only include properties in the `[Bind]` attribute that you want to change. For more information, see [Protect your controller from over-posting](https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application). [`ViewModels`](https://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/) provide an alternative approach to prevent over-posting.
 
-The `HttpPost` attribute specifies that this `Edit` method can be invoked *only* for `POST` requests. You could apply the `[HttpGet]` attribute to the first edit method, but that's not necessary because `[HttpGet]` is the default.
+The `HttpPost` attribute specifies that this `Edit` method can be invoked _only_ for `POST` requests. You could apply the `[HttpGet]` attribute to the first edit method, but that's not necessary because `[HttpGet]` is the default.
 
 The [model binding](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-3.0) system takes the posted form values and creates a `Movie` object that's passed as the `movie` parameter. The `ModelState.IsValid` property verifies that the data submitted in the form can be used to modify (edit or update) a `Movie` object. If the data is valid, it's saved. The updated (edited) movie data is saved to the database by calling the `SaveChangesAsync` method of database context. After saving the data, the code redirects the user to the `Index` action method of the `MoviesController` class, which displays the movie collection, including the changes just made.
 
@@ -851,55 +806,50 @@ When the scaffolding system created the Edit view, it examined the `Movie` class
 CSHTMLCopy
 
 ```html
-@model MvcMovie.Models.Movie
-
-@{
-    ViewData["Title"] = "Edit";
-}
+@model MvcMovie.Models.Movie @{ ViewData["Title"] = "Edit"; }
 
 <h1>Edit</h1>
 
 <h4>Movie</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReleaseDate" class="control-label"></label>
-                <input asp-for="ReleaseDate" class="form-control" />
-                <span asp-validation-for="ReleaseDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Genre" class="control-label"></label>
-                <input asp-for="Genre" class="form-control" />
-                <span asp-validation-for="Genre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+  <div class="col-md-4">
+    <form asp-action="Edit">
+      <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+      <input type="hidden" asp-for="Id" />
+      <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="ReleaseDate" class="control-label"></label>
+        <input asp-for="ReleaseDate" class="form-control" />
+        <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="Genre" class="control-label"></label>
+        <input asp-for="Genre" class="form-control" />
+        <span asp-validation-for="Genre" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="Price" class="control-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+      </div>
+    </form>
+  </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+  <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+@section Scripts { @{await
+Html.RenderPartialAsync("_ValidationScriptsPartial");} }
 ```
 
 Notice how the view template has a `@model MvcMovie.Models.Movie` statement at the top of the file. `@model MvcMovie.Models.Movie` specifies that the view expects the model for the view template to be of type `Movie`.
@@ -910,7 +860,7 @@ The scaffolded code uses several Tag Helper methods to streamline the HTML marku
 
 ### Add Search by name
 
-Update the `Index` method found inside *`Controllers/MoviesController.cs`* with the following code:
+Update the `Index` method found inside _`Controllers/MoviesController.cs`_ with the following code:
 
 ```csharp
 public async Task<IActionResult> Index(string searchString)
@@ -932,14 +882,14 @@ public async Task<IActionResult> Index(string searchString)
    - The `s => s.Title.Contains()` code above is a [Lambda Expression](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions). Lambdas are used in method-based [LINQ](https://docs.microsoft.com/en-us/dotnet/standard/using-linq) queries as arguments to standard query operator methods such as the [Where](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.where) method or `Contains` (used in the code above). LINQ queries are not executed when they're defined or when they're modified by calling a method such as `Where`, `Contains`, or `OrderBy`. Rather, query execution is deferred. That means that the evaluation of an expression is delayed until its realized value is actually iterated over or the `ToListAsync` method is called.
    - Note: The [Contains](https://docs.microsoft.com/en-us/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) method is run on the database, not in the c## code shown above. The case sensitivity on the query depends on the database and the collation. On SQL Server, [Contains](https://docs.microsoft.com/en-us/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) maps to [SQL LIKE](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/like-transact-sql), which is case insensitive. In SQLite, with the default collation, it's case sensitive.
 
-In *`Views/Movies/Index.cshtml`*
+In _`Views/Movies/Index.cshtml`_
 
 ```html
 <form asp-controller="Movies" asp-action="Index" method="get">
-    <p>
-        Title: <input type="text" name="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
+  <p>
+    Title: <input type="text" name="SearchString" />
+    <input type="submit" value="Filter" />
+  </p>
 </form>
 ```
 
@@ -947,7 +897,7 @@ In *`Views/Movies/Index.cshtml`*
 
 ### Add Search by genre
 
-Add the following `MovieGenreViewModel` class to the *Models* folder:
+Add the following `MovieGenreViewModel` class to the _Models_ folder:
 
 ```csharp
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -1011,7 +961,11 @@ The `SelectList` of genres is created by projecting the distinct genres (we don'
 When the user searches for the item, the search value is retained in the search box.
 
 ```html
-    <select asp-for="MovieGenre" asp-items="Model.Genres">            <option value="">All</option>        </select>         Title: <input type="text" asp-for="SearchString" />        <input type="submit" value="Filter" />
+<select asp-for="MovieGenre" asp-items="Model.Genres">
+  <option value="">All</option>
+</select>
+Title: <input type="text" asp-for="SearchString" />
+<input type="submit" value="Filter" />
 ```
 
 `asp-for="MovieGenre"` is similar to `name="MovieGenre"` (same exact thing)
@@ -1020,23 +974,16 @@ We need To also change the lambda expressions ( to access `model.Movies[0].Title
 
 ```html
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies[0].ReleaseDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies[0].Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies[0].Price)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
+  <thead>
+    <tr>
+      <th>@Html.DisplayNameFor(model => model.Movies[0].Title)</th>
+      <th>@Html.DisplayNameFor(model => model.Movies[0].ReleaseDate)</th>
+      <th>@Html.DisplayNameFor(model => model.Movies[0].Genre)</th>
+      <th>@Html.DisplayNameFor(model => model.Movies[0].Price)</th>
+      <th></th>
+    </tr>
+  </thead>
+</table>
 ```
 
 ## Part 8, add a new field
@@ -1052,7 +999,7 @@ We add a new Field `Rating` :
 
 - We modify The view
 
-- We modify the controller  `[Bind("Id,Title,ReleaseDate,Genre,Price,Rating")]`
+- We modify the controller `[Bind("Id,Title,ReleaseDate,Genre,Price,Rating")]`
 
 - We create our migration & update the database with code first migrations:
 

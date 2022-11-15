@@ -4,5 +4,12 @@
     "**/.pnp.*": true
   },
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": [
+      "file:///home/wa101/Project/insat-gl-knowledge/.github/workflows/deploy.yml",
+      "file:///home/wa101/Project/insat-gl-knowledge/.github/workflows/build.yml"
+    ]
+  },
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
 }

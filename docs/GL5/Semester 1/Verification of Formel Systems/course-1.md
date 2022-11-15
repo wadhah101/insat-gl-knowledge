@@ -15,7 +15,7 @@ Une automate est un quintuplé $\mathcal{A}=(V,\Sigma,q_0,F,\delta)$ avec:
 - $V$ est l'ensemble d'états finis
 - $\Sigma$ est un ensemble finis représentant l'alphabet qui peut être exécuté par l'automate
 - $q_0\in V$ est l'état initial de l'automate
-- $F \subseteq V$  est l'ensemble des états finaux de l'automate
+- $F \subseteq V$ est l'ensemble des états finaux de l'automate
 - $\delta \subseteq V\times \Sigma \times V$ est la relation de transition
 
 ### 1.2 Transition
@@ -95,7 +95,8 @@ $$
 (ab^+c)^* (ab^+)^?
 $$
 
-*Démonstration*
+Démonstration
+
 $$
 \begin{align}
 L_1&=bL_1+bL_2\\
@@ -114,7 +115,7 @@ $$
 
 ### 2.1 Définition
 
-Soit $\mathcal{A}_1=(V_1,\Sigma_1,q_1,F_1,\delta_1), \ \mathcal{A}_2=(V_2,\Sigma_2,q_2,F_2,\delta_2)$  deux automates.
+Soit $\mathcal{A}_1=(V_1,\Sigma_1,q_1,F_1,\delta_1), \ \mathcal{A}_2=(V_2,\Sigma_2,q_2,F_2,\delta_2)$ deux automates.
 
 Le produit cartésien entre $\mathcal{A}_1$ et $\mathcal{A}_2$ est l'automate $\mathcal{A}_3=(V_3,\Sigma_3,q_3,F_3,\delta_3)$ tels que:
 
@@ -211,7 +212,7 @@ flowchart LR
 
 ### 3.2 Définition
 
-La composition parallèle entre $\mathcal{A}_1$ et $\mathcal{A}_2$ est l'automate $\mathcal{A}_3=(\Sigma_3,V_3,q_3,\delta_3,F_3)$   définie par:
+La composition parallèle entre $\mathcal{A}_1$ et $\mathcal{A}_2$ est l'automate $\mathcal{A}_3=(\Sigma_3,V_3,q_3,\delta_3,F_3)$ définie par:
 
 - $\Sigma_3=\Sigma_1\cup \Sigma_2$
 
@@ -271,7 +272,7 @@ L'exemple ci dessus représente deux automate $\mathcal{A}_1=(V_1,\Sigma_1,q_1,F
 - $V_1=\{u_0,u_1,u_2\}$, et $V_2=\{v_0,v_1,v_2\}$
 - $\Sigma_1=\{a,b,c\}, \ \Sigma_2=\{b,d,e\}$ et $\Sigma_\cap=\{b\}$
 - $q_1=u_0$ et $q_2=v_0$
-- $F_1=\{u_0,u_2\}$  et $F_2=\{v_0\}$
+- $F_1=\{u_0,u_2\}$ et $F_2=\{v_0\}$
 
 Le produit synchronisé est:
 
@@ -332,10 +333,12 @@ Les transitions en **verts** sont les transitions synchrones.
 ### 4.2 Fonction booléenne à partir d'un graphe
 
 On définit la fonction $f$ par:
+
 $$
 \text{Adj}
 f(x_0,\dots,x_{m-1},x'*1,\dots,x'*{m-1})=\sum_{i=0}^{n-1}\sum_{j\in\text{Adj} (i)} F(i,x_0,\dots,x_{m-1})\times F(j,x'*0,\dots,x'*{m-1})
 $$
+
 Cette fonction binaire va encoder le graphe $\mathcal{G}$
 
 #### Exemple 1
@@ -367,6 +370,7 @@ On a $m=3$, On construit le tableau de $F$
 | $7$ | $\emptyset$     | $111$ | $\bar x_0\bar x_1\bar x_2$ |
 
 Ainsi:
+
 $$
 \begin{align}
  f(x_0,x_1,x_2,x'_0,x'_1,x'*2)&=\sum*{i=0}^{7}\sum_{j\in\text{Adj} (i)} F(i,x_0,x_1,x_2)\times F(j,x'_0,x'_1,x'_2) \\
@@ -388,9 +392,11 @@ $$
 On va construire le graphe $\mathcal{G}$ à partir de $f$
 
 Pour cela on va calculer sa matrice d'adjacence $M$ en utilisant la propriété suivante:
+
 $$
 M_{i,j}=f(b_{i,0},\dots,b_{i,m-1},b_{j,0},\dots,b_{j,m-1})
 $$
+
 À partir de la matrice $M$ on peut construire la liste des arêtes $\mathcal{E}$ et par suite le graphe $\mathcal{G}=(\mathcal{V},\mathcal{E})$
 
 #### Exemple 2
@@ -419,6 +425,7 @@ On génère la table de $f$
 | 1     | 1     | 1      | 1      | 1   |
 
 On a donc:
+
 $$
 \begin{align}M
 &= \begin{pmatrix}f(0,0,0,0) & f(0,0,1,0) & f(0,0,0,1) & f(0,0,1,1) \\
@@ -433,7 +440,8 @@ f(1,1,0,0) & f(1,1,1,0) & f(1,1,0,1) & f(1,1,1,1)
 \end{pmatrix}
 \end{align}
 $$
-Ainsi, le graphe  $\mathcal{G}$ est donc le suivant:
+
+Ainsi, le graphe $\mathcal{G}$ est donc le suivant:
 
 ```mermaid
 flowchart LR
@@ -457,9 +465,11 @@ Cependant, la taille d'une telle arbre peut être exponentielle en $n$. Pour cel
 ### 5.1 Cas d'étude: $f(x,y,z)=(x\oplus y\oplus z) +\bar xyz$
 
 Pour introduire les BDDs, nous allons étudier la fonction booléenne:
+
 $$
 f(x,y,z)=(x\oplus y\oplus z) +\bar xyz
 $$
+
 Avec $\oplus$ est l'opérateur $\texttt{XOR}$
 
 ### 5.2 Génération de la table
@@ -535,7 +545,7 @@ flowchart TB
  z4 --Vrai--> leaf7[1]
 ```
 
-En effet, un arbre $\mathcal{T}$ est redondante si $\text{left}(\mathcal{T})$ et  $\text{right}(\mathcal{T})$ sont isomorphes. Dans ce cas on peut supprimer la redondance en:
+En effet, un arbre $\mathcal{T}$ est redondante si $\text{left}(\mathcal{T})$ et $\text{right}(\mathcal{T})$ sont isomorphes. Dans ce cas on peut supprimer la redondance en:
 
 - Mettant la racine de l'arbre à $\text{left}(\mathcal{T})$
 - Si $\mathcal{T}$ est un fils de $\mathcal{T}'$, alors on remplace aussi $\mathcal{T}$ par $\text{left}(\mathcal{T})$

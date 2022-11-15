@@ -9,6 +9,7 @@ slug: /gl4/archived/data-analysis/11-advanced
 ### 1.1 Statement
 
 Let $X\sim \mathcal{D}$ with finite variance $\sigma^2$ and finite expectation $\mu.$ Then:
+
 $$
 \forall r\in\mathbb{R}_+^*,\quad \mathcal{P}\left(\lvert X-\mu \rvert \ge r\sigma\right) \le \frac{1}{r^2}
 $$
@@ -18,10 +19,13 @@ $$
 Let $X\sim \mathcal{D}$ with finite variance $\sigma^2$ and finite expectation $\mu$
 
 Suppose that $\exists r\in\mathbb{R}_+^*:$
+
 $$
 \mathcal{P}(\lvert X-\mu \rvert \ge r\sigma)> \frac{1}{r^2}
 $$
+
 So we have:
+
 $$
 \begin{align*}
 \mathcal{P}((X-\mu)^2 \ge r^2\sigma^2)&> \frac{1}{r^2}\\
@@ -34,27 +38,29 @@ $$
 &> \sigma^2
 \end{align*}
 $$
+
 Which is a contradiction as $\mathbb{V}[X]=\sigma^2 \quad \blacksquare$
 
 ## 2. Discrete Compound Distribution
 
 A discrete compound distribution is a discrete distribution whose parameter is a random variable $X$.
 
-For example, if $X\sim U(0,1)$,  $\mathcal{B}(X)$ is said to be a compound discrete distribution
+For example, if $X\sim U(0,1)$, $\mathcal{B}(X)$ is said to be a compound discrete distribution
 
 We will analyse two cases:
 
-+ The random variable $X$ is discrete
-+ The random variable $X$ is continuous
+- The random variable $X$ is discrete
+- The random variable $X$ is continuous
 
 ### 2.1 Compounding with a discrete random variable
 
 #### 2.1.1 Definition
 
-+ Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
-+ Let $X$ be a discrete distribution with values on $Q\subseteq S$
+- Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
+- Let $X$ be a discrete distribution with values on $Q\subseteq S$
 
 a discrete random variable $Y$ is said to follow the compound distribution $\mathcal{D}(X)$ if:
+
 $$
 \forall k \in Q, \quad Y[X=k]\sim \mathcal{D}(k)
 $$
@@ -67,9 +73,9 @@ $$
 
 #### 2.1.3 Example
 
-+ Let $n\in\mathbb{N},p\in[0,1]$
-+ Let $X\sim \mathcal{D}(1,n)$
-+ Let $Y\sim \mathcal{D}(1,X).$ It can be thought as following a Bernoulli distribution with a random size $X$
+- Let $n\in\mathbb{N},p\in[0,1]$
+- Let $X\sim \mathcal{D}(1,n)$
+- Let $Y\sim \mathcal{D}(1,X).$ It can be thought as following a Bernoulli distribution with a random size $X$
 
 > **Our goal is to calculate the probability distribution of $Y$, and then its expected value and variance**
 
@@ -125,10 +131,11 @@ $$
 
 #### 2.2.1 Definition
 
-+ Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
-+ Let $X$ be a continuous distribution with values on $Q\subseteq S$
+- Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
+- Let $X$ be a continuous distribution with values on $Q\subseteq S$
 
 a discrete random variable $Y$ is said to follow the compound distribution $\mathcal{D}(X)$ if:
+
 $$
 \forall k \in Q, \quad Y[X=k]\sim \mathcal{D}(k)
 $$
@@ -141,13 +148,14 @@ $$
 
 #### 2.2.3 Example
 
-+ Let $n\in\mathbb{N}$
-+ Let $X\sim \mathcal{U}(0,1)$
-+ Let $Y\sim \mathcal{B}(n,X).$ It can be thought as following a Bernoulli distribution with a random probability $X$
+- Let $n\in\mathbb{N}$
+- Let $X\sim \mathcal{U}(0,1)$
+- Let $Y\sim \mathcal{B}(n,X).$ It can be thought as following a Bernoulli distribution with a random probability $X$
 
 > **Our goal is to calculate the probability distribution of $Y$, and then its expected value and variance**
 
 We will start by the probability distribution function, as it represents the distribution of $Y$
+
 $$
 \begin{align*}
 \forall k \in \{0,\dots,n\}, \mathcal{P}(Y=k)&=\int_{0}^1\mathcal{P}(Y=k \mid X=p)\cdot f_X(p)\space \text{dp}\\
@@ -162,6 +170,7 @@ $$
 $$
 
 The expected value and variance are:
+
 $$
 \begin{align*}
 \mathbb{E}[X]&=\frac{n+1}{2}\\
@@ -174,21 +183,22 @@ $$
 
 A continuous compound distribution is a discrete distribution whose parameter is a random variable $X$.
 
-For example, if $X\sim U(0,1)$,  $\mathcal{N}(X,1)$ is said to be a compound continuous distribution
+For example, if $X\sim U(0,1)$, $\mathcal{N}(X,1)$ is said to be a compound continuous distribution
 
 We will analyse two cases:
 
-+ The random variable $X$ is discrete
-+ The random variable $X$ is continuous
+- The random variable $X$ is discrete
+- The random variable $X$ is continuous
 
 ### 3.1 Compounding by a discrete distribution
 
 #### 3.1.1 Definition
 
-+ Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
-+ Let $X$ be a discrete distribution with values on $Q\subseteq S$
+- Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
+- Let $X$ be a discrete distribution with values on $Q\subseteq S$
 
 a continuous random variable $Y$ is said to follow the compound distribution $\mathcal{D}(X)$ if:
+
 $$
 \forall k \in Q, \quad Y[X=k]\sim \mathcal{D}(k)
 $$
@@ -201,13 +211,14 @@ $$
 
 #### 3.1.3 Example
 
-+ Let $p\in\space ]0,1]$
-+ Let $X\sim \mathcal{G}(p)$
-+ Let $Y\sim \mathcal{U}(0,X).$ It can be thought as following a uniform distribution with a random parameter $X$
+- Let $p\in\space ]0,1]$
+- Let $X\sim \mathcal{G}(p)$
+- Let $Y\sim \mathcal{U}(0,X).$ It can be thought as following a uniform distribution with a random parameter $X$
 
 > **Our goal is to calculate the probability distribution of $Y$, and then its expected value**
 
 We will start by the probability distribution function, as it represents the distribution of $Y$
+
 $$
 \begin{align*}
 \forall y \in\mathbb{R}^*_+, f_Y(y)&= \sum_{n\in\mathbb{N}^*}f_{Y[X=n]}(y)\mathcal{P}(X=n) \\
@@ -217,6 +228,7 @@ $$
 $$
 
 The expected Value $\mathbb{E}[Y]$ is:
+
 $$
 \begin{align*}
 \mathbb{E}[Y]&=\int_{\mathbb{R}_+}yf_Y(y)\space \text{dy}\\
@@ -235,6 +247,7 @@ $$
 $$
 
 It can be also calculated directly using the law of total expectation:
+
 $$
 \begin{align*}
 \mathbb{E}[Y]&=\mathbb{E}[\mathbb{E}[Y\mid X]] \\
@@ -244,7 +257,9 @@ $$
 &=\frac{1}{2p}
 \end{align*}
 $$
+
 A third method close to method 2 is to express $\mathbb{E}[Y\mid X]$ as a function of $X$:
+
 $$
 \begin{align*}
 \forall n\in\mathbb{N}^*,\quad \mathbb{E}[Y\mid X=n]&=\frac{n}{2} \quad \text{as }Y[X=n]\sim\mathcal{U}(0,n)\\
@@ -256,11 +271,12 @@ $$
 \end{align*}
 $$
 
-> *This example may illustrate how using the right tools can simplify your work and make your engineering life easier :smile:*
+> _This example may illustrate how using the right tools can simplify your work and make your engineering life easier :smile:_
 
 We can go further, and calculate the variance of $Y$
 
 First of all, we calculate the conditional variance, given $X$:
+
 $$
 \begin{align*}
 \forall n\in\mathbb{N}^*,\quad \mathbb{V}[Y\mid X=n]&=\frac{n^2}{12} \quad \text{since} \space Y[X=n]\sim\mathcal{U}(0,n) \\
@@ -269,6 +285,7 @@ $$
 $$
 
 Now using the law of total variance:
+
 $$
 \begin{align*}
 \mathbb{V}[Y]&=\mathbb{E}[\mathbb{V}[Y\mid X]]+\mathbb{V}[\mathbb{E}[Y\mid X]]\\
@@ -284,10 +301,11 @@ $$
 
 #### 3.2.1 Definition
 
-+ Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
-+ Let $X$ be a continuous distribution with values on $Q\subseteq S$
+- Let $\mathcal{D}$ a family of distributions with parameter $s\in S$ and values on $A$
+- Let $X$ be a continuous distribution with values on $Q\subseteq S$
 
 a discrete random variable $Y$ is said to follow the compound distribution $\mathcal{D}(X)$ if:
+
 $$
 \forall k \in Q, \quad Y[X=k]\sim \mathcal{D}(k)
 $$
@@ -300,13 +318,14 @@ $$
 
 #### 3.2.3 Example
 
-+ Let $p\in[0,1]$
-+ Let $X\sim \mathcal{U}(0,1)$
-+ Let $Y\sim \mathcal{E}(X)$ is a compound distribution, it can be thought as following a gamma distribution with random parameter $X$
+- Let $p\in[0,1]$
+- Let $X\sim \mathcal{U}(0,1)$
+- Let $Y\sim \mathcal{E}(X)$ is a compound distribution, it can be thought as following a gamma distribution with random parameter $X$
 
 > **Our goal is to represent the distribution of $Y$, its expected value and its variance**
 
 We will start by the probability distribution function
+
 $$
 \begin{align*}
 \forall y \in\mathbb{R}^*_+, f_Y(y)&=\int_{\mathbb{R}}f_{Y[X=t]}(y)\cdot f_X(t)\space \text{dt}\\
@@ -322,6 +341,7 @@ f_Y(0)&=\int_{0}^1t\text{dt}\\
 $$
 
 For the expected value, we will use the theorem of total expectation:
+
 $$
 \begin{align*}
 \mathbb{E}[Y]&=\mathbb{E}[\mathbb{E}[Y\mid X]] \\
@@ -329,11 +349,13 @@ $$
 &=\int_0^1\frac{1}{t} \text{dt} =+\infty\quad \text{diverges}
 \end{align*}
 $$
+
 So this probability distribution does not have a mean value, and by extension it does not have a variance.
 
-> *This example serves as a proof that not all distributions have a mean value and/or a variance*
+> _This example serves as a proof that not all distributions have a mean value and/or a variance_
 
 By contrast, the random variable $Z=\sqrt{Y}$ has a finite mean value, but does not have a variance (if it had one, $Y$ should then have a finite expected value):
+
 $$
 \begin{align*}
 \mathbb{E}[Z]&=\mathbb{E}[\mathbb{E}[\sqrt{Y}\mid X]] \\

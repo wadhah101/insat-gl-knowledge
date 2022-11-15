@@ -1,25 +1,21 @@
 name: Deploy static content to Pages
 
 on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - master
   push:
     branches:
       - master
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
-  group: "pages"
+  group: ${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -58,7 +54,7 @@ jobs:
       - name: generate contributors
         run: |
           gh api repos/wadhah101/insat-gl-knowledge/contributors > data/contributors.json
-          jq ".[] | { login: .login, contributions: .contributions  }" data/contributors.json
+          jq ".[] | { login, contributions }" data/contributors.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -69,12 +65,48 @@ jobs:
         run: mv .yarn/.cache .cache
 
       - name: Upload artifact
-        if: ${{ github.ref != 'refs/heads/master' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         uses: actions/upload-pages-artifact@v1
         with:
           path: "build"
 
+  deploy:
+    needs: build
+    if: ${{ github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
-        if: ${{ github.ref != 'refs/heads/master' }}
         id: deployment
         uses: actions/deploy-pages@v1
+
+  clean:
+    needs: build
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install gh cache extension
+        run: gh extension install actions/gh-actions-cache
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bash version
+        run: bash --version
+
+      - name: Clean cache
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_REF: ${{ github.ref }}
+        run: bash scripts/cleanup_cache_manual.sh

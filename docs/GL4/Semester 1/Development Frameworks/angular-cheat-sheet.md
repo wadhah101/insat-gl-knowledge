@@ -11,14 +11,14 @@ Author [@rihemebh](https://github.com/rihemebh)
 Angular is a Js Framework that supports multiple laguages like ES5, Typescript , dart ...
 
 - SPA (Single Page application):
-The single page application is a web application or website that interacts with the user by dynamically rewriting the current page, rather than loading entire new pages from the server.
+  The single page application is a web application or website that interacts with the user by dynamically rewriting the current page, rather than loading entire new pages from the server.
 
 - Modular , fast , component based
 
 ## Modules
 
-a Module is a class that is decorated by ``@NgModule``
-``appModule`` is the main module that is in charge of the application bootstrapping
+a Module is a class that is decorated by `@NgModule`
+`appModule` is the main module that is in charge of the application bootstrapping
 
 ```typescript
 import { NgModule } from '@angular/core';
@@ -34,7 +34,7 @@ export class AppModule { }
 
 ## Components
 
-A component is a class decorated by ``@Component``
+A component is a class decorated by `@Component`
 
 ```typescript
 @Component({
@@ -55,7 +55,7 @@ Data binding is the mecanism that allows a component and its template to communi
 
 #### Property Binding (DOM <- Component)
 
-A one-way binding  that allows the DOM to recover data from the component.
+A one-way binding that allows the DOM to recover data from the component.
 The property is interpreted by the framework before it is added to the template.
 We can call a property using :
 
@@ -90,21 +90,21 @@ Angular supports two-way data binding that allows interctions from DOM to compon
 
 ## Life cycle
 
-   A component instance has a lifecycle that starts when Angular instantiates the component class and renders the component view along with its child views.
-   The lifecycle continues with change detection, as Angular checks to see when data-bound properties change, and updates both the view and the component instance as needed.
+A component instance has a lifecycle that starts when Angular instantiates the component class and renders the component view along with its child views.
+The lifecycle continues with change detection, as Angular checks to see when data-bound properties change, and updates both the view and the component instance as needed.
 
- |Method|description|When it is called|Use Cases
- |---|---|---|---|
- |ngOnChanges()| |When an input/output binding value changes|whenever there is a change in the @Input data property, we can do some more changes in this method by comparing previous and current values.|
- |ngOnInit()|Initilize the component after construction|occurs only one time: After the first ngOnChanges|- fetch data
+| Method        | description                                | When it is called                                 | Use Cases                                                                                                                                    |
+| ------------- | ------------------------------------------ | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| ngOnChanges() |                                            | When an input/output binding value changes        | whenever there is a change in the @Input data property, we can do some more changes in this method by comparing previous and current values. |
+| ngOnInit()    | Initilize the component after construction | occurs only one time: After the first ngOnChanges | - fetch data                                                                                                                                 |
 
 - Initialize some third party lib|
- |ngDoCheck()|Responsible for Change Detetction|Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run||
- |ngOnDestroy()|Used for clean up| Just before the component is destroyed|The best place to clean up event handlers or any subscriptions|
+  |ngDoCheck()|Responsible for Change Detetction|Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run||
+  |ngOnDestroy()|Used for clean up| Just before the component is destroyed|The best place to clean up event handlers or any subscriptions|
 
 ### Change detection
 
-   Change Detection means updating the DOM when the data has changed usually used with Data binding
+Change Detection means updating the DOM when the data has changed usually used with Data binding
 
 #### How it works ?
 
@@ -115,9 +115,9 @@ Angular supports two-way data binding that allows interctions from DOM to compon
 - Angular updates the component’s view (DOM).
 
   | Create a View -> Create Bindings -> Process Bindings -> Update DOM -> run check |
-  |---|
+  | ------------------------------------------------------------------------------- |
 
-   ** View is a data structure created with every bind
+  \*\* View is a data structure created with every bind
 
 ## Interaction between parent and child component
 
@@ -128,77 +128,80 @@ Angular supports two-way data binding that allows interctions from DOM to compon
 - @Input(): Sending data from **Parent -> child** using property Binding
 - @Output() : Sending data from **Child -> Parent** using Event Binding
 
-   (Imported from "@angular/core")
+  (Imported from "@angular/core")
 
 ### @Input
 
-   Decorate a property with @Input means this property could be seen and modified by the parent.
+Decorate a property with @Input means this property could be seen and modified by the parent.
 
-   **How to use it ?**
-   When the parent called the child compo
-   The child component :
+**How to use it ?**
+When the parent called the child compo
+The child component :
 
-   ```typescript
-   @Input() name = "defaultname"
+```typescript
+@Input() name = "defaultname"
 
-   ```
+```
 
-   The parent template :
+The parent template :
 
-   ```html
-   <app-child [name]="child" />
-   ```
+```html
+<app-child [name]="child" />
+```
 
 ### @Output
 
-   How it works ?
+How it works ?
 
 - In the child component :
+
   - create an eventEmitter and decorate it with @Output()
   - create a method that will use this event emitter
 
-   ```typescript
-   @Output() sendDatatoParent = new EventEmitter()
-   sendData(){
-      this.sendDatatoPrent.emit(“I am the child ”);
-   }
+  ```typescript
+  @Output() sendDatatoParent = new EventEmitter()
+  sendData(){
+     this.sendDatatoPrent.emit(“I am the child ”);
+  }
 
-   ```
+  ```
 
 - In the child template:
+
   - call the method
 
-   ```html
-   <button (click)=“sendData“ ></buttton>
-   ```
+  ```html
+  <button (click)=“sendData“ ></buttton>
+  ```
 
 - In the parent template :
+
   - use the child's event Emitter as an event:
 
-   ```html
-   <app-child (sendDatatoDad) = “processDataInparent”>
-   ```
+  ```html
+  <app-child (sendDatatoDad)="“processDataInparent”"></app-child>
+  ```
 
-=> the parent will be able to process the data came from child which is the message "I am the child" and execute some work in the *processDataInparent* method
+=> the parent will be able to process the data came from child which is the message "I am the child" and execute some work in the _processDataInparent_ method
 
 ## Directives
 
-Angular directives are classes with the ``@Directive`` metadata. It allows you to modify the DOM and makes Templates dynamic
+Angular directives are classes with the `@Directive` metadata. It allows you to modify the DOM and makes Templates dynamic
 
 - Create a new directive :
 
-     ```cmd
-      ng g d <directive-name>
-     ```
+  ```cmd
+   ng g d <directive-name>
+  ```
 
-Angular  has 3 types of Directives :
+Angular has 3 types of Directives :
 
 ### 1. Built-in Attribute Directives
 
 - **ngStyle** : adds and removes a set of HTML styles.
 
 ```html
-  <p [ngStyle]="{'color' : myColor }" ></p>
+<p [ngStyle]="{'color' : myColor }"></p>
 ```
 
 - **ngClass** : adds and removes a set of CSS classes
@@ -214,11 +217,11 @@ Angular  has 3 types of Directives :
 
 - **ngModel** : ndds two-way data binding to an HTML form element.
 
-We need to Import ``FormsModule`` and add it to the NgModule's imports list.
+We need to Import `FormsModule` and add it to the NgModule's imports list.
 
 ```html
 <label for="example-ngModel">[(ngModel)]:</label>
-<input [(ngModel)]="name" id="example-ngModel">
+<input [(ngModel)]="name" id="example-ngModel" />
 ```
 
 => tow-way binding of th property name
@@ -226,19 +229,21 @@ We need to Import ``FormsModule`` and add it to the NgModule's imports list.
 ### 2. Custom Attribute Directives
 
 ```typescript
-         @Directive({
-            selector: '[appHighlight]'
-         })
-          export class HighlightDirective {
-           constructor() {el.nativeElement.style.backgroundColor = 'yellow'; }
-         }
- ```
+@Directive({
+  selector: "[appHighlight]",
+})
+export class HighlightDirective {
+  constructor() {
+    el.nativeElement.style.backgroundColor = "yellow";
+  }
+}
+```
 
 - Call the directive in your template
 
-     ```html
-      <p appHighlight>Highlight me!</p>
-     ```
+  ```html
+  <p appHighlight>Highlight me!</p>
+  ```
 
 - **HostBinding** : associate a property to a directive
 
@@ -256,15 +261,15 @@ We need to Import ``FormsModule`` and add it to the NgModule's imports list.
 
 ### 3. Structural Directives
 
-- *ngIf
-- *ngFor
+- \*ngIf
+- \*ngFor
 - [ngSwitch]
 
 ## Pipes
 
- Pipes are used in Angular to Format data. It is a class that implements the PipeTransform interface and its ```transform()``` method
+Pipes are used in Angular to Format data. It is a class that implements the PipeTransform interface and its `transform()` method
 
- You can use predefined Pipes by Angular or create your own one.
+You can use predefined Pipes by Angular or create your own one.
 
 - Create a new Pipe :
 
@@ -282,66 +287,75 @@ ng g p <pipe-name>
 
 ## Services
 
-Classes decorated by ``@Injectable()`` allowing to encapsulate business processes
+Classes decorated by `@Injectable()` allowing to encapsulate business processes
 
 ```typescript
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class HeroService {
-  constructor() { }
+  constructor() {}
 }
+```
 
-  ```
-
-  By default, the Angular CLI command ``ng generate service`` registers a provider with the root injector for your service by including provider metadata, that is ``providedIn: 'root'`` in the ``@Injectable()`` decorator.
+By default, the Angular CLI command `ng generate service` registers a provider with the root injector for your service by including provider metadata, that is `providedIn: 'root'` in the `@Injectable()` decorator.
 
 ## Routes
 
- Before we start we need to:
+Before we start we need to:
 
-  1. Create a routing file : ``app.routing.ts``
-  2. Import the RouteModule
-  3. Define our routes
+1. Create a routing file : `app.routing.ts`
+2. Import the RouteModule
+3. Define our routes
 
- In the template use :
+In the template use :
 
- ```html
-      <router-outlet></router-outlet>
- ```
+```html
+<router-outlet></router-outlet>
+```
 
 ### Navigate between routes
 
-- ``RouterLink``  directive :
+- `RouterLink` directive :
 
     ```html
-           <a [routerLink]="[‘home’]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >
-     home  </a>
-           <!--We use : [routerLinkActiveOptions]="{exact: true}"
+    <a
+      [routerLink]="[‘home’]"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+    >
+      home
+    </a>
+    <!--We use : [routerLinkActiveOptions]="{exact: true}"
+
             to tell angular that we want only this link to be
-             active and not its parent (dropdown button case) -->
+            active and not its parent (dropdown button case) -->
     ```
 
 - Router Service : Trigger a route from a component
+
   - Redirection
 
-      ```typescript
-           export class HomeComponent{
-                 constructor(private router:Router) { }
-                    onNaviger(){
-                      this.router.navigate(['/about/10'], {queryParams:{'qpVar':'je suis un qp'}});
-                     }
-          }
-       ```
+    ```typescript
+    export class HomeComponent {
+      constructor(private router: Router) {}
+      onNaviger() {
+        this.router.navigate(["/about/10"], {
+          queryParams: { qpVar: "je suis un qp" },
+        });
+      }
+    }
+    ```
 
   - Get Params :
 
-       ```typescript
-           This.router.activatedRoute.params.subscribe(params=>{this.monParam=params['param']});
-            // subscribe to an observable so you have do insubscribe from it in the ngOnDestroy()
-        ```
+    ````typescript
+        This.router.activatedRoute.params.subscribe(params=>{this.monParam=params['param']});
+         // subscribe to an observable so you have do insubscribe from it in the ngOnDestroy()
+     ```
+    ````
 
   [Learn more about oservable](#observable)
 
@@ -357,41 +371,39 @@ Example : all routes related to user management should start with "/user"
         ]
 ```
 
-   **Use case** : When you need to change the layout from screen to another
-      you can make a prefix for each layout and each prefix has its compoenent and its children routes
+**Use case** : When you need to change the layout from screen to another
+you can make a prefix for each layout and each prefix has its compoenent and its children routes
 
-PS: Children should be sorted from most specific  to least specific
+PS: Children should be sorted from most specific to least specific
 
 ## Forms
 
-  Angular uses 2 form approaches:
+Angular uses 2 form approaches:
 
 - Template-driven approach
 - Reactive approach
 
 ### Template-driven Approach
 
-- Import ``FormsModule``
-- Use the ``<form> </form>`` tag to let angular detect that we are using forms
-- Add ``ngModel`` and name property to tags that you want them to be managed by angular form
+- Import `FormsModule`
+- Use the `<form> </form>` tag to let angular detect that we are using forms
+- Add `ngModel` and name property to tags that you want them to be managed by angular form
 
 ```html
-  <input type="text" id="username" class="formcontrol"
-  ngModel
-  name="username" >
+<input type="text" id="username" class="formcontrol" ngModel name="username" />
 ```
 
-- Associate the  form object to a component variable using ``ngForm`` and references using ``#``
+- Associate the form object to a component variable using `ngForm` and references using `#`
 
-``` html
-<form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm">
+```html
+<form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm"></form>
 ```
 
 ```typescript
-    export class TmeplateDrivenComponent {
-    onSubmit(formulaire: NgForm){
-      console.log(formulaire);
-    }
+export class TmeplateDrivenComponent {
+  onSubmit(formulaire: NgForm) {
+    console.log(formulaire);
+  }
 }
 ```
 
@@ -400,7 +412,7 @@ PS: Children should be sorted from most specific  to least specific
 Angular uses attributes (type="email", ... ) and directives(required , ... ) as validators to the form
 
 - Form states :
-  - Dirty : inform  if a property has been modified or not
+  - Dirty : inform if a property has been modified or not
   - Valid : inform that the form is valid of not based on validators
   - Untouched : inform that the form has been touched or not
   - Pristine : the opposite of dirty
@@ -422,45 +434,41 @@ password not valid
 
 Use property binding
 
-#### Grouping Form : ``ngModelGroup``
+#### Grouping Form : `ngModelGroup`
 
 ```html
 <!--div that englobes all the properties that we want to group -->
-<div ngModelGroup= "user" #userData= "ngModelGroup" >
+<div ngModelGroup="user" #userData="ngModelGroup"></div>
 ```
 
 ## Observable
 
 Observables provide support for passing messages between parts of your application
-**Usecases** :  event handling, asynchronous programming, and handling multiple values.
+**Usecases** : event handling, asynchronous programming, and handling multiple values.
 
-An Observable instance begins publishing values only when someone subscribes to it. You subscribe by calling the ``subscribe()`` method of the instance, passing an observer
+An Observable instance begins publishing values only when someone subscribes to it. You subscribe by calling the `subscribe()` method of the instance, passing an observer
 object to receive the notifications.
 
 ```typescript
-const observable = new Observable(
-(observer) => {
-let i = 5;
-setInterval(() => {
-if (!i) {
-observer.complete();
-}
-observer.next(i--);
-}, 1000);
+const observable = new Observable((observer) => {
+  let i = 5;
+  setInterval(() => {
+    if (!i) {
+      observer.complete();
+    }
+    observer.next(i--);
+  }, 1000);
 });
 
 // subscribe to an observable and define the next() function
-observable.subscribe(
-(val) => {
-console.log(val);
-}
-);
-
+observable.subscribe((val) => {
+  console.log(val);
+});
 ```
 
 ### Operators : pipe, filter, map
 
- We could pipe, filter or map the content of the stream then subscribe to it
+We could pipe, filter or map the content of the stream then subscribe to it
 example: observ.pipe(x=> x%2 == 0).subscribe(next())
 
 ### Subject
@@ -471,10 +479,10 @@ It is a particular type of an observable, it coudld work as an observable or obs
 
 Import:
 
-``import {HttpClientModule} from "@angular/common/http";``
+`import {HttpClientModule} from "@angular/common/http";`
 
 Inject the service:
-``constructor(private http:HttpClient) { }``
+`constructor(private http:HttpClient) { }`
 
 ### GET
 
@@ -490,15 +498,15 @@ this.http.get(API_URL).subscribe(
 ### POST
 
 ```typescript
-this.http.post(API_URL,dataToSend).subscribe(
- (response:Response)=>{
-  //ToDo with response
- },
- (err:Error)=>{
-  //ToDo with error
- },
- () => {
-  console.log('complete');
- }
+this.http.post(API_URL, dataToSend).subscribe(
+  (response: Response) => {
+    //ToDo with response
+  },
+  (err: Error) => {
+    //ToDo with error
+  },
+  () => {
+    console.log("complete");
+  }
 );
 ```

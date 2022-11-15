@@ -30,34 +30,47 @@ Let $T_n$ be the cost of calculating $n$ using this algorithm
 ### 2.1 Lower Bound
 
 We have:
+
 $$
 T_n=T_{n-1}+T_{n-2}+\mathcal{O}(1)\ge T_{n-1}+T_{n-2}
 $$
+
 With $T_0=T_1=1$, and by recursion we can prove that:
+
 $$
 \forall n\in\mathbb{N},\quad T_n\ge F_n
 $$
+
 But, $(T_n)_{n\in\mathbb{N}}$ is increasing, so:
+
 $$
 T_n\ge 2T_{n-2}\implies T_n\ge 2^{\frac{n}{2}}T_0
 $$
- By that we have $T_n=\Omega(F_n)=\Omega(2^{\frac{n}{2}})$
+
+By that we have $T_n=\Omega(F_n)=\Omega(2^{\frac{n}{2}})$
 
 ### 2.2 Upper Bound
 
 We also have for some fixed $K>0$:
+
 $$
 T_n\le T_{n-1}+T_{n-2} +K
 $$
+
 We can prove by induction that:
+
 $$
 T_n\le (1+Kn)F_{n+1}
 $$
+
 Also by induction, we can prove that:
+
 $$
 F_n\le 2^n
 $$
+
 So we have:
+
 $$
 T_n=\mathcal{O}(nF_n)=\mathcal{O}(n2^n)
 $$
@@ -65,17 +78,22 @@ $$
 ### 2.3 Sharper Bounds
 
 In fact, it can be proven that:
+
 $$
 F_n=\frac{(\tfrac{1+\sqrt 5}{2})^n-(\tfrac{1-\sqrt 5}{2})^n}{\sqrt{5}}
 $$
+
 So we have:
+
 $$
 \begin{cases}
 T_n&=\mathcal{O}\left(n\left(\frac{1+\sqrt 5}{2}\right)^n\right)\\
 T_n&=\Omega\left(\left(\frac{1+\sqrt 5}{2}\right)^n\right)
 \end{cases}
 $$
+
 We can do even more than that, using more advanced techniques, it can be established that:
+
 $$
 T_n=\Theta\left(\left(\frac{1+\sqrt 5}{2}\right)^n\right)
 $$
@@ -91,6 +109,7 @@ def fibonacci(n:int):
 ```
 
 Let $T_n$ be the cost of this algorithm for an input $n$:
+
 $$
 T_n=\Theta(n)
 $$
@@ -150,6 +169,7 @@ $$
 ### d. Complexity of `fibonacci`
 
 We have $p=q=r=2$. So we have the complexity of `fibonacci` is
+
 $$
 T_n=\mathcal{O}(p^3\log n+pq)=\mathcal{O}(8\log n+4)=\mathcal{O}(\log n)
 $$

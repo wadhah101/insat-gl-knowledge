@@ -13,7 +13,7 @@ Blockchain is a system that records transactions that are devided into multiple 
 - It is impossible to change information or cheat.
 - Transactions are duplicated and distributed accross the network.
 - Blockchain is decentrelized.
-- Blockchain  is managed on a peer-to-peer network of computers, which are referred to as **nodes**. It can also be described as a distributed ledger: a decentralized way to chronologically document transactions.
+- Blockchain is managed on a peer-to-peer network of computers, which are referred to as **nodes**. It can also be described as a distributed ledger: a decentralized way to chronologically document transactions.
 
 ## How it works
 
@@ -23,17 +23,17 @@ If two parties **agree to a transaction**, this information is **broadcast** to 
 
 ## Keywords to know
 
-|Keyword|Explanation|
-|---|---|
-|Transaction| Transaction in blockchain chould be anything not only money |
-|Nodes|are the computers uses in the network|
-|Ledger|A ledger is a book or collection of accounts in which account transactions are recorded|
-|Bitcoin| The first and most popular cryptocurrency based off the decentralized ledger of blockchain|
-|Coin|Representation of a digital asset built on a new blockchain|
-|Ethereum|Blockchain application that uses a built-in programming language that allows users to build decentralized ledgers modified to their own needs. Smart contracts are used to validate transactions in the ledger|
-|Gossip| It is a peer-to-peer communication mechanism in which nodes periodically exchange state information about themselves and other nodes they know |
+| Keyword     | Explanation                                                                                                                                                                                                    |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Transaction | Transaction in blockchain chould be anything not only money                                                                                                                                                    |
+| Nodes       | are the computers uses in the network                                                                                                                                                                          |
+| Ledger      | A ledger is a book or collection of accounts in which account transactions are recorded                                                                                                                        |
+| Bitcoin     | The first and most popular cryptocurrency based off the decentralized ledger of blockchain                                                                                                                     |
+| Coin        | Representation of a digital asset built on a new blockchain                                                                                                                                                    |
+| Ethereum    | Blockchain application that uses a built-in programming language that allows users to build decentralized ledgers modified to their own needs. Smart contracts are used to validate transactions in the ledger |
+| Gossip      | It is a peer-to-peer communication mechanism in which nodes periodically exchange state information about themselves and other nodes they know                                                                 |
 
-## Public, Private & consortium  Blockchain
+## Public, Private & consortium Blockchain
 
 Both are working in the same way, the difference here who is allowed to participate.
 
@@ -113,7 +113,7 @@ A common consensus algorithm that requires a participant node to prove that the 
 
 ### Smart Contracts
 
- Smart contracts are simply programs stored on a blockchain that run when predetermined conditions are met. They typically are used to automate the execution of an agreement so that all participants can be immediately certain of the outcome, without any intermediary’s involvement or time loss.
+Smart contracts are simply programs stored on a blockchain that run when predetermined conditions are met. They typically are used to automate the execution of an agreement so that all participants can be immediately certain of the outcome, without any intermediary’s involvement or time loss.
 
 ### Ethereum 2.0
 
@@ -121,7 +121,7 @@ A big, multi-year long, upgrade to massively increase the blockchain’s scalabi
 
 ### Proof of Stake
 
- a common consensus algorithm that evolved as a low-cost, low-energy consuming. It is based on the trust for validators.
+a common consensus algorithm that evolved as a low-cost, low-energy consuming. It is based on the trust for validators.
 
 ### Validator
 

@@ -6,27 +6,27 @@ slug: /gl5/semester-1/deep-learning/linear-reg
 
 4 things to take in consideration:
 
-1. __Dataset:__
+1. **Dataset:**
 
-    ($x$, $y$) with $x$ being the feature and $y$ being the target.
+   ($x$, $y$) with $x$ being the feature and $y$ being the target.
 
-2. __Model:__
+2. **Model:**
 
-    represented by the function $f(x) = ax + b$, $a$ and $b$ being the parameters.
+   represented by the function $f(x) = ax + b$, $a$ and $b$ being the parameters.
 
-3. __Cost Function:__
+3. **Cost Function:**
 
-    A function to compute the error between the predicted values and the targets.
+   A function to compute the error between the predicted values and the targets.
 
-    In our case, $J(a,b) = {{1 \over{2m}} \sum_{i=1}^{m} (f(x^{(i)}) - y^{(i)})^2 }$, $m$ being the number of rows.
+   In our case, $J(a,b) = {{1 \over{2m}} \sum_{i=1}^{m} (f(x^{(i)}) - y^{(i)})^2 }$, $m$ being the number of rows.
 
-4. __Minimisation Algorithm:__
+4. **Minimisation Algorithm:**
 
-    In our case, we are going to use the _Gradient Descent_.
+   In our case, we are going to use the _Gradient Descent_.
 
-    Basically, for each parameter $a_{i}$, we compute $a_{i}$ = $a_{i}$ - $\alpha$ $\frac{\partial J}{\partial a_i}(a)$.
+   Basically, for each parameter $a_{i}$, we compute $a_{i}$ = $a_{i}$ - $\alpha$ $\frac{\partial J}{\partial a_i}(a)$.
 
-    $\alpha$ being the _learning rate_.
+   $\alpha$ being the _learning rate_.
 
 ## Transform this to a problem using matrices
 

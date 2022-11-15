@@ -8,58 +8,58 @@ Author [@hajali-amine](https://github.com/hajali-amine)
 
 ## Priority queues
 
-Let *E* be a set mapped by a priority function *p*. We call a priority queue a data type that allows us to:
+Let _E_ be a set mapped by a priority function _p_. We call a priority queue a data type that allows us to:
 
-* represent *E*,
-* add an element, with a given __priority__, to *E*,
-* remove an element with the __lowest/highest__ priority.
+- represent _E_,
+- add an element, with a given **priority**, to _E_,
+- remove an element with the **lowest/highest** priority.
 
 ### Implementations
 
 | Structure          | Search max/min | Insertion | Deletion |
 | ------------------ | -------------- | --------- | -------- |
-| __Unsorted Array__ | ``O(n)``       | ``O(1)``  | ``O(n)`` |
-| __Unsorted List__  | ``O(n)``       | ``O(1)``  | ``O(n)`` |
-| __Sorted Array__   | ``O(1)``       | ``O(n)``  | ``O(1)`` |
-| __Sorted List__    | ``O(1)``       | ``O(n)``  | ``O(1)`` |
+| **Unsorted Array** | `O(n)`         | `O(1)`    | `O(n)`   |
+| **Unsorted List**  | `O(n)`         | `O(1)`    | `O(n)`   |
+| **Sorted Array**   | `O(1)`         | `O(n)`    | `O(1)`   |
+| **Sorted List**    | `O(1)`         | `O(n)`    | `O(1)`   |
 
 ### Optimised implementation
 
-| Structure | Search max/min | Insertion     | Deletion      |
-| --------- | -------------- | ------------- | ------------- |
-| __Heap__  | ``O(1)``       | ``O(log(n))`` | ``O(log(n))`` |
+| Structure | Search max/min | Insertion   | Deletion    |
+| --------- | -------------- | ----------- | ----------- |
+| **Heap**  | `O(1)`         | `O(log(n))` | `O(log(n))` |
 
 ## Heap
 
 ### Level of a node
 
-The level of a node X in a tree A is the __number of edges__ on the path from the root node to X.
+The level of a node X in a tree A is the **number of edges** on the path from the root node to X.
 
 ![node_level](assets/node_level.png)
 
-The level of the green node is __3__.
+The level of the green node is **3**.
 
 ### Hierarchical numbering
 
-For a binary tree A, hierarchical numbering consists of numbering, starting from 1, the nodes from *top to bottom* and for each level from the *left to the right*.
+For a binary tree A, hierarchical numbering consists of numbering, starting from 1, the nodes from _top to bottom_ and for each level from the _left to the right_.
 
 ![hier_numbering](assets/hier_numbering.png)
 
 ### Complete binary tree
 
-A complete binary tree is a binary tree in which every level, __except possibly the last__, is completely filled, and all nodes are *as far left* as possible.
+A complete binary tree is a binary tree in which every level, **except possibly the last**, is completely filled, and all nodes are _as far left_ as possible.
 
 ![complete_tree](assets/complete_tree.png)
 
 ### Heap : Complete binary tree
 
-Let *E* be a set mapped by a priority function *p*. A heap representing *(E,p)* is a couple *T=(A,obj)* where *A* is a __complete tree__ and *obj*  is a __bijection__ that maps for each node an element of *E*.
+Let _E_ be a set mapped by a priority function _p_. A heap representing _(E,p)_ is a couple _T=(A,obj)_ where _A_ is a **complete tree** and _obj_ is a **bijection** that maps for each node an element of _E_.
 
-Thus, for all node *x* of *A* other than the root, *p(obj(x))>p(obj(Parent(x)))*
+Thus, for all node _x_ of _A_ other than the root, _p(obj(x))>p(obj(Parent(x)))_
 
 ### Structure
 
-``` c
+```c
 typedef struct{
     element e;
     int priority
@@ -75,11 +75,11 @@ You may be wondering as to why we represent it as an array! Well let me explain.
 
 ![array](assets/array.png)
 
-The root is the node of index ``0``. And for a node of index ``i``, the __parent__ is the node of index ``i-1 div 2``, the __left child__ is the node of index ``2i+1`` and the __right child__ is the node of index ``2i+2``.
+The root is the node of index `0`. And for a node of index `i`, the **parent** is the node of index `i-1 div 2`, the **left child** is the node of index `2i+1` and the **right child** is the node of index `2i+2`.
 
 ### Creation
 
-``` c
+```c
 heap create(int size) {
  node* t = (node*) malloc(size * sizeof(node));
  heap h;
@@ -91,10 +91,10 @@ heap create(int size) {
 
 ### Insertion
 
-* Insert the element at the end of the table.
-* Keep swapping withe the parent until the priority constraint is respected.
+- Insert the element at the end of the table.
+- Keep swapping withe the parent until the priority constraint is respected.
 
-``` c
+```c
 heap insert(node o, heap h) {
  h.t[h.size] = o;
  h.size++;
@@ -119,13 +119,13 @@ heap insert(node o, heap h) {
 
 ### Deletion
 
- In a __min heap__, we can only remove the node with __lowest priority__! In that case, it is the __root node__.
+In a **min heap**, we can only remove the node with **lowest priority**! In that case, it is the **root node**.
 
-* Assign the value of the last node to the root.
-* Delete the last node.
-* Swap with the child node with lowest priority until the priority constraint is respected.
+- Assign the value of the last node to the root.
+- Delete the last node.
+- Swap with the child node with lowest priority until the priority constraint is respected.
 
-``` c
+```c
 heap delete (heap h, node* o) {
  *o = h.t[0];
  h.t[0] = h.t[h.size - 1];

@@ -9,6 +9,7 @@ slug: /gl4/archived/data-analysis/04-advanced-discrete-distributions
 ### 4.1 Definition
 
 A discrete random variable is said to follow the poisson distribution $\mathtt{P}(\lambda)$ with $\lambda \in\mathbb{R}_+$ if:
+
 $$
 \forall n\in\mathbb{N},\quad \mathcal{P}(X=n)= \frac{\lambda^n}{n!}e^{-\lambda}
 $$
@@ -37,6 +38,7 @@ $$
 $$
 
 In particular:
+
 $$
 \mathbb{E}[X]=\lambda\mathbb{E}[X^0]=\lambda\mathbb{E}[1]=\lambda
 $$
@@ -44,6 +46,7 @@ $$
 #### 4.3.2 Central Moments
 
 We will start by the variance:
+
 $$
 \begin{align*}
 \mathbb{E}[X^2]&=\lambda \sum_{s=0}^1{1 \choose s}\mathbb{E}[X^s]\\
@@ -67,15 +70,16 @@ We will denote by $X[E]$ the random variable $X$ knowing that $E$ occured
 Let $N,K,n\in\mathbb{N}/ K\le N \space\text{and}\space n\le N$
 
 We say that a random variable $X$ follows the hyper-geometric distribution $\mathcal{H}(n,N,K)$ with parameters $N,K,n$ if:
+
 $$
 \exists X_1,\dots,X_{N} \sim \mathcal{B}(p) \space \text{i.i.d}\space / \quad X=S_{n}\left[S_N=K\right] \quad \text{with}\space  S_k=\sum_{i=1}^{k}X_i \quad \forall k\in\{1,\dots,N\}
 $$
 
 ### 5.2 Significance
 
-In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [statistics](https://en.wikipedia.org/wiki/Statistics), the **hyper-geometric distribution** is a [discrete probability distribution](https://en.wikipedia.org/wiki/Probability_distribution#Discrete_probability_distribution) that describes the probability of $k$ successes (random draws for which the object drawn has a specified feature) in $n$ draws, *without* replacement, from a finite [population](https://en.wikipedia.org/wiki/Statistical_population) of size $N$ that contains exactly $K$ objects with that feature, wherein each draw is either a success or a failure.
+In [probability theory](https://en.wikipedia.org/wiki/Probability_theory) and [statistics](https://en.wikipedia.org/wiki/Statistics), the **hyper-geometric distribution** is a [discrete probability distribution](https://en.wikipedia.org/wiki/Probability_distribution#Discrete_probability_distribution) that describes the probability of $k$ successes (random draws for which the object drawn has a specified feature) in $n$ draws, _without_ replacement, from a finite [population](https://en.wikipedia.org/wiki/Statistical_population) of size $N$ that contains exactly $K$ objects with that feature, wherein each draw is either a success or a failure.
 
-In contrast, the [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) describes the probability of successes in $n$ draws *with* replacement.
+In contrast, the [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) describes the probability of successes in $n$ draws _with_ replacement.
 
 ### 5.3 Probability Mass function
 
@@ -84,6 +88,7 @@ We have $S_n=\sum_{i=1}^n X_i\sim \mathcal{B}(n,p)$ and $S_N-S_n=\sum_{i=n+1}^N 
 In fact, $S_n$ and $S_{N}-S_n$ are independent.
 
 With that we have:
+
 $$
 \begin{align*}
 \forall k\in\{0,\dots,K\},\quad \mathcal{P}(X=k)&=\mathcal{P}(S_n=k \mid S_N=K) \\
@@ -103,6 +108,7 @@ $$
 #### 5.4.1 Raw Moments
 
 We will start by the expected value $\mathbb{E}[X]:$
+
 $$
 \begin{align*}
 \mathbb{E}[X]&=\mathbb{E}[S_n \mid S_N= K] \\
@@ -123,6 +129,7 @@ $$
 For convenience, we will denote $Y_i=X_i[S_n=K]$
 
 We will start by the variance $\mathbb{V}[X]:$
+
 $$
 \begin{align*}
 \mathbb{V}[X]&= \text{Cov}\left(S_n[S_N=K],S_n[S_N=K]\right) \\

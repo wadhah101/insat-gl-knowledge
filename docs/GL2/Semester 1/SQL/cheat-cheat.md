@@ -2,19 +2,18 @@
 slug: /gl2/semester-1/sql/cheat-cheat
 ---
 
-
 # SQL Introduction
 
 Author [@rihemebh](https://github.com/rihemebh)
 
 ## Managing Users
 
-- ``GRANT privileges ON table TO user (PUBLIC) [WITH GRANT OPTION ]``
-- ``REVOKE privileges ON table FROM user``
+- `GRANT privileges ON table TO user (PUBLIC) [WITH GRANT OPTION ]`
+- `REVOKE privileges ON table FROM user`
 - Privileges:
 
-|``ALL PREVILEGES``|``UPDATE (columns)``|``SELECT (columns)``|``INSERT (columns)``|``DELETE (columns)``|``ALTER (columns)``| ``INDEX``|
-| --- | --- | --- | --- | --- | --- | --- |
+| `ALL PREVILEGES` | `UPDATE (columns)` | `SELECT (columns)` | `INSERT (columns)` | `DELETE (columns)` | `ALTER (columns)` | `INDEX` |
+| ---------------- | ------------------ | ------------------ | ------------------ | ------------------ | ----------------- | ------- |
 
 ### ROLES
 
@@ -34,51 +33,53 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ### Creation
 
-- ``CREATE TABLE table_name ( column_name  [TYPE] [COLUMN_CONSTRAINT]  , [TABLE CONSTRAINT] [REFRENTIAL CONSTAINT]);``
+- `CREATE TABLE table_name ( column_name [TYPE] [COLUMN_CONSTRAINT] , [TABLE CONSTRAINT] [REFRENTIAL CONSTAINT]);`
 
   - **TABLE CONSTRAINT** :
-    - ``CONSTRAINT`` const_name ``CONST_TYPE`` (Column1, column2,... )
+    - `CONSTRAINT` const_name `CONST_TYPE` (Column1, column2,... )
   - **COLUMN CONSTRAINT**:
-      [CONSTRAINT constraint_name]
-    - `` AUTO_INCREMENT ``
-    - ``UNIQUE``
-    - ``NULL`` / ``NOT NULL``
-    - ``DEFAULT``'val'
-    - ``PRIMARY KEY``
-    - ``REFRENCES`` 'table_name'
-    - ``CHECK`` 'constraint'
+    [CONSTRAINT constraint_name]
+
+    - `AUTO_INCREMENT`
+    - `UNIQUE`
+    - `NULL` / `NOT NULL`
+    - `DEFAULT`'val'
+    - `PRIMARY KEY`
+    - `REFRENCES` 'table_name'
+    - `CHECK` 'constraint'
 
   - **REFERENCIAL CONSTRAINT** :
-    - ``FOREIGN KEY``(column_name) ``REFERENCES`` table_name(primarykey) [FOREIGN KEY CONSTRAINT]
+
+    - `FOREIGN KEY`(column_name) `REFERENCES` table_name(primarykey) [FOREIGN KEY CONSTRAINT]
     - **FOREIGN KEY CONSTRAINT**:
-      - ``ON DELETE`` {CASCADE/SET NULL/ SET DEFAULT}
-      - ``ON UPDATE`` {CASCADE/SET NULL/ SET DEFAULT}
+      - `ON DELETE` {CASCADE/SET NULL/ SET DEFAULT}
+      - `ON UPDATE` {CASCADE/SET NULL/ SET DEFAULT}
 
   - **TYPE**:
-    - ``VARCHAR(n)``
-    - ``INTEGER``
-    - ``BOOL``
-    - ``DATE``
-    - ``DATETIME``
+    - `VARCHAR(n)`
+    - `INTEGER`
+    - `BOOL`
+    - `DATE`
+    - `DATETIME`
 
 #### FIND MORE: `https://www.w3schools.com/sql/sql_datatypes.asp`
 
 ### Modification
 
-- ``ALTER TABLE table_name [OPERATION];``
+- `ALTER TABLE table_name [OPERATION];`
 
   - OPERATIONS :
-    - ``RENAME TO`` new_table_name
-    - ``RENAME COLUMN`` column_name ``TO`` new_name
-    - ``DROP COLUMN`` column_name
-    - ``DROP CONSTRAINT`` const_name
-    - ``ADD COLUMN`` column_name
-    - ``ADD CONSTRAINT`` constraint_details
-    - ``MODIFY COLUMN`` column_name
+    - `RENAME TO` new_table_name
+    - `RENAME COLUMN` column_name `TO` new_name
+    - `DROP COLUMN` column_name
+    - `DROP CONSTRAINT` const_name
+    - `ADD COLUMN` column_name
+    - `ADD CONSTRAINT` constraint_details
+    - `MODIFY COLUMN` column_name
 
 ### Delete
 
-- ``DROP TABLE Table_name {CASCADE CONSTRAINT | RESTRICT };``
+- `DROP TABLE Table_name {CASCADE CONSTRAINT | RESTRICT };`
 
 ## Managing Data
 
@@ -94,19 +95,19 @@ Author [@rihemebh](https://github.com/rihemebh)
   ORDER BY columns
 ```
 
-#### Operations can be used in ``WHERE`` and ``HAVING`` clause
+#### Operations can be used in `WHERE` and `HAVING` clause
 
- |< , > , = ,<= , >= |LIKE|IS NULL|IN (va1, val)|BETWEEN n1 AND n2|
- | --- | --- | --- | --- | --- |
+| < , > , = ,<= , >= | LIKE | IS NULL | IN (va1, val) | BETWEEN n1 AND n2 |
+| ------------------ | ---- | ------- | ------------- | ----------------- |
 
-#### Functions can be used in ``SELECT`` statement, ``WHERE`` and ``ORDER BY`` clause
+#### Functions can be used in `SELECT` statement, `WHERE` and `ORDER BY` clause
 
 1 - **Multiple-Row Functions** : Aggregate Functions
 
- | SUM|AVG|MIN|MAX|COUNT|
- | --- | --- | --- | --- | --- |
+| SUM | AVG | MIN | MAX | COUNT |
+| --- | --- | --- | --- | ----- |
 
-2  - **Single-Row functions**
+2 - **Single-Row functions**
 
 - UPPER, LOWER , INITCAP
 - CONCAT, LENGTH, SUBSTR, INSTR, LPAD, RPAD, TRIM , REPLACE.

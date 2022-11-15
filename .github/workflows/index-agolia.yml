@@ -1,0 +1,19 @@
+name: Index wesbite
+
+on:
+  workflow_dispatch:
+
+jobs:
+  index:
+    name: Index site with agolia
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Docker run
+        run: docker run -e "CONFIG=$(jq -r tostring <agolia.json)" -e APPLICATION_ID=${{ secrets.APPLICATION_ID }} -e API_KEY=${{ secrets.AGOLIA_API_KEY }} algolia/docsearch-scraper

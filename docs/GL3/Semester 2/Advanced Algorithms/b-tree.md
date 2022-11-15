@@ -154,8 +154,8 @@ bTree insert(bTree t, int key){
 
 ## Removing a key in a B Tree
 
-| IMPORTANT                                                                                                                                                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IMPORTANT |
+| --- |
 | In here you will find two functions `borrowRight`, `fusionRight` and `deletePred`, you should know that there are also two other `borrowLeft`, `fusionRight` and `deleteSucc` that are basically symetrical to the right version. **You should implement them**. |
 
 ### Borrowing a key from a right child

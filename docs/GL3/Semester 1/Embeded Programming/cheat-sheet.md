@@ -118,8 +118,7 @@ We use CRH cuz 9 > 7
 
 ```
 
-Note you can set ODR register values on one go using BSRR and BRR addresses
-Each BRR and BSRR are unique to each GPIO
+Note you can set ODR register values on one go using BSRR and BRR addresses Each BRR and BSRR are unique to each GPIO
 
 set 9th bit to one : \*BSRR = 0x1 << 9
 
@@ -143,8 +142,7 @@ GPIO_Init (GPIOx , &GPIO_InitStructure);
 
 GPIO_SetBits : take GPIOx and A pin and sets its to one
 
-example : GPIO_SetBits ( GPIOC, GPIO_Pin_9 | GPIO_Pin_7);
-) :
+example : GPIO_SetBits ( GPIOC, GPIO_Pin_9 | GPIO_Pin_7); ) :
 
 GPIO_ResetBits does the oposite
 
@@ -184,20 +182,13 @@ IPR : Interrupt Priority Registers , 8 bit 0 -> 256
 
 ## ARM M3
 
-ISERx : Interrupt Set Enable Register (32 bits) : chaque bit de ce registre permet d’autoriser
-l’interruption correspondante quand il est mis à 1.
+ISERx : Interrupt Set Enable Register (32 bits) : chaque bit de ce registre permet d’autoriser l’interruption correspondante quand il est mis à 1.
 
-ICERx : Interrupt Clear Enable Register (32 bits): chaque bit de ce registre permet d’interdire
-l’interruption correspondante quand il est mis à 1.
+ICERx : Interrupt Clear Enable Register (32 bits): chaque bit de ce registre permet d’interdire l’interruption correspondante quand il est mis à 1.
 
-ISPRx : Interrupt Set Pedning Register (32 bits) : La mise à 1 d’un bit de ce registre active
-(déclenche) une interruption (met l’interruption en état pending). Généralement, ce bit n’est pas mis
-par software, mais par un périphérique « Figure -1 ».
+ISPRx : Interrupt Set Pedning Register (32 bits) : La mise à 1 d’un bit de ce registre active (déclenche) une interruption (met l’interruption en état pending). Généralement, ce bit n’est pas mis par software, mais par un périphérique « Figure -1 ».
 
-ICPRx : Interrupt Clear Pedning Register (32 bits) : La mise à 1 d’un bit de ce registre met
-l’interruption en état ‘not pending’. Ce bit est mis automatiquement à 1 par le matériel (logique de
-contrôle du NVIC) après avoir commencé l’exécution du Handler associé à l’interruption. Mais, il peut
-être également accédé par soft.
+ICPRx : Interrupt Clear Pedning Register (32 bits) : La mise à 1 d’un bit de ce registre met l’interruption en état ‘not pending’. Ce bit est mis automatiquement à 1 par le matériel (logique de contrôle du NVIC) après avoir commencé l’exécution du Handler associé à l’interruption. Mais, il peut être également accédé par soft.
 
 ### priorities
 
@@ -221,19 +212,13 @@ We can move the ISRi vector using VTOR (Vector Table Offset Register)
 
 ### nvic config
 
-uint8_t NVIC_IRQChannel : Il s’agit d’une valeur sur 8 bits qui identifie le numéro de l’interruption
-à configurer. Ces numéros sont figés matériellement. La liste des sources de requêtes d’interruptions ainsi
-que leurs numéros pour la famille F1 est donnée à la fin du chapitre « tableau -4 »
-Remarque : Consulter le document d’aide de la librairie ST pour trouver les valeurs.
+uint8_t NVIC_IRQChannel : Il s’agit d’une valeur sur 8 bits qui identifie le numéro de l’interruption à configurer. Ces numéros sont figés matériellement. La liste des sources de requêtes d’interruptions ainsi que leurs numéros pour la famille F1 est donnée à la fin du chapitre « tableau -4 » Remarque : Consulter le document d’aide de la librairie ST pour trouver les valeurs.
 
-uint8_t NVIC_IRQChannelPreemptionPriority : C’est une valeur sur 8 bits indiquant le groupe de
-priorité auquel appartient l’interruption à configurer « voir tableau 3 ».
+uint8_t NVIC_IRQChannelPreemptionPriority : C’est une valeur sur 8 bits indiquant le groupe de priorité auquel appartient l’interruption à configurer « voir tableau 3 ».
 
-uint8_t NVIC_IRQChannelSubPriority : C’est une valeur sur 8 bits indiquant le niveau de priorité
-attribué à l’interruption au sein du groupe « voir tableau 3 ».
+uint8_t NVIC_IRQChannelSubPriority : C’est une valeur sur 8 bits indiquant le niveau de priorité attribué à l’interruption au sein du groupe « voir tableau 3 ».
 
-NVIC_IRQChannelCmd : peut prendre la valeur ENABLE (1) pour autoriser l’interruption ou bien
-DISABLE (0) pour interdire son déclenchement.
+NVIC_IRQChannelCmd : peut prendre la valeur ENABLE (1) pour autoriser l’interruption ou bien DISABLE (0) pour interdire son déclenchement.
 
 ```c
 typedef struct

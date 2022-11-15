@@ -459,8 +459,7 @@ flowchart LR
 
 Toute fonction booléenne $f$ avec un nombre fini $n$ de variables booléennes peut être implémenté avec une arbre de décision.
 
-Cependant, la taille d'une telle arbre peut être exponentielle en $n$. Pour cela, on doit représenter $f$ sous une forme compacte.
-**La solution est d'utiliser un Binary Decision Diagram**
+Cependant, la taille d'une telle arbre peut être exponentielle en $n$. Pour cela, on doit représenter $f$ sous une forme compacte. **La solution est d'utiliser un Binary Decision Diagram**
 
 ### 5.1 Cas d'étude: $f(x,y,z)=(x\oplus y\oplus z) +\bar xyz$
 

@@ -10,15 +10,13 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 Angular is a Js Framework that supports multiple laguages like ES5, Typescript , dart ...
 
-- SPA (Single Page application):
-  The single page application is a web application or website that interacts with the user by dynamically rewriting the current page, rather than loading entire new pages from the server.
+- SPA (Single Page application): The single page application is a web application or website that interacts with the user by dynamically rewriting the current page, rather than loading entire new pages from the server.
 
 - Modular , fast , component based
 
 ## Modules
 
-a Module is a class that is decorated by `@NgModule`
-`appModule` is the main module that is in charge of the application bootstrapping
+a Module is a class that is decorated by `@NgModule` `appModule` is the main module that is in charge of the application bootstrapping
 
 ```typescript
 import { NgModule } from '@angular/core';
@@ -55,17 +53,14 @@ Data binding is the mecanism that allows a component and its template to communi
 
 #### Property Binding (DOM <- Component)
 
-A one-way binding that allows the DOM to recover data from the component.
-The property is interpreted by the framework before it is added to the template.
-We can call a property using :
+A one-way binding that allows the DOM to recover data from the component. The property is interpreted by the framework before it is added to the template. We can call a property using :
 
 1. on-property
 2. [property]
 
 #### Event Binding (DOM -> Component)
 
-A one-way binding that allows intercations from the DOM to the components using events Handlers.
-we can call a method using:
+A one-way binding that allows intercations from the DOM to the components using events Handlers. we can call a method using:
 
 1. on-eventName
 2. (eventName)
@@ -90,17 +85,14 @@ Angular supports two-way data binding that allows interctions from DOM to compon
 
 ## Life cycle
 
-A component instance has a lifecycle that starts when Angular instantiates the component class and renders the component view along with its child views.
-The lifecycle continues with change detection, as Angular checks to see when data-bound properties change, and updates both the view and the component instance as needed.
+A component instance has a lifecycle that starts when Angular instantiates the component class and renders the component view along with its child views. The lifecycle continues with change detection, as Angular checks to see when data-bound properties change, and updates both the view and the component instance as needed.
 
-| Method        | description                                | When it is called                                 | Use Cases                                                                                                                                    |
-| ------------- | ------------------------------------------ | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| ngOnChanges() |                                            | When an input/output binding value changes        | whenever there is a change in the @Input data property, we can do some more changes in this method by comparing previous and current values. |
-| ngOnInit()    | Initilize the component after construction | occurs only one time: After the first ngOnChanges | - fetch data                                                                                                                                 |
+| Method | description | When it is called | Use Cases |
+| --- | --- | --- | --- |
+| ngOnChanges() |  | When an input/output binding value changes | whenever there is a change in the @Input data property, we can do some more changes in this method by comparing previous and current values. |
+| ngOnInit() | Initilize the component after construction | occurs only one time: After the first ngOnChanges | - fetch data |
 
-- Initialize some third party lib|
-  |ngDoCheck()|Responsible for Change Detetction|Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run||
-  |ngOnDestroy()|Used for clean up| Just before the component is destroyed|The best place to clean up event handlers or any subscriptions|
+- Initialize some third party lib| |ngDoCheck()|Responsible for Change Detetction|Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run|| |ngOnDestroy()|Used for clean up| Just before the component is destroyed|The best place to clean up event handlers or any subscriptions|
 
 ### Change detection
 
@@ -115,7 +107,7 @@ Change Detection means updating the DOM when the data has changed usually used w
 - Angular updates the component’s view (DOM).
 
   | Create a View -> Create Bindings -> Process Bindings -> Update DOM -> run check |
-  | ------------------------------------------------------------------------------- |
+  | --- |
 
   \*\* View is a data structure created with every bind
 
@@ -134,9 +126,7 @@ Change Detection means updating the DOM when the data has changed usually used w
 
 Decorate a property with @Input means this property could be seen and modified by the parent.
 
-**How to use it ?**
-When the parent called the child compo
-The child component :
+**How to use it ?** When the parent called the child compo The child component :
 
 ```typescript
 @Input() name = "defaultname"
@@ -320,19 +310,15 @@ In the template use :
 
 - `RouterLink` directive :
 
-    ```html
-    <a
-      [routerLink]="[‘home’]"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-    >
-      home
-    </a>
-    <!--We use : [routerLinkActiveOptions]="{exact: true}"
-
-            to tell angular that we want only this link to be
-            active and not its parent (dropdown button case) -->
-    ```
+  ```html
+  <a
+    [routerLink]="[‘home’]"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{exact: true}"
+  >
+    home
+  </a>
+  ```
 
 - Router Service : Trigger a route from a component
 
@@ -371,8 +357,7 @@ Example : all routes related to user management should start with "/user"
         ]
 ```
 
-**Use case** : When you need to change the layout from screen to another
-you can make a prefix for each layout and each prefix has its compoenent and its children routes
+**Use case** : When you need to change the layout from screen to another you can make a prefix for each layout and each prefix has its compoenent and its children routes
 
 PS: Children should be sorted from most specific to least specific
 
@@ -443,11 +428,9 @@ Use property binding
 
 ## Observable
 
-Observables provide support for passing messages between parts of your application
-**Usecases** : event handling, asynchronous programming, and handling multiple values.
+Observables provide support for passing messages between parts of your application **Usecases** : event handling, asynchronous programming, and handling multiple values.
 
-An Observable instance begins publishing values only when someone subscribes to it. You subscribe by calling the `subscribe()` method of the instance, passing an observer
-object to receive the notifications.
+An Observable instance begins publishing values only when someone subscribes to it. You subscribe by calling the `subscribe()` method of the instance, passing an observer object to receive the notifications.
 
 ```typescript
 const observable = new Observable((observer) => {
@@ -468,8 +451,7 @@ observable.subscribe((val) => {
 
 ### Operators : pipe, filter, map
 
-We could pipe, filter or map the content of the stream then subscribe to it
-example: observ.pipe(x=> x%2 == 0).subscribe(next())
+We could pipe, filter or map the content of the stream then subscribe to it example: observ.pipe(x=> x%2 == 0).subscribe(next())
 
 ### Subject
 
@@ -481,8 +463,7 @@ Import:
 
 `import {HttpClientModule} from "@angular/common/http";`
 
-Inject the service:
-`constructor(private http:HttpClient) { }`
+Inject the service: `constructor(private http:HttpClient) { }`
 
 ### GET
 

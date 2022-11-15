@@ -10,8 +10,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 
 ### Video 1.2 : what is spring ?
 
-**Spring** : an open source java based application framework, the latest major
-stable release is version 5.0 . It is module based.
+**Spring** : an open source java based application framework, the latest major stable release is version 5.0 . It is module based.
 
 Modules include :
 
@@ -640,8 +639,9 @@ public class FriendlyGreeter
 **Notes :**
 
 - The bean scope is **request** .So for each request a new instance is created then destroyed . For each request we see :
-  `afterPropertiesSet`
-  `destroy`
+
+  `afterPropertiesSet` `destroy`
+
 - If the bean scope is **singleton (default)**. the bean will be instantiated ( `afterPropertiesSet` shows up ) **with application startup** . and will be deleted ( `destroy` will show up ) with **application shutdown**.
 
 #### Example (Annotations)

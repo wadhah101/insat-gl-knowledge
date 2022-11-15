@@ -278,4 +278,5 @@ statement;
   - **Raising an exception** : `RAISE exception_name;`
 
 - Custom exception in PostgreSQL:
+
   `raise exception '%','Exception text';`

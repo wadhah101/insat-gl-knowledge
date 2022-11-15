@@ -4,8 +4,7 @@ slug: /gl4/semester-1/data-mining/cheat-sheet
 
 # Cheat sheet
 
-Author [@rihemebh](https://github.com/rihemebh)
-**Note that this cheat sheet is not completed yet please make your PR to contribute**
+Author [@rihemebh](https://github.com/rihemebh) **Note that this cheat sheet is not completed yet please make your PR to contribute**
 
 ## Definitions
 
@@ -32,10 +31,8 @@ KDD knowledge discovery process is iterative and interactive, comprises of nine 
 1. **Building up an understanding of the application domain**
 2. **Choosing and creating a data set on which discovery will be performed**
 3. **Preprocessing and cleansing**
-4. **Data Transformation**
-   In this stage, the creation of appropriate data for Data Mining is prepared and developed. Techniques here incorporate dimension reduction( for example, feature selection and extraction and record sampling), also attribute transformation(for example, discretization of numerical attributes and functional transformation).
-5. **Prediction and description**
-   We are now prepared to decide on which kind of Data Mining to use, for example, classification, regression, clustering, etc.
+4. **Data Transformation** In this stage, the creation of appropriate data for Data Mining is prepared and developed. Techniques here incorporate dimension reduction( for example, feature selection and extraction and record sampling), also attribute transformation(for example, discretization of numerical attributes and functional transformation).
+5. **Prediction and description** We are now prepared to decide on which kind of Data Mining to use, for example, classification, regression, clustering, etc.
 6. **choose the right Data Mining algo**
 7. **Implement the algo**
 8. **Evaluation**
@@ -59,8 +56,7 @@ KDD knowledge discovery process is iterative and interactive, comprises of nine 
 
    Models the data by allowing the software to automatically search for a combination of data that reliably predicts the desired outcome
 
-5. **Assess**
-   Assesses the usefulness and reliability of the results of the Data Mining process and assesses how it will perform
+5. **Assess** Assesses the usefulness and reliability of the results of the Data Mining process and assesses how it will perform
 
 ### CRISP-DM: CRoss-IndustryStandard Processfor Data Mining (By IBM)
 
@@ -114,15 +110,9 @@ KDD knowledge discovery process is iterative and interactive, comprises of nine 
 | Features | predictor variables |
 | Class    | Target variable     |
 
-response variable |
-| Overfitting | e talk about overfitting when a model has learned too much the particularities of each of the examples provided as an example. It then presents a very high success rate on the training data (which can reach up to 100%), but does not generalize well (less good performance on the test data). |
-| Underfitting | An algorithm that does not learn enough from the learning phase (poor performance on the training set) |
-| Positive | We consider the positive is the less recent case in other words what our task is searching for
+response variable | | Overfitting | e talk about overfitting when a model has learned too much the particularities of each of the examples provided as an example. It then presents a very high success rate on the training data (which can reach up to 100%), but does not generalize well (less good performance on the test data). | | Underfitting | An algorithm that does not learn enough from the learning phase (poor performance on the training set) | | Positive | We consider the positive is the less recent case in other words what our task is searching for
 
-Example: if our task is to pridict the spam emails so the positive is an email is spam |
-| Negative | The more recent case: which is generally the normal case |
-| True and False positive **TP & FP** | When the model correctly predicts the positive: **_True positive_**, else it is called: **_False positive_** |
-| True and False negative **TN & FN** | When the model correctly predicts the negative : **_True negative_**, else it is called **_False negative_** |
+Example: if our task is to pridict the spam emails so the positive is an email is spam | | Negative | The more recent case: which is generally the normal case | | True and False positive **TP & FP** | When the model correctly predicts the positive: **_True positive_**, else it is called: **_False positive_** | | True and False negative **TN & FN** | When the model correctly predicts the negative : **_True negative_**, else it is called **_False negative_** |
 
 ## Supervised Learning
 
@@ -136,11 +126,9 @@ Supervised learning uses a training set to teach models to yield the desired out
 
 We need an expert at the begining to put the correct labels on data.
 
-**Classification**:
-When the data that we want to predict is discret (YES/NO , {1,2,3..} ..)
+**Classification**: When the data that we want to predict is discret (YES/NO , {1,2,3..} ..)
 
-**Regression**:
-When the Data that we want to predict is continous (price, distance .. )
+**Regression**: When the Data that we want to predict is continous (price, distance .. )
 
 ### Libraries to use
 
@@ -214,8 +202,7 @@ knn.score(X_test, y_test)
 
 ### Naive bayes
 
-Associate to each new instance the class that has the biggest probability.
-Naive Bayes classifier assumes that the features we use to predict the target are independent and do not affect each other. That’s why it is called naïve.
+Associate to each new instance the class that has the biggest probability. Naive Bayes classifier assumes that the features we use to predict the target are independent and do not affect each other. That’s why it is called naïve.
 
 Bayes Formula: P(class| features) = P(Features|class) \* P(class) / P(features)
 
@@ -300,8 +287,7 @@ print("Accuracy : ",nb.score(irisData.data,Y))
 
 #### Cross Validation
 
-The original sample is divided into k samples, then one of the k samples is selected as the validation set while the k-1 other samples constitute the training set. After learning, a validation performance can be calculated. Then the operation is repeated by selecting another validation sample from among the predefined blocks.
-At the end of the procedure we thus obtain performance scores, one per block.
+The original sample is divided into k samples, then one of the k samples is selected as the validation set while the k-1 other samples constitute the training set. After learning, a validation performance can be calculated. Then the operation is repeated by selecting another validation sample from among the predefined blocks. At the end of the procedure we thus obtain performance scores, one per block.
 
 The mean and standard deviation of performance scores can be calculated to estimate bias and variance in validation performance.
 
@@ -332,8 +318,7 @@ Why we use it?
 
 ### Measuring model performance
 
-Gerenally our metric is " **Accuracy** " : The more it is higher the more we have better performance.
-But this isn't the case when we are working with unbalanced datasets when there is significant disparity between the number of positive and negative labels which is the most common case in the real life problems that's why we need to have other metrics
+Gerenally our metric is " **Accuracy** " : The more it is higher the more we have better performance. But this isn't the case when we are working with unbalanced datasets when there is significant disparity between the number of positive and negative labels which is the most common case in the real life problems that's why we need to have other metrics
 
 #### Confusion matrix
 
@@ -341,15 +326,14 @@ But this isn't the case when we are working with unbalanced datasets when there 
 
 ![matrix](assets/matrix.png)
 
-| Metric    | Meaning                                                                                                                |
-| --------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Accuracy  | General metric : Fraction of correct predictions: number of correctly classified instances / total number of instances |
-| Precision | When the cost of false positive is high : TP/ TP + FP                                                                  |
-| Recall    | When the cost of false negative is high : TP/ TP + FN                                                                  |
-| F-Score   | A measure that combines precision and recall is their harmonic mean : 𝐹=2∗𝑃𝑟e𝑐𝑖𝑠𝑖𝑜𝑛∗𝑅ecall / Precision+𝑅ecall          |
+| Metric | Meaning |
+| --- | --- |
+| Accuracy | General metric : Fraction of correct predictions: number of correctly classified instances / total number of instances |
+| Precision | When the cost of false positive is high : TP/ TP + FP |
+| Recall | When the cost of false negative is high : TP/ TP + FN |
+| F-Score | A measure that combines precision and recall is their harmonic mean : 𝐹=2∗𝑃𝑟e𝑐𝑖𝑠𝑖𝑜𝑛∗𝑅ecall / Precision+𝑅ecall |
 
-We should note that it works well with non binary classification:
-[See this article for more details](https://towardsdatascience.com/confusion-matrix-for-your-multi-class-machine-learning-model-ff9aa3bf7826)
+We should note that it works well with non binary classification: [See this article for more details](https://towardsdatascience.com/confusion-matrix-for-your-multi-class-machine-learning-model-ff9aa3bf7826)
 
 ## Unsupervised learning
 
@@ -359,14 +343,9 @@ Unsupervised learning is based on unlabled data, it uses machine learning algori
 
 Since we are dealing with unlabeled data so the most critical part that need domain expert is the validation of the clusturing
 
-**Clusturing** :
-Clustering is a data mining technique which groups unlabeled data based on their similarities or differences.
+**Clusturing** : Clustering is a data mining technique which groups unlabeled data based on their similarities or differences.
 
-We optimize the clusturing by calculating the intercluster (between 2 clusters) + intracluster (within a cluster) distances
-**Similarity**: Similarity is the fact that 2 instances are similar depending on the metric we use.
-The larger the measure, the more similar the points.
-the metric used to calculate similarity is the distance
-The calculation of the distance depends on the data type:
+We optimize the clusturing by calculating the intercluster (between 2 clusters) + intracluster (within a cluster) distances **Similarity**: Similarity is the fact that 2 instances are similar depending on the metric we use. The larger the measure, the more similar the points. the metric used to calculate similarity is the distance The calculation of the distance depends on the data type:
 
 <-- edit to complete this part -->
 
@@ -390,11 +369,7 @@ where Sf, mf = ![stand1](assets/stand1.PNG)
 
 - Menhaten
 
-- Euclidien |
-  | Binary | |
-  | Nominal | |
-  | Ordinal | |
-  | Mixed | |
+- Euclidien | | Binary | | | Nominal | | | Ordinal | | | Mixed | |
 
 ### Clusturing Algorithms
 

@@ -10,9 +10,7 @@ Author [@medbensalah](https://github.com/medbensalah)
 
 ### Definition
 
-Processus permettant de construire un ensemble d'éléments
-**clés** permettant de caractériser le contenu d’un
-document / retrouver ce document en réponse à une requête
+Processus permettant de construire un ensemble d'éléments **clés** permettant de caractériser le contenu d’un document / retrouver ce document en réponse à une requête
 
 #### Indexation Libre / Controlée
 
@@ -98,11 +96,9 @@ document / retrouver ce document en réponse à une requête
 
   ![IndexInverse](assets/IndexInverse.png)
 
-  **Dictionnaire :** en mémoire centrale permettant un accès rapide
-  aux termes et leurs informations
+  **Dictionnaire :** en mémoire centrale permettant un accès rapide aux termes et leurs informations
 
-  **Postings :** au niveau du disque et sauvegardant les
-  informations des termes et les identifiants des documents
+  **Postings :** au niveau du disque et sauvegardant les informations des termes et les identifiants des documents
 
   Ce qu'on stocke dépend du modèle de la recherche : + Recherche booléenne : L'identifiant du document est suffisant
 

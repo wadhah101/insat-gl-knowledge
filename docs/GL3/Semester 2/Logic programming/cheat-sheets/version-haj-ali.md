@@ -23,8 +23,7 @@ Prolog is intended primarily as a **declarative programming language**; the prog
 
 **Important note:**
 
-> When we write a goal like _X = Y_ in Prolog, we are testing for more than simple equality in the mathematical sense. We are testing whether X (which might be a variable, an atom, or an arbitrarily complex term) **unifies** with Y (which might also be an atom, a variable, or a term).
-> Whenever you write "=" in a Prolog procedure, review the code to see whether you can get rid of the "=" clause by replacing the item on the left of "=" by the item to the right of it, elsewhere in the procedure.
+> When we write a goal like _X = Y_ in Prolog, we are testing for more than simple equality in the mathematical sense. We are testing whether X (which might be a variable, an atom, or an arbitrarily complex term) **unifies** with Y (which might also be an atom, a variable, or a term). Whenever you write "=" in a Prolog procedure, review the code to see whether you can get rid of the "=" clause by replacing the item on the left of "=" by the item to the right of it, elsewhere in the procedure.
 
 ## Example
 
@@ -44,8 +43,8 @@ mortal(socrates).
 
 ## Execution
 
-| IMPORTANT                                                                                                                                                                   |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IMPORTANT |
+| --- |
 | Prolog explores the rules _in the order of their implementation_ in the program, it explores the list of goals from _the left to the right_, and creates a **search tree**. |
 
 Execution of a Prolog program is initiated when the user writes a **query**. Logically, the Prolog engine tries to find a **resolution refutation** of the _negated query_. If the negated query can be refuted, it follows that the query, with the appropriate variable bindings in place, is a logical consequence of the program. In that case, _all generated variable bindings are reported to the user_, and the query is said to have succeeded.
@@ -122,8 +121,8 @@ This is easily explained by the fact that expressions are represented with **tre
 
 ## Unification
 
-| Comparaison                                                                                                 | Unification                                                                             |
-| ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Comparaison | Unification |
+| --- | --- |
 | `X == Y`, is successful if X is identical to Y whereas `X \== Y`, is successful if X is not identical to Y. | `X = Y`, unifies X with Y whereas `X \= Y`, is successful if X is not unifiable with Y. |
 
 ```prolog
@@ -160,11 +159,11 @@ In Prolog, it is possible to modify dynamically your program by adding and remov
 
 **Predefined predicates:**
 
-| Predicate              | Description                                                         |
-| ---------------------- | ------------------------------------------------------------------- |
-| `asserta`              | adds a fact or a rule at the **top** of the list of facts or rules. |
+| Predicate | Description |
+| --- | --- |
+| `asserta` | adds a fact or a rule at the **top** of the list of facts or rules. |
 | `assert` and `assertz` | adds a fact or a rule at the **end** of the list of facts or rules. |
-| `retract`              | Removes a fact or a rule from the knowledge base.                   |
+| `retract` | Removes a fact or a rule from the knowledge base. |
 
 To be able to use the predicates, you have to declare the concerned predicates using `dynamic`!
 

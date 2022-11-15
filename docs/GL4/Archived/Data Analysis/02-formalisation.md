@@ -2,6 +2,8 @@
 slug: /gl4/archived/data-analysis/02-formalisation
 ---
 
+<!-- markdownlint-disable MD051 -->
+
 # Probability Formalisation
 
 ## 1. Importance
@@ -85,6 +87,7 @@ In probability, A $\sigma$-algebra gives which events make sens. Those events ca
 ### 3.1 Definition
 
 <!-- markdownlint-disable-next-line MD051 -->
+
 Let $S$ be some set and $\mathcal{F}$ be a [$\sigma$-algebra](#sigma-algebra) of $S$
 
 The couple $(S,\mathcal{F})$ is called a **measurable space**
@@ -109,7 +112,6 @@ Any set $U\notin \mathcal{F}$ is called a non-measurable set.
 
 ### 4.1 Definition
 
-<!-- markdownlint-disable-next-line MD051 -->
 A **measure space** $(S,\mathcal{F},\mu)$ is a [_measurable space_](#measurable-space) $(S,\mathcal{F})$ with an additional _real valued function_ $\mu:\mathcal{F}\rightarrow \bar{\mathbb{R}}$ called measure satisfying the following conditions:
 
 1. The measure of the empty set is _null_: $\mu(\emptyset)=0$
@@ -195,7 +197,6 @@ $$
 
 ### 5.1 Definition
 
-<!-- markdownlint-disable-next-line MD051 -->
 A probability space is a [_measure space_](#measure-space) $(\Omega,\mathcal{F},\mu)$ with the additional constraint that $\mu(\Omega)=1$
 
 ### 5.2 Terminology
@@ -448,9 +449,7 @@ $$
 
 ### 8.1 Definition
 
-<!-- markdownlint-disable-next-line MD051 -->
 - Let $(\Omega,\mathcal{F},\mu)$ be a [probability space](#probability-space)
-<!-- markdownlint-disable-next-line MD051 -->
 - Let $E=\mathbb{R},\mathcal{E}=\mathcal{B}$ so that $(\mathbb{R},\mathcal{B})$ is a [measurable space](#measurable-space)
 
 A **real random variable** is a random variable $X:\Omega\rightarrow \mathbb{R}$

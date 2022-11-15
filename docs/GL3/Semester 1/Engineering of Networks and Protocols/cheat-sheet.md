@@ -8,9 +8,7 @@ Autho [@wadhah101](https://github.com/wadhah101)
 
 ## conditions
 
-if no instruction is executable "if" blocks
-else if only one is it's options will gets excuted
-else if multiple insctructions are valid, one will be randomly chosen
+if no instruction is executable "if" blocks else if only one is it's options will gets excuted else if multiple insctructions are valid, one will be randomly chosen
 
 ```promela
 proctype A(){

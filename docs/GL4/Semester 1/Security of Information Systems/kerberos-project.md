@@ -106,10 +106,7 @@ We will use `insat.tn` as domain name.
 apt install krb5-kdc krb5-admin-server krb5-config
 ```
 
-When it's prompted :
--> realm : INSAT.TN
--> kerberos server : kdc.insat.tn
--> Administrative Service: kdc.insat.tn
+When it's prompted : -> realm : INSAT.TN -> kerberos server : kdc.insat.tn -> Administrative Service: kdc.insat.tn
 
 - Create the realm: A Kerberos realm is the domain over which a Kerberos authentication server has the authority to authenticate a user, host or service.
 

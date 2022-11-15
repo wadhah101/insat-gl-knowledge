@@ -8,11 +8,9 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ## Selenium
 
-Selenium is an open source automated testing suite for web applications across different browsers and platforms.
-=> It focuses on automation.
+Selenium is an open source automated testing suite for web applications across different browsers and platforms. => It focuses on automation.
 
-Selenium is not just a single tool but a suite of software's, each catering to different testing needs of an organization.
-It has 4 components:
+Selenium is not just a single tool but a suite of software's, each catering to different testing needs of an organization. It has 4 components:
 
 1. Selenium Integrated Development Environment (IDE)
 2. Selenium Remote Control (RC)
@@ -21,16 +19,13 @@ It has 4 components:
 
 ## 1. Selenium IDE
 
-Selenium Integrated Development Environment (IDE) is the simplest framework
-in the Selenium suite and is the easiest one to learn. (record)
+Selenium Integrated Development Environment (IDE) is the simplest framework in the Selenium suite and is the easiest one to learn. (record)
 
 ## 2. Selenium RC
 
 ## 3. Webdriver
 
-WebDriver is a web automation framework that allows you to execute your tests against different browsers,
-WebDriver also enables you to use a programming language in creating your test scripts (not possible in Selenium IDE).
-It controls the browser from the OS level
+WebDriver is a web automation framework that allows you to execute your tests against different browsers, WebDriver also enables you to use a programming language in creating your test scripts (not possible in Selenium IDE). It controls the browser from the OS level
 
 WebDriver directly talks to the browser while Selenium RC needs the help of the RC Server in order to do so.
 
@@ -95,8 +90,7 @@ File screeenshotFile =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE)
 
 ## 4. Selenium Grid
 
-Selenium grid is a tool used together with Selenium RC to run parallel tests across different machines and different browsers all at the same time.
-Parallele execution means running multiple test at one
+Selenium grid is a tool used together with Selenium RC to run parallel tests across different machines and different browsers all at the same time. Parallele execution means running multiple test at one
 
 ## JUnit
 
@@ -104,15 +98,15 @@ JUnit is an open source framework for the development and execution of automatab
 
 ## Annotations
 
-| Annotation           | Meaning                                                                                                                                                       | Usecase                                                                                                                                                                                                                                          |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `@BeforeClass`       | Run only once and specifically before anything else is run in the test class                                                                                  | initializes Selenium Webdriver and opens a browser                                                                                                                                                                                               |
-| `@AfterClass`        | It is the annotation used to execute tasks after all the tests have been completed                                                                            | close the browser and free that resource once all tests within the JUnit Selenium test class have been executed                                                                                                                                  |
-| `@BeforeEach`        | run code before each test                                                                                                                                     | When writing a Selenium test class, there might be a mandatory step that starts the test from a specific web page. In that case, one can use the @Before annotation so that the required webpage is opened and ready before any test is run.     |
-| `@AfterEach`         | is used to run tasks after the execution of each test. After every test, the test results might have to be sent to a logging service or a monitoring service. |                                                                                                                                                                                                                                                  |
-| `@Test`              | identify the actual test case                                                                                                                                 |                                                                                                                                                                                                                                                  |
-| `@RepeatedTest`      | run a given test any number of times                                                                                                                          | A web application is built to ensure caching does not occur due to highly dynamic data. So, each time the webpage is loaded, the cache must be empty. To automate the testing of this scenario, one has to run the same sequence multiple times. |
-| `@ParameterizedTest` | Parameterized test is to execute the same test over and over again using different values.                                                                    |                                                                                                                                                                                                                                                  |
+| Annotation | Meaning | Usecase |
+| --- | --- | --- |
+| `@BeforeClass` | Run only once and specifically before anything else is run in the test class | initializes Selenium Webdriver and opens a browser |
+| `@AfterClass` | It is the annotation used to execute tasks after all the tests have been completed | close the browser and free that resource once all tests within the JUnit Selenium test class have been executed |
+| `@BeforeEach` | run code before each test | When writing a Selenium test class, there might be a mandatory step that starts the test from a specific web page. In that case, one can use the @Before annotation so that the required webpage is opened and ready before any test is run. |
+| `@AfterEach` | is used to run tasks after the execution of each test. After every test, the test results might have to be sent to a logging service or a monitoring service. |  |
+| `@Test` | identify the actual test case |  |
+| `@RepeatedTest` | run a given test any number of times | A web application is built to ensure caching does not occur due to highly dynamic data. So, each time the webpage is loaded, the cache must be empty. To automate the testing of this scenario, one has to run the same sequence multiple times. |
+| `@ParameterizedTest` | Parameterized test is to execute the same test over and over again using different values. |  |
 
 Example :
 

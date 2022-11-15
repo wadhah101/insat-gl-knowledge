@@ -27,7 +27,7 @@ Actions are the Methods within a controller
 Every method could return an object that implements the **IActionResult** :
 
 | ViewResult | ContentResult | RedirectToActionResult | RedirectToRouteResult | StatusCodeResult |
-| ---------- | ------------- | ---------------------- | --------------------- | ---------------- |
+| --- | --- | --- | --- | --- |
 
 |Rendering the HTMLfile
 
@@ -40,7 +40,7 @@ returns RedirectToRoute(new{controller = ["controllename"], action = ["About"] }
 We could Pass parameters to actions by :
 
 | The Request property | The FormCollection object | The Request Body | Routing -RouteData Property |
-| -------------------- | ------------------------- | ---------------- | --------------------------- |
+| --- | --- | --- | --- |
 
 #### 1.2. Passing data to the view
 
@@ -146,8 +146,7 @@ Example:
 
 #### Model binding
 
-ASP.NET Core MVC model binding converts client request data (form values, route data, query string parameters, HTTP headers)
-into objects that the controller can handle
+ASP.NET Core MVC model binding converts client request data (form values, route data, query string parameters, HTTP headers) into objects that the controller can handle
 
 ### 2. View Component
 
@@ -243,8 +242,8 @@ return View("<htmlFileName>", Student);
 }
 ```
 
-| Generate a Label                     | Generate Input field                  | Generate Checkbox Field                  | Generate Radiobox Field                     | Generate DropedpwnList                                                                        | Form Validation             |
-| ------------------------------------ | ------------------------------------- | ---------------------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------- |
+| Generate a Label | Generate Input field | Generate Checkbox Field | Generate Radiobox Field | Generate DropedpwnList | Form Validation |
+| --- | --- | --- | --- | --- | --- |
 | `@Html.LabelFor(model=> model.Name)` | `@Html.EditorFor(model=> model.Name)` | `@Html.checkboxFor(model=> model.state)` | `@Html.RadioButtonFor(model=> model.state)` | `@Html.DropdownListFor(model=>model.attr, new SelectItelList[]{@*putting data*@}, "Message")` | `@Html.ValidationSummary()` |
 
 `@Html.ValidationMessageFor(model => model.Name)`|

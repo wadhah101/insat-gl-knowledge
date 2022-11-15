@@ -12,8 +12,8 @@ It is a module of .Net Framework which is used to establish connection between a
 
 ADO.NET has two main components that are used for accessing and manipulating data are:
 
-| Data provider                                                                    | DataSet                                                                                                                                                                                |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Data provider | DataSet |
+| --- | --- |
 | It is used to connect to the database, execute commands and retrieve the record. | It is a collection of data tables that contain the data. It is used to fetch data without interacting with a Data Source that's why, it also known as disconnected data access method. |
 
 ## Connected Mode
@@ -25,7 +25,7 @@ ADO.NET has two main components that are used for accessing and manipulating dat
 `SqlDataReader`: It is used to read data from data source
 
 | `SqlDataAdapter`: It works as a bridge between a DataSet and a data source to retrieve data.It can be used to fill the DataSet and update the data source |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --- |
 
 ### Disconnected Mode
 
@@ -61,8 +61,7 @@ cmd.Parameters.Add(param);
 
 Entity Framework (EF) is an open source object-relational mapping (ORM) framework for Ado.NET
 
-![framework](https://static.javatpoint.com/tutorial/entity-framework/images/entity-framework-architecture.png)
-|**EDM (Entity Data Model)**: It is a set of concepts that describe the structure of data Conceptual model
+![framework](https://static.javatpoint.com/tutorial/entity-framework/images/entity-framework-architecture.png) |**EDM (Entity Data Model)**: It is a set of concepts that describe the structure of data Conceptual model
 
 Mapping
 
@@ -75,8 +74,8 @@ Storage model.
 
 ### Workflow
 
-| ModelFirst                                                                                                            | DatabaseFirst                                                                         | CodeFirst                                                                                        |
-| --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| ModelFirst | DatabaseFirst | CodeFirst |
+| --- | --- | --- |
 | Working on a visual diagram using the EF Designer and letting the Entity Framework create/update the rest accordingly | building the Database and letting Entity Framework create/update the rest accordingly | writing the Data Model entity classes and let Entity Framework generate the Database accordingly |
 
 #### Code First
@@ -85,9 +84,9 @@ Storage model.
 
 - DataAnnotions : [annotions details]
 
-| Key                                    | Column("Name", TypeName="ntext")   | ForignKey("fkname") | NotMapped                    |
-| -------------------------------------- | ---------------------------------- | ------------------- | ---------------------------- |
-| Specifies the primary key of the table | Specifies the column name and type | Foreign kety name   | will not be mapped in the db |
+| Key | Column("Name", TypeName="ntext") | ForignKey("fkname") | NotMapped |
+| --- | --- | --- | --- |
+| Specifies the primary key of the table | Specifies the column name and type | Foreign kety name | will not be mapped in the db |
 
 - Relations :
 
@@ -139,8 +138,7 @@ you should first create a database in the sql server than add the connectionStri
 
 ###### dbcontext calss
 
-It is the primary class that is responsible for interacting with data as object. It often referred to as context.
-It is a wrapper around ObjectContext which is useful in all the development models: Code First, Model First and Database First.
+It is the primary class that is responsible for interacting with data as object. It often referred to as context. It is a wrapper around ObjectContext which is useful in all the development models: Code First, Model First and Database First.
 
 - Role:
   - **Querying** : converts database values into entity objects and vice versa.

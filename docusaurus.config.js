@@ -16,12 +16,12 @@ const config = async () => {
     tagline:
       "A Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
     url: "https://wadhah101.github.io",
-    baseUrl: "/insat-gl-knowledge/",
+    baseUrl: process.env.BASE_URL ?? "",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
-    organizationName: "wadhah101", // Usually your GitHub org/user name.
-    projectName: "insat-gl-knowledge", // Usually your repo name.
+    organizationName: "wadhah101",
+    projectName: "insat-gl-knowledge",
 
     i18n: {
       defaultLocale: "en",

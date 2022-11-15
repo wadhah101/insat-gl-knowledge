@@ -3,8 +3,6 @@ name: Deploy static content to Pages
 on:
   pull_request:
     types: [opened, reopened, synchronize]
-    branches:
-      - master
   push:
     branches:
       - master
@@ -64,30 +62,20 @@ jobs:
       - name: Move Webpack cache
         run: mv .yarn/.cache .cache
 
-      - name: Upload artifact
-        if: ${{ github.ref == 'refs/heads/master' }}
-        uses: actions/upload-pages-artifact@v1
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
         with:
-          path: "build"
-
-  deploy:
-    needs: build
-    if: ${{ github.ref == 'refs/heads/master' }}
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+          publish-dir: "./build"
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          alias: deploy-preview-${{ github.event.number }}
+          enable-pull-request-comment: true
+          enable-commit-comment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
 
   clean:
     needs: build

@@ -51,6 +51,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["hast-util-is-element", "npm:1.1.0"],\
             ["postcss", "npm:8.4.18"],\
             ["prettier", "npm:2.7.1"],\
+            ["prettier-plugin-java", "npm:1.6.2"],\
             ["prism-react-renderer", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:17.0.2"],\
@@ -6588,6 +6589,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["chevrotain", [\
+        ["npm:6.5.0", {\
+          "packageLocation": "./.yarn/cache/chevrotain-npm-6.5.0-7a25dc8528-ce03cf3874.zip/node_modules/chevrotain/",\
+          "packageDependencies": [\
+            ["chevrotain", "npm:6.5.0"],\
+            ["regexp-to-ast", "npm:0.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["chokidar", [\
         ["npm:3.5.3", {\
           "packageLocation": "./.yarn/cache/chokidar-npm-3.5.3-c5f9b0a56a-b49fcde401.zip/node_modules/chokidar/",\
@@ -10449,6 +10460,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["hast-util-is-element", "npm:1.1.0"],\
             ["postcss", "npm:8.4.18"],\
             ["prettier", "npm:2.7.1"],\
+            ["prettier-plugin-java", "npm:1.6.2"],\
             ["prism-react-renderer", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.3.5"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:17.0.2"],\
@@ -10998,6 +11010,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["chalk", "npm:4.1.2"],\
             ["filelist", "npm:1.0.4"],\
             ["minimatch", "npm:3.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["java-parser", [\
+        ["npm:2.0.2", {\
+          "packageLocation": "./.yarn/cache/java-parser-npm-2.0.2-52e8cd3002-324f58cc68.zip/node_modules/java-parser/",\
+          "packageDependencies": [\
+            ["java-parser", "npm:2.0.2"],\
+            ["chevrotain", "npm:6.5.0"],\
+            ["lodash", "npm:4.17.21"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13634,10 +13657,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["prettier", [\
+        ["npm:2.3.1", {\
+          "packageLocation": "./.yarn/cache/prettier-npm-2.3.1-f8593fac45-3b37731ff7.zip/node_modules/prettier/",\
+          "packageDependencies": [\
+            ["prettier", "npm:2.3.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:2.7.1", {\
           "packageLocation": "./.yarn/cache/prettier-npm-2.7.1-d1f40f5e1a-55a4409182.zip/node_modules/prettier/",\
           "packageDependencies": [\
             ["prettier", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["prettier-plugin-java", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/cache/prettier-plugin-java-npm-1.6.2-2cabc0c649-e6f7ab6209.zip/node_modules/prettier-plugin-java/",\
+          "packageDependencies": [\
+            ["prettier-plugin-java", "npm:1.6.2"],\
+            ["java-parser", "npm:2.0.2"],\
+            ["lodash", "npm:4.17.21"],\
+            ["prettier", "npm:2.3.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -14509,6 +14551,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["regenerator-transform", "npm:0.15.0"],\
             ["@babel/runtime", "npm:7.20.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["regexp-to-ast", [\
+        ["npm:0.4.0", {\
+          "packageLocation": "./.yarn/cache/regexp-to-ast-npm-0.4.0-5af9e8065b-0f42d802b6.zip/node_modules/regexp-to-ast/",\
+          "packageDependencies": [\
+            ["regexp-to-ast", "npm:0.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\

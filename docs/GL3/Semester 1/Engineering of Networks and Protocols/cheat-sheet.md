@@ -60,8 +60,10 @@ active proctype A() {
 
 ```java
 class Main {
-    synchronized void work () {}
+
+  synchronized void work() {}
 }
+
 ```
 
 ### promela

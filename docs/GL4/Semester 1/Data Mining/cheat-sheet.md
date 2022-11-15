@@ -33,9 +33,9 @@ KDD knowledge discovery process is iterative and interactive, comprises of nine 
 2. **Choosing and creating a data set on which discovery will be performed**
 3. **Preprocessing and cleansing**
 4. **Data Transformation**
-    In this stage, the creation of appropriate data for Data Mining is prepared and developed. Techniques here incorporate dimension reduction( for example, feature selection and extraction and record sampling), also attribute transformation(for example, discretization of numerical attributes and functional transformation).
+   In this stage, the creation of appropriate data for Data Mining is prepared and developed. Techniques here incorporate dimension reduction( for example, feature selection and extraction and record sampling), also attribute transformation(for example, discretization of numerical attributes and functional transformation).
 5. **Prediction and description**
-    We are now prepared to decide on which kind of Data Mining to use, for example, classification, regression, clustering, etc.
+   We are now prepared to decide on which kind of Data Mining to use, for example, classification, regression, clustering, etc.
 6. **choose the right Data Mining algo**
 7. **Implement the algo**
 8. **Evaluation**

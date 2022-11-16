@@ -11,7 +11,7 @@ const config = async () => {
     markdown: {
       mermaid: true,
     },
-    themes: ["@docusaurus/theme-mermaid"],
+    themes: ["@docusaurus/theme-mermaid", "docusaurus-theme-search-typesense"],
     title: "INSAT GL knowledge",
     tagline:
       "A Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
@@ -84,24 +84,26 @@ const config = async () => {
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
-        algolia: {
-          // The application ID provided by Algolia
-          appId: "SB21WGVQ6P",
+        typesense: {
+          typesenseCollectionName: "prod_gl_knowledge", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
 
-          apiKey: "1d0d11b0a4de52a0547adfd329146b56",
+          typesenseServerConfig: {
+            nodes: [
+              {
+                host: process.env.TYPESENSE_HOST ?? "",
+                port: process.env.TYPESENSE_PORT ?? "",
+                protocol: process.env.TYPESENSE_PROTOCOL ?? "http",
+              },
+            ],
+            apiKey: process.env.TYPESENSE_SEARCH_API_KEY || "",
+          },
 
-          indexName: "prod_gl_knowledge",
+          // Optional: Typesense search parameters: https://typesense.org/docs/0.21.0/api/search.md#search-parameters
+          typesenseSearchParameters: {},
 
-          // Optional: see doc section below
+          // Optional
           contextualSearch: true,
-
-          // Optional: Algolia search parameters
-          searchParameters: {},
-
-          // Optional: path for search page that enabled by default (`false` to disable it)
-          searchPagePath: "search",
         },
-
         mermaid: {
           theme: { light: "default", dark: "dark" },
         },

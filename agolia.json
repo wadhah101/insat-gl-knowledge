@@ -1,10 +1,10 @@
 {
   "index_name": "prod_gl_knowledge",
   "start_urls": [
-    "https://wadhah101.github.io/insat-gl-knowledge/"
+    "https://insat-gl-knowledge.netlify.app/"
   ],
   "sitemap_urls": [
-    "https://wadhah101.github.io/insat-gl-knowledge/sitemap.xml"
+    "https://insat-gl-knowledge.netlify.app/sitemap.xml"
   ],
   "sitemap_alternate_links": true,
   "stop_urls": [

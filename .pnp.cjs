@@ -28,6 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@babel/runtime", "npm:7.20.1"],\
             ["@docusaurus/core", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
             ["@docusaurus/logger", "npm:2.2.0"],\
             ["@docusaurus/module-type-aliases", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
@@ -49,6 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/docusaurus", "npm:1.0.6"],\
             ["autoprefixer", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:10.4.13"],\
             ["clsx", "npm:1.2.1"],\
+            ["docusaurus-theme-search-typesense", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.8.0"],\
             ["hast-util-is-element", "npm:1.1.0"],\
             ["postcss", "npm:8.4.18"],\
             ["prettier", "npm:2.7.1"],\
@@ -67,6 +69,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@algolia/autocomplete-core", [\
+        ["npm:1.7.1", {\
+          "packageLocation": "./.yarn/cache/@algolia-autocomplete-core-npm-1.7.1-488e460895-511176e9c2.zip/node_modules/@algolia/autocomplete-core/",\
+          "packageDependencies": [\
+            ["@algolia/autocomplete-core", "npm:1.7.1"],\
+            ["@algolia/autocomplete-shared", "npm:1.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:1.7.2", {\
           "packageLocation": "./.yarn/cache/@algolia-autocomplete-core-npm-1.7.2-7409bf80b4-7d3e879ac7.zip/node_modules/@algolia/autocomplete-core/",\
           "packageDependencies": [\
@@ -77,12 +87,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@algolia/autocomplete-preset-algolia", [\
+        ["npm:1.7.1", {\
+          "packageLocation": "./.yarn/cache/@algolia-autocomplete-preset-algolia-npm-1.7.1-cda1dae133-cb031d5ed4.zip/node_modules/@algolia/autocomplete-preset-algolia/",\
+          "packageDependencies": [\
+            ["@algolia/autocomplete-preset-algolia", "npm:1.7.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["npm:1.7.2", {\
           "packageLocation": "./.yarn/cache/@algolia-autocomplete-preset-algolia-npm-1.7.2-23ff2b2a3a-7120ce1d31.zip/node_modules/@algolia/autocomplete-preset-algolia/",\
           "packageDependencies": [\
             ["@algolia/autocomplete-preset-algolia", "npm:1.7.2"]\
           ],\
           "linkType": "SOFT"\
+        }],\
+        ["virtual:8178dc24ecbcc232faa344cf80fbb52e912ab81edb94abc23322c6ff9b6649347f02f4b43f7bee7cb556146d68b86e19034c85c45c56f80e37d08b98114c5c41#npm:1.7.1", {\
+          "packageLocation": "./.yarn/__virtual__/@algolia-autocomplete-preset-algolia-virtual-e1e3bd01ff/0/cache/@algolia-autocomplete-preset-algolia-npm-1.7.1-cda1dae133-cb031d5ed4.zip/node_modules/@algolia/autocomplete-preset-algolia/",\
+          "packageDependencies": [\
+            ["@algolia/autocomplete-preset-algolia", "virtual:8178dc24ecbcc232faa344cf80fbb52e912ab81edb94abc23322c6ff9b6649347f02f4b43f7bee7cb556146d68b86e19034c85c45c56f80e37d08b98114c5c41#npm:1.7.1"],\
+            ["@algolia/autocomplete-shared", "npm:1.7.1"],\
+            ["@algolia/client-search", null],\
+            ["@types/algolia__client-search", null],\
+            ["@types/algoliasearch", null],\
+            ["algoliasearch", null]\
+          ],\
+          "packagePeers": [\
+            "@algolia/client-search",\
+            "@types/algolia__client-search",\
+            "@types/algoliasearch",\
+            "algoliasearch"\
+          ],\
+          "linkType": "HARD"\
         }],\
         ["virtual:8be581c89cf07f0a3f18fe04cc1c559e23984ed19206ce85859f3d9c413cb2c79d2c27ca8d2eeaab773a486c4305e190aa6663967f17e54fec6571b75337c8ba#npm:1.7.2", {\
           "packageLocation": "./.yarn/__virtual__/@algolia-autocomplete-preset-algolia-virtual-2c1471fd2c/0/cache/@algolia-autocomplete-preset-algolia-npm-1.7.2-23ff2b2a3a-7120ce1d31.zip/node_modules/@algolia/autocomplete-preset-algolia/",\
@@ -104,6 +139,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@algolia/autocomplete-shared", [\
+        ["npm:1.7.1", {\
+          "packageLocation": "./.yarn/cache/@algolia-autocomplete-shared-npm-1.7.1-749810ff60-0e137f1a47.zip/node_modules/@algolia/autocomplete-shared/",\
+          "packageDependencies": [\
+            ["@algolia/autocomplete-shared", "npm:1.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:1.7.2", {\
           "packageLocation": "./.yarn/cache/@algolia-autocomplete-shared-npm-1.7.2-4d0ce3d26a-8336cd1e79.zip/node_modules/@algolia/autocomplete-shared/",\
           "packageDependencies": [\
@@ -5833,6 +5875,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "algoliasearch"\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["virtual:523a5ea33ca9ed74a6aeb5e1fde5d1cc29b8fdd9f657ce9bf273a5fff54c4e6be6a86b6f7c3ba6ee7df45244ff2ba483fd4a6d4cf97dd44d0cc2f949f5ca0dfa#npm:3.11.1", {\
+          "packageLocation": "./.yarn/__virtual__/algoliasearch-helper-virtual-1e1c053b85/0/cache/algoliasearch-helper-npm-3.11.1-1cc35e5b35-207616ca45.zip/node_modules/algoliasearch-helper/",\
+          "packageDependencies": [\
+            ["algoliasearch-helper", "virtual:523a5ea33ca9ed74a6aeb5e1fde5d1cc29b8fdd9f657ce9bf273a5fff54c4e6be6a86b6f7c3ba6ee7df45244ff2ba483fd4a6d4cf97dd44d0cc2f949f5ca0dfa#npm:3.11.1"],\
+            ["@algolia/events", "npm:4.0.1"],\
+            ["@types/algoliasearch", null],\
+            ["algoliasearch", null]\
+          ],\
+          "packagePeers": [\
+            "@types/algoliasearch",\
+            "algoliasearch"\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["ansi-align", [\
@@ -6037,6 +6093,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/axios-npm-0.25.0-a1c287d287-2a8a3787c0.zip/node_modules/axios/",\
           "packageDependencies": [\
             ["axios", "npm:0.25.0"],\
+            ["follow-redirects", "virtual:a1c287d287cceec925a9c0ff143359f3710be8008f8559da00a15e4d93f76849e9493b8b7760d073ae605ea56d1482d54174c007b28cbf6b38332d152576190f#npm:1.15.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:0.26.1", {\
+          "packageLocation": "./.yarn/cache/axios-npm-0.26.1-a6641ce4e3-d9eb58ff4b.zip/node_modules/axios/",\
+          "packageDependencies": [\
+            ["axios", "npm:0.26.1"],\
             ["follow-redirects", "virtual:a1c287d287cceec925a9c0ff143359f3710be8008f8559da00a15e4d93f76849e9493b8b7760d073ae605ea56d1482d54174c007b28cbf6b38332d152576190f#npm:1.15.2"]\
           ],\
           "linkType": "HARD"\
@@ -8496,6 +8560,54 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["docusaurus-theme-search-typesense", [\
+        ["npm:0.8.0", {\
+          "packageLocation": "./.yarn/cache/docusaurus-theme-search-typesense-npm-0.8.0-f211f657d3-38c5d9e8a5.zip/node_modules/docusaurus-theme-search-typesense/",\
+          "packageDependencies": [\
+            ["docusaurus-theme-search-typesense", "npm:0.8.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.8.0", {\
+          "packageLocation": "./.yarn/__virtual__/docusaurus-theme-search-typesense-virtual-523a5ea33c/0/cache/docusaurus-theme-search-typesense-npm-0.8.0-f211f657d3-38c5d9e8a5.zip/node_modules/docusaurus-theme-search-typesense/",\
+          "packageDependencies": [\
+            ["docusaurus-theme-search-typesense", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.8.0"],\
+            ["@docusaurus/core", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
+            ["@docusaurus/logger", "npm:2.2.0"],\
+            ["@docusaurus/plugin-content-docs", "virtual:1105e1e53086ecddf370c887177ff332c60c11e8101940c2bef3c61f2c3a30bc93522a01f5961aa38b7de64ee77be97433a1a3b001f428fd7aebce8c4dff72f3#npm:2.2.0"],\
+            ["@docusaurus/theme-common", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
+            ["@docusaurus/theme-translations", "npm:2.2.0"],\
+            ["@docusaurus/utils", "virtual:61a9a17253a3be5804e8f8aeb4fe4e75853bcba3866de3e3ee079a544b51612d0a99d184f624b5b82db99b06e482cd035d59e98da5f5e8dd5a2ff1c79761ebf1#npm:2.2.0"],\
+            ["@docusaurus/utils-validation", "npm:2.2.0"],\
+            ["@types/docusaurus__core", null],\
+            ["@types/docusaurus__theme-common", null],\
+            ["@types/react", null],\
+            ["@types/react-dom", null],\
+            ["algoliasearch-helper", "virtual:523a5ea33ca9ed74a6aeb5e1fde5d1cc29b8fdd9f657ce9bf273a5fff54c4e6be6a86b6f7c3ba6ee7df45244ff2ba483fd4a6d4cf97dd44d0cc2f949f5ca0dfa#npm:3.11.1"],\
+            ["clsx", "npm:1.2.1"],\
+            ["eta", "npm:1.12.3"],\
+            ["fs-extra", "npm:10.1.0"],\
+            ["lodash", "npm:4.17.21"],\
+            ["react", "npm:17.0.2"],\
+            ["react-dom", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:17.0.2"],\
+            ["tslib", "npm:2.4.1"],\
+            ["typesense-docsearch-react", "virtual:523a5ea33ca9ed74a6aeb5e1fde5d1cc29b8fdd9f657ce9bf273a5fff54c4e6be6a86b6f7c3ba6ee7df45244ff2ba483fd4a6d4cf97dd44d0cc2f949f5ca0dfa#npm:0.2.3"],\
+            ["typesense-instantsearch-adapter", "virtual:523a5ea33ca9ed74a6aeb5e1fde5d1cc29b8fdd9f657ce9bf273a5fff54c4e6be6a86b6f7c3ba6ee7df45244ff2ba483fd4a6d4cf97dd44d0cc2f949f5ca0dfa#npm:2.4.2"],\
+            ["utility-types", "npm:3.10.0"]\
+          ],\
+          "packagePeers": [\
+            "@docusaurus/core",\
+            "@docusaurus/theme-common",\
+            "@types/docusaurus__core",\
+            "@types/docusaurus__theme-common",\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["dom-converter", [\
         ["npm:0.2.0", {\
           "packageLocation": "./.yarn/cache/dom-converter-npm-0.2.0-902408f4a0-ea52fe303f.zip/node_modules/dom-converter/",\
@@ -10501,6 +10613,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["insat-gl-knowledge", "workspace:."],\
+            ["@babel/runtime", "npm:7.20.1"],\
             ["@docusaurus/core", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
             ["@docusaurus/logger", "npm:2.2.0"],\
             ["@docusaurus/module-type-aliases", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
@@ -10522,6 +10635,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/docusaurus", "npm:1.0.6"],\
             ["autoprefixer", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:10.4.13"],\
             ["clsx", "npm:1.2.1"],\
+            ["docusaurus-theme-search-typesense", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.8.0"],\
             ["hast-util-is-element", "npm:1.1.0"],\
             ["postcss", "npm:8.4.18"],\
             ["prettier", "npm:2.7.1"],\
@@ -11476,6 +11590,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/lodash.uniq-npm-4.5.0-7c270dca85-a4779b57a8.zip/node_modules/lodash.uniq/",\
           "packageDependencies": [\
             ["lodash.uniq", "npm:4.5.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["loglevel", [\
+        ["npm:1.8.1", {\
+          "packageLocation": "./.yarn/cache/loglevel-npm-1.8.1-1768109374-a1a62db402.zip/node_modules/loglevel/",\
+          "packageDependencies": [\
+            ["loglevel", "npm:1.8.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -16403,6 +16526,93 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/typescript-patch-80bfdb5552-301459fc3e.zip/node_modules/typescript/",\
           "packageDependencies": [\
             ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["typesense", [\
+        ["npm:1.4.3", {\
+          "packageLocation": "./.yarn/cache/typesense-npm-1.4.3-1ee0e0d020-665de74e54.zip/node_modules/typesense/",\
+          "packageDependencies": [\
+            ["typesense", "npm:1.4.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:8178dc24ecbcc232faa344cf80fbb52e912ab81edb94abc23322c6ff9b6649347f02f4b43f7bee7cb556146d68b86e19034c85c45c56f80e37d08b98114c5c41#npm:1.4.3", {\
+          "packageLocation": "./.yarn/__virtual__/typesense-virtual-345a9a45b0/0/cache/typesense-npm-1.4.3-1ee0e0d020-665de74e54.zip/node_modules/typesense/",\
+          "packageDependencies": [\
+            ["typesense", "virtual:8178dc24ecbcc232faa344cf80fbb52e912ab81edb94abc23322c6ff9b6649347f02f4b43f7bee7cb556146d68b86e19034c85c45c56f80e37d08b98114c5c41#npm:1.4.3"],\
+            ["@babel/runtime", null],\
+            ["@types/babel__runtime", null],\
+            ["axios", "npm:0.26.1"],\
+            ["loglevel", "npm:1.8.1"]\
+          ],\
+          "packagePeers": [\
+            "@babel/runtime",\
+            "@types/babel__runtime"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["typesense-docsearch-css", [\
+        ["npm:0.3.0", {\
+          "packageLocation": "./.yarn/cache/typesense-docsearch-css-npm-0.3.0-4c171a1add-6dc9386545.zip/node_modules/typesense-docsearch-css/",\
+          "packageDependencies": [\
+            ["typesense-docsearch-css", "npm:0.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["typesense-docsearch-react", [\
+        ["npm:0.2.3", {\
+          "packageLocation": "./.yarn/cache/typesense-docsearch-react-npm-0.2.3-1e511f3cda-cd27370df3.zip/node_modules/typesense-docsearch-react/",\
+          "packageDependencies": [\
+            ["typesense-docsearch-react", "npm:0.2.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:523a5ea33ca9ed74a6aeb5e1fde5d1cc29b8fdd9f657ce9bf273a5fff54c4e6be6a86b6f7c3ba6ee7df45244ff2ba483fd4a6d4cf97dd44d0cc2f949f5ca0dfa#npm:0.2.3", {\
+          "packageLocation": "./.yarn/__virtual__/typesense-docsearch-react-virtual-8178dc24ec/0/cache/typesense-docsearch-react-npm-0.2.3-1e511f3cda-cd27370df3.zip/node_modules/typesense-docsearch-react/",\
+          "packageDependencies": [\
+            ["typesense-docsearch-react", "virtual:523a5ea33ca9ed74a6aeb5e1fde5d1cc29b8fdd9f657ce9bf273a5fff54c4e6be6a86b6f7c3ba6ee7df45244ff2ba483fd4a6d4cf97dd44d0cc2f949f5ca0dfa#npm:0.2.3"],\
+            ["@algolia/autocomplete-core", "npm:1.7.1"],\
+            ["@algolia/autocomplete-preset-algolia", "virtual:8178dc24ecbcc232faa344cf80fbb52e912ab81edb94abc23322c6ff9b6649347f02f4b43f7bee7cb556146d68b86e19034c85c45c56f80e37d08b98114c5c41#npm:1.7.1"],\
+            ["@types/react", null],\
+            ["@types/react-dom", null],\
+            ["react", "npm:17.0.2"],\
+            ["react-dom", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:17.0.2"],\
+            ["typesense", "virtual:8178dc24ecbcc232faa344cf80fbb52e912ab81edb94abc23322c6ff9b6649347f02f4b43f7bee7cb556146d68b86e19034c85c45c56f80e37d08b98114c5c41#npm:1.4.3"],\
+            ["typesense-docsearch-css", "npm:0.3.0"],\
+            ["typesense-instantsearch-adapter", "virtual:523a5ea33ca9ed74a6aeb5e1fde5d1cc29b8fdd9f657ce9bf273a5fff54c4e6be6a86b6f7c3ba6ee7df45244ff2ba483fd4a6d4cf97dd44d0cc2f949f5ca0dfa#npm:2.4.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["typesense-instantsearch-adapter", [\
+        ["npm:2.4.2", {\
+          "packageLocation": "./.yarn/unplugged/typesense-instantsearch-adapter-virtual-a36023d1e0/node_modules/typesense-instantsearch-adapter/",\
+          "packageDependencies": [\
+            ["typesense-instantsearch-adapter", "npm:2.4.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:523a5ea33ca9ed74a6aeb5e1fde5d1cc29b8fdd9f657ce9bf273a5fff54c4e6be6a86b6f7c3ba6ee7df45244ff2ba483fd4a6d4cf97dd44d0cc2f949f5ca0dfa#npm:2.4.2", {\
+          "packageLocation": "./.yarn/unplugged/typesense-instantsearch-adapter-virtual-a36023d1e0/node_modules/typesense-instantsearch-adapter/",\
+          "packageDependencies": [\
+            ["typesense-instantsearch-adapter", "virtual:523a5ea33ca9ed74a6aeb5e1fde5d1cc29b8fdd9f657ce9bf273a5fff54c4e6be6a86b6f7c3ba6ee7df45244ff2ba483fd4a6d4cf97dd44d0cc2f949f5ca0dfa#npm:2.4.2"],\
+            ["@babel/runtime", null],\
+            ["@types/babel__runtime", null],\
+            ["typesense", "virtual:8178dc24ecbcc232faa344cf80fbb52e912ab81edb94abc23322c6ff9b6649347f02f4b43f7bee7cb556146d68b86e19034c85c45c56f80e37d08b98114c5c41#npm:1.4.3"]\
+          ],\
+          "packagePeers": [\
+            "@babel/runtime",\
+            "@types/babel__runtime"\
           ],\
           "linkType": "HARD"\
         }]\

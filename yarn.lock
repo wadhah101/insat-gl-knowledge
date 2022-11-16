@@ -5,12 +5,33 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@algolia/autocomplete-core@npm:1.7.1":
+  version: 1.7.1
+  resolution: "@algolia/autocomplete-core@npm:1.7.1"
+  dependencies:
+    "@algolia/autocomplete-shared": 1.7.1
+  checksum: 511176e9c2a9f2e2be62552e48e72dadfcc6638cda4a2990fd3453aed3ce4e7d8ca1bd6a9ccb912430c77734b00a8b836aaad97facc1987157af4ac00f590f4a
+  languageName: node
+  linkType: hard
+
 "@algolia/autocomplete-core@npm:1.7.2":
   version: 1.7.2
   resolution: "@algolia/autocomplete-core@npm:1.7.2"
   dependencies:
     "@algolia/autocomplete-shared": 1.7.2
   checksum: 7d3e879ac74f2d3fd6f80a01d6c05bd22264c428030396234112be7628a80d3a7c250613b2d4102f8ef63115be7b96d8d0231bdf8a02aa9b58873500aa61ffcc
+  languageName: node
+  linkType: hard
+
+"@algolia/autocomplete-preset-algolia@npm:1.7.1":
+  version: 1.7.1
+  resolution: "@algolia/autocomplete-preset-algolia@npm:1.7.1"
+  dependencies:
+    "@algolia/autocomplete-shared": 1.7.1
+  peerDependencies:
+    "@algolia/client-search": ^4.9.1
+    algoliasearch: ^4.9.1
+  checksum: cb031d5ed43f2e10f325f6291cfab851cc5622d96ae8ba1913815ead16b7ce2969b0c51f921d54c47195b2200af8ceecf1c587d2580f842c337f1d8e2f6317c2
   languageName: node
   linkType: hard
 
@@ -23,6 +44,13 @@ __metadata:
     "@algolia/client-search": ">= 4.9.1 < 6"
     algoliasearch: ">= 4.9.1 < 6"
   checksum: 7120ce1d312dbe6d898a0cecd9b28e45f9162a2fd9208a4c4e2efa77027455ee083c11cb782196374da717e990d6ca362c286ace475db97916e52bd277061d77
+  languageName: node
+  linkType: hard
+
+"@algolia/autocomplete-shared@npm:1.7.1":
+  version: 1.7.1
+  resolution: "@algolia/autocomplete-shared@npm:1.7.1"
+  checksum: 0e137f1a470fab9b1bc493284b0be9b83503bda8aa37be9726a8fddf4791dccbd28f9eec399a7c75c1eb3196510dac7be454307fc97fbca2999f3fbc30756c28
   languageName: node
   linkType: hard
 
@@ -1587,7 +1615,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.3, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.6, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.3, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.13, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.6, @babel/runtime@npm:^7.20.1, @babel/runtime@npm:^7.8.4":
   version: 7.20.1
   resolution: "@babel/runtime@npm:7.20.1"
   dependencies:
@@ -3811,6 +3839,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.26.0":
+  version: 0.26.1
+  resolution: "axios@npm:0.26.1"
+  dependencies:
+    follow-redirects: ^1.14.8
+  checksum: d9eb58ff4bc0b36a04783fc9ff760e9245c829a5a1052ee7ca6013410d427036b1d10d04e7380c02f3508c5eaf3485b1ae67bd2adbfec3683704745c8d7a6e1a
+  languageName: node
+  linkType: hard
+
 "babel-loader@npm:^8.2.5":
   version: 8.3.0
   resolution: "babel-loader@npm:8.3.0"
@@ -5895,6 +5932,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"docusaurus-theme-search-typesense@npm:0.8.0":
+  version: 0.8.0
+  resolution: "docusaurus-theme-search-typesense@npm:0.8.0"
+  dependencies:
+    "@docusaurus/logger": 2.2.0
+    "@docusaurus/plugin-content-docs": 2.2.0
+    "@docusaurus/theme-translations": 2.2.0
+    "@docusaurus/utils": 2.2.0
+    "@docusaurus/utils-validation": 2.2.0
+    algoliasearch-helper: ^3.10.0
+    clsx: ^1.2.1
+    eta: ^1.12.3
+    fs-extra: ^10.1.0
+    lodash: ^4.17.21
+    tslib: ^2.4.0
+    typesense-docsearch-react: ^0.2.3
+    typesense-instantsearch-adapter: ^2.4.2
+    utility-types: ^3.10.0
+  peerDependencies:
+    "@docusaurus/core": 2.2.0
+    "@docusaurus/theme-common": 2.2.0
+    react: ^16.8.4 || ^17.0.2
+    react-dom: ^16.8.4 || ^17.0.2
+  checksum: 38c5d9e8a5f4325ad31b44d0696da7c8916c52c57dfce2d20a5f2d7b6c8bc8cc9603895781a5f33a19649789d86647fa2470496976931bcd2adf71bb03a5ee0b
+  languageName: node
+  linkType: hard
+
 "dom-converter@npm:^0.2.0":
   version: 0.2.0
   resolution: "dom-converter@npm:0.2.0"
@@ -6602,7 +6666,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.7":
+"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.7, follow-redirects@npm:^1.14.8":
   version: 1.15.2
   resolution: "follow-redirects@npm:1.15.2"
   peerDependenciesMeta:
@@ -7604,6 +7668,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "insat-gl-knowledge@workspace:."
   dependencies:
+    "@babel/runtime": ^7.20.1
     "@docusaurus/core": 2.2.0
     "@docusaurus/logger": 2.2.0
     "@docusaurus/module-type-aliases": 2.2.0
@@ -7625,6 +7690,7 @@ __metadata:
     "@tsconfig/docusaurus": ^1.0.6
     autoprefixer: ^10.4.13
     clsx: ^1.2.1
+    docusaurus-theme-search-typesense: 0.8.0
     hast-util-is-element: 1.1.0
     postcss: ^8.4.18
     prettier: ^2.7.1
@@ -8462,6 +8528,13 @@ __metadata:
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
+  languageName: node
+  linkType: hard
+
+"loglevel@npm:^1.8.0":
+  version: 1.8.1
+  resolution: "loglevel@npm:1.8.1"
+  checksum: a1a62db40291aaeaef2f612334c49e531bff71cc1d01a2acab689ab80d59e092f852ab164a5aedc1a752fdc46b7b162cb097d8a9eb2cf0b299511106c29af61d
   languageName: node
   linkType: hard
 
@@ -12219,6 +12292,53 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 301459fc3eb3b1a38fe91bf96d98eb55da88a9cb17b4ef80b4d105d620f4d547ba776cc27b44cc2ef58b66eda23fe0a74142feb5e79a6fb99f54fc018a696afa
+  languageName: node
+  linkType: hard
+
+"typesense-docsearch-css@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "typesense-docsearch-css@npm:0.3.0"
+  checksum: 6dc9386545e25fb4c79b60a54eefbe48e95518fe9eb0f380bfa31eaaf2ed68228464d5ce26c58bb13bcf801a4cee85d77186a280df251f994f5c8ca02e142e75
+  languageName: node
+  linkType: hard
+
+"typesense-docsearch-react@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "typesense-docsearch-react@npm:0.2.3"
+  dependencies:
+    "@algolia/autocomplete-core": 1.7.1
+    "@algolia/autocomplete-preset-algolia": 1.7.1
+    typesense: ^1.4.0-3
+    typesense-docsearch-css: ^0.3.0
+    typesense-instantsearch-adapter: ^2.4.2-1
+  peerDependencies:
+    "@types/react": ">= 16.8.0 < 19.0.0"
+    react: ">= 16.8.0 < 19.0.0"
+    react-dom: ">= 16.8.0 < 19.0.0"
+  checksum: cd27370df37c5130b9088186e509328da63a98eb8e63c2634f18ba4318fcaa6105cff283b1b1b8dc3d13c5d2eb2ca75b30eb66828cd0c4002adca5eff4ca3c9d
+  languageName: node
+  linkType: hard
+
+"typesense-instantsearch-adapter@npm:^2.4.2, typesense-instantsearch-adapter@npm:^2.4.2-1":
+  version: 2.4.2
+  resolution: "typesense-instantsearch-adapter@npm:2.4.2"
+  dependencies:
+    typesense: ^1.4.1
+  peerDependencies:
+    "@babel/runtime": ^7.17.2
+  checksum: b894bfb34eda4c4524636f49d77887695774f31fa6c8b51c19453fc14b82aca2a91798be04d605961f48e23af4aab2082d5a2983b72e8af9c4c06e3d7a8b99a0
+  languageName: node
+  linkType: hard
+
+"typesense@npm:^1.4.0-3, typesense@npm:^1.4.1":
+  version: 1.4.3
+  resolution: "typesense@npm:1.4.3"
+  dependencies:
+    axios: ^0.26.0
+    loglevel: ^1.8.0
+  peerDependencies:
+    "@babel/runtime": ^7.17.2
+  checksum: 665de74e54a6ccfa0ee7b2e2eb42e1556ef1899ff9c7038544d9a2259287e3a278e8f2a57396c3940c52d0cee8c60b54849df441e62871e129fb32513cf8e9ad
   languageName: node
   linkType: hard
 

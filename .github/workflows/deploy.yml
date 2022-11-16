@@ -58,6 +58,12 @@ jobs:
 
       - name: Build project
         run: yarn build
+        env:
+          TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
+          TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
+          TYPESENSE_PORT: 443
+          TYPESENSE_PROTOCOL: https
+          TYPESENSE_SEARCH_API_KEY: ${{ secrets.TYPESENSE_SEARCH_API_KEY }}
 
       - name: Move Webpack cache
         run: mv .yarn/.cache .cache

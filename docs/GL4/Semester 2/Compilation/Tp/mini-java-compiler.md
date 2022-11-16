@@ -92,15 +92,11 @@ Where
 Generate the **app.exe** by running the following python script:
 
 ```py
-
 import os
 
 os.system("flex LexicalAnalyzer.lex")
-
 os.system("bison -d SyntaxAnalyzer.y")
-
 os.system("gcc -o app SyntaxAnalyzer.tab.c lex.yy.c symtab.c codeGenerator.c")
-
 ```
 
 then in **cmd**

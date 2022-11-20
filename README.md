@@ -8,6 +8,8 @@ This project is principally community driven and needs **your support**, every l
 
 Adding courses, cheat sheets, links to projects, exams and any content related to Software engineering that would prove useful is welcome.
 
+For an excellent markwon edit experience i higly recommend using [Marktext](https://github.com/marktext/marktext) as an editor instead of manually changing the markdown
+
 Even if you don't have content to add to the project you can check the [issues](https://github.com/wadhah101/insat-gl-knowledge/issues) for any potential bugs and tasks.
 
 New to open-source ? Please read [this guide](https://www.dataschool.io/how-to-contribute-on-github/) on how to contribute to open-source projects

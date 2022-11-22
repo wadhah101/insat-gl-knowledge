@@ -6,7 +6,7 @@ slug: /gl3/semester-1/design-patterns/patterns/adapter
 
 ![Adapter%209922697f875649829f3c30422f97a823/Untitled.png](Adapter%209922697f875649829f3c30422f97a823/Untitled.png)
 
-### Diagram
+## Diagram
 
 ![Adapter%209922697f875649829f3c30422f97a823/Untitled%201.png](Adapter%209922697f875649829f3c30422f97a823/Untitled%201.png)
 

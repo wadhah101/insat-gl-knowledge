@@ -62,7 +62,7 @@ Algorithm that has running time O(log n) is slight faster than O(n). Commonly, a
 
 loop will run k times so that m>1.
 
-*m>1 ; putting value of m for as $n/2^k$*
+m>1 ; putting value of m for as $n/2^k$
 
 $*n/2^k >1*$
 

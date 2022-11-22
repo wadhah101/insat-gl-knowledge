@@ -8,7 +8,7 @@ slug: /gl3/semester-1/design-patterns/patterns/chainofresponsibility
 
 **Chain the receiving objects and pass the request along the chain until an object handles it.**
 
-### UML Diagram
+## UML Diagram
 
 ![Chain%20of%20Responsibility%204eebe6a86a9f4bdc94bd981a1cf091b7/Untitled.png](Chain%20of%20Responsibility%204eebe6a86a9f4bdc94bd981a1cf091b7/Untitled.png)
 
@@ -32,7 +32,7 @@ Create an abstract logger class.
 
 AbstractLogger.java
 
-```
+```java
 public abstract class AbstractLogger {
    public static int INFO = 1;
    public static int DEBUG = 2;
@@ -67,7 +67,7 @@ Create concrete classes extending the logger.
 
 ConsoleLogger.java
 
-```
+```java
 public class ConsoleLogger extends AbstractLogger {
 
    public ConsoleLogger(int level){
@@ -83,7 +83,7 @@ public class ConsoleLogger extends AbstractLogger {
 
 ErrorLogger.java
 
-```
+```java
 public class ErrorLogger extends AbstractLogger {
 
    public ErrorLogger(int level){
@@ -99,7 +99,7 @@ public class ErrorLogger extends AbstractLogger {
 
 FileLogger.java
 
-```
+```java
 public class FileLogger extends AbstractLogger {
 
    public FileLogger(int level){
@@ -119,7 +119,7 @@ Create different types of loggers. Assign them error levels and set next logger 
 
 ChainPatternDemo.java
 
-```
+```java
 public class ChainPatternDemo {
 
    private static AbstractLogger getChainOfLoggers(){
@@ -153,7 +153,7 @@ public class ChainPatternDemo {
 
 Verify the output.
 
-```
+```bash
 Standard Console::Logger: This is an information.
 File::Logger: This is an debug level information.
 Standard Console::Logger: This is an debug level information.

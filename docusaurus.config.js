@@ -1,37 +1,46 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const darkCodeTheme = require("prism-react-renderer/themes/vsDark");
 const math = require("remark-math");
 const katex = require("rehype-katex");
 
-// /** @type {import('@docusaurus/types').Config} */
 const config = async () => {
-  const mdxMermaid = await import("mdx-mermaid");
-
   /** @type {import('@docusaurus/types').Config} */
   return {
-    // DEBT use docusaurus native mermaid supposrt
-    // markdown: {
-    //   mermaid: true,
-    // },
-    // themes: ["@docusaurus/theme-mermaid"],
+    markdown: {
+      mermaid: true,
+    },
+    themes: ["@docusaurus/theme-mermaid", "docusaurus-theme-search-typesense"],
     title: "INSAT GL knowledge",
     tagline:
-      "My Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
+      "A Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.",
     url: "https://wadhah101.github.io",
-    baseUrl: "/insat-gl-knowledge/",
+    baseUrl: process.env.BASE_URL ?? "/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
-    organizationName: "wadhah101", // Usually your GitHub org/user name.
-    projectName: "insat-gl-knowledge", // Usually your repo name.
+    organizationName: "wadhah101",
+    projectName: "insat-gl-knowledge",
 
     i18n: {
       defaultLocale: "en",
       locales: ["en"],
     },
+
+    plugins: [
+      async function myPlugin(context, options) {
+        return {
+          name: "docusaurus-tailwindcss",
+          configurePostCss(postcssOptions) {
+            // Appends TailwindCSS and AutoPrefixer.
+            postcssOptions.plugins.push(require("tailwindcss"));
+            postcssOptions.plugins.push(require("autoprefixer"));
+            return postcssOptions;
+          },
+        };
+      },
+    ],
 
     stylesheets: [
       {
@@ -48,13 +57,18 @@ const config = async () => {
         "classic",
         /** @type {import('@docusaurus/preset-classic').Options} */
         {
+          sitemap: {
+            changefreq: "weekly",
+            priority: 0.5,
+            filename: "sitemap.xml",
+          },
           googleAnalytics: {
             trackingID: "G-XR2Q0GYH0M",
             anonymizeIP: true,
           },
           docs: {
             // DEBT use docusaurus native mermaid supposrt
-            remarkPlugins: [math, mdxMermaid.default],
+            remarkPlugins: [math],
             rehypePlugins: [katex],
             sidebarPath: require.resolve("./sidebars.js"),
             editUrl:
@@ -70,21 +84,40 @@ const config = async () => {
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
-        themeConfig: {
-          mermaid: {
-            theme: { light: "neutral", dark: "forest" },
+        typesense: {
+          typesenseCollectionName: "prod_gl_knowledge", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+
+          typesenseServerConfig: {
+            nodes: [
+              {
+                host: process.env.TYPESENSE_HOST ?? "",
+                port: process.env.TYPESENSE_PORT ?? "",
+                protocol: process.env.TYPESENSE_PROTOCOL ?? "http",
+              },
+            ],
+            apiKey: process.env.TYPESENSE_SEARCH_API_KEY || "",
           },
+
+          // Optional: Typesense search parameters: https://typesense.org/docs/0.21.0/api/search.md#search-parameters
+          typesenseSearchParameters: {},
+
+          // Optional
+          contextualSearch: true,
+        },
+        mermaid: {
+          theme: { light: "default", dark: "dark" },
         },
         navbar: {
           title: "Home",
           logo: {
             alt: "My Site Logo",
             src: "img/logo.svg",
+            srcDark: "img/logo-dark.svg",
           },
           items: [
             {
               type: "doc",
-              docId: "docusaurus",
+              docId: "intro",
               position: "left",
               label: "Docs",
             },
@@ -103,7 +136,7 @@ const config = async () => {
               items: [
                 {
                   label: "Tutorial",
-                  to: "/docs/docusaurus",
+                  to: "/docs/intro",
                 },
               ],
             },
@@ -122,6 +155,7 @@ const config = async () => {
         prism: {
           theme: lightCodeTheme,
           darkTheme: darkCodeTheme,
+          additionalLanguages: ["bash", "csharp", "java", "cshtml", "prolog"],
         },
       }),
   };

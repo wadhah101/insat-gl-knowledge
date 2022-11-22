@@ -1,0 +1,24 @@
+name: Clean webpack cache
+
+on:
+  workflow_dispatch:
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install gh cache extension
+        run: gh extension install actions/gh-actions-cache
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bash version
+        run: bash --version
+
+      - name: Clean cache
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/cleanup_cache_manual.sh

@@ -1,21 +1,28 @@
-# Website
+# INSAT GL knowledge
 
-Going to put everything I know about INSAT & its software engineering degree here
+A Guide on how to survive software engineering in INSAT. You will find tips, references,  projects & cheat sheets.
 
-- CheatSheets
-- Tips
-- Guides
-- PFE things
+## Contributions
 
-Contributions through PRs are always welcome
+This project is principally community driven and needs **your support**, every line **helps**.
+
+Adding courses, cheat sheets, links to projects, exams and any content related to Software engineering that would prove useful is welcome.
+
+For an excellent markwon edit experience i higly recommend using [Marktext](https://github.com/marktext/marktext) as an editor instead of manually changing the markdown
+
+Even if you don't have content to add to the project you can check the [issues](https://github.com/wadhah101/insat-gl-knowledge/issues) for any potential bugs and tasks.
+
+New to open-source ? Please read [this guide](https://www.dataschool.io/how-to-contribute-on-github/) on how to contribute to open-source projects
 
 ## Setup
 
-Make sure Volta is installed and configured on your system. This project relies on **specific** node & yarn versions.
+This project makes use of [Volta](https://volta.sh/) to manage the node and yarn versions.
+
+Make sure [Volta](https://volta.sh/) is installed and configured on your system. This project relies on **specific** node & yarn versions.
 
 ### Unix/Linux
 
-```console
+```bash
 curl https://get.volta.sh | bash
 ```
 
@@ -23,19 +30,19 @@ curl https://get.volta.sh | bash
 
 Follow this [guide](https://docs.volta.sh/guide/getting-started)
 
-### Installation
+### Dependencies Installation
 
 Install your dependencies. **Yarn V2** [Plug'n'Play](https://yarnpkg.com/features/pnp) is active and you won't find any node_module folder.
 
-```console
+```bash
 yarn
 ```
 
-For Vscode userS make sure to apply .vscode/settings.json when promoted
+For Vscode users make sure to apply .vscode/settings.json when promoted
 
 ## Local Development
 
-```console
+```bash
 yarn start
 ```
 
@@ -43,7 +50,7 @@ This command starts a local development server and opens up a browser window. Mo
 
 ## Build
 
-```console
+```bash
 yarn build
 ```
 

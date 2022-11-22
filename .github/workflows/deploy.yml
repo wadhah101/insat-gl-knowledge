@@ -1,0 +1,106 @@
+name: Deploy static content to Pages
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      - name: setup node
+        uses: volta-cli/action@v3
+
+      - name: cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: ".yarn"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: cache webpack modules
+        uses: actions/cache@v3
+        with:
+          path: ".cache"
+          key: ${{ runner.os }}-webpack-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-webpack
+
+      - name: Install deps
+        run: yarn install --immutable
+
+      - name: Move back Webpack cache
+
+        run: \[ -d ".cache" \] &&  mv .cache .yarn/.cache || echo "cache not found."
+
+      - name: show cache
+        run: ls -la .yarn || true
+
+      - name: generate contributors
+        run: |
+          gh api repos/wadhah101/insat-gl-knowledge/contributors > data/contributors.json
+          jq ".[] | { login, contributions }" data/contributors.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build project
+        run: yarn build
+        env:
+          TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
+          TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
+          TYPESENSE_PORT: 443
+          TYPESENSE_PROTOCOL: https
+          TYPESENSE_SEARCH_API_KEY: ${{ secrets.TYPESENSE_SEARCH_API_KEY }}
+
+      - name: Move Webpack cache
+        run: mv .yarn/.cache .cache
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish-dir: "./build"
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          alias: deploy-preview-${{ github.event.number }}
+          enable-pull-request-comment: true
+          enable-commit-comment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
+
+  clean:
+    needs: build
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install gh cache extension
+        run: gh extension install actions/gh-actions-cache
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bash version
+        run: bash --version
+
+      - name: Clean cache
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_REF: ${{ github.ref }}
+        run: bash scripts/cleanup_cache_manual.sh

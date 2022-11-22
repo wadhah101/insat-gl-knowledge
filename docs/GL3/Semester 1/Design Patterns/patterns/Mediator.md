@@ -6,14 +6,11 @@ slug: /gl3/semester-1/design-patterns/patterns/mediator
 
 A Mediator Pattern says that "to define an object that encapsulates how a set of objects interact".
 
-<aside>
 📎 Le médiateur centralise la communication entre les composants du système. Les composants ne voient quel’objet médiateur et ne communiquent pas directement.
-
-</aside>
 
 ![Mediator%20ea7b25c7963947cdb2e63ab4c93e3137/Untitled.png](Mediator%20ea7b25c7963947cdb2e63ab4c93e3137/Untitled.png)
 
-### Example
+## Example
 
 we'll use the Mediator pattern in the context of a chatroom application. First we'll define an interface for our mediator.
 

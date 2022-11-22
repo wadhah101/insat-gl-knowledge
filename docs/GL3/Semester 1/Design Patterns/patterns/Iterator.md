@@ -18,6 +18,6 @@ Probelm : in a restaurant we have 2 kind of menu that have different implementat
 
 ![Iterator%20272f6a5833af4d87b7b730549c327049/Untitled%203.png](Iterator%20272f6a5833af4d87b7b730549c327049/Untitled%203.png)
 
-### In general
+## In general
 
 ![Iterator%20272f6a5833af4d87b7b730549c327049/Untitled%204.png](Iterator%20272f6a5833af4d87b7b730549c327049/Untitled%204.png)

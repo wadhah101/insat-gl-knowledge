@@ -10,11 +10,7 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 ### Introduction ?
 
-<aside>
 💡 The time complexity of an algorithm is the total amount of time required by an algorithm to complete its execution.
-
-</aside>
-<br/>
 
 ![assets/what/Untitled.png](assets/what/Untitled.png)
 
@@ -52,7 +48,6 @@ Algorithm that has running time O(log n) is slight faster than O(n). Commonly, a
 
 ![assets/what/Untitled1.png](assets/what/Untitled1.png)
 
-```
 +-----------+--------------------+
 | Iteration  |     Value of M     |
 +-----------+--------------------+
@@ -64,7 +59,6 @@ Algorithm that has running time O(log n) is slight faster than O(n). Commonly, a
 | .         |  .                 |
 | k         | n/2^k              |
 +-----------+--------------------+
-```
 
 loop will run k times so that m>1.
 
@@ -74,7 +68,7 @@ $*n/2^k >1*$
 
 $*2^k > n*$
 
-*k > logn*
+k > logn
 
 ### **4)** O(n log n) — Linearithmic Time
 
@@ -191,18 +185,16 @@ Un algorithme NP-complet est un problème de décision vérifiant les propriét�
 
 - **Grand – θ** : pour une fonction T(n) no négative si son grand – O et son grand - Ω coïncide alors on parle d’un Grand – θ
 
-<aside>
 📎 Remarques :
- - Le meilleur cas n’est pas le cas ou la taille est fixée à 1
-- Le pire cas n’a rien à avoir avec la complexité asymptotique
 
-</aside>
+- Le meilleur cas n’est pas le cas ou la taille est fixée à 1
+- Le pire cas n’a rien à avoir avec la complexité asymptotique
 
 ---
 
 ### Recursivité
 
-[Recursion](Recursion)
+[Recursion](sheets/recursion.md)
 
 - Récursivité simple : une fonction qui s’appel à elle-même
 - Récursivité croisée : F1 qui appelle F2 et F2 qui appelle F1
@@ -309,9 +301,9 @@ Comme dans le cas des boucles arithmétique, les boucles géométriques précéd
 
 ### Master Theorem
 
- **The Master Method is used for solving the following types of recurrence**
+ The Master Method is used for solving the following types of recurrence
 
-```
+```algorithm
 procedure T( n : size of problem ) defined as:
 If n < 1 then exit
 Do work of amount f(n)

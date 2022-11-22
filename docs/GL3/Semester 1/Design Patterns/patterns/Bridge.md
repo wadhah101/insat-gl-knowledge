@@ -10,7 +10,7 @@ Decoupling an abstraction from the implementation
 - It improves the extensibility.
 - It allows the hiding of implementation details from the client.
 
-### **Usage of Bridge Pattern**
+## **Usage of Bridge Pattern**
 
 - When you don't want a permanent binding between the functional abstraction and its implementation.
 - When both the functional abstraction and its implementation need to extended using sub-classes.

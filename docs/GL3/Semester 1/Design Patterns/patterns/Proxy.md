@@ -6,7 +6,7 @@ slug: /gl3/semester-1/design-patterns/patterns/proxy
 
 ![Proxy%207db54ce03ab74640a1c34f81116a9f91/Untitled.png](Proxy%207db54ce03ab74640a1c34f81116a9f91/Untitled.png)
 
-### Remote Proxy
+## Remote Proxy
 
  When we want to access something remotely (in a different server..)
 

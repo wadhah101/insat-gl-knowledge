@@ -12,7 +12,7 @@ when we have an algorithm that could have a more than a version  (Example : sort
 
 when the algorithm use data that client should not know
 
-### Diagram
+## Diagram
 
 ![Strategy%202fa8e244a3264c7daba35b15442345b1/Untitled.png](Strategy%202fa8e244a3264c7daba35b15442345b1/Untitled.png)
 

@@ -123,10 +123,4 @@ public void test()
 
 ### Order of execution
 
-![execution](assets/order_of_execution.PNG)
-
-<<<<<<< HEAD:docs/GL4/Software Quality/cheat-sheet.md
-=======
-
-![order_of_execution](assets/order_of_execution.png)
->>>>>>> 00e2ecc8061cf249bee71ac754648b4ea6bca30a:docs/GL4/Archived/Software Quality/cheat-sheet.md
+![execution](assets/order_of_execution.png)

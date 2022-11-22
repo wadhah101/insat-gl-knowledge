@@ -4,11 +4,11 @@ slug: /gl3/semester-1/design-patterns/patterns/builderpattern
 
 # Builder Pattern
 
-**"construct a complex object from simple objects using step-by-step approach"**
+"construct a complex object from simple objects using step-by-step approach"
 
 It is mostly used when object can't be created in single step like in the de-serialization of a complex object.
 
-### **Advantage of Builder Design Pattern**
+## Advantage of Builder Design Pattern
 
 The main advantages of Builder Pattern are as follows:
 
@@ -229,7 +229,7 @@ public class BuilderPatternDemo {
 }
 ```
 
-```
+```bash
 Veg Meal
 Item : Veg Burger, Packing : Wrapper, Price : 25.0
 Item : Coke, Packing : Bottle, Price : 30.0

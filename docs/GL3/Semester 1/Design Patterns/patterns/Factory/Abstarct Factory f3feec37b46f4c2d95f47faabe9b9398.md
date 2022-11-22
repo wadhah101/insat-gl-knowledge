@@ -8,7 +8,7 @@ slug: /gl3/semester-1/design-patterns/patterns/factory/abstarct-factory-f3feec37
 
 ![Abstarct%20Factory%20f3feec37b46f4c2d95f47faabe9b9398/Untitled%201.png](Abstarct%20Factory%20f3feec37b46f4c2d95f47faabe9b9398/Untitled%201.png)
 
-### Diagram
+## Diagram
 
 ![Abstarct%20Factory%20f3feec37b46f4c2d95f47faabe9b9398/Untitled%202.png](Abstarct%20Factory%20f3feec37b46f4c2d95f47faabe9b9398/Untitled%202.png)
 

@@ -8,14 +8,11 @@ Prototype design pattern is used to clone an existing object that is expensive t
 
 This pattern involves implementing a prototype interface which tells to create a clone of the current object. This pattern is used when creation of object directly is costly. For example, an object is to be created after a costly database operation. We can cache the object, returns its clone on next request and update the database as and when needed thus reducing database calls.
 
-<aside>
 📎 Cela peut être le cas d'un logiciel de DAO comportant un copier coller.
 L'utilisateur sélectionne un élément graphique (cercle, rectangle, ...), mais laclasse traitant la demande de copier coller ne connaît pas la classe exacte de l'élément à copier.
 ⇒ La solution est de disposer d'une duplication des instances (élément à copier : cercle, rectangle). La duplication peut être également intéressante pour les performances (la duplication est plus rapide que l'instanciation).
 
-</aside>
-
-### Example + implementation
+## Example + implementation
 
 We're going to create an abstract class Shape and concrete classes extending the Shape class. A class ShapeCache is defined as a next step which stores shape objects in a Hashtable and returns their clone when requested.
 

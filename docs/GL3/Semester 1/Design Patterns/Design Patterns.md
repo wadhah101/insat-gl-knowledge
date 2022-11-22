@@ -4,15 +4,15 @@ slug: /gl3/semester-1/design-patterns/design-patterns
 
 # Cheat sheet
 
-### Creational Pattern
+## Creational Pattern
 
-[Factory Pattern](patterns/Factory%20Pattern)
+[Factory Pattern](patterns/Factory.md)
 
-[Builder Pattern](patterns/BuilderPattern)
+[Builder Pattern](patterns/BuilderPattern.md)
 
 [Prototype](patterns/Prototype.md)
 
-[Singleton](patterns/singleton)
+[Singleton](patterns/Singleton.md)
 
 ### Structural Pattern
 

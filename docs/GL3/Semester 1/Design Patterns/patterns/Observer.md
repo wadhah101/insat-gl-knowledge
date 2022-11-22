@@ -4,14 +4,11 @@ slug: /gl3/semester-1/design-patterns/patterns/observer
 
 # Observer
 
-<aside>
 📎 Observer pattern is used when there is one-to-many relationship between objects such as if one object's state is modified, its depenedent objects are to be notified automatically.
-
-</aside>
 
 The same principal as the" Publish-Subscribe"
 
-### Diagram
+## Diagram
 
 ![Observer%208e53c169b4934f43b6f93b311a8a2429/Untitled.png](Observer%208e53c169b4934f43b6f93b311a8a2429/Untitled.png)
 

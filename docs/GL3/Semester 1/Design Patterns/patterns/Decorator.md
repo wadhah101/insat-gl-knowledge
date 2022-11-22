@@ -4,7 +4,7 @@ slug: /gl3/semester-1/design-patterns/patterns/decorator
 
 # Decorator
 
-### The Problem: what we want to do ?
+## The Problem: what we want to do ?
 
 We have a coffee house that serves these kinds of coffee, We need to add "mocha" and "whip" to our DarkRoast and we need to calculate all the cost
 

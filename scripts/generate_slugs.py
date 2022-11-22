@@ -2,7 +2,11 @@ from pathlib import Path
 import re
 import os
 
-result = Path("docs").glob("**/*.md")
+md = Path("docs").glob("**/*.md")
+mdx = Path("docs").glob("**/*.mdx")
+
+result = zip(md, mdx)
+
 
 has_meta_pattern = r"(---\n)([\S\s]*)(\n---)"
 
@@ -25,7 +29,8 @@ for i in result:
                 groups = list(meta_has_slug.groups())
                 groups[2] = f"slug: {slug}"
                 output = "".join(groups)
-                content_updated_slug = re.sub(meta_has_slug_pattern, output, content)
+                content_updated_slug = re.sub(
+                    meta_has_slug_pattern, output, content)
                 with open(i, "w") as f:
                     f.write(content_updated_slug)
         else:

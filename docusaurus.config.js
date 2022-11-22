@@ -29,6 +29,16 @@ const config = async () => {
     },
 
     plugins: [
+      [
+        "@docusaurus/plugin-ideal-image",
+        {
+          quality: 90,
+          max: 1080, // max resized image's size.
+          min: 640, // min resized image's size. if original is lower, use that size.
+          steps: 2, // the max number of images generated between min and max (inclusive)
+          disableInDev: false,
+        },
+      ],
       async function myPlugin(context, options) {
         return {
           name: "docusaurus-tailwindcss",

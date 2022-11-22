@@ -34,31 +34,32 @@ AbstractLogger.java
 
 ```java
 public abstract class AbstractLogger {
-   public static int INFO = 1;
-   public static int DEBUG = 2;
-   public static int ERROR = 3;
 
-   protected int level;
+  public static int INFO = 1;
+  public static int DEBUG = 2;
+  public static int ERROR = 3;
 
-   //next element in chain or responsibility
-   protected AbstractLogger nextLogger;
+  protected int level;
 
-   public void setNextLogger(AbstractLogger nextLogger){
-      this.nextLogger = nextLogger;
-   }
+  //next element in chain or responsibility
+  protected AbstractLogger nextLogger;
 
-   public void logMessage(int level, String message){
-      if(this.level <= level){
-         write(message);
-      }
-      if(nextLogger !=null){
-         nextLogger.logMessage(level, message);
-      }
-   }
+  public void setNextLogger(AbstractLogger nextLogger) {
+    this.nextLogger = nextLogger;
+  }
 
-   abstract protected void write(String message);
+  public void logMessage(int level, String message) {
+    if (this.level <= level) {
+      write(message);
+    }
+    if (nextLogger != null) {
+      nextLogger.logMessage(level, message);
+    }
+  }
 
+  protected abstract void write(String message);
 }
+
 ```
 
 ## Step 2
@@ -70,15 +71,16 @@ ConsoleLogger.java
 ```java
 public class ConsoleLogger extends AbstractLogger {
 
-   public ConsoleLogger(int level){
-      this.level = level;
-   }
+  public ConsoleLogger(int level) {
+    this.level = level;
+  }
 
-   @Override
-   protected void write(String message) {
-      System.out.println("Standard Console::Logger: " + message);
-   }
+  @Override
+  protected void write(String message) {
+    System.out.println("Standard Console::Logger: " + message);
+  }
 }
+
 ```
 
 ErrorLogger.java
@@ -86,15 +88,16 @@ ErrorLogger.java
 ```java
 public class ErrorLogger extends AbstractLogger {
 
-   public ErrorLogger(int level){
-      this.level = level;
-   }
+  public ErrorLogger(int level) {
+    this.level = level;
+  }
 
-   @Override
-   protected void write(String message) {
-      System.out.println("Error Console::Logger: " + message);
-   }
+  @Override
+  protected void write(String message) {
+    System.out.println("Error Console::Logger: " + message);
+  }
 }
+
 ```
 
 FileLogger.java
@@ -102,15 +105,16 @@ FileLogger.java
 ```java
 public class FileLogger extends AbstractLogger {
 
-   public FileLogger(int level){
-      this.level = level;
-   }
+  public FileLogger(int level) {
+    this.level = level;
+  }
 
-   @Override
-   protected void write(String message) {
-      System.out.println("File::Logger: " + message);
-   }
+  @Override
+  protected void write(String message) {
+    System.out.println("File::Logger: " + message);
+  }
 }
+
 ```
 
 ## Step 3
@@ -122,31 +126,34 @@ ChainPatternDemo.java
 ```java
 public class ChainPatternDemo {
 
-   private static AbstractLogger getChainOfLoggers(){
+  private static AbstractLogger getChainOfLoggers() {
+    AbstractLogger errorLogger = new ErrorLogger(AbstractLogger.ERROR);
+    AbstractLogger fileLogger = new FileLogger(AbstractLogger.DEBUG);
+    AbstractLogger consoleLogger = new ConsoleLogger(AbstractLogger.INFO);
 
-      AbstractLogger errorLogger = new ErrorLogger(AbstractLogger.ERROR);
-      AbstractLogger fileLogger = new FileLogger(AbstractLogger.DEBUG);
-      AbstractLogger consoleLogger = new ConsoleLogger(AbstractLogger.INFO);
+    errorLogger.setNextLogger(fileLogger);
+    fileLogger.setNextLogger(consoleLogger);
 
-      errorLogger.setNextLogger(fileLogger);
-      fileLogger.setNextLogger(consoleLogger);
+    return errorLogger;
+  }
 
-      return errorLogger;
-   }
+  public static void main(String[] args) {
+    AbstractLogger loggerChain = getChainOfLoggers();
 
-   public static void main(String[] args) {
-      AbstractLogger loggerChain = getChainOfLoggers();
+    loggerChain.logMessage(AbstractLogger.INFO, "This is an information.");
 
-      loggerChain.logMessage(AbstractLogger.INFO,
-         "This is an information.");
+    loggerChain.logMessage(
+      AbstractLogger.DEBUG,
+      "This is an debug level information."
+    );
 
-      loggerChain.logMessage(AbstractLogger.DEBUG,
-         "This is an debug level information.");
-
-      loggerChain.logMessage(AbstractLogger.ERROR,
-         "This is an error information.");
-   }
+    loggerChain.logMessage(
+      AbstractLogger.ERROR,
+      "This is an error information."
+    );
+  }
 }
+
 ```
 
 ## Step 4

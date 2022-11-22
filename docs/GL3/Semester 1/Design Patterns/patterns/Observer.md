@@ -28,7 +28,7 @@ notify method in weatherData calls the update method in observers classes
 
 ---
 
-the concrete observer is add as w subscriber to the subject  = register to a subject
+the concrete observer is add as w subscriber to the subject = register to a subject
 
 ![Observer%208e53c169b4934f43b6f93b311a8a2429/Untitled%201.png](Observer%208e53c169b4934f43b6f93b311a8a2429/Untitled%201.png)
 

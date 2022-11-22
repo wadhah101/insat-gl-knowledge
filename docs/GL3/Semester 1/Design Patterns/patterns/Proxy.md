@@ -8,7 +8,7 @@ slug: /gl3/semester-1/design-patterns/patterns/proxy
 
 ## Remote Proxy
 
- When we want to access something remotely (in a different server..)
+When we want to access something remotely (in a different server..)
 
 ![Proxy%207db54ce03ab74640a1c34f81116a9f91/Untitled%201.png](Proxy%207db54ce03ab74640a1c34f81116a9f91/Untitled%201.png)
 
@@ -24,7 +24,7 @@ example :
 
 ### Virtual proxy
 
-Control access to ressources that are expensive to create  so you put that proxy to control your intercations in order to create this object whenn you reaaaally need it
+Control access to ressources that are expensive to create so you put that proxy to control your intercations in order to create this object whenn you reaaaally need it
 
 ### Protection proxy
 

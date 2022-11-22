@@ -48,17 +48,7 @@ Algorithm that has running time O(log n) is slight faster than O(n). Commonly, a
 
 ![assets/what/Untitled1.png](assets/what/Untitled1.png)
 
-+-----------+--------------------+
-| Iteration  |     Value of M     |
-+-----------+--------------------+
-| 1         | n                  |
-| 2         | n/2                |
-| 3         | n/2^2              |
-| 4         | n/2^3              |
-| .         |  .                 |
-| .         |  .                 |
-| k         | n/2^k              |
-+-----------+--------------------+
++-----------+--------------------+ | Iteration | Value of M | +-----------+--------------------+ | 1 | n | | 2 | n/2 | | 3 | n/2^2 | | 4 | n/2^3 | | . | . | | . | . | | k | n/2^k | +-----------+--------------------+
 
 loop will run k times so that m>1.
 
@@ -153,9 +143,9 @@ Un algorithme est polynomial si pour un certain k> 0, son temps d'exécution sur
 
 la compexité est au maxium polynomiale
 
- Un algorithme est dit efficace si sa complexité asymptotique est dans O (P(n)) ou P(n) est une fonction polynomiale en fonction de donnée
+Un algorithme est dit efficace si sa complexité asymptotique est dans O (P(n)) ou P(n) est une fonction polynomiale en fonction de donnée
 
-un algorithme A est meilleur que B ssi : $t_A (n)=O(t_B (n))$  Et   $t_B (n) ≠O(t_A (n))$
+un algorithme A est meilleur que B ssi : $t_A (n)=O(t_B (n))$ Et $t_B (n) ≠O(t_A (n))$
 
 ### Algorithme NP-complet (wikipedia)
 
@@ -168,14 +158,14 @@ Un algorithme NP-complet est un problème de décision vérifiant les propriét�
 
 - Meilleur cas : Tmin(n)
 - Pire cas : Tmax(n)
-- Cas Moyen:  $Tmoy (n)= ∑^n _i 〖p_i*t(i)〗$: p probabilité
+- Cas Moyen: $Tmoy (n)= ∑^n _i 〖p_i*t(i)〗$: p probabilité
 
 ---
 
 ### Complexité asymptotique
 
 - Le décompte détaillé de nombre d’instruction peut être compliqué engendrant une expression qui nécessite une approximation. En plus le temps d’exécution des instructions élémentaires est différent d’une machine à une autre. Définition : La complexité asymptotique décrit le comportement d’un algorithme quand la taille de donnée n devient de plus en plus grande plus tout qu’une mesure exacte (sorte de ignorance des constante devant les termes variant en fonction de n)
-- **Grand – O** : soit T(n) une fonction non négative, elle est s’il existe deux constantes positive c et  $n_0$ telles que :
+- **Grand – O** : soit T(n) une fonction non négative, elle est s’il existe deux constantes positive c et $n_0$ telles que :
 
 ![assets/Summary/Untitled.png](assets/Summary/Untitled.png)
 
@@ -209,7 +199,7 @@ Un algorithme NP-complet est un problème de décision vérifiant les propriét�
 
 ### Divide and Conquer
 
-  Des algorithmes à structures récursives devisant le problème initial en des problèmes similaires de tailles moindres, les résoudre, puis les combiner pour résoudre le problème initial. (Diviser, Régner, Combiner)
+Des algorithmes à structures récursives devisant le problème initial en des problèmes similaires de tailles moindres, les résoudre, puis les combiner pour résoudre le problème initial. (Diviser, Régner, Combiner)
 
 Complexité:
 
@@ -217,7 +207,7 @@ $t(n)= a*t(n/b)+f(n)$
 
 a est le nombre d'appelavec la taille n/b
 
- f(n)est le cout de la combinaison
+f(n)est le cout de la combinaison
 
 Ainsi : si f(n)=θ(n^a ) avec a>0 alors
 
@@ -267,14 +257,14 @@ C temps de composition de la solution finale
 
 ### Normalisation des boucles
 
-**Boucle for arithmétique:** for (i=k; i<=n; i+=c)  ****
+**Boucle for arithmétique:** for (i=k; i<=n; i+=c) \*\*\*\*
 
 **Boucle for normalisée:** for (j=0; j<=nb-1; j++)
 
-- Le nombre d’itération de la boucle arithmétique est ($E((n-k)/c+1)$ si  $`k>n`$
+- Le nombre d’itération de la boucle arithmétique est ($E((n-k)/c+1)$ si $`k>n`$
 - En transformant on retranche une valeur ε de la borne sup de la boucle tel que
 
-La transformation de la boucle for (i = sup ; i inf ; i-= dec) en  for (i = inf ; i sup ; i+=dec) garde le même nombre d’itérations
+La transformation de la boucle for (i = sup ; i inf ; i-= dec) en for (i = inf ; i sup ; i+=dec) garde le même nombre d’itérations
 
 ```c
 i = sup ;
@@ -285,7 +275,7 @@ i-=dec ;
  }
 ```
 
-- est équivalente en nombre d’itérations à la boucle  `for (i = sup ; i inf ; i-= dec)`
+- est équivalente en nombre d’itérations à la boucle `for (i = sup ; i inf ; i-= dec)`
 
 (de même si on inverse sup est inf et on changeant la décrémentation en incrémentation)
 
@@ -295,13 +285,13 @@ i-=dec ;
 
 ![assets/Summary/Untitled%203.png](assets/Summary/Untitled%203.png)
 
-Comme dans le cas des boucles arithmétique, les boucles géométriques précédentes ont des équivalentes par  `while`  et `do while`
+Comme dans le cas des boucles arithmétique, les boucles géométriques précédentes ont des équivalentes par `while` et `do while`
 
 ![assets/Summary/Untitled%204.png](assets/Summary/Untitled%204.png)
 
 ### Master Theorem
 
- The Master Method is used for solving the following types of recurrence
+The Master Method is used for solving the following types of recurrence
 
 ```algorithm
 procedure T( n : size of problem ) defined as:
@@ -320,7 +310,7 @@ with a≥1
 
 b≥1 constant
 
- f(n)  function
+f(n) function
 
 Let T (n) is defined on non-negative integers by the recurrence.
 

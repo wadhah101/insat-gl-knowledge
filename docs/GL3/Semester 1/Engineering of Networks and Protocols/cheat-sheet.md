@@ -4,7 +4,7 @@ slug: /gl3/semester-1/engineering-of-networks-and-protocols/cheat-sheet
 
 # Cheat Sheet
 
-Autho [@wadhah101](https://github.com/wadhah101)
+Author [@wadhah101](https://github.com/wadhah101)
 
 ## conditions
 

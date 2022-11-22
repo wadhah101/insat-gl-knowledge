@@ -1,6 +1,6 @@
 # Factory Patterns
 
-# [Factory Method ](Factory/Factory%20Method%2047daf67e33d24e60a0a3df5312f09368.md)
+# [Factory Method](Factory/Factory%20Method%2047daf67e33d24e60a0a3df5312f09368.md)
 
 ![Factory/Untitled.png](Factory/Untitled.png)
 

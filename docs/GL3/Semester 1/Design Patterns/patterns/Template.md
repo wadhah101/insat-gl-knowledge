@@ -19,7 +19,7 @@ We still have different methods But they are actually similar : adding sugar and
 
 ![Template%2094028059c85b4f9381833677eb0e5bae/Untitled%203.png](Template%2094028059c85b4f9381833677eb0e5bae/Untitled%203.png)
 
-we can notice that the boilWater() and pourInCup() are not abstract because they have the same implementation in all subclasses 
+we can notice that the boilWater() and pourInCup() are not abstract because they have the same implementation in all subclasses
 
 If we have a method that could be exsiting in some classes and other not, all you have to do is declaring it as a concrete method with an empty body, this means that subclasses can override it but it is not an obligation : these methods called **hook**
 

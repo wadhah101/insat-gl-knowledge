@@ -1,9 +1,9 @@
 # command
 
-We have a client/invoker and a receiver 
+We have a client/invoker and a receiver
 With command pattern we want to encapsulate the **request.**
 
-⇒ so our command object is a group of actions 
+⇒ so our command object is a group of actions
 
 ### Inderstanding the process
 

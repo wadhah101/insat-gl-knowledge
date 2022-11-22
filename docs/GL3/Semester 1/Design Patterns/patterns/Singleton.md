@@ -2,7 +2,7 @@
 
 Make sure a class has only one instance, and provide a global access to it.
 
-Example : 
+Example :
 
 - A single window manager
 - a single point of access to a database

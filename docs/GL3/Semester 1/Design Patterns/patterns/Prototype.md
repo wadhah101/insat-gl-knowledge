@@ -1,6 +1,6 @@
 # Prototype
 
-Prototype design pattern is used to clone an existing object that is expensive to create 
+Prototype design pattern is used to clone an existing object that is expensive to create
 
 This pattern involves implementing a prototype interface which tells to create a clone of the current object. This pattern is used when creation of object directly is costly. For example, an object is to be created after a costly database operation. We can cache the object, returns its clone on next request and update the database as and when needed thus reducing database calls.
 
@@ -23,38 +23,38 @@ PrototypPatternDemo, our demo class will use ShapeCache class to get a Shape�
 
 ![https://www.tutorialspoint.com/design_pattern/images/prototype_pattern_uml_diagram.jpg](https://www.tutorialspoint.com/design_pattern/images/prototype_pattern_uml_diagram.jpg)
 
-The shapeclass is implementing the Cloneable interface 
+The shapeclass is implementing the Cloneable interface
 
 ```java
 public abstract class Shape implements Cloneable {
-   
+
    private String id;
    protected String type;
-   
+
    abstract void draw();
-   
+
    public String getType(){
       return type;
    }
-   
+
    public String getId() {
       return id;
    }
-   
+
    public void setId(String id) {
       this.id = id;
    }
-   
+
    public Object clone() {
       Object clone = null;
-      
+
       try {
          clone = super.clone();
-         
+
       } catch (CloneNotSupportedException e) {
          e.printStackTrace();
       }
-      
+
       return clone;
    }
 }
@@ -64,7 +64,7 @@ public abstract class Shape implements Cloneable {
 import java.util.Hashtable;
 
 public class ShapeCache {
-	
+
    private static Hashtable<String, Shape> shapeMap  =
  new Hashtable<String, Shape>();
 
@@ -77,7 +77,7 @@ public class ShapeCache {
    // for each shape run database query and create shape
    // shapeMap.put(shapeKey, shape);
    // for example, we are adding three shapes
-   
+
    public static void loadCache() {
       Circle circle = new Circle();
       circle.setId("1");
@@ -100,13 +100,13 @@ public class PrototypePatternDemo {
       ShapeCache.loadCache();
 
       Shape clonedShape = (Shape) ShapeCache.getShape("1");
-      System.out.println("Shape : " + clonedShape.getType());		
+      System.out.println("Shape : " + clonedShape.getType());
 
       Shape clonedShape2 = (Shape) ShapeCache.getShape("2");
-      System.out.println("Shape : " + clonedShape2.getType());		
+      System.out.println("Shape : " + clonedShape2.getType());
 
       Shape clonedShape3 = (Shape) ShapeCache.getShape("3");
-      System.out.println("Shape : " + clonedShape3.getType());		
+      System.out.println("Shape : " + clonedShape3.getType());
    }
 }
 ```

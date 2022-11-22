@@ -2,7 +2,7 @@
 
 Access the elements of an aggregate object sequentially without exposing its underlying implementation
 
-Probelm : in a restaurant we have 2 kind of menu that have different implementation 
+Probelm : in a restaurant we have 2 kind of menu that have different implementation
 
 ![Iterator%20272f6a5833af4d87b7b730549c327049/Untitled.png](Iterator%20272f6a5833af4d87b7b730549c327049/Untitled.png)
 

@@ -1,6 +1,6 @@
 # Flyweight
 
-Flyweight pattern tries to reuse already existing similar kind objects by storing them and creates new object when no matching object is found. 
+Flyweight pattern tries to reuse already existing similar kind objects by storing them and creates new object when no matching object is found.
 
 We will demonstrate this pattern by drawing 20 circles of different locations but we will create only 5 objects. Only 5 colors are available so color property is used to check already existing Circle objects.
 

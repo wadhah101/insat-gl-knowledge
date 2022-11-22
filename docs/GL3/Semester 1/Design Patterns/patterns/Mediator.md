@@ -7,8 +7,6 @@ A Mediator Pattern says that "to define an object that encapsulates how a set of
 
 </aside>
 
- 
-
 ![Mediator%20ea7b25c7963947cdb2e63ab4c93e3137/Untitled.png](Mediator%20ea7b25c7963947cdb2e63ab4c93e3137/Untitled.png)
 
 ### Example

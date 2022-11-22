@@ -16,7 +16,7 @@
 
 [Adapter](patterns/Adapter.md)
 
-[Facade ](patterns/Facade.md)
+[Facade](patterns/Facade.md)
 
 [Composite](patterns/Composite.md)
 
@@ -28,7 +28,7 @@
 
 ### Behavioral Pattern
 
-[Template ](patterns/Template.md)
+[Template](patterns/Template.md)
 
 [State](patterns/State.md)
 
@@ -40,11 +40,10 @@
 
 [command](patterns/command.md)
 
-[Visitor ](patterns/Visitor.md)
+[Visitor](patterns/Visitor.md)
 
 [Iterator](patterns/Iterator.md)
 
 [Memento](patterns/Memento.md)
 
 [Mediator](patterns/Mediator.md)
-

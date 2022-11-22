@@ -1,6 +1,6 @@
 # Chain of Responsibility
 
-**Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request.** 
+**Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request.**
 
 **Chain the receiving objects and pass the request along the chain until an object handles it.**
 
@@ -53,7 +53,7 @@ public abstract class AbstractLogger {
    }
 
    abstract protected void write(String message);
-	
+
 }
 ```
 
@@ -71,7 +71,7 @@ public class ConsoleLogger extends AbstractLogger {
    }
 
    @Override
-   protected void write(String message) {		
+   protected void write(String message) {
       System.out.println("Standard Console::Logger: " + message);
    }
 }
@@ -87,7 +87,7 @@ public class ErrorLogger extends AbstractLogger {
    }
 
    @Override
-   protected void write(String message) {		
+   protected void write(String message) {
       System.out.println("Error Console::Logger: " + message);
    }
 }
@@ -103,7 +103,7 @@ public class FileLogger extends AbstractLogger {
    }
 
    @Override
-   protected void write(String message) {		
+   protected void write(String message) {
       System.out.println("File::Logger: " + message);
    }
 }
@@ -117,7 +117,7 @@ ChainPatternDemo.java
 
 ```
 public class ChainPatternDemo {
-	
+
    private static AbstractLogger getChainOfLoggers(){
 
       AbstractLogger errorLogger = new ErrorLogger(AbstractLogger.ERROR);
@@ -127,19 +127,19 @@ public class ChainPatternDemo {
       errorLogger.setNextLogger(fileLogger);
       fileLogger.setNextLogger(consoleLogger);
 
-      return errorLogger;	
+      return errorLogger;
    }
 
    public static void main(String[] args) {
       AbstractLogger loggerChain = getChainOfLoggers();
 
-      loggerChain.logMessage(AbstractLogger.INFO, 
+      loggerChain.logMessage(AbstractLogger.INFO,
          "This is an information.");
 
-      loggerChain.logMessage(AbstractLogger.DEBUG, 
+      loggerChain.logMessage(AbstractLogger.DEBUG,
          "This is an debug level information.");
 
-      loggerChain.logMessage(AbstractLogger.ERROR, 
+      loggerChain.logMessage(AbstractLogger.ERROR,
          "This is an error information.");
    }
 }

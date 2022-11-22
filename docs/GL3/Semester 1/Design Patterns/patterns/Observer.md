@@ -5,7 +5,7 @@
 
 </aside>
 
-The same principal as the" Publish-Subscribe" 
+The same principal as the" Publish-Subscribe"
 
 ### Diagram
 
@@ -23,7 +23,7 @@ these three are our observer concrete classes
 
 so the weather data class should notify all the observers each time it has a new state
 
-notify method in weatherData calls the update method in observers classes  
+notify method in weatherData calls the update method in observers classes
 
 ---
 

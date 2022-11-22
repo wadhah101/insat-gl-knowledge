@@ -22,7 +22,7 @@
 
 ![Factory%20Method%2047daf67e33d24e60a0a3df5312f09368/Untitled%204.png](Factory%20Method%2047daf67e33d24e60a0a3df5312f09368/Untitled%204.png)
 
-**Pizza store subclasses** 
+**Pizza store subclasses**
 
 ![Factory%20Method%2047daf67e33d24e60a0a3df5312f09368/Untitled%205.png](Factory%20Method%2047daf67e33d24e60a0a3df5312f09368/Untitled%205.png)
 

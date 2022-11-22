@@ -6,10 +6,10 @@ slug: /gl3/semester-1/complexity-theory/cheat-sheet
 
 Author [@rihemebh](https://github.com/rihemebh)
 
-
 ## Time Complexity
 
-### Introduction ? 
+### Introduction ?
+
 <aside>
 💡 The time complexity of an algorithm is the total amount of time required by an algorithm to complete its execution.
 
@@ -54,11 +54,11 @@ Algorithm that has running time O(log n) is slight faster than O(n). Commonly, a
 
 ```
 +-----------+--------------------+
-| Iteration  |     Value of M     |        
+| Iteration  |     Value of M     |
 +-----------+--------------------+
-| 1         | n                  | 
+| 1         | n                  |
 | 2         | n/2                |
-| 3         | n/2^2              | 
+| 3         | n/2^2              |
 | 4         | n/2^3              |
 | .         |  .                 |
 | .         |  .                 |
@@ -98,7 +98,7 @@ For example Bubble Sort algorithm, in other words, a loop inside a loop :
 
 ```c
 for(i=0; i < N; i++) {
-  for(j=0; j < N;j++) { 
+  for(j=0; j < N;j++) {
     statement;
   }
 }
@@ -145,10 +145,7 @@ def heap_permutation(data, n):
 
 ![assets/what/Untitled%203.png](assets/what/Untitled3.png)
 
-
-
 ## Cours Complexité (robbena)
-
 
 ### Algorithme
 
@@ -158,7 +155,7 @@ Un ensemble d’instructions qui transforme un ensemble de données en un ensemb
 
 Un algorithme est polynomial si pour un certain k> 0, son temps d'exécution sur les entrées de taille n est O ($n ^ k$). Cela inclut linéaire, quadratique, cubique et plus. D'un autre côté, les algorithmes à temps d'exécution exponentiel ne sont pas polynomiaux.
 
-### Algorithme efficace 
+### Algorithme efficace
 
 la compexité est au maxium polynomiale
 
@@ -167,6 +164,7 @@ la compexité est au maxium polynomiale
 un algorithme A est meilleur que B ssi : $t_A (n)=O(t_B (n))$  Et   $t_B (n) ≠O(t_A (n))$
 
 ### Algorithme NP-complet (wikipedia)
+
 Un algorithme NP-complet est un problème de décision vérifiant les propriétés suivantes :
 
 - il est possible de vérifier une solution efficacement (en temps polynomial) ; la classe des problèmes vérifiant cette propriété est notée NP ;
@@ -194,8 +192,8 @@ Un algorithme NP-complet est un problème de décision vérifiant les propriét�
 - **Grand – θ** : pour une fonction T(n) no négative si son grand – O et son grand - Ω coïncide alors on parle d’un Grand – θ
 
 <aside>
-📎 Remarques : 
- - Le meilleur cas n’est pas le cas ou la taille est fixée à 1 
+📎 Remarques :
+ - Le meilleur cas n’est pas le cas ou la taille est fixée à 1
 - Le pire cas n’a rien à avoir avec la complexité asymptotique
 
 </aside>
@@ -223,7 +221,7 @@ Un algorithme NP-complet est un problème de décision vérifiant les propriét�
 
 Complexité:
 
-$t(n)= a*t(n/b)+f(n)$ 
+$t(n)= a*t(n/b)+f(n)$
 
 a est le nombre d'appelavec la taille n/b
 
@@ -250,8 +248,10 @@ T temps de resoudre probleme
 C temps de composition de la solution finale
 
 ---
+
 ### Simplification
-### Les regles :
+
+### Les regles
 
 ![assets/Simplification/Untitled.png](assets/Simplification/Untitled.png)
 
@@ -261,7 +261,7 @@ C temps de composition de la solution finale
 
 ![assets/Simplification/Untitled%203.png](assets/Simplification/Untitled%203.png)
 
-### Pour calculer la complexité d'un algorithme :
+### Pour calculer la complexité d'un algorithme
 
 ![assets/Simplification/Untitled%204.png](assets/Simplification/Untitled%204.png)
 
@@ -272,6 +272,7 @@ C temps de composition de la solution finale
 ![assets/Simplification/Untitled%206.png](assets/Simplification/Untitled%206.png)
 
 ![assets/Simplification/Untitled%207.png](assets/Simplification/Untitled%207.png)
+
 ### Normalisation des boucles
 
 **Boucle for arithmétique:** for (i=k; i<=n; i+=c)  ****
@@ -285,9 +286,9 @@ La transformation de la boucle for (i = sup ; i inf ; i-= dec) en  for (i = in
 
 ```c
 i = sup ;
- while (i > inf) 
+ while (i > inf)
 {
- //instructions ne modifiant ni inf ni sup ni dec ; 
+ //instructions ne modifiant ni inf ni sup ni dec ;
 i-=dec ;
  }
 ```
@@ -302,15 +303,13 @@ i-=dec ;
 
 ![assets/Summary/Untitled%203.png](assets/Summary/Untitled%203.png)
 
-Comme dans le cas des boucles arithmétique, les boucles géométriques précédentes ont des équivalentes par  `while`  et `do while` 
+Comme dans le cas des boucles arithmétique, les boucles géométriques précédentes ont des équivalentes par  `while`  et `do while`
 
 ![assets/Summary/Untitled%204.png](assets/Summary/Untitled%204.png)
-
 
 ### Master Theorem
 
  **The Master Method is used for solving the following types of recurrence**
-
 
 ```
 procedure T( n : size of problem ) defined as:
@@ -323,12 +322,11 @@ T(n/b)
 end procedure**
 ```
 
+⇒ **T (n) = a T (n/b) + f (n)**
 
-⇒ **T (n) = a T (n/b) + f (n)** 
+with a≥1
 
-with a≥1 
-
-b≥1 constant 
+b≥1 constant
 
  f(n)  function
 
@@ -338,6 +336,7 @@ Let T (n) is defined on non-negative integers by the recurrence.
 - a is the number of sub problems in the recursion. (nb appel de la fonction)
 - n/b is the size of each sub problem. (Here it is assumed that all sub problems are essentially the same size.)
 - f (n) is the time to create the sub problems and combine their results in the above procedure
+
 ## Complexity
 
 ![assets/MasterTheorem/Untitled.png](assets/MasterTheorem/Untitled.png)
@@ -355,10 +354,7 @@ The master theorem cannot be used if:
 - a is not a constant. eg. `a = 2n`
 - `a < 1`
 
-
-
 ## Useful Videos / playlist
 
-- https://www.youtube.com/channel/UCZCFT11CWBi3MHNlGf019nw
-- https://www.youtube.com/watch?v=2H0GKdrIowU&ab_channel=Rman
-
+- <https://www.youtube.com/channel/UCZCFT11CWBi3MHNlGf019nw>
+- <https://www.youtube.com/watch?v=2H0GKdrIowU&ab_channel=Rman>

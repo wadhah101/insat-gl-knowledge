@@ -1,11 +1,12 @@
 from pathlib import Path
 import re
 import os
+import itertools
 
 md = Path("docs").glob("**/*.md")
 mdx = Path("docs").glob("**/*.mdx")
 
-result = zip(md, mdx)
+result = itertools.chain(md, mdx)
 
 
 has_meta_pattern = r"(---\n)([\S\s]*)(\n---)"

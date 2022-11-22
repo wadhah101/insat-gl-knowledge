@@ -1,5 +1,5 @@
 ---
-slug: /gl3/semester-1/design-patterns/patterns/factory-pattern
+slug: /gl3/semester-1/design-patterns/patterns/factory
 ---
 
 # Factory Patterns

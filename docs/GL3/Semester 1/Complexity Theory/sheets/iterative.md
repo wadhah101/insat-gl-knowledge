@@ -1,5 +1,5 @@
 ---
-slug: /gl3/semester-1/complexity-theory/complexity-theory/iterative
+slug: /gl3/semester-1/complexity-theory/sheets/iterative
 ---
 
 # Iterative Algorithms

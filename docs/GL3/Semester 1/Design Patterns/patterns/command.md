@@ -4,8 +4,7 @@ slug: /gl3/semester-1/design-patterns/patterns/command
 
 # command
 
-We have a client/invoker and a receiver
-With command pattern we want to encapsulate the **request.**
+We have a client/invoker and a receiver With command pattern we want to encapsulate the **request.**
 
 ⇒ so our command object is a group of actions
 

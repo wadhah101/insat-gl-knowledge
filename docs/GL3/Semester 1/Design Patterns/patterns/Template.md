@@ -6,7 +6,7 @@ slug: /gl3/semester-1/design-patterns/patterns/template
 
 ## Let's understand
 
-💡  tea and coffee are made in very **SIMILAR** way: they follow the same preparation algorithm: boil water pourIncup brew coffee grind add sugar and milk
+💡 tea and coffee are made in very **SIMILAR** way: they follow the same preparation algorithm: boil water pourIncup brew coffee grind add sugar and milk
 
 ![Template%2094028059c85b4f9381833677eb0e5bae/Untitled.png](Template%2094028059c85b4f9381833677eb0e5bae/Untitled.png)
 

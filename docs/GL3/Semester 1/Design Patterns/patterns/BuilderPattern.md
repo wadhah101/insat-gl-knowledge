@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/builderpattern
+---
+
 # Builder Pattern
 
 **"construct a complex object from simple objects using step-by-step approach"**

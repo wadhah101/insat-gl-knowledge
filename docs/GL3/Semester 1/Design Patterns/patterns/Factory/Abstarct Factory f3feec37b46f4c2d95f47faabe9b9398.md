@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/factory/abstarct-factory-f3feec37b46f4c2d95f47faabe9b9398
+---
+
 # Abstarct Factory
 
 ![Abstarct%20Factory%20f3feec37b46f4c2d95f47faabe9b9398/Untitled.png](Abstarct%20Factory%20f3feec37b46f4c2d95f47faabe9b9398/Untitled.png)

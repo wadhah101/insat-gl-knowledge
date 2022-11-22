@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/command
+---
+
 # command
 
 We have a client/invoker and a receiver
@@ -31,13 +35,9 @@ on() = action
 
 ![command%2013b7509dad9c43e8aea420df9a48ef90/Untitled%203.png](command%2013b7509dad9c43e8aea420df9a48ef90/Untitled%203.png)
 
----
-
 ### The invoker
 
 ![command%2013b7509dad9c43e8aea420df9a48ef90/Untitled%204.png](command%2013b7509dad9c43e8aea420df9a48ef90/Untitled%204.png)
-
----
 
 ### Test
 

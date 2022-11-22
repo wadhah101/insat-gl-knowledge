@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/memento
+---
+
 # Memento
 
 A Memento Pattern says that "to restore the state of an object to its previous state". But it must do this without violating Encapsulation. Such case is useful in case of error or failure.

@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/bridge
+---
+
 # Bridge
 
 Decoupling an abstraction from the implementation

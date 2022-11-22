@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/mediator
+---
+
 # Mediator
 
 A Mediator Pattern says that "to define an object that encapsulates how a set of objects interact".

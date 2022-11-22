@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/template
+---
+
 # Template
 
 ### Let's understand

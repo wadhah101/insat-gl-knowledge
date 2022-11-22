@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/prototype
+---
+
 # Prototype
 
 Prototype design pattern is used to clone an existing object that is expensive to create
@@ -11,11 +15,7 @@ L'utilisateur sélectionne un élément graphique (cercle, rectangle, ...), mais
 
 </aside>
 
----
-
 ### Example + implementation
-
----
 
 We're going to create an abstract class Shape and concrete classes extending the Shape class. A class ShapeCache is defined as a next step which stores shape objects in a Hashtable and returns their clone when requested.
 

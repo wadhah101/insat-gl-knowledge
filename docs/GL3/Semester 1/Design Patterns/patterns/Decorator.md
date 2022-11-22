@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/decorator
+---
+
 # Decorator
 
 ### The Problem: what we want to do ?

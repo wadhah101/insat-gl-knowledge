@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/flyweight
+---
+
 # Flyweight
 
 Flyweight pattern tries to reuse already existing similar kind objects by storing them and creates new object when no matching object is found.

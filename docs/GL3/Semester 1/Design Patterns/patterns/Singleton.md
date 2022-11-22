@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/singleton
+---
+
 # Singleton
 
 Make sure a class has only one instance, and provide a global access to it.

@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/iterator
+---
+
 # Iterator
 
 Access the elements of an aggregate object sequentially without exposing its underlying implementation

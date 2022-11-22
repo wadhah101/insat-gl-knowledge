@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/factory-pattern
+---
+
 # Factory Patterns
 
 # [Factory Method](Factory/Factory%20Method%2047daf67e33d24e60a0a3df5312f09368.md)

@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/chainofresponsibility
+---
+
 # Chain of Responsibility
 
 **Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request.**

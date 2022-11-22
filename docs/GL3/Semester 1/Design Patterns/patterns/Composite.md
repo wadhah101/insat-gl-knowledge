@@ -1,3 +1,7 @@
+---
+slug: /gl3/semester-1/design-patterns/patterns/composite
+---
+
 # Composite
 
 A composit object means an object that made up of multiple objects

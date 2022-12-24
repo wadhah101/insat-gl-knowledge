@@ -1,5 +1,5 @@
 ---
-slug: /gl5/pfe/readme
+slug: /gl5/pfe/motivation
 ---
 
 # Motivation

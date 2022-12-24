@@ -2,6 +2,8 @@
 slug: /gl5/semester-1/deep-learning/linear-reg
 ---
 
+__Author__: [@hajali-amine](https://github.com/hajali-amine)
+
 # Linear Regression
 
 4 things to take in consideration:

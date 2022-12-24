@@ -117,9 +117,7 @@ the relationship between them.
 
 - every layer should only connect with only the next layer
 
-
 Example OSI Model
-
 
 ### MV* Architecture
 
@@ -181,8 +179,7 @@ smart endpoints
 
 It is generally used in enterprises  where every department has its own Broker + one centrelized
 
-
-#### Pros 
+#### Pros
 
 - Could be used as MOM (only transfer data)
 
@@ -243,7 +240,6 @@ Data Passive
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%2010.png)
 
 Services independants : le seul moyen de communication c’est la base données
-
 
 #### Pros
 

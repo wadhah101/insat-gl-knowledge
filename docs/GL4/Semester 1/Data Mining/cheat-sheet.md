@@ -109,10 +109,7 @@ KDD knowledge discovery process is iterative and interactive, comprises of nine 
 | -------- | ------------------- |
 | Features | predictor variables |
 | Class    | Target variable     |
-
-response variable | | Overfitting | e talk about overfitting when a model has learned too much the particularities of each of the examples provided as an example. It then presents a very high success rate on the training data (which can reach up to 100%), but does not generalize well (less good performance on the test data). | | Underfitting | An algorithm that does not learn enough from the learning phase (poor performance on the training set) | | Positive | We consider the positive is the less recent case in other words what our task is searching for
-
-Example: if our task is to pridict the spam emails so the positive is an email is spam | | Negative | The more recent case: which is generally the normal case | | True and False positive **TP & FP** | When the model correctly predicts the positive: **_True positive_**, else it is called: **_False positive_** | | True and False negative **TN & FN** | When the model correctly predicts the negative : **_True negative_**, else it is called **_False negative_** |
+| Overfitting | we talk about overfitting when a model has learned too much the particularities of each of the examples provided as an example. It then presents a very high success rate on the training data (which can reach up to 100%), but does not generalize well (less good performance on the test data). | | Underfitting | An algorithm that does not learn enough from the learning phase (poor performance on the training set) | | Positive | We consider the positive is the less recent case in other words what our task is searching for Example: if our task is to pridict the spam emails so the positive is an email is spam | | Negative | The more recent case: which is generally the normal case | | True and False positive **TP & FP** | When the model correctly predicts the positive: **_True positive_**, else it is called: **_False positive_** | | True and False negative **TN & FN** | When the model correctly predicts the negative : **_True negative_**, else it is called **_False negative_** |
 
 ## Supervised Learning
 
@@ -133,7 +130,6 @@ We need an expert at the begining to put the correct labels on data.
 ### Libraries to use
 
 - scikit-learn/sklearn
-- TensorFlow
 - keras
 
 ### Decision Tree

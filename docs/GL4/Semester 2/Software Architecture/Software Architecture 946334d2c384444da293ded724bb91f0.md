@@ -1,10 +1,10 @@
-# Software Architecture 
+# Software Architecture
 
 ## Non Functional Requirements
 
 ### **Maintenabilité**
 
-La qualité de se tordre facilement sans se briser 
+La qualité de se tordre facilement sans se briser
 
 quand on a un probleme c’est facile a le maintenir (pas de probleme en cascade)
 
@@ -36,7 +36,7 @@ A quel point est-il facile d'apprendre à utiliser le système?
 
 La facilité avec laquelle le système peut changer
 
- → LE SYSTEME EST FACILE A CHANGER 
+ → LE SYSTEME EST FACILE A CHANGER
 
 ### **Portabilité**
 
@@ -72,9 +72,13 @@ En termes simples, la **disponibilité** est une mesure du pourcentage de temps
 - like connecting to linux via terminal : you are just asking for service without giving any logic
 - the mainframe machine is performante and could execute complex operations
 
-**pros** :  High security, role and privilege managing 
+#### Pros
 
-**cons** : disponibilite (coz all the cherge is on it)  SPOF
+High security, role and privilege managing
+
+#### Cons
+
+disponibilite (coz all the cherge is on it)  SPOF
 
 ### Client / Server
 
@@ -82,19 +86,23 @@ En termes simples, la **disponibilité** est une mesure du pourcentage de temps
 
 - Here the client could execute some logic
 
-**pros**: performance 
+#### Pros: performance
 
-control but not too much 
+control but not too much
 
-**cons**: SPOF
+#### Cons: SPOF
 
 ### Layered architecture
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%202.png)
 
-**pros**  : simple , separation of concerns 
+#### Pros
 
-**cons** : performance , layered are highly coupled
+simple , separation of concerns
+
+#### Cons
+
+performance , layered are highly coupled
 
 Components with similar functionalities are organized into horizontal layers. As a result, each layer performs a specific role within the application.
 
@@ -105,13 +113,12 @@ providing enough detail to understand the roles and responsibilities of individu
 the relationship between them.
 
 - every layer should only connect with only the next layer
-    
+
     Example OSI Model
-    
 
 ### MV* Architecture
 
-. MV* is motivated by the **[separation of concerns (SoC)](https://en.wikipedia.org/wiki/Separation_of_concerns)** 
+. MV* is motivated by the **[separation of concerns (SoC)](https://en.wikipedia.org/wiki/Separation_of_concerns)**
 design principle as it splits up the application into three main components and defines how the components interact. This reduces the coupling between components and allows each component to be independently developed, tested, modified, reused and scaled.
 
 MVP, MVC, MVVM
@@ -145,11 +152,11 @@ source : [https://yuejunphua.medium.com/mv-architecture-explained-3051660c7590](
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%206.png)
 
-stupid communication 
+stupid communication
 
-smart endpoints 
+smart endpoints
 
-**pros** 
+#### pros
 
 - reutilisabilité
 - modularité disponibilité
@@ -158,7 +165,7 @@ smart endpoints
 - versionning
 - scalabilité
 
-**cons** 
+#### cons
 
 - complexité
 - sync entre ms ( on peut ajouter un service de synch )
@@ -167,28 +174,29 @@ smart endpoints
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%207.png)
 
-It is generally used in enterprises  where every department has its own Broker + one centrelized 
+It is generally used in enterprises  where every department has its own Broker + one centrelized
 
 - Could be used as MOM (only transfer data)
-    
+
     ++ asynchronous communication
-    
+
     ++ gestion des pannes
-    
+
 - Or as middleware which is more intelligent
-    
+
      ++ security (works as firewall): access control
-    
+
     ++ data transformation
-    
-    ++ decoupling 
-    
+
+    ++ decoupling
+
     ++ service aggregation
-    
+
     ++ Interoperability (the ability to work and adapt with other system and machines)
-    
-    **Cons**: Performance, SPOF
-    
+
+#### Cons
+
+    Performance, SPOF
 
 ### Master-worker
 
@@ -196,14 +204,14 @@ It is generally used in enterprises  where every department has its own Broker +
 
 Master-Worker architecture is a generic parallel design that is used in order to break down big computational problems into smaller independent tasks that can be solved in parallel. The way it works is by having the master as the core machine in control to assign tasks to the workers which they complete them independently and return back the results
 
-**Pros**: 
+#### Pros
 
 - Parallelisme
 - security (master)
 - availability
 - adabtability
 
-**Cons**
+#### Cons
 
 - SPOF
 - Security (multiple machines- distributed system)
@@ -212,34 +220,34 @@ Master-Worker architecture is a generic parallel design that is used in order to
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%209.png)
 
-**Pros :** 
+#### Pros
 
 - Separation of concerns
 - Reuse
 - Adaptability with the processing type
 
-**Cons:** 
+#### Cons
 
 - Machine are highly coupled for the same job
 - Complexity : connection of multiple technologies
 
-# Data centric architecture
+## Data centric architecture
 
 ### Repository
 
-Data Passive 
+Data Passive
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%2010.png)
 
-Services independants : le seul moyen de communication c’est la base données 
+Services independants : le seul moyen de communication c’est la base données
 
-**Pros**: 
+#### Pros
 
 - Modifiabilité
 - Maintabilité
 - granularity service : reuse
 
-**Cons**: 
+#### Cons
 
 - plusieurs services accedant ala BDs
 - SPOF
@@ -251,18 +259,18 @@ If there is congestion in a place, **the place is extremely crowded and blocked
 
 ### Black board
 
-Data Active 
+Data Active
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%2011.png)
 
-**Pros**
+#### Pros
 
 - Security
 - Performance
 - reuse
 - modifiability
 
-**Cons** 
+#### Cons
 
 - Complexity ( traitement de données au niveau de la bd )
 - complexity bd design
@@ -286,7 +294,7 @@ and independent. Each has its own set of working procedures or rules and each ha
 own private data structure. It contains information necessary for a correct run of the
 knowledge source. The action part of a knowledge source performs the actual problem
 solving and produces changes to the BB. It can allow for different kinds of knowledge
-representation and different inference mechanisms. 
+representation and different inference mechanisms.
 
 **Blackboard**
 
@@ -298,14 +306,14 @@ handle communications between the KSs
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%2012.png)
 
-**Pros** 
+#### Pros
 
 - testability
 - flexibility, portability, reutilisability
 - conformité avec DDD
 - dependance vers le centre
 
-**Cons**
+#### Cons
 
 - complexity
 - trops d’interface
@@ -328,15 +336,15 @@ Again, this is an evolution in further segregating responsibilities, providing f
 
 independante des framework , bd , ui
 
-**pros** 
+#### Pros
 
 testability
 
 maintability
 
-**cons** : 
+#### Cons
 
-complexity 
+complexity
 
 La *clean architecture*
  permet de construire des applications bien structurées, chaque partie ayant un périmètre et un rôle bien défini. Le code est découplé de détails comme les *frameworks*, les bases de données. Il n'est pas obligatoire d'implémenter toutes les couches de la figure. Il faut néanmoins une couche pour les fonctionnalités métiers (*use cases*) et une couche pour les adaptateurs d'interface (*adapters interface*). Des outils comme le *framework* utilisé ou la base de données, sont des détails. Ils sont situés dans une couche supérieure. Les couches supérieures peuvent avoir des dépendances dans les couches inférieures, mais les couches inférieures ne doivent pas avoir des dépendances, des références dans les couches supérieures.

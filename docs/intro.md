@@ -15,7 +15,7 @@ You can find different resources that may be helpful for your studies. Select yo
 
 In case you want to contribute / report an issue, please do it here:
 
-https://github.com/wadhah101/insat-gl-knowledge
+<https://github.com/wadhah101/insat-gl-knowledge>
 
 ## FAQ
 

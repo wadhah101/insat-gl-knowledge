@@ -72,11 +72,11 @@ En termes simples, la **disponibilité** est une mesure du pourcentage de temps
 - like connecting to linux via terminal : you are just asking for service without giving any logic
 - the mainframe machine is performante and could execute complex operations
 
-#### Pros
+#### MainFrame - Pros
 
 High security, role and privilege managing
 
-#### Cons
+#### MainFrame- Cons
 
 disponibilite (coz all the cherge is on it)  SPOF
 
@@ -86,12 +86,12 @@ disponibilite (coz all the cherge is on it)  SPOF
 
 - Here the client could execute some logic
 
-#### Pros
+#### Client / Server - Pros
 
 performance
 control but not too much
 
-#### Cons
+#### Client / Server - Cons
 
 SPOF
 
@@ -99,25 +99,21 @@ SPOF
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%202.png)
 
-#### Pros
+Components with similar functionalities are organized into horizontal layers. As a result, each layer performs a specific role within the application.
+
+- The layered architecture style does not have a restriction on the number of layers that the application can have, as the purpose is to have layers that promote the concept of **separation of concerns**. The layered architecture style abstracts the view ofthe system as a whole while providing enough detail to understand the roles and responsibilities of individual layers and the relationship between them.
+
+- Every layer should be only connected with the next layer
+
+Example OSI Model
+
+#### Layered architecture - Pros
 
 simple , separation of concerns
 
-#### Cons
+#### Layered architecture - Cons
 
 performance , layered are highly coupled
-
-Components with similar functionalities are organized into horizontal layers. As a result, each layer performs a specific role within the application.
-
-The layered architecture style does not have a restriction on the number of layers that the
-application can have, as the purpose is to have layers that promote the concept of separation of
-concerns. The layered architecture style abstracts the view ofthe system as a whole while
-providing enough detail to understand the roles and responsibilities of individual layers and
-the relationship between them.
-
-- every layer should only connect with only the next layer
-
-Example OSI Model
 
 ### MV* Architecture
 
@@ -159,7 +155,7 @@ stupid communication
 
 smart endpoints
 
-#### pros
+#### Microservices - Pros
 
 - reutilisabilité
 - modularité disponibilité
@@ -168,7 +164,7 @@ smart endpoints
 - versionning
 - scalabilité
 
-#### cons
+#### Microservices - Cons
 
 - complexité
 - sync entre ms ( on peut ajouter un service de synch )
@@ -179,7 +175,7 @@ smart endpoints
 
 It is generally used in enterprises  where every department has its own Broker + one centrelized
 
-#### Pros
+#### Broker - Pros
 
 - Could be used as MOM (only transfer data)
 
@@ -194,9 +190,9 @@ It is generally used in enterprises  where every department has its own Broker +
     ++ service aggregation
     ++ Interoperability (the ability to work and adapt with other system and machines)
 
-#### Cons
+#### Broker - Cons
 
-    Performance, SPOF
+Performance, SPOF
 
 ### Master-worker
 
@@ -204,14 +200,14 @@ It is generally used in enterprises  where every department has its own Broker +
 
 Master-Worker architecture is a generic parallel design that is used in order to break down big computational problems into smaller independent tasks that can be solved in parallel. The way it works is by having the master as the core machine in control to assign tasks to the workers which they complete them independently and return back the results
 
-#### Pros
+#### Master-worker - Pros
 
 - Parallelisme
 - security (master)
 - availability
 - adabtability
 
-#### Cons
+#### Master-worker - Cons
 
 - SPOF
 - Security (multiple machines- distributed system)
@@ -220,13 +216,13 @@ Master-Worker architecture is a generic parallel design that is used in order to
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%209.png)
 
-#### Pros
+#### Pipe and Filter - Pros
 
 - Separation of concerns
 - Reuse
 - Adaptability with the processing type
 
-#### Cons
+#### Pipe and Filter - Cons
 
 - Machine are highly coupled for the same job
 - Complexity : connection of multiple technologies
@@ -241,50 +237,31 @@ Data Passive
 
 Services independants : le seul moyen de communication c’est la base données
 
-#### Pros
+#### Repository - Pros
 
 - Modifiabilité
 - Maintabilité
 - granularity service : reuse
 
-#### Cons
+#### Repository - Cons
 
 - plusieurs services accedant ala BDs
 - SPOF
-- Performance : congestion (
+- Performance : congestion (If there is congestion in a place, **the place is extremely crowded and blocked with traffic** )
 
-What is called congestion?
+### Blackboard
 
-If there is congestion in a place, **the place is extremely crowded and blocked with traffic** )
-
-### Black board
-
-Data Active
 Data Active
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%2011.png)
 
-#### Pros
-
-- Security
-- Performance
-- reuse
-- modifiability
-
-#### Cons
-
-- Complexity ( traitement de données au niveau de la bd )
-- complexity bd design
-- diminuer le champs d’action des controlleurs
-
-*Blackboard Architecture is an architecture style or pattern used in solving Artificial Intelligence, Mining, Machine learning problems*
+=> Blackboard Architecture is an architecture style or pattern used in solving Artificial Intelligence, Mining, Machine learning problems
 
 Picture a number of students are all writing on a blackboard at the same time, trying to solve a problem. You think they will?
 
 What if we add a teacher who first asks each student what he wants to write on the blackboard and decides which student has the best idea. And when the student is finished, the process is repeated.
 
-This is the idea behind the blackboard architecture. The students are called Knowledge Sources. The teacher is called the Scheduler and the **Blackboard**
- is the common data structure of the Knowledge Sources. The blackboard represents all states of some problem space.
+This is the idea behind the blackboard architecture. The students are called Knowledge Sources. The teacher is called the Scheduler and the Blackboard is the common data structure of the Knowledge Sources. The blackboard represents all states of some problem space.
 
 **Knowledge sources** are self-selecting modules of domain knowledge. Each knowledge
 source can be viewed as an independent program specialized in processing a certain
@@ -298,55 +275,54 @@ solving and produces changes to the BB. It can allow for different kinds of know
 representation and different inference mechanisms.
 representation and different inference mechanisms.
 
-**Blackboard**
-
-It is the part of the system that is used for storage of knowledge accessible to all the
+**Blackboard**: It is the part of the system that is used for storage of knowledge accessible to all the
 KSs. It is a global data structure used to organize the problem-solving data and to
 handle communications between the KSs
+
+#### Blackboard - Pros
+
+- Security
+- Performance
+- reuse
+- modifiability
+
+#### Blackboard - Cons
+
+- Complexity ( traitement de données au niveau de la bd )
+- complexity bd design
+- diminuer le champs d’action des controlleurs
 
 ### Onion
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%2012.png)
 
-#### Pros
+The Onion Architecture tells us that, in enterprise applications, we will have more than those two layers, and it adds some layers in the business logic which we might recognise from Domain Driven Design.
+
+Key tenets of Onion Architecture:
+
+- The application is built around an independent object model
+- Inner layers define interfaces, Outer layers implement interfaces
+- Direction of coupling is toward the center
+- All application core code can be compiled and run separate from infrastructure. Also, any outer layer can directly call any inner layer, which does not break the coupling direction and avoids creating proxy methods and even proxy classes that contain no business logic, just for the sake of complying with some layering scheme. This also comes in line with the preferences expressed by Martin Fowler.the layers above can use any layer beneath them, not just the layer immediately beneath.
+
+#### Onion - Pros
 
 - testability
 - flexibility, portability, reutilisability
 - conformité avec DDD
 - dependance vers le centre
 
-#### Cons
+#### Onion - Cons
 
 - complexity
 - trops d’interface
 - Abstraction between the domain entities and business layer
-
-However, the Onion Architecture also tells us that, in enterprise applications, we will have more than those two layers, and it adds some layers in the business logic which we might recognise from Domain Driven Design
-
-Key tenets of Onion Architecture: - The application is built around an independent object model - Inner layers define interfaces. Outer layers
-implement interfaces - Direction of coupling is toward the center - All application core code can be compiled and run separate from
-infrastructure. Also, any outer layer can directly call any inner layer, which does not break the coupling direction and avoids creating proxy methods and even proxy classes that contain no business logic, just for the sake of complying with some layering scheme. This also comes
-in line with the preferences expressed by Martin Fowler.the layers above can use any layer beneath them, not just the layer
-immediately beneath.
-**Conclusion**
-Onion Architecture builds on the Ports & Adapters Architecture to add some internal organisation to the business logic of the application based on a few Domain Driven Design concepts.
-Again, this is an evolution in further segregating responsibilities, providing for low coupling and high cohesion, which in turn provides for more testability and maintainability.
 
 ### Clean
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%2013.png)
 
 independante des framework , bd , ui
-
-#### Pros
-
-testability
-
-maintability
-
-#### Cons
-
-complexity
 
 La *clean architecture*
  permet de construire des applications bien structurées, chaque partie ayant un périmètre et un rôle bien défini. Le code est découplé de détails comme les *frameworks*, les bases de données. Il n'est pas obligatoire d'implémenter toutes les couches de la figure. Il faut néanmoins une couche pour les fonctionnalités métiers (*use cases*) et une couche pour les adaptateurs d'interface (*adapters interface*). Des outils comme le *framework* utilisé ou la base de données, sont des détails. Ils sont situés dans une couche supérieure. Les couches supérieures peuvent avoir des dépendances dans les couches inférieures, mais les couches inférieures ne doivent pas avoir des dépendances, des références dans les couches supérieures.
@@ -380,3 +356,13 @@ Cette couche fait la liaison entre les couches supérieures et les couches infé
 ### **Framework and Drivers (Frameworks et Pilotes)**
 
 Dans les *clean architecture*, les outils comme les *frameworks*, bases de données sont considérés comme des détails. Tout ce qui est lié aux *frameworks* et dépendances externes est également défini dans cette couche.
+
+#### Clean - Pros
+
+testability
+
+maintability
+
+#### Clean - Cons
+
+complexity

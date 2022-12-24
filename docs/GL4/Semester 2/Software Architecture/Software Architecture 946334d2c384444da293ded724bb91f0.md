@@ -2,13 +2,13 @@
 
 ## Non Functional Requirements
 
-### **Maintenabilité**
+### Maintenabilité
 
 La qualité de se tordre facilement sans se briser
 
-quand on a un probleme c’est facile a le maintenir (pas de probleme en cascade)
+Quand on a un probleme c’est facile à le maintenir (pas de probleme en cascade)
 
-### **Auditabilité**
+### Auditabilité
 
 Capacité de trouver les causes des erreurs
 
@@ -16,7 +16,7 @@ S'assurer de journaliser le plus d'info possibles, d'une façon lisible et autom
 
 Ne doit pas interférer avec la performance de l'application!
 
-### **Scalabilité**
+### Scalabilité
 
 Faculté à gérer une large variété de tailles pour le système
 
@@ -26,7 +26,7 @@ Essayer de maintenir une documentation à jour du système
 
 Garder la trace des changements
 
-### **Utilisabilité**
+### Utilisabilité
 
 A quel point est-ce que les utilisateurs sont efficaces en utilisant le système?
 
@@ -38,7 +38,7 @@ La facilité avec laquelle le système peut changer
 
  → LE SYSTEME EST FACILE A CHANGER
 
-### **Portabilité**
+### Portabilité
 
 La facilité avec laquelle un logiciel peut être installé sur plusieurs plateformes
 
@@ -46,11 +46,11 @@ La capacité du logiciel à maintenir sa performance dans le temps
 
 Un logiciel non fiable tombe en panne fréquemment
 
-### **Securité**
+### Securité
 
 Plusieurs propriétés de sécurité: authentification, confidentialité, intégrité, non répudiation, etc.
 
-### **Performance**
+### Performance
 
 Les contraintes temporelles du logiciel
 
@@ -86,11 +86,14 @@ disponibilite (coz all the cherge is on it)  SPOF
 
 - Here the client could execute some logic
 
-#### Pros: performance
+#### Pros
 
+performance
 control but not too much
 
-#### Cons: SPOF
+#### Cons
+
+SPOF
 
 ### Layered architecture
 
@@ -114,7 +117,9 @@ the relationship between them.
 
 - every layer should only connect with only the next layer
 
-    Example OSI Model
+
+Example OSI Model
+
 
 ### MV* Architecture
 
@@ -176,22 +181,20 @@ smart endpoints
 
 It is generally used in enterprises  where every department has its own Broker + one centrelized
 
+
+#### Pros 
+
 - Could be used as MOM (only transfer data)
 
     ++ asynchronous communication
-
     ++ gestion des pannes
 
 - Or as middleware which is more intelligent
 
-     ++ security (works as firewall): access control
-
+    ++ security (works as firewall): access control
     ++ data transformation
-
     ++ decoupling
-
     ++ service aggregation
-
     ++ Interoperability (the ability to work and adapt with other system and machines)
 
 #### Cons
@@ -241,6 +244,7 @@ Data Passive
 
 Services independants : le seul moyen de communication c’est la base données
 
+
 #### Pros
 
 - Modifiabilité
@@ -259,6 +263,7 @@ If there is congestion in a place, **the place is extremely crowded and blocked
 
 ### Black board
 
+Data Active
 Data Active
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%2011.png)
@@ -294,6 +299,7 @@ and independent. Each has its own set of working procedures or rules and each ha
 own private data structure. It contains information necessary for a correct run of the
 knowledge source. The action part of a knowledge source performs the actual problem
 solving and produces changes to the BB. It can allow for different kinds of knowledge
+representation and different inference mechanisms.
 representation and different inference mechanisms.
 
 **Blackboard**

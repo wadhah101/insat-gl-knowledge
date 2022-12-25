@@ -1,3 +1,7 @@
+---
+slug: /gl4/semester-2/software-architecture/software-architecture-946334d2c384444da293ded724bb91f0
+---
+
 # Software Architecture
 
 ## Non Functional Requirements

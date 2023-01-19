@@ -377,9 +377,9 @@ done
 **Grep :**
 
 ```pseudocode
-Si le fichier sur lequel porte la recherche n’existe pas 
-Alors $?=2 
-    Sinon Si grep trouve des lignes correspondant au critère de recherche 
+Si le fichier sur lequel porte la recherche n’existe pas
+Alors $?=2
+    Sinon Si grep trouve des lignes correspondant au critère de recherche
         Alors $?=0 Sinon $?=1
 ```
 
@@ -389,7 +389,7 @@ Alors $?=2
 
 - Lorsqu'on on a des caracteres qu'on ne veut pas interpreter ( comme `!d` ) on fait ça
   - `cat f3 | sed "/$x/"'!d'`
-- Check last year's course on **Regular Expression** to learn more .  
+- Check last year's course on **Regular Expression** to learn more .
 
 ---
 
@@ -416,7 +416,7 @@ this file contains the encrypted passwords for each user and their expiry parame
    - `*` : no login possible
 3. Days since 1970 when it was last changed
 4. Days until change allowed (0 : always allowed)
-5. Days before change required  
+5. Days before change required
 6. Days warning before expiration (empty : no warning)
 7. Days before account becomes inactive (empty : never inactive)
 8. Days since 1970 when account will be disabled (empty : never disabled)

@@ -9,7 +9,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 ## Procédures
 
 ```sql
-CREATE OR REPLACE PROCEDURE 
+CREATE OR REPLACE PROCEDURE
 <procedure_name>
     (
     <parameterl  [IN|OUT|IN OUT] <datatype>
@@ -48,7 +48,7 @@ Notes :
 Exemples :
 
 ```sql
-CREATE OR REPLACE PROCEDURE welcome_msg (p_name IN VARCHAR2) 
+CREATE OR REPLACE PROCEDURE welcome_msg (p_name IN VARCHAR2)
 IS
 BEGIN
 dbms_output.put_line ('Welcome '|| p_name);
@@ -73,7 +73,7 @@ end;
 ## Fonctions
 
 ```sql
-CREATE OR REPLACE FUNCTION 
+CREATE OR REPLACE FUNCTION
 <procedure_name>
 (
 <parameterl [IN|OUT|IN OUT] <datatype>
@@ -82,10 +82,10 @@ RETURN <datatype>
 [ IS | AS ]
 <declaration_part>
 BEGIN
-<execution part> 
+<execution part>
 EXCEPTION
 <exception handling part>
-END; 
+END;
 ```
 
 ## Dernières remarques
@@ -127,7 +127,7 @@ nomVariable [CONSTANT] type [:= valeur];
 Autre façon d'affecter une valeur à une variable ( **la requête doit retourner un seul résultat !**) :
 
 ```sql
-SELECT … INTO nomVariable FROM … WHERE … ; 
+SELECT … INTO nomVariable FROM … WHERE … ;
 ```
 
 - Types
@@ -202,12 +202,12 @@ instructions; END LOOP;
 - on peut les définir après `DECLARE` ,  sans utiliser le mot clé `CREATE`
 
 ```sql
-DECLARE 
+DECLARE
 …
-PROCEDURE nomProc … END nomProc; 
+PROCEDURE nomProc … END nomProc;
 FUNCTION nomFonc … END nomFonc;
-BEGIN 
-… 
+BEGIN
+…
 END
 ```
 
@@ -264,22 +264,22 @@ UPDATE immeuble SET NomGerant='Toto' WHERE NbEtg>10; DBMS_OUTPUT.PUT_LINE('Toto 
 - Calculer le nombre d'occupants d'un immeuble
 
 ```sql
-Declare 
+Declare
     monAdr Constant char(20) := '2 rue de la paix'
     CURSOR cOcuupants IS
-        SELECT NbOccup from appart where Adr = monAdr ; 
-    occupApart appart.NbOccup%Type ; 
-    total INTEGER := 0 ; 
+        SELECT NbOccup from appart where Adr = monAdr ;
+    occupApart appart.NbOccup%Type ;
+    total INTEGER := 0 ;
 begin
-    open cOccupants ; 
+    open cOccupants ;
     LOOP
-        Fetch cOccupants INTO ocupAppart; 
-        EXIT when cOccupants%NOTFOUND ; 
+        Fetch cOccupants INTO ocupAppart;
+        EXIT when cOccupants%NOTFOUND ;
         total := total + occupAppart ,
     END LOOP ;
-    close cOccupants ; 
+    close cOccupants ;
     DBMS_OUTPUT.PUT_LINE(total || ' occupants dans l`immeuble')
-end; 
+end;
 ```
 
 **Utilisation de la boucle for**:
@@ -292,15 +292,15 @@ end;
 ```sql
 declare
 monAdr constant char(20) := '2 rue de la Paix';
-CURSOR cOccupant is 
-    select NBOccup From appart Where Adr = monAdr ; 
+CURSOR cOccupant is
+    select NBOccup From appart Where Adr = monAdr ;
 total integer := 0 ;
-begin 
+begin
     for occupAppart in cOccupant loop
         total := total + occupAppart ;
-    end loop ; 
+    end loop ;
 DBMS_OUTPUT.PUT_LINE(total || ' occupants dans l`immeuble')
-end; 
+end;
 ```
 
 ##### Curseurs et modifications
@@ -379,16 +379,16 @@ nomNouveau| PARENT [AS] nomParent } …]
 ```sql
 Create Trigger verifDate
 before insert on occupant for each row
-declare 
+declare
     Imm immeuble%rowtype;
 begin
 select * into Imm from Immeuble
-where immeuble.adr = :New.adr  ; 
+where immeuble.adr = :New.adr  ;
 
-IF  (:New.DateArrive < Imm.dateConstr ) 
+IF  (:New.DateArrive < Imm.dateConstr )
 THEN raise_application_erreur(-20100,:New.Nom || ' arrivé avant la construction de l immeuble '||Imm.Adr);
 END IF;
-END ; 
+END ;
 ```
 
 - insérer automatiquement un appartement dans tout nouvel immeuble construit
@@ -399,7 +399,7 @@ after insert on  immeuble
 for each row
 begin
 insert into appart (Adr, Num, NbOccup) values (:New.adr, 1, 0) ;
-end ; 
+end ;
 ```
 
 ##### Déclencheurs sur suppression
@@ -407,13 +407,13 @@ end ;
 - Au départ d'un occupant, décrémenter le nombre d'occupants de l'appartement en question
 
 ```sql
-create trigger departOccupant 
-after delete on occupant 
+create trigger departOccupant
+after delete on occupant
 for each row
 
-begin 
+begin
 update appart
-set nbOccup = nbOccup -1 
+set nbOccup = nbOccup -1
 where ( (:Old.adr = appart.adr) and (appart.Num = :Old.numApp)) ;
 
 end;
@@ -424,24 +424,24 @@ end;
 - En cas de modification sur un occupant, modifier le nombre d'occupants des appartements concernés (si la modification concerne l'immeuble/l'appartement)
 
 ```sql
-create trigger modifOccupant 
-after update on occupant 
-for each row 
+create trigger modifOccupant
+after update on occupant
+for each row
 
 begin
 if ((:NEW.adr <> :Old.adr) OR ( :New.numApp <> :Old.numApp))
-then 
+then
 -- nbre occupants -1 pour l'ancien appart
 update appart
-set nbOccup = nbOccup -1 
+set nbOccup = nbOccup -1
 where ( (:Old.adr = appart.adr) and ( :Old.numApp =appart.Num)) ;
 -- nbre occupants +1 pour le nouveau appart
-update appart 
-set nbOccup = nbOccup +1 
+update appart
+set nbOccup = nbOccup +1
 where ((:New.adr = appart.adr) and (:New.numApp = appart.num  ));
 
-end if ; 
-end ; 
+end if ;
+end ;
 ```
 
 ##### Déclencheur sur conditions multiples
@@ -450,7 +450,7 @@ end ;
 
 ```sql
 create trigger touteModifOccupant
-after insert or update or delete on occupant 
+after insert or update or delete on occupant
 for each row
 
 If INSERTING  then ... ;

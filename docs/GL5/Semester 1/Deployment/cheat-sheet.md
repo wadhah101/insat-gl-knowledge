@@ -289,7 +289,7 @@ kubectl delete deployment <deployment-name>
 
 ```bash
 kubectl apply -f <config.yaml>
-# for example 
+# for example
 kubectl apply -f nginx.yaml
 ```
 
@@ -382,10 +382,10 @@ The service also has a listening `targetPort` so other resources can connect to 
 To verify that the service can connect to the pod
 
 ```bash
-# Verify the "endpoint" variable. 
+# Verify the "endpoint" variable.
 kubectl describe service <service-name>
 
-# Check the IP of the pod, make sure it maches the one in the "endpoint" variable in the service 
+# Check the IP of the pod, make sure it maches the one in the "endpoint" variable in the service
 kubectl get pod -o wide
 ```
 
@@ -648,7 +648,7 @@ spec:
         backend:
           service:
             name: kubernetes-dashboard
-            port: 
+            port:
               number: 80
 ```
 
@@ -700,7 +700,7 @@ spec:
 `myapp-secret-tls` needs to be a Kubernetes `Secret` resource that contains some specific data for its configuration
 
 ```yaml
-apiVersion: v1 
+apiVersion: v1
 kind: Secret
 metadata:
   name: myapp-secret-tls
@@ -812,7 +812,7 @@ If we need a configuration file/certificate file for pod, we need to do this :
 template:
   spec:
     containers:
-    - name: ... 
+    - name: ...
       image: ...
       volumeMounts:
         - name: config-dir

@@ -89,7 +89,7 @@ resource "aws_vpc" "example" {
 #### K8s
 
 ```hcl
-# Configure the Kubernetes Provider 
+# Configure the Kubernetes Provider
 provider "kubernetes" {
   config_context_auth_info = "ops"
   config_context_cluster = "mycluster"
@@ -144,7 +144,7 @@ provider "aws" {
 to install a provider to use with terraform we do this : We select the directory where `main.tf` is and we run
 
 ```bash
-terraform init  
+terraform init
 ```
 
 this will download any unavailable providers that are used in our files. and will generate a couple of new files.
@@ -171,7 +171,7 @@ resource "aws_vpc" "development-vpc" {
   cidr_block = "10.0.0.0/16"
 }
 
-  
+
 
 resource "aws_subnet" "dev-subnet-1" {
   vpc_id = aws_vpc.development-vpc.id
@@ -318,7 +318,7 @@ subnet_cidr_block = "10.0.40.0/24"
 
 vpc_cidr_block = "10.0.0.0/16"
 
-  
+
 environment = "development"
 ```
 
@@ -493,7 +493,7 @@ connection {
   private_key = file(var.private_key_location)
 }
 
-  
+
 
 provisioner "remote-exec" {
   inline = [

@@ -20,8 +20,8 @@ Implique la pratique de l'analyse, de la planification, de la conception et de l
 
 Les concepts d'architecture d'entreprise sont différents d’un profil à l’autre dans une même organisation
 
-- Professionnels IT: Infrastructures, d'applications et de composants de gestion sous leur contrôle.  
-- Architectes d'entreprise: Architectures logicielles, processus et orchestration  
+- Professionnels IT: Infrastructures, d'applications et de composants de gestion sous leur contrôle.
+- Architectes d'entreprise: Architectures logicielles, processus et orchestration
 - Intégrateurs: Assemblage de matériels et logiciels
 
 #### 2. Importance
@@ -81,7 +81,7 @@ Couche technique, tout ce qui est materiel physique:
 
 ### B. Frameworks d'Architectures d'Entreprise
 
-### 1. ZF : Zachman’s Framework  
+### 1. ZF : Zachman’s Framework
 
 Représente les artefacts de conception de divers produits selon le public cible (perspective) ainsi que le contenu ou sujet de l’artefact (abstraction)
 
@@ -89,11 +89,11 @@ Représente les artefacts de conception de divers produits selon le public cible
 
 ![[zachman2.png]]
 
-#### 2. **EAP** : Enterprise Architecture Planning  
+#### 2. **EAP** : Enterprise Architecture Planning
 
 EAP permet de définir la façon d’approcher la création des deux premières lignes dans le framework de Zachman, le planner et le owner. ( La conception du système en tant que tel est en dehors du scope de EAP. )
 
-EAP définit ce que les données, applications et technologies permettent de faire pour le bénéfice de l’entreprise.  
+EAP définit ce que les données, applications et technologies permettent de faire pour le bénéfice de l’entreprise.
 
 Définit 4 niveaux (Levels) et 7 composants
 
@@ -108,7 +108,7 @@ Définit 4 niveaux (Levels) et 7 composants
 
 ![eap](assets/eap.png)
 
-#### 3. **FEAF**: Federal Enterprise Architecture Framework  
+#### 3. **FEAF**: Federal Enterprise Architecture Framework
 
 Architecture d’entreprise de référence réalisée par le gouvernement fédéral aux États Unis.
 
@@ -118,9 +118,9 @@ Ce framework est basé sur l’approche Zachman, comme c’est le cas pour EAP, 
 
 Définit quatre niveaux d’architecture:
 
-- Architecture métier: Ce qui est fait, par qui, comment et pourquoi  
-- Architecture de données: Informations utilisées par l’agence pour réaliser le métier  
-- Architecture d’application: Applications et logiciels qui traitent les données selon les règles métiers définies.  
+- Architecture métier: Ce qui est fait, par qui, comment et pourquoi
+- Architecture de données: Informations utilisées par l’agence pour réaliser le métier
+- Architecture d’application: Applications et logiciels qui traitent les données selon les règles métiers définies.
 - Architecture de technologie: Technologies de communication et matériel utilisé pour supporter les trois couches ci-dessus.
 
 FEAF Définit un assortiment de modèles de référence appelé CRM (Consolidated Reference Model) qui développe une taxonomie commune pour décrire les ressources IT
@@ -150,11 +150,11 @@ ADM permet d’établir un EAF, de développer le contenu d’une architecture, 
 
 Cycle itératif de définition et réalisation continues d’architectures. Permet une transformation contrôlée des entreprises, en réponse de leurs besoins et opportunités métiers.
 
-- Phase 0 : Phase préliminaire : Activités de préparation et d’initiation pour créer l’architecture, inclut la personnalisation du framework TOGAF et la définition des principes d’architecture.  
+- Phase 0 : Phase préliminaire : Activités de préparation et d’initiation pour créer l’architecture, inclut la personnalisation du framework TOGAF et la définition des principes d’architecture.
 
 - Phase A : Architecture Vision : Phase initiale du cycle de définition de l’architecture. Informations sur la définition de sa portée (scope), identification des parties prenantes, et l’obtention de l’accord nécessaire pour sa mise en place.
 
-- Phase B : Business Architecture : Développement de l’architecture métier.  
+- Phase B : Business Architecture : Développement de l’architecture métier.
 
 - Phase C : Information Systems Architecture : Développement de l’architecture du SI.
 
@@ -162,11 +162,11 @@ Cycle itératif de définition et réalisation continues d’architectures. Perm
 
 - Phase E : Opportunities & Solutions : Planning initial d’implémentation et identification des livrables de l’architecture prédéfinie.
 
-- Phase F : Migration Planning : Comment passer de l’architecture initiale vers l’architecture cible en finalisant un plan détaillé d’implémentation et de migration.  
+- Phase F : Migration Planning : Comment passer de l’architecture initiale vers l’architecture cible en finalisant un plan détaillé d’implémentation et de migration.
 
 - Phase G : Implementation Governance Définition d’un contrat d’architecture pour gérer le processus d’implémentation et déploiement, et attribution des rôle pour les intervenants.
 
-- Phase H : Architecture Change Management Établissement de procédures pour gérer les modifications de la nouvelle architecture.  
+- Phase H : Architecture Change Management Établissement de procédures pour gérer les modifications de la nouvelle architecture.
 
 - Phase Centrale : Requirements Management Définition du processus de gestion des besoins tout au long de l’ADM.
 
@@ -174,18 +174,18 @@ Cycle itératif de définition et réalisation continues d’architectures. Perm
 
 Le TOGAF Content Framework définit un cadre de catégorisation à utiliser pour structurer :
 
-- La description de l'architecture  
-- Les produits de travail utilisés pour exprimer une architecture  
+- La description de l'architecture
+- Les produits de travail utilisés pour exprimer une architecture
 - La collection de modèles qui décrivent l'architecture.
 
 Il permet de:
 
-- Fournir un modèle détaillé des produits du travail architectural  
-- Favoriser la cohérence des résultats créés en suivant l’ADM.  
-- Fournir une liste de contrôle complète des produits d'architecture qui pourraient  
-être créés.  
-- Réduire le risque de lacunes dans l'ensemble des livrables d'architecture finaux.  
-- Aider l'entreprise à définir des concepts, des termes et des livrables d'architecture  
+- Fournir un modèle détaillé des produits du travail architectural
+- Favoriser la cohérence des résultats créés en suivant l’ADM.
+- Fournir une liste de contrôle complète des produits d'architecture qui pourraient
+être créés.
+- Réduire le risque de lacunes dans l'ensemble des livrables d'architecture finaux.
+- Aider l'entreprise à définir des concepts, des termes et des livrables d'architecture
 standard.
 
 ![togaf_content](assets/togaf_content.png)
@@ -214,13 +214,13 @@ TOGAF définit plusieurs concepts pour satisfaire les besoins des différentes p
 
 - Ensemble de règles s’imposant à tout ou partie du SI
 - Définition de règles à respecter par les applications, pour obtenir un SI évolutif
-- Les concepts manipulés s'apparentent à ceux de l'urbanisation de l'habitat humain  
+- Les concepts manipulés s'apparentent à ceux de l'urbanisation de l'habitat humain
 (organisation des villes, du territoire)
 
 -> Le processus d'urbanisation répond aux couches "Scope (contexte)" , "Business Model (conceptuel)" et "System Model (logique)" des Architectures d’Entreprise.
 
-- Imposer des règles globales aux concepteurs de façon à tenir compte des contraintes techniques et d’exploitation  
-- Respecter l’asynchronisme et indépendance des traitements  
+- Imposer des règles globales aux concepteurs de façon à tenir compte des contraintes techniques et d’exploitation
+- Respecter l’asynchronisme et indépendance des traitements
 - Unifier les interfaces
 
 ![diff_urbanisation](assets/diff_urbanisation.png)
@@ -251,12 +251,12 @@ Procédure et fonctions -> Module(Groupe de fonctions) -> Objet(Represente une E
 
 Cohesion : Degree to which a module performs one and only one function. All elements of component are directed towards performing the same task
 
-Coupling : Degree to which a module is connected to other modules in the  
+Coupling : Degree to which a module is connected to other modules in the
 system.
 
-**Les services de présentations ou de référencement** : vers les informations affichées et les formulaires de saisies de données.  
+**Les services de présentations ou de référencement** : vers les informations affichées et les formulaires de saisies de données.
 
-**Les processus métiers** : composés de tâches décrites et faisant appel éventuellement à d’autres services.  
+**Les processus métiers** : composés de tâches décrites et faisant appel éventuellement à d’autres services.
 
 **Les services de gestion et d’accès aux bases de données** : permettent la gestion des données partagées
 
@@ -271,7 +271,7 @@ system.
 Permet d’intégrer et de manipuler les différentes briques et composants applicatifs d’un système informatique et de gérer les liens qu’ils entretiennent
 
 Objectifs :
--> Décomposer une fonctionnalités en un ensemble de fonctions basiques (services) fournies par des composants  
+-> Décomposer une fonctionnalités en un ensemble de fonctions basiques (services) fournies par des composants
 -> Décrire finement le schéma d’interaction entre ces services
 
 #### 2. Principes de la SOA
@@ -338,7 +338,7 @@ Est transverse : entre plusieurs départements, unités, acteurs...
 
 #### 1. Outils ETL
 
-Réponse à la problématique: Assurer la consistance et  propagation des données entre plusieurs sous-systèmes  
+Réponse à la problématique: Assurer la consistance et  propagation des données entre plusieurs sous-systèmes
 
 Permettent la synchronisation, consolidation et propagation des données entre sous-systèmes hétérogènes
 
@@ -386,7 +386,7 @@ Architecture Hub and Spoke (réseau en étoile): Un composant central :
 
 Permettent d’assurer la transformation des données pour limiter le  couplage fonctionnel entre systèmes
 
-Permettent d’appliquer des règles de routage sophistiquées  
+Permettent d’appliquer des règles de routage sophistiquées
 
 Jouent le rôle d’orchestrateur : hébergent des processus métier de haut niveau
 
@@ -417,14 +417,14 @@ Construit conformément aux principes SOA :
 
 ESB s’appuient en général sur des standards
 
-**Définition** : Architecture de services distribuée, qui inclut un modèle  
-de conteneur léger pour héberger des composants  
-d’intégration comme services distants  
+**Définition** : Architecture de services distribuée, qui inclut un modèle
+de conteneur léger pour héberger des composants
+d’intégration comme services distants
 
 Permet de :
 
-- Délivrer des messages entre applications et services  
-- Réaliser les transformations des données  
+- Délivrer des messages entre applications et services
+- Réaliser les transformations des données
 - Router les messages selon leur contenu
 
 Framework de sécurité flexible + Infrastructure de gestion qui permet de configurer,  déployer et gérer vos services distants
@@ -535,15 +535,15 @@ Domaines :
 
 ### A. Composition de services (General)
 
-Implémentation d’une application (offerte comme service) dont la  
-logique implique l’invocation d’opérations offertes par d’autres  
+Implémentation d’une application (offerte comme service) dont la
+logique implique l’invocation d’opérations offertes par d’autres
 services
 
 - Le nouveau service est appelé **service composite**
 - Les services invoqués sont des **composants de service**
 
-Du point de vue du client, un service composite et un service  
-basique (implémenté par un langage de programmation  
+Du point de vue du client, un service composite et un service
+basique (implémenté par un langage de programmation
 traditionnel) sont in-distinguables.
 
 Notion de Service *Mashup* :

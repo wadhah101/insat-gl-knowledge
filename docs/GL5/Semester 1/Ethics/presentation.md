@@ -171,7 +171,7 @@ Complaining about the government is allowed and most of the time turned a blind 
 
 ### B. The Social Credit System
 
-System developed in china, where good actions **raise your score** and bad actions  
+System developed in china, where good actions **raise your score** and bad actions
 **lower your score**. Your score can be looked up online to judge you.
 
 It is based on :
@@ -271,23 +271,23 @@ The company also introduced what it calls **Model Cards** starting with cards fo
 
 ### A. Advantages
 
-- **Greater Road Safety**: Government data identifies driver behavior or error as  
-a factor in 94 percent of crashes, and self-driving vehicles can help reduce  
-driver error.  
-- **Greater Independence**: People with disabilities, like the blind, are capable  
-of self-sufficiency, and highly automated vehicles can help them live the  
-life they want.  
-- **Saving Money**: Automated driving systems could impact our pocketbooks in many  
-ways. HAVs can help avoid the costs of crashes, including medical bills, lost  
+- **Greater Road Safety**: Government data identifies driver behavior or error as
+a factor in 94 percent of crashes, and self-driving vehicles can help reduce
+driver error.
+- **Greater Independence**: People with disabilities, like the blind, are capable
+of self-sufficiency, and highly automated vehicles can help them live the
+life they want.
+- **Saving Money**: Automated driving systems could impact our pocketbooks in many
+ways. HAVs can help avoid the costs of crashes, including medical bills, lost
 work time and vehicle repair.
-- **More Productivity**: In the future, HAVs could offer the convenience of  
-dropping vehicle occupants at their destination, whether an airport or  
-shopping mall, while the vehicle parks itself.  
-- **Reduced Congestion**: HAVs maintain a safe and consistent distance between  
-vehicles, helping to reduce the number of stop-and-go waves that produce road  
-congestion.  
-- **Environmental Gains**: HAVs have the potential to reduce fuel use and carbon  
-emissions. Fewer traffic jams save fuel and reduce greenhouse gases from  
+- **More Productivity**: In the future, HAVs could offer the convenience of
+dropping vehicle occupants at their destination, whether an airport or
+shopping mall, while the vehicle parks itself.
+- **Reduced Congestion**: HAVs maintain a safe and consistent distance between
+vehicles, helping to reduce the number of stop-and-go waves that produce road
+congestion.
+- **Environmental Gains**: HAVs have the potential to reduce fuel use and carbon
+emissions. Fewer traffic jams save fuel and reduce greenhouse gases from
 needless idling.
 
 ### B. Ethical concerns
@@ -315,7 +315,7 @@ There are three fundamental principles that holds true across the world:
 
 - **Eastern countries** seem to be more respectful of older people over children.
 - **The french and the french sub-cluster** showed an unexpectedly strong preference for saving women over man.
-- the **higher** the **economic inequality** in a country the **more people** were willing to  
+- the **higher** the **economic inequality** in a country the **more people** were willing to
 spare the executives at the cost of the homeless people.
 
 ![[moral_machine.png]]
@@ -346,8 +346,8 @@ Being a data literate means we have to be willing to play detective every time w
 
 #### B. 1. Algorithmic bias
 
-Our systems have a problem: bias and the risk of discrimination. Their  
-algorithms are value-laden by nature, reflecting the life and background of  
+Our systems have a problem: bias and the risk of discrimination. Their
+algorithms are value-laden by nature, reflecting the life and background of
 the engineers who build them . typically white males from high income countries.
 
 Not only can algorithm design engender bias, but the transfer of services and the emergence of new digital products can also end up replicating or amplifying existing inequalities. For example, a new study of the most popular object-recognition algorithms found that 10 percent more errors were made when the algorithms were tasked to identify items from a household with a lower monthly income.
@@ -400,7 +400,7 @@ Two data protection bills were passed by parliament to better ensure data protec
 
 ### D. Toward better data governance
 
-- Enforce accountability mechanisms  
+- Enforce accountability mechanisms
 for unethical data use
 - Create favorable conditions for a private sector shift toward ethical technology development
 - Address gaps in data literacy by developing and distributing educational programming for online  and offline users
@@ -408,7 +408,7 @@ for unethical data use
 
 ### Conclusion of presentation
 
-To conclude, only through experimentation and evidence-based policy can we move  
+To conclude, only through experimentation and evidence-based policy can we move
 from reflection to action in our quest for a more equitable and inclusive digital future.
 
 ## 7. Fake News & Deep Fakes

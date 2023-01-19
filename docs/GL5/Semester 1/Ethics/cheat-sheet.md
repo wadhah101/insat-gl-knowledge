@@ -215,11 +215,11 @@ The cookie consent policy got updated in 2020 with these new changes :
 
 ### B. Open Data
 
-Data or content is open if anyone is free to use, re-use or redistribute it, subject at most to measures that preserve provenance and openness.  
+Data or content is open if anyone is free to use, re-use or redistribute it, subject at most to measures that preserve provenance and openness.
 
 There are two dimensions of data openness :
 
-1. The data must be legally open, which means they must be placed in the public domain or under liberal terms of use with minimal restrictions.  
+1. The data must be legally open, which means they must be placed in the public domain or under liberal terms of use with minimal restrictions.
 2. The data must be technically open, which means they must be published in electronic formats that are machine readable and non-proprietary, so that anyone can access and use the data using common, freely available software tools. Data must also be publicly available and accessible on a public server, without password or firewall restrictions. To make Open Data easier to find, most organizations create and manage Open Data catalogs.
 
 ### C. Anonymizing data
@@ -264,8 +264,8 @@ Algorithmically manufactured information that has no connection to real events. 
 
 ### D. Importance of anonymizing data
 
-Theory that says if you have gender, date of birth, and zip code, you can easily identify  
-any person (87% of the people can be identifiable)  
+Theory that says if you have gender, date of birth, and zip code, you can easily identify
+any person (87% of the people can be identifiable)
 
 Even with just two of these information, it is possible to find the person’s identity
 
@@ -275,13 +275,13 @@ Even with just two of these information, it is possible to find the person’s i
 
 #### 1. What is Bias ?
 
-- Bias has different definitions which adds to the confusion  
-- 1900’s definition: Systematic differences between a sample and a population  
-- In law: Bias means judgment based on preconceived notions or prejudice (impartiality)  
-- Bias comes from:  
-  - In most of cases, data it was trained on (training data can be be complete, bias, skewed, non representative, etc)  
-  - Humans biases and cultural assumptions can cause bias by introducing exclusion or underrepresentation of certain populations  
-  - 4.4 million people arrested on suspicion between 2004 an 2012, 83% were black or hispanic  
+- Bias has different definitions which adds to the confusion
+- 1900’s definition: Systematic differences between a sample and a population
+- In law: Bias means judgment based on preconceived notions or prejudice (impartiality)
+- Bias comes from:
+  - In most of cases, data it was trained on (training data can be be complete, bias, skewed, non representative, etc)
+  - Humans biases and cultural assumptions can cause bias by introducing exclusion or underrepresentation of certain populations
+  - 4.4 million people arrested on suspicion between 2004 an 2012, 83% were black or hispanic
   - Social sciences and humanities have decades of research on bias in social systems
 
 #### 2. Harms of allocation
@@ -380,7 +380,7 @@ AI systems are trying to make good predictions , but they make mistakes:
 
 ### C. Data validity
 
-Often limited by the data we have and doesn’t have access to data we want to have.  
+Often limited by the data we have and doesn’t have access to data we want to have.
 
 The big question is, what constitutes **valid data** that we can base our speculations on ?
 

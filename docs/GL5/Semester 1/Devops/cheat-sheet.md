@@ -97,7 +97,7 @@ we get the nodes.
 > Note : We can also use **kind** which is similar to **minikube**
 
 - We add the repo for the charts via :
-  
+
 ```bash
 helm add repo <repo_url>
 ```
@@ -121,7 +121,7 @@ helm template ... | kubectl apply
 To see all applications currently installed through helm:
 
 ```bash
-helm list 
+helm list
 ```
 
 To only generate the template without applying
@@ -133,7 +133,7 @@ helm template prometheus prometheus-community/prometheus
 To select a configuration file to use for templating, we add this part to the previous command:
 
 ```bash
--f values.yaml 
+-f values.yaml
 ```
 
 to uninstall a chart
@@ -230,8 +230,8 @@ datadog:
 
   kubelet:
     tlsVerify: false # needed if working with azure
-  
-  logs: 
+
+  logs:
     enabled: true #enable logs
     containerCollectAll: true # collect logs of all containers
 ```

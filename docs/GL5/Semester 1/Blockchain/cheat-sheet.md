@@ -99,7 +99,7 @@ Two main forks happened:
 
 A common consensus algorithm that requires a participant node to prove that the work done and submitted by them qualifies them to receive the right to add new transactions to the blockchain. However, this whole mining mechanism of bitcoin needs high energy consumption and a longer processing time. It is based on the physical capacities of minors. It has several problems : 51% attack, energivore …
 
-## Etheurum
+## Ethereum
 
 - (ETH) is the currency used on the Ethereum network.
 - It natively supports **smart contracts**, an essential tool behind decentralized applications.

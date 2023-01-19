@@ -1,5 +1,5 @@
 ---
-slug: /gl4/semester-2/real-time-systems/posix
+slug: /gl4/semester-1/real-time-systems/posix
 ---
 
 # Posix

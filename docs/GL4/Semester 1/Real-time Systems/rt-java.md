@@ -115,7 +115,7 @@ RealtimeThread(SchedulingParameters, ReleaseParameters, MemoryParameters, Memory
 
 ```java
 PriorityParameters(int priority) // extends SchedulingParameters
-ImportanceParameters(int priority, int importance ) // extends SchedulingParameters, utilisé lorsque toute les tâches ne sont pas ordonnançable dans les temps 
+ImportanceParameters(int priority, int importance ) // extends SchedulingParameters, utilisé lorsque toute les tâches ne sont pas ordonnançable dans les temps
 
 ```
 
@@ -124,27 +124,27 @@ ImportanceParameters(int priority, int importance ) // extends SchedulingParamet
 ### Timers
 
 - **Timers**: a form of AsyncEvent relative to a clock
-  
+
   - **OneShotTimer**:
-  
+
     - interruption générée une seule fois
-  
+
       ```java
       OneShotTimer(HighResolutionTime time, AsyncEventHandler handler) // system clock
       OneShotTimer(HighResolutionTime time, Clock clock, AsyncEventHandler handler) // choose the clock
       ```
-  
+
   - **PeriodicTimer**:
-  
+
     - interruption générée périodiquement
-  
+
       ```java
       PeriodicTimer(HighResolutionTime start, RelativeTime interval, AsyncEventHandler handler) // system clock
       PeriodicTimer(HighResolutionTime start, RelativeTime interval, Clock clock, AsyncEventHandler handler) // choose the clock
       ```
 
 - **Time**: (**Extends** `HighResolutionTime`, we can add the clock in params to all of them)
-  
+
   - **`AbsoluteTime(Date)`**: depuis 1970
   - **`RelativeTime(long millis, int nanos)`**: relative to a date
   - **``RationalTime(int frequency, long millis, int nanos)``**: taux d'occurrences par intervalle de temps
@@ -288,11 +288,11 @@ To check for feasibility
 
 ```java
 mythread.setScheduler(sched);
-if (!mythread.getScheduler().isFeasible()) 
+if (!mythread.getScheduler().isFeasible())
     mythread.start()
 try {
     mythread.join();
-}  
+}
 catch (InterruptedException e) {}
 ```
 
@@ -323,7 +323,7 @@ public class Handler extends BoundAsyncEventHandler {
     public void handleAsyncEvent() {
         System.out.println("Dépassement D'écheance");
         //...
-    } 
+    }
 }
 ```
 
@@ -333,13 +333,13 @@ public class Handler extends BoundAsyncEventHandler {
 public class Test {
 
     public static void main(String[] args) {
-        PriorityScheduler sched = 
+        PriorityScheduler sched =
             javax.realtime.Scheduler.getDefaultScheduler();
 
 
         /** SchedulingParameters */
         SchedulingParameters schedulingParameters = new ImportanceParameters(sched.getMaxPriority(), 3);
-        
+
         /** ReleaseParameters */
         RelativeTime start = new RelativeTime(0,0);
         RelativeTime period = new RelativeTime(100,0);
@@ -347,7 +347,7 @@ public class Test {
         RelativeTime deadline = new RelativeTime(60,0);
         AsyncEventHandler overrunHandler = null ;
         AsyncEventHandler missHandler = new Handler();
-        
+
         ReleaseParameters releaseParameters = new PeriodicParameters(
             start,
             period,
@@ -405,7 +405,7 @@ public class Test {
             rt.start();
         }
 
-        rt.join();  
+        rt.join();
 
     }
 

@@ -311,7 +311,7 @@ export class CustomFilter implements ExceptionFilter{
             path: request.url,
         });
     return response;
-    } 
+    }
 }
 ```
 
@@ -515,7 +515,7 @@ TypeOrmModule.forRoot(
 { //..
 //entities: ["dist/**/*.entity{.ts,.js}"],
 autoLoadEntities: true,
-} 
+}
 ```
 
 Cette deuxieme methode se fait en chargeant automatiquement, toutes les entités enregistré avec la méthode forFeature

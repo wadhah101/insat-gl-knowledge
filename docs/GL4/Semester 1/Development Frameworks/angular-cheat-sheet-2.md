@@ -64,7 +64,7 @@ import { Component, OnInit } from "@angular/core";
 export class SecondComponent implements OnInit {
     constructor() {
     }
-    ngOnInit(): void {   
+    ngOnInit(): void {
     }
 }
 ```
@@ -192,7 +192,7 @@ export class InterpolationComponent {
 #### Different lifecycle hooks
 
 - Constructor
-- **`ngOnChanges`**:  
+- **`ngOnChanges`**:
   - Elle est appelé si un composant posséde des input (``@Input`) et à chaque fois qu’elles changent.
   - La méthode reçoit en paramètre un objet représentant les valeurs actuelles et les valeurs précédentes disponibles pour ce composant.
 - **`ngOnInit`**:
@@ -802,16 +802,16 @@ Pour broadcaster une nouvelle valeur, il suffit d'appeler la méthode next, et e
 
 ```typescript
 import { Subject } from 'rxjs';
- 
+
 const subject = new Subject<number>();
- 
+
 subject.subscribe({
   next: (v) => console.log(`observerA: ${v}`)
 });
 subject.subscribe({
   next: (v) => console.log(`observerB: ${v}`)
 });
- 
+
 subject.next(1);
 subject.next(2);
 ```
@@ -1136,7 +1136,7 @@ const routes: Route[] = [
 ];
 @NgModule({
     imports: [RouterModule.forChild(routes)], // le changement
-    exports: [RouterModule], 
+    exports: [RouterModule],
 })
 export class TodoRouting {} // on l'importe aprés dans notre module
 ```
@@ -1415,7 +1415,7 @@ this.isLoggedIn$ = this.store.pipe(
 ```typescript
 this.isLoggedIn$ = this.store.pipe(
     map(
-        (state) => state["auth"]    
+        (state) => state["auth"]
     ),
     distinctUntilChanged()
 )
@@ -1425,7 +1425,7 @@ this.isLoggedIn$ = this.store.pipe(
 
 ```typescript
 this.isLoggedIn$ = this.store.select(
-    (state) => !!state["auth"].user 
+    (state) => !!state["auth"].user
 );
 ```
 

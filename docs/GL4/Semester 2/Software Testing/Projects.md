@@ -12,3 +12,4 @@ Edit this page and make a PR to add your project !
 | App 4 Software Testing & DevOps Pipeline | 2021-2022 | - | [@MelekElloumi](https://github.com/MelekElloumi) | [Repo](https://github.com/MelekElloumi/Software-Testing-DevOps-Pipeline) |
 | Software-Testing | 2021-2022 | - | [@Mellywins](https://github.com/Mellywins) | [Repo](https://github.com/Mellywins/Software-Testing) |
 | Image Resizer | 2021-2022 | - | [@hajali-amine](https://github.com/hajali-amine) | [Repo](https://github.com/hajali-amine/image-resizer) |
+| QIPAT | 2021-2022 | Image Processing Toolkit written in Qt and C++ | [@Saief1999](https://github.com/Saief1999) and [@ramizouari](https://github.com/ramizouari) | [Repo](https://github.com/ramizouari/QIPAT) |

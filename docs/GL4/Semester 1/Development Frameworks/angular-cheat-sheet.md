@@ -2,7 +2,7 @@
 slug: /gl4/semester-1/development-frameworks/angular-cheat-sheet
 ---
 
-# Angular-Cheat-Sheet
+# Angular Cheat Sheet
 
 Author [@rihemebh](https://github.com/rihemebh)
 

@@ -4,7 +4,10 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import styles from "./index.module.css";
-import { CONTRIBUTORS_DATA } from "@site/data/contributors";
+import {
+  BLACKLISTED_CONTRIBUTORS,
+  CONTRIBUTORS,
+} from "@site/data/contributors";
 import { Contributor } from "@site/data/Contributors.interface";
 
 function HomepageHeader() {
@@ -59,10 +62,8 @@ const ContributorList: React.FC<ContributorListProps> = ({ contributors }) => {
   );
 };
 
-const blackList = ["ImgBotApp", "pre-commit-ci[bot]"];
-
-const filteredContributors = CONTRIBUTORS_DATA.filter(
-  (e) => !blackList.find((x) => x === e.login)
+const filteredContributors = CONTRIBUTORS.filter(
+  (e) => !BLACKLISTED_CONTRIBUTORS.find((x) => x === e.login)
 );
 
 export default function Home(): JSX.Element {

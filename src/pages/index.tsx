@@ -70,7 +70,7 @@ export default function Home(): JSX.Element {
     <Layout title={`Home`} description="">
       <HomepageHeader />
       <div className="grid py-20 place-items-center">
-        <ContributorList contributors={[filteredContributors]} />
+        <ContributorList contributors={filteredContributors} />
       </div>
     </Layout>
   );

@@ -1,5 +1,5 @@
 ---
-slug: /gl5/semester-1/ethics/presentations
+slug: /gl5/semester-1/ethics/presentation
 ---
 
 # Ethics Presentations

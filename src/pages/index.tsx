@@ -32,26 +32,28 @@ interface ContributorListProps {
 
 const ContributorList: React.FC<ContributorListProps> = ({ contributors }) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full ">
       <h2 className="pb-3 text-3xl text-center"> CONTRIBUTORS </h2>
-      <div className="flex flex-wrap items-center justify-center gap-3 px-8 md:w-6/12">
-        {contributors.map((e) => (
-          <div key={e.id}>
-            <a
-              title={`${e.login}: ${e.contributions} contributions`}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={e.html_url}
-            >
-              <div className="flex flex-col">
-                <img
-                  className="w-16 h-16 rounded-full md:w-24 md:h-24"
-                  src={e.avatar_url}
-                />
-              </div>
-            </a>
-          </div>
-        ))}
+      <div className=" md:w-6/12">
+        <div className="flex flex-wrap items-center justify-center gap-3 px-8 md:gap-6">
+          {contributors.map((e) => (
+            <div key={e.id}>
+              <a
+                title={`${e.login}: ${e.contributions} contributions`}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={e.html_url}
+              >
+                <div className="flex flex-col">
+                  <img
+                    className="w-16 h-16 rounded-full md:w-24 md:h-24"
+                    src={e.avatar_url}
+                  />
+                </div>
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -68,7 +70,9 @@ export default function Home(): JSX.Element {
     <Layout title={`Home`} description="">
       <HomepageHeader />
       <div className="grid py-20 place-items-center">
-        <ContributorList contributors={filteredContributors} />
+        <ContributorList
+          contributors={[...filteredContributors, ...filteredContributors]}
+        />
       </div>
     </Layout>
   );

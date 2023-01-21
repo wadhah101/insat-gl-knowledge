@@ -45,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@docusaurus/types", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
             ["@docusaurus/utils", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
             ["@docusaurus/utils-common", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
+            ["@easyops-cn/docusaurus-search-local", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.33.6"],\
             ["@mdx-js/react", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.6.22"],\
             ["@prettier/plugin-xml", "npm:2.2.0"],\
             ["@tsconfig/docusaurus", "npm:1.0.6"],\
@@ -4142,6 +4143,63 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@easyops-cn/autocomplete.js", [\
+        ["npm:0.38.1", {\
+          "packageLocation": "./.yarn/cache/@easyops-cn-autocomplete.js-npm-0.38.1-2375cf670a-d88b61f12c.zip/node_modules/@easyops-cn/autocomplete.js/",\
+          "packageDependencies": [\
+            ["@easyops-cn/autocomplete.js", "npm:0.38.1"],\
+            ["cssesc", "npm:3.0.0"],\
+            ["immediate", "npm:3.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@easyops-cn/docusaurus-search-local", [\
+        ["npm:0.33.6", {\
+          "packageLocation": "./.yarn/cache/@easyops-cn-docusaurus-search-local-npm-0.33.6-35fb1c8f7f-fd2f3e7f5f.zip/node_modules/@easyops-cn/docusaurus-search-local/",\
+          "packageDependencies": [\
+            ["@easyops-cn/docusaurus-search-local", "npm:0.33.6"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.33.6", {\
+          "packageLocation": "./.yarn/__virtual__/@easyops-cn-docusaurus-search-local-virtual-17d2dba257/0/cache/@easyops-cn-docusaurus-search-local-npm-0.33.6-35fb1c8f7f-fd2f3e7f5f.zip/node_modules/@easyops-cn/docusaurus-search-local/",\
+          "packageDependencies": [\
+            ["@easyops-cn/docusaurus-search-local", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.33.6"],\
+            ["@docusaurus/plugin-content-docs", "virtual:1105e1e53086ecddf370c887177ff332c60c11e8101940c2bef3c61f2c3a30bc93522a01f5961aa38b7de64ee77be97433a1a3b001f428fd7aebce8c4dff72f3#npm:2.2.0"],\
+            ["@docusaurus/theme-common", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
+            ["@docusaurus/theme-translations", "npm:2.2.0"],\
+            ["@docusaurus/utils", "virtual:61a9a17253a3be5804e8f8aeb4fe4e75853bcba3866de3e3ee079a544b51612d0a99d184f624b5b82db99b06e482cd035d59e98da5f5e8dd5a2ff1c79761ebf1#npm:2.2.0"],\
+            ["@docusaurus/utils-common", "virtual:8f4940463b41fe9b1a7e909430bf753dc4283b74746d65cf6e0d849d9a2d7833a29c61876d1c3aecd9cf2d0dd305c9e7a754256be3c1f511f9693c11f9586fa9#npm:2.2.0"],\
+            ["@docusaurus/utils-validation", "npm:2.2.0"],\
+            ["@easyops-cn/autocomplete.js", "npm:0.38.1"],\
+            ["@node-rs/jieba", "npm:1.6.2"],\
+            ["@types/docusaurus__theme-common", null],\
+            ["@types/react", null],\
+            ["@types/react-dom", null],\
+            ["cheerio", "npm:1.0.0-rc.12"],\
+            ["clsx", "npm:1.2.1"],\
+            ["debug", "virtual:569a25513afb6a24dfed8c5a30a481623293e0360f4b156e464840d4caead450805a6a0e63416cee33f850b619b3920e00801a8b5031df983b570ea9dd38b09f#npm:4.3.4"],\
+            ["fs-extra", "npm:10.1.0"],\
+            ["klaw-sync", "npm:6.0.0"],\
+            ["lunr", "npm:2.3.9"],\
+            ["lunr-languages", "npm:1.10.0"],\
+            ["mark.js", "npm:8.11.1"],\
+            ["react", "npm:17.0.2"],\
+            ["react-dom", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:17.0.2"],\
+            ["tslib", "npm:2.4.1"]\
+          ],\
+          "packagePeers": [\
+            "@docusaurus/theme-common",\
+            "@types/docusaurus__theme-common",\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@endiliey/react-ideal-image", [\
         ["npm:0.0.11", {\
           "packageLocation": "./.yarn/cache/@endiliey-react-ideal-image-npm-0.0.11-9efe93392e-81f7bf641a.zip/node_modules/@endiliey/react-ideal-image/",\
@@ -4359,6 +4417,145 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@mdx-js-util-npm-1.6.22-8e56495eac-4b393907e3.zip/node_modules/@mdx-js/util/",\
           "packageDependencies": [\
             ["@mdx-js/util", "npm:1.6.22"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/cache/@node-rs-jieba-npm-1.6.2-3d8be7adf9-3d5264170d.zip/node_modules/@node-rs/jieba/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba", "npm:1.6.2"],\
+            ["@node-rs/jieba-android-arm-eabi", "npm:1.6.2"],\
+            ["@node-rs/jieba-android-arm64", "npm:1.6.2"],\
+            ["@node-rs/jieba-darwin-arm64", "npm:1.6.2"],\
+            ["@node-rs/jieba-darwin-x64", "npm:1.6.2"],\
+            ["@node-rs/jieba-freebsd-x64", "npm:1.6.2"],\
+            ["@node-rs/jieba-linux-arm-gnueabihf", "npm:1.6.2"],\
+            ["@node-rs/jieba-linux-arm64-gnu", "npm:1.6.2"],\
+            ["@node-rs/jieba-linux-arm64-musl", "npm:1.6.2"],\
+            ["@node-rs/jieba-linux-x64-gnu", "npm:1.6.2"],\
+            ["@node-rs/jieba-linux-x64-musl", "npm:1.6.2"],\
+            ["@node-rs/jieba-win32-arm64-msvc", "npm:1.6.2"],\
+            ["@node-rs/jieba-win32-ia32-msvc", "npm:1.6.2"],\
+            ["@node-rs/jieba-win32-x64-msvc", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-android-arm-eabi", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-android-arm-eabi-npm-1.6.2-1f2632cf36/node_modules/@node-rs/jieba-android-arm-eabi/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-android-arm-eabi", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-android-arm64", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-android-arm64-npm-1.6.2-ee5a66d999/node_modules/@node-rs/jieba-android-arm64/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-android-arm64", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-darwin-arm64", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-darwin-arm64-npm-1.6.2-2d4850163b/node_modules/@node-rs/jieba-darwin-arm64/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-darwin-arm64", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-darwin-x64", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-darwin-x64-npm-1.6.2-8ee651ba07/node_modules/@node-rs/jieba-darwin-x64/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-darwin-x64", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-freebsd-x64", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-freebsd-x64-npm-1.6.2-2615d1316e/node_modules/@node-rs/jieba-freebsd-x64/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-freebsd-x64", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-linux-arm-gnueabihf", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-linux-arm-gnueabihf-npm-1.6.2-b2fa2f48c1/node_modules/@node-rs/jieba-linux-arm-gnueabihf/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-linux-arm-gnueabihf", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-linux-arm64-gnu", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-linux-arm64-gnu-npm-1.6.2-e7c2b8bb64/node_modules/@node-rs/jieba-linux-arm64-gnu/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-linux-arm64-gnu", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-linux-arm64-musl", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-linux-arm64-musl-npm-1.6.2-a98b99264e/node_modules/@node-rs/jieba-linux-arm64-musl/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-linux-arm64-musl", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-linux-x64-gnu", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-linux-x64-gnu-npm-1.6.2-a50728b3e2/node_modules/@node-rs/jieba-linux-x64-gnu/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-linux-x64-gnu", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-linux-x64-musl", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-linux-x64-musl-npm-1.6.2-a143e70c14/node_modules/@node-rs/jieba-linux-x64-musl/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-linux-x64-musl", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-win32-arm64-msvc", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-win32-arm64-msvc-npm-1.6.2-924e7435b3/node_modules/@node-rs/jieba-win32-arm64-msvc/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-win32-arm64-msvc", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-win32-ia32-msvc", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-win32-ia32-msvc-npm-1.6.2-64b7eb2163/node_modules/@node-rs/jieba-win32-ia32-msvc/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-win32-ia32-msvc", "npm:1.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@node-rs/jieba-win32-x64-msvc", [\
+        ["npm:1.6.2", {\
+          "packageLocation": "./.yarn/unplugged/@node-rs-jieba-win32-x64-msvc-npm-1.6.2-edabd82ce9/node_modules/@node-rs/jieba-win32-x64-msvc/",\
+          "packageDependencies": [\
+            ["@node-rs/jieba-win32-x64-msvc", "npm:1.6.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10518,6 +10715,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["immediate", [\
+        ["npm:3.3.0", {\
+          "packageLocation": "./.yarn/cache/immediate-npm-3.3.0-d00fd9df7d-634b430510.zip/node_modules/immediate/",\
+          "packageDependencies": [\
+            ["immediate", "npm:3.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["immer", [\
         ["npm:9.0.16", {\
           "packageLocation": "./.yarn/cache/immer-npm-9.0.16-426ac657bc-e9a5ca65c9.zip/node_modules/immer/",\
@@ -10657,6 +10863,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@docusaurus/types", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
             ["@docusaurus/utils", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
             ["@docusaurus/utils-common", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:2.2.0"],\
+            ["@easyops-cn/docusaurus-search-local", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:0.33.6"],\
             ["@mdx-js/react", "virtual:a3a063878316384bed6aecbfefaf6ae6da5927d905b4413e66cd96df3c637ae0d2ff81a99eb49322eac678ebde06caabea86eda633400f502a6b9a32e7f607ed#npm:1.6.22"],\
             ["@prettier/plugin-xml", "npm:2.2.0"],\
             ["@tsconfig/docusaurus", "npm:1.0.6"],\
@@ -11448,6 +11655,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["klaw-sync", [\
+        ["npm:6.0.0", {\
+          "packageLocation": "./.yarn/cache/klaw-sync-npm-6.0.0-251c1a2fa5-0da397f896.zip/node_modules/klaw-sync/",\
+          "packageDependencies": [\
+            ["klaw-sync", "npm:6.0.0"],\
+            ["graceful-fs", "npm:4.2.10"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["kleur", [\
         ["npm:3.0.3", {\
           "packageLocation": "./.yarn/cache/kleur-npm-3.0.3-f6f53649a4-df82cd1e17.zip/node_modules/kleur/",\
@@ -11683,6 +11900,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["lunr", [\
+        ["npm:2.3.9", {\
+          "packageLocation": "./.yarn/cache/lunr-npm-2.3.9-fa3aa9c2d6-176719e24f.zip/node_modules/lunr/",\
+          "packageDependencies": [\
+            ["lunr", "npm:2.3.9"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lunr-languages", [\
+        ["npm:1.10.0", {\
+          "packageLocation": "./.yarn/cache/lunr-languages-npm-1.10.0-1ead56f23a-e8fd7562f5.zip/node_modules/lunr-languages/",\
+          "packageDependencies": [\
+            ["lunr-languages", "npm:1.10.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["magic-string", [\
         ["npm:0.25.9", {\
           "packageLocation": "./.yarn/cache/magic-string-npm-0.25.9-0b51c0ea50-9a0e55a15c.zip/node_modules/magic-string/",\
@@ -11724,6 +11959,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["promise-retry", "npm:2.0.1"],\
             ["socks-proxy-agent", "npm:7.0.0"],\
             ["ssri", "npm:9.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["mark.js", [\
+        ["npm:8.11.1", {\
+          "packageLocation": "./.yarn/cache/mark.js-npm-8.11.1-04e3941033-aa6b9ae1c6.zip/node_modules/mark.js/",\
+          "packageDependencies": [\
+            ["mark.js", "npm:8.11.1"]\
           ],\
           "linkType": "HARD"\
         }]\

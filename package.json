@@ -33,6 +33,7 @@
     "@docusaurus/types": "2.2.0",
     "@docusaurus/utils": "2.2.0",
     "@docusaurus/utils-common": "2.2.0",
+    "@easyops-cn/docusaurus-search-local": "^0.33.6",
     "@mdx-js/react": "^1.6.22",
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.1",

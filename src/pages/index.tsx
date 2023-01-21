@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import styles from "./index.module.css";
-import { contributors } from "@site/data/contributors";
+import { CONTRIBUTORS_DATA } from "@site/data/contributors";
 import { Contributor } from "@site/data/Contributors.interface";
 
 function HomepageHeader() {
@@ -32,9 +32,9 @@ interface ContributorListProps {
 
 const ContributorList: React.FC<ContributorListProps> = ({ contributors }) => {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <h2 className="pb-3 text-3xl text-center"> CONTRIBUTORS </h2>
-      <div className="grid grid-cols-5 gap-6">
+      <div className="flex flex-wrap items-center justify-center gap-3 px-8 md:w-6/12">
         {contributors.map((e) => (
           <div key={e.id}>
             <a
@@ -44,7 +44,10 @@ const ContributorList: React.FC<ContributorListProps> = ({ contributors }) => {
               href={e.html_url}
             >
               <div className="flex flex-col">
-                <img className="h-24 rounded-full" src={e.avatar_url} />
+                <img
+                  className="w-16 h-16 rounded-full md:w-24 md:h-24"
+                  src={e.avatar_url}
+                />
               </div>
             </a>
           </div>
@@ -54,8 +57,10 @@ const ContributorList: React.FC<ContributorListProps> = ({ contributors }) => {
   );
 };
 
-const filteredContributors = contributors.filter(
-  (e) => !["ImgBotApp", "pre-commit-ci[bot]"].find((x) => x === e.login)
+const blackList = ["ImgBotApp", "pre-commit-ci[bot]"];
+
+const filteredContributors = CONTRIBUTORS_DATA.filter(
+  (e) => !blackList.find((x) => x === e.login)
 );
 
 export default function Home(): JSX.Element {

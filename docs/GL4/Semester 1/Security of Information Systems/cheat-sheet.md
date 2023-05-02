@@ -572,7 +572,7 @@ openssl dgst -sha256 -verify PUB -signature fileHashSign file
 
 - Certification Authority issues digital certificates
 
-- Get the Certification of the www.google.com website:
+- Get the Certification of the <www.google.com> website:
 
 ```bash
 openssl s_client www.google.com:443

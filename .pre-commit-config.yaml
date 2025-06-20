@@ -8,7 +8,7 @@ repos:
         exclude: .yarn
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.42.0
+    rev: v0.45.0
     hooks:
       - id: markdownlint-fix
         name: markdownlint-fix
@@ -23,3 +23,21 @@ repos:
     hooks:
       - id: shellcheck
         args: ["--severity=style"]
+
+  - repo: local
+    hooks:
+      - id: lint
+        name: lint
+        entry: yarn lint
+        language: system
+        types: [file, javascript]
+        pass_filenames: false
+
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: yarn prettier
+        language: system
+        types: [file, javascript]
+        pass_filenames: false

@@ -41,3 +41,12 @@ repos:
         language: system
         types: [file, python]
         pass_filenames: false
+
+  - repo: local
+    hooks:
+      - id: generate_contributors
+        name: generate_contributors
+        entry: bash -c "gh api repos/wadhah101/insat-gl-knowledge/contributors > data/contributors.json"
+        language: system
+        types: [file, python]
+        pass_filenames: false

@@ -60,12 +60,7 @@ jobs:
       - name: show cache
         run: ls -la .yarn || true
 
-      - name: generate contributors
-        run: |
-          gh api repos/wadhah101/insat-gl-knowledge/contributors > data/contributors.json
-          jq ".[] | { login, contributions }" data/contributors.json
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Build project
         run: yarn build

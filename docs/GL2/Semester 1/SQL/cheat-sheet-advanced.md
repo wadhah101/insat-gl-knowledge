@@ -125,6 +125,8 @@ Author [@rihemebh](https://github.com/rihemebh)
 
 #### Procedures
 
+<!-- markdownlint-disable MD056  -->
+
 | Oracle                                                     | PostgreSQL |
 | ---------------------------------------------------------- | ---------- |
 | `CREATE procedure proc_name[(in / out / in out parms)] AS` |

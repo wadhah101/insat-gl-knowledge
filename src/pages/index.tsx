@@ -4,11 +4,13 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import styles from "./index.module.css";
+import { PostHogProvider } from "posthog-js/react";
 import {
   BLACKLISTED_CONTRIBUTORS,
   CONTRIBUTORS,
 } from "@site/data/contributors";
 import { Contributor } from "@site/data/Contributors.interface";
+
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -29,6 +31,7 @@ function HomepageHeader() {
     </header>
   );
 }
+
 interface ContributorListProps {
   contributors: Contributor[];
 }
@@ -66,13 +69,23 @@ const filteredContributors = CONTRIBUTORS.filter(
   (e) => !BLACKLISTED_CONTRIBUTORS.find((x) => x === e.login)
 );
 
+
 export default function Home(): JSX.Element {
   return (
-    <Layout title={`Home`} description="">
-      <HomepageHeader />
-      <div className="grid py-20 place-items-center">
-        <ContributorList contributors={filteredContributors} />
-      </div>
-    </Layout>
+    <PostHogProvider
+      apiKey={"phc_xiS1BHDxm0iYKyaKfDvYlzaB4JibK4BpcQYkYJovK4t"}
+      options={{
+        api_host: "https://eu.i.posthog.com",
+        capture_exceptions: true,
+        debug: false
+      }}
+    >
+      <Layout title={`Home`} description="">
+        <HomepageHeader />
+        <div className="grid py-20 place-items-center">
+          <ContributorList contributors={filteredContributors} />
+        </div>
+      </Layout>
+    </PostHogProvider>
   );
 }

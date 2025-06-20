@@ -138,9 +138,9 @@ SELECT … INTO nomVariable FROM … WHERE … ;
   - ex. `numEmp EMP.EMPNO%TYPE;`
 - `nomVariable%TYPE` :
   - le type de la variable (déclarée auparavant)
-  - ex. `credit REAL;`
-          `debit credit%TYPE;`
+  - ex. `credit REAL;` `debit credit%TYPE;`
 - `nomTable%ROWTYPE` :
+
   - type (composé) des lignes de la table
   - ex. `unEtudiant STUDENT%ROWTYPE;`
 
@@ -199,7 +199,7 @@ instructions; END LOOP;
 
 ### sous-programme dans PL/SQL
 
-- on peut les définir après `DECLARE` ,  sans utiliser le mot clé `CREATE`
+- on peut les définir après `DECLARE` , sans utiliser le mot clé `CREATE`
 
 ```sql
 DECLARE

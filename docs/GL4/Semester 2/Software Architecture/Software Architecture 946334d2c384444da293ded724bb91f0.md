@@ -40,7 +40,7 @@ A quel point est-il facile d'apprendre à utiliser le système?
 
 La facilité avec laquelle le système peut changer
 
- → LE SYSTEME EST FACILE A CHANGER
+→ LE SYSTEME EST FACILE A CHANGER
 
 ### Portabilité
 
@@ -60,8 +60,7 @@ Les contraintes temporelles du logiciel
 
 Respecter les contraintes de temps et les attentes des utilisateurs
 
- **la fiabilité vs disponibilité**
-En termes simples, la **disponibilité** est une mesure du pourcentage de temps pendant lequel l'équipement est dans un état opérationnel, tandis que **la fiabilité** est une mesure de la durée pendant laquelle l'article remplit sa fonction prévue.
+**la fiabilité vs disponibilité** En termes simples, la **disponibilité** est une mesure du pourcentage de temps pendant lequel l'équipement est dans un état opérationnel, tandis que **la fiabilité** est une mesure de la durée pendant laquelle l'article remplit sa fonction prévue.
 
 ---
 
@@ -82,7 +81,7 @@ High security, role and privilege managing
 
 #### MainFrame- Cons
 
-disponibilite (coz all the cherge is on it)  SPOF
+disponibilite (coz all the cherge is on it) SPOF
 
 ### Client / Server
 
@@ -92,8 +91,7 @@ disponibilite (coz all the cherge is on it)  SPOF
 
 #### Client / Server - Pros
 
-performance
-control but not too much
+performance control but not too much
 
 #### Client / Server - Cons
 
@@ -119,10 +117,9 @@ simple , separation of concerns
 
 performance , layered are highly coupled
 
-### MV* Architecture
+### MV\* Architecture
 
-. MV* is motivated by the **[separation of concerns (SoC)](https://en.wikipedia.org/wiki/Separation_of_concerns)**
-design principle as it splits up the application into three main components and defines how the components interact. This reduces the coupling between components and allows each component to be independently developed, tested, modified, reused and scaled.
+. MV\* is motivated by the **[separation of concerns (SoC)](https://en.wikipedia.org/wiki/Separation_of_concerns)** design principle as it splits up the application into three main components and defines how the components interact. This reduces the coupling between components and allows each component to be independently developed, tested, modified, reused and scaled.
 
 MVP, MVC, MVVM
 
@@ -177,22 +174,17 @@ smart endpoints
 
 ![Untitled](Software%20Architecture%20946334d2c384444da293ded724bb91f0/Untitled%207.png)
 
-It is generally used in enterprises  where every department has its own Broker + one centrelized
+It is generally used in enterprises where every department has its own Broker + one centrelized
 
 #### Broker - Pros
 
 - Could be used as MOM (only transfer data)
 
-    ++ asynchronous communication
-    ++ gestion des pannes
+  ++ asynchronous communication ++ gestion des pannes
 
 - Or as middleware which is more intelligent
 
-    ++ security (works as firewall): access control
-    ++ data transformation
-    ++ decoupling
-    ++ service aggregation
-    ++ Interoperability (the ability to work and adapt with other system and machines)
+  ++ security (works as firewall): access control ++ data transformation ++ decoupling ++ service aggregation ++ Interoperability (the ability to work and adapt with other system and machines)
 
 #### Broker - Cons
 
@@ -267,21 +259,9 @@ What if we add a teacher who first asks each student what he wants to write on t
 
 This is the idea behind the blackboard architecture. The students are called Knowledge Sources. The teacher is called the Scheduler and the Blackboard is the common data structure of the Knowledge Sources. The blackboard represents all states of some problem space.
 
-**Knowledge sources** are self-selecting modules of domain knowledge. Each knowledge
-source can be viewed as an independent program specialized in processing a certain
-type of information or knowledge of a narrower domain. Each knowledge source should
-have the ability to assess itself on whether it should contribute to the problem solving
-process at any instance. The knowledge sources in a blackboard system are separated
-and independent. Each has its own set of working procedures or rules and each has its
-own private data structure. It contains information necessary for a correct run of the
-knowledge source. The action part of a knowledge source performs the actual problem
-solving and produces changes to the BB. It can allow for different kinds of knowledge
-representation and different inference mechanisms.
-representation and different inference mechanisms.
+**Knowledge sources** are self-selecting modules of domain knowledge. Each knowledge source can be viewed as an independent program specialized in processing a certain type of information or knowledge of a narrower domain. Each knowledge source should have the ability to assess itself on whether it should contribute to the problem solving process at any instance. The knowledge sources in a blackboard system are separated and independent. Each has its own set of working procedures or rules and each has its own private data structure. It contains information necessary for a correct run of the knowledge source. The action part of a knowledge source performs the actual problem solving and produces changes to the BB. It can allow for different kinds of knowledge representation and different inference mechanisms. representation and different inference mechanisms.
 
-**Blackboard**: It is the part of the system that is used for storage of knowledge accessible to all the
-KSs. It is a global data structure used to organize the problem-solving data and to
-handle communications between the KSs
+**Blackboard**: It is the part of the system that is used for storage of knowledge accessible to all the KSs. It is a global data structure used to organize the problem-solving data and to handle communications between the KSs
 
 #### Blackboard - Pros
 
@@ -328,8 +308,7 @@ Key tenets of Onion Architecture:
 
 independante des framework , bd , ui
 
-La *clean architecture*
- permet de construire des applications bien structurées, chaque partie ayant un périmètre et un rôle bien défini. Le code est découplé de détails comme les *frameworks*, les bases de données. Il n'est pas obligatoire d'implémenter toutes les couches de la figure. Il faut néanmoins une couche pour les fonctionnalités métiers (*use cases*) et une couche pour les adaptateurs d'interface (*adapters interface*). Des outils comme le *framework* utilisé ou la base de données, sont des détails. Ils sont situés dans une couche supérieure. Les couches supérieures peuvent avoir des dépendances dans les couches inférieures, mais les couches inférieures ne doivent pas avoir des dépendances, des références dans les couches supérieures.
+La *clean architecture*  permet de construire des applications bien structurées, chaque partie ayant un périmètre et un rôle bien défini. Le code est découplé de détails comme les *frameworks*, les bases de données. Il n'est pas obligatoire d'implémenter toutes les couches de la figure. Il faut néanmoins une couche pour les fonctionnalités métiers (_use cases_) et une couche pour les adaptateurs d'interface (_adapters interface_). Des outils comme le *framework* utilisé ou la base de données, sont des détails. Ils sont situés dans une couche supérieure. Les couches supérieures peuvent avoir des dépendances dans les couches inférieures, mais les couches inférieures ne doivent pas avoir des dépendances, des références dans les couches supérieures.
 
 C’ est un mode d'organisation, d'architecture, qui met l'accent la séparation des responsabilités, et le découplage des fonctionnalités métiers d'outils comme les frameworks, et les bases de données.
 

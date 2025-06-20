@@ -15,6 +15,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 - Chaque module Angular est une classe avec une annotation `@NgModule`
 
 - Chaque application a au moins un module, c’est le module principale **AppModule**.
+
   - le module principal est le module qui permet de lancer l’application de la bootstraper
 
   - Annoté par `@NgModule`, prend en parametre un objet contenant:
@@ -30,7 +31,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 ### Ajout de styles/scripts
 
 1. Dans `src/index.html`
-2. Dans  `src/style.css` :  `@import "~bootstrap/dist/css/bootstrap.css";`
+2. Dans `src/style.css` : `@import "~bootstrap/dist/css/bootstrap.css";`
 3. En ajoutant le chemin des dépendances dans les tableaux **styles** et **scripts** dans le fichier `angular.json`
 
 ## Composants
@@ -47,8 +48,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 #### Manuellement
 
 - Ajouté avec `@Component()`, prend en parametre:
-  - `selector`: permet de spécifier le tag (nom de la balise) associé ce
-    composant
+  - `selector`: permet de spécifier le tag (nom de la balise) associé ce composant
   - `templateUrl`: spécifie l’url du template associé au composant
   - `styleUrls`: tableau des feuilles de styles associé à ce composant
   - `providers`: S'il y'a des services
@@ -56,36 +56,30 @@ Author [@Saief1999](https://github.com/Saief1999)
 ```typescript
 import { Component, OnInit } from "@angular/core";
 @Component({
-    selector: "app-second",
-    templateUrl: "second.component.html",
-    styleUrls: ["./second.component.scss"],
-    providers: [] // s'il ya un service
+  selector: "app-second",
+  templateUrl: "second.component.html",
+  styleUrls: ["./second.component.scss"],
+  providers: [], // s'il ya un service
 })
 export class SecondComponent implements OnInit {
-    constructor() {
-    }
-    ngOnInit(): void {
-    }
+  constructor() {}
+  ngOnInit(): void {}
 }
 ```
 
-- Puis on doit l'ajouer dans  `AppModule (app.module.ts)` dans `declarations`
+- Puis on doit l'ajouer dans `AppModule (app.module.ts)` dans `declarations`
 
 ```typescript
 @NgModule({
   declarations: [
     AppComponent,
-    SecondComponent // on ajoute ça
+    SecondComponent, // on ajoute ça
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}
 ```
 
 - Ensuite on le met (par exemple) dans `app.component.html`
@@ -114,36 +108,35 @@ export class AppModule { }
 - `(event)` ou `on-event`
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 @Component({
-    selector: 'inter-interpolation',
-    template : 'interpolation.html' ,
-    styles: []
+  selector: "inter-interpolation",
+  template: "interpolation.html",
+  styles: [],
 })
 export class InterpolationComponent {
-    nom:string ='Aymen Sellaouti';
-    age:number =35;
-    adresse:string ='Chez moi ou autre part :)';
-    getName(){
-        return this.nom;
-    }
-    modifier(newName){
-        this.nom=newName;
-    }
+  nom: string = "Aymen Sellaouti";
+  age: number = 35;
+  adresse: string = "Chez moi ou autre part :)";
+  getName() {
+    return this.nom;
+  }
+  modifier(newName) {
+    this.nom = newName;
+  }
 }
 ```
 
 ```html
-<hr>
-    Nom : {{nom}}<br>
-    Age : {{age}}<br>
-    Adresse : {{adresse}}<br>
-    //Property Binding
-    <input #name [value]="getName()">
-    //Event Binding
-    <button (click)="modifier(name.value)"
-    >Modifier le nom</button>
-<hr>
+<hr />
+Nom : {{nom}}<br />
+Age : {{age}}<br />
+Adresse : {{adresse}}<br />
+//Property Binding
+<input #name [value]="getName()" />
+//Event Binding
+<button (click)="modifier(name.value)">Modifier le nom</button>
+<hr />
 ```
 
 **Referening :**
@@ -152,14 +145,12 @@ export class InterpolationComponent {
 
 **Accés à une propriété de style :**
 
-- our accéder à une propriété de style d’un élément on peut binder la propriété
-  `[style.nomPropriété]` exemple `[style.backgroundColor]`
+- our accéder à une propriété de style d’un élément on peut binder la propriété `[style.nomPropriété]` exemple `[style.backgroundColor]`
 
 #### Two way binding
 
 - Two-way binding
-- Permet d’interagir du Dom vers le composant et du composant vers le
-  DOM.
+- Permet d’interagir du Dom vers le composant et du composant vers le DOM.
 - se fait avec `([ngModel])=property`
   - :warning: Afin d'utiliser ngModel, on doit importer **FormsModule** dans `app.module.ts`
 
@@ -171,7 +162,7 @@ export class InterpolationComponent {
 4. Update DOM
 5. Run Check (by defaut **dirty checking**: it will perform checks for each browser events, timers, XHRs and promises )
 
-- Every component has a change detector that reads the binding on the  template and makes sure that the data model and view are in sync with  each other.
+- Every component has a change detector that reads the binding on the template and makes sure that the data model and view are in sync with each other.
 - Angular assumes that the data in the component or the whole application state changes due to the following reasons:
   - An event, such as click or submit, gets fired
   - An XHR is call to work with an API
@@ -203,8 +194,7 @@ export class InterpolationComponent {
 - **`ngAfterViewInit`**:
   - appelé juste aprés la mise en place de la vue d'un composant et des vues de ses composants fils s'il en a.
 - `ngAfterViewChecked` :
-- **`ngOnDestroy`**: Cette méthode est appelée avant qu’Angular ne détruise et ne
-  retire du DOM le composant.
+- **`ngOnDestroy`**: Cette méthode est appelée avant qu’Angular ne détruise et ne retire du DOM le composant.
 
 #### Interaction père fils
 
@@ -212,11 +202,11 @@ export class InterpolationComponent {
 
 - Le père voit le fils, pour pouvoir voir ces propriété:
   - Dans fils : `@Input() color="black"`
-  - `<app-fils  [color]="'white'"></app-fils>`
+  - `<app-fils [color]="'white'"></app-fils>`
 
 ##### Fils -> Pere
 
-- le père va  intercepter l’event et récupérer ce que je lui ai envoyé à travers la variable `$event` et va l’utiliser comme il veut
+- le père va intercepter l’event et récupérer ce que je lui ai envoyé à travers la variable `$event` et va l’utiliser comme il veut
 
   - Dans fils :
 
@@ -263,9 +253,11 @@ export class InterpolationComponent {
 - utilise le property binding
 
 ```html
-<p [ngStyle]="{'color':myColor,'font-
+<p
+  [ngStyle]="{'color':myColor,'font-
 family':myfont,'background-color' :
-myBackground}">
+myBackground}"
+></p>
 ```
 
 #### ngClass ( Similar to `:class` in Vue )
@@ -285,23 +277,21 @@ myBackground}">
 
 ```typescript
 @Directive({
-    selector: "[appHighlight]",
+  selector: "[appHighlight]",
 })
-export class HighlightDirective{
-    @HostBinding("style.backgroundColor") bg:string = red;
-    @HostListener("mouseenter") mouseenter() {
-        this.bg = "yellow"
-    }
-    @HostListener("mouseleave") mouseenter() {
-        this.bg = "red"
-    }
+export class HighlightDirective {
+  @HostBinding("style.backgroundColor") bg: string = red;
+  @HostListener("mouseenter") mouseenter() {
+    this.bg = "yellow";
+  }
+  @HostListener("mouseleave") mouseenter() {
+    this.bg = "red";
+  }
 }
 ```
 
 ```html
-<div appHighlight>
-    Bonjour je teste une directive
-</div>
+<div appHighlight>Bonjour je teste une directive</div>
 ```
 
 ##### Ajouter un Input
@@ -312,7 +302,7 @@ export class HighlightDirective{
 ```
 
 ```html
-<p [appHighlight]="color" defaultThing="3">
+<p [appHighlight]="color" defaultThing="3"></p>
 ```
 
 **:warning: : Ne faites pas l'initialisation avec la valeur d'un autre prop dans le constructor, car à ce niveau le property binding n'a pas été achevé encore (on va avoir la valeur par défaut) . utilisez `ngOnInit` dans ce cas**
@@ -322,27 +312,25 @@ export class HighlightDirective{
 #### `*ngIf`
 
 ```html
-<p *ngIf="true">
-    Je suis visible :D</p>
-<p *ngIf="false">
-    Je suis caché :(
-</p>
+<p *ngIf="true">Je suis visible :D</p>
+<p *ngIf="false">Je suis caché :(</p>
 ```
 
 #### `*ngFor`
 
 ```html
 <ul>
-    <li *ngFor="let episode of episodes; let i = index;
+  <li
+    *ngFor="let episode of episodes; let i = index;
     let isOdd = odd; let isFirst=first"
     [ngClass]="{ odd: isOdd , bgfonce: isFirst}"
-    >
-        Episode {{i+1}}{{episode.title}}
-    </li>
+  >
+    Episode {{i+1}}{{episode.title}}
+  </li>
 </ul>
 ```
 
-- `index`  : position de l'element courant
+- `index` : position de l'element courant
 - `first` : vrai si premier element
 - `last` : vrai si dernier element
 - `even`
@@ -379,16 +367,19 @@ export class HighlightDirective{
 - crée avec `ng g p nomPipe`
 
 ```typescript
-import { Pipe, PipeTransform } from '@angular/core';
-@Pipe({ name: 'team' })
+import { Pipe, PipeTransform } from "@angular/core";
+@Pipe({ name: "team" })
 export class TeamPipe implements PipeTransform {
-transform(value: any, args?: any): any {
+  transform(value: any, args?: any): any {
     switch (value) {
-        case 'barca' : return ' blaugrana';
-        case 'roma' : return ' giallorossa';
-        case 'milan' : return ' rossoneri';
-        }
+      case "barca":
+        return " blaugrana";
+      case "roma":
+        return " giallorossa";
+      case "milan":
+        return " rossoneri";
     }
+  }
 }
 ```
 
@@ -404,7 +395,7 @@ transform(value: any, args?: any): any {
 import { Injectable } from "@angular/core";
 @Injectable()
 export class FirstService {
-    constructor () {}
+  constructor() {}
 }
 ```
 
@@ -432,35 +423,31 @@ constructor() { }
 }
 ```
 
- ```typescript
- NgModule({
- "declarations": [AppComponent,],
- "imports": [
-    BrowserModule,
-    FormsModule,
-    HttpModule
- ],
- "providers": [CvService],
- "bootstrap": [AppComponent]
- })
- export class AppModule { }
- ```
+```typescript
+NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule, HttpModule],
+  providers: [CvService],
+  bootstrap: [AppComponent],
+});
+export class AppModule {}
+```
 
 #### Dans le composant
 
 ```typescript
-import { Component, OnInit } from '@angular/core';
-import {Cv} from './cv';
-import {CvService} from "../cv.service";
+import { Component, OnInit } from "@angular/core";
+import { Cv } from "./cv";
+import { CvService } from "../cv.service";
 @Component({
-    selector: 'app-cv',
-    templateUrl: './cv.component.html',
-    styleUrls: ['./cv.component.css'],
-    providers:[CvService] // on peut aussi l’importer ici
+  selector: "app-cv",
+  templateUrl: "./cv.component.html",
+  styleUrls: ["./cv.component.css"],
+  providers: [CvService], // on peut aussi l’importer ici
 })
 export class CvComponent {
-selectedCv : Cv;
-constructor(private monPremierService:CvService) { } // voici l'injection
+  selectedCv: Cv;
+  constructor(private monPremierService: CvService) {} // voici l'injection
 }
 ```
 
@@ -491,29 +478,25 @@ constructor(private monPremierService:CvService) { } // voici l'injection
 
 ### Création d'un système de Routing
 
-1. Indiquer au routeur comment composer les urls en ajoutant dans le
-   head la balise suivante : `<base href="/">`
-2. Créer un fichier `‘app.routing.ts’` Importer le service de routing
-   d’Angular
+1. Indiquer au routeur comment composer les urls en ajoutant dans le head la balise suivante : `<base href="/">`
+2. Créer un fichier `‘app.routing.ts’` Importer le service de routing d’Angular
    1. `import { RouterModule, Routes } from '@angular/router'`;
       - `RouterModule` : Permettre de configurer les routes dans votre projet
       - `Routes` : va permettre de créer les routes
-3. Créer la constante qui est un tableau d’objet de type `Routes` représentant
-   chacun la route à décrire
-4. Intégrer les routes à notre application dans le app module à travers le
-   RouterModule et sa méthode forRoot
+3. Créer la constante qui est un tableau d’objet de type `Routes` représentant chacun la route à décrire
+4. Intégrer les routes à notre application dans le app module à travers le RouterModule et sa méthode forRoot
 
 > The `forRoot` static method is a part of a pattern that ensures that you are using singleton classes.
 
 ```typescript
-const routes:Routes= [
-  {path:"cv", component: CvComponent},
-  {path:"pere", component: PereComponent}
-]
+const routes: Routes = [
+  { path: "cv", component: CvComponent },
+  { path: "pere", component: PereComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
 ```
@@ -532,8 +515,8 @@ In `index.html`
 
 ```html
 <head>
-    <!--... -->
-    <base href="/">
+  <!--... -->
+  <base href="/" />
 </head>
 ```
 
@@ -545,7 +528,7 @@ In `index.html`
 ```html
 <as-header></as-header>
 <div class="container">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
 ```
 
@@ -569,8 +552,7 @@ In `index.html`
 ```
 
 - `routerLinkActive="active"` :
-  - va associer la classe `active` à l’uri cible ainisi qu’à
-    tous ces ses ancetres.
+  - va associer la classe `active` à l’uri cible ainisi qu’à tous ces ses ancetres.
   - utiliser `[routerLinkActiveOptions]="{exact: true}”` pour identifier juste l'uri cible
 
 #### Déclencher une route à partir du composant
@@ -580,11 +562,11 @@ In `index.html`
 
 ```typescript
 //...
-export class HomeComponent{
-    constructor(private router:Router) { }
-    onNaviger(){
-        this.router.navigate(['/about/10']);
-    }
+export class HomeComponent {
+  constructor(private router: Router) {}
+  onNaviger() {
+    this.router.navigate(["/about/10"]);
+  }
 }
 ```
 
@@ -602,14 +584,20 @@ export class HomeComponent{
 ##### Navigate
 
 ```typescript
-this.router.navigate(['/about',this.id],{queryParams:{'qpVar':'je suis un qp'}});
+this.router.navigate(["/about", this.id], {
+  queryParams: { qpVar: "je suis un qp" },
+});
 ```
 
 ##### RouterLink
 
 ```html
-<a [routerLink]="['/about/10']" [queryParams]="{qpVar:'je suis
-un qp bindé avec le routerLink'}">About</a>
+<a
+  [routerLink]="['/about/10']"
+  [queryParams]="{qpVar:'je suis
+un qp bindé avec le routerLink'}"
+  >About</a
+>
 ```
 
 - Pour recupérer les query params
@@ -626,14 +614,14 @@ un qp bindé avec le routerLink'}">About</a>
 
 ```typescript
 const CV_ROUTE: Routes = [
-    {
-        path: 'cv',
-        children: [
-            {path: '', component: CvComponent },
-            {path: 'detail/:id', component: DetailCvComponent },
-            {path: 'addPersonne', component: FormPersonneComponent },
-        ]
-    }
+  {
+    path: "cv",
+    children: [
+      { path: "", component: CvComponent },
+      { path: "detail/:id", component: DetailCvComponent },
+      { path: "addPersonne", component: FormPersonneComponent },
+    ],
+  },
 ];
 ```
 
@@ -641,27 +629,27 @@ const CV_ROUTE: Routes = [
 
 ```typescript
 const CV_ROUTE: Routes = [
-    {
-        path: 'cv',
-        component: CvComponent, // we specify the component for our parent component
-        children: [
-            {path: 'detail/:id', component: DetailCvComponent },
-            {path: 'addPersonne', component: FormPersonneComponent },
-        ]
-    }
+  {
+    path: "cv",
+    component: CvComponent, // we specify the component for our parent component
+    children: [
+      { path: "detail/:id", component: DetailCvComponent },
+      { path: "addPersonne", component: FormPersonneComponent },
+    ],
+  },
 ];
 ```
 
 #### Redirection
 
 ```typescript
-const APP_Routes:Routes =[
-    {path:'',component:HomeComponent},
-    {path:'about',redirectTo:'', pathMatch:'full'},
-    {path:'about/:param',component:AboutComponent},
-    {path:'about/:param',component:AboutComponent,children:FILS_ROUTE},
-    {path: '**', component: ErrorPageComponent }
-]
+const APP_Routes: Routes = [
+  { path: "", component: HomeComponent },
+  { path: "about", redirectTo: "", pathMatch: "full" },
+  { path: "about/:param", component: AboutComponent },
+  { path: "about/:param", component: AboutComponent, children: FILS_ROUTE },
+  { path: "**", component: ErrorPageComponent },
+];
 ```
 
 - Si la route n’a pas encore été matché, alors les routes commençant par ce path seront redirigées.
@@ -675,14 +663,14 @@ const APP_Routes:Routes =[
 ### Approche basée Template
 
 ```html
-<form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm">
+<form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm"></form>
 ```
 
 ```typescript
-export class TemplateDrivenComponent{
-    onSubmit(formulaire:NgForm){
-        console.log(formulaire);
-    }
+export class TemplateDrivenComponent {
+  onSubmit(formulaire: NgForm) {
+    console.log(formulaire);
+  }
 }
 ```
 
@@ -697,11 +685,10 @@ export class TemplateDrivenComponent{
 
   - **`valid`**: informe sur le fait que l'une des propriétés du formulaire a été modifié ou non
   - **`untouched`** : informe si le formulaire est touché ou non
-  - **`dirty`** : informe sur le fait que l’une des propriétés du formulaire a été modifié ou
-    non
+  - **`dirty`** : informe sur le fait que l’une des propriétés du formulaire a été modifié ou non
   - **`pristine`** : le formulaire n’a pas été modifié, c’est l’opposé du dirty
 
-- On accéde à ces propriétés à travers  la classe associé :
+- On accéde à ces propriétés à travers la classe associé :
 
   - `<input ... class="form-control ng-untouched ng-pristine ng-valid" ...>`
   - ou avec `#notreChamp="ngModel"`
@@ -713,10 +700,8 @@ export class TemplateDrivenComponent{
   - Il suffit d’ajouter la directive ngModelGroup dans la div qui englobe les propriétés à grouper.
 
   - ```html
-    <div
-    ngModelGroup= "user"
-    #userData= "ngModelGroup"
-    >
+    <div ngModelGroup="user" #userData="ngModelGroup"></div>
+    ```
 
 ## Angular HTTP et Déploiement
 
@@ -726,15 +711,13 @@ export class TemplateDrivenComponent{
 
 ```typescript
 var promise2 = new Promise((resolve, reject) => {
-    setTimeout(() => {
+  setTimeout(() => {
     resolve(3);
-    }, 5000);
+  }, 5000);
 });
-promise2.then(
-    function (x) {
-    console.log('resolved with value :', x);
-    }
-)
+promise2.then(function (x) {
+  console.log("resolved with value :", x);
+});
 ```
 
 ### la programmation réactive
@@ -751,29 +734,26 @@ promise2.then(
 - Il définit une relation entre objets de type un-à-plusieurs.
 - Lorsque l’état de l'observable change, il notifie ces observateurs.
 
-| Promesses                             | Observable                                                   |
-| ------------------------------------- | ------------------------------------------------------------ |
-| gére un seul évenement                | gére un flux d'évenement                                     |
-| Non annulable                         | Annulable                                                    |
-| Traitement immédiat                   | Lazy (n'est déclenché qu'a la première utilisation de résultat) |
-| Deux méthodes uniquement (then/catch) | Une centaine d'opérateurs de transformation natifs           |
+| Promesses | Observable |
+| --- | --- |
+| gére un seul évenement | gére un flux d'évenement |
+| Non annulable | Annulable |
+| Traitement immédiat | Lazy (n'est déclenché qu'a la première utilisation de résultat) |
+| Deux méthodes uniquement (then/catch) | Une centaine d'opérateurs de transformation natifs |
 
 ```typescript
-const observable = new Observable(
-(observer) => {
-    let i = 5;
-    setInterval(() => {
+const observable = new Observable((observer) => {
+  let i = 5;
+  setInterval(() => {
     if (!i) {
-        observer.complete();
+      observer.complete();
     }
     observer.next(i--);
-    }, 1000);
+  }, 1000);
 });
-observable.subscribe(
-    (val) => {
-        console.log(val);
-    }
-);
+observable.subscribe((val) => {
+  console.log(val);
+});
 ```
 
 #### Async Pipe
@@ -785,8 +765,7 @@ observable.subscribe(
 
 #### Opérateurs de l'observable
 
-- **Un opérateur pipeable** est une fonction qui prend un observable comme entrée et renvoie unautre observable. C'est une opération pure : le précédent Observable reste inchangé.
-  Syntaxe : `monObservable.pipe(opertaeur1(), operateur2(), ...).`
+- **Un opérateur pipeable** est une fonction qui prend un observable comme entrée et renvoie unautre observable. C'est une opération pure : le précédent Observable reste inchangé. Syntaxe : `monObservable.pipe(opertaeur1(), operateur2(), ...).`
 - **Les opérateurs de création** sont l'autre type d'opérateur, qui peut être appelé comme fonctions autonomes pour créer un nouvel Observable. Par exemple : `of(1, 2, 3)` crée un observable qui va émettre 1, 2, et 3, l'un après l'autre, `range(1,200)` va émettre des valeurs numériques de 1 jusqu'a 200.
 - Quelques opérateurs :
   - `map(x => 10*x)`
@@ -801,15 +780,15 @@ Un subject est un type particulier d’observable. En effet Un subject est en m�
 Pour broadcaster une nouvelle valeur, il suffit d'appeler la méthode next, et elle sera diffusé aux Observateurs enregistrés pour écouter le Subject
 
 ```typescript
-import { Subject } from 'rxjs';
+import { Subject } from "rxjs";
 
 const subject = new Subject<number>();
 
 subject.subscribe({
-  next: (v) => console.log(`observerA: ${v}`)
+  next: (v) => console.log(`observerA: ${v}`),
 });
 subject.subscribe({
-  next: (v) => console.log(`observerB: ${v}`)
+  next: (v) => console.log(`observerB: ${v}`),
 });
 
 subject.next(1);
@@ -824,13 +803,13 @@ subject.next(2);
 
 In ReactiveX an observer subscribes to an Observable. Then that observer reacts to whatever item or sequence of items the Observable emits. This pattern facilitates concurrent operations because it does not need to block while waiting for the Observable to emit objects, but instead it creates a sentry in the form of an observer that stands ready to react appropriately at whatever future time the Observable does so.
 
-In an ordinary method call — that is, *not* the sort of asynchronous, parallel calls typical in ReactiveX — the flow is something like this:
+In an ordinary method call — that is, _not_ the sort of asynchronous, parallel calls typical in ReactiveX — the flow is something like this:
 
 1. Call a method.
 2. Store the return value from that method in a variable.
 3. Use that variable and its new value to do something useful.
 
- Or, something like this:
+Or, something like this:
 
 ```typescript
 // make the call, assign its return value to `returnVal`
@@ -838,12 +817,12 @@ returnVal = someMethod(itsParameters);
 // do something useful with returnVal
 ```
 
- In the asynchronous model the flow goes more like this:
+In the asynchronous model the flow goes more like this:
 
-1. Define a method that does something useful with the return value from the asynchronous call; this method is     part of the *observer*.
-2. Define the asynchronous call itself as an *Observable*.
-3. Attach the observer to that Observable by *subscribing* it (this also initiates the actions of the     Observable).
-4. Go on with your business; whenever the call returns, the observer’s method will begin to operate on its     return value or values — the *items* emitted by the Observable.
+1. Define a method that does something useful with the return value from the asynchronous call; this method is part of the _observer_.
+2. Define the asynchronous call itself as an _Observable_.
+3. Attach the observer to that Observable by _subscribing_ it (this also initiates the actions of the Observable).
+4. Go on with your business; whenever the call returns, the observer’s method will begin to operate on its return value or values — the _items_ emitted by the Observable.
 
 ---
 
@@ -875,19 +854,19 @@ constructor(private http:HttpClient) { }
 
 ```typescript
 this.http.get(API_URL).subscribe(
-    (response:Response)=>{
-        //ToDo with DATA
-    },
-    (err:Error)=>{
-        //ToDo with error
-    },
-    () => {
-        console.log('Data transmission complete');
-    }
+  (response: Response) => {
+    //ToDo with DATA
+  },
+  (err: Error) => {
+    //ToDo with error
+  },
+  () => {
+    console.log("Data transmission complete");
+  }
 );
 ```
 
-The `get()` method takes two arguments; the endpoint URL from which to fetch, and an *options* object that is used to configure the request.
+The `get()` method takes two arguments; the endpoint URL from which to fetch, and an _options_ object that is used to configure the request.
 
 ```typescript
 options: {
@@ -918,16 +897,16 @@ options: {
 - Diffère de la méthode get avec un attribut supplémentaire : body
 
 ```typescript
-this.http.post(API_URL,dataToSend).subscribe(
-    (response:Response)=>{
-        //ToDo with response
-    },
-    (err:Error)=>{
-        //ToDo with error
-    },
-    () => {
-        console.log('complete');
-    }
+this.http.post(API_URL, dataToSend).subscribe(
+  (response: Response) => {
+    //ToDo with response
+  },
+  (err: Error) => {
+    //ToDo with error
+  },
+  () => {
+    console.log("complete");
+  }
 );
 ```
 
@@ -937,17 +916,19 @@ this.http.post(API_URL,dataToSend).subscribe(
 - Vous devez l'ajouter au `HttpParams` ensuite l’ajouter comme paramètre à votre requête.
 
 ```typescript
-const params = new HttpParams()
-.set('access_token', localStorage.getItem('token'));
-return this.http.post(this.apiUrl, personne, {params});
+const params = new HttpParams().set(
+  "access_token",
+  localStorage.getItem("token")
+);
+return this.http.post(this.apiUrl, personne, { params });
 ```
 
 - Une seconde méthode consiste à ajouter dans le header de la requête avec comme name ‘Authorization’ et comme valeur ‘bearer’ à laquelle on concatène le Token.
 
 ```typescript
 const headers = new HttpHeaders();
-headers.append('Authorization', 'Bearer ${token}');
-return this.http.post(this.apiUrl, personne, {headers});
+headers.append("Authorization", "Bearer ${token}");
+return this.http.post(this.apiUrl, personne, { headers });
 ```
 
 ### Guards
@@ -1012,11 +993,13 @@ canActivate: [AuthGuard]
 
 ```typescript
 export class AuthentificationInterceptor implements HttpInterceptor {
-intercept(req: HttpRequest<any>, next: HttpHandler):
-Observable<HttpEvent<any>> {
-    console.log('intercepted', req);
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+    console.log("intercepted", req);
     return next.handle(req);
-}
+  }
 }
 ```
 
@@ -1024,11 +1007,10 @@ Observable<HttpEvent<any>> {
 - L’inscription au niveau du provider se fait de la façon suivante :
 
 ```typescript
-export const
-AuthentificationInterceptorProvider = {
-provide: HTTP_INTERCEPTORS,
-useClass: AuthentificationInterceptor,
-multi: true,
+export const AuthentificationInterceptorProvider = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: AuthentificationInterceptor,
+  multi: true,
 };
 ```
 
@@ -1047,7 +1029,7 @@ AuthentificationInterceptorProvider
 
 ```typescript
 const newReq = req.clone({
-    headers: new HttpHeaders()// faites ce que vous voulez ici ajouter desheaders, des params ...
+  headers: new HttpHeaders(), // faites ce que vous voulez ici ajouter desheaders, des params ...
 });
 // Chainer la nouvelle requete avec next.handle
 return next.handle(newReq);
@@ -1102,17 +1084,17 @@ Observable<HttpEvent<any>> {
 - Lorsqu’on importe un module, **on importe réellement tous ce qu’il exporte**.
 
 ```typescript
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppComponent } from "./app.component";
 @NgModule({
-    imports: [ BrowserModule ], // modules utilisés
-    exports: [], // classes de vues à exporter
-    declarations: [ AppComponent ], // vues appartenant à ce module : composants, directives et pipes
-    providers: [], // déclaration des services
-    bootstrap: [ AppComponent ] // utilisé juste pour le module racine, indique le composant à exécuter au lancement de l'application
+  imports: [BrowserModule], // modules utilisés
+  exports: [], // classes de vues à exporter
+  declarations: [AppComponent], // vues appartenant à ce module : composants, directives et pipes
+  providers: [], // déclaration des services
+  bootstrap: [AppComponent], // utilisé juste pour le module racine, indique le composant à exécuter au lancement de l'application
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 #### Declarations
@@ -1131,12 +1113,12 @@ import { Route, RouterModule } from "@angular/router";
 import { NF404Component } from "../nf404/nf404.component";
 import { TodoComponent } from "./todo.component";
 const routes: Route[] = [
-{ path: "todo", component: TodoComponent },
-{ path: "**", component: NF404Component },
+  { path: "todo", component: TodoComponent },
+  { path: "**", component: NF404Component },
 ];
 @NgModule({
-    imports: [RouterModule.forChild(routes)], // le changement
-    exports: [RouterModule],
+  imports: [RouterModule.forChild(routes)], // le changement
+  exports: [RouterModule],
 })
 export class TodoRouting {} // on l'importe aprés dans notre module
 ```
@@ -1181,11 +1163,8 @@ L’idée du lazyLoading et de charge au départ le module principale et puis de
 
 #### Preloading Lazy Loading
 
-- C'est une solution pour charger le premier module rapidement pour
-  que le premier affichage soit rapide, et après en background on charge les autres modules.
-- On Change la strategy de chargement en **PreloadAllModules** en gardant le lazy
-  loading et donc en décomposant les bundles par module et en les chargeant en
-  backgound après le chargement du AppModule
+- C'est une solution pour charger le premier module rapidement pour que le premier affichage soit rapide, et après en background on charge les autres modules.
+- On Change la strategy de chargement en **PreloadAllModules** en gardant le lazy loading et donc en décomposant les bundles par module et en les chargeant en backgound après le chargement du AppModule
 
 ```typescript
 mport { PreloadAllModules } from "@angular/router";
@@ -1212,7 +1191,7 @@ exports: [RouterModule],
 
 ![A la découverte de ngrx avec Angular 9–Etape 1 - Formations informatiques,  nouvelles technologies et NTIC | Dev to be curious](https://devtobecurious.fr/wp-content/uploads/2020/05/state-management-lifecycle.png)
 
-NgRx est un framework (implémentation de  redux) pour créer des applications réactives dans Angular. NgRx fournit des bibliothèques pour:
+NgRx est un framework (implémentation de redux) pour créer des applications réactives dans Angular. NgRx fournit des bibliothèques pour:
 
 - Gérer l'état global et local de votre application.
 - Isoler des effets de bord permettant d’avoir une architecture de composants plus propre.
@@ -1225,10 +1204,8 @@ NgRx est un framework (implémentation de  redux) pour créer des applications r
 ### Store
 
 - Afin de récupérer votre store, vous devez l’injecter.
-- Une fois fait le store est représenté par un observable qui n’offre aucune méthode
-  permettant de manipuler le state.
-- Etant un objet générique, vous pouvez lui spécifier l’objet représentant votre état
-  (le state)
+- Une fois fait le store est représenté par un observable qui n’offre aucune méthode permettant de manipuler le state.
+- Etant un objet générique, vous pouvez lui spécifier l’objet représentant votre état (le state)
 
 ```typescript
 // in index.ts
@@ -1240,27 +1217,22 @@ constructor(private store: Store<AppState>) {}
 ### Actions (actions in Vue)
 
 - Les actions sont l'un des principaux composants de NgRx.
-- Les actions expriment des événements uniques qui se produisent dans votre
-  application.
-- Que ce soit des événements interne de votre utilisateur, ou des événements
-  externes via le réseau ou toute autre événement, les actions sont la pour les décrire.
+- Les actions expriment des événements uniques qui se produisent dans votre application.
+- Que ce soit des événements interne de votre utilisateur, ou des événements externes via le réseau ou toute autre événement, les actions sont la pour les décrire.
 - les actions NgRx doivent implémenter **l'interface Action**
 - La propriété **type** représente le type qui est l’identifiant de l’action.
 
 ```typescript
 interface Action {
-type: string;
+  type: string;
 }
 ```
 
-- Vous disposez aussi d’une propriété payload qui contiendra les informations à
-  fournir en cas de besoin avec votre action (login nécessite un username et un
-  password)
+- Vous disposez aussi d’une propriété payload qui contiendra les informations à fournir en cas de besoin avec votre action (login nécessite un username et un password)
 - La propriété type suit une convention de nommage : `[Source] Event`
   - Example `[Login Page] User Login`
 - Ceci permet de définir le contexte et de spécifier quelle catégorie d'action il s'agit et d'où une action a été distribuée.
-- Vous ajoutez des propriétés à une action pour fournir un contexte ou des
-  métadonnées supplémentaires pour une action.
+- Vous ajoutez des propriétés à une action pour fournir un contexte ou des métadonnées supplémentaires pour une action.
 
 ```typescript
 {
@@ -1271,8 +1243,7 @@ type: string;
 ```
 
 - Une action est donc simplement un objet Js implémentant l’interface Action et permettant de décrire un événement dans votre application.
-- NgRx nous fournit une méthode createAction qui vous permet de créer une action et une fonction props qui permet de spécifier le type du payload donnant plus de
-  robustesse à votre code.
+- NgRx nous fournit une méthode createAction qui vous permet de créer une action et une fonction props qui permet de spécifier le type du payload donnant plus de robustesse à votre code.
 - Les actions peuvent être crées enutilisant les props ou les fonctions fléchées.
 
 ```typescript
@@ -1289,14 +1260,14 @@ props<{user: User}>()
 
 ```typescript
 export const loginAction = createAction(
-ActionActionsEnum.LOGIN,
-props<{user: User}>()
-)
+  ActionActionsEnum.LOGIN,
+  props<{ user: User }>()
+);
 //ou
 export const loginAction = createAction(
-ActionActionsEnum.LOGIN,
-(user: User | null) => ({user})
-)
+  ActionActionsEnum.LOGIN,
+  (user: User | null) => ({ user })
+);
 ```
 
 - Afin de déclencher une action, vousdevez utiliser la méthode dispatch devotre store.
@@ -1321,22 +1292,24 @@ ActionActionsEnum.LOGIN,
 
 ```typescript
 const scoreboarReducer = createReducer(
-    initialState,
-    on(ScoreboardPageActions.homeScore,
-       state => ({...state, home: state.home + 1})
-      ),
-    on(ScoreboardPageActions.awayScore,
-       state => ({ ...state, away: state.away + 1 })
-      ),
-    on(ScoreboardPageActions.resetScore,
-       state => ({ home: 0, away: 0 })
-      ),
-    on(ScoreboardPageActions.setScores,
-      (state, { game }) => ({home: game.home, away: game.away}))
-)
+  initialState,
+  on(ScoreboardPageActions.homeScore, (state) => ({
+    ...state,
+    home: state.home + 1,
+  })),
+  on(ScoreboardPageActions.awayScore, (state) => ({
+    ...state,
+    away: state.away + 1,
+  })),
+  on(ScoreboardPageActions.resetScore, (state) => ({ home: 0, away: 0 })),
+  on(ScoreboardPageActions.setScores, (state, { game }) => ({
+    home: game.home,
+    away: game.away,
+  }))
+);
 // Nécessaire pour les version Angular qui n’utilise pas Ivy
 export function reducer(state: State | undefined, action: Action) {
-    return scoreboardReducer(state, action);
+  return scoreboardReducer(state, action);
 }
 ```
 
@@ -1346,16 +1319,16 @@ export function reducer(state: State | undefined, action: Action) {
 
 ```typescript
 export interface AuthState {
-    user: User;
+  user: User;
 }
 export const initialAuthState: AuthState = {
-    user: undefined,
+  user: undefined,
 };
 export const authReducer = createReducer(
-    initialAuthState,
-    on(AuthActions.loginAction, (state, action) => {
-        return {user: action.user};}
-      )
+  initialAuthState,
+  on(AuthActions.loginAction, (state, action) => {
+    return { user: action.user };
+  })
 );
 ```
 
@@ -1370,7 +1343,7 @@ export const authReducer = createReducer(
 - En enregistrant le state avec **forRoot**, vous rendez le state disponible dès le lancement de l'application
 
 ```typescript
-StoreModule.forRoot({home:fromHomeReducer.reducer})
+StoreModule.forRoot({ home: fromHomeReducer.reducer });
 ```
 
 ##### Reducer : Feature State
@@ -1379,7 +1352,7 @@ StoreModule.forRoot({home:fromHomeReducer.reducer})
 - Votre état est un objet volumineux et les états de fonctionnalité enregistrent des clés et des valeurs supplémentaires dans cet objet.
 
 ```typescript
-StoreModule.forFeature("auth", authReducer)
+StoreModule.forFeature("auth", authReducer);
 ```
 
 - En regardant un exemple d'objet d'état, vous voyez comment un état de fonctionnalité permet à votre état d'être construit de manière incrémentale. Commençons par un objet d'état vide
@@ -1395,17 +1368,15 @@ StoreModule.forFeature("auth", authReducer)
 
 ```typescript
 this.store.subscrive((state) => {
-    console.log("state", state);
-    console.log("authState", state["auth"]);
-})
+  console.log("state", state);
+  console.log("authState", state["auth"]);
+});
 ```
 
 - Afin de sélectionner la partie que vous voulez, utilisez l’opérateur
 
 ```typescript
-this.isLoggedIn$ = this.store.pipe(
-    map((state) => !! state["auth"].user)
-);
+this.isLoggedIn$ = this.store.pipe(map((state) => !!state["auth"].user));
 ```
 
 - Le problème ici est que cette opération va se répéter à chaque fois alors que le résultat risque d’être le même. Une fonction pure qui a le même input retournera toujours le même Output
@@ -1414,19 +1385,15 @@ this.isLoggedIn$ = this.store.pipe(
 
 ```typescript
 this.isLoggedIn$ = this.store.pipe(
-    map(
-        (state) => state["auth"]
-    ),
-    distinctUntilChanged()
-)
+  map((state) => state["auth"]),
+  distinctUntilChanged()
+);
 ```
 
 - Afin de nous aider dans cette démarche, NgRx nous offre l’opérateur select qui réalise un map selon une fonction pur et ne déclenche le flux de l’observable qui si le résultat change en utilisant distinctUntilChanged.
 
 ```typescript
-this.isLoggedIn$ = this.store.select(
-    (state) => !!state["auth"].user
-);
+this.isLoggedIn$ = this.store.select((state) => !!state["auth"].user);
 ```
 
 #### Selectors
@@ -1461,56 +1428,60 @@ La fonction **createSelector** prend en paramètre un **ensemble** de **sélecte
 **La fonction de map récupère comme paramètres le résultat de l’ensemble des sélecteurs passé en paramètre avec elle.**
 
 ```typescript
-import { createSelector } from '@ngrx/store';
+import { createSelector } from "@ngrx/store";
 export interface User {
-    id: number;
-    name: string;
+  id: number;
+  name: string;
 }
 export interface Book {
-    id: number;
-    userId: number;
-    name: string;
+  id: number;
+  userId: number;
+  name: string;
 }
 export interface AppState {
-    selectedUser: User;
-    allBooks: Book[];
+  selectedUser: User;
+  allBooks: Book[];
 }
 ```
 
 ```typescript
-export const selectUser = (state: AppState) => state.select
+export const selectUser = (state: AppState) => state.select;
 edUser;
-export const selectAllBooks = (state: AppState) => state.al
+export const selectAllBooks = (state: AppState) => state.al;
 lBooks;
 export const selectVisibleBooks = createSelector(
-    selectUser,
-    selectAllBooks,
-    (selectedUser: User, allBooks: Book[]) => {
-        if (selectedUser && allBooks) {
-            return allBooks.filter((book: Book) => book.userId === selectedUser.id);
-        } else {
-            return allBooks;
-        }
+  selectUser,
+  selectAllBooks,
+  (selectedUser: User, allBooks: Book[]) => {
+    if (selectedUser && allBooks) {
+      return allBooks.filter((book: Book) => book.userId === selectedUser.id);
+    } else {
+      return allBooks;
     }
+  }
 );
 ```
 
 #### Feature Selectors (important)
 
-Afin de centraliser et de typer la partie de votre state qui correspond à une
-fonctionnalité particulière (généralement votre module state), vous pouvez utiliser les
-**featureSelector**.
+Afin de centraliser et de typer la partie de votre state qui correspond à une fonctionnalité particulière (généralement votre module state), vous pouvez utiliser les **featureSelector**.
 
 Pour ce faire, utilisez la méthode createFeatureSelector caster la au fetureStateType que vous souhaiter et passer lui comme paramètre la clé représentant la partie du state que vous voulez utiliser.
 
 ```typescript
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { User } from "./model/user.model"
-import { AuthState } from "./reducers"
+import { User } from "./model/user.model";
+import { AuthState } from "./reducers";
 
 export const authFeatureSelector = createFeatureSelector<AuthState>("auth");
 
-export const isLoggedInSelector = createSelector(authFeatureSelector, (auth) => !!auth.user);
+export const isLoggedInSelector = createSelector(
+  authFeatureSelector,
+  (auth) => !!auth.user
+);
 
-export const isLoggedOutSelector = createSelector(isLoggedInSelector, (loggedIn) => !loggedIn);
+export const isLoggedOutSelector = createSelector(
+  isLoggedInSelector,
+  (loggedIn) => !loggedIn
+);
 ```

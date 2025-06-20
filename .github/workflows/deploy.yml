@@ -13,6 +13,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: volta-cli/action@v4
+      - run: yarn
+      - uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: --all-files
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -49,12 +60,7 @@ jobs:
       - name: show cache
         run: ls -la .yarn || true
 
-      - name: generate contributors
-        run: |
-          gh api repos/wadhah101/insat-gl-knowledge/contributors > data/contributors.json
-          jq ".[] | { login, contributions }" data/contributors.json
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Build project
         run: yarn build
@@ -64,6 +70,8 @@ jobs:
           TYPESENSE_PORT: 443
           TYPESENSE_PROTOCOL: https
           TYPESENSE_SEARCH_API_KEY: ${{ secrets.TYPESENSE_SEARCH_API_KEY }}
+          REACT_APP_POSTHOG_HOST: https://eu.i.posthog.com
+          REACT_APP_POSTHOG_KEY: phc_xiS1BHDxm0iYKyaKfDvYlzaB4JibK4BpcQYkYJovK4t
 
       - name: Move Webpack cache
         run: mv .yarn/.cache .cache

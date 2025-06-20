@@ -43,6 +43,8 @@ scp <filename> <username>@<hostname>:<path>
 
 ## Attacks
 
+<!-- markdownlint-disable MD056  -->
+
 | Attack | Description | Example |
 | --- | --- | --- |
 | Birthday Attack | It is made against the Hash algorithms. (Belongs to a class of brute force) |
@@ -572,7 +574,7 @@ openssl dgst -sha256 -verify PUB -signature fileHashSign file
 
 - Certification Authority issues digital certificates
 
-- Get the Certification of the <www.google.com> website:
+- Get the Certification of the [www.google.com](https://www.google.com) website:
 
 ```bash
 openssl s_client www.google.com:443

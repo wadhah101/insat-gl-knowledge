@@ -52,7 +52,7 @@ DALLE is unable to properly generate realistic human faces, despite using approx
 
 #### Is AI Art considered an art or a GAN product?
 
-- An artwork made by Artificial  Intelligence (AI) won first place at the Colorado State Fair’s fine arts competition on August 2022, sparking controversy about whether AI-generated art can be used to compete in competitions.
+- An artwork made by Artificial Intelligence (AI) won first place at the Colorado State Fair’s fine arts competition on August 2022, sparking controversy about whether AI-generated art can be used to compete in competitions.
 
 #### Who is the real author of the work?
 
@@ -112,8 +112,7 @@ At a high level, the digital divide is the **gap** between those with Internet a
 
 ### Solutions
 
-- Collaboration between governmental, educational, and private sectors.
-  If these three entities are able to work together, students will be far more equipped to handle digital learning.
+- Collaboration between governmental, educational, and private sectors. If these three entities are able to work together, students will be far more equipped to handle digital learning.
 - Create educational resources that are culturally relevant and available in several different languages.
 - [Community networks](https://www.internetsociety.org/issues/community-networks/ "https://www.internetsociety.org/issues/community-networks/") can bring affordable internet access to those who need it the most.
 - Teachers should:
@@ -171,8 +170,7 @@ Complaining about the government is allowed and most of the time turned a blind 
 
 ### B. The Social Credit System
 
-System developed in china, where good actions **raise your score** and bad actions
-**lower your score**. Your score can be looked up online to judge you.
+System developed in china, where good actions **raise your score** and bad actions **lower your score**. Your score can be looked up online to judge you.
 
 It is based on :
 
@@ -204,6 +202,7 @@ Following the exponential growth in technology within the previous years, the Ch
 - Crowd control : AI can monitor crowds for their size and the period each person has stayed in the same zone detecting unusual activities (protests) in real-time allowing action to be taken immediately with minimal damage.
 
 - **Skynet** Project :
+
   - **Megvii**: A rising tech company specialized in video stream processing and cross-checking facial data against enormous government databases being mainly oriented at criminal databases.
   - 1.4 Billion dollars funding mostly from the Chinese, UAE & Russian governments.
   - 3000 cases have been caught in 2021 using this system.
@@ -271,24 +270,12 @@ The company also introduced what it calls **Model Cards** starting with cards fo
 
 ### A. Advantages
 
-- **Greater Road Safety**: Government data identifies driver behavior or error as
-a factor in 94 percent of crashes, and self-driving vehicles can help reduce
-driver error.
-- **Greater Independence**: People with disabilities, like the blind, are capable
-of self-sufficiency, and highly automated vehicles can help them live the
-life they want.
-- **Saving Money**: Automated driving systems could impact our pocketbooks in many
-ways. HAVs can help avoid the costs of crashes, including medical bills, lost
-work time and vehicle repair.
-- **More Productivity**: In the future, HAVs could offer the convenience of
-dropping vehicle occupants at their destination, whether an airport or
-shopping mall, while the vehicle parks itself.
-- **Reduced Congestion**: HAVs maintain a safe and consistent distance between
-vehicles, helping to reduce the number of stop-and-go waves that produce road
-congestion.
-- **Environmental Gains**: HAVs have the potential to reduce fuel use and carbon
-emissions. Fewer traffic jams save fuel and reduce greenhouse gases from
-needless idling.
+- **Greater Road Safety**: Government data identifies driver behavior or error as a factor in 94 percent of crashes, and self-driving vehicles can help reduce driver error.
+- **Greater Independence**: People with disabilities, like the blind, are capable of self-sufficiency, and highly automated vehicles can help them live the life they want.
+- **Saving Money**: Automated driving systems could impact our pocketbooks in many ways. HAVs can help avoid the costs of crashes, including medical bills, lost work time and vehicle repair.
+- **More Productivity**: In the future, HAVs could offer the convenience of dropping vehicle occupants at their destination, whether an airport or shopping mall, while the vehicle parks itself.
+- **Reduced Congestion**: HAVs maintain a safe and consistent distance between vehicles, helping to reduce the number of stop-and-go waves that produce road congestion.
+- **Environmental Gains**: HAVs have the potential to reduce fuel use and carbon emissions. Fewer traffic jams save fuel and reduce greenhouse gases from needless idling.
 
 ### B. Ethical concerns
 
@@ -315,8 +302,7 @@ There are three fundamental principles that holds true across the world:
 
 - **Eastern countries** seem to be more respectful of older people over children.
 - **The french and the french sub-cluster** showed an unexpectedly strong preference for saving women over man.
-- the **higher** the **economic inequality** in a country the **more people** were willing to
-spare the executives at the cost of the homeless people.
+- the **higher** the **economic inequality** in a country the **more people** were willing to spare the executives at the cost of the homeless people.
 
 ![[moral_machine.png]]
 
@@ -346,9 +332,7 @@ Being a data literate means we have to be willing to play detective every time w
 
 #### B. 1. Algorithmic bias
 
-Our systems have a problem: bias and the risk of discrimination. Their
-algorithms are value-laden by nature, reflecting the life and background of
-the engineers who build them . typically white males from high income countries.
+Our systems have a problem: bias and the risk of discrimination. Their algorithms are value-laden by nature, reflecting the life and background of the engineers who build them . typically white males from high income countries.
 
 Not only can algorithm design engender bias, but the transfer of services and the emergence of new digital products can also end up replicating or amplifying existing inequalities. For example, a new study of the most popular object-recognition algorithms found that 10 percent more errors were made when the algorithms were tasked to identify items from a household with a lower monthly income.
 
@@ -386,9 +370,7 @@ However, this effort to shape one’s own identity based on moral values becomes
 
 The fact that attitudes toward privacy, data governance approaches, and technological development strategies differ widely across regions poses a challenge to the development of transnational data governance mechanism.
 
-USA : Market centered
-China : Innovation centered
-Europe : Human centered
+USA : Market centered China : Innovation centered Europe : Human centered
 
 #### Case of Kenya's voter register
 
@@ -400,16 +382,14 @@ Two data protection bills were passed by parliament to better ensure data protec
 
 ### D. Toward better data governance
 
-- Enforce accountability mechanisms
-for unethical data use
+- Enforce accountability mechanisms for unethical data use
 - Create favorable conditions for a private sector shift toward ethical technology development
-- Address gaps in data literacy by developing and distributing educational programming for online  and offline users
+- Address gaps in data literacy by developing and distributing educational programming for online and offline users
 - Promote a diverse and interdisciplinary AI workforce
 
 ### Conclusion of presentation
 
-To conclude, only through experimentation and evidence-based policy can we move
-from reflection to action in our quest for a more equitable and inclusive digital future.
+To conclude, only through experimentation and evidence-based policy can we move from reflection to action in our quest for a more equitable and inclusive digital future.
 
 ## 7. Fake News & Deep Fakes
 

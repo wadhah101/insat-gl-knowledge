@@ -81,7 +81,7 @@ If we lost a container (in case the app crashed/ run out of resources/ ect...) i
 - Data comes in base64 encoded format. We need to also encrypt them using third party tools ( they are not encrypted by default! ).
 - Will contain things like credentials, tokens, ...
 
-We can use data from **Secret** of **ConfigMap** inside of the application pod as  **environment variables** or a **properties file**
+We can use data from **Secret** of **ConfigMap** inside of the application pod as **environment variables** or a **properties file**
 
 ### Volumes (Data persistance)
 
@@ -103,8 +103,7 @@ StatefulSet :
 
 - Meant for stateful apps ( databases ) otherwise we might have data inconsistencies if we use a normal deployment.
 - it's like a Deployment for stateful application
-- Deploying statefulSet is not easy ( a common practice is often to just host the database outside of the k8s cluster
- and communicate with it when needed )
+- Deploying statefulSet is not easy ( a common practice is often to just host the database outside of the k8s cluster and communicate with it when needed )
 
 ## Kubernetes Architecture
 
@@ -118,7 +117,7 @@ Worker Nodes do the actual work
 
 3 Processes must be installed on every node :
 
-- **Container runtime**:  (docker, containerd, ...) (docker images can run on any container runtime ). It needs to be installed on every node
+- **Container runtime**: (docker, containerd, ...) (docker images can run on any container runtime ). It needs to be installed on every node
 - **Kubelet** : Interacts with both the **container** and **node**.
   - Starts the pod with a container inside
 - **Kube Proxy** :
@@ -136,7 +135,7 @@ We can have multiple master nodes.
 - **Api Server** :
   - Cluster gateway to get requests and queries
   - Our entrypoint to the cluster
-  - Gatekeepter for authentication and authorization:  Validates requests then forwards it to other processes to do the worker
+  - Gatekeepter for authentication and authorization: Validates requests then forwards it to other processes to do the worker
 - **Scheduler** : Just decides on which node the new pod should be scheduled (The kubelet is the one that actually creates the pod)
   - Looks at your worker node and chooses the one that currently can deploy your application and is least busy.
 - **Controller manager** :
@@ -149,7 +148,7 @@ We can have multiple master nodes.
 
 ### Example of cluster setup
 
-We can have 2  Master nodes , 5 worker nodes
+We can have 2 Master nodes , 5 worker nodes
 
 The master nodes need less resources than worker nodes.
 
@@ -165,7 +164,7 @@ To add a new Master/Node server:
 
 One node kubernetes cluster that has both master processes and worker processes
 
-Minikube will create a virtualbox  for the cluster
+Minikube will create a virtualbox for the cluster
 
 Used for testing purposes
 
@@ -203,10 +202,10 @@ kubectl get service
 
 ```bash
 # create a deployment
-kubectl create deployment <name> --image=image [--dry-run] [options]
+kubectl create deployment [--dry-run] [options] < name > --image=image
 ```
 
-`--dry-run`: Must be "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If  server  strategy, submit server-side request without persist in the resource.
+`--dry-run`: Must be "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persist in the resource.
 
 Simply put. using `--dry-run=client` will not create the resource. We can output it by doing `-o yaml` at the end.
 
@@ -220,7 +219,7 @@ kubectl create deployment nginx-depl --image=nginx
 kubectl get deployment
 ```
 
-A pod will be created by this deployment. We can check that here  ( wil have this name :  `deploymentName-${some hash}`)
+A pod will be created by this deployment. We can check that here ( wil have this name : `deploymentName-${some hash}`)
 
 ```bash
 # To return the pod created by the deployment
@@ -270,7 +269,7 @@ kubectl logs <pod-name>
 To access the container and look inside of it
 
 ```bash
-kubectl exec -it <pod-name> -- /bin/bash
+kubectl exec -it /bin/bash < pod-name > --
 ```
 
 To get info aboud a pod
@@ -313,10 +312,10 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
 ```
 
 we can also delete based on a configuration file
@@ -429,6 +428,7 @@ or using a config file
 ### Use cases of namespaces
 
 1. Group resources by namespace :
+
    - database namespace
    - Monitoring namespace (prometheus, ...)
    - elastic stack namespace
@@ -460,10 +460,10 @@ kubectl apply -f configmap.yaml --namespace=my-namespace
 apiVersion: v1
 kind: ConfigMap
 metadata:
-    name: mysql-configmap
-    namespace: my-namespace
+  name: mysql-configmap
+  namespace: my-namespace
 data:
-    db_url: mysql-service.database
+  db_url: mysql-service.database
 ```
 
 ### Change Active namespace
@@ -519,13 +519,13 @@ We have this by setting **ClusterIp: None**
 
 Client wants to communicate with **1 specific Pod directly**
 
-Pods  want to talk directly with  **specific Pod** ( so not randomly selected)
+Pods want to talk directly with **specific Pod** ( so not randomly selected)
 
 Use case : Stateful application, likes **databases** (We have Master/Worker pods and it's important to choose the right pod )
 
 Client needs to figure out IP addresses of each Pod :
 
-- Option  - Api Call to K8s API Server ( Inefficient + makes app too tied to k8s API )
+- Option - Api Call to K8s API Server ( Inefficient + makes app too tied to k8s API )
 - Discover pod ip address through DNS lookup
   - By setting clusterIp to "None" in the service, We won't have a cluster IP address assigned for the service, we can do a simple Ip address lookup on the service and we'll get the IP address of the Pod.
 
@@ -640,16 +640,16 @@ metadata:
     name: kubernetes-dashboard
 spec:
   rules:
-  - host: dashboard.com
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: kubernetes-dashboard
-            port:
-              number: 80
+    - host: dashboard.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: kubernetes-dashboard
+                port:
+                  number: 80
 ```
 
 we apply and wait a little while for it to resolve.
@@ -678,6 +678,7 @@ To configure a custom default backend :
 ### Different Use cases to Ingress
 
 - Multiple paths for same hosts
+
   - We will need one host block, with multiple paths
   - for example /analytics redirect to analytics-service on port `3000` and `/shop` redirect to analytics-service on a different port
 
@@ -755,8 +756,8 @@ spec:
     - name: myfrontend
       image: nginx
       volumeMounts:
-      - mountPath: "/var/www/html"
-        name: mypd
+        - mountPath: "/var/www/html"
+          name: mypd
   volumes:
     - name: mypd
       persistentVolumeClaim:
@@ -812,14 +813,14 @@ If we need a configuration file/certificate file for pod, we need to do this :
 template:
   spec:
     containers:
-    - name: ...
-      image: ...
-      volumeMounts:
-        - name: config-dir
-          mountPath: /etc/myconfigfile
-          readOnly: true
-    - name: ...
-      image: ...
+      - name: ...
+        image: ...
+        volumeMounts:
+          - name: config-dir
+            mountPath: /etc/myconfigfile
+            readOnly: true
+      - name: ...
+        image: ...
 volumes:
   - name: myconfigfile
     configMap:

@@ -4,25 +4,25 @@ slug: /gl5/semester-1/deep-learning/linear-reg
 
 # Linear Regression
 
-__Author__: [@hajali-amine](https://github.com/hajali-amine)
+**Author**: [@hajali-amine](https://github.com/hajali-amine)
 
 4 things to take in consideration:
 
-1. __Dataset:__
+1. **Dataset:**
 
    ($x$, $y$) with $x$ being the feature and $y$ being the target.
 
-2. __Model:__
+2. **Model:**
 
    represented by the function $f(x) = ax + b$, $a$ and $b$ being the parameters.
 
-3. __Cost Function:__
+3. **Cost Function:**
 
    A function to compute the error between the predicted values and the targets.
 
    In our case, $J(a,b) = {{1 \over{2m}} \sum_{i=1}^{m} (f(x^{(i)}) - y^{(i)})^2 }$, $m$ being the number of rows.
 
-4. __Minimisation Algorithm:__
+4. **Minimisation Algorithm:**
 
    In our case, we are going to use the _Gradient Descent_.
 

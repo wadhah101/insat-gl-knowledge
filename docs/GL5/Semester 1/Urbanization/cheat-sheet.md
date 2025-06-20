@@ -97,7 +97,7 @@ EAP définit ce que les données, applications et technologies permettent de fai
 
 Définit 4 niveaux (Levels) et 7 composants
 
-- **Level 1** Par où commencer? : Production d’un plan, couvrant les  décisions à prendre pour la méthodologie à utiliser, les parties impliquées et les outils nécessaires
+- **Level 1** Par où commencer? : Production d’un plan, couvrant les décisions à prendre pour la méthodologie à utiliser, les parties impliquées et les outils nécessaires
 - **Level 2** Où en sommes-nous aujourd’hui? : Définition des processus métiers et des systèmes et technologies actuellement utilisés.
 - **Level 3** Où voulons-nous aller?
   - (1) définition des données nécessaires pour le métier
@@ -137,8 +137,7 @@ Se base sur les 4 domaines d’architecture précédemment cités (métier, donn
 - Les architecture de risque et de sécurité
 - L’architecture digitale
 
-![togaf_principe_1](assets/togaf_principe_1.png)
-![togaf_principe_2](assets/togaf_principe_2.png)
+![togaf_principe_1](assets/togaf_principe_1.png) ![togaf_principe_2](assets/togaf_principe_2.png)
 
 #### 1. ADM : Architecture Development Method
 
@@ -182,11 +181,9 @@ Il permet de:
 
 - Fournir un modèle détaillé des produits du travail architectural
 - Favoriser la cohérence des résultats créés en suivant l’ADM.
-- Fournir une liste de contrôle complète des produits d'architecture qui pourraient
-être créés.
+- Fournir une liste de contrôle complète des produits d'architecture qui pourraient être créés.
 - Réduire le risque de lacunes dans l'ensemble des livrables d'architecture finaux.
-- Aider l'entreprise à définir des concepts, des termes et des livrables d'architecture
-standard.
+- Aider l'entreprise à définir des concepts, des termes et des livrables d'architecture standard.
 
 ![togaf_content](assets/togaf_content.png)
 
@@ -198,7 +195,7 @@ TOGAF définit plusieurs concepts pour satisfaire les besoins des différentes p
   - Entités d'un type particulier dans le métamodèle
     - par exemple, un service commercial appelé "Bon de commande"
   - Peuvent également inclure des entités dépendantes ou contenues selon le contexte de l'architecture
-    - par exemple, un service commercial appelé "Bon de commande" peut inclure  implicitement un certain nombre de processus, d'entités de données, de  composants d'application, etc.
+    - par exemple, un service commercial appelé "Bon de commande" peut inclure implicitement un certain nombre de processus, d'entités de données, de composants d'application, etc.
 - Catalogues
   - Listes de blocs de construction d'un type spécifique, ou de types apparentés, qui sont utilisés à des fins de gouvernance ou de référence
     - par exemple, un organigramme, indiquant les lieux et les acteurs
@@ -214,8 +211,7 @@ TOGAF définit plusieurs concepts pour satisfaire les besoins des différentes p
 
 - Ensemble de règles s’imposant à tout ou partie du SI
 - Définition de règles à respecter par les applications, pour obtenir un SI évolutif
-- Les concepts manipulés s'apparentent à ceux de l'urbanisation de l'habitat humain
-(organisation des villes, du territoire)
+- Les concepts manipulés s'apparentent à ceux de l'urbanisation de l'habitat humain (organisation des villes, du territoire)
 
 -> Le processus d'urbanisation répond aux couches "Scope (contexte)" , "Business Model (conceptuel)" et "System Model (logique)" des Architectures d’Entreprise.
 
@@ -229,7 +225,7 @@ TOGAF définit plusieurs concepts pour satisfaire les besoins des différentes p
 
 ### A. Besoins
 
-- Prise en compte de l’évolution des besoins fonctionnels à la  conception des application
+- Prise en compte de l’évolution des besoins fonctionnels à la conception des application
 - Éviter le décalage entre besoins métiers et leur réalisation
 - Besoin de réutilisation des fonctionnalités ( Non fournie par le modèle MVC classique )
 - Processus métiers de plus en plus inter-départementaux ( Coût considérable dans la gestion des flux entre départements )
@@ -240,19 +236,18 @@ Procédure et fonctions -> Module(Groupe de fonctions) -> Objet(Represente une E
 
 - Ensemble de fonctionnalités qui ont un sens
 - Expose un petit nombre d’opérations offrant un traitement de bout en bout
-- Est implémenté par un fournisseur et utilisé par un  consommateur
+- Est implémenté par un fournisseur et utilisé par un consommateur
 
 - Large Granularité (Coarse-grained) : Englobe plusieurs fonctions
 - Interface : Implémente 1+ interfaces
-- Localisable: *find*
+- Localisable: _find_
 - **Instance unique** : Design pattern singleton
 - Couplage faible (loosely-coupled) : services connectés par des standards assurant le découplage
 - Synchrone ou Asynchrone
 
 Cohesion : Degree to which a module performs one and only one function. All elements of component are directed towards performing the same task
 
-Coupling : Degree to which a module is connected to other modules in the
-system.
+Coupling : Degree to which a module is connected to other modules in the system.
 
 **Les services de présentations ou de référencement** : vers les informations affichées et les formulaires de saisies de données.
 
@@ -270,9 +265,7 @@ system.
 
 Permet d’intégrer et de manipuler les différentes briques et composants applicatifs d’un système informatique et de gérer les liens qu’ils entretiennent
 
-Objectifs :
--> Décomposer une fonctionnalités en un ensemble de fonctions basiques (services) fournies par des composants
--> Décrire finement le schéma d’interaction entre ces services
+Objectifs : -> Décomposer une fonctionnalités en un ensemble de fonctions basiques (services) fournies par des composants -> Décrire finement le schéma d’interaction entre ces services
 
 #### 2. Principes de la SOA
 
@@ -282,10 +275,10 @@ Objectifs :
   - Assurer une indépendance totale entre les interfaces et les implémentations.
   - L'élément qui utilise un service ne doit pas être contraint ni par la technologie d’implémentation, ni par sa localisation (potentiellement distribué).
 - Mutualisation :
-  - Favoriser la réutilisation de services métiers par plusieurs lignes métiers  ou applications.
-  - Permettre la construction de services de haut niveau par **combinaison de  services existants**.
+  - Favoriser la réutilisation de services métiers par plusieurs lignes métiers ou applications.
+  - Permettre la construction de services de haut niveau par **combinaison de services existants**.
 - Automatisation des processus métier :
-  - Isoler la logique des processus métiers sur des composants dédiés qui  prennent en charge les enchainements de tâches et les échanges de flux d’information.
+  - Isoler la logique des processus métiers sur des composants dédiés qui prennent en charge les enchainements de tâches et les échanges de flux d’information.
 - Echanges orientés Document : Les informations échangées par les services possèdent une structure propre, guidée par les besoins métiers.
 
 ### D. Elements de base de la SOA
@@ -338,7 +331,7 @@ Est transverse : entre plusieurs départements, unités, acteurs...
 
 #### 1. Outils ETL
 
-Réponse à la problématique: Assurer la consistance et  propagation des données entre plusieurs sous-systèmes
+Réponse à la problématique: Assurer la consistance et propagation des données entre plusieurs sous-systèmes
 
 Permettent la synchronisation, consolidation et propagation des données entre sous-systèmes hétérogènes
 
@@ -360,7 +353,7 @@ Fournissent une infrastructure technique pour la médiation entre deux ou plusie
 ##### 2.1 MOM
 
 - Système Store and Forward.
-- Sémantique asynchrone : Le client construit un message et  le transmet au middleware, qui le route vers le ou les systèmes cibles.
+- Sémantique asynchrone : Le client construit un message et le transmet au middleware, qui le route vers le ou les systèmes cibles.
 - Pas de couplage technique entre les participants.
 - **Solutions principalement propriétaires** : Toutes les parties doivent connaître le mode d’interfaçage du middleware.
 - **Capacités de routage limitées**, obligeant à configurer explicitement les routes à prendre.
@@ -375,16 +368,16 @@ Fournissent une infrastructure technique pour la médiation entre deux ou plusie
   - Couplage fonctionnel fort
   - Solutions très techniques
 
-##### 2.3  EAI : Entreprise Application Integration
+##### 2.3 EAI : Entreprise Application Integration
 
 ![eai](assets/eai.png)
 
 Architecture Hub and Spoke (réseau en étoile): Un composant central :
 
 - Assure la médiation physique entre le client et sa cible
-- Prend en charge les problématiques techniques de bas niveau (localisation,  disponibilité, communication, transcodage, traces, sécurité...)
+- Prend en charge les problématiques techniques de bas niveau (localisation, disponibilité, communication, transcodage, traces, sécurité...)
 
-Permettent d’assurer la transformation des données pour limiter le  couplage fonctionnel entre systèmes
+Permettent d’assurer la transformation des données pour limiter le couplage fonctionnel entre systèmes
 
 Permettent d’appliquer des règles de routage sophistiquées
 
@@ -417,9 +410,7 @@ Construit conformément aux principes SOA :
 
 ESB s’appuient en général sur des standards
 
-**Définition** : Architecture de services distribuée, qui inclut un modèle
-de conteneur léger pour héberger des composants
-d’intégration comme services distants
+**Définition** : Architecture de services distribuée, qui inclut un modèle de conteneur léger pour héberger des composants d’intégration comme services distants
 
 Permet de :
 
@@ -427,7 +418,7 @@ Permet de :
 - Réaliser les transformations des données
 - Router les messages selon leur contenu
 
-Framework de sécurité flexible + Infrastructure de gestion qui permet de configurer,  déployer et gérer vos services distants
+Framework de sécurité flexible + Infrastructure de gestion qui permet de configurer, déployer et gérer vos services distants
 
 ### B. Rôle des ESB dans une SOA
 
@@ -436,15 +427,15 @@ Framework de sécurité flexible + Infrastructure de gestion qui permet de confi
   - ESB apporte une couche d’abstraction vis à vis des technologies utilisées dans le SI
   - Ne dépend pas d’un SE ou d’un langage
   - Supporte plusieurs standards : WS, XML, JCA
-  - Offre un panel ouvert de connecteurs spécialisés vers les  différentes briques du SI (mainframes, applications  propriétaires, progiciels...)
+  - Offre un panel ouvert de connecteurs spécialisés vers les différentes briques du SI (mainframes, applications propriétaires, progiciels...)
 - Médiation et Routage:
-  - Support de différentes sémantiques d’échange (synchrone,  asynchrone...)
+  - Support de différentes sémantiques d’échange (synchrone, asynchrone...)
   - Gestion des règles de routage sur les messages
   - Transformation et conversion de messages
   - Validation des données entrantes ou sortantes
 - Découpler consommateurs et fournisseurs de services
   - Consommateur ne voit que l’ESB, et ne connaît ni le format ni le protocole utilisé par le fournisseur
-- Agréger les services de niveau N pour construire des services de  niveau N+1
+- Agréger les services de niveau N pour construire des services de niveau N+1
   - Si l’agrégation est complexe ou nécessite des structures de contrôle de flux d’exécution, il utilise un moteur d’orchestration (BPEL par exemple)
 - Tracer les messages :
   - Traçabilité et monitoring des traitements
@@ -535,18 +526,14 @@ Domaines :
 
 ### A. Composition de services (General)
 
-Implémentation d’une application (offerte comme service) dont la
-logique implique l’invocation d’opérations offertes par d’autres
-services
+Implémentation d’une application (offerte comme service) dont la logique implique l’invocation d’opérations offertes par d’autres services
 
 - Le nouveau service est appelé **service composite**
 - Les services invoqués sont des **composants de service**
 
-Du point de vue du client, un service composite et un service
-basique (implémenté par un langage de programmation
-traditionnel) sont in-distinguables.
+Du point de vue du client, un service composite et un service basique (implémenté par un langage de programmation traditionnel) sont in-distinguables.
 
-Notion de Service *Mashup* :
+Notion de Service _Mashup_ :
 
 - Forme plus légère de composition
 - Pour les applications web
@@ -561,14 +548,13 @@ Gestion des exceptions et de l’intégrité transactionnelle. Les études montr
 ### B. Orchestration de services
 
 - L’approche la plus commune.
-- La séquence d’étape est définie dans un processus, avec  conditions et exceptions
+- La séquence d’étape est définie dans un processus, avec conditions et exceptions
 - Un contrôleur central est ensuite créé pour implémenter la séquence
 - Les étapes individuelles d’une séquence sont implémentés par des opérations sur des services
 - **Pour des compositions de services simples**, l’orchestration est faite dans le code (Java, C#...) résidant dans le composite
 - **Pour des orchestrations complexes**, un outil est utilisé pour :
   - Créer un modèle visuel d’une séquence
-  - Générer le code qui exécute cette séquence dans un environnement d’exécution dédié
-=> Approche BPM (Business Process Model)
+  - Générer le code qui exécute cette séquence dans un environnement d’exécution dédié => Approche BPM (Business Process Model)
 
 #### Résumé de l'orchestration des Services
 
@@ -600,8 +586,8 @@ Schéma de composition statique
 #### 1. Basée sur les messages
 
 - Basée sur l’examen des messages entre les participants dans un processus
-- Le comportement est défini par la capture des contrats de  messages entre les parties en collaboration
-- Supporté par le standard WS-CDL (Web Service Choregraphy  Definition Language)
+- Le comportement est défini par la capture des contrats de messages entre les parties en collaboration
+- Supporté par le standard WS-CDL (Web Service Choregraphy Definition Language)
 - Souvent utilisé pour les applications B2B (entre entreprises)
 - Besoin de spécifier uniquement l’échange des messages (syntaxe, sémantique, comportement)
 
@@ -622,7 +608,7 @@ Schéma de composition statique
 
 #### Résumé de la chorégraphie de services
 
-- Le comportement global du processus émerge du travail des  différentes parties. Aucune perspective globale n’est nécessaire
+- Le comportement global du processus émerge du travail des différentes parties. Aucune perspective globale n’est nécessaire
 - Les processus complexes sont décomposés en agendas de travail **où chaque élément autonome contrôle son propre agenda**.
 - Se couple facilement avec les systèmes basés sur les événements et sur les agents
 - Est généralement plus difficile à démarrer, mais la mise à l'échelle à des processus complexe est plus facile

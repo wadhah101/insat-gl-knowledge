@@ -14,6 +14,6 @@ It is sad.
 
 It is frustrating.
 
-__But you will do it. And you will do it *amazingly*.__.
+**But you will do it. And you will do it _amazingly_.**.
 
 Stay positive.

@@ -19,6 +19,8 @@ Blockchain is a system that records transactions that are devided into multiple 
 
 If two parties **agree to a transaction**, this information is **broadcast** to the computers (nodes) of the peer-to-peer network, where it is then **validated**. Once the transaction has been verified, it is added to a block together with other transactions. This block is then **hashed**. Every block contains a **reference to the hash** of the block that came before it. This guarantees the position of the block in the chain and ensures that it **cannot be tampered** with. The new block is then permanently added to the blockchain and **distributed to all its participants**. The transaction is now complete.
 
+<!-- markdownlint-disable MD059  -->
+
 -- Click [here](https://blog.bosch-si.com/blockchain/10-things-you-need-to-know-about-blockchain/) to see all the blog
 
 ## Keywords to know

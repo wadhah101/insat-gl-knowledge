@@ -50,7 +50,7 @@ In order to determine what's right. We need to use reason.
 
 **Categorial imperatives** : Commands you must follow, regardless of your desires. Moral obligations that are derived from pure reason ( binding on all of us ).
 
-Kant : It's not fair for you to make exceptions for yourself. Follow moral absolute rules instead ( even when you think your situation does not abide to that rule -> e.g : lying to *save* someon's life ).
+Kant : It's not fair for you to make exceptions for yourself. Follow moral absolute rules instead ( even when you think your situation does not abide to that rule -> e.g : lying to _save_ someon's life ).
 
 ### c. Utilitarianism
 
@@ -74,7 +74,7 @@ Also called **Rights-based Ethics**
 
 Moral theory that believes **right acts** are those that do not violate the free, rational agreements that we've made.
 
-No rules -> A lot of freedom,  but no security ( other people might do things that are not in accord with your rights ). ( A terrible way to live... )
+No rules -> A lot of freedom, but no security ( other people might do things that are not in accord with your rights ). ( A terrible way to live... )
 
 Free, rational, self-interested people realize that there are more benefits to be found in cooperating than in not cooperating.
 
@@ -82,11 +82,11 @@ Free, rational, self-interested people realize that there are more benefits to b
 
 Morality is determined by a group of contractors : whatever they agree to goes.
 
-No one should be forced into a contract. It should make your life *overall* better (even if, in some aspects, it favours other people)
+No one should be forced into a contract. It should make your life _overall_ better (even if, in some aspects, it favours other people)
 
 If, as a group, we change our minds, we can simply **modify the contract**. Which is exactly what happens, **explicitly**, when we **change laws**, and **implicitly**, with shifting social mores.
 
-### e.  Care-based ethics / Feminist ethics
+### e. Care-based ethics / Feminist ethics
 
 -> What is moral is that which promotes healthy relationships and the well-being of individuals and their interdependence.
 
@@ -177,9 +177,10 @@ those researchers argued they shouldn’t be held responsible for ethical data u
 
 ### C. GDPR
 
--> Consent of the data subject means any **freely given, specific, informed and  unambiguous** indication of the data subject’s wishes by which he or she, by a **statement or by a clear affirmative action**, signifies **agreement** to the  processing of personal data relating to him or her.
+-> Consent of the data subject means any **freely given, specific, informed and unambiguous** indication of the data subject’s wishes by which he or she, by a **statement or by a clear affirmative action**, signifies **agreement** to the processing of personal data relating to him or her.
 
 - **freely given** : given on a voluntary basis. The element “**free**” implies a real **choice** by the data subject. Any element of inappropriate pressure or influence which could affect the outcome of that choice renders the consent invalid.
+
   - For one thing, that means you cannot require consent to data processing as a condition of using the service. They need to be able to say no.
   - The one exception is if you need some piece of data from someone to provide them with your service.
 
@@ -264,8 +265,7 @@ Algorithmically manufactured information that has no connection to real events. 
 
 ### D. Importance of anonymizing data
 
-Theory that says if you have gender, date of birth, and zip code, you can easily identify
-any person (87% of the people can be identifiable)
+Theory that says if you have gender, date of birth, and zip code, you can easily identify any person (87% of the people can be identifiable)
 
 Even with just two of these information, it is possible to find the person’s identity
 

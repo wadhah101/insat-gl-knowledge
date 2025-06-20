@@ -4,7 +4,7 @@ slug: /gl3/semester-1/embeded-programming/tps
 
 # TPs
 
-__Author:__ [@hajali-amine](https://github.com/hajali-amine)
+**Author:** [@hajali-amine](https://github.com/hajali-amine)
 
 ## Introduction
 

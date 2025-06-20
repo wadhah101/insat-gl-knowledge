@@ -65,7 +65,7 @@ env (or export) : display all env vars
 
 - generalement declaré dans un fichier de config (~/.bashrc ou ~/.profile)
 - alias : Displays all the current shell aliases.
-- `alias alias1 alias2  aliasN` : shows info about alias(es) in paremeter
+- `alias alias1 alias2 aliasN` : shows info about alias(es) in paremeter
 - `alias AliasName="command(s)..."` : create new alias
 - alias cp="cp -i" : replaces the original command cp with cp -i for interactive copying
 - unalias AliasName : Unsets (deletes) the alias
@@ -73,31 +73,32 @@ env (or export) : display all env vars
 ### functions
 
 - local vars in functions
+
   - $1 - $9 Positional parameters
   - $# Number of positional parameters
-  - $* :  "$1 $2 $3 ..." (string)
+  - $\* : "$1 $2 $3 ..." (string)
   - $@ "$1" "$2" "$3" . (array)
 
 - to export : `export -f FunctionName`
 - Definition :
 
 ```bash
-FunctionName () {
-command ;
-command ;
+FunctionName() {
+  command
+  command
 
-return 0 ; # to return a value
+  return 0 # to return a value
 }
 ```
 
 Or
 
 ```bash
-function FunctionName () {
-command ;
-command ;
-...
-return 0 ; # to return a value
+function FunctionName() {
+  command
+  command
+  ...
+  return 0 # to return a value
 }
 ```
 
@@ -105,7 +106,7 @@ return 0 ; # to return a value
 
 ### write simple scripts
 
-first Line :  #!/bin/bash (which interpreter to use )
+first Line : #!/bin/bash (which interpreter to use )
 
 #### Passing parameters to a script
 
@@ -114,23 +115,23 @@ first Line :  #!/bin/bash (which interpreter to use )
 
 - $0 : scriptname
 
-| command | description                                                  |
-| ------- | ------------------------------------------------------------ |
-| `$n`      | Positional parameter n max. n=9 ($0 is the name of the shell script) |
-| `${nn}`   | Positional parameter nn (for nn>9)                           |
-| `$#`      | Number of positional parameters (not including the script program) |
-| `$@, $*`  | All positional parameters                                    |
-| `"$@"`    | Same as "$1" "$2" . . . "$n"                                 |
-| `"$*"`    | Same as "$1c$2c . . . $n" c = content of **$IFS** (default is space) |
-| `$?`      | Exit status of the last command                              |
-| `$$`      | Process ID of the current shell                              |
-| `$-`      | Current options in effect                                    |
-| `$!`      | Process ID of the last background command                    |
-| `$is`     | Name of the current shell (in this case 'bash')              |
+| command | description |
+| --- | --- |
+| `$n` | Positional parameter n max. n=9 ($0 is the name of the shell script) |
+| `${nn}` | Positional parameter nn (for nn>9) |
+| `$#` | Number of positional parameters (not including the script program) |
+| `$@, $*` | All positional parameters |
+| `"$@"` | Same as "$1" "$2" . . . "$n" |
+| `"$*"` | Same as "$1c$2c . . . $n" c = content of **$IFS\*\* (default is space) |
+| `$?` | Exit status of the last command |
+| `$$` | Process ID of the current shell |
+| `$-` | Current options in effect |
+| `$!` | Process ID of the last background command |
+| `$is` | Name of the current shell (in this case 'bash') |
 
 **shift** : décalage à gauche des parametres d'entrée ( $2 became $1 and &3 become $2 ...)
 
-set aa bb cc dd  : assign aa to $1, bb to $2, cc to $3 and dd to $4
+set aa bb cc dd : assign aa to $1, bb to $2, cc to $3 and dd to $4
 
 ### Conditional Statements
 
@@ -147,19 +148,13 @@ run_these_commands_instead
 fi
 ```
 
-- **Test the status of files or directories (exists or not )**
-`if test -e /etc/fstab ; then`
-or
-`if [ -e /etc/fstab ] ; then`
+- **Test the status of files or directories (exists or not )** `if test -e /etc/fstab ; then` or `if [ -e /etc/fstab ] ; then`
 
-- **Command or script exit code**
-`if (ifconfig | grep 'ppp0') ; then`
+- **Command or script exit code** `if (ifconfig | grep 'ppp0') ; then`
 
--**content of var**
-`if $1 ; then` (true if $1 has value inside , **true for 0 too !** )
+-**content of var** `if $1 ; then` (true if $1 has value inside , **true for 0 too !** )
 
-- **String testing**
-`if [ "$net" = "eth0" ] ; then (string testing)`
+- **String testing** `if [ "$net" = "eth0" ] ; then (string testing)`
 
 - **Notes** :
   - there needs to be a **space** after `[` and before `]`
@@ -202,17 +197,17 @@ done
 #### for
 
 ```bash
-for variable in list ; do
-run_these_commands
+for variable in list; do
+  run_these_commands
 done
 ```
 
-Exemple  : (les 3 noms des fichiers vont etre enregistré dans le fichier ~/allfiles)
+Exemple : (les 3 noms des fichiers vont etre enregistré dans le fichier ~/allfiles)
 
 ```bash
-for item in ~/file1 ~/file2 ~/file3 ; do
-echo "------------ Content of $item -----------"
-cat $item >> ~/allfiles
+for item in ~/file1 ~/file2 ~/file3; do
+  echo "------------ Content of $item -----------"
+  cat $item >> ~/allfiles
 done
 ```
 
@@ -237,7 +232,7 @@ done
 - Syntax3:
 
   - ```bash
-    mail -s "subject" destination_mail_address <<EOM
+    mail -s "subject" destination_mail_address << EOM
     message body.......
     EOM
     ```
@@ -263,13 +258,13 @@ done
 
 #### Tests on strings
 
-| Test                       | Description                                                  |
-| -------------------------- | ------------------------------------------------------------ |
-| -n str                     | true if length of string is not 0                            |
-| -z str                     | true if length of string is 0                                |
-| str1 = str2 / str1 == str2 | equal ( != for not equal)                                    |
-| string = pattern           | true if **string matches pattern** (!= for doesn't match)    |
-| string1 < string2          | True if string1 sorts before string2 lexicographically in the current locale( > for after) |
+| Test | Description |
+| --- | --- |
+| -n str | true if length of string is not 0 |
+| -z str | true if length of string is 0 |
+| str1 = str2 / str1 == str2 | equal ( != for not equal) |
+| string = pattern | true if **string matches pattern** (!= for doesn't match) |
+| string1 < string2 | True if string1 sorts before string2 lexicographically in the current locale( > for after) |
 
 #### Test on integers
 
@@ -295,7 +290,7 @@ done
 
 `[ "$A" = "$B" -a \( "$C" = "$D" -a "$E" = "$F" \) ]`
 
-> always use a space between the `[ ]`  , `\( \)` and expressions .
+> always use a space between the `[ ]` , `\( \)` and expressions .
 
 ---
 
@@ -307,9 +302,9 @@ done
 
 - Kernel options at boot time : **/usr/src/linux/Documentation/kernel-parameters.txt**
 
-- Kernel modules are located in : **/lib/modules/kernel-version/***
+- Kernel modules are located in : **/lib/modules/kernel-version/\***
 
-- to get the "kernel-version" we do : **/lib/modules/$(uname -r) /***
+- to get the "kernel-version" we do : **/lib/modules/$(uname -r) /\***
 
 - Modules can **depend on other modules** being loaded. The list of modules and their dependencies are in:
   - `/lib/modules/kernel-version/modules.dep`
@@ -322,19 +317,19 @@ done
   - **Format** : `modulename size usedBy`
   - **usedBy** : `number module1,module2,...moduleN`
 - `insmod modulename [module_parameters]` : **Loads** a module (no dependency check) ( in my version , the **filename** needs to be provided and not the **modulename** )
-- `modprobe modulename`  : Loads all the dependencies if needed and then **loads** the module.
+- `modprobe modulename` : Loads all the dependencies if needed and then **loads** the module.
 - `modprobe -r modulename` : **removes** module with dependency check
 - `rmmod [-r] module1 [module2] ....` : removes modules ( -r : removes recursively through dependencies )
 - `modinfo [-adlpn] [-F field] modulename` :
   - Prints information about a module.
   - -n = /path/filename of module's file
-  - -F --field  : Only print this field value, one per line.
-  - Field names: author (-a) description (-d) license (-l)  param (-p)
+  - -F --field : Only print this field value, one per line.
+  - Field names: author (-a) description (-d) license (-l) param (-p)
 - `depmod [-abeFAn]` :
   - Determines module dependencies and writes modules.dep file.
   - -n=Writes only to screen
   - Example :
-    - depmod -av  :Checks all and writes modules.dep
+    - depmod -av :Checks all and writes modules.dep
 
 ### /etc/modules.conf (or /etc/conf.modules)
 
@@ -363,7 +358,7 @@ done
 - **-a : all options**
 - -n, --nodename : network node hostname
 - -s, --kernel-name : kernel name
-- **-r :  current release**
+- **-r : current release**
 - -v, --kernel-version : prints kernel version (date)
 - -m, --machine : hardware machine name
 - -p, --processor : processor type
@@ -477,7 +472,7 @@ this file contains the encrypted passwords for each user and their expiry parame
   - -e : user forced to change pass at next login
   - -l : an administrator can lock the account of the specified user
   - -u : a system administrator can unlock the specified account
-  - -n min :  user will not be permitted to change the password until min days have elapsed
+  - -n min : user will not be permitted to change the password until min days have elapsed
   - -x max : max days for password validity (today > maxday+1 => you need to change pass)
 
 #### chage
@@ -492,11 +487,11 @@ this file contains the encrypted passwords for each user and their expiry parame
 #### newusers
 
 - Update and create new users in batch mode , using `<passfile>` for input
-- Syntax  : `newusers <passfile>`
+- Syntax : `newusers <passfile>`
 
 #### chpassword
 
-- Modifies the passwords of multiple users in batch mode using  for input
+- Modifies the passwords of multiple users in batch mode using for input
 - Syntax : `chpasswd <passfile>`
 
 #### Other login / user related commands
@@ -505,9 +500,9 @@ this file contains the encrypted passwords for each user and their expiry parame
 - `id -nG [username]` / `groups [username]` : shows all groups current user belongs too
 - `echo $USER` : shows current user
 - `id -u` : id of a user
-- `who` / w / users  : users presently logged in locally
+- `who` / w / users : users presently logged in locally
 - `finger [-l username]` : users presently logged in locally/remotely
-- `lastlog` : all logins since  /var/log/lastlog was created
+- `lastlog` : all logins since /var/log/lastlog was created
 - `last` : all logins since /var/log/wtmp was created
 - `lastb` ! all logins since /var/log/btmp was created (generally compressed & recreated)
 
@@ -592,13 +587,15 @@ MembersList : member1,member2 ...
 ## Tips and tricks
 
 - Showing all the registered users and their groups in detail (For systems where the UID starts at 500):
+
   - `grep ':[5-9]..:' /etc/passwd | cut -d: -f1) ; \ for user in $users; do id $user ; done ;`
 
 - **To disable an Account**:
-  - Add a *** or a !** to the encrypted password in **/etc/shadow** file.
+
+  - Add a **\* or a !** to the encrypted password in **/etc/shadow** file.
 
 - To show list of connected users : users
-- To show the list of groups a  user belongs too : groups ( or groups [user])
+- To show the list of groups a user belongs too : groups ( or groups [user])
 
 ---
 
@@ -614,7 +611,7 @@ MembersList : member1,member2 ...
    - init starts the default run level scripts and passes control to the getty on virtual terminal 1 for user login.
    - If xdm/kdm/gdm display manager is started as part of the default runlevel, then the display manager takes over control of the display for graphic user login.
 
-**/etc/modules.conf** :  used during startup , contained different parameters for the moldules
+**/etc/modules.conf** : used during startup , contained different parameters for the moldules
 
 **Boot Log files** : /var/log/messages
 
@@ -648,14 +645,14 @@ MembersList : member1,member2 ...
 
 - **Dans /etc**
 
-| file                     | role                                                         |
-| ------------------------ | ------------------------------------------------------------ |
-| rc.sysinit               | The startup script launched by **init** at boot time         |
-| rc.local                 | A script for **local startup customizations**, started automatically after the system is running. |
-| rc                       | A script used to change runlevels.                           |
+| file | role |
+| --- | --- |
+| rc.sysinit | The startup script launched by **init** at boot time |
+| rc.local | A script for **local startup customizations**, started automatically after the system is running. |
+| rc | A script used to change runlevels. |
 | /etc/rc0.d -> /etc/rc6.d | Directories containing **symbolic links** to **scripts** in **/etc/init.d**. |
 
-- Names of the **links** are in the **format**  : `[K|S][nn][init.d_name]`
+- Names of the **links** are in the **format** : `[K|S][nn][init.d_name]`
   - K/S : Kill / Start
   - nn : sequence number controlling startup or shutdown order.
   - The script names starting with S are run with the argument start, and the ones with K are run with the argument stop
@@ -689,6 +686,7 @@ The **/etc/inittab** file is the configuration file used by the **System V (SysV
 - what processes to start, monitor, and restart if they terminate
 - what actions to take when the system enters a new runlevel
 - format :
+
   - Each line starting with '#' is a comment.
   - Each entry uses one line.
   - Syntax : `id:runlevels:action:process`
@@ -705,6 +703,7 @@ Example :
 #### Shutdown Command
 
 - Syntax : shutdown [options] time
+
   - options : -c : cancel / -r : restart / -h : halt
   - time format : now / +2m / hh:mm
 
@@ -728,10 +727,12 @@ init va lire sa configuration de /etc/inittab pour savoir les processus à execu
   - `UID:PID:PPID:C:STIME;TTY:TIME:CMD`
     - STIME : start Time
 - pour le detail complet : ps -efl
-  - `F S UID PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY TIME CMD`
+
+  - `F S UID PID PPID C PRI NI ADDR SZ WCHAN STIME TTY TIME CMD`
   - `State (2)`: S-sleeping, R-running, T-stopped or traced, D-uniterruptable sleep, Z=zombie
 
 - Singals :
+
   - `kill -1 $pid` (`-SIGHUP`) : (restart)
   - `kill -2 $pid` (`-SIGINT`) (ctrl+c)
   - `kill -9 $pid` (`-SIGKILL`) (stopper)
@@ -740,11 +741,13 @@ init va lire sa configuration de /etc/inittab pour savoir les processus à execu
   - `kill -20 $pid` (`-SIGSTP`) (susprendre)
 
 - pour trouver le pid d'un proc :
+
   - `pidof [options] <command>`
   - `pgrep [options] <pattern>`
 
 - Filtrage de ps -ef :
-  - `ps -ef | awk '{printf("%d\t%s\n",$2,$8)}'`
+
+  - `ps -ef | awk '{printf("%d %s ",$2,$8)}'`
 
 - Trouver les proc avec ppid =ppidVal
   - `ps -ef | tr -s " "| grep -E "^[a-zA-Z]+ [0-9]+ ${ppidVal} .*$"`
@@ -784,12 +787,15 @@ init va lire sa configuration de /etc/inittab pour savoir les processus à execu
 - Each cron entry can be very long but MUST exist on a single physical line.
 
 - `crontab -e`
+
   - create/edit a user crontab (scheduling) file (incl. root). The crontab program will save this file under the user's name in the /var/spool/cron/tabs/ directory. eg. /var/spool/cron/tabs/joe
 
 - `crontab -l`
+
   - Display user's crontab file.
 
 - `crontab -r`
+
   - Delete user's crontab file.
 
 - `crontab -e -u username`

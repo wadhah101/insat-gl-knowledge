@@ -14,7 +14,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 
 `set -e` : set the shell to exit as soon as the first error is encountered
 
-`set -u`: The -u option treats unset or undefined variables except for special parameters such as wildcards (*) or “@” as errors during parameter expansion.
+`set -u`: The -u option treats unset or undefined variables except for special parameters such as wildcards (\*) or “@” as errors during parameter expansion.
 
 `#!/usr/bin/env bash` : better than `#!/bin/bash` because it will always use the right "bash"
 
@@ -57,8 +57,7 @@ ssh -j <bastion-host> <remote-host>
 
 ## Vagrant
 
-`vagrant init <box-name>`
-write spec for VM using vagrantfile to create repeatable environment containing our different tools.
+`vagrant init <box-name>` write spec for VM using vagrantfile to create repeatable environment containing our different tools.
 
 images for VMs are avaiable through vagrant **boxes**
 

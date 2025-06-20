@@ -26,18 +26,18 @@ repos:
 
   - repo: local
     hooks:
-      - id: lint
-        name: lint
-        entry: yarn lint
+      - id: prettier
+        name: prettier
+        entry: yarn format
         language: system
         types: [file, javascript]
         pass_filenames: false
 
   - repo: local
     hooks:
-      - id: prettier
-        name: prettier
-        entry: yarn prettier
+      - id: generate_slugs
+        name: generate_slugs
+        entry: python scripts/generate_slugs.py
         language: system
-        types: [file, javascript]
+        types: [file, python]
         pass_filenames: false

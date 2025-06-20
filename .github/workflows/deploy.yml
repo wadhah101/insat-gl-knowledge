@@ -13,6 +13,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: volta-cli/action@v4
+      - run: yarn
+      - uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: --all-files
+
   build:
     runs-on: ubuntu-latest
     steps:

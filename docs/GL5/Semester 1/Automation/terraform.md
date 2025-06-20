@@ -9,6 +9,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 ## Overview
 
 - automate and manage your infrastructure
+
   - plateform
   - services that run on plateform
 
@@ -51,7 +52,8 @@ Ansible:
 - Managing existing infrastructure ( adding more containers, ect...)
 
 - Replicating infrastructure :
-  - Replicate DEV to PROD  to have same infra
+
+  - Replicate DEV to PROD to have same infra
 
 - We don't need to rememeber the current state. We just need to know the desired state.
 
@@ -105,6 +107,7 @@ resource "kubernetes_namespace" "example" {
 ### Declarative vs Imperative
 
 - Terraform is declarative
+
   - You define the **end state** in your config file ( instead of HOW to achieve that end state ).
   - e.g. 5 servers with following network config & AWS user with following permissions.
 
@@ -250,6 +253,7 @@ Method 2 ( should not generally be used ) : Do `terraform destory -target resour
 ## State
 
 - `terraform.tfstate` :
+
   - This file is first created when we do the first apply. By going to AWS and getting the details ( in case we're using AWS provider ).
   - It saves the current state of our resources.
   - It gets updated with each new `apply` in order to add / remove / update our resources ( we can see that in action in the step `refreshing state...` when we do an `apply`)
@@ -473,7 +477,7 @@ docker run -p 8080:80 nginx
 
 > Use **user_data** If it's available ( and it is on most cloud providers). Using provisioners isn't recommanded! Also provisioners break idempotency ( we might end up with a different state)!
 
-Terraform doesn't  give us any feedback on `user_data` commands execution. Because AWS will execute the commands later on. There are however still ways to run commands from terraform directly. by using provisioners.
+Terraform doesn't give us any feedback on `user_data` commands execution. Because AWS will execute the commands later on. There are however still ways to run commands from terraform directly. by using provisioners.
 
 provisioners are able to connect to a remote server and execute commands.
 

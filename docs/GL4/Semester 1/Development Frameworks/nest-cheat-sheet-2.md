@@ -40,16 +40,15 @@ nest start –watch
 - each Module has this architecture:
 
 ```typescript
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { Module } from "@nestjs/common";
+import { AppController } from "./app.controller";
+import { AppService } from "./app.service";
 @Module({
   imports: [TestModule], // list of imported modules ( each of these modules contains the list of providers this module needs )
   exports: [], // List if exported providers, can be used by other modules
   controllers: [AppController], // the list of controllers defined in the module
   providers: [AppService], // the list of providers contained in the module, will be instanciated via dependency injection
 })
-
 export class AppModule {}
 ```
 
@@ -116,8 +115,7 @@ export class AppModule {}
 ## Pipes
 
 - classe qui a 2 fonctionnalités:
-  - **transformation**: transformez les données d'entrée sous la forme
-    souhaitée (par exemple, de chaîne en entier).
+  - **transformation**: transformez les données d'entrée sous la forme souhaitée (par exemple, de chaîne en entier).
   - **validation**: évaluez les données d'entrée et, si elles sont valides, passez-les simplement telles quelles; sinon, lever une exception lorsque les données sont incorrectes.
 - les pipes **fonctionnent sur les arguments** gérés par l’action du contrôleur.
 - Nest appelle le pipe juste avant l'invocation d'une méthode.
@@ -181,12 +179,12 @@ return this.tasksService.getTaskById(id, user);
 ##### Transform : true
 
 - Active la transformation automatique des objets js (géneralement de la requete) en dto qu'on a fourni tout en changeant tout les champs
-- Ceci permettra d’activer la transformation des types primitives. Plus
-  besoin d’utiliser un ParseIntPipe pour convertir la chaine en entier.
+- Ceci permettra d’activer la transformation des types primitives. Plus besoin d’utiliser un ParseIntPipe pour convertir la chaine en entier.
 
 ##### Class Validator options
 
 - `whitelist`: accepte juse les propriétés défini par la dtos ( les autres ignorés )
+
   - Ceci n’est valide que si vous @nnoter vos propriétés. Une propriété non @nnotée sera ignorée.
 
 - `forbidNonWhitelisted`: Si elle détecte une propriété non défini dans la dto, déclenche un erreur
@@ -203,12 +201,13 @@ return this.tasksService.getTaskById(id, user);
 ### Custom Pipes
 
 ```typescript
-import { ArgumentMetadata, PipeTransform} from '@nestjs/common';
-export class FusionUpperPipe implements PipeTransform{
-transform(value: any, metadata: ArgumentMetadata): any {
-console.log(metadata);
-return value;
-} }
+import { ArgumentMetadata, PipeTransform } from "@nestjs/common";
+export class FusionUpperPipe implements PipeTransform {
+  transform(value: any, metadata: ArgumentMetadata): any {
+    console.log(metadata);
+    return value;
+  }
+}
 ```
 
 Then we do `App.useGlobalPipes` Or
@@ -241,21 +240,21 @@ Then we do `App.useGlobalPipes` Or
 ### Classe
 
 ```typescript
-import { NestMiddleware} from '@nestjs/common';
+import { NestMiddleware } from "@nestjs/common";
 @Injectable()
-export class FirstMiddleware implements NestMiddleware{
-use(req: any, res: any, next: () => void): any {
-} }
+export class FirstMiddleware implements NestMiddleware {
+  use(req: any, res: any, next: () => void): any {}
+}
 ```
 
 then we need to make sure that AppModule implements NestModule, and we do this :
 
 ```typescript
-export class AppModule implements NestModule{
+export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LoggerMiddleware).forRoutes(
-      {path: "todos", method:RequestMethod.GET}
-    );
+    consumer
+      .apply(LoggerMiddleware)
+      .forRoutes({ path: "todos", method: RequestMethod.GET });
   }
 }
 ```
@@ -263,10 +262,11 @@ export class AppModule implements NestModule{
 ### Function
 
 ```typescript
-export class AppModule implements NestModule{
+export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(logger).forRoutes( //logger is a function not a class this time
-      {path: "todos", method:RequestMethod.GET}
+    consumer.apply(logger).forRoutes(
+      //logger is a function not a class this time
+      { path: "todos", method: RequestMethod.GET }
     );
   }
 }
@@ -286,32 +286,38 @@ export class AppModule implements NestModule{
 
 ```typescript
 if (course._id) {
-throw new HttpException('Vous ne pouvez pas mentionner d id', HttpStatus.BAD_REQUEST); // error 400
+  throw new HttpException(
+    "Vous ne pouvez pas mentionner d id",
+    HttpStatus.BAD_REQUEST
+  ); // error 400
 }
 ```
 
 ### Filters personnalisés
 
- ```typescript
-import { ArgumentsHost, Catch, ExceptionFilter, HttpException} from '@nestjs/common';
-import { Request, Response } from 'express';
+```typescript
+import {
+  ArgumentsHost,
+  Catch,
+  ExceptionFilter,
+  HttpException,
+} from "@nestjs/common";
+import { Request, Response } from "express";
 @Catch(HttpException)
-export class CustomFilter implements ExceptionFilter{
-        catch(exception: HttpException, host: ArgumentsHost): any {
-            const ctx = host.switchToHttp();
-            const response = ctx.getResponse<Response>();
-            const request = ctx.getRequest<Request>();
-            const exceptionResponse = exception.getResponse();
-            response
-            .status(status)
-            .json({
-            message: 'custom response',
-            statusCode: exception.getStatus(),
-            timestamp: new Date().toISOString(),
-            path: request.url,
-        });
+export class CustomFilter implements ExceptionFilter {
+  catch(exception: HttpException, host: ArgumentsHost): any {
+    const ctx = host.switchToHttp();
+    const response = ctx.getResponse<Response>();
+    const request = ctx.getRequest<Request>();
+    const exceptionResponse = exception.getResponse();
+    response.status(status).json({
+      message: "custom response",
+      statusCode: exception.getStatus(),
+      timestamp: new Date().toISOString(),
+      path: request.url,
+    });
     return response;
-    }
+  }
 }
 ```
 
@@ -371,17 +377,21 @@ L’odre des filtres doit être du filtre le plus générique vers le plus spéc
 - Un interceptor doit implémenter la méthode intercept. Sa méthode next.**handle** (qui remet la requete dans son chemin) retourne un observable pour pouvoir intercepter la reponse
 
 ```typescript
-import{
-Injectable, NestInterceptor,ExecutionContext,CallHandler
-}from'@nestjs/common';
-import{Observable}from'rxjs';
-import{tap}from'rxjs/operators';
+import {
+  Injectable,
+  NestInterceptor,
+  ExecutionContext,
+  CallHandler,
+} from "@nestjs/common";
+import { Observable } from "rxjs";
+import { tap } from "rxjs/operators";
 @Injectable()
-export class MyFirstInterceptor implements NestInterceptor{
-intercept(context:ExecutionContext,next:CallHandler):Observable<any>
-{ console.log('Before...');
-return next.handle().pipe(tap(()=>console.log(`After...`)));
-} }
+export class MyFirstInterceptor implements NestInterceptor {
+  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+    console.log("Before...");
+    return next.handle().pipe(tap(() => console.log(`After...`)));
+  }
+}
 ```
 
 Afin de définir le domaine d’exécution de l’intercepteur, vous pouvez le spécifier pour:
@@ -393,17 +403,22 @@ Afin de définir le domaine d’exécution de l’intercepteur, vous pouvez le s
 #### Example
 
 ```typescript
-export class RequestDurationInterceptor implements NestInterceptor{
-intercept(context: ExecutionContext,next: CallHandler<any>): Observable<any> | Promise<Observable<any>> {
-console.log('Before handling Request ...');
-const request = context.switchToHttp().getRequest();
-const start = Date.now();
-return next.handle().pipe(
-tap(()=> {
-const end = Date.now();
-console.log(`After ${start-end}ms`);
-} ));
-} }
+export class RequestDurationInterceptor implements NestInterceptor {
+  intercept(
+    context: ExecutionContext,
+    next: CallHandler<any>
+  ): Observable<any> | Promise<Observable<any>> {
+    console.log("Before handling Request ...");
+    const request = context.switchToHttp().getRequest();
+    const start = Date.now();
+    return next.handle().pipe(
+      tap(() => {
+        const end = Date.now();
+        console.log(`After ${start - end}ms`);
+      })
+    );
+  }
+}
 ```
 
 ## Config .env
@@ -427,17 +442,18 @@ isGlobal: true,
 
 ```typescript
 imports: [
-ProduitModule,
-TypeOrmModule.forRoot(
-{ type: 'mysql',
-host: process.env.DB_HOST,
-port: 3306,
-username: process.env.DB_USER,
-password: process.env.DB_PASSWORD,
-database: process.env.DB_NAME,
-entities: [],
-synchronize: true,
-} ) ]
+  ProduitModule,
+  TypeOrmModule.forRoot({
+    type: "mysql",
+    host: process.env.DB_HOST,
+    port: 3306,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    entities: [],
+    synchronize: true,
+  }),
+];
 ```
 
 > On peut aussi créer un fichier dans la racine appelé `ormconfig.json` au lieu de passer l'objet de configuration
@@ -455,22 +471,22 @@ Chaque entité doit être enregistré dans vos options de connexions sous la cl�
 Exemple :
 
 ```typescript
-import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
-import { Roles } from '../../Enums/roles.enum';
-import { PostEntity} from '../../post/entity/post.entity';
-@Entity('user')
-export class UserEntity{
-@PrimaryGeneratedColumn() // on met @PrimaryColumn() si on veut la mettre manuellemnt
-id: number;
-@Column({length:50, unique: true})
-//options : type, name, length, nullable, unique, update, select
-username: string;
-@Column()
-password: string;
-@Column({unique: true})
-email: string;
-@Column({type: 'enum', enum: Roles, default: Roles.user})
-role: Roles;
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Roles } from "../../Enums/roles.enum";
+import { PostEntity } from "../../post/entity/post.entity";
+@Entity("user")
+export class UserEntity {
+  @PrimaryGeneratedColumn() // on met @PrimaryColumn() si on veut la mettre manuellemnt
+  id: number;
+  @Column({ length: 50, unique: true })
+  //options : type, name, length, nullable, unique, update, select
+  username: string;
+  @Column()
+  password: string;
+  @Column({ unique: true })
+  email: string;
+  @Column({ type: "enum", enum: Roles, default: Roles.user })
+  role: Roles;
 }
 ```
 
@@ -487,9 +503,7 @@ synchronize: true,
 } ),
 ```
 
-- TypeORM supporte la plupart des typesde colonnes utilisés par les
-  différents SGBD. Les colonnes sontdatabase-type spécifiquece qui permet d’avoir
-  beaucoup de flexibilités.
+- TypeORM supporte la plupart des typesde colonnes utilisés par les différents SGBD. Les colonnes sontdatabase-type spécifiquece qui permet d’avoir beaucoup de flexibilités.
 
 #### Colonnes spéciales
 
@@ -548,6 +562,7 @@ private readonlypostRepository: Repository<PostEntity>,
 #### Methodes
 
 - Save : La méthode save prend en paramètre une entité ou un tableau d’entités. Si l’entité existe, elle la met à jour, sinon elle l’ajoute.
+
   - Dans le cas d’ajout d’un tableau d’entités, l’ajout se fait à travers unetransaction, cad qu’en cas d’échec d’un des save la totalité est annulée via un Rollback.
   - supporte la mise à jour partielle
   - retourne la liste des entités modifiées / mises à jour
@@ -556,7 +571,7 @@ private readonlypostRepository: Repository<PostEntity>,
   - Si l'entité existe déjà dans la base de données, elle la charge (et tout ce qui y est lié), remplace toutes les valeurs par les nouvelles valeurs de l'objet donné et renvoie la nouvelle entité.
 
 ```typescript
-const newEntity = await repository.preload({id, name, firstname});
+const newEntity = await repository.preload({ id, name, firstname });
 ```
 
 ## Versioning
@@ -569,8 +584,8 @@ const newEntity = await repository.preload({id, name, firstname});
 
 ```typescript
 app.enableVersioning({
-type:VersioningType.URI,
-prefix:'v1'
+  type: VersioningType.URI,
+  prefix: "v1",
 });
 ```
 

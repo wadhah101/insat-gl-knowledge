@@ -8,8 +8,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 
 ## 1. Prometheus, Grafana
 
-we should use `snake_case` to name metrics in prometheus ( as a norm )
-Example : `http_request_total`
+we should use `snake_case` to name metrics in prometheus ( as a norm ) Example : `http_request_total`
 
 counter
 
@@ -22,6 +21,7 @@ Metrics :
 How to show metrics externally :
 
 - Approach 1 : our applications exports its metrics to a db that's compatible with prometheus within fixed intervals
+
   - Our application will depend from Prometheus
   - it will handle the different errors in case it can't access it
   - Might be more suitable for a Lambda function
@@ -45,7 +45,7 @@ we add this to `prometheus.yml`
 ```yaml
 - job_name: "fact"
   static_configs:
-      - targets: ["localhost:5000"]
+    - targets: ["localhost:5000"]
 ```
 
 Method 2 : Dynamic configuration (using Service Discovery)
@@ -144,13 +144,13 @@ helm uninstall prometheus
 
 > In order for a directory to contain a Helm chart, it should contain a `Chart.yaml`
 
-After creating the Helm chart ( and the deployment inside),  we can do :
+After creating the Helm chart ( and the deployment inside), we can do :
 
 ```bash
 helm install "fact-service" .
 ```
 
-in Kubernetes : we have an `overlay network` : even if two pods are far from each other ( in two different nodes )  they share the same local network with each other and can communicate
+in Kubernetes : we have an `overlay network` : even if two pods are far from each other ( in two different nodes ) they share the same local network with each other and can communicate
 
 nodeport : attach port in node to service
 
@@ -190,7 +190,7 @@ Log levels :
 
 `requestLogger = rootLogger.with("request_id", "1234")` -> We will inherit the rootLogger and add the request_id to each and every log message
 
-agent : reads the logs ( outputs from the app ) - and send  it to datadog/loki for visualization
+agent : reads the logs ( outputs from the app ) - and send it to datadog/loki for visualization
 
 In kubernetes : nodes , within each node multiple pods
 
@@ -209,11 +209,11 @@ helm repo add datadog https://helm.datadoghq.com
 helm repo update
 ```
 
-To install the chart , we run  ( found in `https://github.com/DataDog/helm-charts/tree/main/charts/datadog` )
+To install the chart , we run ( found in `https://github.com/DataDog/helm-charts/tree/main/charts/datadog` )
 
 ```bash
-helm install <RELEASE_NAME> \
-    --set datadog.apiKey=<DATADOG_API_KEY> datadog/datadog
+helm install \
+  datadog.apiKey= < RELEASE_NAME > --set < DATADOG_API_KEY > datadog/datadog
 ```
 
 ## 4. Watchdog 2
@@ -237,7 +237,7 @@ datadog:
 ```
 
 ```bash
-helm install datadog -f datadog-values.yml  datadog/datadog
+helm install datadog -f datadog-values.yml datadog/datadog
 ```
 
 After that we add a simple `console.log`, redeploy the application in dockerhub then in kubernetes :
@@ -250,11 +250,9 @@ We run this a few times to get logs , and then we check them in datadog
 
 Datadog : There are two parts , tags and attributes
 
-  tags : dependent from the appllcation
-     Message : blabla
-     requestId: 1234
+tags : dependent from the appllcation Message : blabla requestId: 1234
 
-  attributes: ( added to pinpoint the location )
+attributes: ( added to pinpoint the location )
 
 - podName
 - serviceName
@@ -263,8 +261,7 @@ Datadog query language: key:value
 
 Next Task -> We added the requestId to all the logs
 
-other tools for logging open source : logstash (from elk), loki ( from grafana loki )
--> Problem with opensource tools: storage
+other tools for logging open source : logstash (from elk), loki ( from grafana loki ) -> Problem with opensource tools: storage
 
 Layer 0 : Provisioning/Infra: Terraform
 
@@ -285,7 +282,7 @@ We add
 ```yaml
 oltp:
 receiver:
-    protocols:
-    grpc:
-        enabled: true
+  protocols:
+  grpc:
+    enabled: true
 ```

@@ -21,11 +21,12 @@ Author [@Saief1999](https://github.com/Saief1999)
     - `notify()` { wakes up 1 in random and puts it in ready state }
     - `notifyAll()` { wakes all waiting threads and puts them in ready state }
       - From ready state we need to ask again for resource
-- `resume`/`suspend` : Resumes and suspends  a thread [ DEPRECATED ]
+- `resume`/`suspend` : Resumes and suspends a thread [ DEPRECATED ]
 
 - **Garbage Collector** : Thread qui a la plus faible priorité
 
 ---
+
 Priority:
 
 Priority Example might not work properly, because we use multiple cores, so many threads can enter at the same time even if they don't have the same priority
@@ -35,6 +36,7 @@ Priority Example might not work properly, because we use multiple cores, so many
 ## Real Time Java
 
 - `RealtimeThread` :
+
   - Access To Heap
   - Prio < GC
 
@@ -56,8 +58,7 @@ Scheduler -> checks feasibility of the system ( system of Schedulable threads )
 2. `scheduler.isFeasible()`
    - Vérifie si le système est ordonnançable
 
-To change parameters of a schedulable in runtime (first performs analysis with this new parameters and then replaces them in the schedulable) :
-`scheduler.setIfFeasible(Schedulable, ReleaseParams, MemoryParams)`
+To change parameters of a schedulable in runtime (first performs analysis with this new parameters and then replaces them in the schedulable) : `scheduler.setIfFeasible(Schedulable, ReleaseParams, MemoryParams)`
 
 `schedulable.waitforNextPeriod()` : pour les tâches périodiques
 
@@ -147,7 +148,7 @@ ImportanceParameters(int priority, int importance ) // extends SchedulingParamet
 
   - **`AbsoluteTime(Date)`**: depuis 1970
   - **`RelativeTime(long millis, int nanos)`**: relative to a date
-  - **``RationalTime(int frequency, long millis, int nanos)``**: taux d'occurrences par intervalle de temps
+  - **`RationalTime(int frequency, long millis, int nanos)`**: taux d'occurrences par intervalle de temps
     - 9/250 -> armé 9 fois dans les 250ms
 
 ---
@@ -244,6 +245,7 @@ MemoryArea memoryArea = new LTMemory(4096, 4096);
   - Stack
   - Heap (Where objects are allocated)
 - Pour RTSJ:
+
   - ScopedMemory ( durée de vie de Thread qui l'occupe)
     - LTMemory
     - VTMemory
@@ -318,13 +320,16 @@ catch (InterruptedException e) {}
 
 ```java
 import javax.realtime.*;
+
 public class Handler extends BoundAsyncEventHandler {
-    @Override
-    public void handleAsyncEvent() {
-        System.out.println("Dépassement D'écheance");
-        //...
-    }
+
+  @Override
+  public void handleAsyncEvent() {
+    System.out.println("Dépassement D'écheance");
+    //...
+  }
 }
+
 ```
 
 **Exemple Complet**:

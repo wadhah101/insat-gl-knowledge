@@ -8,7 +8,7 @@ Author [@Saief1999](https://github.com/Saief1999)
 
 ## C'est quoi une tâche?
 
-- **processus lourd** :  lorsqu'il est créé, implique la réservation des ressources telles qu'un espace mémoire, une table de fichiers ouverts et une pile interne qui lui sont toutes dédiées
+- **processus lourd** : lorsqu'il est créé, implique la réservation des ressources telles qu'un espace mémoire, une table de fichiers ouverts et une pile interne qui lui sont toutes dédiées
 - **processus léger**(thread): partage le même espace mémoire et la même table des fichiers ouverts que son processus père. Mais dispose de **sa propre pile**
 
 ## Création des tâches
@@ -26,7 +26,7 @@ int pthread_create(pthread_t* thread, pthread_attr_t* attr, void* (*start_routin
   - joignable ? détachable ?
 - **start_routine**: fonction qui va être executée en premier
   - it is the signature of a **function pointer** that **takes** and **returns** `void *`.
-- **arg**: variables passées en paramètre de *start_routine* ( NULL for none )
+- **arg**: variables passées en paramètre de _start_routine_ ( NULL for none )
 
 ### Return Type
 
@@ -61,14 +61,14 @@ Lorsqu'un processus lourd crée une tâche sous Posix, s'il ne lui est pas expli
 Pour affecter la priorité à une tache :
 
 1. `struct sched_param param`
-2. `int pthread_attr_setinheritsched(pthread_attr_t *attr, int inheritsched)`: l'os prend en considération les priorités + type d'ordonnancelent, *inheritsched*:
+2. `int pthread_attr_setinheritsched(pthread_attr_t *attr, int inheritsched)`: l'os prend en considération les priorités + type d'ordonnancelent, _inheritsched_:
    1. **PTHREAD_EXPLICIT_SCHED**: utilise les paramétres d'ordonnancement depuis sont **attr**
    2. **PTHREAD_INHERIT_SCHED** : utilise les paramétres d'ordonnancement de son père.
 3. `int pthread_attr_setschedparam(pthread_attr_t *attr, const struct sched_param *param)`: affecter la **Priorité**
 4. `int pthread_attr_setschedpolicy(pthread_attr_t *attr, int policy)` : affecter le type d'ordonnancement **Policy**
-   1. **SCHED_FIFO** : ordonnancement  préemptif  à  priorités  fixes.  Les  tâches  de même priorité sont ordonnancées en FIFO
-   2. **SCHED_RR** :  Round-Robin à priorité préemptif. Une tâche utilise un quantum  de temps puis est déplacée en queue de la file d'attente du niveau de sa priorité.
-   3. **SCHED_OTHER** : il  s'agit  d'un  ordonnancement  à  temps  partagé  entre  tâches.  Il  pointe généralement sur SCHED_FIFO.
+   1. **SCHED_FIFO** : ordonnancement préemptif à priorités fixes. Les tâches de même priorité sont ordonnancées en FIFO
+   2. **SCHED_RR** : Round-Robin à priorité préemptif. Une tâche utilise un quantum de temps puis est déplacée en queue de la file d'attente du niveau de sa priorité.
+   3. **SCHED_OTHER** : il s'agit d'un ordonnancement à temps partagé entre tâches. Il pointe généralement sur SCHED_FIFO.
 5. `int pthread_setschedparam(pthread_t thread, int policy, const struct sched_param *param)` : Affecter policy + priorité **lors de l'execution**
 
 ## Data Sharing & critical sections
@@ -85,17 +85,15 @@ Pour affecter la priorité à une tache :
 
 ### Exclusion mutuelle et variable condition
 
-Une tâche accédant à la donnée peut être  endormie si la  condition n'est pas vérifiée. Elle ne sera réveillée que lorsqu'une autre tâche accédera à cette donnée et rendra la condition vraie.
+Une tâche accédant à la donnée peut être endormie si la condition n'est pas vérifiée. Elle ne sera réveillée que lorsqu'une autre tâche accédera à cette donnée et rendra la condition vraie.
 
-> **Lorsqu'une tâche est endormie , elle libére le verrou avant**
-> Ceci est équivalent à l'utilisation de `wait` et `notify` dans Java. C'est le même principe.
-> `notifyAll` (JAVA) **équivalent à** `pthread_cond_broadcast` (POSIX)
+> **Lorsqu'une tâche est endormie , elle libére le verrou avant** Ceci est équivalent à l'utilisation de `wait` et `notify` dans Java. C'est le même principe. `notifyAll` (JAVA) **équivalent à** `pthread_cond_broadcast` (POSIX)
 
 #### Etapes
 
 1. `pthread_cond_t cond = PTHREAD_COND_INITIALIZER;` : crée variable condition
 2. `int pthread_cond_wait(pthread_cond_t *cond, pthread_mutex_t *verrou)` : endormit une tâche (possédant le verrou sur la donnée partagée) si la condition cond est fausse
-3. `int pthread_cond_signal(pthread_cond_t *cond)` rend  la  condition cond vraie.  Cela  envoie  un  signal de  réveil aux tâches qui ont été endormies sur cette condition. Si plusieurs tâches attendent sur une condition, **cela ne réveille que l'une d'entre elles**.
+3. `int pthread_cond_signal(pthread_cond_t *cond)` rend la condition cond vraie. Cela envoie un signal de réveil aux tâches qui ont été endormies sur cette condition. Si plusieurs tâches attendent sur une condition, **cela ne réveille que l'une d'entre elles**.
 4. `int pthread_cond_broadcast(pthread_cond_t *cond)` : Réveille toute les tâches
 
 ### Inversion de priorité
@@ -109,11 +107,11 @@ Une tâche accédant à la donnée peut être  endormie si la  condition n'est p
 2. `int pthread_mutexattr_init(pthread_mutexattr_t *m_attr)`: Init (Oblig)
 3. `int pthread_mutexattr_setpshared(pthread_mutexattr_t *m_attr, int pshared)` : fonction permettant à un mutex d'être partagé par les tâches appartenant à n'importe quel processus.
    1. **PTHREAD_PROCESS_SHARED**.
-   2. **PTHREAD_PROCESS_PRIVATE**: le  partage  est  interne  au processus/tâche  créateur  du  mutex,  alorspshared doit  prendre  la valeur
-4. `int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *m_attr, int prioceiling)` La  fonction  permettant  de  mettre  dans  la  propriété m_attr qui  sera  affectée  au  mutex,  sa priorité plafond prioceiling
+   2. **PTHREAD_PROCESS_PRIVATE**: le partage est interne au processus/tâche créateur du mutex, alorspshared doit prendre la valeur
+4. `int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *m_attr, int prioceiling)` La fonction permettant de mettre dans la propriété m_attr qui sera affectée au mutex, sa priorité plafond prioceiling
 
-5. `int pthread_mutexattr_setprotocol(pthread_mutexattr_t *m_attr, int protocol)`: affecte le protocole  d'héritage
-   1. **PTHREAD_PRIO_PROTECT** : toute  tâche  s'emparant  du  mutex  doit hériter  de  sa  priorité
+5. `int pthread_mutexattr_setprotocol(pthread_mutexattr_t *m_attr, int protocol)`: affecte le protocole d'héritage
+   1. **PTHREAD_PRIO_PROTECT** : toute tâche s'emparant du mutex doit hériter de sa priorité
    2. **PTHREAD_PRIO_NONE**
    3. **PTHREAD_PRIO_INHERIT**
 6. ...
@@ -122,13 +120,13 @@ Une tâche accédant à la donnée peut être  endormie si la  condition n'est p
 
 ## Périodicité
 
-1. `struct timespec time` : La  déclaration  de  la  structure  de  données  de  gestion  du  temps
-2. ` int clock_gettime(clockid_t clk_id, struct timespec *time) ` : Avoir temps système, clockid_t:
+1. `struct timespec time` : La déclaration de la structure de données de gestion du temps
+2. `int clock_gettime(clockid_t clk_id, struct timespec *time)` : Avoir temps système, clockid_t:
    1. **CLOCK_REALTIME**
    2. **CLOCK_MONOTONIC**
    3. **CLOCK_PROCESS_CPUTIME_ID**
    4. **CLOCK_THREAD_CPUTIME_ID**
-3. `int pthread_cond_timedwait(pthread_cond_t *cond, pthread_mutex_t *verrou, struct timespec *time)` : utilise  un  décompteur  (timeout)  sur  le temps time pour  réveiller  la  tâche endormie sur l'attente de la variable condition `cond` qui ne sera jamais signalée
+3. `int pthread_cond_timedwait(pthread_cond_t *cond, pthread_mutex_t *verrou, struct timespec *time)` : utilise un décompteur (timeout) sur le temps time pour réveiller la tâche endormie sur l'attente de la variable condition `cond` qui ne sera jamais signalée
 
 ## Synchronisation : Sémaphores
 
@@ -136,6 +134,6 @@ Une tâche accédant à la donnée peut être  endormie si la  condition n'est p
 2. `int sem_wait(sem_t* s)` : attendre evt
 3. `int sem_post(sem_t* s)`: signaler evt
 4. `int sem_init(sem_t* s, int pshared, unsigned int valeur)` :
-   1. Initialement, ce sémaphore est fait  pour  gérer  la  synchronisation  entre  processus  lourd.  Mais,  on  peut  le  restreindre  à  gérer uniquement  la  synchronisation  entre  les  tâches  du  processus  courant  (dans  notre  cas,  le processus issu de la fonction main(void)), en fixant la variable pshared à 0. Ce sémaphore est partagé entre plusieurs processus si la variable pshared est différente de 0.
+   1. Initialement, ce sémaphore est fait pour gérer la synchronisation entre processus lourd. Mais, on peut le restreindre à gérer uniquement la synchronisation entre les tâches du processus courant (dans notre cas, le processus issu de la fonction main(void)), en fixant la variable pshared à 0. Ce sémaphore est partagé entre plusieurs processus si la variable pshared est différente de 0.
    2. **valeur** : compteur associé au sémaphore evt
-5. `int sem_destroy(sem_t* s)` : détruire evt, Une  fois  cette  fonction  appelée,  aucune tâche ne doit plus être bloquée sur ce dernier
+5. `int sem_destroy(sem_t* s)` : détruire evt, Une fois cette fonction appelée, aucune tâche ne doit plus être bloquée sur ce dernier

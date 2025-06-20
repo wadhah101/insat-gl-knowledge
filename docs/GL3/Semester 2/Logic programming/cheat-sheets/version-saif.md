@@ -494,6 +494,7 @@ X mod Y the remainder of X divided by Y
       - the list consisting of the atoms a, b and c is written `.(a,.(b,.(c,[])))`,
 
     - we can also use another notation , called the `list notation` : `[a]`
+    <!-- markdownlint-disable MD056 -->
 
     | -                       | List       | Head               | Tail |
     | ----------------------- | ---------- | ------------------ | ---- |

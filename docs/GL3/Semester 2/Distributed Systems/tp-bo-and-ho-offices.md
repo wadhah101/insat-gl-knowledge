@@ -6,6 +6,8 @@ slug: /gl3/semester-2/distributed-systems/tp-bo-and-ho-offices
 
 ## Work
 
+<!-- markdownlint-disable MD059  -->
+
 You will find [@AhmedGrati](https://github.com/AhmedGrati) and [@hajali-amine](https://github.com/hajali-amine) work [here](https://github.com/hajali-amine/synchronized-databases)
 
 ## Problem

@@ -1,9 +1,10 @@
 // @ts-check
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/vsDark");
-const math = require("remark-math");
-const katex = require("rehype-katex");
+const { themes } = require("prism-react-renderer");
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.vsDark;
+
+// No longer need remark-math and rehype-katex here
 
 const config = async () => {
   /** @type {import('@docusaurus/types').Config} */
@@ -12,7 +13,7 @@ const config = async () => {
       mermaid: true,
     },
     themes: [
-      "@docusaurus/theme-mermaid",
+      // No longer need @docusaurus/theme-mermaid
       [
         require.resolve("@easyops-cn/docusaurus-search-local"),
         /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
@@ -43,7 +44,6 @@ const config = async () => {
         return {
           name: "docusaurus-tailwindcss",
           configurePostCss(postcssOptions) {
-            // Appends TailwindCSS and AutoPrefixer.
             postcssOptions.plugins.push(require("tailwindcss"));
             postcssOptions.plugins.push(require("autoprefixer"));
             return postcssOptions;
@@ -66,7 +66,7 @@ const config = async () => {
       [
         "classic",
         /** @type {import('@docusaurus/preset-classic').Options} */
-        {
+        ({
           sitemap: {
             changefreq: "weekly",
             priority: 0.5,
@@ -77,9 +77,9 @@ const config = async () => {
             anonymizeIP: true,
           },
           docs: {
-            // DEBT use docusaurus native mermaid supposrt
-            remarkPlugins: [math],
-            rehypePlugins: [katex],
+            // FIX: Require the plugins inline here
+            // remarkPlugins: [require("remark-math")],
+            // rehypePlugins: [require("rehype-katex")],
             sidebarPath: require.resolve("./sidebars.js"),
             editUrl:
               "https://github.com/wadhah101/insat-gl-knowledge/edit/master",
@@ -87,13 +87,14 @@ const config = async () => {
           theme: {
             customCss: require.resolve("./src/css/custom.css"),
           },
-        },
+        }),
       ],
     ],
 
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
+        // This is for the native mermaid support
         mermaid: {
           theme: { light: "default", dark: "dark" },
         },
@@ -152,6 +153,8 @@ const config = async () => {
             "cshtml",
             "prolog",
             "hcl",
+            "diff",
+            "json"
           ],
         },
       }),

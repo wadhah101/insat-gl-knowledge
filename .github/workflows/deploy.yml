@@ -70,6 +70,8 @@ jobs:
           TYPESENSE_PORT: 443
           TYPESENSE_PROTOCOL: https
           TYPESENSE_SEARCH_API_KEY: ${{ secrets.TYPESENSE_SEARCH_API_KEY }}
+          REACT_APP_POSTHOG_HOST: https://eu.i.posthog.com
+          REACT_APP_POSTHOG_KEY: phc_xiS1BHDxm0iYKyaKfDvYlzaB4JibK4BpcQYkYJovK4t
 
       - name: Move Webpack cache
         run: mv .yarn/.cache .cache
